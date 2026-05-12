@@ -30,7 +30,7 @@ import numpy as np
 from networkx.algorithms.community import louvain_communities
 
 THIS_DIR = Path(__file__).resolve().parent
-SRC = Path("/home/user/etnografia-c4ai/ex_cap1 - 2026-05-04T155948.717.tex")
+SRC = Path("/home/user/etnografia-c4ai/capitulo1")
 OUT = THIS_DIR
 
 # ---------------------------------------------------------------------------
@@ -192,6 +192,9 @@ LATEX_CMD_TOKENS = {
 def strip_latex(text: str) -> str:
     # Drop comments (% to end-of-line, but not \%)
     text = re.sub(r"(?<!\\)%.*", "", text)
+    # Neutralize escaped dollars so the math regex below doesn't pair them
+    # with real `$...$` delimiters and swallow paragraphs of prose.
+    text = text.replace(r"\$", " ")
     # Drop \begin{...} and \end{...}
     text = re.sub(r"\\begin\{[^}]*\}", " ", text)
     text = re.sub(r"\\end\{[^}]*\}", " ", text)
