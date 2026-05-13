@@ -19,6 +19,7 @@ import sys
 from pathlib import Path
 
 from infranodus_cap1 import run as run_analysis
+from narrative_trajectory import run as run_trajectory
 
 THIS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = THIS_DIR.parent
@@ -119,14 +120,19 @@ def main() -> None:
         # cap1 keeps the legacy flat layout in infranodus/; others get a subdir.
         out = THIS_DIR if slug == "cap1" else THIS_DIR / slug
         interp = THIS_DIR / f"interpretation_{slug}.md"
-        print(f"\n=== {slug} ({spec.get('title', slug)}) ← {src}")
+        title = spec.get("title", slug)
+        print(f"\n=== {slug} ({title}) ← {src}")
         run_analysis(
             src=src,
             slug=slug,
-            title=spec.get("title", slug),
+            title=title,
             out=out,
             interpretation_path=interp if interp.exists() else None,
         )
+        try:
+            run_trajectory(src=src, slug=slug, title=title, out=out)
+        except Exception as exc:  # noqa: BLE001 — trajectory is non-fatal
+            failures.append(f"{slug} (trajectory): {type(exc).__name__}: {exc}")
 
     if skipped:
         print("\nSkipped (disabled):", ", ".join(skipped))

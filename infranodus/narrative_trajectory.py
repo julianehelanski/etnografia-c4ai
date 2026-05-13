@@ -1,5 +1,5 @@
 """
-Narrative trajectory analysis of capítulo 1.
+Narrative trajectory analysis of a thesis chapter.
 
 Three complementary views, all answering questions about *order* and
 *flow* rather than aggregate co-occurrence:
@@ -20,10 +20,15 @@ Three complementary views, all answering questions about *order* and
      by reading order — answers "what arc does the chapter trace?".
 
 Reuses tokenization / lemmatization from `infranodus_cap1.py`.
+
+CLI:
+    python narrative_trajectory.py                           # cap1 default
+    python narrative_trajectory.py --chapter PATH --slug X --title "Capítulo X"
 """
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from collections import Counter
@@ -38,7 +43,7 @@ sys.path.insert(0, str(THIS_DIR))
 from infranodus_cap1 import (  # noqa: E402
     LATEX_CMD_TOKENS,
     PT_STOPWORDS,
-    SRC,
+    DEFAULT_SRC,
     lemma,
     normalize_token,
     strip_latex,
@@ -78,7 +83,7 @@ def tokenize(text: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def render_gantt(paras: list[str], para_tokens: list[list[str]],
-                  top_concepts: list[str], path: Path):
+                  top_concepts: list[str], path: Path, title: str):
     info = {}
     for c in top_concepts:
         positions = [i for i, ts in enumerate(para_tokens) if c in ts]
@@ -116,7 +121,7 @@ def render_gantt(paras: list[str], para_tokens: list[list[str]],
     ax.set_ylim(-1, len(concepts_sorted))
     ax.invert_yaxis()
     ax.set_title(
-        "Capítulo 1 · Gantt lexical: entrada, persistência e saída dos conceitos\n"
+        f"{title} · Gantt lexical: entrada, persistência e saída dos conceitos\n"
         "(barra = ‘vida’ do conceito · pontos = ocorrências · ordenado por entrada)",
         fontsize=13, color="#0e1116", pad=12,
     )
@@ -133,7 +138,7 @@ def render_gantt(paras: list[str], para_tokens: list[list[str]],
 # ---------------------------------------------------------------------------
 
 def render_alluvial(paras: list[str], para_tokens: list[list[str]],
-                     path: Path, K: int = 8, top_per_seg: int = 5):
+                     path: Path, title: str, K: int = 8, top_per_seg: int = 5):
     n = len(paras)
     bounds = [(round(k * n / K), round((k + 1) * n / K)) for k in range(K)]
 
@@ -214,7 +219,7 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
     ax.set_ylim(y_min, 2.5)
     ax.axis("off")
     ax.set_title(
-        f"Capítulo 1 · fluxo de tópicos por segmento (top-{top_per_seg} em {K} segmentos sequenciais)\n"
+        f"{title} · fluxo de tópicos por segmento (top-{top_per_seg} em {K} segmentos sequenciais)\n"
         "blocos = peso local · faixas = persistência · ▶ = primeira aparição na cadeia",
         fontsize=13, color="#0e1116", pad=14,
     )
@@ -228,7 +233,7 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
 # ---------------------------------------------------------------------------
 
 def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
-                                 path: Path, group_size: int = 5):
+                                 path: Path, title: str, group_size: int = 5):
     """Embed groups of paragraphs ("moments") and project to 2D.
 
     Tries the multilingual sentence-transformer first; if the model can't
@@ -325,7 +330,7 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
     ax.set_xlabel(f"PC1 ({var1:.1f}% da variância)", fontsize=11, color="#0e1116")
     ax.set_ylabel(f"PC2 ({var2:.1f}% da variância)", fontsize=11, color="#0e1116")
     ax.set_title(
-        f"Capítulo 1 · trajetória semântica em {n} momentos (grupos de {group_size} parágrafos)\n"
+        f"{title} · trajetória semântica em {n} momentos (grupos de {group_size} parágrafos)\n"
         f"(embeddings: {method} · projeção PCA 2D · cor = ordem de leitura)",
         fontsize=12, color="#0e1116", pad=12,
     )
@@ -342,11 +347,13 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
-    raw = SRC.read_text(encoding="utf-8")
+def run(src: Path, slug: str, title: str, out: Path) -> None:
+    """Generate Gantt, alluvial and semantic trajectory PNGs for one chapter."""
+    out.mkdir(parents=True, exist_ok=True)
+    raw = src.read_text(encoding="utf-8")
     paras = extract_paragraphs(raw)
     para_tokens = [tokenize(p) for p in paras]
-    print(f"[1] Paragraphs extracted: {len(paras)}")
+    print(f"[1] [{slug}] Paragraphs extracted: {len(paras)}")
     print(f"    Tokens per paragraph (mean): {np.mean([len(t) for t in para_tokens]):.1f}")
 
     # Pick concepts to display in the Gantt: top by frequency, but skipping
@@ -355,23 +362,48 @@ def main():
     freq = Counter(flat)
     GANTT_SIZE = 20
     SKIP = {"parte", "modo", "tipo", "questao", "geral", "exemplo",
-            "claude"}  # remove if you want the AI-assistant marker visible
+            "claude"}
     candidates = [w for w, _ in freq.most_common(60) if w not in SKIP]
     top_concepts = candidates[:GANTT_SIZE]
 
-    out = THIS_DIR
     print(f"[2] Rendering Gantt ({len(top_concepts)} concepts) ...")
-    render_gantt(paras, para_tokens, top_concepts, out / "trajectory_gantt.png")
+    render_gantt(paras, para_tokens, top_concepts,
+                 out / "trajectory_gantt.png", title=title)
 
     print(f"[3] Rendering alluvial flow (K=8 segments) ...")
-    render_alluvial(paras, para_tokens, out / "trajectory_alluvial.png", K=8, top_per_seg=5)
+    render_alluvial(paras, para_tokens, out / "trajectory_alluvial.png",
+                    title=title, K=8, top_per_seg=5)
 
     print(f"[4] Rendering semantic trajectory ...")
-    render_semantic_trajectory(paras, para_tokens, out / "trajectory_semantic.png")
+    render_semantic_trajectory(paras, para_tokens,
+                               out / "trajectory_semantic.png", title=title)
 
-    print("[5] Done. Outputs:")
+    print(f"[5] [{slug}] Done. Outputs:")
     for n in ["trajectory_gantt.png", "trajectory_alluvial.png", "trajectory_semantic.png"]:
         print("    -", out / n)
+
+
+def _parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--chapter", type=Path, default=DEFAULT_SRC,
+                   help="Path to the LaTeX chapter file (default: capitulo1 at repo root).")
+    p.add_argument("--slug", default="cap1",
+                   help="Short identifier (default: cap1).")
+    p.add_argument("--title", default="Capítulo 1",
+                   help="Human-readable label used in figure titles.")
+    p.add_argument("--out", type=Path, default=None,
+                   help="Output directory. Default: infranodus/ when slug=cap1, "
+                        "else infranodus/<slug>/.")
+    return p.parse_args()
+
+
+def main() -> None:
+    args = _parse_args()
+    out = args.out
+    if out is None:
+        out = THIS_DIR if args.slug == "cap1" else THIS_DIR / args.slug
+    run(src=args.chapter, slug=args.slug, title=args.title, out=out)
 
 
 if __name__ == "__main__":
