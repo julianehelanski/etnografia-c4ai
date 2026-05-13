@@ -57,10 +57,8 @@ python infranodus/infranodus_cap1.py \
   --chapter _tex/capitulo2.tex --slug cap2 --title "Capítulo 2"
 ```
 
-Outputs:
-- `cap1` (legado): `infranodus/infranodus_cap1_*` direto na pasta `infranodus/`.
-- `cap2`, `cap3`, …: subpasta `infranodus/<slug>/` (mantém a história
-  intocada e separa cada capítulo).
+Outputs: cada capítulo grava em `infranodus/<slug>/` — `cap1`, `cap2`,
+`cap3`, `cap4` ficam cada um na sua subpasta com PNG/GEXF/CSV/`.md` próprios.
 
 ## Trigger manual
 
