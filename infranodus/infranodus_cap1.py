@@ -1,5 +1,5 @@
 """
-InfraNodus-style text network analysis of Capítulo 1.
+InfraNodus-style text network analysis of a thesis chapter.
 
 Methodology (following Paranyushkin 2019 / InfraNodus):
 - Tokenize text (Portuguese), lowercase, strip accents/punctuation.
@@ -12,11 +12,17 @@ Methodology (following Paranyushkin 2019 / InfraNodus):
 - Identify topical gaps: the pairs of largest communities that are weakly connected.
 - Render two PNGs (full network, community-colored) and a Markdown report.
 
-Output goes to /home/user/etnografia-c4ai/infranodus/.
+CLI:
+    python infranodus_cap1.py                          # roda no capitulo1 (default)
+    python infranodus_cap1.py --chapter PATH --slug X  # roda em qualquer capítulo
+    python infranodus_cap1.py --chapter capitulo2.tex --slug cap2 --title "Capítulo 2"
+
+Outputs go to infranodus/<slug>/ (or infranodus/ for the legacy cap1 default).
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import unicodedata
@@ -30,8 +36,7 @@ import numpy as np
 from networkx.algorithms.community import louvain_communities
 
 THIS_DIR = Path(__file__).resolve().parent
-SRC = Path("/home/user/etnografia-c4ai/capitulo1")
-OUT = THIS_DIR
+DEFAULT_SRC = Path("/home/user/etnografia-c4ai/capitulo1")
 
 # ---------------------------------------------------------------------------
 # 1. Pre-processing
@@ -695,11 +700,24 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
 # 6. Main
 # ---------------------------------------------------------------------------
 
-def main():
-    raw = SRC.read_text(encoding="utf-8")
+def run(src: Path, slug: str, title: str, out: Path,
+        interpretation_path: Path | None = None) -> None:
+    """Run the full pipeline for one chapter.
+
+    src                   : path to the LaTeX chapter file.
+    slug                  : short identifier used as filename prefix (e.g. "cap1").
+    title                 : human-readable label used in figure titles ("Capítulo 1").
+    out                   : output directory (created if absent).
+    interpretation_path   : optional Markdown file whose contents are embedded
+                            as the "Leitura interpretativa" section. Skipped if None.
+    """
+    out.mkdir(parents=True, exist_ok=True)
+    prefix = f"infranodus_{slug}"
+
+    raw = src.read_text(encoding="utf-8")
     tokens = extract_tokens(raw)
 
-    print(f"[1] Tokens after cleaning: {len(tokens):,}")
+    print(f"[1] [{slug}] Tokens after cleaning: {len(tokens):,}")
     G_full = build_graph(tokens, window=4)
     print(f"    Full graph: {G_full.number_of_nodes()} nodes, {G_full.number_of_edges()} edges")
 
@@ -719,13 +737,13 @@ def main():
     gaps = find_structural_gaps(G, comms, top_k=min(5, len(comms)))
 
     # --- Renders -----------------------------------------------------------
-    render_network(G, comms, deg, OUT / "infranodus_cap1_network.png",
-                   title="Rede textual — Capítulo 1 (co-ocorrência, janela=4)",
+    render_network(G, comms, deg, out / f"{prefix}_network.png",
+                   title=f"Rede textual — {title} (co-ocorrência, janela=4)",
                    label_top=50)
 
     render_network_pmi(G, comms, pr,
-                        OUT / "infranodus_cap1_pmi.png",
-                        title="Rede textual — Capítulo 1",
+                        out / f"{prefix}_pmi.png",
+                        title=f"Rede textual — {title}",
                         npmi_threshold=0.20, label_top=55)
 
     # focused render: only top 100 nodes by degree
@@ -738,18 +756,18 @@ def main():
         comms_focus = detect_topics(G_focus)
         deg_focus, btw_focus, pr_focus = compute_metrics(G_focus)
         render_network(G_focus, comms_focus, deg_focus,
-                       OUT / "infranodus_cap1_focus.png",
-                       title="Rede textual — Capítulo 1 · núcleo (top-100, peso ≥ 3)",
+                       out / f"{prefix}_focus.png",
+                       title=f"Rede textual — {title} · núcleo (top-100, peso ≥ 3)",
                        label_top=60)
         render_network_pmi(G_focus, comms_focus, pr_focus,
-                            OUT / "infranodus_cap1_focus_pmi.png",
-                            title="Rede textual — Capítulo 1 · núcleo",
+                            out / f"{prefix}_focus_pmi.png",
+                            title=f"Rede textual — {title} · núcleo",
                             npmi_threshold=0.25, label_top=60)
         export_for_gephi(G_focus, comms_focus, deg_focus, btw_focus,
-                         OUT / "infranodus_cap1_focus", pr=pr_focus)
+                         out / f"{prefix}_focus", pr=pr_focus)
 
     # Gephi export of the full analytic graph
-    export_for_gephi(G, comms, deg, btw, OUT / "infranodus_cap1", pr=pr)
+    export_for_gephi(G, comms, deg, btw, out / prefix, pr=pr)
 
     # --- Reports -----------------------------------------------------------
     top_terms = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:30]
@@ -784,10 +802,20 @@ def main():
             f"densidade ponderada de ligação = {density:.4f}"
         )
 
-    report = f"""# Análise de rede textual — Capítulo 1
+    # Interpretation block: external file if provided, else placeholder.
+    if interpretation_path is not None and interpretation_path.exists():
+        interpretation_md = interpretation_path.read_text(encoding="utf-8").strip()
+    else:
+        interpretation_md = (
+            f"_Leitura interpretativa ainda não escrita para este capítulo. "
+            f"Crie `interpretation_{slug}.md` ao lado dos outputs para que "
+            f"o conteúdo seja embutido aqui automaticamente._"
+        )
+
+    report = f"""# Análise de rede textual — {title}
 
 > Análise de rede textual (*text network analysis*, Paranyushkin 2019)
-> aplicada ao arquivo `{SRC.name}`. O texto foi limpo de comandos LaTeX,
+> aplicada ao arquivo `{src.name}`. O texto foi limpo de comandos LaTeX,
 > citações e notas de rodapé foram reincorporadas; janela deslizante de
 > 4 *tokens* com pesos decrescentes pela distância (3-2-1). Comunidades
 > detectadas por Louvain ponderado. Esta versão acrescenta duas métricas
@@ -850,49 +878,30 @@ texto — candidatos a aprofundamento argumentativo.
 {chr(10).join(gaps_md_lines)}
 
 ## 9. Leitura interpretativa
-
-**O que a rede mostra.** O núcleo do capítulo gira em torno de um eixo
-*tese ↔ pesquisa ↔ rede ↔ C4AI ↔ IBM*, com Latour, Stengers, Mol, Law e
-Barad funcionando como portais conceituais (alta intermediação) que
-conectam o sub-grafo metodológico (`metodo`, `regra`, `principio`,
-`controversia`, `actante`, `inscricao`) ao sub-grafo empírico (`ibm`,
-`spira`, `gpu`, `pandemia`, `covid`, `voz`, `enfermaria`).
-
-**Pontes (`betweenness`).** Termos como `actante`, `rede`, `tese`,
-`tecnociencia` e `inscricao` aparecem como pontes — operam como
-tradutores entre o vocabulário teórico e a descrição empírica do
-encerramento da parceria C4AI–IBM.
-
-**Lacunas a desenvolver.** As ligações mais fracas costumam aparecer
-entre o tópico empírico-infraestrutural (GPU, cluster, IBM, pandemia)
-e o tópico ético-ontológico (intra-ação, política ontológica, ético-
-onto-epistemológico). Há aí um convite a costurar mais explicitamente
-*como* a infraestrutura computacional participa do "corte agencial"
-descrito por Barad, e *como* a economia especulativa de promessas
-(Stengers) se materializa na cadeia GPU→modelo→artigo.
+{interpretation_md}
 
 ## 10. Arquivos gerados
-**Visões frequentistas (mantidas)**
-- `infranodus_cap1_network.png` — rede completa, tamanho por degree.
-- `infranodus_cap1_focus.png` — núcleo (top-100, peso ≥ 3).
+**Visões frequentistas**
+- `{prefix}_network.png` — rede completa, tamanho por degree.
+- `{prefix}_focus.png` — núcleo (top-100, peso ≥ 3).
 
-**Visões informativas (novas)**
-- `infranodus_cap1_pmi.png` — rede completa, tamanho por **PageRank**,
+**Visões informativas**
+- `{prefix}_pmi.png` — rede completa, tamanho por **PageRank**,
   arestas filtradas por **NPMI ≥ 0,20**.
-- `infranodus_cap1_focus_pmi.png` — núcleo, NPMI ≥ 0,25.
+- `{prefix}_focus_pmi.png` — núcleo, NPMI ≥ 0,25.
 
 **Dados**
-- `infranodus_cap1_metrics.json` — métricas brutas (degree, betweenness,
+- `{prefix}_metrics.json` — métricas brutas (degree, betweenness,
   PageRank, NPMI, comunidades, lacunas).
-- `infranodus_cap1.gexf` / `infranodus_cap1_focus.gexf` — grafos para Gephi
+- `{prefix}.gexf` / `{prefix}_focus.gexf` — grafos para Gephi
   já com `community`, `frequency`, `degree_weighted`, `betweenness`,
   `pagerank` (nós) e `weight`, `npmi` (arestas).
-- `infranodus_cap1_nodes.csv` / `infranodus_cap1_edges.csv` (e `_focus_*`)
+- `{prefix}_nodes.csv` / `{prefix}_edges.csv` (e `_focus_*`)
   — fallback em planilha; CSVs trazem todas as colunas acima.
 
 ## 11. Como abrir no Gephi
 1. Instale Gephi (≥ 0.10): https://gephi.org/users/download/
-2. `File → Open…` → selecione `infranodus_cap1.gexf` (ou `_focus.gexf`).
+2. `File → Open…` → selecione `{prefix}.gexf` (ou `_focus.gexf`).
 3. No painel **Appearance**: já vem com cor por `community` e tamanho por
    `degree_weighted` (embutidos via atributos `viz`). Ajuste se quiser.
 4. Em **Layout**: aplique *ForceAtlas 2* (ative *Prevent Overlap* e
@@ -902,7 +911,7 @@ descrito por Barad, e *como* a economia especulativa de promessas
 6. Em **Preview**: ative *Node Labels*, escolha fonte e exporte para PDF/SVG.
 """
 
-    (OUT / "infranodus_cap1_report.md").write_text(report, encoding="utf-8")
+    (out / f"{prefix}_report.md").write_text(report, encoding="utf-8")
 
     metrics = {
         "tokens": len(tokens),
@@ -928,15 +937,45 @@ descrito por Barad, e *como* a economia especulativa de promessas
             {"topic_a": i, "topic_b": j, "edge_density": d} for (i, j, d) in gaps
         ],
     }
-    (OUT / "infranodus_cap1_metrics.json").write_text(
+    (out / f"{prefix}_metrics.json").write_text(
         json.dumps(metrics, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
-    print("[4] Wrote:")
-    for p in ["infranodus_cap1_network.png", "infranodus_cap1_focus.png",
-              "infranodus_cap1_pmi.png", "infranodus_cap1_focus_pmi.png",
-              "infranodus_cap1_report.md", "infranodus_cap1_metrics.json"]:
-        print("    -", OUT / p)
+    print(f"[4] [{slug}] Wrote:")
+    for suffix in ["_network.png", "_focus.png", "_pmi.png", "_focus_pmi.png",
+                   "_report.md", "_metrics.json"]:
+        print("    -", out / f"{prefix}{suffix}")
+
+
+def _parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--chapter", type=Path, default=DEFAULT_SRC,
+                   help="Path to the LaTeX chapter file (default: capitulo1 at repo root).")
+    p.add_argument("--slug", default="cap1",
+                   help="Short identifier used as filename prefix (default: cap1).")
+    p.add_argument("--title", default="Capítulo 1",
+                   help="Human-readable label for figure titles (default: 'Capítulo 1').")
+    p.add_argument("--out", type=Path, default=None,
+                   help="Output directory. Default: infranodus/ when slug=cap1, "
+                        "else infranodus/<slug>/.")
+    p.add_argument("--interpretation", type=Path, default=None,
+                   help="Optional Markdown file to embed as the interpretive section. "
+                        "If omitted, looks for infranodus/interpretation_<slug>.md.")
+    return p.parse_args()
+
+
+def main() -> None:
+    args = _parse_args()
+    out = args.out
+    if out is None:
+        # Backwards-compatible default: cap1 → infranodus/; everything else → infranodus/<slug>/.
+        out = THIS_DIR if args.slug == "cap1" else THIS_DIR / args.slug
+    interpretation = args.interpretation
+    if interpretation is None:
+        candidate = THIS_DIR / f"interpretation_{args.slug}.md"
+        interpretation = candidate if candidate.exists() else None
+    run(src=args.chapter, slug=args.slug, title=args.title,
+        out=out, interpretation_path=interpretation)
 
 
 if __name__ == "__main__":
