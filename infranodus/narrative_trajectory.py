@@ -387,22 +387,19 @@ def _parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--chapter", type=Path, default=DEFAULT_SRC,
-                   help="Path to the LaTeX chapter file (default: capitulo1 at repo root).")
+                   help=f"Path to the LaTeX chapter file (default: {DEFAULT_SRC}).")
     p.add_argument("--slug", default="cap1",
                    help="Short identifier (default: cap1).")
     p.add_argument("--title", default="Capítulo 1",
                    help="Human-readable label used in figure titles.")
     p.add_argument("--out", type=Path, default=None,
-                   help="Output directory. Default: infranodus/ when slug=cap1, "
-                        "else infranodus/<slug>/.")
+                   help="Output directory. Default: infranodus/<slug>/.")
     return p.parse_args()
 
 
 def main() -> None:
     args = _parse_args()
-    out = args.out
-    if out is None:
-        out = THIS_DIR if args.slug == "cap1" else THIS_DIR / args.slug
+    out = args.out if args.out is not None else THIS_DIR / args.slug
     run(src=args.chapter, slug=args.slug, title=args.title, out=out)
 
 

@@ -13,11 +13,10 @@ Methodology (following Paranyushkin 2019 / InfraNodus):
 - Render two PNGs (full network, community-colored) and a Markdown report.
 
 CLI:
-    python infranodus_cap1.py                          # roda no capitulo1 (default)
-    python infranodus_cap1.py --chapter PATH --slug X  # roda em qualquer capítulo
-    python infranodus_cap1.py --chapter capitulo2.tex --slug cap2 --title "Capítulo 2"
+    python infranodus_cap1.py --chapter _tex/ex_cap1.tex --slug cap1
+    python infranodus_cap1.py --chapter _tex/ex_cap2.tex --slug cap2 --title "Capítulo 2"
 
-Outputs go to infranodus/<slug>/ (or infranodus/ for the legacy cap1 default).
+Outputs go to infranodus/<slug>/.
 """
 
 from __future__ import annotations
@@ -36,9 +35,11 @@ import numpy as np
 from networkx.algorithms.community import louvain_communities
 
 THIS_DIR = Path(__file__).resolve().parent
-DEFAULT_SRC = Path("/home/user/etnografia-c4ai/capitulo1")
-# Back-compat: narrative_trajectory.py and other tools import SRC directly.
-SRC = DEFAULT_SRC
+# CLI default points at the sister etnografia repo checked out under _tex/.
+# Running these scripts directly (without --chapter) assumes you have
+#   git clone https://github.com/julianehelanski/etnografia.git _tex
+# at the repo root. The GitHub Action sets this up automatically.
+DEFAULT_SRC = THIS_DIR.parent / "_tex" / "ex_cap1.tex"
 
 # ---------------------------------------------------------------------------
 # 1. Pre-processing
@@ -952,14 +953,13 @@ texto — candidatos a aprofundamento argumentativo.
 def _parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--chapter", type=Path, default=DEFAULT_SRC,
-                   help="Path to the LaTeX chapter file (default: capitulo1 at repo root).")
+                   help=f"Path to the LaTeX chapter file (default: {DEFAULT_SRC}).")
     p.add_argument("--slug", default="cap1",
                    help="Short identifier used as filename prefix (default: cap1).")
     p.add_argument("--title", default="Capítulo 1",
                    help="Human-readable label for figure titles (default: 'Capítulo 1').")
     p.add_argument("--out", type=Path, default=None,
-                   help="Output directory. Default: infranodus/ when slug=cap1, "
-                        "else infranodus/<slug>/.")
+                   help="Output directory. Default: infranodus/<slug>/.")
     p.add_argument("--interpretation", type=Path, default=None,
                    help="Optional Markdown file to embed as the interpretive section. "
                         "If omitted, looks for infranodus/interpretation_<slug>.md.")
@@ -968,10 +968,7 @@ def _parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = _parse_args()
-    out = args.out
-    if out is None:
-        # Backwards-compatible default: cap1 → infranodus/; everything else → infranodus/<slug>/.
-        out = THIS_DIR if args.slug == "cap1" else THIS_DIR / args.slug
+    out = args.out if args.out is not None else THIS_DIR / args.slug
     interpretation = args.interpretation
     if interpretation is None:
         candidate = THIS_DIR / f"interpretation_{args.slug}.md"

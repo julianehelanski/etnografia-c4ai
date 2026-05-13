@@ -7,9 +7,7 @@ Uso típico:
     python infranodus/run_all.py --source-root /caminho/local/etnografia
     python infranodus/run_all.py --only cap1,cap2
 
-Fallback para o capítulo 1 legado: se o arquivo de origem listado no manifesto
-não existir mas o arquivo `capitulo1` legado existir na raiz do repo, ele é
-usado automaticamente (preserva compatibilidade com PRs anteriores).
+Cada capítulo grava seus PNG/GEXF/CSV/relatório em infranodus/<slug>/.
 """
 
 from __future__ import annotations
@@ -70,19 +68,9 @@ def _coerce(v: str):
 
 
 def _resolve_source(spec: dict, source_root: Path) -> Path | None:
-    """Resolve the chapter source path.
-
-    Falls back to the legacy `capitulo1` file at repo root when slug=cap1
-    and the configured path is missing.
-    """
+    """Resolve the chapter source path inside `source_root`."""
     candidate = source_root / spec["source"]
-    if candidate.exists():
-        return candidate
-    if spec.get("slug") == "cap1":
-        legacy = REPO_ROOT / "capitulo1"
-        if legacy.exists():
-            return legacy
-    return None
+    return candidate if candidate.exists() else None
 
 
 def _parse_args() -> argparse.Namespace:
@@ -117,8 +105,7 @@ def main() -> None:
             failures.append(f"{slug}: source not found ({spec['source']})")
             continue
 
-        # cap1 keeps the legacy flat layout in infranodus/; others get a subdir.
-        out = THIS_DIR if slug == "cap1" else THIS_DIR / slug
+        out = THIS_DIR / slug
         interp = THIS_DIR / f"interpretation_{slug}.md"
         title = spec.get("title", slug)
         print(f"\n=== {slug} ({title}) ← {src}")
