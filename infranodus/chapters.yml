@@ -13,22 +13,22 @@
 #   enabled: defina como false para pular um capítulo sem removê-lo.
 
 chapters:
-  - source: capitulo1.tex
+  - source: ex_cap1.tex
     slug: cap1
     title: "Capítulo 1"
     enabled: true
 
-  - source: capitulo2.tex
+  - source: ex_cap2.tex
     slug: cap2
     title: "Capítulo 2"
-    enabled: false  # mude para true quando o arquivo existir no repo .tex
+    enabled: true
 
-  - source: capitulo3.tex
+  - source: ex_cap3.tex
     slug: cap3
     title: "Capítulo 3"
-    enabled: false
+    enabled: true
 
-  - source: capitulo4.tex
+  - source: ex_cap4.tex
     slug: cap4
     title: "Capítulo 4"
-    enabled: false
+    enabled: true

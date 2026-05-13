@@ -37,6 +37,8 @@ from networkx.algorithms.community import louvain_communities
 
 THIS_DIR = Path(__file__).resolve().parent
 DEFAULT_SRC = Path("/home/user/etnografia-c4ai/capitulo1")
+# Back-compat: narrative_trajectory.py and other tools import SRC directly.
+SRC = DEFAULT_SRC
 
 # ---------------------------------------------------------------------------
 # 1. Pre-processing
