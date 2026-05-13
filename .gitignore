@@ -1,0 +1,7 @@
+# Checkout temporário do repositório irmão (etnografia/.tex) pelo workflow.
+_tex/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
