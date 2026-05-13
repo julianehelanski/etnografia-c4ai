@@ -133,23 +133,23 @@
   "top_terms_pagerank": [
     {
       "term": "pesquisa",
-      "pagerank": 0.03079854414503265
+      "pagerank": 0.030798544145032664
     },
     {
       "term": "claudio",
-      "pagerank": 0.02335846642236311
+      "pagerank": 0.023358466422363097
     },
     {
       "term": "corporacao",
-      "pagerank": 0.02176715860573407
+      "pagerank": 0.021767158605734062
     },
     {
       "term": "centro",
-      "pagerank": 0.01940434843391252
+      "pagerank": 0.019404348433912512
     },
     {
       "term": "publico",
-      "pagerank": 0.01671260115177941
+      "pagerank": 0.016712601151779395
     },
     {
       "term": "instituicao",
@@ -157,11 +157,11 @@
     },
     {
       "term": "tecnologia",
-      "pagerank": 0.015407772883785064
+      "pagerank": 0.015407772883785068
     },
     {
       "term": "modelo",
-      "pagerank": 0.01468059744398666
+      "pagerank": 0.014680597443986663
     },
     {
       "term": "fabio",
@@ -169,23 +169,23 @@
     },
     {
       "term": "inteligencia",
-      "pagerank": 0.012977826163472494
+      "pagerank": 0.012977826163472496
     },
     {
       "term": "artificial",
-      "pagerank": 0.01293437492636118
+      "pagerank": 0.012934374926361182
     },
     {
       "term": "ator",
-      "pagerank": 0.012126479853670826
+      "pagerank": 0.012126479853670828
     },
     {
       "term": "brasil",
-      "pagerank": 0.011996563788842328
+      "pagerank": 0.01199656378884233
     },
     {
       "term": "laboratorio",
-      "pagerank": 0.011852198472029785
+      "pagerank": 0.011852198472029788
     },
     {
       "term": "cientifico",
@@ -197,7 +197,7 @@
     },
     {
       "term": "arranjo",
-      "pagerank": 0.010951355738658016
+      "pagerank": 0.010951355738658014
     },
     {
       "term": "infraestrutura",
@@ -205,23 +205,23 @@
     },
     {
       "term": "fapesp",
-      "pagerank": 0.009804258535450071
+      "pagerank": 0.009804258535450075
     },
     {
       "term": "recursos",
-      "pagerank": 0.009779386572128446
+      "pagerank": 0.009779386572128445
     },
     {
       "term": "ecossistema",
-      "pagerank": 0.009667233409329134
+      "pagerank": 0.009667233409329132
     },
     {
       "term": "inovacao",
-      "pagerank": 0.009307070060574647
+      "pagerank": 0.00930707006057465
     },
     {
       "term": "informacao",
-      "pagerank": 0.008912651959449375
+      "pagerank": 0.008912651959449378
     },
     {
       "term": "universidade",
@@ -229,7 +229,7 @@
     },
     {
       "term": "seguir",
-      "pagerank": 0.008709882742271049
+      "pagerank": 0.008709882742271052
     },
     {
       "term": "encerramento",
@@ -245,11 +245,11 @@
     },
     {
       "term": "pinhanez",
-      "pagerank": 0.007883270004744827
+      "pagerank": 0.007883270004744829
     },
     {
       "term": "etnografia",
-      "pagerank": 0.007876750816292674
+      "pagerank": 0.007876750816292676
     }
   ],
   "top_terms_betweenness": [
@@ -348,28 +348,22 @@
       "shift": 25
     },
     {
+      "term": "tecnociencia",
+      "degree_rank": 80,
+      "pagerank_rank": 65,
+      "shift": 15
+    },
+    {
       "term": "estruturais",
       "degree_rank": 128,
       "pagerank_rank": 113,
       "shift": 15
     },
     {
-      "term": "tecnociencia",
-      "degree_rank": 79,
-      "pagerank_rank": 65,
-      "shift": 14
-    },
-    {
       "term": "translacao",
-      "degree_rank": 129,
+      "degree_rank": 130,
       "pagerank_rank": 117,
-      "shift": 12
-    },
-    {
-      "term": "ponto",
-      "degree_rank": 64,
-      "pagerank_rank": 53,
-      "shift": 11
+      "shift": 13
     },
     {
       "term": "codigo",
@@ -384,9 +378,9 @@
       "shift": 10
     },
     {
-      "term": "maquina",
-      "degree_rank": 80,
-      "pagerank_rank": 71,
+      "term": "ponto",
+      "degree_rank": 62,
+      "pagerank_rank": 53,
       "shift": 9
     },
     {
@@ -396,9 +390,9 @@
       "shift": 9
     },
     {
-      "term": "aberto",
-      "degree_rank": 77,
-      "pagerank_rank": 69,
+      "term": "maquina",
+      "degree_rank": 79,
+      "pagerank_rank": 71,
       "shift": 8
     },
     {
@@ -408,9 +402,15 @@
       "shift": 8
     },
     {
-      "term": "latour",
-      "degree_rank": 49,
-      "pagerank_rank": 42,
+      "term": "sistema",
+      "degree_rank": 51,
+      "pagerank_rank": 44,
+      "shift": 7
+    },
+    {
+      "term": "aberto",
+      "degree_rank": 76,
+      "pagerank_rank": 69,
       "shift": 7
     },
     {
@@ -420,10 +420,10 @@
       "shift": 7
     },
     {
-      "term": "sistema",
-      "degree_rank": 50,
-      "pagerank_rank": 44,
-      "shift": 6
+      "term": "linux",
+      "degree_rank": 175,
+      "pagerank_rank": 168,
+      "shift": 7
     }
   ],
   "top_npmi_pairs": [
@@ -434,8 +434,8 @@
       "cooccurrence_weight": 48
     },
     {
-      "a": "open",
-      "b": "source",
+      "a": "source",
+      "b": "open",
       "npmi": 0.8896079078711867,
       "cooccurrence_weight": 51
     },
@@ -446,14 +446,14 @@
       "cooccurrence_weight": 50
     },
     {
-      "a": "inteligencia",
-      "b": "artificial",
+      "a": "artificial",
+      "b": "inteligencia",
       "npmi": 0.8581346138487423,
       "cooccurrence_weight": 153
     },
     {
-      "a": "informacao",
-      "b": "verbal",
+      "a": "verbal",
+      "b": "informacao",
       "npmi": 0.8526653548421118,
       "cooccurrence_weight": 81
     },
@@ -470,8 +470,8 @@
       "cooccurrence_weight": 44
     },
     {
-      "a": "informacao",
-      "b": "pinhanez",
+      "a": "pinhanez",
+      "b": "informacao",
       "npmi": 0.7180430008244132,
       "cooccurrence_weight": 57
     },
@@ -482,8 +482,8 @@
       "cooccurrence_weight": 34
     },
     {
-      "a": "criar",
-      "b": "demanda",
+      "a": "demanda",
+      "b": "criar",
       "npmi": 0.7137230309717345,
       "cooccurrence_weight": 28
     },
@@ -494,14 +494,14 @@
       "cooccurrence_weight": 21
     },
     {
-      "a": "servicos",
-      "b": "demanda",
+      "a": "demanda",
+      "b": "servicos",
       "npmi": 0.6538671205491295,
       "cooccurrence_weight": 33
     },
     {
-      "a": "verbal",
-      "b": "pinhanez",
+      "a": "pinhanez",
+      "b": "verbal",
       "npmi": 0.6497640272330318,
       "cooccurrence_weight": 40
     },
@@ -512,8 +512,8 @@
       "cooccurrence_weight": 18
     },
     {
-      "a": "elaboracao",
-      "b": "relatorios",
+      "a": "relatorios",
+      "b": "elaboracao",
       "npmi": 0.5901863120860688,
       "cooccurrence_weight": 20
     },
@@ -524,8 +524,8 @@
       "cooccurrence_weight": 21
     },
     {
-      "a": "fabio",
-      "b": "claudio",
+      "a": "claudio",
+      "b": "fabio",
       "npmi": 0.5888572447610879,
       "cooccurrence_weight": 139
     },
@@ -542,8 +542,8 @@
       "cooccurrence_weight": 42
     },
     {
-      "a": "brasileiro",
-      "b": "contexto",
+      "a": "contexto",
+      "b": "brasileiro",
       "npmi": 0.5717283454205575,
       "cooccurrence_weight": 18
     },
@@ -560,8 +560,8 @@
       "cooccurrence_weight": 18
     },
     {
-      "a": "multiplicacao",
-      "b": "instituicao",
+      "a": "instituicao",
+      "b": "multiplicacao",
       "npmi": 0.5575886649227676,
       "cooccurrence_weight": 54
     },
@@ -581,53 +581,56 @@
   "communities": [
     {
       "id": 0,
-      "size": 38,
+      "size": 41,
       "label": [
-        "claudio",
-        "fabio",
         "ator",
         "rede",
         "seguir",
         "etnografia",
+        "ciencia",
         "associacao",
-        "bluetalks"
+        "porta",
+        "analise"
       ],
       "members": [
         "actante",
         "analise",
+        "articulacao",
         "associacao",
         "ator",
-        "bluetalks",
         "cadeia",
         "campo",
-        "claudio",
+        "ciencia",
+        "cientista",
         "condicao",
         "condicoes",
         "diagrama",
-        "entrevista",
-        "entrevistas",
         "etnografia",
-        "evento",
-        "fabio",
+        "fato",
         "historica",
         "humano",
         "investigacao",
-        "maior",
+        "latour",
         "metodo",
+        "movimento",
         "objetivos",
         "operam",
         "passagem",
-        "pergunta",
+        "pessoas",
         "plano",
         "ponto",
         "porta",
+        "pratica",
         "processo",
         "questao",
         "rede",
-        "resposta",
+        "registro",
+        "registros",
         "seguir",
+        "tecnociencia",
         "torna",
         "tornam",
+        "tornou",
         "translacao",
         "visivel",
         "voz"
@@ -635,43 +638,45 @@
     },
     {
       "id": 1,
-      "size": 35,
+      "size": 39,
       "label": [
         "corporacao",
         "publico",
+        "tecnologia",
         "infraestrutura",
         "fapesp",
         "recursos",
         "universidade",
-        "dependencia",
-        "financiamento"
+        "dependencia"
       ],
       "members": [
         "acordo",
-        "agenda",
         "arranjos",
+        "assimetria",
         "assimetrias",
+        "capacidade",
         "colaboracao",
         "computacional",
-        "conhecimento",
         "contextos",
         "corporacao",
-        "dado",
-        "decisoes",
         "dependencia",
+        "dependencias",
+        "desenvolvimento",
         "diferentes",
+        "empresas",
         "escala",
-        "especificas",
         "estruturais",
-        "expertise",
         "fapesp",
         "financiamento",
         "fontes",
         "geopolitica",
         "global",
+        "industria",
         "infraestrutura",
         "interesse",
         "interesses",
+        "linux",
+        "material",
         "mercado",
         "parte",
         "projetos",
@@ -680,13 +685,15 @@
         "relacao",
         "relacoes",
         "saude",
-        "tecnicas",
+        "social",
+        "tecnologia",
+        "trajetoria",
         "universidade"
       ]
     },
     {
       "id": 2,
-      "size": 29,
+      "size": 28,
       "label": [
         "pesquisa",
         "centro",
@@ -699,13 +706,13 @@
       ],
       "members": [
         "acesso",
+        "agenda",
         "arranjo",
         "brasil",
         "centro",
-        "cientista",
-        "computacao",
         "criacao",
         "custos",
+        "decisoes",
         "dezembro",
         "disponivel",
         "encerramento",
@@ -718,120 +725,44 @@
         "laboratorio",
         "multiplicacao",
         "novembro",
+        "operacao",
         "parceria",
+        "periodo",
         "pesquisa",
         "pesquisador",
-        "registro",
         "research",
-        "tornou",
-        "trajetoria",
         "unico",
         "valor"
       ]
     },
     {
       "id": 3,
-      "size": 27,
-      "label": [
-        "tecnologia",
-        "hollerith",
-        "tabulacao",
-        "ciencia",
-        "latour",
-        "sistema",
-        "desenvolvimento",
-        "maquina"
-      ],
-      "members": [
-        "cartoes",
-        "ciencia",
-        "comercial",
-        "decisao",
-        "dependencias",
-        "desenvolvimento",
-        "empresa",
-        "empresas",
-        "fato",
-        "historia",
-        "hollerith",
-        "industria",
-        "latour",
-        "maquina",
-        "operacao",
-        "periodo",
-        "pessoas",
-        "pratica",
-        "seculo",
-        "sistema",
-        "sistemas",
-        "social",
-        "tabulacao",
-        "tecnica",
-        "tecnociencia",
-        "tecnologia",
-        "watson"
-      ]
-    },
-    {
-      "id": 4,
-      "size": 20,
-      "label": [
-        "inteligencia",
-        "artificial",
-        "ecossistema",
-        "inovacao",
-        "brasileiro",
-        "ecossistemas",
-        "demanda",
-        "captura"
-      ],
-      "members": [
-        "articulacao",
-        "artificial",
-        "brasileiro",
-        "captura",
-        "contexto",
-        "criar",
-        "demanda",
-        "ecossistema",
-        "ecossistemas",
-        "estrategia",
-        "estrategias",
-        "inovacao",
-        "inteligencia",
-        "logica",
-        "momentos",
-        "movimento",
-        "obia",
-        "opera",
-        "servicos",
-        "vinculo"
-      ]
-    },
-    {
-      "id": 5,
-      "size": 14,
+      "size": 18,
       "label": [
         "modelo",
+        "ecossistemas",
         "negocio",
         "open",
         "source",
         "gente",
-        "aberto",
-        "codigo",
-        "dinheiro"
+        "captura",
+        "dado"
       ],
       "members": [
         "aberto",
-        "assimetria",
-        "capacidade",
+        "captura",
         "codigo",
+        "conhecimento",
+        "dado",
         "dinheiro",
+        "ecossistemas",
+        "estrategia",
+        "estrategias",
+        "expertise",
         "gente",
         "linguagem",
-        "linux",
-        "material",
         "modelo",
+        "momentos",
         "negocio",
         "open",
         "software",
@@ -839,16 +770,107 @@
       ]
     },
     {
+      "id": 4,
+      "size": 17,
+      "label": [
+        "hollerith",
+        "tabulacao",
+        "sistema",
+        "maquina",
+        "empresa",
+        "comercial",
+        "historia",
+        "watson"
+      ],
+      "members": [
+        "cartoes",
+        "comercial",
+        "computacao",
+        "decisao",
+        "empresa",
+        "estados",
+        "historia",
+        "hollerith",
+        "maquina",
+        "seculo",
+        "sistema",
+        "sistemas",
+        "tabulacao",
+        "tecnica",
+        "tecnicas",
+        "unidos",
+        "watson"
+      ]
+    },
+    {
+      "id": 5,
+      "size": 13,
+      "label": [
+        "claudio",
+        "fabio",
+        "informacao",
+        "pinhanez",
+        "verbal",
+        "bluetalks",
+        "entrevista",
+        "maior"
+      ],
+      "members": [
+        "bluetalks",
+        "claudio",
+        "entrevista",
+        "entrevistas",
+        "evento",
+        "fabio",
+        "informacao",
+        "maior",
+        "pergunta",
+        "pinhanez",
+        "projeto",
+        "resposta",
+        "verbal"
+      ]
+    },
+    {
       "id": 6,
+      "size": 13,
+      "label": [
+        "inteligencia",
+        "artificial",
+        "ecossistema",
+        "inovacao",
+        "brasileiro",
+        "demanda",
+        "criar",
+        "servicos"
+      ],
+      "members": [
+        "artificial",
+        "brasileiro",
+        "contexto",
+        "criar",
+        "demanda",
+        "ecossistema",
+        "inovacao",
+        "inteligencia",
+        "logica",
+        "obia",
+        "opera",
+        "servicos",
+        "vinculo"
+      ]
+    },
+    {
+      "id": 7,
       "size": 11,
       "label": [
         "cientifico",
         "relatorios",
         "producao",
-        "registros",
         "anuais",
         "partir",
         "publicacoes",
+        "especificas",
         "elaboracao"
       ],
       "members": [
@@ -857,85 +879,65 @@
         "cientifico",
         "datasets",
         "elaboracao",
+        "especificas",
         "grupo",
         "partir",
         "producao",
         "publicacoes",
-        "registros",
         "relatorios"
-      ]
-    },
-    {
-      "id": 7,
-      "size": 6,
-      "label": [
-        "informacao",
-        "pinhanez",
-        "verbal",
-        "estados",
-        "unidos",
-        "projeto"
-      ],
-      "members": [
-        "estados",
-        "informacao",
-        "pinhanez",
-        "projeto",
-        "unidos",
-        "verbal"
       ]
     }
   ],
   "structural_gaps": [
     {
-      "topic_a": 3,
-      "topic_b": 4,
-      "edge_density": 0.29444444444444445
+      "topic_a": 0,
+      "topic_b": 3,
+      "edge_density": 0.15040650406504066
     },
     {
       "topic_a": 0,
       "topic_b": 4,
-      "edge_density": 0.33289473684210524
+      "edge_density": 0.242467718794835
+    },
+    {
+      "topic_a": 2,
+      "topic_b": 4,
+      "edge_density": 0.2857142857142857
+    },
+    {
+      "topic_a": 3,
+      "topic_b": 4,
+      "edge_density": 0.2973856209150327
     },
     {
       "topic_a": 1,
       "topic_b": 4,
-      "edge_density": 0.3442857142857143
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 3,
-      "edge_density": 0.3469785575048733
+      "edge_density": 0.31825037707390647
     },
     {
       "topic_a": 0,
       "topic_b": 1,
-      "edge_density": 0.3699248120300752
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 3,
-      "edge_density": 0.4095238095238095
+      "edge_density": 0.3333333333333333
     },
     {
       "topic_a": 2,
       "topic_b": 3,
-      "edge_density": 0.4559386973180077
+      "edge_density": 0.375
     },
     {
       "topic_a": 0,
       "topic_b": 2,
-      "edge_density": 0.5635208711433757
+      "edge_density": 0.4642857142857143
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 3,
+      "edge_density": 0.4757834757834758
     },
     {
       "topic_a": 1,
       "topic_b": 2,
-      "edge_density": 0.6985221674876847
-    },
-    {
-      "topic_a": 2,
-      "topic_b": 4,
-      "edge_density": 0.7310344827586207
+      "edge_density": 0.7316849816849816
     }
   ]
 }

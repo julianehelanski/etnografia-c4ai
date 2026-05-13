@@ -95,19 +95,19 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 |---|-------|-------------|----------------|-------|
 | 1 | `unidos` | 131 | 104 | +27 |
 | 2 | `estados` | 125 | 100 | +25 |
-| 3 | `estruturais` | 128 | 113 | +15 |
-| 4 | `tecnociencia` | 79 | 65 | +14 |
-| 5 | `translacao` | 129 | 117 | +12 |
-| 6 | `ponto` | 64 | 53 | +11 |
-| 7 | `codigo` | 78 | 68 | +10 |
-| 8 | `assimetrias` | 142 | 132 | +10 |
-| 9 | `maquina` | 80 | 71 | +9 |
-| 10 | `capacidade` | 124 | 115 | +9 |
-| 11 | `aberto` | 77 | 69 | +8 |
-| 12 | `passagem` | 154 | 146 | +8 |
-| 13 | `latour` | 49 | 42 | +7 |
+| 3 | `tecnociencia` | 80 | 65 | +15 |
+| 4 | `estruturais` | 128 | 113 | +15 |
+| 5 | `translacao` | 130 | 117 | +13 |
+| 6 | `codigo` | 78 | 68 | +10 |
+| 7 | `assimetrias` | 142 | 132 | +10 |
+| 8 | `ponto` | 62 | 53 | +9 |
+| 9 | `capacidade` | 124 | 115 | +9 |
+| 10 | `maquina` | 79 | 71 | +8 |
+| 11 | `passagem` | 154 | 146 | +8 |
+| 12 | `sistema` | 51 | 44 | +7 |
+| 13 | `aberto` | 76 | 69 | +7 |
 | 14 | `estrategias` | 98 | 91 | +7 |
-| 15 | `sistema` | 50 | 44 | +6 |
+| 15 | `linux` | 175 | 168 | +7 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -142,51 +142,51 @@ vezes.
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
 | 1 | `unidos` | `estados` | 0.890 | 48 |
-| 2 | `open` | `source` | 0.890 | 51 |
+| 2 | `source` | `open` | 0.890 | 51 |
 | 3 | `porta` | `voz` | 0.880 | 50 |
-| 4 | `inteligencia` | `artificial` | 0.858 | 153 |
-| 5 | `informacao` | `verbal` | 0.853 | 81 |
+| 4 | `artificial` | `inteligencia` | 0.858 | 153 |
+| 5 | `verbal` | `informacao` | 0.853 | 81 |
 | 6 | `aberto` | `codigo` | 0.796 | 45 |
 | 7 | `relatorios` | `anuais` | 0.783 | 44 |
-| 8 | `informacao` | `pinhanez` | 0.718 | 57 |
+| 8 | `pinhanez` | `informacao` | 0.718 | 57 |
 | 9 | `ponto` | `passagem` | 0.715 | 34 |
-| 10 | `criar` | `demanda` | 0.714 | 28 |
+| 10 | `demanda` | `criar` | 0.714 | 28 |
 | 11 | `elaboracao` | `base` | 0.663 | 21 |
-| 12 | `servicos` | `demanda` | 0.654 | 33 |
-| 13 | `verbal` | `pinhanez` | 0.650 | 40 |
+| 12 | `demanda` | `servicos` | 0.654 | 33 |
+| 13 | `pinhanez` | `verbal` | 0.650 | 40 |
 | 14 | `estruturais` | `assimetrias` | 0.635 | 18 |
-| 15 | `elaboracao` | `relatorios` | 0.590 | 20 |
+| 15 | `relatorios` | `elaboracao` | 0.590 | 20 |
 | 16 | `torna` | `visivel` | 0.590 | 21 |
-| 17 | `fabio` | `claudio` | 0.589 | 139 |
+| 17 | `claudio` | `fabio` | 0.589 | 139 |
 | 18 | `tabulacao` | `sistema` | 0.584 | 30 |
 | 19 | `brasil` | `research` | 0.581 | 42 |
-| 20 | `brasileiro` | `contexto` | 0.572 | 18 |
+| 20 | `contexto` | `brasileiro` | 0.572 | 18 |
 | 21 | `relatorios` | `base` | 0.565 | 18 |
 | 22 | `partir` | `elaboracao` | 0.559 | 18 |
-| 23 | `multiplicacao` | `instituicao` | 0.558 | 54 |
+| 23 | `instituicao` | `multiplicacao` | 0.558 | 54 |
 | 24 | `investigacao` | `historica` | 0.533 | 15 |
 | 25 | `hollerith` | `tabulacao` | 0.533 | 29 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (38 termos): claudio, fabio, ator, rede, seguir, etnografia
-- **Tópico 2** (35 termos): corporacao, publico, infraestrutura, fapesp, recursos, universidade
-- **Tópico 3** (29 termos): pesquisa, centro, instituicao, laboratorio, brasil, arranjo
-- **Tópico 4** (27 termos): tecnologia, hollerith, tabulacao, ciencia, latour, sistema
-- **Tópico 5** (20 termos): inteligencia, artificial, ecossistema, inovacao, brasileiro, ecossistemas
-- **Tópico 6** (14 termos): modelo, negocio, open, source, gente, aberto
-- **Tópico 7** (11 termos): cientifico, relatorios, producao, registros, anuais, partir
-- **Tópico 8** (6 termos): informacao, pinhanez, verbal, estados, unidos, projeto
+- **Tópico 1** (41 termos): ator, rede, seguir, etnografia, ciencia, associacao
+- **Tópico 2** (39 termos): corporacao, publico, tecnologia, infraestrutura, fapesp, recursos
+- **Tópico 3** (28 termos): pesquisa, centro, instituicao, laboratorio, brasil, arranjo
+- **Tópico 4** (18 termos): modelo, ecossistemas, negocio, open, source, gente
+- **Tópico 5** (17 termos): hollerith, tabulacao, sistema, maquina, empresa, comercial
+- **Tópico 6** (13 termos): claudio, fabio, informacao, pinhanez, verbal, bluetalks
+- **Tópico 7** (13 termos): inteligencia, artificial, ecossistema, inovacao, brasileiro, demanda
+- **Tópico 8** (11 termos): cientifico, relatorios, producao, anuais, partir, publicacoes
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 4** [tecnologia, hollerith, tabulacao] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.2944
-- Lacuna entre **Tópico 1** [claudio, fabio, ator] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3329
-- Lacuna entre **Tópico 2** [corporacao, publico, infraestrutura] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3443
-- Lacuna entre **Tópico 1** [claudio, fabio, ator] e **Tópico 4** [tecnologia, hollerith, tabulacao] — densidade ponderada de ligação = 0.3470
-- Lacuna entre **Tópico 1** [claudio, fabio, ator] e **Tópico 2** [corporacao, publico, infraestrutura] — densidade ponderada de ligação = 0.3699
-- Lacuna entre **Tópico 2** [corporacao, publico, infraestrutura] e **Tópico 4** [tecnologia, hollerith, tabulacao] — densidade ponderada de ligação = 0.4095
+- Lacuna entre **Tópico 1** [ator, rede, seguir] e **Tópico 4** [modelo, ecossistemas, negocio] — densidade ponderada de ligação = 0.1504
+- Lacuna entre **Tópico 1** [ator, rede, seguir] e **Tópico 5** [hollerith, tabulacao, sistema] — densidade ponderada de ligação = 0.2425
+- Lacuna entre **Tópico 3** [pesquisa, centro, instituicao] e **Tópico 5** [hollerith, tabulacao, sistema] — densidade ponderada de ligação = 0.2857
+- Lacuna entre **Tópico 4** [modelo, ecossistemas, negocio] e **Tópico 5** [hollerith, tabulacao, sistema] — densidade ponderada de ligação = 0.2974
+- Lacuna entre **Tópico 2** [corporacao, publico, tecnologia] e **Tópico 5** [hollerith, tabulacao, sistema] — densidade ponderada de ligação = 0.3183
+- Lacuna entre **Tópico 1** [ator, rede, seguir] e **Tópico 2** [corporacao, publico, tecnologia] — densidade ponderada de ligação = 0.3333
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap3.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
