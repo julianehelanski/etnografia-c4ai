@@ -13,7 +13,7 @@
 - Tokens significativos: **7,088**
 - Grafo bruto: **2978** nós · **18553** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **1376** arestas
-- Tópicos detectados (Louvain): **9**
+- Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -93,20 +93,20 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `technology` | 142 | 115 | +27 |
-| 2 | `johnson` | 81 | 57 | +24 |
+| 1 | `technology` | 145 | 115 | +30 |
+| 2 | `johnson` | 82 | 57 | +25 |
 | 3 | `importa` | 88 | 65 | +23 |
-| 4 | `lenhard` | 91 | 73 | +18 |
-| 5 | `knowledge` | 162 | 144 | +18 |
+| 4 | `knowledge` | 163 | 144 | +19 |
+| 5 | `figural` | 105 | 87 | +18 |
 | 6 | `scientific` | 177 | 160 | +17 |
-| 7 | `cientifico` | 60 | 46 | +14 |
-| 8 | `computacional` | 63 | 49 | +14 |
-| 9 | `engenharia` | 68 | 54 | +14 |
-| 10 | `figural` | 101 | 87 | +14 |
-| 11 | `mundo` | 104 | 90 | +14 |
-| 12 | `agencia` | 67 | 55 | +12 |
-| 13 | `posicao` | 106 | 94 | +12 |
-| 14 | `opera` | 134 | 122 | +12 |
+| 7 | `lenhard` | 89 | 73 | +16 |
+| 8 | `computacional` | 64 | 49 | +15 |
+| 9 | `cientifico` | 60 | 46 | +14 |
+| 10 | `engenharia` | 68 | 54 | +14 |
+| 11 | `opera` | 136 | 122 | +14 |
+| 12 | `mundo` | 103 | 90 | +13 |
+| 13 | `ponto` | 140 | 127 | +13 |
+| 14 | `posicao` | 106 | 94 | +12 |
 | 15 | `descrevo` | 110 | 99 | +11 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
@@ -141,52 +141,52 @@ vezes.
 
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
-| 1 | `teses` | `dissertacoes` | 0.901 | 21 |
-| 2 | `teses` | `catalogo` | 0.878 | 21 |
-| 3 | `johnson` | `lenhard` | 0.829 | 26 |
+| 1 | `dissertacoes` | `teses` | 0.901 | 21 |
+| 2 | `catalogo` | `teses` | 0.878 | 21 |
+| 3 | `lenhard` | `johnson` | 0.829 | 26 |
 | 4 | `mediacao` | `tecnica` | 0.814 | 45 |
-| 5 | `press` | `university` | 0.812 | 50 |
-| 6 | `artificial` | `inteligencia` | 0.807 | 244 |
+| 5 | `university` | `press` | 0.812 | 50 |
+| 6 | `inteligencia` | `artificial` | 0.807 | 244 |
 | 7 | `crawford` | `joler` | 0.786 | 19 |
-| 8 | `catalogo` | `dissertacoes` | 0.756 | 14 |
+| 8 | `dissertacoes` | `catalogo` | 0.756 | 14 |
 | 9 | `historias` | `importa` | 0.748 | 16 |
 | 10 | `central` | `foco` | 0.734 | 20 |
-| 11 | `ator` | `teoria` | 0.719 | 18 |
-| 12 | `capes` | `dissertacoes` | 0.706 | 21 |
+| 11 | `teoria` | `ator` | 0.719 | 18 |
+| 12 | `dissertacoes` | `capes` | 0.706 | 21 |
 | 13 | `science` | `studies` | 0.679 | 21 |
-| 14 | `stengers` | `haraway` | 0.669 | 27 |
-| 15 | `numero` | `maior` | 0.669 | 15 |
-| 16 | `latour` | `bruno` | 0.663 | 43 |
+| 14 | `haraway` | `stengers` | 0.669 | 27 |
+| 15 | `maior` | `numero` | 0.669 | 15 |
+| 16 | `bruno` | `latour` | 0.663 | 43 |
 | 17 | `recusa` | `posicao` | 0.660 | 9 |
-| 18 | `brasil` | `emergente` | 0.656 | 11 |
+| 18 | `emergente` | `brasil` | 0.656 | 11 |
 | 19 | `computacional` | `infraestrutura` | 0.656 | 22 |
-| 20 | `figuracao` | `possiveis` | 0.650 | 13 |
+| 20 | `possiveis` | `figuracao` | 0.650 | 13 |
 | 21 | `analise` | `bibliometrica` | 0.646 | 18 |
 | 22 | `disponivel` | `acesso` | 0.644 | 17 |
-| 23 | `revista` | `educacao` | 0.641 | 12 |
-| 24 | `sistemas` | `especialistas` | 0.627 | 30 |
+| 23 | `educacao` | `revista` | 0.641 | 12 |
+| 24 | `especialistas` | `sistemas` | 0.627 | 30 |
 | 25 | `cientista` | `engenheiro` | 0.626 | 9 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (33 termos): campo, etnografia, analise, laboratorio, haraway, metodo
-- **Tópico 2** (30 termos): latour, rede, tecnica, mediacao, vocabulario, ator
-- **Tópico 3** (29 termos): producao, pratica, infraestrutura, tecnociencia, cientifico, acesso
-- **Tópico 4** (24 termos): capes, dado, conhecimento, scielo, area, defesas
-- **Tópico 5** (19 termos): ciencia, tecnologia, sociais, humano, estudos, antropologia
-- **Tópico 6** (15 termos): social, press, university, science, studies, traducao
-- **Tópico 7** (11 termos): torna, collins, forsythe, visivel, modelo, linguagem
-- **Tópico 8** (10 termos): crawford, pasquinelli, joler, figural, posicao, abertura
+- **Tópico 1** (62 termos): campo, etnografia, vocabulario, analise, pratica, torna
+- **Tópico 2** (26 termos): humano, capes, dado, conhecimento, scielo, area
+- **Tópico 3** (24 termos): ciencia, tecnologia, sociais, estudos, antropologia, acao
+- **Tópico 4** (22 termos): latour, rede, social, ator, bruno, science
+- **Tópico 5** (19 termos): producao, tecnociencia, cientifico, acesso, maquina, cultura
+- **Tópico 6** (10 termos): tecnica, mediacao, relacoes, agencia, importa, mundo
+- **Tópico 7** (10 termos): inteligencia, artificial, sistemas, pesquisa, objeto, partir
+- **Tópico 8** (7 termos): press, university, traducao, tema, chicago, material
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [latour, rede, tecnica] e **Tópico 4** [capes, dado, conhecimento] — densidade ponderada de ligação = 0.0639
-- Lacuna entre **Tópico 1** [campo, etnografia, analise] e **Tópico 4** [capes, dado, conhecimento] — densidade ponderada de ligação = 0.1136
-- Lacuna entre **Tópico 3** [producao, pratica, infraestrutura] e **Tópico 4** [capes, dado, conhecimento] — densidade ponderada de ligação = 0.1264
-- Lacuna entre **Tópico 2** [latour, rede, tecnica] e **Tópico 3** [producao, pratica, infraestrutura] — densidade ponderada de ligação = 0.1310
-- Lacuna entre **Tópico 1** [campo, etnografia, analise] e **Tópico 3** [producao, pratica, infraestrutura] — densidade ponderada de ligação = 0.1703
-- Lacuna entre **Tópico 3** [producao, pratica, infraestrutura] e **Tópico 5** [ciencia, tecnologia, sociais] — densidade ponderada de ligação = 0.1906
+- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 2** [humano, capes, dado] — densidade ponderada de ligação = 0.0943
+- Lacuna entre **Tópico 4** [latour, rede, social] e **Tópico 5** [producao, tecnociencia, cientifico] — densidade ponderada de ligação = 0.1292
+- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 4** [latour, rede, social] — densidade ponderada de ligação = 0.1371
+- Lacuna entre **Tópico 2** [humano, capes, dado] e **Tópico 4** [latour, rede, social] — densidade ponderada de ligação = 0.1381
+- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 5** [producao, tecnociencia, cientifico] — densidade ponderada de ligação = 0.1443
+- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 3** [ciencia, tecnologia, sociais] — densidade ponderada de ligação = 0.1667
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap2.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
