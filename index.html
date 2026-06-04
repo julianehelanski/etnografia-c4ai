@@ -7,7 +7,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Roboto+Mono:wght@400&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f4d0e1;overflow:hidden;width:100vw;height:100vh;font-family:'Roboto',sans-serif;color:#243352}
+body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'Roboto',sans-serif;color:#243352}
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 1.2s ease}
 #intro.out{opacity:0;pointer-events:none}
 #intro h1{font-family:'Roboto',sans-serif;font-style:normal;font-weight:300;font-size:clamp(1.1rem,2.5vw,1.8rem);text-align:center;line-height:1.7;letter-spacing:-.01em;max-width:580px;padding:0 2rem;color:#000000;opacity:0;animation:rise 1.5s ease .5s forwards}
@@ -165,7 +165,7 @@ body{background:#f4d0e1;overflow:hidden;width:100vw;height:100vh;font-family:'Ro
 .fig-mermaid-link a:hover{text-decoration:underline}
 
 /* ═══════════ CARTOGRAFIA — reskin de carta antiga (papel envelhecido) ═══════════ */
-:root{--ink:#243352;--ink-soft:#5b6480;--parch:#f4d0e1;--parch-2:#fdf3f8;--rule:#a386b8;--rule-soft:#cdb6da;--gold:#ef9f2c}
+:root{--ink:#243352;--ink-soft:#5b6480;--parch:#f8e2ec;--parch-2:#fdf3f8;--rule:#a386b8;--rule-soft:#cdb6da;--gold:#ef9f2c}
 
 /* textura de papel + vinheta */
 #paper-tex{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;mix-blend-mode:multiply;
@@ -189,7 +189,7 @@ body{background:#f4d0e1;overflow:hidden;width:100vw;height:100vh;font-family:'Ro
 #intro .hint{color:#e3a85a!important}
 
 /* cartela de título */
-#title-bar{top:0;left:0;padding:1.5rem;background:linear-gradient(135deg,rgba(244,208,225,.95),rgba(244,208,225,0) 78%)}
+#title-bar{top:0;left:0;padding:1.5rem;background:linear-gradient(135deg,rgba(248,226,236,.95),rgba(248,226,236,0) 78%)}
 #title-bar h2{font-family:'Noto Serif',serif;font-style:italic;font-size:.92rem;font-weight:500;color:#2f3f63;letter-spacing:.01em;line-height:1.4;border-left:2px solid var(--rule-soft);padding-left:.6rem}
 #title-bar p{color:var(--gold);letter-spacing:.2em;margin-top:.4rem}
 
@@ -640,15 +640,6 @@ const link=g.append("g").attr("fill","none")
   .attr("stroke-opacity",.9)
   .attr("stroke-linecap","round");
 
-const branches=g.append("g").attr("fill","none")
-  .selectAll("path")
-  .data(links.flatMap(l=>l._branches.map(b=>({l,b}))))
-  .join("path")
-  .attr("stroke","#e0a24a")
-  .attr("stroke-width",d=>.35+d.b.w*.45)
-  .attr("stroke-opacity",.55)
-  .attr("stroke-linecap","round");
-
 const node=g.append("g").selectAll("g").data(nodes).join("g")
   .attr("cursor","pointer")
   .call(d3.drag()
@@ -666,24 +657,6 @@ node.append("circle")
 
 node.each(function(d){
   const el=d3.select(this);
-  const r=d.size;
-  const nFuzz = 5 + Math.floor(Math.random()*5);
-  for(let i=0;i<nFuzz;i++){
-    const a   = Math.random()*Math.PI*2;
-    const len = r*.4 + Math.random()*r*.9;
-    const x1=Math.cos(a)*r, y1=Math.sin(a)*r;
-    const x2=Math.cos(a)*(r+len), y2=Math.sin(a)*(r+len);
-    const ca=a+(Math.random()-.5)*.7, cl=r+len*.55;
-    const cx=Math.cos(ca)*cl, cy=Math.sin(ca)*cl;
-    el.append("path")
-      .attr("d",`M${x1},${y1}Q${cx},${cy} ${x2},${y2}`)
-      .attr("fill","none")
-      .attr("stroke",C[d.type])
-      .attr("stroke-opacity",.32)
-      .attr("stroke-width",.45)
-      .attr("stroke-linecap","round")
-      .attr("pointer-events","none");
-  }
   const lines=d.label.split("\n");
   const txt=el.append("text")
     .attr("text-anchor","middle")
@@ -739,7 +712,6 @@ function branchPath(item){
 sim.on("tick",()=>{
   updateTerritories();
   link.attr("d",hyphaPath);
-  branches.attr("d",branchPath);
   node.attr("transform",d=>`translate(${d.x},${d.y})`);
 });
 
