@@ -556,10 +556,10 @@ const gTerrLbl=g.append("g").attr("class","terr-labels");
 // graticule — meridianos e paralelos imaginários
 for(let x=-1600;x<=3600;x+=170)
   gGrat.append("line").attr("x1",x).attr("y1",-1600).attr("x2",x).attr("y2",3600)
-    .attr("stroke","#a386b8").attr("stroke-width",.4).attr("stroke-opacity",.06);
+    .attr("stroke","#a386b8").attr("stroke-width",.4).attr("stroke-opacity",.09);
 for(let y=-1600;y<=3600;y+=170)
   gGrat.append("line").attr("x1",-1600).attr("y1",y).attr("x2",3600).attr("y2",y)
-    .attr("stroke","#a386b8").attr("stroke-width",.4).attr("stroke-opacity",.06);
+    .attr("stroke","#a386b8").attr("stroke-width",.4).attr("stroke-opacity",.09);
 
 // a que território pertence cada nó
 const REGION={
@@ -577,14 +577,14 @@ const REGION_DEFS={
 const _terrLine=d3.line().curve(d3.curveCatmullRomClosed.alpha(.85));
 Object.keys(REGION_DEFS).forEach(k=>{
   const def=REGION_DEFS[k];
-  def._fill=gTerr.append("path").attr("fill",def.fill).attr("fill-opacity",.13).attr("stroke","none");
+  def._fill=gTerr.append("path").attr("fill",def.fill).attr("fill-opacity",.18).attr("stroke","none");
   def._coast=gTerr.append("path").attr("fill","none").attr("stroke",def.coast)
-    .attr("stroke-width",1).attr("stroke-opacity",.45).attr("stroke-dasharray","1 3.5").attr("stroke-linecap","round");
-  const lbl=gTerrLbl.append("text").attr("text-anchor","middle").attr("pointer-events","none");
+    .attr("stroke-width",1.4).attr("stroke-opacity",.78).attr("stroke-dasharray","2 3").attr("stroke-linecap","round");
+  const lbl=gTerrLbl.append("text").attr("text-anchor","middle").attr("pointer-events","none").attr("paint-order","stroke").attr("stroke","#f8e2ec").attr("stroke-width",3).attr("stroke-linejoin","round");
   def._name=lbl.append("tspan").attr("class","terr-name").attr("x",0).attr("dy",0)
-    .attr("fill",def.coast).attr("fill-opacity",.5).attr("font-size","12px").attr("letter-spacing","1px");
+    .attr("fill",def.coast).attr("fill-opacity",.95).attr("font-size","13px").attr("letter-spacing","1px");
   def._sub=lbl.append("tspan").attr("class","terr-sub").attr("x",0).attr("dy","1.55em")
-    .attr("fill",def.coast).attr("fill-opacity",.4).attr("font-size","8.5px").attr("letter-spacing","1px");
+    .attr("fill",def.coast).attr("fill-opacity",.8).attr("font-size","8.5px").attr("letter-spacing","1px");
   def._lbl=lbl;
 });
 let _terrLang='pt';
