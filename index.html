@@ -676,40 +676,35 @@ const node=g.append("g").selectAll("g").data(nodes).join("g")
 window._tourNode=node;
 node.append("circle")
   .attr("r",d=>d.size)
-  .attr("fill",d=>ncol(d)+"22")
+  .attr("fill",d=>ncol(d)+"14")
   .attr("stroke",d=>ncol(d))
-  .attr("stroke-width",d=>d.type==="core"?2:1)
-  .attr("stroke-opacity",.95);
+  .attr("stroke-width",d=>d.type==="core"?1.5:.7)
+  .attr("stroke-opacity",.6);
 
 node.each(function(d){
   const el=d3.select(this);
   const lines=d.label.split("\n");
   const txt=el.append("text")
     .attr("text-anchor","middle")
-    .attr("dominant-baseline","hanging")
-    .attr("y",d.size+6)
-    .attr("fill","#243352")
-    .attr("stroke","#f8e2ec")
-    .attr("stroke-width",2.6)
-    .attr("stroke-linejoin","round")
-    .attr("paint-order","stroke")
-    .attr("font-size",d.size>14?"8.5px":"7.5px")
-    .attr("font-weight",d.type==="core"?700:600)
+    .attr("fill",ncol(d))
+    .attr("fill-opacity",.92)
+    .attr("font-size",d.size>14?"8px":"7px")
     .attr("font-family","CMU Serif,serif")
     .attr("pointer-events","none");
-  lines.forEach((l,i)=>txt.append("tspan").attr("x",0).attr("dy",i===0?"0":"1.05em").text(l));
+  if(lines.length===1){txt.attr("dominant-baseline","central").text(d.label)}
+  else{lines.forEach((l,i)=>txt.append("tspan").attr("x",0).attr("dy",i===0?`-${(lines.length-1)*.55}em`:"1.2em").text(l))}
 });
 
 const tip=document.getElementById("tip");
 
 node.on("mouseover",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"33").attr("stroke-opacity",1);
+    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"28").attr("stroke-opacity",1);
     tip.style.display="block";tip.textContent=d.label.replace(/\n/g," ");
     tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px";
   })
   .on("mousemove",e=>{tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px"})
   .on("mouseout",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"22").attr("stroke-opacity",.95);
+    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"14").attr("stroke-opacity",.6);
     tip.style.display="none";
   })
   .on("click",(e,d)=>{e.stopPropagation();showPanel(d)});
@@ -801,7 +796,8 @@ function setLang(l){
     const el=d3.select(this).select('text');
     el.selectAll('tspan').remove();
     el.text(null);
-    lines.forEach((ln,i)=>el.append('tspan').attr('x',0).attr('dy',i===0?'0':'1.05em').text(ln));
+    if(lines.length===1){el.attr('dominant-baseline','central').text(lbl);}
+    else{lines.forEach((ln,i)=>el.append('tspan').attr('x',0).attr('dy',i===0?`-${(lines.length-1)*.55}em`:'1.2em').text(ln));}
   });
   const lPT=['apresentação','capítulo 1 · método','capítulo 2 · figurações','capítulo 3 · C4AI','capítulo 4 · SPIRA'];
   const lEN=['foreword','chapter 1 · method','chapter 2 · figurations','chapter 3 · C4AI','chapter 4 · SPIRA'];
