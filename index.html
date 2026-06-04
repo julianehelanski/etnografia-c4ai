@@ -620,6 +620,11 @@ const sim=d3.forceSimulation(nodes)
   .force("center",d3.forceCenter(W/2,H/2))
   .force("collide",d3.forceCollide(d=>d.size+18));
 
+// ── agrupamento por capítulo: cada território é nudgeado p/ uma âncora própria
+const RANCHOR={teoria:[W*.30,H*.30],metodo:[W*.72,H*.30],c4ai:[W*.30,H*.74],spira:[W*.74,H*.74]};
+sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.07:0))
+   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.07:0));
+
 // ── MICÉLIO: sementes determinísticas por aresta para curvatura, ramificações e pesos
 links.forEach(l=>{
   l._curl   = (Math.random()-.5)*.55;
