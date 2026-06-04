@@ -306,6 +306,8 @@ body{background:#ffffff!important}
 #tour-bar{background:rgba(255,255,255,.98)!important;border-top:1px solid #e3e3e3!important}
 #tour-node-label{color:#1c2942}
 #tour-script-text{color:#222}
+#tour-btn{background:#1c2942!important;color:#ffffff!important;border-color:#1c2942!important;border-radius:999px;padding:.45rem .9rem;letter-spacing:.12em}
+#tour-btn:hover,#tour-btn.active{background:#000!important;color:#fff!important;border-color:#000!important}
 </style>
 </head>
 <body>
@@ -353,7 +355,7 @@ body{background:#ffffff!important}
 <div id="tip"></div>
 
 <button id="lang-btn">EN</button>
-<button id="tour-btn" title="Modo apresentação">APRESENTAÇÃO</button>
+<button id="tour-btn" title="Apresentação guiada (abre a barra inferior)">▶ apresentação guiada</button>
 <div id="tour-bar">
   <div id="tour-trail"></div>
   <div id="tour-body">
@@ -668,8 +670,8 @@ const sim=d3.forceSimulation(nodes)
 
 // ── agrupamento por capítulo: cada território é nudgeado p/ uma âncora própria
 const RANCHOR={teoria:[W*.30,H*.30],metodo:[W*.72,H*.30],c4ai:[W*.30,H*.74],spira:[W*.74,H*.74]};
-sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.025:0))
-   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.025:0));
+sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.08:0))
+   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.08:0));
 
 // ── MICÉLIO: sementes determinísticas por aresta para curvatura, ramificações e pesos
 links.forEach(l=>{
