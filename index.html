@@ -635,8 +635,9 @@ links.forEach(l=>{
 const link=g.append("g").attr("fill","none")
   .selectAll("path").data(links).join("path")
   .attr("stroke","#e0a24a")
-  .attr("stroke-width",d=>.55+d._weight*.5)
-  .attr("stroke-opacity",.9)
+  .attr("stroke-width",d=>.5+d._weight*.4)
+  .attr("stroke-opacity",.4)
+  .attr("stroke-dasharray","1 4")
   .attr("stroke-linecap","round");
 
 const node=g.append("g").selectAll("g").data(nodes).join("g")
