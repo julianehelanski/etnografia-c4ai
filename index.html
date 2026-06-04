@@ -578,6 +578,8 @@ const nodesEN={"tese":{label:"Thesis",title:"Following Scientists and Engineers 
 const W=window.innerWidth, H=window.innerHeight;
 const svg=d3.select("#graph-svg");
 const g=svg.append("g");
+const defs=svg.append("defs");
+defs.append("filter").attr("id","nodeglow").attr("x","-60%").attr("y","-60%").attr("width","220%").attr("height","220%").append("feGaussianBlur").attr("stdDeviation",2.6);
 
 /* ═══════════ CARTOGRAFIA: graticule, territórios e rótulos ═══════════ */
 const gGrat=g.append("g").attr("class","graticule");
@@ -656,11 +658,11 @@ nodes.forEach(n=>n._deg=_deg[n.id]||1);
 function nr(d){return 2.8+Math.sqrt(d._deg)*2.2;}
 const sim=d3.forceSimulation(nodes)
   .force("link",d3.forceLink(links).id(d=>d.id).distance(d=>{
-    if(d.source.id==="tese"||d.target.id==="tese")return 160;
-    if(d.source.type==="chapter"||d.target.type==="chapter")return 110;
-    return 80;
-  }).strength(.6))
-  .force("charge",d3.forceManyBody().strength(d=>d.type==="core"?-400:-180))
+    if(d.source.id==="tese"||d.target.id==="tese")return 100;
+    if(d.source.type==="chapter"||d.target.type==="chapter")return 62;
+    return 42;
+  }).strength(.72))
+  .force("charge",d3.forceManyBody().strength(d=>d.type==="core"?-260:-95))
   .force("center",d3.forceCenter(W/2,H/2))
   .force("collide",d3.forceCollide(d=>nr(d)+3));
 
@@ -685,13 +687,21 @@ links.forEach(l=>{
   }));
 });
 
+const grad=defs.selectAll("linearGradient").data(links).join("linearGradient")
+  .attr("id",(d,i)=>"lg"+i).attr("gradientUnits","userSpaceOnUse");
+grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
+grad.append("stop").attr("offset","100%").attr("stop-color",d=>ncol(d.target));
 const link=g.append("g").attr("fill","none")
   .selectAll("path").data(links).join("path")
-  .attr("stroke",d=>ncol(d.source))
-  .attr("stroke-width",d=>.35+d._weight*.4)
-  .attr("stroke-opacity",.3)
+  .attr("stroke",(d,i)=>"url(#lg"+i+")")
+  .attr("stroke-width",d=>.5+d._weight*.5)
+  .attr("stroke-opacity",.5)
   .attr("stroke-linecap","round");
 
+const gGlow=g.append("g").attr("class","glows");
+const glow=gGlow.selectAll("circle").data(nodes).join("circle")
+  .attr("r",d=>nr(d)*1.8).attr("fill",d=>ncol(d)).attr("fill-opacity",.26)
+  .attr("filter","url(#nodeglow)").attr("pointer-events","none");
 const node=g.append("g").selectAll("g").data(nodes).join("g")
   .attr("cursor","pointer")
   .call(d3.drag()
@@ -752,6 +762,8 @@ function branchPath(item){
 }
 sim.on("tick",()=>{
   updateTerritories();
+  grad.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+  glow.attr("cx",d=>d.x).attr("cy",d=>d.y);
   link.attr("d",hyphaPath);
   node.attr("transform",d=>`translate(${d.x},${d.y})`);
 });
