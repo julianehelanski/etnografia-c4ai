@@ -283,6 +283,29 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .fig-label{font-family:'CMU Serif',serif}
 #intro .creds{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.04em;line-height:2.1;color:#24388d;text-align:center;max-width:620px;margin-top:1.3rem;opacity:0;animation:rise 1.5s ease 1.9s forwards}
 #intro .creds .creds-line{opacity:.72;font-style:italic}
+/* ── tema branco + estilo rede complexa (sem camada cartográfica) ── */
+body{background:#ffffff!important}
+.graticule,.territorios,.terr-labels{display:none!important}
+#paper-tex,#vignette,#scale-bar,#side-title{display:none!important}
+#intro{background:#ffffff!important}
+#intro h1{color:#1c2942!important}
+#intro .tex-pre,#intro .sub,#intro .creds{color:#5a5a5a!important}
+#intro .creds .creds-line{color:#8a8a8a!important}
+#intro .hint{color:#9a9a9a!important}
+#title-bar{background:none!important}
+#title-bar h2{color:#1c2942}
+#title-bar p{color:#9a9a9a}
+#panel{background:rgba(255,255,255,.985)!important;border-left:1px solid #e6e6e6!important}
+#pbody{color:#222!important}
+#pbody blockquote{border-left-color:#ddd!important;color:#555!important}
+#pbody .tag{color:#555!important}
+#legend{background:rgba(255,255,255,.93)!important;border:1px solid #e3e3e3!important}
+#legend::before{color:#666!important}
+#legend .li{color:#555!important}
+#tip{background:rgba(255,255,255,.97)!important;border-color:#ddd!important;color:#222!important}
+#tour-bar{background:rgba(255,255,255,.98)!important;border-top:1px solid #e3e3e3!important}
+#tour-node-label{color:#1c2942}
+#tour-script-text{color:#222}
 </style>
 </head>
 <body>
@@ -321,11 +344,11 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <div id="pbody"></div>
 </div>
 <div id="legend">
-  <div class="li"><div class="ld" style="background:#243352"></div>apresentação</div>
-  <div class="li"><div class="ld" style="background:#5f8a52"></div>capítulo 1 · método</div>
-  <div class="li"><div class="ld" style="background:#7a64ad"></div>capítulo 2 · figurações</div>
-  <div class="li"><div class="ld" style="background:#d98a2e"></div>capítulo 3 · C4AI</div>
-  <div class="li"><div class="ld" style="background:#3f97ad"></div>capítulo 4 · SPIRA</div>
+  <div class="li"><div class="ld" style="background:#d6489b"></div>apresentação</div>
+  <div class="li"><div class="ld" style="background:#56b04a"></div>capítulo 1 · método</div>
+  <div class="li"><div class="ld" style="background:#9b59c6"></div>capítulo 2 · figurações</div>
+  <div class="li"><div class="ld" style="background:#ef8a3c"></div>capítulo 3 · C4AI</div>
+  <div class="li"><div class="ld" style="background:#27adc4"></div>capítulo 4 · SPIRA</div>
 </div>
 <div id="tip"></div>
 
@@ -555,6 +578,8 @@ const nodesEN={"tese":{label:"Thesis",title:"Following Scientists and Engineers 
 const W=window.innerWidth, H=window.innerHeight;
 const svg=d3.select("#graph-svg");
 const g=svg.append("g");
+const defs=svg.append("defs");
+defs.append("filter").attr("id","nodeglow").attr("x","-60%").attr("y","-60%").attr("width","220%").attr("height","220%").append("feGaussianBlur").attr("stdDeviation",2.6);
 
 /* ═══════════ CARTOGRAFIA: graticule, territórios e rótulos ═══════════ */
 const gGrat=g.append("g").attr("class","graticule");
@@ -625,22 +650,26 @@ function updateTerritories(){
 const zoom=d3.zoom().scaleExtent([.25,4]).on("zoom",e=>g.attr("transform",e.transform));
 svg.call(zoom);
 
-const CHCOL={metodo:"#5f8a52",teoria:"#7a64ad",c4ai:"#d98a2e",spira:"#3f97ad"};
-function ncol(d){return d.id==="tese"?"#243352":(CHCOL[REGION[d.id]]||"#7a64ad");}
+const CHCOL={metodo:"#56b04a",teoria:"#9b59c6",c4ai:"#ef8a3c",spira:"#27adc4"};
+function ncol(d){return d.id==="tese"?"#d6489b":(CHCOL[REGION[d.id]]||"#9b59c6");}
+const _deg={};
+links.forEach(l=>{const s=l.source.id??l.source,t=l.target.id??l.target;_deg[s]=(_deg[s]||0)+1;_deg[t]=(_deg[t]||0)+1;});
+nodes.forEach(n=>n._deg=_deg[n.id]||1);
+function nr(d){return 2.8+Math.sqrt(d._deg)*2.2;}
 const sim=d3.forceSimulation(nodes)
   .force("link",d3.forceLink(links).id(d=>d.id).distance(d=>{
-    if(d.source.id==="tese"||d.target.id==="tese")return 160;
-    if(d.source.type==="chapter"||d.target.type==="chapter")return 110;
-    return 80;
-  }).strength(.6))
-  .force("charge",d3.forceManyBody().strength(d=>d.type==="core"?-400:-180))
+    if(d.source.id==="tese"||d.target.id==="tese")return 100;
+    if(d.source.type==="chapter"||d.target.type==="chapter")return 62;
+    return 42;
+  }).strength(.72))
+  .force("charge",d3.forceManyBody().strength(d=>d.type==="core"?-260:-95))
   .force("center",d3.forceCenter(W/2,H/2))
-  .force("collide",d3.forceCollide(d=>d.size+18));
+  .force("collide",d3.forceCollide(d=>nr(d)+3));
 
 // ── agrupamento por capítulo: cada território é nudgeado p/ uma âncora própria
 const RANCHOR={teoria:[W*.30,H*.30],metodo:[W*.72,H*.30],c4ai:[W*.30,H*.74],spira:[W*.74,H*.74]};
-sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.07:0))
-   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.07:0));
+sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.025:0))
+   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.025:0));
 
 // ── MICÉLIO: sementes determinísticas por aresta para curvatura, ramificações e pesos
 links.forEach(l=>{
@@ -658,14 +687,21 @@ links.forEach(l=>{
   }));
 });
 
+const grad=defs.selectAll("linearGradient").data(links).join("linearGradient")
+  .attr("id",(d,i)=>"lg"+i).attr("gradientUnits","userSpaceOnUse");
+grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
+grad.append("stop").attr("offset","100%").attr("stop-color",d=>ncol(d.target));
 const link=g.append("g").attr("fill","none")
   .selectAll("path").data(links).join("path")
-  .attr("stroke","#c97e36")
-  .attr("stroke-width",d=>.65+d._weight*.5)
-  .attr("stroke-opacity",.6)
-  .attr("stroke-dasharray","2 3")
+  .attr("stroke",(d,i)=>"url(#lg"+i+")")
+  .attr("stroke-width",d=>.5+d._weight*.5)
+  .attr("stroke-opacity",.5)
   .attr("stroke-linecap","round");
 
+const gGlow=g.append("g").attr("class","glows");
+const glow=gGlow.selectAll("circle").data(nodes).join("circle")
+  .attr("r",d=>nr(d)*1.8).attr("fill",d=>ncol(d)).attr("fill-opacity",.26)
+  .attr("filter","url(#nodeglow)").attr("pointer-events","none");
 const node=g.append("g").selectAll("g").data(nodes).join("g")
   .attr("cursor","pointer")
   .call(d3.drag()
@@ -675,36 +711,25 @@ const node=g.append("g").selectAll("g").data(nodes).join("g")
 
 window._tourNode=node;
 node.append("circle")
-  .attr("r",d=>d.size)
-  .attr("fill",d=>ncol(d)+"14")
-  .attr("stroke",d=>ncol(d))
-  .attr("stroke-width",d=>d.type==="core"?1.5:.7)
-  .attr("stroke-opacity",.6);
+  .attr("r",d=>nr(d))
+  .attr("fill",d=>ncol(d))
+  .attr("fill-opacity",.9)
+  .attr("stroke","#ffffff")
+  .attr("stroke-width",.6)
+  .attr("stroke-opacity",.85);
 
-node.each(function(d){
-  const el=d3.select(this);
-  const lines=d.label.split("\n");
-  const txt=el.append("text")
-    .attr("text-anchor","middle")
-    .attr("fill",ncol(d))
-    .attr("fill-opacity",.92)
-    .attr("font-size",d.size>14?"8px":"7px")
-    .attr("font-family","CMU Serif,serif")
-    .attr("pointer-events","none");
-  if(lines.length===1){txt.attr("dominant-baseline","central").text(d.label)}
-  else{lines.forEach((l,i)=>txt.append("tspan").attr("x",0).attr("dy",i===0?`-${(lines.length-1)*.55}em`:"1.2em").text(l))}
-});
+/* rótulos apenas no hover (estilo rede complexa) */
 
 const tip=document.getElementById("tip");
 
 node.on("mouseover",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"28").attr("stroke-opacity",1);
+    d3.select(e.currentTarget).select("circle").attr("stroke","#1c2942").attr("stroke-width",1.6).attr("stroke-opacity",1);
     tip.style.display="block";tip.textContent=d.label.replace(/\n/g," ");
     tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px";
   })
   .on("mousemove",e=>{tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px"})
   .on("mouseout",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"14").attr("stroke-opacity",.6);
+    d3.select(e.currentTarget).select("circle").attr("stroke","#ffffff").attr("stroke-width",.6).attr("stroke-opacity",.85);
     tip.style.display="none";
   })
   .on("click",(e,d)=>{e.stopPropagation();showPanel(d)});
@@ -737,6 +762,8 @@ function branchPath(item){
 }
 sim.on("tick",()=>{
   updateTerritories();
+  grad.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+  glow.attr("cx",d=>d.x).attr("cy",d=>d.y);
   link.attr("d",hyphaPath);
   node.attr("transform",d=>`translate(${d.x},${d.y})`);
 });
