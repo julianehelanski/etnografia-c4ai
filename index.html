@@ -313,12 +313,11 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'Ro
   <div id="pbody"></div>
 </div>
 <div id="legend">
-  <div class="li"><div class="ld" style="background:#5b8fd4"></div>capítulo</div>
-  <div class="li"><div class="ld" style="background:#e08a3a"></div>pessoa</div>
-  <div class="li"><div class="ld" style="background:#8a76c4"></div>instituição</div>
-  <div class="li"><div class="ld" style="background:#3fa6bd"></div>actante não-humano</div>
-  <div class="li"><div class="ld" style="background:#d9a93a"></div>conceito</div>
-  <div class="li"><div class="ld" style="background:#d863a0"></div>mídia · simpósio · dados</div>
+  <div class="li"><div class="ld" style="background:#243352"></div>apresentação</div>
+  <div class="li"><div class="ld" style="background:#5f8a52"></div>capítulo 1 · método</div>
+  <div class="li"><div class="ld" style="background:#7a64ad"></div>capítulo 2 · figurações</div>
+  <div class="li"><div class="ld" style="background:#d98a2e"></div>capítulo 3 · C4AI</div>
+  <div class="li"><div class="ld" style="background:#3f97ad"></div>capítulo 4 · SPIRA</div>
 </div>
 <div id="tip"></div>
 
@@ -618,6 +617,8 @@ function updateTerritories(){
 const zoom=d3.zoom().scaleExtent([.25,4]).on("zoom",e=>g.attr("transform",e.transform));
 svg.call(zoom);
 
+const CHCOL={metodo:"#5f8a52",teoria:"#7a64ad",c4ai:"#d98a2e",spira:"#3f97ad"};
+function ncol(d){return d.id==="tese"?"#243352":(CHCOL[REGION[d.id]]||"#7a64ad");}
 const sim=d3.forceSimulation(nodes)
   .force("link",d3.forceLink(links).id(d=>d.id).distance(d=>{
     if(d.source.id==="tese"||d.target.id==="tese")return 160;
@@ -667,35 +668,40 @@ const node=g.append("g").selectAll("g").data(nodes).join("g")
 window._tourNode=node;
 node.append("circle")
   .attr("r",d=>d.size)
-  .attr("fill",d=>C[d.type]+"14")
-  .attr("stroke",d=>C[d.type])
-  .attr("stroke-width",d=>d.type==="core"?1.5:.7)
-  .attr("stroke-opacity",.6);
+  .attr("fill",d=>ncol(d)+"22")
+  .attr("stroke",d=>ncol(d))
+  .attr("stroke-width",d=>d.type==="core"?2:1)
+  .attr("stroke-opacity",.95);
 
 node.each(function(d){
   const el=d3.select(this);
   const lines=d.label.split("\n");
   const txt=el.append("text")
     .attr("text-anchor","middle")
-    .attr("fill",d=>C[d.type])
-    .attr("fill-opacity",.88)
-    .attr("font-size",d.size>14?"8px":"7px")
+    .attr("dominant-baseline","hanging")
+    .attr("y",d.size+6)
+    .attr("fill","#243352")
+    .attr("stroke","#f8e2ec")
+    .attr("stroke-width",2.6)
+    .attr("stroke-linejoin","round")
+    .attr("paint-order","stroke")
+    .attr("font-size",d.size>14?"8.5px":"7.5px")
+    .attr("font-weight",d.type==="core"?700:600)
     .attr("font-family","Roboto,sans-serif")
     .attr("pointer-events","none");
-  if(lines.length===1){txt.attr("dominant-baseline","central").text(d.label)}
-  else{lines.forEach((l,i)=>txt.append("tspan").attr("x",0).attr("dy",i===0?`-${(lines.length-1)*.55}em`:"1.2em").text(l))}
+  lines.forEach((l,i)=>txt.append("tspan").attr("x",0).attr("dy",i===0?"0":"1.05em").text(l));
 });
 
 const tip=document.getElementById("tip");
 
 node.on("mouseover",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",C[d.type]+"28").attr("stroke-opacity",1);
+    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"33").attr("stroke-opacity",1);
     tip.style.display="block";tip.textContent=d.label.replace(/\n/g," ");
     tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px";
   })
   .on("mousemove",e=>{tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-18)+"px"})
   .on("mouseout",(e,d)=>{
-    d3.select(e.currentTarget).select("circle").attr("fill",C[d.type]+"14").attr("stroke-opacity",.6);
+    d3.select(e.currentTarget).select("circle").attr("fill",ncol(d)+"22").attr("stroke-opacity",.95);
     tip.style.display="none";
   })
   .on("click",(e,d)=>{e.stopPropagation();showPanel(d)});
@@ -735,7 +741,7 @@ sim.on("tick",()=>{
 function showPanel(d){
   const p=document.getElementById("panel");
   p.dataset.activeNode=d.id;
-  const col=C[d.type];
+  const col=ncol(d);
   const en=nodesEN[d.id];
   const badge=document.getElementById("pbadge");
   badge.textContent=(lang==='en'&&en)?en.badge:d.badge;
@@ -787,11 +793,10 @@ function setLang(l){
     const el=d3.select(this).select('text');
     el.selectAll('tspan').remove();
     el.text(null);
-    if(lines.length===1){el.attr('dominant-baseline','central').text(lbl);}
-    else{lines.forEach((ln,i)=>el.append('tspan').attr('x',0).attr('dy',i===0?`-${(lines.length-1)*.55}em`:'1.2em').text(ln));}
+    lines.forEach((ln,i)=>el.append('tspan').attr('x',0).attr('dy',i===0?'0':'1.05em').text(ln));
   });
-  const lPT=['capítulo','pessoa','instituição','actante não-humano','conceito','mídia · simpósio · dados'];
-  const lEN=['chapter','person','institution','non-human actant','concept','media · symposium · data'];
+  const lPT=['apresentação','capítulo 1 · método','capítulo 2 · figurações','capítulo 3 · C4AI','capítulo 4 · SPIRA'];
+  const lEN=['foreword','chapter 1 · method','chapter 2 · figurations','chapter 3 · C4AI','chapter 4 · SPIRA'];
   document.querySelectorAll('#legend .li').forEach((el,i)=>{
     const dot=el.querySelector('.ld');el.textContent='';el.appendChild(dot);
     el.appendChild(document.createTextNode(lang==='en'?lEN[i]:lPT[i]));
@@ -828,7 +833,7 @@ function buildTrail(){
   const ct = document.getElementById('tour-trail');
   TOUR.forEach((s,i)=>{
     const nd = nodes.find(n=>n.id===s.id);
-    const col = nd ? (TYPE_COLOR[nd.type]||'#aaa') : '#aaa';
+    const col = nd ? ncol(nd) : '#aaa';
     const wrap = document.createElement('div');
     wrap.className='t-stop';wrap.dataset.i=i;
     wrap.innerHTML='<div class="t-dot" style="background:'+col+'"></div><div class="t-stop-label">'+s.mv+' · '+s.label+'</div>';
@@ -873,7 +878,7 @@ function zoomToNode(id){
 function renderTour(idx){
   const s = TOUR[idx];
   const nd = nodes.find(n=>n.id===s.id);
-  const col = nd ? (TYPE_COLOR[nd.type]||'#5b8fd4') : '#5b8fd4';
+  const col = nd ? ncol(nd) : '#243352';
 
   document.getElementById('tour-mv').textContent = s.mv;
   const lbl = document.getElementById('tour-node-label');
