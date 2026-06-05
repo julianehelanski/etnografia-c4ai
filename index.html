@@ -335,6 +335,29 @@ details.toc-sub>p{color:#777;margin:.1rem 0 .4rem .7rem;font-size:.95em}
 #tour-instrucao{font-size:.72rem!important}
 #legend .li{font-size:.62rem!important}
 #tip{font-size:.72rem!important}
+/* ── apresentação: dark gray + maior (mantém CMU Serif) ── */
+#pbody{font-size:1.1rem!important;line-height:1.7!important;color:#3a3a3a!important}
+#pbody blockquote{color:#555!important}
+#ptitle{font-size:1.6rem!important}
+#pbadge{font-size:.78rem!important}
+#pbody code{font-size:1rem}
+#pbody .tag{font-size:.86rem}
+.fig-label{font-size:.82rem;color:#666}
+#tour-script-text{font-size:1.1rem!important;line-height:1.65!important;color:#3a3a3a!important}
+#tour-node-label{font-size:1.2rem!important}
+#tour-instrucao{font-size:.88rem!important}
+.toc-head{color:#555!important;font-size:1rem}
+details.toc-sec>summary{color:#3a3a3a!important;font-size:1.02rem}
+.toc-body>p{color:#4a4a4a!important}
+details.toc-sub>summary{color:#4a4a4a!important}
+details.toc-sub>p{color:#5a5a5a!important}
+#title-bar h2{color:#3a3a3a}
+#legend .li{font-size:.84rem!important;margin-bottom:.42rem}
+#legend .li:nth-child(1){color:#d6489b!important}
+#legend .li:nth-child(2){color:#56b04a!important}
+#legend .li:nth-child(3){color:#9b59c6!important}
+#legend .li:nth-child(4){color:#ef8a3c!important}
+#legend .li:nth-child(5){color:#27adc4!important}
 </style>
 </head>
 <body>
@@ -373,11 +396,11 @@ details.toc-sub>p{color:#777;margin:.1rem 0 .4rem .7rem;font-size:.95em}
   <div id="pbody"></div>
 </div>
 <div id="legend">
-  <div class="li"><div class="ld" style="background:#d6489b"></div>apresentação</div>
-  <div class="li"><div class="ld" style="background:#56b04a"></div>capítulo 1 · método</div>
-  <div class="li"><div class="ld" style="background:#9b59c6"></div>capítulo 2 · figurações</div>
-  <div class="li"><div class="ld" style="background:#ef8a3c"></div>capítulo 3 · C4AI</div>
-  <div class="li"><div class="ld" style="background:#27adc4"></div>capítulo 4 · SPIRA</div>
+  <div class="li">apresentação</div>
+  <div class="li">capítulo 1 · método</div>
+  <div class="li">capítulo 2 · figurações</div>
+  <div class="li">capítulo 3 · C4AI</div>
+  <div class="li">capítulo 4 · SPIRA</div>
 </div>
 <div id="tip"></div>
 
@@ -898,8 +921,7 @@ function setLang(l){
   const lPT=['apresentação','capítulo 1 · método','capítulo 2 · figurações','capítulo 3 · C4AI','capítulo 4 · SPIRA'];
   const lEN=['foreword','chapter 1 · method','chapter 2 · figurations','chapter 3 · C4AI','chapter 4 · SPIRA'];
   document.querySelectorAll('#legend .li').forEach((el,i)=>{
-    const dot=el.querySelector('.ld');el.textContent='';el.appendChild(dot);
-    el.appendChild(document.createTextNode(lang==='en'?lEN[i]:lPT[i]));
+    el.textContent=lang==='en'?lEN[i]:lPT[i];
   });
   document.getElementById('pcl').textContent=lang==='en'?'× close':'× fechar';
   document.getElementById('title-bar').querySelector('h2').innerHTML=lang==='en'
