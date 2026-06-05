@@ -298,7 +298,6 @@ body{background:#ffffff!important}
 #pbody .tag{color:#555!important}
 #legend{background:rgba(255,255,255,.93)!important;border:1px solid #e3e3e3!important}
 #legend::before{color:#666!important}
-#legend .li{color:#555!important}
 #tip{background:rgba(255,255,255,.97)!important;border-color:#ddd!important;color:#222!important}
 #tour-bar{background:rgba(255,255,255,.98)!important;border-top:1px solid #e3e3e3!important}
 #tour-node-label{color:#1c2942}
@@ -350,11 +349,6 @@ details.toc-sub>summary{color:#1f1f1f!important}
 details.toc-sub>p{color:#2a2a2a!important}
 #title-bar h2{color:#111}
 #legend .li{font-size:.84rem!important;margin-bottom:.42rem}
-#legend .li:nth-child(1){color:#d6489b!important}
-#legend .li:nth-child(2){color:#56b04a!important}
-#legend .li:nth-child(3){color:#9b59c6!important}
-#legend .li:nth-child(4){color:#ef8a3c!important}
-#legend .li:nth-child(5){color:#27adc4!important}
 #legend::before{display:none!important}
 #legend .li{font-weight:700!important}
 #intro h1{font-family:'CMU Typewriter Text',monospace!important;font-style:normal!important;font-weight:400!important;font-size:clamp(.8rem,1.55vw,1.08rem)!important;line-height:1.95!important;letter-spacing:0!important;color:#2a2a2a!important;max-width:780px}
@@ -394,6 +388,8 @@ details.toc-sub>p{color:#2a2a2a!important}
 #intro .sub{font-size:1rem!important;margin-top:2.1rem!important}
 #intro .creds{font-size:.92rem!important;line-height:2.1!important;max-width:920px!important;margin-top:1.8rem!important}
 #intro .hint{font-size:.92rem!important}
+#cluster-btn{position:fixed;bottom:3.7rem;right:5rem;z-index:20;background:rgba(255,255,255,.9);border:1px solid #d0cec8;color:#555;font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.12em;padding:.4rem .7rem;cursor:pointer;transition:all .2s;border-radius:999px}
+#cluster-btn:hover{border-color:#111;color:#111}
 </style>
 </head>
 <body>
@@ -440,6 +436,7 @@ details.toc-sub>p{color:#2a2a2a!important}
 </div>
 <div id="tip"></div>
 
+<button id="cluster-btn" title="Alternar o eixo de agrupamento dos nós (capítulo / natureza do actante)">⊞ por capítulo</button>
 <button id="tour-btn" title="Apresentação guiada (abre a barra inferior)">▶ apresentação guiada</button>
 <div id="tour-bar">
   <div id="tour-trail"></div>
@@ -731,36 +728,30 @@ const REGION_DEFS={
   metodo:{fill:"#a6c19a",coast:"#5f8a52",pt:["CAPÍTULO 1","método: seguir os cientistas"],en:["CHAPTER 1","method: following the scientists"]}
 };
 const _terrLine=d3.line().curve(d3.curveCatmullRomClosed.alpha(.85));
-Object.keys(REGION_DEFS).forEach(k=>{
-  const def=REGION_DEFS[k];
-  def._fill=gTerr.append("path").attr("fill",def.fill).attr("fill-opacity",.13).attr("stroke","none");
-  def._coast=gTerr.append("path").attr("fill","none").attr("stroke",def.coast)
-    .attr("stroke-width",1.15).attr("stroke-opacity",.55).attr("stroke-dasharray","2 3.5").attr("stroke-linecap","round");
-  const lbl=gTerrLbl.append("text").attr("text-anchor","middle").attr("pointer-events","none").attr("paint-order","stroke").attr("stroke","#f8e2ec").attr("stroke-width",3).attr("stroke-linejoin","round");
-  def._name=lbl.append("tspan").attr("class","terr-name").attr("x",0).attr("dy",0)
-    .attr("fill",def.coast).attr("fill-opacity",.8).attr("font-size","12.5px").attr("letter-spacing","1px");
-  def._sub=lbl.append("tspan").attr("class","terr-sub").attr("x",0).attr("dy","1.55em")
-    .attr("fill",def.coast).attr("fill-opacity",.64).attr("font-size","8.5px").attr("letter-spacing","1px");
-  def._lbl=lbl;
-});
-let _terrLang='pt';
-function _terrText(){
-  Object.keys(REGION_DEFS).forEach(k=>{
-    const def=REGION_DEFS[k],t=_terrLang==='en'?def.en:def.pt;
-    def._name.text(t[0]);def._sub.text(t[1]);
+function buildTerritories(defs){
+  gTerr.selectAll("*").remove();
+  gTerrLbl.selectAll("*").remove();
+  Object.keys(defs).forEach(k=>{
+    const def=defs[k];
+    def._fill=gTerr.append("path").attr("fill",def.fill).attr("fill-opacity",.13).attr("stroke","none");
+    def._coast=gTerr.append("path").attr("fill","none").attr("stroke",def.coast)
+      .attr("stroke-width",1.15).attr("stroke-opacity",.55).attr("stroke-dasharray","2 3.5").attr("stroke-linecap","round");
+    const lbl=gTerrLbl.append("text").attr("text-anchor","middle").attr("pointer-events","none").attr("paint-order","stroke").attr("stroke","#ffffff").attr("stroke-width",3).attr("stroke-linejoin","round");
+    def._name=lbl.append("tspan").attr("class","terr-name").attr("x",0).attr("dy",0).attr("fill",def.coast).attr("fill-opacity",.85).attr("font-size","12.5px").attr("letter-spacing","1px").text(def.pt[0]);
+    def._sub=lbl.append("tspan").attr("class","terr-sub").attr("x",0).attr("dy","1.55em").attr("fill",def.coast).attr("fill-opacity",.66).attr("font-size","8.5px").attr("letter-spacing","1px").text(def.pt[1]);
+    def._lbl=lbl;
   });
 }
-_terrText();
-window._setTerrLang=function(l){_terrLang=l;_terrText();};
+buildTerritories(REGION_DEFS);
 
 function _hullExpand(pts,pad){
   const cx=d3.mean(pts,p=>p[0]),cy=d3.mean(pts,p=>p[1]);
   return pts.map(p=>{const dx=p[0]-cx,dy=p[1]-cy,L=Math.hypot(dx,dy)||1;return [p[0]+dx/L*pad,p[1]+dy/L*pad];});
 }
 function updateTerritories(){
-  Object.keys(REGION_DEFS).forEach(k=>{
-    const def=REGION_DEFS[k];
-    const pts=nodes.filter(n=>REGION[n.id]===k&&n.x!=null).map(n=>[n.x,n.y]);
+  Object.keys(curDefs()).forEach(k=>{
+    const def=curDefs()[k];
+    const pts=nodes.filter(n=>RG(n.id)===k&&n.x!=null).map(n=>[n.x,n.y]);
     const hull=pts.length>=3?d3.polygonHull(pts):null;
     if(!hull||hull.length<3){def._fill.attr("d",null);def._coast.attr("d",null);def._lbl.style("display","none");return;}
     const exp=_hullExpand(hull,52),dd=_terrLine(exp);
@@ -774,7 +765,29 @@ const zoom=d3.zoom().scaleExtent([.25,4]).on("zoom",e=>g.attr("transform",e.tran
 svg.call(zoom);
 
 const CHCOL={metodo:"#56b04a",teoria:"#9b59c6",c4ai:"#ef8a3c",spira:"#27adc4"};
-function ncol(d){return d.id==="tese"?"#d6489b":(CHCOL[REGION[d.id]]||"#9b59c6");}
+/* ===== EIXOS DE AGRUPAMENTO: por capitulo (REGION) ou por natureza do actante ===== */
+const NATMAP={person:"humano",historical:"humano",nonhuman:"naohumano",institution:"instituicao",concept:"conceito",media:"inscricao",chapter:"texto",core:"texto",section:"texto"};
+const NATUREZA={};nodes.forEach(n=>NATUREZA[n.id]=NATMAP[n.type]||"texto");
+const NATCOL={humano:"#e8553b",naohumano:"#27adc4",instituicao:"#3f6fd6",conceito:"#e0a82e",inscricao:"#b14fb0",texto:"#9b9b9b"};
+const NAT_DEFS={
+  humano:{fill:"#f0a594",coast:"#d1432a",pt:["HUMANOS","cientistas e te\u00f3ricos"]},
+  conceito:{fill:"#edd293",coast:"#bf8e1d",pt:["CONCEITOS","aparato anal\u00edtico da TAR"]},
+  instituicao:{fill:"#a6b6e6",coast:"#345fc0",pt:["INSTITUI\u00c7\u00d5ES","C4AI \u00b7 IBM \u00b7 FAPESP \u00b7 USP"]},
+  naohumano:{fill:"#93d3df",coast:"#1f93a8",pt:["N\u00c3O-HUMANOS","actantes t\u00e9cnicos"]},
+  inscricao:{fill:"#d7a0d2",coast:"#9b3e96",pt:["INSCRI\u00c7\u00d5ES","imagens, ensaios, publica\u00e7\u00f5es"]},
+  texto:{fill:"#cccccc",coast:"#8a8a8a",pt:["A TESE","estrutura e cap\u00edtulos"]}
+};
+const NAT_ANCHOR={texto:[W*.50,H*.50],humano:[W*.26,H*.27],conceito:[W*.74,H*.27],instituicao:[W*.19,H*.73],inscricao:[W*.81,H*.73],naohumano:[W*.50,H*.87]};
+let MODE="cap";
+function curMap(){return MODE==="cap"?REGION:NATUREZA;}
+function curDefs(){return MODE==="cap"?REGION_DEFS:NAT_DEFS;}
+function curAnchor(){return MODE==="cap"?RANCHOR:NAT_ANCHOR;}
+function RG(id){return curMap()[id];}
+function ncol(d){return MODE==="cap"?(d.id==="tese"?"#d6489b":(CHCOL[REGION[d.id]]||"#9b59c6")):(NATCOL[NATUREZA[d.id]]||"#9b9b9b");}
+function applyClusterForce(){
+  sim.force("clX",d3.forceX(d=>(curAnchor()[RG(d.id)]||[W/2,H/2])[0]).strength(d=>curAnchor()[RG(d.id)]?.08:0));
+  sim.force("clY",d3.forceY(d=>(curAnchor()[RG(d.id)]||[W/2,H/2])[1]).strength(d=>curAnchor()[RG(d.id)]?.08:0));
+}
 const _deg={};
 links.forEach(l=>{const s=l.source.id??l.source,t=l.target.id??l.target;_deg[s]=(_deg[s]||0)+1;_deg[t]=(_deg[t]||0)+1;});
 nodes.forEach(n=>n._deg=_deg[n.id]||1);
@@ -791,8 +804,7 @@ const sim=d3.forceSimulation(nodes)
 
 // ── agrupamento por capítulo: cada território é nudgeado p/ uma âncora própria
 const RANCHOR={teoria:[W*.30,H*.30],metodo:[W*.72,H*.30],c4ai:[W*.30,H*.74],spira:[W*.74,H*.74]};
-sim.force("clX",d3.forceX(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[0]).strength(d=>RANCHOR[REGION[d.id]]?.08:0))
-   .force("clY",d3.forceY(d=>(RANCHOR[REGION[d.id]]||[W/2,H/2])[1]).strength(d=>RANCHOR[REGION[d.id]]?.08:0));
+applyClusterForce();
 
 // ── MICÉLIO: sementes determinísticas por aresta para curvatura, ramificações e pesos
 links.forEach(l=>{
@@ -895,6 +907,29 @@ sim.on("tick",()=>{
   link.attr("d",hyphaPath);
   node.attr("transform",d=>`translate(${d.x},${d.y})`);
 });
+
+/* ===== alternancia de eixo de agrupamento ===== */
+function rebuildLegend(){
+  const items = MODE==="cap"
+    ? [["apresenta\u00e7\u00e3o","#d6489b"],["cap\u00edtulo 1 \u00b7 m\u00e9todo","#56b04a"],["cap\u00edtulo 2 \u00b7 figura\u00e7\u00f5es","#9b59c6"],["cap\u00edtulo 3 \u00b7 C4AI","#ef8a3c"],["cap\u00edtulo 4 \u00b7 SPIRA","#27adc4"]]
+    : [["humanos","#e8553b"],["n\u00e3o-humanos","#27adc4"],["institui\u00e7\u00f5es","#3f6fd6"],["conceitos","#e0a82e"],["inscri\u00e7\u00f5es","#b14fb0"],["a tese","#9b9b9b"]];
+  document.getElementById("legend").innerHTML = items.map(it=>'<div class="li" style="color:'+it[1]+'">'+it[0]+'</div>').join("");
+}
+function setMode(m){
+  MODE=m;
+  buildTerritories(curDefs());
+  document.getElementById("cluster-btn").textContent = MODE==="cap" ? "\u229e por cap\u00edtulo" : "\u229e por natureza";
+  rebuildLegend();
+  glow.transition().duration(700).attr("fill",d=>ncol(d));
+  node.select("circle").transition().duration(700).attr("fill",d=>ncol(d));
+  grad.selectAll("stop").remove();
+  grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
+  grad.append("stop").attr("offset","100%").attr("stop-color",d=>ncol(d.target));
+  applyClusterForce();
+  sim.alpha(.85).restart();
+}
+document.getElementById("cluster-btn").onclick=()=>setMode(MODE==="cap"?"nat":"cap");
+rebuildLegend();
 
 function showPanel(d){
   const p=document.getElementById("panel");
