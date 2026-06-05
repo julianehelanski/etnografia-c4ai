@@ -778,12 +778,21 @@ const NAT_DEFS={
   texto:{fill:"#cccccc",coast:"#8a8a8a",pt:["A TESE","estrutura e cap\u00edtulos"]}
 };
 const NAT_ANCHOR={texto:[W*.50,H*.50],humano:[W*.26,H*.27],conceito:[W*.74,H*.27],instituicao:[W*.19,H*.73],inscricao:[W*.81,H*.73],naohumano:[W*.50,H*.87]};
+const REDEMAP={metodo:"aparato",teoria:"aparato",c4ai:"rede_c4ai",spira:"rede_spira"};
+const REDE={};nodes.forEach(n=>REDE[n.id]=n.id==="tese"?"aparato":(REDEMAP[REGION[n.id]]||"aparato"));
+const REDECOL={aparato:"#8a63c4",rede_c4ai:"#ef8a3c",rede_spira:"#27adc4"};
+const REDE_DEFS={
+  aparato:{fill:"#bfa9e0",coast:"#6f4fb0",pt:["APARATO TE\u00d3RICO-METODOL\u00d3GICO","autores, conceitos e m\u00e9todo (Cap. 1\u20132)"]},
+  rede_c4ai:{fill:"#f4c187",coast:"#d27d22",pt:["A REDE C4AI\u2013IBM","arranjo institucional (Cap. 3)"]},
+  rede_spira:{fill:"#8fd0dc",coast:"#1f93a8",pt:["A REDE SPIRA","cadeia t\u00e9cnico-cl\u00ednica (Cap. 4)"]}
+};
+const REDE_ANCHOR={aparato:[W*.50,H*.26],rede_c4ai:[W*.27,H*.74],rede_spira:[W*.73,H*.74]};
 let MODE="cap";
-function curMap(){return MODE==="cap"?REGION:NATUREZA;}
-function curDefs(){return MODE==="cap"?REGION_DEFS:NAT_DEFS;}
-function curAnchor(){return MODE==="cap"?RANCHOR:NAT_ANCHOR;}
+function curMap(){return MODE==="cap"?REGION:(MODE==="nat"?NATUREZA:REDE);}
+function curDefs(){return MODE==="cap"?REGION_DEFS:(MODE==="nat"?NAT_DEFS:REDE_DEFS);}
+function curAnchor(){return MODE==="cap"?RANCHOR:(MODE==="nat"?NAT_ANCHOR:REDE_ANCHOR);}
 function RG(id){return curMap()[id];}
-function ncol(d){return MODE==="cap"?(d.id==="tese"?"#d6489b":(CHCOL[REGION[d.id]]||"#9b59c6")):(NATCOL[NATUREZA[d.id]]||"#9b9b9b");}
+function ncol(d){return MODE==="cap"?(d.id==="tese"?"#d6489b":(CHCOL[REGION[d.id]]||"#9b59c6")):(MODE==="nat"?(NATCOL[NATUREZA[d.id]]||"#9b9b9b"):(REDECOL[REDE[d.id]]||"#8a63c4"));}
 function applyClusterForce(){
   sim.force("clX",d3.forceX(d=>(curAnchor()[RG(d.id)]||[W/2,H/2])[0]).strength(d=>curAnchor()[RG(d.id)]?.08:0));
   sim.force("clY",d3.forceY(d=>(curAnchor()[RG(d.id)]||[W/2,H/2])[1]).strength(d=>curAnchor()[RG(d.id)]?.08:0));
@@ -910,15 +919,18 @@ sim.on("tick",()=>{
 
 /* ===== alternancia de eixo de agrupamento ===== */
 function rebuildLegend(){
-  const items = MODE==="cap"
-    ? [["apresenta\u00e7\u00e3o","#d6489b"],["cap\u00edtulo 1 \u00b7 m\u00e9todo","#56b04a"],["cap\u00edtulo 2 \u00b7 figura\u00e7\u00f5es","#9b59c6"],["cap\u00edtulo 3 \u00b7 C4AI","#ef8a3c"],["cap\u00edtulo 4 \u00b7 SPIRA","#27adc4"]]
-    : [["humanos","#e8553b"],["n\u00e3o-humanos","#27adc4"],["institui\u00e7\u00f5es","#3f6fd6"],["conceitos","#e0a82e"],["inscri\u00e7\u00f5es","#b14fb0"],["a tese","#9b9b9b"]];
+  const LEG={
+    cap:[["apresenta\u00e7\u00e3o","#d6489b"],["cap\u00edtulo 1 \u00b7 m\u00e9todo","#56b04a"],["cap\u00edtulo 2 \u00b7 figura\u00e7\u00f5es","#9b59c6"],["cap\u00edtulo 3 \u00b7 C4AI","#ef8a3c"],["cap\u00edtulo 4 \u00b7 SPIRA","#27adc4"]],
+    nat:[["humanos","#e8553b"],["n\u00e3o-humanos","#27adc4"],["institui\u00e7\u00f5es","#3f6fd6"],["conceitos","#e0a82e"],["inscri\u00e7\u00f5es","#b14fb0"],["a tese","#9b9b9b"]],
+    rede:[["aparato te\u00f3rico-metodol\u00f3gico","#8a63c4"],["rede C4AI\u2013IBM","#ef8a3c"],["rede SPIRA","#27adc4"]]
+  };
+  const items = LEG[MODE];
   document.getElementById("legend").innerHTML = items.map(it=>'<div class="li" style="color:'+it[1]+'">'+it[0]+'</div>').join("");
 }
 function setMode(m){
   MODE=m;
   buildTerritories(curDefs());
-  document.getElementById("cluster-btn").textContent = MODE==="cap" ? "\u229e por cap\u00edtulo" : "\u229e por natureza";
+  document.getElementById("cluster-btn").textContent = MODE==="cap" ? "\u229e por cap\u00edtulo" : (MODE==="nat" ? "\u229e por natureza" : "\u229e por rede");
   rebuildLegend();
   glow.transition().duration(700).attr("fill",d=>ncol(d));
   node.select("circle").transition().duration(700).attr("fill",d=>ncol(d));
@@ -928,7 +940,7 @@ function setMode(m){
   applyClusterForce();
   sim.alpha(.85).restart();
 }
-document.getElementById("cluster-btn").onclick=()=>setMode(MODE==="cap"?"nat":"cap");
+document.getElementById("cluster-btn").onclick=()=>setMode(MODE==="cap"?"nat":(MODE==="nat"?"rede":"cap"));
 rebuildLegend();
 
 function showPanel(d){
