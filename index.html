@@ -304,8 +304,9 @@ body{background:#ffffff!important}
 #tour-script-text{color:#222}
 #tour-btn{background:#1c2942!important;color:#ffffff!important;border-color:#1c2942!important;border-radius:999px;padding:.45rem .9rem;letter-spacing:.12em}
 #tour-btn:hover,#tour-btn.active{background:#000!important;color:#fff!important;border-color:#000!important}
-.nlabel{opacity:0;transition:opacity .35s ease}
-#graph-svg.show-labels .nlabel{opacity:1}
+.nlabel{opacity:1;transition:opacity .35s ease}
+.nlabel-sec{opacity:0}
+#graph-svg.show-labels .nlabel,#graph-svg.show-labels .nlabel-sec{opacity:1}
 .toc-head{font-style:italic;color:#666;border-top:1px solid #e3e3e3;margin-top:1.5rem;padding-top:1rem;margin-bottom:.3rem}
 details.toc-sec{margin:.15rem 0;border-left:2px solid #ececec;padding-left:.6rem}
 details.toc-sec>summary{cursor:pointer;font-weight:600;color:#2a2a2a;list-style:none;padding:.18rem 0}
@@ -862,7 +863,7 @@ node.append("circle")
   .attr("stroke-width",.6)
   .attr("stroke-opacity",.85);
 
-node.append("text").attr("class","nlabel")
+node.append("text").attr("class",d=>d.type==="section"?"nlabel nlabel-sec":"nlabel")
   .attr("text-anchor","middle").attr("dominant-baseline","hanging").attr("y",d=>nr(d)+4)
   .attr("fill","#1c2942").attr("stroke","#ffffff").attr("stroke-width",2.4)
   .attr("stroke-linejoin","round").attr("paint-order","stroke")
