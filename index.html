@@ -55,8 +55,6 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .ext-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;color:#555;border:1px solid #e0deda;padding:.25rem .6rem;text-decoration:none;letter-spacing:.08em;margin:.3rem 0;transition:border-color .2s}
 .ext-link:hover{border-color:#aaa;color:#222}
 
-#lang-btn{position:fixed;bottom:1.5rem;left:1.5rem;z-index:10;background:none;border:1px solid #d0cec8;color:#888;font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.15em;padding:.4rem .7rem;cursor:pointer;transition:all .2s}
-#lang-btn:hover{border-color:#888;color:#333}
 
 /* ── BOTÃO APRESENTAÇÃO ── */
 #tour-btn{
@@ -214,8 +212,6 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #scale-bar .sb-cap{font-family:'CMU Serif',serif;font-style:italic;font-size:.52rem;letter-spacing:.1em;color:#c07a2a;margin-top:.25rem}
 
 /* botões em estilo carta */
-#lang-btn{top:1.5rem;right:8rem;bottom:auto;left:auto;border-color:var(--rule-soft);color:#c07a2a;background:rgba(253,243,248,.72)}
-#lang-btn:hover{border-color:#2f3f63;color:#1c2942}
 #tour-btn{border-color:var(--rule-soft);color:#c07a2a}
 #tour-btn:hover,#tour-btn.active{border-color:#1c2942;color:#fdf3f8;background:#1c2942}
 
@@ -247,7 +243,7 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .terr-sub{font-family:'CMU Serif',serif;font-style:italic}
 
 /* detalhes do site de referência: botões-pílula e título-espinha vertical */
-#lang-btn,#tour-btn,.t-nav-btn,.ext-link,#pbadge,#pbody .tag{border-radius:999px}
+#tour-btn,.t-nav-btn,.ext-link,#pbadge,#pbody .tag{border-radius:999px}
 #legend{border-radius:14px}
 #tip{border-radius:8px}
 #title-bar h2{font-weight:700;font-style:normal}
@@ -362,6 +358,34 @@ details.toc-sub>p{color:#2a2a2a!important}
 #legend .li{font-weight:700!important}
 #intro h1{font-family:'CMU Typewriter Text',monospace!important;font-style:normal!important;font-weight:400!important;font-size:clamp(.8rem,1.55vw,1.08rem)!important;line-height:1.95!important;letter-spacing:0!important;color:#2a2a2a!important;max-width:780px}
 #intro h1 .tx-cmd{font-family:'CMU Typewriter Text',monospace;color:#8a6fb0;font-weight:500}
+
+/* ── títulos e subtítulos em código-fonte LaTeX (CMU Typewriter) ── */
+#title-bar h2,#title-bar p,#ptitle,#pbadge,#legend .li,#tour-mv,#tour-node-label,.toc-head,details.toc-sec>summary,details.toc-sub>summary{font-family:'CMU Typewriter Text',monospace!important;font-style:normal!important}
+#title-bar h2,#ptitle,#tour-node-label{letter-spacing:0!important}
+/* título superior como \\title{...} */
+#title-bar h2{font-weight:400!important}
+#title-bar h2::before{content:"\\title{";color:#8a6fb0;font-weight:500}
+#title-bar h2::after{content:"}";color:#8a6fb0;font-weight:500}
+#title-bar h2 .tx-b,#title-bar h2 .tx-d{color:#c07a2a!important}
+#title-bar p{text-transform:none!important}
+#title-bar p::before{content:"% ";color:#9aa0ab}
+/* painel: \\section{título} */
+#ptitle{font-weight:400!important}
+#ptitle::before{content:"\\section{";color:#8a6fb0}
+#ptitle::after{content:"}";color:#8a6fb0}
+/* etiqueta como argumento opcional [...] */
+#pbadge::before{content:"[";color:#c07a2a;margin-right:.12em}
+#pbadge::after{content:"]";color:#c07a2a;margin-left:.12em}
+/* legenda como \\item */
+#legend .li::before{content:"\\item ";color:#8a6fb0!important;font-weight:400}
+/* apresentação guiada */
+#tour-mv::before{content:"% ";color:#9aa0ab}
+#tour-node-label{font-weight:400!important}
+#tour-node-label::before{content:"\\subsection{";color:#8a6fb0}
+#tour-node-label::after{content:"}";color:#8a6fb0}
+/* sumário interno do painel */
+.toc-head{font-style:normal!important;color:#8a6fb0!important}
+.toc-head::before{content:"% ";color:#9aa0ab}
 </style>
 </head>
 <body>
@@ -408,7 +432,6 @@ details.toc-sub>p{color:#2a2a2a!important}
 </div>
 <div id="tip"></div>
 
-<button id="lang-btn">EN</button>
 <button id="tour-btn" title="Apresentação guiada (abre a barra inferior)">▶ apresentação guiada</button>
 <div id="tour-bar">
   <div id="tour-trail"></div>
@@ -910,36 +933,6 @@ document.getElementById("pbody").addEventListener("click",e=>{
 });
 
 let lang='pt';
-function setLang(l){
-  lang=l;
-  document.getElementById('lang-btn').textContent=lang==='pt'?'EN':'PT';
-  node.each(function(d){
-    const en=nodesEN[d.id];
-    const lbl=lang==='en'&&en?en.label:d.label;
-    const lines=lbl.split('\n');
-    const el=d3.select(this).select('text.nlabel');
-    el.selectAll('tspan').remove();
-    el.text(null);
-    lines.forEach((ln,i)=>el.append('tspan').attr('x',0).attr('dy',i===0?'0':'1.05em').text(ln));
-  });
-  const lPT=['apresentação','capítulo 1 · método','capítulo 2 · figurações','capítulo 3 · C4AI','capítulo 4 · SPIRA'];
-  const lEN=['foreword','chapter 1 · method','chapter 2 · figurations','chapter 3 · C4AI','chapter 4 · SPIRA'];
-  document.querySelectorAll('#legend .li').forEach((el,i)=>{
-    el.textContent=lang==='en'?lEN[i]:lPT[i];
-  });
-  document.getElementById('pcl').textContent=lang==='en'?'× close':'× fechar';
-  document.getElementById('title-bar').querySelector('h2').innerHTML=lang==='en'
-    ?'<span class="tx-b">{</span>techno-ethnography<span class="tx-b">}</span> of an AI centre<br>following scientists and engineers <span class="tx-d">---</span> beyond the university'
-    :'<span class="tx-b">{</span>tecno-etnografia<span class="tx-b">}</span> de um centro de inteligência artificial<br>seguindo cientistas e engenheiros <span class="tx-d">---</span> universidade afora';
-  const hint=document.querySelector('#intro .hint');
-  if(hint)hint.textContent='\begin{document}';
-  const panel=document.getElementById('panel');
-  if(panel.classList.contains('open')&&panel.dataset.activeNode){
-    const d=nodes.find(n=>n.id===panel.dataset.activeNode);if(d)showPanel(d);
-  }
-  if(window._setTerrLang)window._setTerrLang(lang);
-}
-document.getElementById('lang-btn').onclick=()=>setLang(lang==='pt'?'en':'pt');
 
 
 /* ── TOUR MODE ─────────────────────────────────────────────────────── */
