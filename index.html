@@ -389,8 +389,12 @@ details.toc-sub>p{color:#2a2a2a!important}
 #intro .sub{font-size:1rem!important;margin-top:2.1rem!important}
 #intro .creds{font-size:.92rem!important;line-height:2.1!important;max-width:920px!important;margin-top:1.8rem!important}
 #intro .hint{font-size:.92rem!important}
-#cluster-btn{position:fixed;bottom:3.7rem;right:5rem;z-index:20;background:rgba(255,255,255,.9);border:1px solid #d0cec8;color:#555;font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.12em;padding:.4rem .7rem;cursor:pointer;transition:all .2s;border-radius:999px}
-#cluster-btn:hover{border-color:#111;color:#111}
+#cluster-ctl{position:fixed;bottom:3.4rem;right:5rem;z-index:20;display:flex;align-items:center;gap:.5rem;font-family:'CMU Typewriter Text',monospace;font-size:.58rem;background:rgba(255,255,255,.93);border:1px solid #e3e0d8;border-radius:999px;padding:.3rem .45rem .3rem .7rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+#cluster-ctl .cc-label{color:#8a8a8a;letter-spacing:.04em;white-space:nowrap}
+#cluster-ctl .cc-segs{display:inline-flex;gap:.12rem}
+#cluster-ctl .cc-seg{font-family:inherit;font-size:.58rem;letter-spacing:.04em;border:1px solid transparent;background:none;color:#9a9a9a;padding:.2rem .5rem;border-radius:999px;cursor:pointer;transition:all .18s}
+#cluster-ctl .cc-seg:hover{color:#222;background:#f1eff4}
+#cluster-ctl .cc-seg.active{background:#1c2942;color:#fff;font-weight:600}
 .kw-block{font-family:'CMU Typewriter Text',monospace;font-size:.82rem;line-height:1.85;margin:.1rem 0 1.2rem;padding:.55rem .8rem;background:#faf8fc;border:1px solid #ece6f3;border-radius:8px;color:#2a2a2a}
 .kw-block .kw-cmd{color:#8a6fb0;font-weight:600}
 .kw-block .kw sup{color:#b9842b;font-size:.6em;margin-left:1px;font-weight:600}
@@ -443,7 +447,7 @@ details.toc-sub>p{color:#2a2a2a!important}
 </div>
 <div id="tip"></div>
 
-<button id="cluster-btn" title="Alternar o eixo de agrupamento dos nós (capítulo / natureza do actante)">⊞ por capítulo</button>
+<div id="cluster-ctl" title="Escolha como os nós são agrupados na rede"><span class="cc-label">⊞ agrupar a rede por:</span><span class="cc-segs"><button class="cc-seg active" data-mode="cap">capítulo</button><button class="cc-seg" data-mode="nat">natureza</button><button class="cc-seg" data-mode="rede">rede</button></span></div>
 <button id="tour-btn" title="Apresentação guiada (abre a barra inferior)">▶ apresentação guiada</button>
 <div id="tour-bar">
   <div id="tour-trail"></div>
@@ -937,7 +941,7 @@ function rebuildLegend(){
 function setMode(m){
   MODE=m;
   buildTerritories(curDefs());
-  document.getElementById("cluster-btn").textContent = MODE==="cap" ? "\u229e por cap\u00edtulo" : (MODE==="nat" ? "\u229e por natureza" : "\u229e por rede");
+  document.querySelectorAll("#cluster-ctl .cc-seg").forEach(s=>s.classList.toggle("active",s.dataset.mode===MODE));
   rebuildLegend();
   glow.transition().duration(700).attr("fill",d=>ncol(d));
   node.select("circle").transition().duration(700).attr("fill",d=>ncol(d));
@@ -947,7 +951,7 @@ function setMode(m){
   applyClusterForce();
   sim.alpha(.85).restart();
 }
-document.getElementById("cluster-btn").onclick=()=>setMode(MODE==="cap"?"nat":(MODE==="nat"?"rede":"cap"));
+document.querySelectorAll("#cluster-ctl .cc-seg").forEach(s=>s.onclick=()=>setMode(s.dataset.mode));
 rebuildLegend();
 
 function showPanel(d){
