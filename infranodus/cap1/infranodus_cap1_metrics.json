@@ -98,11 +98,11 @@
       "degree": 310
     },
     {
-      "term": "dado",
+      "term": "inscricao",
       "degree": 307
     },
     {
-      "term": "inscricao",
+      "term": "dado",
       "degree": 307
     },
     {
@@ -133,7 +133,7 @@
   "top_terms_pagerank": [
     {
       "term": "rede",
-      "pagerank": 0.03125280583563387
+      "pagerank": 0.031252805835633855
     },
     {
       "term": "pesquisa",
@@ -149,7 +149,7 @@
     },
     {
       "term": "artificial",
-      "pagerank": 0.014907731869023447
+      "pagerank": 0.01490773186902345
     },
     {
       "term": "metodo",
@@ -157,19 +157,19 @@
     },
     {
       "term": "inteligencia",
-      "pagerank": 0.014853860322566241
+      "pagerank": 0.014853860322566246
     },
     {
       "term": "latour",
-      "pagerank": 0.014532295938107983
+      "pagerank": 0.014532295938107977
     },
     {
       "term": "campo",
-      "pagerank": 0.013311804746757973
+      "pagerank": 0.013311804746757971
     },
     {
       "term": "humano",
-      "pagerank": 0.012712747266893323
+      "pagerank": 0.012712747266893322
     },
     {
       "term": "objeto",
@@ -177,23 +177,23 @@
     },
     {
       "term": "descricao",
-      "pagerank": 0.0112697466708687
+      "pagerank": 0.011269746670868693
     },
     {
       "term": "modelo",
-      "pagerank": 0.01113045944969568
+      "pagerank": 0.011130459449695679
     },
     {
       "term": "corte",
-      "pagerank": 0.010937551074537736
+      "pagerank": 0.010937551074537739
     },
     {
       "term": "pratica",
-      "pagerank": 0.010887863925736898
+      "pagerank": 0.010887863925736894
     },
     {
       "term": "gesto",
-      "pagerank": 0.010286236916216038
+      "pagerank": 0.010286236916216041
     },
     {
       "term": "parte",
@@ -205,7 +205,7 @@
     },
     {
       "term": "inscricao",
-      "pagerank": 0.009414053261125195
+      "pagerank": 0.009414053261125193
     },
     {
       "term": "analise",
@@ -213,15 +213,15 @@
     },
     {
       "term": "claude",
-      "pagerank": 0.009269948648497903
+      "pagerank": 0.009269948648497901
     },
     {
       "term": "escrita",
-      "pagerank": 0.009214685852309558
+      "pagerank": 0.00921468585230956
     },
     {
       "term": "relacao",
-      "pagerank": 0.00920731760343489
+      "pagerank": 0.009207317603434892
     },
     {
       "term": "ator",
@@ -229,7 +229,7 @@
     },
     {
       "term": "dado",
-      "pagerank": 0.009054222301657235
+      "pagerank": 0.009054222301657233
     },
     {
       "term": "pesquisador",
@@ -241,15 +241,15 @@
     },
     {
       "term": "conceito",
-      "pagerank": 0.008157355457577916
+      "pagerank": 0.008157355457577918
     },
     {
       "term": "descreve",
-      "pagerank": 0.007501107997604507
+      "pagerank": 0.007501107997604505
     },
     {
       "term": "parcial",
-      "pagerank": 0.007424234875074755
+      "pagerank": 0.007424234875074753
     }
   ],
   "top_terms_betweenness": [
@@ -343,33 +343,21 @@
     },
     {
       "term": "computacional",
-      "degree_rank": 111,
+      "degree_rank": 110,
       "pagerank_rank": 101,
-      "shift": 10
+      "shift": 9
     },
     {
       "term": "momento",
-      "degree_rank": 127,
+      "degree_rank": 126,
       "pagerank_rank": 117,
-      "shift": 10
+      "shift": 9
     },
     {
       "term": "mobiliza",
-      "degree_rank": 128,
+      "degree_rank": 127,
       "pagerank_rank": 118,
-      "shift": 10
-    },
-    {
-      "term": "funcionam",
-      "degree_rank": 122,
-      "pagerank_rank": 114,
-      "shift": 8
-    },
-    {
-      "term": "tecnica",
-      "degree_rank": 129,
-      "pagerank_rank": 121,
-      "shift": 8
+      "shift": 9
     },
     {
       "term": "manifesta",
@@ -378,21 +366,15 @@
       "shift": 7
     },
     {
-      "term": "condicoes",
-      "degree_rank": 107,
-      "pagerank_rank": 100,
+      "term": "funcionam",
+      "degree_rank": 121,
+      "pagerank_rank": 114,
       "shift": 7
     },
     {
-      "term": "conexoes",
-      "degree_rank": 118,
-      "pagerank_rank": 111,
-      "shift": 7
-    },
-    {
-      "term": "decisao",
-      "degree_rank": 146,
-      "pagerank_rank": 139,
+      "term": "tecnica",
+      "degree_rank": 128,
+      "pagerank_rank": 121,
       "shift": 7
     },
     {
@@ -402,15 +384,33 @@
       "shift": 6
     },
     {
+      "term": "condicoes",
+      "degree_rank": 106,
+      "pagerank_rank": 100,
+      "shift": 6
+    },
+    {
+      "term": "conexoes",
+      "degree_rank": 117,
+      "pagerank_rank": 111,
+      "shift": 6
+    },
+    {
+      "term": "decisao",
+      "degree_rank": 145,
+      "pagerank_rank": 139,
+      "shift": 6
+    },
+    {
       "term": "social",
       "degree_rank": 152,
       "pagerank_rank": 146,
       "shift": 6
     },
     {
-      "term": "inscricao",
-      "degree_rank": 24,
-      "pagerank_rank": 19,
+      "term": "actante",
+      "degree_rank": 45,
+      "pagerank_rank": 40,
       "shift": 5
     },
     {
@@ -440,8 +440,8 @@
       "cooccurrence_weight": 261
     },
     {
-      "a": "parciais",
-      "b": "existencias",
+      "a": "existencias",
+      "b": "parciais",
       "npmi": 0.8193986074074042,
       "cooccurrence_weight": 72
     },
@@ -458,20 +458,20 @@
       "cooccurrence_weight": 89
     },
     {
-      "a": "distribuida",
-      "b": "agencia",
+      "a": "agencia",
+      "b": "distribuida",
       "npmi": 0.7168730794359142,
       "cooccurrence_weight": 50
     },
     {
-      "a": "manifesta",
-      "b": "otherness",
+      "a": "otherness",
+      "b": "manifesta",
       "npmi": 0.7017571262156076,
       "cooccurrence_weight": 35
     },
     {
-      "a": "presenca",
-      "b": "ausencia",
+      "a": "ausencia",
+      "b": "presenca",
       "npmi": 0.6922195408625457,
       "cooccurrence_weight": 34
     },
@@ -482,8 +482,8 @@
       "cooccurrence_weight": 40
     },
     {
-      "a": "tecnico",
-      "b": "letramento",
+      "a": "letramento",
+      "b": "tecnico",
       "npmi": 0.6283930646175645,
       "cooccurrence_weight": 31
     },
@@ -500,8 +500,8 @@
       "cooccurrence_weight": 32
     },
     {
-      "a": "linguagem",
-      "b": "modelo",
+      "a": "modelo",
+      "b": "linguagem",
       "npmi": 0.5998771413668413,
       "cooccurrence_weight": 84
     },
@@ -530,16 +530,16 @@
       "cooccurrence_weight": 50
     },
     {
-      "a": "condicao",
-      "b": "possibilidade",
-      "npmi": 0.5497635496355551,
-      "cooccurrence_weight": 21
-    },
-    {
       "a": "computacao",
       "b": "cientista",
       "npmi": 0.5497635496355551,
       "cooccurrence_weight": 22
+    },
+    {
+      "a": "possibilidade",
+      "b": "condicao",
+      "npmi": 0.5497635496355551,
+      "cooccurrence_weight": 21
     },
     {
       "a": "etnografia",
@@ -548,14 +548,14 @@
       "cooccurrence_weight": 63
     },
     {
-      "a": "figuracao",
-      "b": "textil",
+      "a": "textil",
+      "b": "figuracao",
       "npmi": 0.5397551619666853,
       "cooccurrence_weight": 36
     },
     {
-      "a": "principio",
-      "b": "simetria",
+      "a": "simetria",
+      "b": "principio",
       "npmi": 0.5396866578853037,
       "cooccurrence_weight": 15
     },
@@ -566,8 +566,8 @@
       "cooccurrence_weight": 20
     },
     {
-      "a": "condicoes",
-      "b": "materiais",
+      "a": "materiais",
+      "b": "condicoes",
       "npmi": 0.5320984275950796,
       "cooccurrence_weight": 24
     },
@@ -581,7 +581,7 @@
   "communities": [
     {
       "id": 0,
-      "size": 53,
+      "size": 51,
       "label": [
         "metodo",
         "latour",
@@ -601,7 +601,6 @@
         "conceitos",
         "conexoes",
         "corte",
-        "cortes",
         "costura",
         "desenvolve",
         "dialogo",
@@ -636,7 +635,6 @@
         "recusa",
         "registro",
         "regra",
-        "relacoes",
         "secao",
         "simetria",
         "strathern",
@@ -650,33 +648,128 @@
     },
     {
       "id": 1,
-      "size": 25,
+      "size": 40,
+      "label": [
+        "pesquisa",
+        "etnografia",
+        "campo",
+        "objeto",
+        "descricao",
+        "pratica",
+        "conhecimento",
+        "lugar"
+      ],
+      "members": [
+        "campo",
+        "condicao",
+        "condicoes",
+        "conhecimento",
+        "cortes",
+        "descricao",
+        "diferentes",
+        "digital",
+        "efeitos",
+        "elementos",
+        "entrevistas",
+        "etnografia",
+        "funcionam",
+        "heterogeneos",
+        "letramento",
+        "lugar",
+        "materiais",
+        "material",
+        "modos",
+        "momento",
+        "mundo",
+        "notas",
+        "objeto",
+        "observacao",
+        "parceria",
+        "pensamento",
+        "pesquisa",
+        "posicao",
+        "possibilidade",
+        "possivel",
+        "pratica",
+        "producao",
+        "produz",
+        "publico",
+        "relacoes",
+        "tecnicas",
+        "tecnico",
+        "tecno",
+        "torna",
+        "tornou"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 28,
+      "label": [
+        "modelo",
+        "parte",
+        "claude",
+        "escrita",
+        "inscricao",
+        "pesquisador",
+        "descreve",
+        "tecnociencia"
+      ],
+      "members": [
+        "acesso",
+        "cadeia",
+        "cientifico",
+        "cientista",
+        "claude",
+        "computacao",
+        "computacional",
+        "corporacao",
+        "decisao",
+        "descreve",
+        "diagrama",
+        "diferenca",
+        "escrita",
+        "existe",
+        "imagem",
+        "infraestrutura",
+        "inscricao",
+        "instituicao",
+        "laboratorio",
+        "linguagem",
+        "modelo",
+        "parte",
+        "pesquisador",
+        "politicas",
+        "processo",
+        "social",
+        "tecnica",
+        "tecnociencia"
+      ]
+    },
+    {
+      "id": 3,
+      "size": 20,
       "label": [
         "rede",
         "ator",
         "analise",
-        "pesquisador",
         "teoria",
         "actante",
         "spira",
-        "termos"
+        "termos",
+        "associacao"
       ],
       "members": [
         "actante",
         "analise",
         "associacao",
         "ator",
-        "cadeia",
         "composicao",
         "comunidades",
-        "decisao",
         "descrevo",
         "distintas",
         "funciona",
-        "instituicao",
         "maior",
-        "momento",
-        "pesquisador",
         "ponto",
         "precisa",
         "rede",
@@ -687,85 +780,6 @@
         "teoria",
         "termos",
         "textual"
-      ]
-    },
-    {
-      "id": 2,
-      "size": 25,
-      "label": [
-        "etnografia",
-        "campo",
-        "objeto",
-        "descricao",
-        "parte",
-        "claude",
-        "escrita",
-        "descreve"
-      ],
-      "members": [
-        "campo",
-        "claude",
-        "condicao",
-        "descreve",
-        "descricao",
-        "digital",
-        "efeitos",
-        "escrita",
-        "etnografia",
-        "existe",
-        "lugar",
-        "material",
-        "mundo",
-        "objeto",
-        "observacao",
-        "parceria",
-        "parte",
-        "posicao",
-        "possibilidade",
-        "possivel",
-        "processo",
-        "produz",
-        "tecno",
-        "torna",
-        "tornou"
-      ]
-    },
-    {
-      "id": 3,
-      "size": 22,
-      "label": [
-        "pesquisa",
-        "artificial",
-        "inteligencia",
-        "pratica",
-        "conhecimento",
-        "materiais",
-        "construcao",
-        "generativa"
-      ],
-      "members": [
-        "acesso",
-        "artificial",
-        "centro",
-        "condicoes",
-        "conhecimento",
-        "construcao",
-        "descrever",
-        "diferentes",
-        "elementos",
-        "entrevistas",
-        "generativa",
-        "heterogeneos",
-        "inteligencia",
-        "materiais",
-        "modos",
-        "pensamento",
-        "pesquisa",
-        "pratica",
-        "producao",
-        "publico",
-        "sistemas",
-        "tecnicas"
       ]
     },
     {
@@ -805,65 +819,50 @@
     },
     {
       "id": 5,
-      "size": 16,
+      "size": 10,
       "label": [
         "ciencia",
         "dado",
         "sociais",
         "tecnologia",
-        "laboratorio",
-        "tecnico",
-        "cientista",
-        "termo"
+        "termo",
+        "estudos",
+        "conjunto",
+        "acao"
       ],
       "members": [
         "acao",
         "ciencia",
-        "cientista",
-        "computacao",
         "conjunto",
         "contexto",
         "dado",
         "estudos",
-        "laboratorio",
-        "letramento",
         "palavra",
         "sociais",
-        "social",
-        "tecnico",
         "tecnologia",
         "termo"
       ]
     },
     {
       "id": 6,
-      "size": 15,
+      "size": 7,
       "label": [
-        "modelo",
-        "inscricao",
-        "tecnociencia",
-        "linguagem",
-        "infraestrutura",
-        "diagrama",
-        "computacional",
-        "cientifico"
+        "artificial",
+        "inteligencia",
+        "construcao",
+        "generativa",
+        "centro",
+        "descrever",
+        "sistemas"
       ],
       "members": [
-        "cientifico",
-        "computacional",
-        "corporacao",
-        "diagrama",
-        "diferenca",
-        "funcionam",
-        "imagem",
-        "infraestrutura",
-        "inscricao",
-        "linguagem",
-        "modelo",
-        "notas",
-        "politicas",
-        "tecnica",
-        "tecnociencia"
+        "artificial",
+        "centro",
+        "construcao",
+        "descrever",
+        "generativa",
+        "inteligencia",
+        "sistemas"
       ]
     },
     {
@@ -887,54 +886,54 @@
   ],
   "structural_gaps": [
     {
+      "topic_a": 0,
+      "topic_b": 2,
+      "edge_density": 0.41386554621848737
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 4,
+      "edge_density": 0.5263157894736842
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 4,
+      "edge_density": 0.543859649122807
+    },
+    {
+      "topic_a": 2,
+      "topic_b": 4,
+      "edge_density": 0.5451127819548872
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 3,
+      "edge_density": 0.5480392156862746
+    },
+    {
       "topic_a": 3,
       "topic_b": 4,
-      "edge_density": 0.4784688995215311
+      "edge_density": 0.6578947368421053
     },
     {
       "topic_a": 0,
       "topic_b": 1,
-      "edge_density": 0.5169811320754717
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 3,
-      "edge_density": 0.5274442538593482
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 4,
-      "edge_density": 0.5322740814299901
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 4,
-      "edge_density": 0.6610526315789473
-    },
-    {
-      "topic_a": 2,
-      "topic_b": 4,
-      "edge_density": 0.7157894736842105
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 2,
-      "edge_density": 0.8271698113207547
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 3,
-      "edge_density": 0.8309090909090909
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 2,
-      "edge_density": 1.0464
+      "edge_density": 0.6892156862745098
     },
     {
       "topic_a": 2,
       "topic_b": 3,
-      "edge_density": 1.3072727272727274
+      "edge_density": 0.85
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 2,
+      "edge_density": 0.8526785714285714
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 3,
+      "edge_density": 0.86125
     }
   ]
 }
