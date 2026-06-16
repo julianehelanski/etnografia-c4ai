@@ -1,31 +1,32 @@
-# Exemplo de workflow para o repositório `julianehelanski/etnografia` (o repo .tex).
+# Exemplo de workflow para o repositório `julianehelanski/tecno-etnografia-centro-ia` (o repo .tex).
 #
-# Cole o conteúdo abaixo em `.github/workflows/notify-c4ai.yml` no repo etnografia.
+# Cole o conteúdo abaixo em `.github/workflows/notify-c4ai.yml` no repo
+# tecno-etnografia-centro-ia.
 #
-# Função: a cada push que toque um arquivo capituloN.tex, dispara um evento
-# `repository_dispatch` no repo etnografia-c4ai, que por sua vez roda
+# Função: a cada push que toque um arquivo ex_capN.tex, dispara um evento
+# `repository_dispatch` no repo tecno-etnografia-tese-site, que por sua vez roda
 # `infranodus/run_all.py` e commita os PNG/GEXF/relatórios atualizados.
 #
-# Pré-requisitos (no repo etnografia):
+# Pré-requisitos (no repo tecno-etnografia-centro-ia):
 #   - Settings → Secrets and variables → Actions → New repository secret
 #     - Name:  C4AI_DISPATCH_PAT
 #     - Value: Personal Access Token (fine-grained) com permissão
-#              "Contents: read & write" no repo etnografia-c4ai.
+#              "Contents: read & write" no repo tecno-etnografia-tese-site.
 #              (Em PATs clássicos: escopo `repo`.)
 #
-# Pré-requisitos (no repo etnografia-c4ai):
-#   - Se este repo for privado, criar o secret ETNOGRAFIA_PAT com um PAT
-#     que tenha permissão de leitura no repo etnografia. Se for público,
-#     o workflow já usa GITHUB_TOKEN como fallback.
+# Pré-requisitos (no repo tecno-etnografia-tese-site):
+#   - Se o repo .tex for privado, criar o secret ETNOGRAFIA_PAT com um PAT
+#     que tenha permissão de leitura nele. Como é público, o workflow já usa
+#     GITHUB_TOKEN como fallback.
 
-name: Notifica etnografia-c4ai
+name: Notifica tecno-etnografia-tese-site
 
 on:
   push:
     branches: [main]
     paths:
-      - "capitulo*.tex"
-      - "**/capitulo*.tex"
+      - "ex_cap*.tex"
+      - "**/ex_cap*.tex"
 
 jobs:
   dispatch:
@@ -35,7 +36,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.C4AI_DISPATCH_PAT }}
-          repository: julianehelanski/etnografia-c4ai
+          repository: julianehelanski/tecno-etnografia-tese-site
           event-type: thesis-updated
           # client_payload chega na Action de análise como
           # ${{ github.event.client_payload.* }} e é usado na mensagem de commit.

@@ -1,8 +1,8 @@
 name: Analisa capítulos da tese
 
 # Dispara em três situações:
-#  1. repository_dispatch (event_type = thesis-updated) — vindo do repo etnografia
-#     toda vez que um capítulo é alterado lá. Veja
+#  1. repository_dispatch (event_type = thesis-updated) — vindo do repo
+#     tecno-etnografia-centro-ia toda vez que um capítulo é alterado lá. Veja
 #     docs/dispatch-from-tex.yml.example para o workflow que dispara este.
 #  2. workflow_dispatch — botão "Run workflow" no GitHub Actions, para
 #     reanálise manual.
@@ -37,19 +37,19 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout etnografia-c4ai
+      - name: Checkout tecno-etnografia-tese-site
         uses: actions/checkout@v4
         with:
           path: c4ai
 
-      - name: Checkout etnografia (.tex)
+      - name: Checkout tecno-etnografia-centro-ia (.tex)
         uses: actions/checkout@v4
         with:
-          repository: julianehelanski/etnografia
+          repository: julianehelanski/tecno-etnografia-centro-ia
           # Se o repo .tex for privado, defina o secret ETNOGRAFIA_PAT como um
           # Personal Access Token com escopo `repo` (fine-grained: read contents
-          # do repositório etnografia). Se for público, o GITHUB_TOKEN padrão
-          # funciona.
+          # do repositório tecno-etnografia-centro-ia). Se for público (é o caso
+          # atual), o GITHUB_TOKEN padrão já funciona.
           token: ${{ secrets.ETNOGRAFIA_PAT || secrets.GITHUB_TOKEN }}
           path: c4ai/_tex
           ref: main
