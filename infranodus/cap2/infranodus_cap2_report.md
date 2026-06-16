@@ -10,44 +10,44 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **7,088**
-- Grafo bruto: **2978** nós · **18553** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **1376** arestas
+- Tokens significativos: **27,140**
+- Grafo bruto: **6861** nós · **63680** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3461** arestas
 - Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `inteligencia` | 601 |
-| 2 | `artificial` | 566 |
-| 3 | `ciencia` | 464 |
-| 4 | `tecnologia` | 263 |
-| 5 | `latour` | 221 |
-| 6 | `sociais` | 218 |
-| 7 | `humano` | 217 |
-| 8 | `estudos` | 216 |
-| 9 | `campo` | 193 |
-| 10 | `sistemas` | 167 |
-| 11 | `etnografia` | 159 |
-| 12 | `capes` | 153 |
-| 13 | `antropologia` | 146 |
-| 14 | `pesquisa` | 143 |
-| 15 | `dado` | 138 |
-| 16 | `rede` | 128 |
-| 17 | `tecnica` | 127 |
-| 18 | `social` | 125 |
-| 19 | `mediacao` | 123 |
-| 20 | `vocabulario` | 119 |
-| 21 | `conhecimento` | 117 |
-| 22 | `press` | 113 |
-| 23 | `analise` | 112 |
-| 24 | `producao` | 111 |
-| 25 | `ator` | 107 |
-| 26 | `objeto` | 103 |
-| 27 | `scielo` | 102 |
-| 28 | `pratica` | 101 |
-| 29 | `area` | 97 |
-| 30 | `torna` | 95 |
+| 1 | `campo` | 2119 |
+| 2 | `artificial` | 1859 |
+| 3 | `inteligencia` | 1836 |
+| 4 | `latour` | 1122 |
+| 5 | `militar` | 1100 |
+| 6 | `ciencia` | 941 |
+| 7 | `analise` | 727 |
+| 8 | `vocabulario` | 723 |
+| 9 | `humano` | 702 |
+| 10 | `rede` | 650 |
+| 11 | `aime` | 533 |
+| 12 | `ocorrencias` | 505 |
+| 13 | `science` | 497 |
+| 14 | `figuracao` | 493 |
+| 15 | `teoria` | 493 |
+| 16 | `catalogo` | 484 |
+| 17 | `action` | 467 |
+| 18 | `descreve` | 448 |
+| 19 | `objeto` | 446 |
+| 20 | `tecnociencia` | 439 |
+| 21 | `obras` | 439 |
+| 22 | `figuracoes` | 437 |
+| 23 | `leitura` | 433 |
+| 24 | `tecnologia` | 432 |
+| 25 | `ator` | 427 |
+| 26 | `dado` | 415 |
+| 27 | `capes` | 415 |
+| 28 | `densidade` | 414 |
+| 29 | `artigos` | 391 |
+| 30 | `partir` | 381 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -56,36 +56,36 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `inteligencia` | 0.0370 |
-| 2 | `artificial` | 0.0345 |
-| 3 | `ciencia` | 0.0297 |
-| 4 | `tecnologia` | 0.0178 |
-| 5 | `latour` | 0.0166 |
-| 6 | `humano` | 0.0151 |
-| 7 | `campo` | 0.0145 |
-| 8 | `sociais` | 0.0143 |
-| 9 | `estudos` | 0.0141 |
-| 10 | `sistemas` | 0.0126 |
-| 11 | `etnografia` | 0.0120 |
-| 12 | `vocabulario` | 0.0108 |
-| 13 | `capes` | 0.0108 |
-| 14 | `dado` | 0.0106 |
-| 15 | `social` | 0.0106 |
-| 16 | `pesquisa` | 0.0106 |
-| 17 | `antropologia` | 0.0101 |
-| 18 | `rede` | 0.0101 |
-| 19 | `tecnica` | 0.0100 |
-| 20 | `mediacao` | 0.0100 |
-| 21 | `press` | 0.0096 |
-| 22 | `conhecimento` | 0.0091 |
-| 23 | `analise` | 0.0089 |
-| 24 | `producao` | 0.0085 |
-| 25 | `pratica` | 0.0085 |
-| 26 | `ator` | 0.0083 |
-| 27 | `torna` | 0.0080 |
-| 28 | `infraestrutura` | 0.0080 |
-| 29 | `university` | 0.0077 |
-| 30 | `scielo` | 0.0075 |
+| 1 | `campo` | 0.0380 |
+| 2 | `artificial` | 0.0325 |
+| 3 | `inteligencia` | 0.0322 |
+| 4 | `latour` | 0.0209 |
+| 5 | `militar` | 0.0194 |
+| 6 | `ciencia` | 0.0174 |
+| 7 | `analise` | 0.0141 |
+| 8 | `humano` | 0.0134 |
+| 9 | `vocabulario` | 0.0133 |
+| 10 | `rede` | 0.0127 |
+| 11 | `aime` | 0.0102 |
+| 12 | `figuracao` | 0.0097 |
+| 13 | `teoria` | 0.0094 |
+| 14 | `ocorrencias` | 0.0093 |
+| 15 | `catalogo` | 0.0093 |
+| 16 | `descreve` | 0.0091 |
+| 17 | `science` | 0.0090 |
+| 18 | `tecnociencia` | 0.0090 |
+| 19 | `figuracoes` | 0.0089 |
+| 20 | `objeto` | 0.0088 |
+| 21 | `dado` | 0.0088 |
+| 22 | `tecnologia` | 0.0088 |
+| 23 | `leitura` | 0.0087 |
+| 24 | `obras` | 0.0087 |
+| 25 | `action` | 0.0084 |
+| 26 | `capes` | 0.0084 |
+| 27 | `ator` | 0.0083 |
+| 28 | `partir` | 0.0080 |
+| 29 | `conhecimento` | 0.0080 |
+| 30 | `densidade` | 0.0079 |
 
 ## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
 Diferença de posição (rank por degree) − (rank por PageRank). Valor
@@ -93,45 +93,45 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `technology` | 145 | 115 | +30 |
-| 2 | `johnson` | 82 | 57 | +25 |
-| 3 | `importa` | 88 | 65 | +23 |
-| 4 | `knowledge` | 163 | 144 | +19 |
-| 5 | `figural` | 105 | 87 | +18 |
-| 6 | `scientific` | 177 | 160 | +17 |
-| 7 | `lenhard` | 89 | 73 | +16 |
-| 8 | `computacional` | 64 | 49 | +15 |
-| 9 | `cientifico` | 60 | 46 | +14 |
-| 10 | `engenharia` | 68 | 54 | +14 |
-| 11 | `opera` | 136 | 122 | +14 |
-| 12 | `mundo` | 103 | 90 | +13 |
-| 13 | `ponto` | 140 | 127 | +13 |
-| 14 | `posicao` | 106 | 94 | +12 |
-| 15 | `descrevo` | 110 | 99 | +11 |
+| 1 | `press` | 160 | 91 | +69 |
+| 2 | `university` | 169 | 106 | +63 |
+| 3 | `joler` | 163 | 139 | +24 |
+| 4 | `crawford` | 175 | 158 | +17 |
+| 5 | `modelo` | 56 | 45 | +11 |
+| 6 | `collins` | 114 | 104 | +10 |
+| 7 | `forsythe` | 131 | 121 | +10 |
+| 8 | `claude` | 71 | 62 | +9 |
+| 9 | `modos` | 136 | 127 | +9 |
+| 10 | `sistemas` | 48 | 40 | +8 |
+| 11 | `producao` | 55 | 47 | +8 |
+| 12 | `sustenta` | 65 | 57 | +8 |
+| 13 | `quadro` | 84 | 76 | +8 |
+| 14 | `cientifico` | 120 | 112 | +8 |
+| 15 | `etnografia` | 63 | 56 | +7 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `ciencia` | 0.3744 |
-| 2 | `inteligencia` | 0.3440 |
-| 3 | `artificial` | 0.3393 |
-| 4 | `humano` | 0.1420 |
-| 5 | `latour` | 0.1406 |
-| 6 | `tecnologia` | 0.0908 |
-| 7 | `antropologia` | 0.0903 |
-| 8 | `sistemas` | 0.0787 |
-| 9 | `sociais` | 0.0726 |
-| 10 | `campo` | 0.0654 |
-| 11 | `social` | 0.0615 |
-| 12 | `vocabulario` | 0.0588 |
-| 13 | `pesquisa` | 0.0428 |
-| 14 | `capes` | 0.0428 |
-| 15 | `etnografia` | 0.0408 |
-| 16 | `rede` | 0.0401 |
-| 17 | `producao` | 0.0398 |
-| 18 | `pratica` | 0.0390 |
-| 19 | `relacoes` | 0.0384 |
-| 20 | `conhecimento` | 0.0361 |
+| 1 | `campo` | 0.5087 |
+| 2 | `inteligencia` | 0.2703 |
+| 3 | `latour` | 0.2096 |
+| 4 | `militar` | 0.1963 |
+| 5 | `artificial` | 0.1511 |
+| 6 | `vocabulario` | 0.1196 |
+| 7 | `ciencia` | 0.1157 |
+| 8 | `catalogo` | 0.0681 |
+| 9 | `capes` | 0.0629 |
+| 10 | `figuracao` | 0.0593 |
+| 11 | `teoria` | 0.0503 |
+| 12 | `figuracoes` | 0.0490 |
+| 13 | `analise` | 0.0414 |
+| 14 | `descreve` | 0.0398 |
+| 15 | `rede` | 0.0394 |
+| 16 | `modelo` | 0.0350 |
+| 17 | `aime` | 0.0330 |
+| 18 | `haraway` | 0.0330 |
+| 19 | `tecnociencia` | 0.0304 |
+| 20 | `humano` | 0.0281 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -141,52 +141,52 @@ vezes.
 
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
-| 1 | `dissertacoes` | `teses` | 0.901 | 21 |
-| 2 | `catalogo` | `teses` | 0.878 | 21 |
-| 3 | `lenhard` | `johnson` | 0.829 | 26 |
-| 4 | `mediacao` | `tecnica` | 0.814 | 45 |
-| 5 | `university` | `press` | 0.812 | 50 |
-| 6 | `inteligencia` | `artificial` | 0.807 | 244 |
-| 7 | `crawford` | `joler` | 0.786 | 19 |
-| 8 | `dissertacoes` | `catalogo` | 0.756 | 14 |
-| 9 | `historias` | `importa` | 0.748 | 16 |
-| 10 | `central` | `foco` | 0.734 | 20 |
-| 11 | `teoria` | `ator` | 0.719 | 18 |
-| 12 | `dissertacoes` | `capes` | 0.706 | 21 |
-| 13 | `science` | `studies` | 0.679 | 21 |
-| 14 | `haraway` | `stengers` | 0.669 | 27 |
-| 15 | `maior` | `numero` | 0.669 | 15 |
-| 16 | `bruno` | `latour` | 0.663 | 43 |
-| 17 | `recusa` | `posicao` | 0.660 | 9 |
-| 18 | `emergente` | `brasil` | 0.656 | 11 |
-| 19 | `computacional` | `infraestrutura` | 0.656 | 22 |
-| 20 | `possiveis` | `figuracao` | 0.650 | 13 |
-| 21 | `analise` | `bibliometrica` | 0.646 | 18 |
-| 22 | `disponivel` | `acesso` | 0.644 | 17 |
-| 23 | `educacao` | `revista` | 0.641 | 12 |
-| 24 | `especialistas` | `sistemas` | 0.627 | 30 |
-| 25 | `cientista` | `engenheiro` | 0.626 | 9 |
+| 1 | `laboratory` | `life` | 0.871 | 109 |
+| 2 | `pandora` | `hope` | 0.868 | 123 |
+| 3 | `inteligencia` | `artificial` | 0.827 | 807 |
+| 4 | `press` | `university` | 0.817 | 64 |
+| 5 | `taxa` | `interna` | 0.802 | 54 |
+| 6 | `science` | `action` | 0.788 | 171 |
+| 7 | `code` | `claude` | 0.785 | 92 |
+| 8 | `actor` | `network` | 0.764 | 71 |
+| 9 | `crawford` | `joler` | 0.738 | 41 |
+| 10 | `quadro` | `conclusao` | 0.726 | 62 |
+| 11 | `mediacao` | `tecnica` | 0.716 | 96 |
+| 12 | `maquina` | `aprendizado` | 0.706 | 123 |
+| 13 | `ator` | `teoria` | 0.701 | 137 |
+| 14 | `topologico` | `textil` | 0.665 | 49 |
+| 15 | `contagem` | `refinada` | 0.652 | 46 |
+| 16 | `lexicometrica` | `analise` | 0.631 | 95 |
+| 17 | `sistemas` | `especialistas` | 0.626 | 50 |
+| 18 | `ator` | `rede` | 0.614 | 139 |
+| 19 | `linguagem` | `modelo` | 0.594 | 63 |
+| 20 | `recalling` | `clarifications` | 0.584 | 30 |
+| 21 | `pandora` | `action` | 0.564 | 55 |
+| 22 | `militar` | `industria` | 0.564 | 89 |
+| 23 | `repositorio` | `publico` | 0.537 | 33 |
+| 24 | `topologico` | `vocabulario` | 0.533 | 60 |
+| 25 | `stengers` | `haraway` | 0.531 | 28 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (62 termos): campo, etnografia, vocabulario, analise, pratica, torna
-- **Tópico 2** (26 termos): humano, capes, dado, conhecimento, scielo, area
-- **Tópico 3** (24 termos): ciencia, tecnologia, sociais, estudos, antropologia, acao
-- **Tópico 4** (22 termos): latour, rede, social, ator, bruno, science
-- **Tópico 5** (19 termos): producao, tecnociencia, cientifico, acesso, maquina, cultura
-- **Tópico 6** (10 termos): tecnica, mediacao, relacoes, agencia, importa, mundo
-- **Tópico 7** (10 termos): inteligencia, artificial, sistemas, pesquisa, objeto, partir
-- **Tópico 8** (7 termos): press, university, traducao, tema, chicago, material
+- **Tópico 1** (50 termos): ciencia, humano, tecnologia, dado, capes, artigos
+- **Tópico 2** (40 termos): campo, militar, vocabulario, aime, ocorrencias, figuracao
+- **Tópico 3** (39 termos): latour, analise, rede, teoria, descreve, tecnociencia
+- **Tópico 4** (35 termos): artificial, inteligencia, objeto, conhecimento, maquina, pesquisa
+- **Tópico 5** (7 termos): science, action, pandora, hope, life, laboratory
+- **Tópico 6** (5 termos): quadro, conclusao, modos, investigacao, grupo
+- **Tópico 7** (2 termos): press, university
+- **Tópico 8** (2 termos): joler, crawford
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 2** [humano, capes, dado] — densidade ponderada de ligação = 0.0943
-- Lacuna entre **Tópico 4** [latour, rede, social] e **Tópico 5** [producao, tecnociencia, cientifico] — densidade ponderada de ligação = 0.1292
-- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 4** [latour, rede, social] — densidade ponderada de ligação = 0.1371
-- Lacuna entre **Tópico 2** [humano, capes, dado] e **Tópico 4** [latour, rede, social] — densidade ponderada de ligação = 0.1381
-- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 5** [producao, tecnociencia, cientifico] — densidade ponderada de ligação = 0.1443
-- Lacuna entre **Tópico 1** [campo, etnografia, vocabulario] e **Tópico 3** [ciencia, tecnologia, sociais] — densidade ponderada de ligação = 0.1667
+- Lacuna entre **Tópico 1** [ciencia, humano, tecnologia] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.3057
+- Lacuna entre **Tópico 4** [artificial, inteligencia, objeto] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.3061
+- Lacuna entre **Tópico 2** [campo, militar, vocabulario] e **Tópico 4** [artificial, inteligencia, objeto] — densidade ponderada de ligação = 0.4829
+- Lacuna entre **Tópico 1** [ciencia, humano, tecnologia] e **Tópico 3** [latour, analise, rede] — densidade ponderada de ligação = 0.5795
+- Lacuna entre **Tópico 1** [ciencia, humano, tecnologia] e **Tópico 2** [campo, militar, vocabulario] — densidade ponderada de ligação = 0.7790
+- Lacuna entre **Tópico 3** [latour, analise, rede] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.8388
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap2.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
