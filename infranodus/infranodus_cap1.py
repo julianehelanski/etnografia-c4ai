@@ -35,9 +35,9 @@ import numpy as np
 from networkx.algorithms.community import louvain_communities
 
 THIS_DIR = Path(__file__).resolve().parent
-# CLI default points at the sister etnografia repo checked out under _tex/.
+# CLI default points at the sister thesis (.tex) repo checked out under _tex/.
 # Running these scripts directly (without --chapter) assumes you have
-#   git clone https://github.com/julianehelanski/etnografia.git _tex
+#   git clone https://github.com/julianehelanski/tecno-etnografia-centro-ia.git _tex
 # at the repo root. The GitHub Action sets this up automatically.
 DEFAULT_SRC = THIS_DIR.parent / "_tex" / "ex_cap1.tex"
 

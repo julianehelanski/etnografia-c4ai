@@ -23,7 +23,7 @@ THESIS_REPO.
 import os, re, sys, math, subprocess
 from collections import Counter
 
-THESIS_REPO = "https://github.com/julianehelanski/tecno-etnografia-de-um-centro-de-inteligencia-artificial"
+THESIS_REPO = "https://github.com/julianehelanski/tecno-etnografia-centro-ia"
 HERE = os.path.dirname(os.path.abspath(__file__))
 INDEX = os.path.join(HERE, "..", "index.html")
 
