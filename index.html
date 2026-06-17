@@ -109,8 +109,8 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 /* corpo da barra */
 #tour-body{
-  display:grid;grid-template-columns:auto 1fr auto;
-  align-items:start;gap:1rem;padding:.7rem 1.2rem .9rem;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:1rem;padding:.7rem 1.2rem .9rem;
   flex:1;overflow:hidden;
 }
 #tour-meta{flex-shrink:0;min-width:120px}
@@ -126,19 +126,6 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #tour-counter{
   font-family:'CMU Typewriter Text',monospace;font-size:.5rem;
   color:#c0beb8;margin-top:.25rem;letter-spacing:.1em;
-}
-
-/* instrução e script */
-#tour-scroll{overflow-y:auto;max-height:130px}
-#tour-instrucao{
-  font-family:'CMU Typewriter Text',monospace;font-size:.56rem;
-  color:#a06832;letter-spacing:.05em;margin-bottom:.35rem;
-  display:none;
-}
-#tour-instrucao.has-instrucao{display:block}
-#tour-script-text{
-  font-family:'CMU Serif',serif;font-size:.72rem;
-  line-height:1.78;color:#111;white-space:pre-line;
 }
 
 /* navegação */
@@ -282,7 +269,6 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #ptitle{font-family:'CMU Serif',serif}
 #pbody{font-family:'CMU Serif',serif;line-height:1.85}
 #pbody blockquote{font-family:'CMU Serif',serif}
-#tour-script-text{font-family:'CMU Serif',serif}
 .fig-label{font-family:'CMU Serif',serif}
 #intro .creds{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.04em;line-height:2.1;color:#24388d;text-align:center;max-width:620px;margin-top:1.3rem;opacity:0;animation:rise 1.5s ease 1.9s forwards}
 #intro .creds .creds-line{opacity:.72;font-style:italic}
@@ -307,7 +293,6 @@ body{background:#ffffff!important}
 #tip{background:rgba(255,255,255,.97)!important;border-color:#ddd!important;color:#222!important}
 #tour-bar{background:rgba(255,255,255,.98)!important;border-top:1px solid #e3e3e3!important}
 #tour-node-label{color:#1c2942}
-#tour-script-text{color:#222}
 #tour-btn{background:#1c2942!important;color:#ffffff!important;border-color:#1c2942!important;border-radius:999px;padding:.45rem .9rem;letter-spacing:.12em}
 #tour-btn:hover,#tour-btn.active{background:#000!important;color:#fff!important;border-color:#000!important}
 .nlabel{opacity:1;transition:opacity .35s ease}
@@ -333,9 +318,7 @@ details.toc-sub>p{color:#777;margin:.1rem 0 .4rem .7rem;font-size:.95em}
 #pbody code{font-size:.82rem}
 #pbody .tag{font-size:.72rem}
 .fig-label{font-size:.68rem}
-#tour-script-text{font-size:.88rem!important;line-height:1.7!important}
 #tour-node-label{font-size:1rem!important}
-#tour-instrucao{font-size:.72rem!important}
 #legend .li{font-size:.62rem!important}
 #tip{font-size:.72rem!important}
 /* ── apresentação: dark gray + maior (mantém CMU Serif) ── */
@@ -346,9 +329,7 @@ details.toc-sub>p{color:#777;margin:.1rem 0 .4rem .7rem;font-size:.95em}
 #pbody code{font-size:1rem}
 #pbody .tag{font-size:.86rem}
 .fig-label{font-size:.82rem;color:#666}
-#tour-script-text{font-size:1.1rem!important;line-height:1.65!important;color:#111!important}
 #tour-node-label{font-size:1.2rem!important}
-#tour-instrucao{font-size:.88rem!important}
 .toc-head{color:#555!important;font-size:1rem}
 details.toc-sec>summary{color:#111!important;font-size:1.02rem}
 .toc-body>p{color:#1f1f1f!important}
@@ -467,10 +448,6 @@ details.toc-sub>p{color:#2a2a2a!important}
       <div id="tour-mv"></div>
       <div id="tour-node-label"></div>
       <div id="tour-counter"></div>
-    </div>
-    <div id="tour-scroll">
-      <div id="tour-instrucao"></div>
-      <div id="tour-script-text"></div>
     </div>
     <div id="tour-nav">
       <div style="display:flex;gap:.4rem">
@@ -1163,13 +1140,6 @@ function renderTour(idx){
   lbl.textContent = t.label;
   lbl.style.color = col;
   document.getElementById('tour-counter').textContent = (idx+1)+' / '+TOUR.length;
-
-  const ins = document.getElementById('tour-instrucao');
-  ins.textContent = t.instrucao;
-  ins.classList.toggle('has-instrucao', !!t.instrucao);
-
-  document.getElementById('tour-script-text').textContent = t.script;
-  document.getElementById('tour-scroll').scrollTop=0;
 
   document.getElementById('t-prev').disabled = idx===0;
   document.getElementById('t-next').textContent = idx===TOUR.length-1 ? (lang==='en'?'✓ end':'✓ fim') : (lang==='en'?'next →':'próx →');
