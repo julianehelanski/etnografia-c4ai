@@ -25,7 +25,7 @@ from collections import Counter
 
 THESIS_REPO = "https://github.com/julianehelanski/tecno-etnografia-centro-ia"
 HERE = os.path.dirname(os.path.abspath(__file__))
-INDEX = os.path.join(HERE, "..", "index.html")
+INDEX = os.path.join(HERE, "..", os.environ.get("SITE_INDEX", "index.html"))
 
 # qual arquivo .tex corresponde a cada capítulo do site
 CHAPTER_FILES = {"cap1": "ex_cap1.tex", "cap2": "ex_cap2.tex",

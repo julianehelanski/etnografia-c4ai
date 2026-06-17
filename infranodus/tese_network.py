@@ -129,6 +129,9 @@ def main() -> int:
     ap.add_argument("--edges-per-node", type=int, default=16,
                     help="mantém as N arestas mais fortes por termo (densidade controlada)")
     ap.add_argument("--out", type=Path, default=THIS_DIR / "tese_network.json")
+    ap.add_argument("--inject", type=Path, default=None,
+                    help="reinjeta o JSON no <script id=netdata> deste HTML "
+                         "(ex.: index.html)")
     args = ap.parse_args()
 
     all_tokens: list[str] = []
@@ -242,15 +245,29 @@ def main() -> int:
         "nodes": nodes,
         "edges": edges,
     }
-    args.out.write_text(json.dumps(payload, ensure_ascii=False,
-                                   separators=(",", ":")), encoding="utf-8")
+    data_str = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    args.out.write_text(data_str, encoding="utf-8")
     kb = args.out.stat().st_size / 1024
     print(f"[4] JSON: {args.out}  ({kb:.0f} KB)  "
           f"{len(nodes)} nós, {len(edges)} arestas, {len(communities)} comunidades, "
           f"núcleo={len(core)}")
     # prévia das comunidades
     for c in communities:
-        print(f"    T{c['id']} ({c['size']}): {', '.join(c['label'])}")
+        print(f"    T{c['id']} ({c['size']}): {c.get('name') or ', '.join(c['label'])}")
+
+    # reinjeta no HTML alvo (substitui o conteúdo de <script id="netdata">)
+    if args.inject is not None:
+        assert "</script" not in data_str.lower(), "JSON contém </script>"
+        html = args.inject.read_text(encoding="utf-8")
+        pat = re.compile(
+            r'(<script type="application/json" id="netdata">).*?(</script>)',
+            re.DOTALL)
+        new, n = pat.subn(lambda m: m.group(1) + data_str + m.group(2), html, count=1)
+        if n != 1:
+            print(f"[inject] ERRO: <script id=netdata> não encontrado em {args.inject}")
+            return 1
+        args.inject.write_text(new, encoding="utf-8")
+        print(f"[5] JSON reinjetado em {args.inject}")
     return 0
 
 

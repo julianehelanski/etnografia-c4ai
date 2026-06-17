@@ -39,8 +39,18 @@ alternância.
 
 ## Regenerar a rede textual quando a tese mudar
 
+**Automático:** o workflow `.github/workflows/analyze.yml` regenera a rede
+e reinjeta o JSON no `index.html` a cada atualização da tese. Ele dispara:
+
+- por *repository_dispatch* (`thesis-updated`) vindo do repo da tese —
+  **requer** que o workflow de `docs/dispatch-from-tex.yml.example` esteja
+  instalado no repo `tecno-etnografia-centro-ia` (com o secret PAT);
+- pelo botão **Run workflow** em Actions (manual, a qualquer momento);
+- ao alterar `infranodus/tese_network.py` ou os scripts de análise.
+
+**Manual** (rodar localmente):
+
 ```bash
 git clone --depth 1 https://github.com/julianehelanski/tecno-etnografia-centro-ia.git /tmp/tese
-python3 infranodus/tese_network.py --source-root /tmp/tese
-# depois reinjete o JSON em index.html (o Claude faz isso)
+python3 infranodus/tese_network.py --source-root /tmp/tese --inject index.html
 ```

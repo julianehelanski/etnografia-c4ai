@@ -21,6 +21,7 @@ on:
     branches: [main]
     paths:
       - "infranodus/infranodus_cap1.py"
+      - "infranodus/tese_network.py"
       - "infranodus/run_all.py"
       - "infranodus/chapters.yml"
       - "infranodus/interpretation_*.md"
@@ -76,6 +77,10 @@ jobs:
             python infranodus/run_all.py --source-root _tex
           fi
 
+      - name: Regenera a rede textual da tese e reinjeta no index.html (mapa principal)
+        working-directory: c4ai
+        run: python infranodus/tese_network.py --source-root _tex --inject index.html
+
       - name: Sincroniza imagens da análise para o site (figuras/)
         working-directory: c4ai
         run: python infranodus/sync_site_figuras.py
@@ -84,16 +89,24 @@ jobs:
         working-directory: c4ai
         run: python scripts/sync_tese_figuras.py --source-root _tex
 
-      - name: Atualiza contagens de palavras-chave no index.html
+      # Os passos abaixo mantêm a página curada arquivada (index-curado.html)
+      # em dia. O mapa principal (index.html) é a rede textual, regenerada acima.
+      - name: Atualiza contagens de palavras-chave (index-curado.html)
         working-directory: c4ai
+        env:
+          SITE_INDEX: index-curado.html
         run: python scripts/atualizar_keywords.py _tex
 
-      - name: Cache-busting das figuras no index.html (versão por conteúdo)
+      - name: Cache-busting das figuras (index-curado.html)
         working-directory: c4ai
+        env:
+          SITE_INDEX: index-curado.html
         run: python scripts/cache_busting_figuras.py
 
-      - name: Sumário automático dos capítulos (do .tex para o site)
+      - name: Sumário automático dos capítulos (index-curado.html)
         working-directory: c4ai
+        env:
+          SITE_INDEX: index-curado.html
         run: python scripts/sumario_auto.py --source-root _tex
 
       - name: Relatório de divergência tese ↔ site (seções/figuras)
@@ -105,7 +118,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infranodus/ figuras/ index.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
+          git add infranodus/ figuras/ index.html index-curado.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
           if git diff --cached --quiet; then
             echo "Sem mudanças nos outputs da análise."
             exit 0

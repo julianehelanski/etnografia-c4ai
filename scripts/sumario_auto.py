@@ -18,6 +18,7 @@ Uso:
 """
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 
@@ -26,7 +27,8 @@ from relatorio_divergencia_tese import (CHAPTER_FILES, clean_title,
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parent
-INDEX = REPO_ROOT / "index.html"
+# página alvo (curada). Configurável via env SITE_INDEX; padrão index.html.
+INDEX = REPO_ROOT / os.environ.get("SITE_INDEX", "index.html")
 
 # slug do capítulo -> id do nó-capítulo no grafo/index.html
 NODE_ID = {"cap1": "cap1m", "cap2": "cap2", "cap3": "cap3", "cap4": "cap4"}
