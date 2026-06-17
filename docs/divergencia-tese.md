@@ -1,15 +1,26 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-06-17 01:05 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-06-17 01:11 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
 
-## Snapshot inicial criado
+## Sem divergências
 
-Não havia snapshot anterior — este é o ponto de partida. A partir da próxima atualização da tese, as mudanças estruturais serão listadas aqui.
+A estrutura da tese não mudou desde a última sincronização. Nada a fazer.
 
-- **cap1**: 7 seções, 15 subseções, 14 figuras.
-- **cap2**: 6 seções, 6 subseções, 28 figuras.
-- **cap3**: 6 seções, 0 subseções, 19 figuras.
-- **cap4**: 9 seções, 17 subseções, 49 figuras.
+### cap1
+
+_Sem mudanças estruturais._
+
+### cap2
+
+_Sem mudanças estruturais._
+
+### cap3
+
+_Sem mudanças estruturais._
+
+### cap4
+
+_Sem mudanças estruturais._
