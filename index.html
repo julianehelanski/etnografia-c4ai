@@ -859,10 +859,15 @@ grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
 grad.append("stop").attr("offset","100%").attr("stop-color",d=>ncol(d.target));
 const link=g.append("g").attr("fill","none")
   .selectAll("path").data(links).join("path")
-  .attr("stroke",(d,i)=>"url(#lg"+i+")")
   .attr("stroke-width",d=>.5+d._weight*.5)
   .attr("stroke-opacity",.5)
   .attr("stroke-linecap","round");
+// arestas monocromáticas (fonte e destino com a mesma cor) usam traço sólido — visual
+// idêntico ao gradiente, mas sem custo de endpoint por quadro. Só as bicolores usam gradiente.
+function paintLinks(){link.attr("stroke",(d,i)=>ncol(d.source)===ncol(d.target)?ncol(d.source):"url(#lg"+i+")");}
+let gradTick;
+function refreshGradTick(){gradTick=grad.filter(d=>ncol(d.source)!==ncol(d.target));}
+paintLinks();refreshGradTick();
 
 const gGlow=g.append("g").attr("class","glows");
 const glowGrad=defs.selectAll("radialGradient.glowg").data(nodes).join("radialGradient")
@@ -942,7 +947,7 @@ sim.on("tick",()=>{
   // territórios (hull+curva) e gradientes: throttle p/ ~20fps em movimento, sempre ao assentar
   if((_tickN++ % 3)===0 || a<=0.05){
     updateTerritories();
-    grad.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+    gradTick.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
   }
   link.attr("d",hyphaPath);
   node.attr("transform",d=>`translate(${d.x},${d.y})`);
@@ -971,6 +976,7 @@ function setMode(m){
   grad.selectAll("stop").remove();
   grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
   grad.append("stop").attr("offset","100%").attr("stop-color",d=>ncol(d.target));
+  paintLinks();refreshGradTick();
   applyClusterForce();
   sim.alpha(.85).restart();
 }
