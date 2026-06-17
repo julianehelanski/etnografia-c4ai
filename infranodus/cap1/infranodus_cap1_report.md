@@ -95,19 +95,19 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 |---|-------|-------------|----------------|-------|
 | 1 | `cientifico` | 114 | 98 | +16 |
 | 2 | `momento` | 128 | 117 | +11 |
-| 3 | `mobiliza` | 129 | 118 | +11 |
-| 4 | `computacional` | 110 | 101 | +9 |
-| 5 | `funcionam` | 122 | 114 | +8 |
-| 6 | `manifesta` | 82 | 75 | +7 |
-| 7 | `condicoes` | 107 | 100 | +7 |
+| 3 | `computacional` | 109 | 101 | +8 |
+| 4 | `mobiliza` | 126 | 118 | +8 |
+| 5 | `manifesta` | 82 | 75 | +7 |
+| 6 | `conexoes` | 118 | 111 | +7 |
+| 7 | `funcionam` | 121 | 114 | +7 |
 | 8 | `social` | 153 | 146 | +7 |
 | 9 | `infraestrutura` | 73 | 67 | +6 |
-| 10 | `presenca` | 91 | 85 | +6 |
-| 11 | `diagrama` | 101 | 95 | +6 |
+| 10 | `condicoes` | 106 | 100 | +6 |
+| 11 | `tecnica` | 127 | 121 | +6 |
 | 12 | `inscricao` | 24 | 19 | +5 |
 | 13 | `actante` | 45 | 40 | +5 |
 | 14 | `hinterland` | 51 | 46 | +5 |
-| 15 | `problema` | 117 | 112 | +5 |
+| 15 | `presenca` | 90 | 85 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -143,50 +143,50 @@ vezes.
 |---|---------|---------|------|------------------|
 | 1 | `ausencia` | `manifesta` | 0.871 | 57 |
 | 2 | `artificial` | `inteligencia` | 0.858 | 261 |
-| 3 | `existencias` | `parciais` | 0.819 | 72 |
+| 3 | `parciais` | `existencias` | 0.819 | 72 |
 | 4 | `existencia` | `parcial` | 0.747 | 61 |
 | 5 | `ator` | `teoria` | 0.719 | 89 |
-| 6 | `agencia` | `distribuida` | 0.717 | 50 |
-| 7 | `manifesta` | `otherness` | 0.702 | 35 |
-| 8 | `ausencia` | `presenca` | 0.692 | 34 |
-| 9 | `conexao` | `parcial` | 0.634 | 40 |
+| 6 | `distribuida` | `agencia` | 0.717 | 50 |
+| 7 | `otherness` | `manifesta` | 0.702 | 35 |
+| 8 | `presenca` | `ausencia` | 0.692 | 34 |
+| 9 | `parcial` | `conexao` | 0.634 | 40 |
 | 10 | `tecnico` | `letramento` | 0.628 | 31 |
 | 11 | `heterogeneos` | `materiais` | 0.607 | 33 |
 | 12 | `computacional` | `infraestrutura` | 0.604 | 32 |
 | 13 | `modelo` | `linguagem` | 0.600 | 84 |
-| 14 | `ausencia` | `otherness` | 0.598 | 26 |
-| 15 | `manifesta` | `presenca` | 0.591 | 20 |
-| 16 | `ciencia` | `sociais` | 0.572 | 84 |
-| 17 | `analise` | `textual` | 0.555 | 50 |
+| 14 | `otherness` | `ausencia` | 0.598 | 26 |
+| 15 | `presenca` | `manifesta` | 0.591 | 20 |
+| 16 | `sociais` | `ciencia` | 0.572 | 84 |
+| 17 | `textual` | `analise` | 0.555 | 50 |
 | 18 | `cientista` | `computacao` | 0.550 | 22 |
 | 19 | `possibilidade` | `condicao` | 0.550 | 21 |
-| 20 | `etnografia` | `tecno` | 0.543 | 63 |
+| 20 | `tecno` | `etnografia` | 0.543 | 63 |
 | 21 | `figuracao` | `textil` | 0.540 | 36 |
 | 22 | `principio` | `simetria` | 0.540 | 15 |
-| 23 | `otherness` | `presenca` | 0.538 | 20 |
-| 24 | `condicoes` | `materiais` | 0.532 | 24 |
+| 23 | `presenca` | `otherness` | 0.538 | 20 |
+| 24 | `materiais` | `condicoes` | 0.532 | 24 |
 | 25 | `estudos` | `tecnologia` | 0.526 | 23 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (55 termos): metodo, latour, corte, gesto, strathern, haraway
-- **Tópico 2** (29 termos): campo, objeto, modelo, parte, claude, escrita
-- **Tópico 3** (25 termos): pesquisa, artificial, inteligencia, pratica, conhecimento, materiais
-- **Tópico 4** (21 termos): rede, ator, analise, pesquisador, teoria, actante
-- **Tópico 5** (19 termos): humano, relacao, parcial, maquina, agencia, existencia
-- **Tópico 6** (17 termos): ciencia, dado, sociais, tecnologia, laboratorio, tecnico
-- **Tópico 7** (9 termos): etnografia, descricao, torna, possivel, condicao, possibilidade
+- **Tópico 1** (52 termos): metodo, latour, corte, gesto, strathern, haraway
+- **Tópico 2** (26 termos): etnografia, campo, objeto, descricao, parte, claude
+- **Tópico 3** (22 termos): rede, ator, analise, pesquisador, teoria, actante
+- **Tópico 4** (21 termos): pesquisa, artificial, inteligencia, pratica, conhecimento, materiais
+- **Tópico 5** (19 termos): ciencia, dado, sociais, lugar, spira, tecnologia
+- **Tópico 6** (19 termos): humano, relacao, parcial, maquina, agencia, existencia
+- **Tópico 7** (16 termos): modelo, inscricao, tecnociencia, linguagem, infraestrutura, cadeia
 - **Tópico 8** (5 termos): hinterland, otherness, ausencia, manifesta, presenca
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 3** [pesquisa, artificial, inteligencia] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.4168
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 3** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.4516
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.5100
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 4** [rede, ator, analise] — densidade ponderada de ligação = 0.5610
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 2** [campo, objeto, modelo] — densidade ponderada de ligação = 0.6019
-- Lacuna entre **Tópico 2** [campo, objeto, modelo] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.6552
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 5** [ciencia, dado, sociais] — densidade ponderada de ligação = 0.3259
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 4** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.5394
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 3** [rede, ator, analise] — densidade ponderada de ligação = 0.5726
+- Lacuna entre **Tópico 3** [rede, ator, analise] e **Tópico 5** [ciencia, dado, sociais] — densidade ponderada de ligação = 0.6651
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 2** [etnografia, campo, objeto] — densidade ponderada de ligação = 0.8062
+- Lacuna entre **Tópico 3** [rede, ator, analise] e **Tópico 4** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.8398
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O núcleo do capítulo gira em torno de um eixo
