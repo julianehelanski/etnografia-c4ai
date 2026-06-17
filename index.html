@@ -25,8 +25,14 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #title-bar{position:fixed;top:1.5rem;left:1.5rem;z-index:5;pointer-events:none}
 #title-bar h2{font-family:'CMU Serif',serif;font-style:normal;font-weight:300;font-size:.72rem;color:#aaa8a2;line-height:1.6;letter-spacing:-.005em}
 #title-bar p{font-size:.55rem;color:#c0beb8;letter-spacing:.12em;text-transform:uppercase;margin-top:.3rem}
-#panel{position:fixed;top:0;right:-43%;width:42%;height:100vh;background:rgba(255,255,255,.98);border-left:1px solid #e0deda;z-index:50;transition:right .5s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:3rem 2.2rem 3rem}
-#panel.open{right:0}
+#panel{position:fixed;top:0;right:0;width:var(--panel-w,42%);height:100vh;background:rgba(255,255,255,.98);border-left:1px solid #e0deda;z-index:50;transform:translateX(100%);transition:transform .5s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:3rem 2.2rem 3rem}
+#panel.open{transform:translateX(0)}
+#panel.resizing{transition:none}
+#panel.resizing ~ #lang-btn{transition:none}
+#panel-grip{display:none;position:fixed;top:0;height:100vh;width:11px;left:calc(100% - var(--panel-w));z-index:51;cursor:ew-resize;touch-action:none}
+#panel-grip::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3px;height:46px;border-radius:3px;background:#c0beb8;transition:background .2s,height .2s}
+#panel-grip:hover::before,#panel-grip.active::before{background:#7a5a72;height:64px}
+#panel.open ~ #panel-grip{display:block}
 #pcl{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;color:#c0beb8;font-family:'CMU Typewriter Text',monospace;font-size:.7rem;cursor:pointer;letter-spacing:.1em}
 #pcl:hover{color:#444}
 #pbadge{font-family:'CMU Typewriter Text',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid #e0deda;display:inline-block;padding:.2rem .55rem;margin-bottom:1.2rem}
@@ -169,7 +175,7 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .fig-mermaid-link a:hover{text-decoration:underline}
 
 /* ═══════════ CARTOGRAFIA — reskin de carta antiga (papel envelhecido) ═══════════ */
-:root{--ink:#243352;--ink-soft:#5b6480;--parch:#f8e2ec;--parch-2:#fdf3f8;--rule:#a386b8;--rule-soft:#cdb6da;--gold:#ef9f2c}
+:root{--ink:#243352;--ink-soft:#5b6480;--parch:#f8e2ec;--parch-2:#fdf3f8;--rule:#a386b8;--rule-soft:#cdb6da;--gold:#ef9f2c;--panel-w:42%}
 
 /* textura de papel + vinheta */
 #paper-tex{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;mix-blend-mode:multiply;
@@ -402,7 +408,7 @@ details.toc-sub>p{color:#2a2a2a!important}
 .kw-block .kw-line{margin:.1rem 0}
 .kw-block .kw-line+.kw-line{margin-top:.55rem;padding-top:.5rem;border-top:1px dashed #e7dff0}
 #lang-btn{position:fixed;top:1rem;right:1.2rem;z-index:60;font-family:'CMU Typewriter Text',monospace;font-size:.62rem;padding:.34rem .62rem;background:rgba(253,243,248,.95);border:1px solid #d8c0d0;border-radius:999px;cursor:pointer;color:#5b3a52;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:right .5s cubic-bezier(.16,1,.3,1)}
-#panel.open ~ #lang-btn{right:calc(42% + 1.2rem)}
+#panel.open ~ #lang-btn{right:calc(var(--panel-w) + 1.2rem)}
 #pbody .toc-head{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody details.toc-sec>summary{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody details.toc-sub>summary{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody .toc-body,#pbody .toc-body p,#pbody .toc-body li{font-family:'CMU Serif',serif!important;font-size:inherit!important}
 </style>
 </head>
@@ -441,6 +447,7 @@ details.toc-sub>p{color:#2a2a2a!important}
   <div id="ptitle"></div>
   <div id="pbody"></div>
 </div>
+<div id="panel-grip" title="Arraste para ajustar a largura do painel"></div>
 <div id="legend">
   <div class="li">apresentação</div>
   <div class="li">capítulo 1 · método</div>
@@ -985,6 +992,45 @@ function showPanel(d){
 }
 
 document.getElementById("pcl").onclick=()=>document.getElementById("panel").classList.remove("open");
+
+/* painel redimensionável: arraste a alça da borda esquerda para abrir mais à esquerda */
+(function(){
+  var grip=document.getElementById("panel-grip");
+  var panel=document.getElementById("panel");
+  var root=document.documentElement;
+  if(!grip||!panel)return;
+  var MIN=28,MAX=92; /* limites de largura em % da janela */
+  try{var saved=localStorage.getItem("panelW");if(saved)root.style.setProperty("--panel-w",saved);}catch(e){}
+  var dragging=false,last="";
+  function apply(clientX){
+    var vw=window.innerWidth;
+    var pct=(vw-clientX)/vw*100;
+    pct=Math.max(MIN,Math.min(MAX,pct));
+    last=pct.toFixed(1)+"%";
+    root.style.setProperty("--panel-w",last);
+  }
+  function start(clientX,e){
+    dragging=true;last="";
+    panel.classList.add("resizing");grip.classList.add("active");
+    document.body.style.userSelect="none";document.body.style.cursor="ew-resize";
+    if(e)e.preventDefault();
+  }
+  function end(){
+    if(!dragging)return;
+    dragging=false;
+    panel.classList.remove("resizing");grip.classList.remove("active");
+    document.body.style.userSelect="";document.body.style.cursor="";
+    if(last){try{localStorage.setItem("panelW",last);}catch(e){}}
+  }
+  grip.addEventListener("mousedown",function(e){start(e.clientX,e);});
+  window.addEventListener("mousemove",function(e){if(dragging)apply(e.clientX);});
+  window.addEventListener("mouseup",end);
+  grip.addEventListener("touchstart",function(e){start(e.touches[0].clientX,e);},{passive:false});
+  window.addEventListener("touchmove",function(e){if(dragging){apply(e.touches[0].clientX);e.preventDefault();}},{passive:false});
+  window.addEventListener("touchend",end);
+  /* duplo-clique restaura a largura padrão */
+  grip.addEventListener("dblclick",function(){last="42%";root.style.setProperty("--panel-w",last);try{localStorage.setItem("panelW",last);}catch(e){}});
+})();
 
 function showMovimento(id){
   const d=nodes.find(n=>n.id===id);
