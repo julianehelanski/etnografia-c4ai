@@ -716,7 +716,7 @@ const W=window.innerWidth, H=window.innerHeight;
 const svg=d3.select("#graph-svg");
 const g=svg.append("g");
 const defs=svg.append("defs");
-defs.append("filter").attr("id","nodeglow").attr("x","-60%").attr("y","-60%").attr("width","220%").attr("height","220%").append("feGaussianBlur").attr("stdDeviation",2.6);
+/* halos dos nós: gradiente radial estático (substitui o blur gaussiano, sem custo de filtro por quadro) */
 
 /* ═══════════ CARTOGRAFIA: graticule, territórios e rótulos ═══════════ */
 const gGrat=g.append("g").attr("class","graticule");
@@ -865,9 +865,13 @@ const link=g.append("g").attr("fill","none")
   .attr("stroke-linecap","round");
 
 const gGlow=g.append("g").attr("class","glows");
+const glowGrad=defs.selectAll("radialGradient.glowg").data(nodes).join("radialGradient")
+  .attr("class","glowg").attr("id",(d,i)=>"glowg"+i);
+glowGrad.append("stop").attr("class","gs0").attr("offset","0%").attr("stop-color",d=>ncol(d)).attr("stop-opacity",.45);
+glowGrad.append("stop").attr("class","gs1").attr("offset","100%").attr("stop-color",d=>ncol(d)).attr("stop-opacity",0);
 const glow=gGlow.selectAll("circle").data(nodes).join("circle")
-  .attr("r",d=>nr(d)*1.8).attr("fill",d=>ncol(d)).attr("fill-opacity",.26)
-  .attr("filter","url(#nodeglow)").attr("pointer-events","none");
+  .attr("r",d=>nr(d)*2.1).attr("fill",(d,i)=>"url(#glowg"+i+")")
+  .attr("pointer-events","none");
 const node=g.append("g").selectAll("g").data(nodes).join("g")
   .attr("cursor","pointer")
   .call(d3.drag()
@@ -931,16 +935,10 @@ function branchPath(item){
   const cy = py + ny*b.side*len*.55 + uy*len*(b.ang*.5+b.bend);
   return `M${px},${py}Q${cx},${cy} ${ex},${ey}`;
 }
-let _tickN=0,_glowHidden=false;
+let _tickN=0;
 sim.on("tick",()=>{
   const a=sim.alpha();
-  // glow gaussiano (caro): esconde durante o movimento, restaura ao assentar
-  if(a>0.05){
-    if(!_glowHidden){gGlow.attr("display","none");_glowHidden=true;}
-  }else{
-    if(_glowHidden){gGlow.attr("display",null);_glowHidden=false;}
-    glow.attr("cx",d=>d.x).attr("cy",d=>d.y);
-  }
+  glow.attr("cx",d=>d.x).attr("cy",d=>d.y);
   // territórios (hull+curva) e gradientes: throttle p/ ~20fps em movimento, sempre ao assentar
   if((_tickN++ % 3)===0 || a<=0.05){
     updateTerritories();
@@ -967,7 +965,8 @@ function setMode(m){
   buildTerritories(curDefs());
   document.querySelectorAll("#cluster-ctl .cc-seg").forEach(s=>s.classList.toggle("active",s.dataset.mode===MODE));
   rebuildLegend();
-  glow.transition().duration(700).attr("fill",d=>ncol(d));
+  glowGrad.select(".gs0").transition().duration(700).attr("stop-color",d=>ncol(d));
+  glowGrad.select(".gs1").transition().duration(700).attr("stop-color",d=>ncol(d));
   node.select("circle").transition().duration(700).attr("fill",d=>ncol(d));
   grad.selectAll("stop").remove();
   grad.append("stop").attr("offset","0%").attr("stop-color",d=>ncol(d.source));
