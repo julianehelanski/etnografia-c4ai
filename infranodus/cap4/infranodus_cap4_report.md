@@ -13,7 +13,7 @@
 - Tokens significativos: **33,614**
 - Grafo bruto: **6733** nós · **79255** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4114** arestas
-- Tópicos detectados (Louvain): **8**
+- Tópicos detectados (Louvain): **6**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -98,12 +98,12 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 3 | `caixa` | 102 | 86 | +16 |
 | 4 | `parametros` | 113 | 98 | +15 |
 | 5 | `processo` | 105 | 96 | +9 |
-| 6 | `grade` | 144 | 135 | +9 |
-| 7 | `linguagem` | 138 | 130 | +8 |
-| 8 | `publico` | 74 | 67 | +7 |
-| 9 | `processamento` | 77 | 70 | +7 |
-| 10 | `disponivel` | 106 | 101 | +5 |
-| 11 | `audioset` | 111 | 106 | +5 |
+| 6 | `linguagem` | 139 | 130 | +9 |
+| 7 | `grade` | 144 | 135 | +9 |
+| 8 | `processamento` | 78 | 70 | +8 |
+| 9 | `disponivel` | 107 | 101 | +6 |
+| 10 | `tecnica` | 135 | 129 | +6 |
+| 11 | `escolha` | 100 | 95 | +5 |
 | 12 | `carrega` | 115 | 110 | +5 |
 | 13 | `leitor` | 126 | 121 | +5 |
 | 14 | `designa` | 137 | 132 | +5 |
@@ -143,50 +143,48 @@ vezes.
 |---|---------|---------|------|------------------|
 | 1 | `caixa` | `preta` | 0.898 | 87 |
 | 2 | `respiratoria` | `insuficiencia` | 0.841 | 335 |
-| 3 | `centro` | `calculo` | 0.769 | 88 |
+| 3 | `calculo` | `centro` | 0.769 | 88 |
 | 4 | `neural` | `rede` | 0.601 | 130 |
 | 5 | `acao` | `programa` | 0.569 | 38 |
-| 6 | `acustico` | `sinal` | 0.550 | 64 |
-| 7 | `possivel` | `tornou` | 0.549 | 37 |
+| 6 | `sinal` | `acustico` | 0.550 | 64 |
+| 7 | `tornou` | `possivel` | 0.549 | 37 |
 | 8 | `acesso` | `disponivel` | 0.533 | 27 |
 | 9 | `linguagem` | `processamento` | 0.520 | 27 |
-| 10 | `saude` | `publico` | 0.518 | 25 |
+| 10 | `publico` | `saude` | 0.518 | 25 |
 | 11 | `torna` | `visivel` | 0.512 | 60 |
-| 12 | `marcelo` | `entrevista` | 0.507 | 105 |
-| 13 | `acao` | `ciencia` | 0.492 | 24 |
-| 14 | `repositorio` | `publico` | 0.485 | 21 |
+| 12 | `entrevista` | `marcelo` | 0.507 | 105 |
+| 13 | `ciencia` | `acao` | 0.492 | 24 |
+| 14 | `publico` | `repositorio` | 0.485 | 21 |
 | 15 | `ciencia` | `construcao` | 0.483 | 22 |
-| 16 | `pesquisa` | `saude` | 0.477 | 24 |
-| 17 | `producao` | `condicoes` | 0.473 | 51 |
+| 16 | `saude` | `pesquisa` | 0.477 | 24 |
+| 17 | `condicoes` | `producao` | 0.473 | 51 |
 | 18 | `covideiro` | `pandemico` | 0.473 | 100 |
-| 19 | `youtube` | `audioset` | 0.466 | 17 |
-| 20 | `ruido` | `enfermaria` | 0.464 | 58 |
+| 19 | `audioset` | `youtube` | 0.466 | 17 |
+| 20 | `enfermaria` | `ruido` | 0.464 | 58 |
 | 21 | `cadeia` | `translacoes` | 0.456 | 57 |
-| 22 | `medicos` | `fonoaudiologos` | 0.456 | 28 |
-| 23 | `referencia` | `conceito` | 0.436 | 16 |
+| 22 | `fonoaudiologos` | `medicos` | 0.456 | 28 |
+| 23 | `conceito` | `referencia` | 0.436 | 16 |
 | 24 | `modelo` | `treinado` | 0.436 | 46 |
-| 25 | `precisa` | `forca` | 0.424 | 12 |
+| 25 | `forca` | `precisa` | 0.424 | 12 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (40 termos): inscricao, cadeia, objeto, analise, pratica, dispositivo
-- **Tópico 2** (39 termos): covideiro, dado, coleta, actante, ruido, condicoes
-- **Tópico 3** (35 termos): espectrograma, audio, torna, sinal, paciente, visivel
-- **Tópico 4** (31 termos): spira, artigo, projeto, artigos, cientifico, partir
-- **Tópico 5** (10 termos): respiratoria, insuficiencia, covid, deteccao, versao, acustica
-- **Tópico 6** (10 termos): marcelo, condicao, entrevista, campo, pesquisador, processamento
-- **Tópico 7** (8 termos): modelo, treinado, repositorio, computacional, observador, tecnica
-- **Tópico 8** (7 termos): rede, neural, associacao, ator, topologia, nenhuma
+- **Tópico 1** (49 termos): modelo, dado, espectrograma, audio, sinal, partir
+- **Tópico 2** (35 termos): inscricao, cadeia, torna, analise, dispositivo, secao
+- **Tópico 3** (31 termos): spira, artigo, projeto, marcelo, artigos, cientifico
+- **Tópico 4** (29 termos): covideiro, coleta, actante, condicoes, condicao, laboratorio
+- **Tópico 5** (20 termos): respiratoria, insuficiencia, covid, ruido, pacientes, enfermaria
+- **Tópico 6** (16 termos): rede, objeto, pratica, neural, diferentes, distintos
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [covideiro, dado, coleta] e **Tópico 3** [espectrograma, audio, torna] — densidade ponderada de ligação = 0.7429
-- Lacuna entre **Tópico 3** [espectrograma, audio, torna] e **Tópico 5** [respiratoria, insuficiencia, covid] — densidade ponderada de ligação = 0.8486
-- Lacuna entre **Tópico 1** [inscricao, cadeia, objeto] e **Tópico 2** [covideiro, dado, coleta] — densidade ponderada de ligação = 0.8635
-- Lacuna entre **Tópico 3** [espectrograma, audio, torna] e **Tópico 4** [spira, artigo, projeto] — densidade ponderada de ligação = 0.8811
-- Lacuna entre **Tópico 1** [inscricao, cadeia, objeto] e **Tópico 3** [espectrograma, audio, torna] — densidade ponderada de ligação = 0.9036
-- Lacuna entre **Tópico 1** [inscricao, cadeia, objeto] e **Tópico 5** [respiratoria, insuficiencia, covid] — densidade ponderada de ligação = 0.9700
+- Lacuna entre **Tópico 2** [inscricao, cadeia, torna] e **Tópico 5** [respiratoria, insuficiencia, covid] — densidade ponderada de ligação = 0.5900
+- Lacuna entre **Tópico 1** [modelo, dado, espectrograma] e **Tópico 4** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.7495
+- Lacuna entre **Tópico 1** [modelo, dado, espectrograma] e **Tópico 2** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.8595
+- Lacuna entre **Tópico 1** [modelo, dado, espectrograma] e **Tópico 5** [respiratoria, insuficiencia, covid] — densidade ponderada de ligação = 0.9684
+- Lacuna entre **Tópico 2** [inscricao, cadeia, torna] e **Tópico 4** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.9734
+- Lacuna entre **Tópico 1** [modelo, dado, espectrograma] e **Tópico 3** [spira, artigo, projeto] — densidade ponderada de ligação = 0.9908
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap4.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
