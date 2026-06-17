@@ -13,7 +13,7 @@
 - Tokens significativos: **33,614**
 - Grafo bruto: **6733** nós · **79255** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4114** arestas
-- Tópicos detectados (Louvain): **6**
+- Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -102,9 +102,9 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 7 | `grade` | 144 | 135 | +9 |
 | 8 | `processamento` | 78 | 70 | +8 |
 | 9 | `disponivel` | 107 | 101 | +6 |
-| 10 | `publico` | 72 | 67 | +5 |
-| 11 | `escolha` | 100 | 95 | +5 |
-| 12 | `carrega` | 115 | 110 | +5 |
+| 10 | `carrega` | 116 | 110 | +6 |
+| 11 | `tecnica` | 135 | 129 | +6 |
+| 12 | `publico` | 72 | 67 | +5 |
 | 13 | `leitor` | 126 | 121 | +5 |
 | 14 | `designa` | 137 | 132 | +5 |
 | 15 | `ciencia` | 149 | 144 | +5 |
@@ -141,50 +141,52 @@ vezes.
 
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
-| 1 | `preta` | `caixa` | 0.898 | 87 |
-| 2 | `respiratoria` | `insuficiencia` | 0.841 | 335 |
-| 3 | `calculo` | `centro` | 0.769 | 88 |
-| 4 | `rede` | `neural` | 0.601 | 130 |
-| 5 | `programa` | `acao` | 0.569 | 38 |
-| 6 | `acustico` | `sinal` | 0.550 | 64 |
-| 7 | `tornou` | `possivel` | 0.549 | 37 |
+| 1 | `caixa` | `preta` | 0.898 | 87 |
+| 2 | `insuficiencia` | `respiratoria` | 0.841 | 335 |
+| 3 | `centro` | `calculo` | 0.769 | 88 |
+| 4 | `neural` | `rede` | 0.601 | 130 |
+| 5 | `acao` | `programa` | 0.569 | 38 |
+| 6 | `sinal` | `acustico` | 0.550 | 64 |
+| 7 | `possivel` | `tornou` | 0.549 | 37 |
 | 8 | `acesso` | `disponivel` | 0.533 | 27 |
-| 9 | `processamento` | `linguagem` | 0.520 | 27 |
+| 9 | `linguagem` | `processamento` | 0.520 | 27 |
 | 10 | `publico` | `saude` | 0.518 | 25 |
-| 11 | `torna` | `visivel` | 0.512 | 60 |
+| 11 | `visivel` | `torna` | 0.512 | 60 |
 | 12 | `marcelo` | `entrevista` | 0.507 | 105 |
-| 13 | `acao` | `ciencia` | 0.492 | 24 |
+| 13 | `ciencia` | `acao` | 0.492 | 24 |
 | 14 | `publico` | `repositorio` | 0.485 | 21 |
-| 15 | `construcao` | `ciencia` | 0.483 | 22 |
-| 16 | `pesquisa` | `saude` | 0.477 | 24 |
+| 15 | `ciencia` | `construcao` | 0.483 | 22 |
+| 16 | `saude` | `pesquisa` | 0.477 | 24 |
 | 17 | `condicoes` | `producao` | 0.473 | 51 |
 | 18 | `covideiro` | `pandemico` | 0.473 | 100 |
-| 19 | `audioset` | `youtube` | 0.466 | 17 |
+| 19 | `youtube` | `audioset` | 0.466 | 17 |
 | 20 | `enfermaria` | `ruido` | 0.464 | 58 |
-| 21 | `cadeia` | `translacoes` | 0.456 | 57 |
-| 22 | `fonoaudiologos` | `medicos` | 0.456 | 28 |
+| 21 | `translacoes` | `cadeia` | 0.456 | 57 |
+| 22 | `medicos` | `fonoaudiologos` | 0.456 | 28 |
 | 23 | `conceito` | `referencia` | 0.436 | 16 |
-| 24 | `modelo` | `treinado` | 0.436 | 46 |
+| 24 | `treinado` | `modelo` | 0.436 | 46 |
 | 25 | `forca` | `precisa` | 0.424 | 12 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (47 termos): inscricao, cadeia, artigo, torna, cientifico, condicoes
-- **Tópico 2** (35 termos): spira, projeto, marcelo, artigos, analise, partir
-- **Tópico 3** (34 termos): espectrograma, audio, sinal, paciente, arquivo, imagem
-- **Tópico 4** (32 termos): covideiro, modelo, dado, actante, ruido, pandemico
-- **Tópico 5** (17 termos): respiratoria, insuficiencia, coleta, covid, pacientes, condicao
-- **Tópico 6** (15 termos): rede, objeto, pratica, neural, diferentes, distintos
+- **Tópico 1** (35 termos): inscricao, cadeia, torna, analise, dispositivo, secao
+- **Tópico 2** (34 termos): spira, projeto, marcelo, artigos, partir, condicao
+- **Tópico 3** (31 termos): rede, objeto, espectrograma, pratica, imagem, produz
+- **Tópico 4** (27 termos): covideiro, modelo, dado, actante, pandemico, humano
+- **Tópico 5** (19 termos): artigo, coleta, cientifico, condicoes, laboratorio, producao
+- **Tópico 6** (19 termos): audio, ruido, sinal, paciente, arquivo, virus
+- **Tópico 7** (9 termos): respiratoria, insuficiencia, covid, pacientes, deteccao, versao
+- **Tópico 8** (6 termos): preta, caixa, audioset, parametros, youtube, corpus
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [inscricao, cadeia, artigo] e **Tópico 3** [espectrograma, audio, sinal] — densidade ponderada de ligação = 0.7741
-- Lacuna entre **Tópico 1** [inscricao, cadeia, artigo] e **Tópico 5** [respiratoria, insuficiencia, coleta] — densidade ponderada de ligação = 0.7935
-- Lacuna entre **Tópico 2** [spira, projeto, marcelo] e **Tópico 3** [espectrograma, audio, sinal] — densidade ponderada de ligação = 0.8202
-- Lacuna entre **Tópico 3** [espectrograma, audio, sinal] e **Tópico 5** [respiratoria, insuficiencia, coleta] — densidade ponderada de ligação = 0.8997
-- Lacuna entre **Tópico 3** [espectrograma, audio, sinal] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.9182
-- Lacuna entre **Tópico 1** [inscricao, cadeia, artigo] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.9581
+- Lacuna entre **Tópico 3** [rede, objeto, espectrograma] e **Tópico 5** [artigo, coleta, cientifico] — densidade ponderada de ligação = 0.7165
+- Lacuna entre **Tópico 3** [rede, objeto, espectrograma] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.8375
+- Lacuna entre **Tópico 2** [spira, projeto, marcelo] e **Tópico 3** [rede, objeto, espectrograma] — densidade ponderada de ligação = 0.8861
+- Lacuna entre **Tópico 1** [inscricao, cadeia, torna] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.9217
+- Lacuna entre **Tópico 1** [inscricao, cadeia, torna] e **Tópico 3** [rede, objeto, espectrograma] — densidade ponderada de ligação = 1.0461
+- Lacuna entre **Tópico 1** [inscricao, cadeia, torna] e **Tópico 5** [artigo, coleta, cientifico] — densidade ponderada de ligação = 1.1519
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap4.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
