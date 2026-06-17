@@ -51,7 +51,7 @@ def parse_outline(tex: str) -> list[dict]:
             break
         kind = m.group(1)
         arg, nxt = _match_brace_arg(tex, m.end() - 1)
-        title = esc(clean_title(arg))
+        title = clean_title(arg)
         if not title:
             i = nxt
             continue
@@ -81,7 +81,7 @@ def main() -> int:
             continue
         tex = src.read_text(encoding="utf-8")
         outline = parse_outline(tex)
-        figs = [esc(clean_title(c)) for c in _commands(tex, "caption")]
+        figs = [clean_title(c) for c in _commands(tex, "caption")]
         figs = [f for f in figs if f]
         if outline or figs:
             data[NODE_ID[slug]] = {"secs": outline, "figs": figs}
