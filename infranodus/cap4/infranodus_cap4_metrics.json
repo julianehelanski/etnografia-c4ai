@@ -133,15 +133,15 @@
   "top_terms_pagerank": [
     {
       "term": "spira",
-      "pagerank": 0.039711641642817624
+      "pagerank": 0.039711641642817604
     },
     {
       "term": "covideiro",
-      "pagerank": 0.02208735787148581
+      "pagerank": 0.022087357871485802
     },
     {
       "term": "inscricao",
-      "pagerank": 0.02099483501603673
+      "pagerank": 0.020994835016036738
     },
     {
       "term": "cadeia",
@@ -149,27 +149,27 @@
     },
     {
       "term": "artigo",
-      "pagerank": 0.017314270707816035
+      "pagerank": 0.017314270707816028
     },
     {
       "term": "rede",
-      "pagerank": 0.016672166517738306
+      "pagerank": 0.016672166517738313
     },
     {
       "term": "objeto",
-      "pagerank": 0.015659729326877377
+      "pagerank": 0.015659729326877387
     },
     {
       "term": "respiratoria",
-      "pagerank": 0.01484664692991184
+      "pagerank": 0.014846646929911837
     },
     {
       "term": "projeto",
-      "pagerank": 0.01436230703739612
+      "pagerank": 0.014362307037396117
     },
     {
       "term": "modelo",
-      "pagerank": 0.01433324621819314
+      "pagerank": 0.014333246218193143
     },
     {
       "term": "insuficiencia",
@@ -177,11 +177,11 @@
     },
     {
       "term": "dado",
-      "pagerank": 0.013874322277539144
+      "pagerank": 0.013874322277539142
     },
     {
       "term": "marcelo",
-      "pagerank": 0.013641604648687135
+      "pagerank": 0.013641604648687133
     },
     {
       "term": "espectrograma",
@@ -189,15 +189,15 @@
     },
     {
       "term": "coleta",
-      "pagerank": 0.010848775063485673
+      "pagerank": 0.010848775063485668
     },
     {
       "term": "artigos",
-      "pagerank": 0.010405683885236862
+      "pagerank": 0.010405683885236858
     },
     {
       "term": "actante",
-      "pagerank": 0.009787190024962887
+      "pagerank": 0.009787190024962889
     },
     {
       "term": "audio",
@@ -205,11 +205,11 @@
     },
     {
       "term": "ruido",
-      "pagerank": 0.009142060865984238
+      "pagerank": 0.009142060865984236
     },
     {
       "term": "torna",
-      "pagerank": 0.008813060027358734
+      "pagerank": 0.008813060027358733
     },
     {
       "term": "covid",
@@ -217,11 +217,11 @@
     },
     {
       "term": "sinal",
-      "pagerank": 0.008708361053628906
+      "pagerank": 0.00870836105362891
     },
     {
       "term": "pacientes",
-      "pagerank": 0.008384169829099872
+      "pagerank": 0.00838416982909987
     },
     {
       "term": "partir",
@@ -229,11 +229,11 @@
     },
     {
       "term": "condicoes",
-      "pagerank": 0.008343642477509775
+      "pagerank": 0.008343642477509773
     },
     {
       "term": "analise",
-      "pagerank": 0.008304728705937282
+      "pagerank": 0.008304728705937278
     },
     {
       "term": "pratica",
@@ -241,15 +241,15 @@
     },
     {
       "term": "cientifico",
-      "pagerank": 0.008297083353827936
+      "pagerank": 0.008297083353827932
     },
     {
       "term": "dispositivo",
-      "pagerank": 0.007834217752759932
+      "pagerank": 0.007834217752759928
     },
     {
       "term": "condicao",
-      "pagerank": 0.00777582283176887
+      "pagerank": 0.007775822831768868
     }
   ],
   "top_terms_betweenness": [
@@ -337,9 +337,9 @@
   "underrated_by_frequency": [
     {
       "term": "preta",
-      "degree_rank": 93,
+      "degree_rank": 92,
       "pagerank_rank": 74,
-      "shift": 19
+      "shift": 18
     },
     {
       "term": "escala",
@@ -372,6 +372,12 @@
       "shift": 9
     },
     {
+      "term": "processamento",
+      "degree_rank": 78,
+      "pagerank_rank": 70,
+      "shift": 8
+    },
+    {
       "term": "linguagem",
       "degree_rank": 138,
       "pagerank_rank": 130,
@@ -379,20 +385,20 @@
     },
     {
       "term": "publico",
-      "degree_rank": 74,
+      "degree_rank": 73,
       "pagerank_rank": 67,
-      "shift": 7
-    },
-    {
-      "term": "processamento",
-      "degree_rank": 76,
-      "pagerank_rank": 70,
       "shift": 6
     },
     {
       "term": "disponivel",
-      "degree_rank": 106,
+      "degree_rank": 107,
       "pagerank_rank": 101,
+      "shift": 6
+    },
+    {
+      "term": "escolha",
+      "degree_rank": 100,
+      "pagerank_rank": 95,
       "shift": 5
     },
     {
@@ -418,18 +424,12 @@
       "degree_rank": 149,
       "pagerank_rank": 144,
       "shift": 5
-    },
-    {
-      "term": "tecnica",
-      "degree_rank": 133,
-      "pagerank_rank": 129,
-      "shift": 4
     }
   ],
   "top_npmi_pairs": [
     {
-      "a": "caixa",
-      "b": "preta",
+      "a": "preta",
+      "b": "caixa",
       "npmi": 0.8977175886235516,
       "cooccurrence_weight": 87
     },
@@ -446,20 +446,20 @@
       "cooccurrence_weight": 88
     },
     {
-      "a": "neural",
-      "b": "rede",
+      "a": "rede",
+      "b": "neural",
       "npmi": 0.6005578082750794,
       "cooccurrence_weight": 130
     },
     {
-      "a": "acao",
-      "b": "programa",
+      "a": "programa",
+      "b": "acao",
       "npmi": 0.5687491625085699,
       "cooccurrence_weight": 38
     },
     {
-      "a": "acustico",
-      "b": "sinal",
+      "a": "sinal",
+      "b": "acustico",
       "npmi": 0.5499978907921758,
       "cooccurrence_weight": 64
     },
@@ -470,32 +470,32 @@
       "cooccurrence_weight": 37
     },
     {
-      "a": "disponivel",
-      "b": "acesso",
+      "a": "acesso",
+      "b": "disponivel",
       "npmi": 0.5328515035782712,
       "cooccurrence_weight": 27
     },
     {
-      "a": "processamento",
-      "b": "linguagem",
+      "a": "linguagem",
+      "b": "processamento",
       "npmi": 0.5199752429303132,
       "cooccurrence_weight": 27
     },
     {
-      "a": "saude",
-      "b": "publico",
+      "a": "publico",
+      "b": "saude",
       "npmi": 0.5177911028179706,
       "cooccurrence_weight": 25
     },
     {
-      "a": "visivel",
-      "b": "torna",
+      "a": "torna",
+      "b": "visivel",
       "npmi": 0.5118292855404428,
       "cooccurrence_weight": 60
     },
     {
-      "a": "entrevista",
-      "b": "marcelo",
+      "a": "marcelo",
+      "b": "entrevista",
       "npmi": 0.5068600113717111,
       "cooccurrence_weight": 105
     },
@@ -506,8 +506,8 @@
       "cooccurrence_weight": 24
     },
     {
-      "a": "repositorio",
-      "b": "publico",
+      "a": "publico",
+      "b": "repositorio",
       "npmi": 0.4853552916701658,
       "cooccurrence_weight": 21
     },
@@ -518,20 +518,20 @@
       "cooccurrence_weight": 22
     },
     {
-      "a": "saude",
-      "b": "pesquisa",
+      "a": "pesquisa",
+      "b": "saude",
       "npmi": 0.477128624344721,
       "cooccurrence_weight": 24
     },
     {
-      "a": "condicoes",
-      "b": "producao",
+      "a": "producao",
+      "b": "condicoes",
       "npmi": 0.473391969023026,
       "cooccurrence_weight": 51
     },
     {
-      "a": "pandemico",
-      "b": "covideiro",
+      "a": "covideiro",
+      "b": "pandemico",
       "npmi": 0.4726692816729293,
       "cooccurrence_weight": 100
     },
@@ -560,20 +560,20 @@
       "cooccurrence_weight": 28
     },
     {
-      "a": "conceito",
-      "b": "referencia",
+      "a": "referencia",
+      "b": "conceito",
       "npmi": 0.4357056653781252,
       "cooccurrence_weight": 16
     },
     {
-      "a": "modelo",
-      "b": "treinado",
+      "a": "treinado",
+      "b": "modelo",
       "npmi": 0.43556245799300414,
       "cooccurrence_weight": 46
     },
     {
-      "a": "forca",
-      "b": "precisa",
+      "a": "precisa",
+      "b": "forca",
       "npmi": 0.4243967430655054,
       "cooccurrence_weight": 12
     }
@@ -581,68 +581,19 @@
   "communities": [
     {
       "id": 0,
-      "size": 34,
-      "label": [
-        "covideiro",
-        "modelo",
-        "dado",
-        "actante",
-        "ruido",
-        "pandemico",
-        "enfermaria",
-        "humano"
-      ],
-      "members": [
-        "acao",
-        "actante",
-        "ambiente",
-        "antiprograma",
-        "artificial",
-        "ciencia",
-        "computacional",
-        "configuracao",
-        "conjunto",
-        "construcao",
-        "contexto",
-        "controles",
-        "covideiro",
-        "dado",
-        "diferenca",
-        "enfermaria",
-        "fonoaudiologos",
-        "hospital",
-        "humano",
-        "inscrito",
-        "medicos",
-        "modelo",
-        "mundo",
-        "observador",
-        "pandemico",
-        "pessoas",
-        "produziu",
-        "programa",
-        "repositorio",
-        "ruido",
-        "tecnica",
-        "treinado",
-        "treinamento",
-        "voz"
-      ]
-    },
-    {
-      "id": 1,
-      "size": 33,
+      "size": 35,
       "label": [
         "inscricao",
         "cadeia",
         "torna",
+        "analise",
         "dispositivo",
         "secao",
         "ponto",
-        "visivel",
-        "latour"
+        "visivel"
       ],
       "members": [
+        "analise",
         "argumento",
         "cadeia",
         "codigo",
@@ -662,6 +613,7 @@
         "operacao",
         "painel",
         "parte",
+        "percorre",
         "percurso",
         "ponto",
         "possivel",
@@ -679,86 +631,90 @@
       ]
     },
     {
-      "id": 2,
-      "size": 32,
+      "id": 1,
+      "size": 34,
       "label": [
-        "espectrograma",
+        "covideiro",
+        "modelo",
+        "dado",
+        "actante",
         "audio",
-        "sinal",
-        "partir",
-        "paciente",
+        "pandemico",
         "arquivo",
-        "imagem",
-        "produz"
+        "humano"
       ],
       "members": [
-        "acustico",
-        "algoritmo",
-        "aparece",
+        "acao",
+        "actante",
+        "antiprograma",
         "arquivo",
         "audio",
-        "ausencia",
-        "carrega",
-        "celular",
-        "classificacao",
-        "coeficientes",
-        "corpo",
-        "escala",
-        "espectrograma",
-        "fala",
-        "frequencia",
-        "frequencias",
-        "grade",
-        "gravacao",
-        "grupo",
-        "imagem",
-        "microfone",
-        "onda",
-        "paciente",
-        "padrao",
-        "partir",
-        "percorre",
-        "presenca",
-        "produz",
+        "audioset",
+        "ciencia",
+        "computacional",
+        "configuracao",
+        "conjunto",
+        "construcao",
+        "contexto",
+        "corpus",
+        "covideiro",
+        "dado",
+        "diferenca",
+        "hospital",
+        "humano",
+        "inscrito",
+        "modelo",
+        "observador",
+        "pandemico",
+        "parametros",
+        "pessoas",
+        "produziu",
+        "programa",
+        "repositorio",
         "sequencia",
-        "sinal",
+        "tecnica",
+        "treinado",
+        "treinamento",
         "valores",
-        "virus"
+        "voz",
+        "youtube"
       ]
     },
     {
-      "id": 3,
-      "size": 28,
+      "id": 2,
+      "size": 30,
       "label": [
         "spira",
         "projeto",
         "marcelo",
         "artigos",
-        "analise",
+        "partir",
         "dataset",
         "entrevista",
-        "centro"
+        "sistema"
       ],
       "members": [
         "acesso",
-        "analise",
         "arquitetura",
         "artigos",
-        "calculo",
         "campo",
-        "centro",
         "dataset",
         "descricao",
         "disponivel",
         "entrevista",
         "fapesp",
         "finger",
+        "fonoaudiologos",
+        "gravacao",
+        "grupo",
         "instituicao",
         "larissa",
         "linguagem",
         "marcelo",
+        "medicos",
         "original",
         "pandemia",
+        "partir",
         "pesquisa",
         "pesquisador",
         "processamento",
@@ -771,45 +727,119 @@
       ]
     },
     {
-      "id": 4,
-      "size": 21,
+      "id": 3,
+      "size": 25,
       "label": [
-        "artigo",
+        "respiratoria",
+        "insuficiencia",
         "coleta",
-        "cientifico",
-        "condicoes",
-        "condicao",
-        "laboratorio",
-        "producao",
-        "resultado"
+        "covid",
+        "ruido",
+        "sinal",
+        "pacientes",
+        "condicao"
       ],
       "members": [
-        "acuracia",
-        "aliados",
-        "artigo",
-        "cientifico",
-        "circular",
+        "acustica",
+        "acustico",
+        "ambiente",
+        "artificial",
+        "causas",
+        "celular",
         "clinica",
         "coleta",
         "condicao",
+        "controles",
+        "corpo",
+        "covid",
+        "deteccao",
+        "enfermaria",
+        "fala",
+        "hospitais",
+        "insuficiencia",
+        "paciente",
+        "pacientes",
+        "precisao",
+        "protocolo",
+        "respiratoria",
+        "ruido",
+        "sinal",
+        "versao"
+      ]
+    },
+    {
+      "id": 4,
+      "size": 21,
+      "label": [
+        "espectrograma",
+        "imagem",
+        "virus",
+        "produz",
+        "aparece",
+        "algoritmo",
+        "coeficientes",
+        "escala"
+      ],
+      "members": [
+        "algoritmo",
+        "aparece",
+        "ausencia",
+        "carrega",
+        "classificacao",
+        "coeficientes",
+        "escala",
+        "espectrograma",
+        "frequencia",
+        "frequencias",
+        "grade",
+        "imagem",
+        "microfone",
+        "nenhum",
+        "onda",
+        "padrao",
+        "padroes",
+        "presenca",
+        "produz",
+        "reconhecer",
+        "virus"
+      ]
+    },
+    {
+      "id": 5,
+      "size": 17,
+      "label": [
+        "artigo",
+        "cientifico",
+        "condicoes",
+        "laboratorio",
+        "centro",
+        "producao",
+        "resultado",
+        "precisamente"
+      ],
+      "members": [
+        "acuracia",
+        "artigo",
+        "calculo",
+        "centro",
+        "cientifico",
+        "circular",
         "condicoes",
         "forca",
         "laboratorio",
         "leitor",
         "movel",
-        "nenhum",
+        "mundo",
         "precisa",
         "precisamente",
-        "precisao",
         "producao",
-        "protocolo",
         "registra",
         "resultado"
       ]
     },
     {
-      "id": 5,
-      "size": 15,
+      "id": 6,
+      "size": 16,
       "label": [
         "rede",
         "objeto",
@@ -821,6 +851,7 @@
         "associacao"
       ],
       "members": [
+        "aliados",
         "associacao",
         "ator",
         "designa",
@@ -839,50 +870,15 @@
       ]
     },
     {
-      "id": 6,
-      "size": 11,
-      "label": [
-        "respiratoria",
-        "insuficiencia",
-        "covid",
-        "pacientes",
-        "deteccao",
-        "versao",
-        "acustica",
-        "causas"
-      ],
-      "members": [
-        "acustica",
-        "causas",
-        "covid",
-        "deteccao",
-        "hospitais",
-        "insuficiencia",
-        "pacientes",
-        "padroes",
-        "reconhecer",
-        "respiratoria",
-        "versao"
-      ]
-    },
-    {
       "id": 7,
-      "size": 6,
+      "size": 2,
       "label": [
         "preta",
-        "caixa",
-        "audioset",
-        "parametros",
-        "youtube",
-        "corpus"
+        "caixa"
       ],
       "members": [
-        "audioset",
         "caixa",
-        "corpus",
-        "parametros",
-        "preta",
-        "youtube"
+        "preta"
       ]
     }
   ],
@@ -890,52 +886,52 @@
     {
       "topic_a": 2,
       "topic_b": 4,
-      "edge_density": 0.6398809523809523
+      "edge_density": 0.7476190476190476
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 3,
+      "edge_density": 0.824
     },
     {
       "topic_a": 0,
       "topic_b": 1,
-      "edge_density": 0.8689839572192514
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 2,
-      "edge_density": 0.8805147058823529
-    },
-    {
-      "topic_a": 2,
-      "topic_b": 3,
-      "edge_density": 0.9252232142857143
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 2,
-      "edge_density": 0.9801136363636364
+      "edge_density": 0.8563025210084033
     },
     {
       "topic_a": 1,
       "topic_b": 4,
-      "edge_density": 1.1645021645021645
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 3,
-      "edge_density": 1.1722689075630253
+      "edge_density": 0.8697478991596639
     },
     {
       "topic_a": 0,
       "topic_b": 4,
-      "edge_density": 1.1778711484593838
-    },
-    {
-      "topic_a": 1,
-      "topic_b": 3,
-      "edge_density": 1.2727272727272727
+      "edge_density": 0.8843537414965986
     },
     {
       "topic_a": 3,
       "topic_b": 4,
-      "edge_density": 1.6139455782312926
+      "edge_density": 0.9333333333333333
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 2,
+      "edge_density": 1.2009803921568627
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 2,
+      "edge_density": 1.2428571428571429
+    },
+    {
+      "topic_a": 2,
+      "topic_b": 3,
+      "edge_density": 1.3253333333333333
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 3,
+      "edge_density": 1.3411764705882352
     }
   ]
 }
