@@ -113,6 +113,10 @@ jobs:
         working-directory: c4ai
         run: python scripts/relatorio_divergencia_tese.py --source-root _tex
 
+      - name: Regenera o documento da tese (resumo · sumário · figuras · tabelas) e reinjeta no index.html
+        working-directory: c4ai
+        run: python infranodus/tese_documento.py --source-root _tex --inject index.html
+
       - name: Commit & push outputs
         working-directory: c4ai
         run: |
