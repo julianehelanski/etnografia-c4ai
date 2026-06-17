@@ -76,18 +76,26 @@ jobs:
             python infranodus/run_all.py --source-root _tex
           fi
 
+      - name: Sincroniza imagens da análise para o site (figuras/)
+        working-directory: c4ai
+        run: python infranodus/sync_site_figuras.py
+
+      - name: Atualiza contagens de palavras-chave no index.html
+        working-directory: c4ai
+        run: python scripts/atualizar_keywords.py _tex
+
       - name: Commit & push outputs
         working-directory: c4ai
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infranodus/
+          git add infranodus/ figuras/ index.html
           if git diff --cached --quiet; then
             echo "Sem mudanças nos outputs da análise."
             exit 0
           fi
           SOURCE_SHA="${{ github.event.client_payload.sha || 'manual' }}"
-          git commit -m "Regenerate text networks from etnografia@${SOURCE_SHA:0:7}"
+          git commit -m "Regenerate networks + site figures/keywords from thesis@${SOURCE_SHA:0:7}"
           # Push retry com backoff exponencial (2s, 4s, 8s, 16s).
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
