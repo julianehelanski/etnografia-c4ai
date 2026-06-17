@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-17 22:40 UTC",
+  "generated": "2026-06-17 23:25 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -9,7 +9,7 @@
         "O patchwork como figuração do método",
         "Existências parciais: quase-máquinas, híbridos e o fazer-com IA",
         "Compostagens: compostar-com e tornar-se-com",
-        "Conclusões parciais: o capítulo como composição"
+        "Arremate: etnografias e compostagens"
       ],
       "subsections": [
         "O que torno presente",
@@ -32,17 +32,16 @@
         "1000015590.pdf",
         "1000015599.pdf",
         "1000015602.pdf",
-        "Nvidia-entrega-openai.jpg",
         "caderno_quadro.jpg",
         "grade_tres_planos.png",
         "infranodus_cap1_focus.png",
         "infranodus_cap1_network.png",
         "infranodus_cap1_pmi.png",
+        "mapa-capitulo1.png",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
         "trajectory_semantic.png",
-        "urdidura-capitulo1-2026-05-12-231748.pdf",
-        "urdidura-capitulo1.png"
+        "urdidura-capitulo1-2026-05-12-231748.pdf"
       ]
     },
     "cap2": {
@@ -95,7 +94,8 @@
     },
     "cap3": {
       "sections": [
-        "Seguindo os atores e fazendo associações",
+        "Do C4AI-IBM à Terra",
+        "Seguindo Fábio e Cláudio: observação, entrevistas e documentos",
         "Criar demanda: a racionalidade de um ecossistema",
         "A trajetória da IBM",
         "As entrevistas com Fábio e Cláudio",
