@@ -11,6 +11,10 @@ name: Analisa capítulos da tese
 on:
   repository_dispatch:
     types: [thesis-updated]
+  # Rede de segurança: roda diariamente e regenera o site SE a tese mudou.
+  # A regeneração é determinística (PYTHONHASHSEED=0), então sem mudança não há commit.
+  schedule:
+    - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
       only:
@@ -22,6 +26,7 @@ on:
     paths:
       - "infranodus/infranodus_cap1.py"
       - "infranodus/tese_network.py"
+      - "infranodus/tese_documento.py"
       - "infranodus/run_all.py"
       - "infranodus/chapters.yml"
       - "infranodus/interpretation_*.md"
@@ -37,6 +42,8 @@ concurrency:
 jobs:
   analyze:
     runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"   # regeneração determinística: o agendamento só commita se a tese mudou
     steps:
       - name: Checkout tecno-etnografia-tese-site
         uses: actions/checkout@v4
