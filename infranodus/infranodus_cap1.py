@@ -657,10 +657,16 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
     H.remove_nodes_from(list(nx.isolates(H)))
     if H.number_of_nodes() == 0:
         return
+    # Legibilidade: mantém só o maior componente conectado (evita que pares
+    # soltos sejam arremessados aos cantos e comprimam o núcleo no centro).
+    comps = sorted(nx.connected_components(H), key=len, reverse=True)
+    if comps:
+        H = H.subgraph(comps[0]).copy()
 
-    pos = nx.spring_layout(H, weight="weight", seed=11,
-                            k=2.8 / np.sqrt(max(H.number_of_nodes(), 1)),
-                            iterations=320)
+    # Layout sem peso (arestas puxam por igual) e bem espalhado, para que os
+    # rótulos não se sobreponham.
+    pos = nx.spring_layout(H, seed=11,
+                           k=0.9, iterations=400)
     node2comm: dict[str, int] = {}
     for i, c in enumerate(comms):
         for n in c:
