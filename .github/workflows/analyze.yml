@@ -84,6 +84,10 @@ jobs:
         working-directory: c4ai
         run: python scripts/atualizar_keywords.py _tex
 
+      - name: Cache-busting das figuras no index.html (versão por conteúdo)
+        working-directory: c4ai
+        run: python scripts/cache_busting_figuras.py
+
       - name: Sumário automático dos capítulos (do .tex para o site)
         working-directory: c4ai
         run: python scripts/sumario_auto.py --source-root _tex
