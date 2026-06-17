@@ -13,7 +13,7 @@
 - Tokens significativos: **17,474**
 - Grafo bruto: **5240** nós · **44940** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2377** arestas
-- Tópicos detectados (Louvain): **9**
+- Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -93,21 +93,21 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `conta` | 111 | 82 | +29 |
-| 2 | `estados` | 86 | 68 | +18 |
-| 3 | `estatistica` | 100 | 83 | +17 |
-| 4 | `escala` | 88 | 75 | +13 |
-| 5 | `pratica` | 129 | 117 | +12 |
-| 6 | `tecnociencia` | 131 | 119 | +12 |
-| 7 | `unidos` | 112 | 101 | +11 |
+| 1 | `conta` | 114 | 82 | +32 |
+| 2 | `estados` | 89 | 68 | +21 |
+| 3 | `estatistica` | 101 | 83 | +18 |
+| 4 | `pratica` | 130 | 117 | +13 |
+| 5 | `escala` | 87 | 75 | +12 |
+| 6 | `unidos` | 112 | 101 | +11 |
+| 7 | `tecnociencia` | 129 | 119 | +10 |
 | 8 | `vida` | 151 | 141 | +10 |
-| 9 | `gesto` | 155 | 146 | +9 |
-| 10 | `computacional` | 89 | 81 | +8 |
+| 9 | `computacional` | 90 | 81 | +9 |
+| 10 | `gesto` | 155 | 146 | +9 |
 | 11 | `lado` | 107 | 100 | +7 |
 | 12 | `translacao` | 116 | 109 | +7 |
 | 13 | `objeto` | 125 | 118 | +7 |
 | 14 | `conjunto` | 160 | 153 | +7 |
-| 15 | `comercial` | 85 | 79 | +6 |
+| 15 | `humano` | 83 | 77 | +6 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -141,52 +141,51 @@ vezes.
 
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
-| 1 | `voz` | `porta` | 0.881 | 68 |
+| 1 | `porta` | `voz` | 0.881 | 68 |
 | 2 | `inteligencia` | `artificial` | 0.871 | 144 |
-| 3 | `estados` | `unidos` | 0.857 | 51 |
-| 4 | `verbal` | `informacao` | 0.855 | 72 |
+| 3 | `unidos` | `estados` | 0.857 | 51 |
+| 4 | `informacao` | `verbal` | 0.855 | 72 |
 | 5 | `anuais` | `relatorios` | 0.786 | 41 |
 | 6 | `codigo` | `aberto` | 0.745 | 48 |
-| 7 | `pinhanez` | `informacao` | 0.731 | 51 |
+| 7 | `informacao` | `pinhanez` | 0.731 | 51 |
 | 8 | `pinhanez` | `verbal` | 0.670 | 36 |
 | 9 | `elaboracao` | `base` | 0.660 | 21 |
-| 10 | `claudio` | `fabio` | 0.616 | 138 |
+| 10 | `fabio` | `claudio` | 0.616 | 138 |
 | 11 | `investigacao` | `historica` | 0.615 | 24 |
 | 12 | `ponto` | `passagem` | 0.592 | 33 |
-| 13 | `elaboracao` | `relatorios` | 0.588 | 20 |
+| 13 | `relatorios` | `elaboracao` | 0.588 | 20 |
 | 14 | `relatorios` | `base` | 0.572 | 18 |
 | 15 | `cientifico` | `producao` | 0.572 | 43 |
-| 16 | `acesso` | `disponivel` | 0.553 | 21 |
-| 17 | `research` | `brasil` | 0.550 | 33 |
+| 16 | `disponivel` | `acesso` | 0.553 | 21 |
+| 17 | `brasil` | `research` | 0.550 | 33 |
 | 18 | `anuais` | `base` | 0.540 | 12 |
-| 19 | `dezembro` | `novembro` | 0.517 | 18 |
+| 19 | `novembro` | `dezembro` | 0.517 | 18 |
 | 20 | `encerramento` | `dezembro` | 0.517 | 34 |
 | 21 | `tecnica` | `comercial` | 0.514 | 16 |
-| 22 | `translacao` | `cadeias` | 0.513 | 15 |
-| 23 | `instituicao` | `multiplicacao` | 0.508 | 30 |
+| 22 | `cadeias` | `translacao` | 0.513 | 15 |
+| 23 | `multiplicacao` | `instituicao` | 0.508 | 30 |
 | 24 | `estatistica` | `foucault` | 0.506 | 14 |
-| 25 | `condicao` | `funcionamento` | 0.500 | 15 |
+| 25 | `funcionamento` | `condicao` | 0.500 | 15 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (40 termos): tecnologia, hollerith, trajetoria, maquina, tabulacao, empresa
-- **Tópico 2** (38 termos): claudio, rede, fabio, seguir, ator, porta
-- **Tópico 3** (30 termos): pesquisa, centro, arranjo, laboratorio, brasil, cientifico
-- **Tópico 4** (29 termos): publico, corporacao, instituicao, infraestrutura, universidade, fapesp
-- **Tópico 5** (13 termos): inteligencia, artificial, ecossistema, inovacao, brasileiro, valor
-- **Tópico 6** (11 termos): modelo, dado, codigo, publicacoes, aberto, negocio
-- **Tópico 7** (8 termos): relatorios, partir, registros, acesso, anuais, elaboracao
-- **Tópico 8** (6 termos): informacao, verbal, pinhanez, gente, dinheiro, projeto
+- **Tópico 1** (39 termos): claudio, rede, fabio, seguir, ator, porta
+- **Tópico 2** (38 termos): tecnologia, hollerith, trajetoria, maquina, tabulacao, empresa
+- **Tópico 3** (38 termos): publico, corporacao, instituicao, infraestrutura, modelo, universidade
+- **Tópico 4** (24 termos): pesquisa, centro, cientifico, relatorios, partir, pesquisador
+- **Tópico 5** (18 termos): inteligencia, artificial, ecossistema, ponto, inovacao, acesso
+- **Tópico 6** (17 termos): arranjo, laboratorio, brasil, encerramento, parte, dezembro
+- **Tópico 7** (6 termos): informacao, verbal, pinhanez, estados, unidos, projeto
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [claudio, rede, fabio] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3178
-- Lacuna entre **Tópico 1** [tecnologia, hollerith, trajetoria] e **Tópico 2** [claudio, rede, fabio] — densidade ponderada de ligação = 0.3243
-- Lacuna entre **Tópico 1** [tecnologia, hollerith, trajetoria] e **Tópico 3** [pesquisa, centro, arranjo] — densidade ponderada de ligação = 0.3500
-- Lacuna entre **Tópico 1** [tecnologia, hollerith, trajetoria] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3962
-- Lacuna entre **Tópico 2** [claudio, rede, fabio] e **Tópico 4** [publico, corporacao, instituicao] — densidade ponderada de ligação = 0.4174
-- Lacuna entre **Tópico 1** [tecnologia, hollerith, trajetoria] e **Tópico 4** [publico, corporacao, instituicao] — densidade ponderada de ligação = 0.4224
+- Lacuna entre **Tópico 2** [tecnologia, hollerith, trajetoria] e **Tópico 4** [pesquisa, centro, cientifico] — densidade ponderada de ligação = 0.3191
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 2** [tecnologia, hollerith, trajetoria] — densidade ponderada de ligação = 0.3279
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3348
+- Lacuna entre **Tópico 2** [tecnologia, hollerith, trajetoria] e **Tópico 5** [inteligencia, artificial, ecossistema] — densidade ponderada de ligação = 0.3743
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 3** [publico, corporacao, instituicao] — densidade ponderada de ligação = 0.3765
+- Lacuna entre **Tópico 2** [tecnologia, hollerith, trajetoria] e **Tópico 3** [publico, corporacao, instituicao] — densidade ponderada de ligação = 0.4211
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap3.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
