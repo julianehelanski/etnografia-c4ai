@@ -930,6 +930,7 @@ sim.on("tick",()=>{
 });
 
 /* ===== alternancia de eixo de agrupamento ===== */
+let lang='pt';
 function rebuildLegend(){
   const LEG={
     cap:[["apresenta\u00e7\u00e3o","#d6489b"],["cap\u00edtulo 1 \u00b7 m\u00e9todo","#56b04a"],["cap\u00edtulo 2 \u00b7 figura\u00e7\u00f5es","#9b59c6"],["cap\u00edtulo 3 \u00b7 C4AI","#ef8a3c"],["cap\u00edtulo 4 \u00b7 SPIRA","#27adc4"]],
@@ -1003,7 +1004,6 @@ document.getElementById("pbody").addEventListener("click",e=>{
   }
 });
 
-let lang='pt';
 function _lbl(d){return (lang==='en'&&nodesEN[d.id]&&nodesEN[d.id].label)?nodesEN[d.id].label:d.label;}
 function applyLang(){
   var EN=(lang==='en');
