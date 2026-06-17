@@ -27,6 +27,9 @@ on:
     paths:
       - "ex_cap*.tex"
       - "**/ex_cap*.tex"
+      # Também dispara quando você adiciona/atualiza figuras, para que o site
+      # ressincronize as imagens (via scripts/sync_tese_figuras.py).
+      - "figuras/**"
 
 jobs:
   dispatch:

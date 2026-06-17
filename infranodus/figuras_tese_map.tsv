@@ -1,0 +1,29 @@
+# Mapa de sincronização: figuras da TESE -> figuras do SITE.
+# Formato (TAB):  <destino no site>\t<origem na tese (glob; '*' cobre timestamps de data)>
+# A cada atualização da tese, scripts/sync_tese_figuras.py copia a origem mais
+# recente que casa com o glob para o destino no site. Acrescente linhas conforme
+# novas figuras passarem a ser exibidas no site (veja docs/sync-figuras-tese.md).
+figuras/Vero_48H_corona_filopodio_1_dentro.jpg	figuras/cap.4/covid/Vero_48H_corona_filopodio_1_dentro.jpg
+figuras/Vero_48H_corona_filopodio_2_dentro.jpg	figuras/cap.4/covid/Vero_48H_corona_filopodio_2_dentro.jpg
+figuras/Vero_72H_corona_filopodio_3_dentro.jpg	figuras/cap.4/covid/Vero_72H_corona_filopodio_3_dentro.jpg
+figuras/cadeia-translacao-condensada-capitulo4-2026-04-15-202330.png	figuras/cap.4/diagramas-mermaid/cadeia-translacao-condensada-capitulo4-*.png
+figuras/cadeia-translacao-spira-2026-03-11-130346.png	figuras/cap.4/diagramas-mermaid/cadeia-translacao-spira-capitulo4-*.png
+figuras/juki_1.jpg	figuras/cap.4/covid/juki_1.jpg
+figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49531042907_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49534865371_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49534865371_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49557550706_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49557550706_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49557550751_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49557550751_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49597020853_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49597020853_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49597519106_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49597519106_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49641177636_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49641177636_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49641177821_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49641177821_o.jpg
+figuras/quadro-analitico-capitulo4-2026-04-15-202321.png	figuras/cap.4/quadro-analitico-capitulo4-*.png
+figuras/rede-sociotecnica-spira-capitulo4-2026-04-15-202334.png	figuras/cap.4/diagramas-mermaid/rede-sociotecnica-spira-capitulo4-*.png
+figuras/spira_cnn_diagrama_real.png	figuras/cap.4/imagem-voz/spira_cnn_diagrama_real.png
+figuras/spira_comparacao_linear_log.png	figuras/cap.4/imagem-voz/spira_comparacao_linear_log.png
+figuras/spira_espectrograma_com_eixos.png	figuras/cap.4/imagem-voz/spira_espectrograma_com_eixos.png
+figuras/spira_espectrograma_sem_legenda.png	figuras/cap.4/imagem-voz/spira_espectrograma_sem_legenda.png
+figuras/spira_paciente_com_eixos.png	figuras/cap.4/imagem-voz/spira_paciente_com_eixos.png
+figuras/spira_waveform_controle.png	figuras/cap.4/imagem-voz/spira_waveform_controle.png
+figuras/spira_waveform_paciente.png	figuras/cap.4/imagem-voz/spira_waveform_paciente.png
+figuras/younesi2024_fig7_filtro_deslizante.png	figuras/cap.4/younesi2024_fig7_filtro_deslizante.png

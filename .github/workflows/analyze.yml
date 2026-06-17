@@ -80,6 +80,10 @@ jobs:
         working-directory: c4ai
         run: python infranodus/sync_site_figuras.py
 
+      - name: Sincroniza figuras de conteúdo da tese para o site (mapa)
+        working-directory: c4ai
+        run: python scripts/sync_tese_figuras.py --source-root _tex
+
       - name: Atualiza contagens de palavras-chave no index.html
         working-directory: c4ai
         run: python scripts/atualizar_keywords.py _tex
