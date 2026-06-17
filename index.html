@@ -972,7 +972,7 @@ function showPanel(d){
   ptitle.style.color=col;
   document.getElementById("pbody").innerHTML=(lang==='en'&&en)?en.content:d.content;
   var _sa=(typeof SUMARIO_AUTO!=='undefined')&&SUMARIO_AUTO[d.id];
-  if(_sa&&_sa.length){var _EN=(lang==='en');var _h=_EN?'Chapter outline · auto-updated from the thesis':'Sumário do capítulo · atualizado da tese';var _html='<p class="toc-head" style="margin-top:1.4rem">'+_h+'</p><ol class="auto-sum">';_sa.forEach(function(se){_html+='<li>'+se.t;if(se.subs&&se.subs.length){_html+='<ul>';se.subs.forEach(function(su){_html+='<li>'+su+'</li>';});_html+='</ul>';}_html+='</li>';});_html+='</ol>';document.getElementById("pbody").innerHTML+=_html;}
+  if(_sa&&_sa.length){var _EN=(lang==='en');var _h=_EN?'Chapter outline · auto-updated from the thesis':'Sumário do capítulo · atualizado da tese';var _html='<div class="auto-sum-box" style="margin:1rem 0;padding:.65rem .9rem;border:1px dashed #d8c0d0;border-radius:8px;background:rgba(253,243,248,.55)"><p class="toc-head" style="margin:0 0 .35rem">'+_h+'</p><ol class="auto-sum" style="margin:0">';_sa.forEach(function(se){_html+='<li>'+se.t;if(se.subs&&se.subs.length){_html+='<ul>';se.subs.forEach(function(su){_html+='<li>'+su+'</li>';});_html+='</ul>';}_html+='</li>';});_html+='</ol></div>';var _pb=document.getElementById("pbody");var _i=_pb.innerHTML.indexOf("</p>");if(_i>=0){_pb.innerHTML=_pb.innerHTML.slice(0,_i+4)+_html+_pb.innerHTML.slice(_i+4);}else{_pb.innerHTML=_html+_pb.innerHTML;}}
   p.classList.add("open");
 }
 
