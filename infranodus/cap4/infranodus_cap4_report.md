@@ -93,21 +93,21 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `preta` | 93 | 74 | +19 |
+| 1 | `preta` | 92 | 74 | +18 |
 | 2 | `escala` | 86 | 69 | +17 |
 | 3 | `caixa` | 102 | 86 | +16 |
-| 4 | `parametros` | 113 | 98 | +15 |
+| 4 | `parametros` | 112 | 98 | +14 |
 | 5 | `processo` | 105 | 96 | +9 |
 | 6 | `grade` | 144 | 135 | +9 |
 | 7 | `linguagem` | 138 | 130 | +8 |
 | 8 | `processamento` | 77 | 70 | +7 |
 | 9 | `disponivel` | 107 | 101 | +6 |
-| 10 | `carrega` | 116 | 110 | +6 |
+| 10 | `tecnica` | 135 | 129 | +6 |
 | 11 | `publico` | 72 | 67 | +5 |
-| 12 | `escolha` | 100 | 95 | +5 |
-| 13 | `leitor` | 126 | 121 | +5 |
-| 14 | `designa` | 137 | 132 | +5 |
-| 15 | `ciencia` | 149 | 144 | +5 |
+| 12 | `leitor` | 126 | 121 | +5 |
+| 13 | `designa` | 137 | 132 | +5 |
+| 14 | `ciencia` | 149 | 144 | +5 |
+| 15 | `escolha` | 99 | 95 | +4 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -146,46 +146,46 @@ vezes.
 | 3 | `centro` | `calculo` | 0.769 | 88 |
 | 4 | `rede` | `neural` | 0.601 | 130 |
 | 5 | `acao` | `programa` | 0.569 | 38 |
-| 6 | `acustico` | `sinal` | 0.550 | 64 |
+| 6 | `sinal` | `acustico` | 0.550 | 64 |
 | 7 | `possivel` | `tornou` | 0.549 | 37 |
 | 8 | `acesso` | `disponivel` | 0.533 | 27 |
 | 9 | `linguagem` | `processamento` | 0.520 | 27 |
 | 10 | `saude` | `publico` | 0.518 | 25 |
-| 11 | `torna` | `visivel` | 0.512 | 60 |
-| 12 | `entrevista` | `marcelo` | 0.507 | 105 |
-| 13 | `ciencia` | `acao` | 0.492 | 24 |
+| 11 | `visivel` | `torna` | 0.512 | 60 |
+| 12 | `marcelo` | `entrevista` | 0.507 | 105 |
+| 13 | `acao` | `ciencia` | 0.492 | 24 |
 | 14 | `publico` | `repositorio` | 0.485 | 21 |
 | 15 | `ciencia` | `construcao` | 0.483 | 22 |
 | 16 | `saude` | `pesquisa` | 0.477 | 24 |
 | 17 | `producao` | `condicoes` | 0.473 | 51 |
-| 18 | `covideiro` | `pandemico` | 0.473 | 100 |
+| 18 | `pandemico` | `covideiro` | 0.473 | 100 |
 | 19 | `audioset` | `youtube` | 0.466 | 17 |
-| 20 | `enfermaria` | `ruido` | 0.464 | 58 |
+| 20 | `ruido` | `enfermaria` | 0.464 | 58 |
 | 21 | `cadeia` | `translacoes` | 0.456 | 57 |
-| 22 | `medicos` | `fonoaudiologos` | 0.456 | 28 |
+| 22 | `fonoaudiologos` | `medicos` | 0.456 | 28 |
 | 23 | `conceito` | `referencia` | 0.436 | 16 |
 | 24 | `modelo` | `treinado` | 0.436 | 46 |
-| 25 | `forca` | `precisa` | 0.424 | 12 |
+| 25 | `precisa` | `forca` | 0.424 | 12 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (36 termos): espectrograma, audio, sinal, paciente, arquivo, imagem
-- **Tópico 2** (35 termos): covideiro, modelo, dado, coleta, actante, ruido
-- **Tópico 3** (35 termos): inscricao, cadeia, torna, analise, dispositivo, secao
-- **Tópico 4** (30 termos): spira, projeto, marcelo, artigos, partir, dataset
-- **Tópico 5** (20 termos): artigo, cientifico, condicao, laboratorio, programa, resultado
-- **Tópico 6** (16 termos): rede, objeto, pratica, neural, diferentes, distintos
-- **Tópico 7** (8 termos): respiratoria, insuficiencia, covid, deteccao, versao, acustica
+- **Tópico 1** (40 termos): covideiro, dado, coleta, actante, covid, ruido
+- **Tópico 2** (34 termos): spira, artigo, projeto, marcelo, artigos, cientifico
+- **Tópico 3** (33 termos): inscricao, cadeia, torna, analise, dispositivo, secao
+- **Tópico 4** (31 termos): espectrograma, audio, sinal, partir, paciente, arquivo
+- **Tópico 5** (18 termos): modelo, campo, treinado, processamento, pesquisador, repositorio
+- **Tópico 6** (17 termos): respiratoria, objeto, insuficiencia, pratica, condicao, deteccao
+- **Tópico 7** (7 termos): rede, neural, associacao, entrada, ator, topologia
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 5** [artigo, cientifico, condicao] — densidade ponderada de ligação = 0.5569
-- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 4** [spira, projeto, marcelo] — densidade ponderada de ligação = 0.8139
-- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 3** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.8429
-- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 2** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.8587
-- Lacuna entre **Tópico 2** [covideiro, modelo, dado] e **Tópico 3** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.9037
-- Lacuna entre **Tópico 2** [covideiro, modelo, dado] e **Tópico 5** [artigo, cientifico, condicao] — densidade ponderada de ligação = 1.0857
+- Lacuna entre **Tópico 3** [inscricao, cadeia, torna] e **Tópico 5** [modelo, campo, treinado] — densidade ponderada de ligação = 0.6145
+- Lacuna entre **Tópico 1** [covideiro, dado, coleta] e **Tópico 5** [modelo, campo, treinado] — densidade ponderada de ligação = 0.7500
+- Lacuna entre **Tópico 1** [covideiro, dado, coleta] e **Tópico 4** [espectrograma, audio, sinal] — densidade ponderada de ligação = 0.7927
+- Lacuna entre **Tópico 2** [spira, artigo, projeto] e **Tópico 4** [espectrograma, audio, sinal] — densidade ponderada de ligação = 0.8102
+- Lacuna entre **Tópico 4** [espectrograma, audio, sinal] e **Tópico 5** [modelo, campo, treinado] — densidade ponderada de ligação = 0.8244
+- Lacuna entre **Tópico 1** [covideiro, dado, coleta] e **Tópico 3** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.8750
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap4.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
