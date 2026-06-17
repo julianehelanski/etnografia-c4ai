@@ -24,7 +24,7 @@ import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, ".."))
-INDEX = os.path.join(ROOT, "index.html")
+INDEX = os.path.join(ROOT, os.environ.get("SITE_INDEX", "index.html"))
 
 # captura: attr=("|') figuras/caminho.ext (?v=...)? ("|')
 REF_RE = re.compile(
