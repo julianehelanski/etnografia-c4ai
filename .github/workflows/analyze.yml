@@ -84,12 +84,16 @@ jobs:
         working-directory: c4ai
         run: python scripts/atualizar_keywords.py _tex
 
+      - name: Relatório de divergência tese ↔ site (seções/figuras)
+        working-directory: c4ai
+        run: python scripts/relatorio_divergencia_tese.py --source-root _tex
+
       - name: Commit & push outputs
         working-directory: c4ai
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infranodus/ figuras/ index.html
+          git add infranodus/ figuras/ index.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
           if git diff --cached --quiet; then
             echo "Sem mudanças nos outputs da análise."
             exit 0
