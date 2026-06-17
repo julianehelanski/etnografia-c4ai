@@ -22,34 +22,101 @@ THIS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(THIS_DIR.parent / "scripts"))
 from relatorio_divergencia_tese import clean_title, _match_brace_arg  # noqa: E402
 
-# capítulo: (arquivo, número, título de exibição, resumo curado)
+# Síntese para a banca, ancorada no Resumo e nas Considerações Finais (cap.5).
+# Curada (não gerada): revise/ajuste se quiser outra ênfase.
+TESE = {
+    "tema": "A pesquisa em inteligência artificial como prática tecnocientífica "
+            "situada — uma etnografia do Centro de Inteligência Artificial da "
+            "USP (C4AI) entre 2020 e 2025.",
+    "objeto": "A rede sociotécnica que associou universidade pública e "
+              "corporação transnacional (USP · IBM · FAPESP) na pesquisa de IA "
+              "no Brasil, da fundação à dissolução; e a cadeia técnica do projeto "
+              "SPIRA, da voz do paciente ao diagnóstico.",
+    "pergunta": "Onde está o laboratório de IA e onde estão os seus cientistas? "
+                "O que cientistas e engenheiros fazem quando desenvolvem "
+                "inteligência artificial?",
+    "objetivo": "Descrever o arranjo das práticas tecnocientíficas dessa rede e "
+                "analisar como o plano institucional-corporativo e o plano "
+                "técnico-situado se articulam na produção de conhecimento em IA "
+                "e na produção de conhecimento sobre IA pelas ciências sociais.",
+    "questoes": [
+        "Como se faz IA, na prática, num centro de pesquisa?",
+        "Como um arranjo público-privado nasce, opera e se dissolve?",
+        "Como a voz de um paciente se converte em dado e em diagnóstico — e o "
+        "que se perde nessa cadeia de inscrições?",
+        "Que vocabulário (figurações) descreve a tecnociência sem denunciá-la "
+        "nem celebrá-la?",
+    ],
+    "conclusao": "Fazer IA é fazer tecnociência: construir fatos e, ao mesmo "
+                 "tempo, sustentar as redes que os tornam possíveis. O "
+                 "laboratório está distribuído (no computador, em casa, na "
+                 "enfermaria) e as redes que pareciam estáveis revelaram-se "
+                 "composições precárias — a falha de generalização do SPIRA e a "
+                 "dissolução da parceria IBM-C4AI (dez. 2025) tornaram visível "
+                 "essa fragilidade.",
+    "contribuicoes": [
+        "Empírica — o registro etnográfico do ciclo completo de uma parceria "
+        "público-privada em IA no Brasil, do nascimento à dissolução (inclui "
+        "relatórios não-públicos e entrevistas que preservam a ciência em "
+        "construção).",
+        "Metodológica — as quatro lições do Capítulo 1, a proposta da "
+        "tecnoetnografia e o uso das notas de rodapé como dispositivo "
+        "teórico-metodológico.",
+        "Analítica — o conceito de inscrição tecnoetnográfica, a leitura do "
+        "SPIRA como objeto fracional (Mol/Law) e a proposta descritiva de "
+        "tecnopoder.",
+    ],
+    "desdobramentos": [
+        "Acompanhar o SPIRA-BM (segunda fase) e realizar a entrevista com "
+        "Larissa Berti.",
+        "Acompanhar o C4AI após a saída da IBM — o que resta quando a rede se "
+        "desfaz.",
+        "Investigar a composição entre pesquisadora e modelo de linguagem "
+        "(Claude) na produção da tese.",
+    ],
+}
+
+# capítulo: (arquivo, número, título, resumo [o que faz], conclusão [a que chega])
 CHAPTERS = [
     ("ex_cap0.tex", "", "Apresentação",
-     "A entrada em campo: a pergunta que move a tese — o que cientistas e "
-     "engenheiros fazem ao desenvolver inteligência artificial — e o primeiro "
-     "encontro com um sistema de IA (o SPIRA), que abre o percurso etnográfico."),
+     "A entrada em campo: a pergunta que move a tese e o primeiro encontro com "
+     "um sistema de IA (o SPIRA), que abre o percurso etnográfico.",
+     ""),
     ("ex_cap1.tex", "1", "Método",
-     "O capítulo metodológico: constrói o método a partir da experiência de "
-     "campo. Apresenta o patchwork como figuração do método, as existências "
-     "parciais (incluindo o fazer-com IA generativa) e a compostagem, e nomeia "
-     "a prática como tecnoetnografia."),
+     "Documenta o percurso da etnógrafa pelo campo e constrói o método a partir "
+     "da experiência: o patchwork como figuração, as existências parciais "
+     "(incluindo o fazer-com IA generativa) e a compostagem.",
+     "Chega a quatro lições metodológicas e à proposta da tecnoetnografia — "
+     "modo de pesquisa que habita a tensão entre a circulabilidade técnica das "
+     "inscrições e a realidade sensível dos corpos."),
     ("ex_cap2.tex", "2", "Metáforas, figurações e alianças",
-     "Revisão da literatura em duas tramas: a análise lexicométrica das "
-     "figurações em seis obras de Latour e o mapeamento bibliométrico do campo "
-     "brasileiro de IA nas ciências humanas, com as leituras de campo entre elas."),
+     "Reconstrói as alianças teóricas da tese em duas tramas: a análise "
+     "lexicométrica das figurações em seis obras de Latour e o mapeamento "
+     "bibliométrico do campo brasileiro de IA nas ciências humanas.",
+     "Mostra que a figuração militar-industrial é situada e que o vocabulário "
+     "têxtil-topológico organiza os textos metateóricos de Latour; documenta um "
+     "campo brasileiro em formação, onde a pesquisa se insere."),
     ("ex_cap3.tex", "3", "A rede que Fábio e Cláudio construíram",
-     "Seguindo Fábio e Cláudio, diretores do C4AI: a genealogia da IBM, a "
-     "racionalidade do ecossistema de inovação e o ciclo da parceria "
-     "universidade–corporação, da fundação (2020) à dissolução (2025)."),
+     "Segue Fábio e Cláudio pela rede longa que sustentou o C4AI por cinco "
+     "anos, dos cartões de Hollerith (1890) à genealogia da IBM e à "
+     "racionalidade do ecossistema de inovação.",
+     "Documenta o ciclo completo da parceria (2020–2025) e identifica um padrão "
+     "de construção de dependência sedimentado pela IBM ao longo de 135 anos — "
+     "proposto como tecnopoder; encerra com a dissolução IBM-C4AI (dez. 2025)."),
     ("ex_cap4.tex", "4", "A rede que Marcelo construiu",
-     "Seguindo Marcelo Finger e o projeto SPIRA: a cadeia de translações que "
-     "converte a voz de pacientes com Covid-19 em espectrogramas processados "
-     "por redes neurais — da fala ao dado ao diagnóstico — e sua política "
-     "ontológica."),
+     "Segue Marcelo Finger pela rede curta do SPIRA: a cadeia de translações "
+     "que converte a voz de pacientes com Covid-19 em espectrogramas "
+     "processados por redes neurais — da fala ao dado ao diagnóstico.",
+     "Mostra que o modelo (96,5% de precisão) aprendeu uma insuficiência "
+     "respiratória específica ao covideiro pandêmico: sua falha de "
+     "generalização é evidência empírica da tensão ontológica (Mol). Propõe a "
+     "inscrição tecnoetnográfica."),
     ("ex_cap5.tex", "", "Considerações finais",
-     "O arremate da tese: como seguir múltiplos atores articula as negociações "
-     "institucionais e as práticas tecnocientíficas situadas na produção de "
-     "conhecimento em e sobre inteligência artificial."),
+     "Cruza as redes longas (Cap. 3) e curtas (Cap. 4) e reúne as contribuições "
+     "empírica, metodológica e analítica da tese.",
+     "Os dois pontos de cruzamento — a falha do SPIRA e a dissolução IBM-C4AI — "
+     "revelam a fragilidade de redes que pareciam estáveis: as inscrições "
+     "carregavam, ocultas, as condições de sua produção."),
 ]
 
 ENV_RE = re.compile(
@@ -163,7 +230,7 @@ def main() -> int:
 
     sumario, figuras, tabelas = [], [], []
     fign = tabn = 0
-    for fname, num, title, resumo_cap in CHAPTERS:
+    for fname, num, title, resumo_cap, conclusao_cap in CHAPTERS:
         src = args.source_root / fname
         if not src.exists():
             print(f"[doc] aviso: {fname} ausente, pulando.")
@@ -172,6 +239,7 @@ def main() -> int:
         sumario.append({
             "id": fname.replace("ex_", "").replace(".tex", ""),
             "num": num, "title": title, "resumo": resumo_cap,
+            "conclusao": conclusao_cap,
             "sections": parse_outline(tex),
         })
         f, t = parse_captions(tex)
@@ -183,6 +251,7 @@ def main() -> int:
             tabelas.append({"n": tabn, "cap": num or title, "t": c})
 
     payload = {
+        "tese": TESE,
         "resumo": resumo,
         "palavras_chave": palavras,
         "sumario": sumario,
