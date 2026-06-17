@@ -94,20 +94,20 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
 | 1 | `cientifico` | 114 | 98 | +16 |
-| 2 | `mobiliza` | 129 | 118 | +11 |
-| 3 | `computacional` | 110 | 101 | +9 |
-| 4 | `momento` | 126 | 117 | +9 |
+| 2 | `momento` | 128 | 117 | +11 |
+| 3 | `mobiliza` | 129 | 118 | +11 |
+| 4 | `computacional` | 110 | 101 | +9 |
 | 5 | `funcionam` | 122 | 114 | +8 |
 | 6 | `manifesta` | 82 | 75 | +7 |
 | 7 | `condicoes` | 107 | 100 | +7 |
-| 8 | `conexoes` | 118 | 111 | +7 |
-| 9 | `tecnica` | 128 | 121 | +7 |
-| 10 | `decisao` | 146 | 139 | +7 |
-| 11 | `social` | 153 | 146 | +7 |
-| 12 | `infraestrutura` | 73 | 67 | +6 |
-| 13 | `inscricao` | 24 | 19 | +5 |
+| 8 | `social` | 153 | 146 | +7 |
+| 9 | `infraestrutura` | 73 | 67 | +6 |
+| 10 | `presenca` | 91 | 85 | +6 |
+| 11 | `diagrama` | 101 | 95 | +6 |
+| 12 | `inscricao` | 24 | 19 | +5 |
+| 13 | `actante` | 45 | 40 | +5 |
 | 14 | `hinterland` | 51 | 46 | +5 |
-| 15 | `presenca` | 90 | 85 | +5 |
+| 15 | `problema` | 117 | 112 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -143,50 +143,50 @@ vezes.
 |---|---------|---------|------|------------------|
 | 1 | `ausencia` | `manifesta` | 0.871 | 57 |
 | 2 | `artificial` | `inteligencia` | 0.858 | 261 |
-| 3 | `parciais` | `existencias` | 0.819 | 72 |
-| 4 | `parcial` | `existencia` | 0.747 | 61 |
-| 5 | `teoria` | `ator` | 0.719 | 89 |
+| 3 | `existencias` | `parciais` | 0.819 | 72 |
+| 4 | `existencia` | `parcial` | 0.747 | 61 |
+| 5 | `ator` | `teoria` | 0.719 | 89 |
 | 6 | `agencia` | `distribuida` | 0.717 | 50 |
-| 7 | `otherness` | `manifesta` | 0.702 | 35 |
+| 7 | `manifesta` | `otherness` | 0.702 | 35 |
 | 8 | `ausencia` | `presenca` | 0.692 | 34 |
-| 9 | `parcial` | `conexao` | 0.634 | 40 |
+| 9 | `conexao` | `parcial` | 0.634 | 40 |
 | 10 | `tecnico` | `letramento` | 0.628 | 31 |
-| 11 | `materiais` | `heterogeneos` | 0.607 | 33 |
+| 11 | `heterogeneos` | `materiais` | 0.607 | 33 |
 | 12 | `computacional` | `infraestrutura` | 0.604 | 32 |
-| 13 | `linguagem` | `modelo` | 0.600 | 84 |
+| 13 | `modelo` | `linguagem` | 0.600 | 84 |
 | 14 | `ausencia` | `otherness` | 0.598 | 26 |
-| 15 | `presenca` | `manifesta` | 0.591 | 20 |
-| 16 | `sociais` | `ciencia` | 0.572 | 84 |
-| 17 | `textual` | `analise` | 0.555 | 50 |
+| 15 | `manifesta` | `presenca` | 0.591 | 20 |
+| 16 | `ciencia` | `sociais` | 0.572 | 84 |
+| 17 | `analise` | `textual` | 0.555 | 50 |
 | 18 | `cientista` | `computacao` | 0.550 | 22 |
-| 19 | `condicao` | `possibilidade` | 0.550 | 21 |
+| 19 | `possibilidade` | `condicao` | 0.550 | 21 |
 | 20 | `etnografia` | `tecno` | 0.543 | 63 |
 | 21 | `figuracao` | `textil` | 0.540 | 36 |
-| 22 | `simetria` | `principio` | 0.540 | 15 |
-| 23 | `presenca` | `otherness` | 0.538 | 20 |
+| 22 | `principio` | `simetria` | 0.540 | 15 |
+| 23 | `otherness` | `presenca` | 0.538 | 20 |
 | 24 | `condicoes` | `materiais` | 0.532 | 24 |
 | 25 | `estudos` | `tecnologia` | 0.526 | 23 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (53 termos): metodo, latour, corte, gesto, strathern, haraway
-- **Tópico 2** (33 termos): etnografia, campo, objeto, descricao, parte, claude
-- **Tópico 3** (26 termos): rede, ator, analise, pesquisador, teoria, actante
-- **Tópico 4** (19 termos): humano, relacao, parcial, maquina, agencia, existencia
-- **Tópico 5** (19 termos): pesquisa, artificial, inteligencia, pratica, conhecimento, materiais
-- **Tópico 6** (18 termos): ciencia, dado, sociais, lugar, tecnologia, laboratorio
-- **Tópico 7** (7 termos): modelo, linguagem, infraestrutura, computacional, cientifico, politicas
+- **Tópico 1** (55 termos): metodo, latour, corte, gesto, strathern, haraway
+- **Tópico 2** (29 termos): campo, objeto, modelo, parte, claude, escrita
+- **Tópico 3** (25 termos): pesquisa, artificial, inteligencia, pratica, conhecimento, materiais
+- **Tópico 4** (21 termos): rede, ator, analise, pesquisador, teoria, actante
+- **Tópico 5** (19 termos): humano, relacao, parcial, maquina, agencia, existencia
+- **Tópico 6** (17 termos): ciencia, dado, sociais, tecnologia, laboratorio, tecnico
+- **Tópico 7** (9 termos): etnografia, descricao, torna, possivel, condicao, possibilidade
 - **Tópico 8** (5 termos): hinterland, otherness, ausencia, manifesta, presenca
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 4** [humano, relacao, parcial] e **Tópico 5** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.4792
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 3** [rede, ator, analise] — densidade ponderada de ligação = 0.5152
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 4** [humano, relacao, parcial] — densidade ponderada de ligação = 0.5323
-- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 5** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.5482
-- Lacuna entre **Tópico 2** [etnografia, campo, objeto] e **Tópico 4** [humano, relacao, parcial] — densidade ponderada de ligação = 0.6316
-- Lacuna entre **Tópico 3** [rede, ator, analise] e **Tópico 4** [humano, relacao, parcial] — densidade ponderada de ligação = 0.6417
+- Lacuna entre **Tópico 3** [pesquisa, artificial, inteligencia] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.4168
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 3** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.4516
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.5100
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 4** [rede, ator, analise] — densidade ponderada de ligação = 0.5610
+- Lacuna entre **Tópico 1** [metodo, latour, corte] e **Tópico 2** [campo, objeto, modelo] — densidade ponderada de ligação = 0.6019
+- Lacuna entre **Tópico 2** [campo, objeto, modelo] e **Tópico 5** [humano, relacao, parcial] — densidade ponderada de ligação = 0.6552
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O núcleo do capítulo gira em torno de um eixo
