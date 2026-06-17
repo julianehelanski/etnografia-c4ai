@@ -666,7 +666,7 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
     # Layout sem peso (arestas puxam por igual) e bem espalhado, para que os
     # rótulos não se sobreponham.
     pos = nx.spring_layout(H, seed=11,
-                           k=0.9, iterations=400)
+                           k=1.3, iterations=500)
     node2comm: dict[str, int] = {}
     for i, c in enumerate(comms):
         for n in c:
