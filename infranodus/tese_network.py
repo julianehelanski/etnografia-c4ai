@@ -54,6 +54,8 @@ def main() -> int:
                     help="peso mínimo de aresta na poda")
     ap.add_argument("--core", type=int, default=80,
                     help="nº de termos na vista núcleo (por PageRank)")
+    ap.add_argument("--edges-per-node", type=int, default=16,
+                    help="mantém as N arestas mais fortes por termo (densidade controlada)")
     ap.add_argument("--out", type=Path, default=THIS_DIR / "tese_network.json")
     args = ap.parse_args()
 
@@ -91,6 +93,19 @@ def main() -> int:
     deg, btw, pr = compute_metrics(G)
     comms = detect_topics(G)
     print(f"[3] Comunidades: {len(comms)} | tamanhos: {[len(c) for c in comms]}")
+
+    # densidade controlada: mantém as K arestas mais fortes por termo (união),
+    # preservando conectividade e o caráter "panorama" sem virar emaranhado total.
+    K = args.edges_per_node
+    keep_edges: set = set()
+    for n in G.nodes():
+        nbr = sorted(G[n].items(), key=lambda kv: kv[1].get("weight", 0), reverse=True)
+        for m, _ in nbr[:K]:
+            keep_edges.add((n, m) if n < m else (m, n))
+    drop = [(u, v) for u, v in G.edges() if (u, v) not in keep_edges
+            and (v, u) not in keep_edges]
+    G.remove_edges_from(drop)
+    print(f"    Densidade: {G.number_of_edges()} arestas após manter top-{K} por termo")
 
     # id de comunidade por nó
     comm_of: dict[str, int] = {}
