@@ -93,21 +93,21 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `preta` | 92 | 74 | +18 |
+| 1 | `preta` | 93 | 74 | +19 |
 | 2 | `escala` | 86 | 69 | +17 |
 | 3 | `caixa` | 102 | 86 | +16 |
 | 4 | `parametros` | 113 | 98 | +15 |
 | 5 | `processo` | 105 | 96 | +9 |
 | 6 | `linguagem` | 139 | 130 | +9 |
 | 7 | `grade` | 144 | 135 | +9 |
-| 8 | `processamento` | 77 | 70 | +7 |
-| 9 | `disponivel` | 107 | 101 | +6 |
-| 10 | `escolha` | 100 | 95 | +5 |
+| 8 | `publico` | 74 | 67 | +7 |
+| 9 | `processamento` | 76 | 70 | +6 |
+| 10 | `disponivel` | 106 | 101 | +5 |
 | 11 | `audioset` | 111 | 106 | +5 |
 | 12 | `carrega` | 115 | 110 | +5 |
 | 13 | `leitor` | 126 | 121 | +5 |
-| 14 | `tecnica` | 134 | 129 | +5 |
-| 15 | `designa` | 137 | 132 | +5 |
+| 14 | `designa` | 137 | 132 | +5 |
+| 15 | `ciencia` | 149 | 144 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -142,50 +142,50 @@ vezes.
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
 | 1 | `caixa` | `preta` | 0.898 | 87 |
-| 2 | `respiratoria` | `insuficiencia` | 0.841 | 335 |
-| 3 | `calculo` | `centro` | 0.769 | 88 |
+| 2 | `insuficiencia` | `respiratoria` | 0.841 | 335 |
+| 3 | `centro` | `calculo` | 0.769 | 88 |
 | 4 | `neural` | `rede` | 0.601 | 130 |
-| 5 | `programa` | `acao` | 0.569 | 38 |
+| 5 | `acao` | `programa` | 0.569 | 38 |
 | 6 | `acustico` | `sinal` | 0.550 | 64 |
-| 7 | `tornou` | `possivel` | 0.549 | 37 |
-| 8 | `acesso` | `disponivel` | 0.533 | 27 |
+| 7 | `possivel` | `tornou` | 0.549 | 37 |
+| 8 | `disponivel` | `acesso` | 0.533 | 27 |
 | 9 | `processamento` | `linguagem` | 0.520 | 27 |
-| 10 | `publico` | `saude` | 0.518 | 25 |
+| 10 | `saude` | `publico` | 0.518 | 25 |
 | 11 | `visivel` | `torna` | 0.512 | 60 |
-| 12 | `marcelo` | `entrevista` | 0.507 | 105 |
-| 13 | `ciencia` | `acao` | 0.492 | 24 |
-| 14 | `publico` | `repositorio` | 0.485 | 21 |
-| 15 | `construcao` | `ciencia` | 0.483 | 22 |
+| 12 | `entrevista` | `marcelo` | 0.507 | 105 |
+| 13 | `acao` | `ciencia` | 0.492 | 24 |
+| 14 | `repositorio` | `publico` | 0.485 | 21 |
+| 15 | `ciencia` | `construcao` | 0.483 | 22 |
 | 16 | `saude` | `pesquisa` | 0.477 | 24 |
-| 17 | `condicoes` | `producao` | 0.473 | 51 |
+| 17 | `producao` | `condicoes` | 0.473 | 51 |
 | 18 | `covideiro` | `pandemico` | 0.473 | 100 |
 | 19 | `youtube` | `audioset` | 0.466 | 17 |
-| 20 | `enfermaria` | `ruido` | 0.464 | 58 |
+| 20 | `ruido` | `enfermaria` | 0.464 | 58 |
 | 21 | `translacoes` | `cadeia` | 0.456 | 57 |
 | 22 | `fonoaudiologos` | `medicos` | 0.456 | 28 |
 | 23 | `conceito` | `referencia` | 0.436 | 16 |
-| 24 | `modelo` | `treinado` | 0.436 | 46 |
+| 24 | `treinado` | `modelo` | 0.436 | 46 |
 | 25 | `precisa` | `forca` | 0.424 | 12 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (37 termos): inscricao, cadeia, torna, analise, dispositivo, secao
-- **Tópico 2** (36 termos): espectrograma, audio, sinal, paciente, arquivo, imagem
-- **Tópico 3** (35 termos): covideiro, modelo, dado, actante, ruido, laboratorio
-- **Tópico 4** (32 termos): spira, projeto, marcelo, artigos, partir, dataset
+- **Tópico 1** (36 termos): espectrograma, audio, sinal, paciente, arquivo, imagem
+- **Tópico 2** (35 termos): inscricao, cadeia, torna, analise, dispositivo, secao
+- **Tópico 3** (32 termos): spira, projeto, marcelo, artigos, partir, dataset
+- **Tópico 4** (32 termos): covideiro, modelo, dado, actante, ruido, pandemico
 - **Tópico 5** (16 termos): rede, objeto, pratica, neural, diferentes, distintos
-- **Tópico 6** (14 termos): artigo, coleta, cientifico, condicoes, condicao, producao
-- **Tópico 7** (10 termos): respiratoria, insuficiencia, covid, pacientes, deteccao, versao
+- **Tópico 6** (15 termos): respiratoria, insuficiencia, coleta, covid, pacientes, condicao
+- **Tópico 7** (14 termos): artigo, cientifico, condicoes, laboratorio, producao, resultado
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [espectrograma, audio, sinal] e **Tópico 5** [rede, objeto, pratica] — densidade ponderada de ligação = 0.7622
-- Lacuna entre **Tópico 3** [covideiro, modelo, dado] e **Tópico 5** [rede, objeto, pratica] — densidade ponderada de ligação = 0.7982
-- Lacuna entre **Tópico 2** [espectrograma, audio, sinal] e **Tópico 4** [spira, projeto, marcelo] — densidade ponderada de ligação = 0.7986
-- Lacuna entre **Tópico 1** [inscricao, cadeia, torna] e **Tópico 2** [espectrograma, audio, sinal] — densidade ponderada de ligação = 0.8138
-- Lacuna entre **Tópico 1** [inscricao, cadeia, torna] e **Tópico 3** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.8386
-- Lacuna entre **Tópico 2** [espectrograma, audio, sinal] e **Tópico 3** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.8667
+- Lacuna entre **Tópico 4** [covideiro, modelo, dado] e **Tópico 5** [rede, objeto, pratica] — densidade ponderada de ligação = 0.7559
+- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 5** [rede, objeto, pratica] — densidade ponderada de ligação = 0.7622
+- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 3** [spira, projeto, marcelo] — densidade ponderada de ligação = 0.7986
+- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 2** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.8413
+- Lacuna entre **Tópico 2** [inscricao, cadeia, torna] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.8625
+- Lacuna entre **Tópico 1** [espectrograma, audio, sinal] e **Tópico 4** [covideiro, modelo, dado] — densidade ponderada de ligação = 0.9054
 
 ## 9. Leitura interpretativa
 _Leitura interpretativa ainda não escrita para este capítulo. Crie `interpretation_cap4.md` ao lado dos outputs para que o conteúdo seja embutido aqui automaticamente._
