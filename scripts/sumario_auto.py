@@ -22,7 +22,7 @@ import re
 from pathlib import Path
 
 from relatorio_divergencia_tese import (CHAPTER_FILES, clean_title,
-                                        _match_brace_arg)
+                                        _match_brace_arg, _commands)
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parent
@@ -79,9 +79,12 @@ def main() -> int:
         if not src.exists():
             print(f"[sumario] aviso: {fname} não encontrado, pulando.")
             continue
-        outline = parse_outline(src.read_text(encoding="utf-8"))
-        if outline:
-            data[NODE_ID[slug]] = outline
+        tex = src.read_text(encoding="utf-8")
+        outline = parse_outline(tex)
+        figs = [esc(clean_title(c)) for c in _commands(tex, "caption")]
+        figs = [f for f in figs if f]
+        if outline or figs:
+            data[NODE_ID[slug]] = {"secs": outline, "figs": figs}
 
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     repl = "/*SUMARIO-AUTO-START*/var SUMARIO_AUTO=" + payload + ";/*SUMARIO-AUTO-END*/"
@@ -93,11 +96,12 @@ def main() -> int:
     new = MARK.sub(lambda _: repl, html, count=1)
     INDEX.write_text(new, encoding="utf-8")
 
-    tot = sum(len(v) for v in data.values())
+    tot = sum(len(v["secs"]) for v in data.values())
     print(f"[sumario] {len(data)} capítulos, {tot} seções injetadas em index.html")
     for k, v in data.items():
-        print(f"  - {k}: {len(v)} seções, "
-              f"{sum(len(s['subs']) for s in v)} subseções")
+        print(f"  - {k}: {len(v['secs'])} seções, "
+              f"{sum(len(s['subs']) for s in v['secs'])} subseções, "
+              f"{len(v['figs'])} figuras")
     return 0
 
 
