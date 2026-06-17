@@ -543,8 +543,8 @@ def label_topic(community: set[str], deg: dict[str, float], k: int = 4) -> list[
 
 def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
                    path: Path, title: str, label_top: int = 45):
-    pos = nx.spring_layout(G, weight="weight", seed=11, k=1.4 / np.sqrt(max(G.number_of_nodes(), 1)),
-                           iterations=200)
+    pos = nx.spring_layout(G, weight="weight", seed=11, k=2.2 / np.sqrt(max(G.number_of_nodes(), 1)),
+                           iterations=300)
     node2comm: dict[str, int] = {}
     for i, c in enumerate(comms):
         for n in c:
@@ -659,8 +659,8 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
         return
 
     pos = nx.spring_layout(H, weight="weight", seed=11,
-                            k=1.4 / np.sqrt(max(H.number_of_nodes(), 1)),
-                            iterations=200)
+                            k=2.8 / np.sqrt(max(H.number_of_nodes(), 1)),
+                            iterations=320)
     node2comm: dict[str, int] = {}
     for i, c in enumerate(comms):
         for n in c:
@@ -670,7 +670,7 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
 
     pr_local = {n: pr.get(n, 0.0) for n in H.nodes()}
     max_pr = max(pr_local.values()) or 1.0
-    node_sizes = [80 + 1100 * (pr_local[n] / max_pr) for n in H.nodes()]
+    node_sizes = [55 + 520 * (pr_local[n] / max_pr) for n in H.nodes()]
 
     fig, ax = plt.subplots(figsize=(18, 14))
     ax.set_facecolor("#ffffff")
