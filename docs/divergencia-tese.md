@@ -1,13 +1,13 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-06-18 16:32 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-06-18 16:40 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
 
-## Mudanças desde a última sincronização
+## Sem divergências
 
-Atualize os nós/sumário/figuras correspondentes no `index.html` (PT **e** EN).
+A estrutura da tese não mudou desde a última sincronização. Nada a fazer.
 
 ### cap1
 
@@ -19,8 +19,7 @@ _Sem mudanças estruturais._
 
 ### cap3
 
-**Figuras**
-- ✏️ renomeada (provável): `roadmap-ciclo-capitulo3-2026-04-17-213930.png` → `linha-do-tempo-capitulo3.png`
+_Sem mudanças estruturais._
 
 ### cap4
 
