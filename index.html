@@ -377,15 +377,22 @@ const MAPAS = {
   '3': {chart:'https://mermaid.ai/d/0c8eb50f-d995-4bba-b60a-c768ebe5dd51', svg:'figuras/mapas/mapa-capitulo3.svg'},
   '4': {chart:'https://mermaid.ai/d/cde0a17c-8b5b-4e55-a287-2f2a51f8738d', svg:'figuras/mapas/mapa-capitulo4.svg'}
 };
+// linhas do tempo (roadmaps de capítulo); chart = link interativo MermaidChart (preencher ao publicar)
+const TEMPOS = {
+  '3': {chart:'', svg:'figuras/linha-do-tempo/linha-do-tempo-capitulo3.svg'}
+};
 function dEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function dList(items){
   let h='<div class="lst">', cur=null;
   items.forEach(it=>{
     if(it.cap!==cur){cur=it.cap;h+='<div class="grp">'+(/^\d+$/.test(String(it.cap))?('Capítulo '+it.cap):dEsc(it.cap))+'</div>';}
     const mm=String(it.t).match(/Texto-mapa do cap[ií]tulo\s+capitulo(\d)/i);
-    const url=(mm&&MAPAS[mm[1]])?MAPAS[mm[1]].chart:'';
-    const at=url?(' data-mapa="'+url+'" title="clique para ampliar · clique de novo para abrir o mapa interativo"'):'';
-    const hint=url?'<span class="itmap">mapa ↗</span>':'';
+    const tm=String(it.t).match(/Linha do tempo do cap[ií]tulo\s+capitulo(\d)/i);
+    const mapaUrl=(mm&&MAPAS[mm[1]])?MAPAS[mm[1]].chart:'';
+    const tempoUrl=(tm&&TEMPOS[tm[1]])?TEMPOS[tm[1]].chart:'';
+    let at='', hint='';
+    if(mapaUrl){at=' data-mapa="'+mapaUrl+'" title="clique para ampliar · clique de novo para abrir o mapa interativo"';hint='<span class="itmap">mapa ↗</span>';}
+    else if(tempoUrl){at=' data-tempo="'+tempoUrl+'" title="clique para ampliar · clique de novo para abrir a linha do tempo interativa"';hint='<span class="itmap">linha do tempo ↗</span>';}
     h+='<div class="it"'+at+'><span class="num">'+it.n+'</span><span>'+dEsc(it.t)+hint+'</span></div>';
   });
   return h+'</div>';
@@ -439,8 +446,8 @@ function buildDoc(){
     const head=e.target.closest('.chead,.sec,.ov .ovr,.lst .it');
     if(!head)return;
     const ja=head.classList.contains('zoom');
-    const mapa=head.getAttribute('data-mapa');
-    if(ja&&mapa){window.open(mapa,'_blank','noopener');return;} // 2º clique no texto-mapa: abre o interativo
+    const mapa=head.getAttribute('data-mapa')||head.getAttribute('data-tempo');
+    if(ja&&mapa){window.open(mapa,'_blank','noopener');return;} // 2º clique no texto-mapa/linha do tempo: abre o interativo
     body.querySelectorAll('.zoom').forEach(el=>el.classList.remove('zoom'));
     if(!ja){head.classList.add('zoom');head.scrollIntoView({behavior:'smooth',block:'center'});}
   });
