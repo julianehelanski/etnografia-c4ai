@@ -127,6 +127,13 @@ ENV_RE = re.compile(
 SEC_RE = re.compile(r'\\(section|subsection)\*?\s*\{')
 
 
+def _is_continuation(s: str) -> bool:
+    """Rótulo de continuação (parte seguinte de uma figura/longtable),
+    que compartilha o número e não entra na lista de ilustrações."""
+    return re.sub(r"[()\.\s]", "", s).lower() in (
+        "continua", "continuacao", "continuação")
+
+
 def _trunc(s: str, n: int = 170) -> str:
     s = s.strip()
     return s if len(s) <= n else s[:n - 1].rstrip() + "…"
@@ -195,12 +202,16 @@ def parse_captions(tex: str):
                 stack.pop()
         else:  # \caption
             short = m.group(3)
+            if short is not None and short.strip() == "":
+                # \caption[]{...}: entrada vazia na lista de ilustrações
+                # (típico de continuação de longtable) — não listar.
+                continue
             if short:
                 cap = clean_title(short)
             else:
                 arg, _ = _match_brace_arg(tex, m.end() - 1)
                 cap = _trunc(clean_title(arg))
-            if not cap:
+            if not cap or _is_continuation(cap):
                 continue
             env = stack[-1] if stack else "figure"
             (tabs if env in ("table", "longtable") else figs).append(cap)
