@@ -1,0 +1,227 @@
+---
+config:
+  layout: elk
+  look: classic
+  theme: base
+  themeVariables:
+    fontFamily: "Helvetica Neue, Arial, sans-serif"
+    fontSize: 15px
+    lineColor: '#6b7280'
+    primaryTextColor: '#1a1a1a'
+---
+flowchart TB
+
+subgraph LEGENDA["<b>LEGENDA &nbsp;·&nbsp; o que cada cor indica</b>"]
+    direction LR
+    L1["<b>EIXO</b><br>título, pergunta<br>e cabeçalhos de seção"]:::eixo
+    L2["<b>TEORIA</b><br>autores, conceitos<br>e aparato analítico"]:::teoria
+    L3["<b>CAMPO</b><br>material empírico:<br>observação, entrevistas,<br>documentos"]:::campo
+    L4["<b>INSCRIÇÃO</b><br>dados produzidos:<br>bibliometria, gráficos,<br>diagramas"]:::inscricao
+    L5["<b>DOBRA</b><br>argumento-síntese<br>e considerações finais"]:::dobra
+    L1 ~~~ L2 ~~~ L3 ~~~ L4 ~~~ L5
+end
+
+subgraph titulo["<b>TEXTO-MAPA DO CAPÍTULO 3</b>"]
+    direction TB
+    TIT["<b>A rede longa do C4AI</b><br><br>seguir os atores,<br>da bluetalks à<br>trajetória da IBM<br><br>inscrição que produzi<br>com o claude e o<br>MermaidChart, como<br>dado etnográfico do<br>fazer-com (cap. 1)"]
+end
+
+subgraph pergunta["<b>PERGUNTA QUE ABRE O CAPÍTULO</b>"]
+    direction TB
+    RQ(("<b>O que circula<br>nas parcerias entre<br>universidade pública<br>e corporação?</b><br><br>Por quais caminhos<br>e sob que termos<br>se exerce o tecnopoder?"))
+end
+
+subgraph metodo["<b>COMO SEGUI A REDE: percurso metodológico</b>"]
+    direction TB
+    M_ATORES["<b>Seguir os atores</b><br><br>Fábio Cozman e<br>Cláudio Pinhanez,<br>que acompanhei em<br>múltiplos contextos:<br>seminários, bluetalks,<br>eventos, LinkedIn,<br>conversas informais"]
+    M_COLETA["<b>Métodos de coleta</b><br><br>observação participante<br>(mar. 2022 a dez. 2025);<br>entrevistas (~60 min cada,<br>set. e out. 2025);<br>análise documental<br>(Acordo de Cooperação 2016,<br>relatórios C4AI 2021-2025,<br>imprensa)"]
+    M_CAMPO["<b>Dados de campo gerados</b><br><br>caderno de campo<br>(o dito e o não dito);<br>transcrições (autonomia<br>declarada versus<br>alinhamento observado);<br>evidências documentais<br>(cláusula versus prática)"]
+    M_TRIANG["<b>Triangulação e<br>reflexividade</b><br><br>cruzar observação,<br>documentos e entrevistas;<br>posicionalidade de<br>aliada do OBIA;<br>seguir o ciclo<br>institucional completo:<br>funcionamento,<br>consolidação, encerramento"]
+    M_ATORES --> M_COLETA --> M_CAMPO --> M_TRIANG
+end
+
+subgraph base["<b>FUNDAMENTOS TEÓRICO-METODOLÓGICOS</b>"]
+    direction LR
+    LATOUR["Bruno Latour<br><br>seguir os atores;<br>actante, porta-voz,<br>cadeia de translação,<br>ponto de passagem<br>obrigatório"]
+    CALLON["Callon, Law<br><br>problematização,<br>interessamento,<br>recrutamento,<br>mobilização;<br>centros de tradução"]
+    LAW_BASE["John Law<br><br>ausência manifesta:<br>o que o arranjo<br>deixou de inscrever"]
+end
+
+subgraph terra["<b>1. DO C4AI-IBM À TERRA: a cadeia de translação</b>"]
+    direction TB
+    T_CORTE["<b>O corte e a cadeia<br>de translação</b><br><br>a pergunta da bluetalks<br>decide por onde seguir<br>a rede; a translação<br>como fio que atravessa<br>o capítulo"]
+    subgraph fundo["Para trás no tempo, para baixo na matéria"]
+        direction TB
+        T_HOLL["Hollerith (1890):<br>o censo que converte<br>cada vida em<br>categorias perfuradas"]
+        T_KHIPU["O khipu e as acllaconas:<br>contar, atar e ler fios<br>em práticas antigas,<br>plurais e situadas"]
+        T_GOV["Contar, classificar<br>e governar: da estatística<br>do censo à IA preditiva;<br>datificação da vida"]
+        T_HOLL --> T_KHIPU --> T_GOV
+    end
+    subgraph mineral["A descida ao geos"]
+        direction TB
+        T_GEONTO["Geontopoder (Povinelli):<br>a fronteira entre<br>Vida e Não Vida;<br>o Spira como travessia<br>do vivo ao inerte"]
+        T_TERRA["O geos e o Terrestre<br>(Latour): o mineral que<br>a IA extrai e que reage;<br>o futuro tecnológico que<br>nunca esteve à frente,<br>e sim embaixo"]
+        T_GEONTO --> T_TERRA
+    end
+    T_CORTE --> fundo
+    fundo ==> mineral
+end
+
+subgraph seguir["<b>2. SEGUINDO FÁBIO E CLÁUDIO: observação, entrevistas e documentos</b>"]
+    direction TB
+    subgraph desloc["O deslocamento metodológico"]
+        direction TB
+        DES["De uma etnografia<br>do fazer IA<br>para uma etnografia<br>do arranjo que torna<br>esse fazer possível"]
+        BLUE["A agência da bluetalks<br>(fev. 2023): a formulação<br>de Cláudio sobre criar<br>demanda e disseminar<br>ecossistemas"]
+        DES --> BLUE
+    end
+    subgraph porque["Por que seguir Fábio, Cláudio, corporações"]
+        direction TB
+        PORTA["Os porta-vozes<br>como guias da rede:<br>seguir onde quer que<br>as associações levem"]
+        ETICA["Considerações éticas,<br>reflexividade e limitações:<br>aliada do OBIA desde 2022,<br>acesso e posicionalidade"]
+    end
+    subgraph quadro["Quadro analítico: três camadas de ferramentas"]
+        direction LR
+        QA1["ANT:<br>Latour,<br>Callon, Law"]
+        QA2["Trajetória histórica:<br>Foucault, SCOT,<br>Johnson e Lenhard"]
+        QA3["Estudos críticos de IA:<br>Crawford e Joler,<br>Pasquinelli"]
+    end
+end
+
+subgraph problema["<b>3. CRIAR DEMANDA: a racionalidade de um ecossistema</b>"]
+    direction TB
+    PROB_INTRO["<b>Criar demanda,<br>disseminar ecossistema</b><br><br>a fala de Cláudio na<br>bluetalks reunida à<br>lógica da IBM Research:<br>lucro de ponta, spin-off<br>por margem, computação<br>quântica, Red Hat"]
+    subgraph dims["Quatro frentes de investigação"]
+        direction LR
+        D1["Histórica:<br>de Hollerith ao<br>open source via<br>serviços"]
+        D2["Técnica:<br>codificação, controle<br>de infraestrutura,<br>abertura versus<br>fechamento"]
+        D3["Organizacional:<br>aluguel, produtos<br>versus serviços,<br>capital intelectual"]
+        D4["Institucional:<br>arranjos público-<br>privados, C4AI como<br>incubadora"]
+    end
+    PROB_INTRO --> dims
+end
+
+subgraph trajetoria["<b>4. A TRAJETÓRIA DA IBM: a rede longa</b>"]
+    direction TB
+    GEN_INTRO["<b>De Hollerith (1890)<br>ao C4AI (2025)</b><br><br>135 anos de racionalidades<br>que se sedimentam:<br>da tabulação eletromecânica<br>do censo à infraestrutura de IA"]
+    subgraph registros["Dois registros da trajetória"]
+        direction LR
+        subgraph reg1["Registro 1"]
+            direction TB
+            R1A["<b>Infraestrutura,<br>aprisionamento<br>e ecossistema</b>"]
+            R1B["Cartão perfurado<br>proprietário, aluguel<br>de máquinas, Linux,<br>open source como<br>modelo de negócio"]
+            R1A --> R1B
+        end
+        subgraph reg2["Registro 2"]
+            direction TB
+            R2A["<b>Estado, universidades<br>e captura epistêmica</b>"]
+            R2B["Governamentalidade<br>estatística; recrutamento<br>de governos e universidades;<br>extração sem propriedade"]
+            R2A --> R2B
+        end
+    end
+    CONV["<b>Convergência: o C4AI</b><br><br>centro de tradução entre<br>universidade, Estado<br>e corporação; FAPESP,<br>USP e IBM recrutados<br>para a mesma rede"]
+    registros ==> CONV
+end
+
+subgraph entrevistas["<b>5. AS ENTREVISTAS COM FÁBIO E CLÁUDIO</b>"]
+    direction TB
+    ENT_INTRO["<b>O que o cotidiano<br>mantinha implícito</b><br><br>Quatro cenas que as falas<br>de Fábio e Cláudio<br>trouxeram à fala"]
+    subgraph tacitas["Quatro cenas"]
+        direction LR
+        E1["Os post-its e<br>o veto: USP lidera,<br>Brasil diferencia,<br>IBM tem interesse"]
+        E2["Os três potes:<br>FAPESP, FUSP e USP<br>como fontes<br>complementares"]
+        E3["Propriedade<br>intelectual: a<br>irrelevância do<br>juridicamente central"]
+        E4["Línguas indígenas<br>e as ambiguidades<br>do 'AI for Good'"]
+    end
+    NUMEROS["<b>Produção científica<br>e concentração</b><br><br>569 publicações (2020-2024);<br>AI HEALTH (35,1%) e NLP2 (23,0%)<br>somam 58,1%; dois menores<br>(OceanML, MClimate) só 6,6%;<br>pico de 313 em 2023, queda<br>para 66 em 2024, quando<br>AI HEALTH zera com a venda<br>da divisão de saúde da IBM"]
+    ENT_INTRO --> tacitas
+    tacitas ==> NUMEROS
+end
+
+subgraph fecho["<b>6. O FIM DA 'PARCERIA' C4AI-IBM</b>"]
+    direction TB
+    subgraph selet["Seletividade geográfica"]
+        direction TB
+        F1["US$ 7,5 bi em P&D<br>global em 2024:<br>fechamento não é crise.<br>IISc 2021, Quantum Valley<br>e BharatGen 2025"]
+        F2["Genesis Mission (EUA)<br>e inauguração do JAIRU<br>na USP (96 GPUs B200,<br>~R$ 40 mi, dez. 2025):<br>fecha no Brasil,<br>expande alhures"]
+        F1 --> F2
+    end
+    subgraph registros5["Cinco registros que o seguir tornou legíveis"]
+        direction TB
+        REG5["Assimetria orçamentária,<br>multiplicação institucional,<br>reorientação sistemática,<br>seletividade geográfica,<br>opacidade do encerramento"]
+        NAOINSCR["<b>O que o arranjo<br>não inscreveu</b><br><br>seis registros de ausência:<br>horizontes temporais, fontes,<br>decisão, bolsistas,<br>infraestrutura, consulta"]
+        REG5 --> NAOINSCR
+    end
+    selet ==> registros5
+end
+
+subgraph conclusoes["<b>CONSIDERAÇÕES FINAIS</b>"]
+    direction TB
+    SINTESE["Dirigir a análise aos<br>arranjos que faltaram,<br>e não a Fábio e Cláudio:<br>existência parcial do<br>C4AI no sentido de Strathern"]
+    PERGUNTA_ABERTA["A pergunta sobre o lugar<br>da universidade quando a<br>fronteira da IA migra para<br>a infraestrutura corporativa:<br>não entrego conclusão,<br>ofereço um problema"]
+    PONTE["Ponte para o capítulo 4:<br>descer ao cotidiano<br>do laboratório do Spira"]
+    SINTESE --> PERGUNTA_ABERTA
+    PERGUNTA_ABERTA --> PONTE
+end
+
+LEGENDA ~~~ titulo
+TIT -.->|abre-se em| RQ
+RQ -->|exige| LATOUR
+RQ -->|exige| CALLON
+RQ -->|exige| LAW_BASE
+RQ ==>|investigada por meio de| metodo
+metodo -.->|gera os achados que organizam| terra
+LATOUR -.->|orienta| seguir
+CALLON -.->|orienta| seguir
+LAW_BASE -.->|orienta| fecho
+terra ==>|do fundo material volto ao presente do campo| seguir
+BLUE ==>|reorienta a pesquisa para| porque
+porque ==>|mobiliza o| quadro
+seguir ==>|a pergunta de pesquisa abre| problema
+problema ==>|seguir a IBM no tempo abre| trajetoria
+QA2 -.->|sustenta| GEN_INTRO
+trajetoria ==>|a trajetória torna dizível o que| entrevistas
+CONV -.->|prepara| ENT_INTRO
+entrevistas ==>|os números e o cotidiano levam ao| fecho
+NUMEROS -.->|materializa| F1
+fecho ==>|o encerramento converte a rede em| conclusoes
+NAOINSCR -.->|fundamenta| SINTESE
+
+%% ===== PADRÃO DE ESTILO DA TESE — 5 classes semânticas =====
+classDef eixo      fill:#EEF1F4,stroke:#37474F,stroke-width:3px,color:#22303a;
+classDef teoria    fill:#DCE7F5,stroke:#2E5A87,stroke-width:2px,color:#14304a;
+classDef campo     fill:#DDEEDD,stroke:#3F7A3F,stroke-width:2px,color:#1e3a1e;
+classDef inscricao fill:#FBEFD0,stroke:#B5860A,stroke-width:2px,color:#5a4205;
+classDef dobra     fill:#E8E0F0,stroke:#6A4C93,stroke-width:2px,color:#3a2a52;
+
+class TIT,RQ,T_CORTE,PROB_INTRO,GEN_INTRO,ENT_INTRO,R1A,R2A eixo
+class LATOUR,CALLON,LAW_BASE,QA1,QA2,QA3,T_HOLL,T_KHIPU,T_GOV,T_GEONTO,T_TERRA,CONV,R1B,R2B,D1,D2,D3,D4 teoria
+class M_ATORES,M_COLETA,M_CAMPO,M_TRIANG,DES,BLUE,PORTA,ETICA,E1,E2,E3,E4,F1,F2 campo
+class NUMEROS inscricao
+class REG5,NAOINSCR,SINTESE,PERGUNTA_ABERTA,PONTE dobra
+
+%% ===== Caixas (subgraphs): borda neutra uniforme =====
+style LEGENDA fill:#fbfbfc,stroke:#9aa2ad,stroke-width:1px
+style titulo fill:transparent,stroke:#b8bec7,stroke-width:1px
+style pergunta fill:transparent,stroke:#b8bec7,stroke-width:1px
+style metodo fill:transparent,stroke:#b8bec7,stroke-width:1px
+style base fill:transparent,stroke:#b8bec7,stroke-width:1px
+style terra fill:transparent,stroke:#b8bec7,stroke-width:1px
+style fundo fill:transparent,stroke:#b8bec7,stroke-width:1px
+style mineral fill:transparent,stroke:#b8bec7,stroke-width:1px
+style seguir fill:transparent,stroke:#b8bec7,stroke-width:1px
+style desloc fill:transparent,stroke:#b8bec7,stroke-width:1px
+style porque fill:transparent,stroke:#b8bec7,stroke-width:1px
+style quadro fill:transparent,stroke:#b8bec7,stroke-width:1px
+style problema fill:transparent,stroke:#b8bec7,stroke-width:1px
+style dims fill:transparent,stroke:#b8bec7,stroke-width:1px
+style trajetoria fill:transparent,stroke:#b8bec7,stroke-width:1px
+style registros fill:transparent,stroke:#b8bec7,stroke-width:1px
+style reg1 fill:transparent,stroke:#b8bec7,stroke-width:1px
+style reg2 fill:transparent,stroke:#b8bec7,stroke-width:1px
+style entrevistas fill:transparent,stroke:#b8bec7,stroke-width:1px
+style tacitas fill:transparent,stroke:#b8bec7,stroke-width:1px
+style fecho fill:transparent,stroke:#b8bec7,stroke-width:1px
+style selet fill:transparent,stroke:#b8bec7,stroke-width:1px
+style registros5 fill:transparent,stroke:#b8bec7,stroke-width:1px
+style conclusoes fill:transparent,stroke:#b8bec7,stroke-width:1px
