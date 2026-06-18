@@ -100,6 +100,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .cap .cconc .cct{font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6b6b;margin-right:.45rem}
 #doc .cap .chead{margin:0 -.4rem .2rem;padding:.3rem .4rem;border-radius:4px;transition:background .12s ease}
 #doc .cap .chead:hover{background:#fdf2a0}
+#doc .cap .cmapa{display:inline-flex;align-items:center;gap:.3rem;margin-top:.1rem;font-family:'CMU Typewriter Text',monospace;
+  font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#5b3a52;background:#fff;border:1px solid var(--rule-soft);
+  border-radius:999px;padding:.26rem .7rem;text-decoration:none;cursor:pointer;transition:border-color .12s ease,color .12s ease}
+#doc .cap .cmapa:hover{color:#000;border-color:#9a9a9a}
 #doc .ov{margin:.3rem 0 .6rem}
 #doc .ov .ovr{display:grid;grid-template-columns:7.2rem 1fr;gap:.7rem;padding:.5rem;margin:0 -.5rem;border-bottom:1px solid #f1eef4;align-items:start;border-radius:4px;transition:background .12s ease}
 #doc .ov .ovr:hover{background:#fdf2a0;border-bottom-color:transparent}
@@ -340,6 +344,14 @@ comm.filter(c => c.size >= 3).forEach(c => {
 
 // ---- documento da tese (resumo · sumário · ilustrações · tabelas) ----
 const DOC = JSON.parse(document.getElementById('docdata').textContent);
+// Mapas-capítulo: link público do MermaidChart (chart) e SVG versionado (svg, backup offline/PDF).
+// O botão "mapa do capítulo" aparece sozinho quando 'chart' estiver preenchido.
+const MAPAS = {
+  '1': {chart:'https://mermaid.ai/d/6dbd9e0b-a652-428d-99b1-a76d0c068b5b', svg:'figuras/mapas/mapa-capitulo1.svg'},
+  '2': {chart:'https://mermaid.ai/d/b4a7d089-3a37-4ab6-8e45-fc4ecca9e22f', svg:'figuras/mapas/mapa-capitulo2.svg'},
+  '3': {chart:'https://mermaid.ai/d/0c8eb50f-d995-4bba-b60a-c768ebe5dd51', svg:'figuras/mapas/mapa-capitulo3.svg'},
+  '4': {chart:'https://mermaid.ai/d/cde0a17c-8b5b-4e55-a287-2f2a51f8738d', svg:'figuras/mapas/mapa-capitulo4.svg'}
+};
 function dEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function dList(items){
   let h='<div class="lst">', cur=null;
@@ -377,6 +389,7 @@ function buildDoc(){
     h+='<div class="cap"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
     h+='<div class="ctitle">'+dEsc(c.title)+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';
     if(c.conclusao)h+='<div class="cconc"><span class="cct">a que chega</span>'+dEsc(c.conclusao)+'</div>';
+    if(MAPAS[c.num]&&MAPAS[c.num].chart)h+='<a class="cmapa" href="'+MAPAS[c.num].chart+'" target="_blank" rel="noopener">&#x1F5FA;&#xFE0F; mapa do capítulo &#x2197;</a>';
     h+='</div>';
     (c.sections||[]).forEach(s=>{
       h+='<div class="sec"><div class="st">'+dEsc(s.t)+'</div>';
