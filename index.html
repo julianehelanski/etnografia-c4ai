@@ -138,6 +138,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .lst .it:hover{background:#fdf2a0}
 #doc .lst .it.zoom{background:#fdf2a0;cursor:zoom-out;font-size:1.08rem;line-height:1.5;padding:.5rem .6rem;margin:.2rem -.6rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
 #doc .lst .it.zoom .num{font-size:.84rem;min-width:1.9rem}
+#doc .lst .it .itmap{font-family:'CMU Typewriter Text',monospace;font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:#5b3a52;border:1px solid var(--rule-soft);border-radius:999px;padding:.04rem .4rem;margin-left:.5rem;white-space:nowrap}
+#doc .lst .it.zoom .itmap{font-size:.7rem;padding:.1rem .55rem}
 #doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#888888;flex-shrink:0;min-width:1.4rem}
 @media(max-width:620px){#doc .lst{column-count:1}}
 
@@ -373,7 +375,11 @@ function dList(items){
   let h='<div class="lst">', cur=null;
   items.forEach(it=>{
     if(it.cap!==cur){cur=it.cap;h+='<div class="grp">'+(/^\d+$/.test(String(it.cap))?('Capítulo '+it.cap):dEsc(it.cap))+'</div>';}
-    h+='<div class="it"><span class="num">'+it.n+'</span><span>'+dEsc(it.t)+'</span></div>';
+    const mm=String(it.t).match(/Texto-mapa do cap[ií]tulo\s+capitulo(\d)/i);
+    const url=(mm&&MAPAS[mm[1]])?MAPAS[mm[1]].chart:'';
+    const at=url?(' data-mapa="'+url+'" title="clique para ampliar · clique de novo para abrir o mapa interativo"'):'';
+    const hint=url?'<span class="itmap">mapa ↗</span>':'';
+    h+='<div class="it"'+at+'><span class="num">'+it.n+'</span><span>'+dEsc(it.t)+hint+'</span></div>';
   });
   return h+'</div>';
 }
@@ -426,6 +432,8 @@ function buildDoc(){
     const head=e.target.closest('.chead,.sec,.ov .ovr,.lst .it');
     if(!head)return;
     const ja=head.classList.contains('zoom');
+    const mapa=head.getAttribute('data-mapa');
+    if(ja&&mapa){window.open(mapa,'_blank','noopener');return;} // 2º clique no texto-mapa: abre o interativo
     body.querySelectorAll('.zoom').forEach(el=>el.classList.remove('zoom'));
     if(!ja){head.classList.add('zoom');head.scrollIntoView({behavior:'smooth',block:'center'});}
   });
