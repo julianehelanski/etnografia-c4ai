@@ -8,8 +8,11 @@ quatro capítulos. Editáveis no [MermaidChart](https://www.mermaidchart.com/).
 
 - `mapa-capitulo{1..4}.mmd` — código-fonte Mermaid (versionado, editável).
 - `mapa-capitulo{1..4}.svg` — exportação vetorial (backup offline + versão impressa/PDF).
-- Versão interativa (pan/zoom, para a defesa): publicada no MermaidChart; o link
-  fica em `index.html`, no objeto `MAPAS` (botão "mapa do capítulo" no sumário da aba "tese").
+- Versão interativa (pan/zoom, para a defesa): publicada no MermaidChart. O link
+  **vive na própria tese** — um `\href{https://mermaid.ai/d/...}{...}` na legenda
+  (`\caption`) da figura. O gerador `infranodus/tese_documento.py` o extrai para
+  `DOC.figuras[].link`; o site acende o selinho "mapa ↗" na lista de ilustrações
+  e o botão "abrir o mapa do capítulo" no card do capítulo (sumário da aba "tese").
 
 ## Cabeçalho-padrão (idêntico em todos)
 

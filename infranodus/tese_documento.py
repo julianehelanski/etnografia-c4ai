@@ -126,6 +126,9 @@ ENV_RE = re.compile(
 
 SEC_RE = re.compile(r'\\(section|subsection)\*?\s*\{')
 
+# Diagrama interativo (MermaidChart) embutido na legenda via \href{...}.
+MERMAID_RE = re.compile(r'https://mermaid\.ai/d/[0-9a-fA-F-]+')
+
 
 def _is_continuation(s: str) -> bool:
     """Rótulo de continuação (parte seguinte de uma figura/longtable),
@@ -206,15 +209,14 @@ def parse_captions(tex: str):
                 # \caption[]{...}: entrada vazia na lista de ilustrações
                 # (típico de continuação de longtable) — não listar.
                 continue
-            if short:
-                cap = clean_title(short)
-            else:
-                arg, _ = _match_brace_arg(tex, m.end() - 1)
-                cap = _trunc(clean_title(arg))
+            arg, _ = _match_brace_arg(tex, m.end() - 1)
+            cap = clean_title(short) if short else _trunc(clean_title(arg))
             if not cap or _is_continuation(cap):
                 continue
+            link_m = MERMAID_RE.search(arg)
+            link = link_m.group(0) if link_m else None
             env = stack[-1] if stack else "figure"
-            (tabs if env in ("table", "longtable") else figs).append(cap)
+            (tabs if env in ("table", "longtable") else figs).append((cap, link))
     return figs, tabs
 
 
@@ -254,10 +256,13 @@ def main() -> int:
             "sections": parse_outline(tex),
         })
         f, t = parse_captions(tex)
-        for c in f:
+        for c, link in f:
             fign += 1
-            figuras.append({"n": fign, "cap": num or title, "t": c})
-        for c in t:
+            entry = {"n": fign, "cap": num or title, "t": c}
+            if link:
+                entry["link"] = link
+            figuras.append(entry)
+        for c, _link in t:
             tabn += 1
             tabelas.append({"n": tabn, "cap": num or title, "t": c})
 
