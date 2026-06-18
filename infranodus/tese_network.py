@@ -68,6 +68,36 @@ def name_territory(terms: set, used: set) -> str:
     return ""
 
 
+# Curadoria: território bibliométrico forçado.
+# O mapeamento bibliométrico do campo brasileiro de IA (panorama Capes/SciELO/
+# OpenAlex no cap.2 e a produção dos grupos do C4AI no cap.3) não se aglutina
+# sozinho via Louvain — seu vocabulário se dispersa pelos demais territórios.
+# Reunimos aqui, por curadoria, os termos mais propriamente bibliométricos
+# presentes na rede, garantindo o território no mapa.
+BIBLIOMETRIC_NAME = "Bibliometria · panorama do campo"
+BIBLIOMETRIC_TERMS = [
+    "capes", "producao", "distribuicao", "frequencia",
+    "area", "base", "corpus", "brasileira",
+]
+
+
+def carve_bibliometric_territory(comms: list[set]) -> tuple[list[set], dict]:
+    """Reúne os termos bibliométricos numa comunidade dedicada (curadoria
+    forçada), retirando-os das comunidades onde o Louvain os dispersou.
+    Retorna (comms_atualizadas, {índice_da_nova: nome_fixo}). Se sobrarem
+    poucos termos na rede, não força o território (evita um polo artificial)."""
+    present: set = set()
+    for c in comms:
+        present |= c
+    members = {t for t in BIBLIOMETRIC_TERMS if t in present}
+    if len(members) < 3:
+        return comms, {}
+    carved = [c - members for c in comms]
+    carved = [c for c in carved if c]  # descarta comunidades esvaziadas
+    carved.append(members)
+    return carved, {len(carved) - 1: BIBLIOMETRIC_NAME}
+
+
 def _sentences(tex: str) -> list[str]:
     clean = re.sub(r"\s+", " ", strip_latex(tex)).strip()
     return re.split(r'(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÀÜÇ"])', clean)
@@ -167,6 +197,10 @@ def main() -> int:
 
     deg, btw, pr = compute_metrics(G)
     comms = detect_topics(G)
+    comms, forced_names = carve_bibliometric_territory(comms)
+    if forced_names:
+        print(f"    Curadoria: território bibliométrico forçado com "
+              f"{len(comms[-1])} termos ({', '.join(sorted(comms[-1]))})")
     print(f"[3] Comunidades: {len(comms)} | tamanhos: {[len(c) for c in comms]}")
 
     # densidade controlada: mantém as K arestas mais fortes por termo (união),
@@ -231,7 +265,7 @@ def main() -> int:
         communities.append({
             "id": i,
             "size": len(c),
-            "name": name_territory(c, used_names),
+            "name": forced_names.get(i) or name_territory(c, used_names),
             "label": label_topic(c, deg, k=5),
             "color": PALETTE[i % len(PALETTE)],
         })
