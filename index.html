@@ -106,11 +106,11 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .cap .chead.zoom .cresumo{font-size:1.1rem;line-height:1.7}
 #doc .cap .chead.zoom .cconc{font-size:1.04rem;line-height:1.65}
 #doc .cap .chead.zoom .cconc .cct{font-size:.66rem}
-#doc .cap .chead.zoom .cmapa{font-size:.72rem;padding:.34rem .85rem}
-#doc .cap .cmapa{display:inline-flex;align-items:center;gap:.3rem;margin-top:.1rem;font-family:'CMU Typewriter Text',monospace;
-  font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#5b3a52;background:#fff;border:1px solid var(--rule-soft);
-  border-radius:999px;padding:.26rem .7rem;text-decoration:none;cursor:pointer;transition:border-color .12s ease,color .12s ease}
-#doc .cap .cmapa:hover{color:#000;border-color:#9a9a9a}
+#doc .cap .chead.zoom .cmapa{font-size:1rem}
+#doc .cap .cmapa{display:inline-block;margin-top:.25rem;font-family:'CMU Serif',serif;font-size:.8rem;
+  color:#0645ad;text-decoration:underline;text-underline-offset:.12em;cursor:pointer}
+#doc .cap .cmapa:hover{color:#0b0bcf}
+#doc .cap .cmapa:visited{color:#6a3ab2}
 #doc .ov{margin:.3rem 0 .6rem}
 #doc .ov .ovr{display:grid;grid-template-columns:7.2rem 1fr;gap:.7rem;padding:.5rem;margin:0 -.5rem;border-bottom:1px solid #f1eef4;align-items:start;border-radius:4px;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .ov .ovr:hover{background:#fdf2a0;border-bottom-color:transparent}
@@ -411,7 +411,7 @@ function buildDoc(){
     h+='<div class="cap"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
     h+='<div class="ctitle">'+dEsc(c.title)+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';
     if(c.conclusao)h+='<div class="cconc"><span class="cct">a que chega</span>'+dEsc(c.conclusao)+'</div>';
-    if(MAPAS[c.num]&&MAPAS[c.num].chart)h+='<a class="cmapa" href="'+MAPAS[c.num].chart+'" target="_blank" rel="noopener">&#x1F5FA;&#xFE0F; mapa do capítulo &#x2197;</a>';
+    if(MAPAS[c.num]&&MAPAS[c.num].chart)h+='<a class="cmapa" href="'+MAPAS[c.num].chart+'" target="_blank" rel="noopener">abrir o mapa do capítulo &#x2197;</a>';
     h+='</div>';
     (c.sections||[]).forEach(s=>{
       h+='<div class="sec"><div class="st">'+dEsc(s.t)+'</div>';
