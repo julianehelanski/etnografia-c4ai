@@ -112,23 +112,32 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   border-radius:999px;padding:.26rem .7rem;text-decoration:none;cursor:pointer;transition:border-color .12s ease,color .12s ease}
 #doc .cap .cmapa:hover{color:#000;border-color:#9a9a9a}
 #doc .ov{margin:.3rem 0 .6rem}
-#doc .ov .ovr{display:grid;grid-template-columns:7.2rem 1fr;gap:.7rem;padding:.5rem;margin:0 -.5rem;border-bottom:1px solid #f1eef4;align-items:start;border-radius:4px;transition:background .12s ease}
+#doc .ov .ovr{display:grid;grid-template-columns:7.2rem 1fr;gap:.7rem;padding:.5rem;margin:0 -.5rem;border-bottom:1px solid #f1eef4;align-items:start;border-radius:4px;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .ov .ovr:hover{background:#fdf2a0;border-bottom-color:transparent}
+#doc .ov .ovr.zoom{background:#fdf2a0;cursor:zoom-out;padding:.75rem;margin:.35rem -.75rem;box-shadow:0 6px 26px rgba(40,30,55,.18);border-bottom-color:transparent}
+#doc .ov .ovr.zoom .ovk{font-size:.72rem}
+#doc .ov .ovr.zoom .ovv{font-size:1.12rem;line-height:1.65}
 #doc .ov .ovk{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#2b2b2b;padding-top:.1rem}
 #doc .ov .ovv{font-family:'CMU Serif',serif;font-size:.8rem;line-height:1.55;color:#1c1c1c}
 #doc .ov .ovul{margin:0;padding-left:1rem}
 #doc .ov .ovul li{margin:.12rem 0}
 @media(max-width:560px){#doc .ov .ovr{grid-template-columns:1fr;gap:.15rem}}
-#doc .sec{margin:.25rem -.4rem;padding:.28rem .4rem;border-radius:4px;transition:background .12s ease}
+#doc .sec{margin:.25rem -.4rem;padding:.28rem .4rem;border-radius:4px;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .sec:hover{background:#fdf2a0}
+#doc .sec.zoom{background:#fdf2a0;cursor:zoom-out;padding:.7rem .8rem;margin:.4rem -.8rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
+#doc .sec.zoom .st{font-size:1.18rem}
+#doc .sec.zoom .snota{font-size:1.02rem;line-height:1.6}
+#doc .sec.zoom .subs{font-size:.84rem;line-height:1.7}
 #doc .sec .st{font-family:'CMU Serif',serif;font-size:.76rem;font-weight:600;color:#1e1e1e}
 #doc .sec .snota{font-family:'CMU Serif',serif;font-size:.72rem;line-height:1.45;color:#555555;margin:.05rem 0 .1rem}
 #doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#666666;line-height:1.6}
 #doc .lst{column-count:2;column-gap:1.6rem}
 #doc .lst .grp{break-inside:avoid;font-family:'CMU Typewriter Text',monospace;font-size:.54rem;letter-spacing:.1em;
   text-transform:uppercase;color:#a386b8;margin:.7rem 0 .25rem}
-#doc .lst .it{break-inside:avoid;font-family:'CMU Serif',serif;font-size:.72rem;line-height:1.4;color:#222222;margin:.12rem -.35rem;padding:.1rem .35rem;border-radius:3px;display:flex;gap:.4rem;transition:background .12s ease}
+#doc .lst .it{break-inside:avoid;font-family:'CMU Serif',serif;font-size:.72rem;line-height:1.4;color:#222222;margin:.12rem -.35rem;padding:.1rem .35rem;border-radius:3px;display:flex;gap:.4rem;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .lst .it:hover{background:#fdf2a0}
+#doc .lst .it.zoom{background:#fdf2a0;cursor:zoom-out;font-size:1.08rem;line-height:1.5;padding:.5rem .6rem;margin:.2rem -.6rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
+#doc .lst .it.zoom .num{font-size:.84rem;min-width:1.9rem}
 #doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#888888;flex-shrink:0;min-width:1.4rem}
 @media(max-width:620px){#doc .lst{column-count:1}}
 
@@ -414,7 +423,7 @@ function buildDoc(){
   const body=document.getElementById('doc-body');
   body.addEventListener('click',e=>{
     if(e.target.closest('a'))return; // não interfere no botão "mapa do capítulo"
-    const head=e.target.closest('.chead');
+    const head=e.target.closest('.chead,.sec,.ov .ovr,.lst .it');
     if(!head)return;
     const ja=head.classList.contains('zoom');
     body.querySelectorAll('.chead.zoom').forEach(el=>el.classList.remove('zoom'));
