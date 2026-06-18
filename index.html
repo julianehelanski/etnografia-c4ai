@@ -426,7 +426,7 @@ function buildDoc(){
     const head=e.target.closest('.chead,.sec,.ov .ovr,.lst .it');
     if(!head)return;
     const ja=head.classList.contains('zoom');
-    body.querySelectorAll('.chead.zoom').forEach(el=>el.classList.remove('zoom'));
+    body.querySelectorAll('.zoom').forEach(el=>el.classList.remove('zoom'));
     if(!ja){head.classList.add('zoom');head.scrollIntoView({behavior:'smooth',block:'center'});}
   });
 }
