@@ -108,7 +108,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .dsub{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;letter-spacing:.1em;color:#333333;margin-bottom:1.4rem}
 #doc .dh{font-family:'CMU Typewriter Text',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
   color:#333333;border-top:1px solid #ececec;padding-top:1.1rem;margin:2rem 0 .9rem}
-#doc .resumo{font-family:'CMU Serif',serif;font-size:.96rem;line-height:1.75;color:#1a1a1a;text-align:justify}
+#doc .resumo{font-family:'CMU Typewriter Text','Courier New',monospace;font-size:.72rem;line-height:1.5;color:#1a1a1a;text-align:justify}
 #doc .kw{margin-top:.9rem}
 #doc .kw .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.03em;
   border:1px solid var(--rule-soft);border-radius:999px;padding:.2rem .6rem;margin:.2rem .3rem 0 0;color:#444444}
@@ -432,8 +432,13 @@ comm.filter(c => c.size >= 3).forEach(c => {
     node.style('opacity', n => activeComm == null || n.community === activeComm ? 1 : .1);
     link.style('opacity', activeComm == null ? null : .03);
     legend.querySelectorAll('.li').forEach((li, i) => li.classList.toggle('dim', activeComm != null && comm.filter(x => x.size >= 3)[i].id !== activeComm));
-    sim.alphaTarget(.3).restart();                 // reaquece: a rede volta a se mover ao clicar
-    clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 700);
+    // movimento: perturba as forças para a rede se reorganizar — agrupa o
+    // território ativo no centro; ao desmarcar, ela volta a se espalhar.
+    const pull = n => (activeComm != null && n.community === activeComm) ? 0.14 : 0.02;
+    sim.force('x', d3.forceX(W / 2).strength(pull));
+    sim.force('y', d3.forceY(H / 2).strength(pull));
+    sim.alphaTarget(.32).restart();
+    clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 1400);
   };
   legend.appendChild(el);
 });
