@@ -215,7 +215,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <p class="texnote">a sintaxe LaTeX (<span class="texcmd">\chapter{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\section{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\subsection{</span><span class="texarg">…</span><span class="texcmd">}</span>) é proposital: a tese vive no Overleaf. aqui os comandos chamam a própria tese — seus capítulos, seções e subseções.</p>
 </div>
 
-<div id="legend"><div class="lh">territórios temáticos</div></div>
+<div id="legend"><div class="lh"><span class="texcmd">\legend{</span><span class="texarg">territórios temáticos</span><span class="texcmd">}</span></div></div>
 <div id="hint">arraste · zoom com a roda · clique num termo</div>
 <div id="tip"></div>
 
@@ -424,14 +424,16 @@ let activeComm = null;
 comm.filter(c => c.size >= 3).forEach(c => {
   const el = document.createElement('div');
   el.className = 'li';
-  el.innerHTML = '<span class="sw" style="background:' + c.color + '"></span><span><b>' +
-    (c.name || c.label.slice(0, 3).join(' · ')) + '</b>' +
-    (c.name ? '<span class="lt">' + c.label.slice(0, 4).join(' · ') + '</span>' : '') + '</span>';
+  el.innerHTML = '<span class="sw" style="background:' + c.color + '"></span><span>' +
+    '<span class="texcmd">\\item </span><span class="texarg">' + (c.name || c.label.slice(0, 3).join(' · ')) + '</span>' +
+    (c.name ? '<span class="lt">% ' + c.label.slice(0, 4).join(' · ') + '</span>' : '') + '</span>';
   el.onclick = () => {
     activeComm = (activeComm === c.id) ? null : c.id;
     node.style('opacity', n => activeComm == null || n.community === activeComm ? 1 : .1);
     link.style('opacity', activeComm == null ? null : .03);
     legend.querySelectorAll('.li').forEach((li, i) => li.classList.toggle('dim', activeComm != null && comm.filter(x => x.size >= 3)[i].id !== activeComm));
+    sim.alphaTarget(.3).restart();                 // reaquece: a rede volta a se mover ao clicar
+    clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 700);
   };
   legend.appendChild(el);
 });
