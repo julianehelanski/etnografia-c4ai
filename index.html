@@ -63,6 +63,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #qzoom-ch{font-family:'CMU Typewriter Text',monospace;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-bottom:1.1rem}
 #qzoom-tx{font-family:'CMU Serif',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.5;color:#141414}
 #qzoom-tx mark{background:#fbe7a8;color:#141414;padding:.05em .25em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#qzoom-tx .qz-link{font-size:.5em;color:#0645ad;text-decoration:underline;text-underline-offset:.12em}
 .qch{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#b3b0bb;margin-bottom:.25rem}
 .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.64rem;letter-spacing:.04em;
   border:1px solid #e0deda;border-radius:999px;padding:.18rem .5rem;margin:.2rem .25rem 0 0;color:#444444}
@@ -469,14 +470,32 @@ function buildDoc(){
   // clique amplia (zoom para leitura/apresentação) o cabeçalho do capítulo; um por vez
   const body=document.getElementById('doc-body');
   body.addEventListener('click',e=>{
-    if(e.target.closest('a'))return; // não interfere no botão "mapa do capítulo"
-    const head=e.target.closest('.chead,.sec,.ov .ovr,.lst .it');
+    if(e.target.closest('a'))return; // não interfere nos links (mapa do capítulo etc.)
+    const head=e.target.closest('.chead,.sec,.ovr,.lst .it');
     if(!head)return;
-    const ja=head.classList.contains('zoom');
-    const mapa=head.getAttribute('data-link');
-    if(ja&&mapa){window.open(mapa,'_blank','noopener');return;} // 2º clique no diagrama: abre o interativo
-    body.querySelectorAll('.zoom').forEach(el=>el.classList.remove('zoom'));
-    if(!ja){head.classList.add('zoom');head.scrollIntoView({behavior:'smooth',block:'center'});}
+    let ch='', html='';
+    const link=head.getAttribute('data-link')||'';
+    if(head.matches('.lst .it')){
+      const num=head.querySelector('.num');
+      const cap=[...head.querySelectorAll('span')].find(s=>!s.classList.contains('num')&&!s.classList.contains('itmap'));
+      let capEl=cap?cap.cloneNode(true):null;
+      if(capEl)capEl.querySelectorAll('.itmap').forEach(x=>x.remove());
+      ch=(num?num.textContent.trim()+' · ':'')+'ilustração';
+      html=capEl?capEl.textContent.trim():head.textContent.trim();
+    }else if(head.matches('.ovr')){
+      ch=head.querySelector('.ovk')?head.querySelector('.ovk').textContent:'';
+      html=head.querySelector('.ovv')?head.querySelector('.ovv').innerHTML:'';
+    }else if(head.matches('.sec')){
+      ch=head.querySelector('.st')?head.querySelector('.st').textContent:'';
+      html=head.querySelector('.snota')?head.querySelector('.snota').innerHTML:'';
+    }else if(head.matches('.chead')){
+      ch=head.querySelector('.cnum')?head.querySelector('.cnum').textContent:'';
+      const t=head.querySelector('.ctitle')?head.querySelector('.ctitle').textContent:'';
+      const r=head.querySelector('.cresumo')?head.querySelector('.cresumo').innerHTML:'';
+      html='<strong>'+t+'</strong>'+(r?'<br><br>'+r:'');
+    }
+    if(link)html+='<br><br><a class="qz-link" href="'+link+'" target="_blank" rel="noopener">ver diagrama ↗</a>';
+    if(html)openQZoom(ch,html);
   });
 }
 const docEl=document.getElementById('doc');
