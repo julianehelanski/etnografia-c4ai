@@ -476,11 +476,28 @@ const ANALISES=[
   {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-9-concentracao.png?v=9fcd7f9249', c:'C4AI — análise de concentração'},
   {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg?v=2bc57e47f8', c:'C4AI — comparação entre os principais grupos'},
 ];
-function galBuild(){
+// figuras do capítulo 4 (SPIRA): a voz como dado + microscopia do SARS-CoV-2.
+const CAP4FIGS=[
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma de uma gravação de voz, com eixos (tempo × frequência)'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma da voz — a “imagem” que a rede recebe como entrada'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação de escalas: espectrograma linear × logarítmico'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_paciente_com_eixos.png?v=8e006127cc', c:'Espectrograma de paciente, com eixos'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform) — sujeito-controle'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform) — paciente'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_cnn_diagrama_real.png?v=480d92c049', c:'Arquitetura da CNN do SPIRA — diagrama da rede convolucional'},
+  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/younesi2024_fig7_filtro_deslizante.png?v=fdaa4d8abf', c:'Filtro deslizante (convolução) sobre o espectrograma (Younesi et al., 2024)'},
+  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_48H_corona_filopodio_1_dentro.jpg?v=5861823177', c:'Célula Vero infectada (48 h) — filopódios com partículas de SARS-CoV-2'},
+  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_48H_corona_filopodio_2_dentro.jpg?v=ca1b102b0f', c:'Célula Vero infectada (48 h) — detalhe dos filopódios'},
+  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_72H_corona_filopodio_3_dentro.jpg?v=a7c571268a', c:'Célula Vero infectada (72 h) — filopódios e brotamento viral'},
+  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg?v=4f64088742', c:'SARS-CoV-2 emergindo de célula em cultura (microscopia eletrônica, NIAID)'},
+];
+const GALITEMS=[]; // registro global das figuras renderizadas (índice estável entre galerias)
+function galBuild(list){
   let h='', cur=null;
-  ANALISES.forEach((a,i)=>{
+  list.forEach(a=>{
+    const gi=GALITEMS.push(a)-1;
     if(a.g!==cur){if(cur!==null)h+='</div>';cur=a.g;h+='<div class="ggrp">'+dEsc(a.g)+'</div><div class="gal">';}
-    h+='<figure class="gfig" data-i="'+i+'"><img loading="lazy" src="'+a.s+'" alt="'+dEsc(a.c)+'">'
+    h+='<figure class="gfig" data-i="'+gi+'"><img loading="lazy" src="'+a.s+'" alt="'+dEsc(a.c)+'">'
       +'<figcaption>'+dEsc(a.c)+'</figcaption></figure>';
   });
   if(cur!==null)h+='</div>';
@@ -502,8 +519,8 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImgZoom();});
 function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
-  const ids=['d-tese','d-resumo','d-sumario','d-analises','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','análises','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
+  const ids=['d-tese','d-resumo','d-sumario','d-analises','d-cap4','d-figuras','d-tabelas'];
+  nav.innerHTML=['a tese','resumo','sumário','análises','capítulo 4','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
   let h='<h2 class="dt">{tecno-etnografia} de um centro de inteligência artificial</h2>';
   h+='<div class="dsub">seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026</div>';
   const T=DOC.tese;
@@ -535,7 +552,8 @@ function buildDoc(){
     });
     h+='</div>';
   });
-  h+='<div class="dh" id="d-analises">Análises (gráficos)</div>'+galBuild();
+  h+='<div class="dh" id="d-analises">Análises (gráficos)</div>'+galBuild(ANALISES);
+  h+='<div class="dh" id="d-cap4">Capítulo 4 · SPIRA</div>'+galBuild(CAP4FIGS);
   h+='<div class="dh" id="d-figuras">Lista de ilustrações ('+DOC.figuras.length+')</div>'+dList(DOC.figuras);
   h+='<div class="dh" id="d-tabelas">Lista de tabelas ('+DOC.tabelas.length+')</div>'+dList(DOC.tabelas);
   document.getElementById('doc-body').innerHTML=h;
@@ -545,7 +563,7 @@ function buildDoc(){
   body.addEventListener('click',e=>{
     if(e.target.closest('a'))return; // não interfere nos links (mapa do capítulo etc.)
     const gf=e.target.closest('.gfig');
-    if(gf){const a=ANALISES[+gf.dataset.i];if(a)openImgZoom(a.s,a.c);return;}
+    if(gf){const a=GALITEMS[+gf.dataset.i];if(a)openImgZoom(a.s,a.c);return;}
     const head=e.target.closest('.chead,.sec,.ovr,.lst .it');
     if(!head)return;
     let ch='', html='';
