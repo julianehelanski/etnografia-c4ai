@@ -27,10 +27,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 /* legenda de tópicos */
 #legend{position:fixed;bottom:1.4rem;left:1.4rem;z-index:6;background:rgba(255,255,255,.9);
   border:1px solid var(--rule-soft);padding:.7rem .9rem;box-shadow:0 2px 14px rgba(70,60,110,.12);max-width:19rem}
-#legend .lh{font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:#9aa0ab;margin-bottom:.5rem}
+#legend .lh{font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:#555555;margin-bottom:.5rem}
 #legend .li{display:flex;align-items:flex-start;gap:.45rem;font-size:.66rem;margin:.32rem 0;cursor:pointer;color:#34405e;line-height:1.25}
 #legend .li b{font-weight:600}
-#legend .li .lt{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;color:#9aa0ab;letter-spacing:.02em;margin-top:.05rem}
+#legend .li .lt{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;color:#555555;letter-spacing:.02em;margin-top:.05rem}
 #legend .li:hover{color:#000}
 #legend .sw{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:.18rem}
 #legend .li.dim{opacity:.34}
@@ -40,19 +40,19 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   border-left:1px solid var(--rule-soft);z-index:50;transform:translateX(100%);
   transition:transform .45s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:2.6rem 1.9rem 3rem}
 #panel.open{transform:translateX(0)}
-#pcl{position:absolute;top:1rem;right:1.1rem;background:none;border:none;color:#c0beb8;
+#pcl{position:absolute;top:1rem;right:1.1rem;background:none;border:none;color:#555555;
   font-family:'CMU Typewriter Text',monospace;font-size:.66rem;cursor:pointer;letter-spacing:.1em}
 #pcl:hover{color:#444}
 #pterm{font-family:'CMU Serif',serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.2rem}
 #ptopic{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.06em;margin-bottom:1.3rem}
 .psec{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
-  color:#9aa0ab;border-top:1px solid #ececec;padding-top:.7rem;margin:1.3rem 0 .6rem}
+  color:#555555;border-top:1px solid #ececec;padding-top:.7rem;margin:1.3rem 0 .6rem}
 .pstat{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#5b6480;line-height:1.9}
-.pexp{display:block;font-family:'CMU Serif',serif;font-size:.78rem;font-style:italic;color:#9aa0ab;
+.pexp{display:block;font-family:'CMU Serif',serif;font-size:.78rem;color:#1a1a1a;
   line-height:1.4;letter-spacing:0;text-transform:none;margin:.05rem 0 .6rem}
 .assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3}
 .assoc .bar{height:5px;border-radius:3px;flex-shrink:0;min-width:3px}
-.assoc .aw{font-family:'CMU Typewriter Text',monospace;font-size:.54rem;color:#aaa;margin-left:auto}
+.assoc .aw{font-family:'CMU Typewriter Text',monospace;font-size:.54rem;color:#555555;margin-left:auto}
 .assoc b{font-weight:600;cursor:pointer;color:#243352}
 .assoc b:hover{text-decoration:underline}
 .quote{font-family:'CMU Serif',serif;font-size:1.08rem;line-height:1.65;color:#1f2430;border-left:3px solid var(--rule-soft);padding-left:.95rem;margin:.95rem 0}
@@ -66,7 +66,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #qzoom-tx{font-family:'CMU Serif',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.5;color:#141414}
 #qzoom-tx mark{background:#f6d36b;color:#141414;padding:.05em .25em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 #qzoom-tx .qz-link{font-size:.5em;color:#0645ad;text-decoration:underline;text-underline-offset:.12em}
-.qch{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#b3b0bb;margin-bottom:.25rem}
+.qch{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#555555;margin-bottom:.25rem}
 .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.64rem;letter-spacing:.04em;
   border:1px solid #e0deda;border-radius:999px;padding:.18rem .5rem;margin:.2rem .25rem 0 0;color:#444444}
 
@@ -75,7 +75,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   box-shadow:0 2px 10px rgba(0,0,0,.08)}
 
 #hint{position:fixed;bottom:1.4rem;right:1.4rem;z-index:6;font-family:'CMU Typewriter Text',monospace;
-  font-size:.52rem;letter-spacing:.1em;color:#b3b0bb;text-align:right;line-height:1.7;pointer-events:none}
+  font-size:.52rem;letter-spacing:.1em;color:#555555;text-align:right;line-height:1.7;pointer-events:none}
 
 /* botão e modal do documento da tese */
 #doc-btn{position:fixed;top:1.3rem;right:1.4rem;z-index:40;font-family:'CMU Serif',serif;
@@ -106,7 +106,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .cap{margin:1.1rem 0 1.3rem;border-left:2px solid #d4d4d4;padding-left:.9rem}
 #doc .cap .cnum{font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.14em;color:#3a3a3a}
 #doc .cap .ctitle{font-family:'CMU Serif',serif;font-weight:700;font-size:1.2rem;color:#111111;margin:.05rem 0 .35rem}
-#doc .cap .cresumo{font-family:'CMU Serif',serif;font-size:.9rem;line-height:1.55;color:#262626;margin-bottom:.4rem}
+#doc .cap .cresumo{font-family:'CMU Serif',serif;font-size:.9rem;line-height:1.55;color:#1a1a1a;margin-bottom:.4rem}
 #doc .cap .cconc{font-family:'CMU Serif',serif;font-size:.88rem;line-height:1.5;color:#1a1a1a;margin-bottom:.5rem}
 #doc .cap .cconc .cct{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#505050;margin-right:.45rem}
 #doc .cap .chead{margin:0 -.4rem .2rem;padding:.3rem .4rem;border-radius:4px;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
@@ -140,7 +140,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .sec.zoom .snota{font-size:1.02rem;line-height:1.6}
 #doc .sec.zoom .subs{font-size:.84rem;line-height:1.7}
 #doc .sec .st{font-family:'CMU Serif',serif;font-size:.76rem;font-weight:600;color:#1e1e1e}
-#doc .sec .snota{font-family:'CMU Serif',serif;font-size:.86rem;line-height:1.45;color:#333333;margin:.05rem 0 .1rem}
+#doc .sec .snota{font-family:'CMU Serif',serif;font-size:.86rem;line-height:1.45;color:#1a1a1a;margin:.05rem 0 .1rem}
 #doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#3f3f3f;line-height:1.6}
 #doc .lst{column-count:2;column-gap:1.6rem}
 #doc .lst .grp{break-inside:avoid;font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.1em;
@@ -167,7 +167,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro h1 .tx-cmd{color:#555;font-family:'CMU Typewriter Text',monospace;font-weight:500;font-style:normal}
 #intro h1 .tx-b{color:#555;font-family:'CMU Typewriter Text',monospace;font-weight:500;font-style:normal}
 #intro h1 .tx-d{color:#555;font-family:'CMU Typewriter Text',monospace;font-weight:500;font-style:normal;padding:0 .12em}
-#intro .hint{position:absolute;bottom:2.6rem;font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:#c0beb8;opacity:0;animation:rise 1s ease 2.8s forwards}
+#intro .hint{position:absolute;bottom:2.6rem;font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:#555555;opacity:0;animation:rise 1s ease 2.8s forwards}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
