@@ -154,6 +154,25 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .lst .it.zoom .itmap{font-size:1rem}
 #doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#555555;flex-shrink:0;min-width:1.4rem}
 @media(max-width:620px){#doc .lst{column-count:1}}
+/* galeria de análises (bibliometria · lexicometria) */
+#doc .ggrp{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#333333;margin:1.4rem 0 .55rem}
+#doc .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.9rem;margin:0 0 .8rem}
+#doc .gfig{margin:0;cursor:zoom-in;border:1px solid #e4e1ea;border-radius:6px;overflow:hidden;
+  background:#fff;transition:box-shadow .15s ease,transform .15s ease}
+#doc .gfig:hover{box-shadow:0 6px 22px rgba(40,30,55,.18);transform:translateY(-1px)}
+#doc .gfig img{display:block;width:100%;height:150px;object-fit:contain;background:#faf9fc;border-bottom:1px solid #efedf3}
+#doc .gfig figcaption{font-family:'CMU Serif',serif;font-size:.74rem;line-height:1.3;color:#1a1a1a;padding:.45rem .55rem}
+@media(max-width:560px){#doc .gal{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+/* lightbox de imagem */
+#imgzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.78);backdrop-filter:blur(2px);
+  display:flex;align-items:center;justify-content:center;padding:3vh 3vw;cursor:zoom-out}
+#imgzoom[hidden]{display:none}
+#imgzoom-card{position:relative;max-width:96vw;max-height:94vh;display:flex;flex-direction:column;align-items:center;cursor:auto}
+#imgzoom-im{max-width:96vw;max-height:84vh;object-fit:contain;background:#fff;border-radius:6px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+#imgzoom-cap{margin-top:.8rem;font-family:'CMU Serif',serif;font-size:.95rem;color:#f3f0ea;text-align:center;max-width:60rem;line-height:1.4}
+#imgzoom-cl{position:absolute;top:-2.1rem;right:0;font-family:'CMU Typewriter Text',monospace;font-size:.8rem;
+  color:#f3f0ea;background:none;border:none;cursor:pointer;letter-spacing:.04em}
 
 /* intro */
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;
@@ -190,6 +209,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <div id="pbody"></div>
 </div>
 <div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
+<div id="imgzoom" hidden><div id="imgzoom-card"><button id="imgzoom-cl">× fechar</button><img id="imgzoom-im" alt=""><div id="imgzoom-cap"></div></div></div>
 <button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese">a tese ↗</button>
 <div id="doc"><div id="doc-card">
   <button id="doc-cl">× fechar</button>
@@ -429,11 +449,61 @@ function dList(items){
 }
 function ovRow(k,v){return '<div class="ovr"><span class="ovk">'+k+'</span><span class="ovv">'+dEsc(v)+'</span></div>';}
 function ovList(k,arr){return '<div class="ovr"><span class="ovk">'+k+'</span><span class="ovv"><ul class="ovul">'+arr.map(x=>'<li>'+dEsc(x)+'</li>').join('')+'</ul></span></div>';}
+// galeria de análises: gráficos bibliométricos e lexicométricos (arquivos em
+// figuras/, sincronizados da tese). Legendas curadas; edite à vontade.
+const ANALISES=[
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-science-in-action.png?v=484d6fb206', c:'Science in Action (1987) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-lab-life.png?v=80cf128008', c:'Laboratory Life (1979) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-pandora.png?v=1ba28f0ea2', c:'A Esperança de Pandora (1999) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-aime.png?v=09e6609fb9', c:'Modos de Existência · AIME (2012) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-clarifications.png?v=04a866cfc7', c:'“Clarifications” — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-recalling.png?v=7fc4a907bf', c:'“Recalling ANT” (texto integral) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-comparacao.png?v=2e11cfc18b', c:'Comparação das frequências de figurações entre as obras'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-grande-area.png?v=8022e294db', c:'CAPES — distribuição por grande área'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-subcampos.png?v=76bf440146', c:'CAPES — distribuição por subcampos'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-humanas.png?v=0a8d570d80', c:'CAPES — áreas das ciências humanas'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-humanas-temporal.png?v=1d7b5d4529', c:'CAPES — evolução temporal nas ciências humanas'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-heatmap-kw.png?v=23f1abc7f3', c:'CAPES — mapa de calor: grande área × palavra-chave'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-heatmap-sub.png?v=b5c8e1faaf', c:'CAPES — mapa de calor: subcampo × grande área'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-scielo-area.png?v=62d73ed289', c:'SciELO — distribuição por área temática'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-scielo-subcampos.png?v=14b9c12ac1', c:'SciELO — distribuição por subcampos'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-comparativo.png?v=93b9bf24ce', c:'Comparativo SciELO × CAPES'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-1-ranking.png?v=82d1c27e88', c:'C4AI — ranking de grupos'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-3-evolucao.png?v=847dfecfd3', c:'C4AI — evolução temporal da produção'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=acebe634a6', c:'C4AI — mapa de calor: grupo × ano'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-6-produtividade.png?v=fef6d16a5d', c:'C4AI — produtividade dos grupos'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-8-composicao.png?v=55a295c265', c:'C4AI — composição temporal'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-9-concentracao.png?v=9fcd7f9249', c:'C4AI — análise de concentração'},
+  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg?v=2bc57e47f8', c:'C4AI — comparação entre os principais grupos'},
+];
+function galBuild(){
+  let h='', cur=null;
+  ANALISES.forEach((a,i)=>{
+    if(a.g!==cur){if(cur!==null)h+='</div>';cur=a.g;h+='<div class="ggrp">'+dEsc(a.g)+'</div><div class="gal">';}
+    h+='<figure class="gfig" data-i="'+i+'"><img loading="lazy" src="'+a.s+'" alt="'+dEsc(a.c)+'">'
+      +'<figcaption>'+dEsc(a.c)+'</figcaption></figure>';
+  });
+  if(cur!==null)h+='</div>';
+  return h;
+}
+function openImgZoom(src,cap){
+  document.getElementById('imgzoom-im').src=src;
+  document.getElementById('imgzoom-cap').textContent=cap;
+  document.getElementById('imgzoom').hidden=false;
+}
+function closeImgZoom(){
+  document.getElementById('imgzoom').hidden=true;
+  document.getElementById('imgzoom-im').src='';
+}
+document.getElementById('imgzoom').addEventListener('click',e=>{
+  if(e.target.id==='imgzoom'||e.target.id==='imgzoom-cl')closeImgZoom();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImgZoom();});
 function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
-  const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
+  const ids=['d-tese','d-resumo','d-sumario','d-analises','d-figuras','d-tabelas'];
+  nav.innerHTML=['a tese','resumo','sumário','análises','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
   let h='<h2 class="dt">{tecno-etnografia} de um centro de inteligência artificial</h2>';
   h+='<div class="dsub">seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026</div>';
   const T=DOC.tese;
@@ -465,6 +535,7 @@ function buildDoc(){
     });
     h+='</div>';
   });
+  h+='<div class="dh" id="d-analises">Análises (gráficos)</div>'+galBuild();
   h+='<div class="dh" id="d-figuras">Lista de ilustrações ('+DOC.figuras.length+')</div>'+dList(DOC.figuras);
   h+='<div class="dh" id="d-tabelas">Lista de tabelas ('+DOC.tabelas.length+')</div>'+dList(DOC.tabelas);
   document.getElementById('doc-body').innerHTML=h;
@@ -473,6 +544,8 @@ function buildDoc(){
   const body=document.getElementById('doc-body');
   body.addEventListener('click',e=>{
     if(e.target.closest('a'))return; // não interfere nos links (mapa do capítulo etc.)
+    const gf=e.target.closest('.gfig');
+    if(gf){const a=ANALISES[+gf.dataset.i];if(a)openImgZoom(a.s,a.c);return;}
     const head=e.target.closest('.chead,.sec,.ovr,.lst .it');
     if(!head)return;
     let ch='', html='';
