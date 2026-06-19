@@ -432,8 +432,13 @@ comm.filter(c => c.size >= 3).forEach(c => {
     node.style('opacity', n => activeComm == null || n.community === activeComm ? 1 : .1);
     link.style('opacity', activeComm == null ? null : .03);
     legend.querySelectorAll('.li').forEach((li, i) => li.classList.toggle('dim', activeComm != null && comm.filter(x => x.size >= 3)[i].id !== activeComm));
-    sim.alphaTarget(.3).restart();                 // reaquece: a rede volta a se mover ao clicar
-    clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 700);
+    // movimento: perturba as forças para a rede se reorganizar — agrupa o
+    // território ativo no centro; ao desmarcar, ela volta a se espalhar.
+    const pull = n => (activeComm != null && n.community === activeComm) ? 0.14 : 0.02;
+    sim.force('x', d3.forceX(W / 2).strength(pull));
+    sim.force('y', d3.forceY(H / 2).strength(pull));
+    sim.alphaTarget(.32).restart();
+    clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 1400);
   };
   legend.appendChild(el);
 });
