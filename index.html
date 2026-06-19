@@ -164,6 +164,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .gfig img{display:block;width:100%;height:150px;object-fit:contain;background:#faf9fc;border-bottom:1px solid #efedf3}
 #doc .gfig figcaption{font-family:'CMU Serif',serif;font-size:.74rem;line-height:1.3;color:#1a1a1a;padding:.45rem .55rem}
 @media(max-width:560px){#doc .gal{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+#doc .capgal{margin:.3rem 0 .2rem;border-top:1px solid #ece9f1;padding-top:.2rem}
+#doc .capgal .ggrp:first-child{margin-top:.7rem}
 /* lightbox de imagem */
 #imgzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.78);backdrop-filter:blur(2px);
   display:flex;align-items:center;justify-content:center;padding:3vh 3vw;cursor:zoom-out}
@@ -521,8 +523,8 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImgZoom();});
 function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
-  const ids=['d-tese','d-resumo','d-sumario','d-cap2','d-cap3','d-cap4','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','capítulo 2','capítulo 3','capítulo 4','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
+  const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
+  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
   let h='<h2 class="dt">{tecno-etnografia} de um centro de inteligência artificial</h2>';
   h+='<div class="dsub">seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026</div>';
   const T=DOC.tese;
@@ -540,6 +542,7 @@ function buildDoc(){
     h+='<div class="kw">'+DOC.palavras_chave.map(k=>'<span class="chip">'+dEsc(k)+'</span>').join('')+'</div>';
   }
   h+='<div class="dh" id="d-sumario">Sumário</div>';
+  const capFigs={'2':CAP2FIGS,'3':CAP3FIGS,'4':CAP4FIGS}; // figuras embutidas em cada capítulo
   DOC.sumario.forEach(c=>{
     h+='<div class="cap"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
     h+='<div class="ctitle">'+dEsc(c.title)+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';
@@ -552,11 +555,10 @@ function buildDoc(){
       if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(dEsc).join(' · ')+'</div>';
       h+='</div>';
     });
+    const cf=capFigs[String(c.num)];
+    if(cf)h+='<div class="capgal">'+galBuild(cf)+'</div>';
     h+='</div>';
   });
-  h+='<div class="dh" id="d-cap2">Capítulo 2 · Metáforas, figurações e alianças</div>'+galBuild(CAP2FIGS);
-  h+='<div class="dh" id="d-cap3">Capítulo 3 · A rede que Fábio e Cláudio construíram</div>'+galBuild(CAP3FIGS);
-  h+='<div class="dh" id="d-cap4">Capítulo 4 · A rede que Marcelo construiu</div>'+galBuild(CAP4FIGS);
   h+='<div class="dh" id="d-figuras">Lista de ilustrações ('+DOC.figuras.length+')</div>'+dList(DOC.figuras);
   h+='<div class="dh" id="d-tabelas">Lista de tabelas ('+DOC.tabelas.length+')</div>'+dList(DOC.tabelas);
   document.getElementById('doc-body').innerHTML=h;
