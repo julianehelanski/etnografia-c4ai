@@ -52,6 +52,13 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   border-left:1px solid var(--rule-soft);z-index:50;transform:translateX(100%);
   transition:transform .45s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:2.6rem 1.9rem 3rem}
 #panel.open{transform:translateX(0)}
+/* alça de redimensionamento: arrastar a borda esquerda para alargar o painel */
+#presize{display:none;position:fixed;top:0;right:var(--pw,34rem);width:13px;height:100vh;
+  z-index:60;cursor:ew-resize;align-items:center;justify-content:center;touch-action:none}
+#panel.open ~ #presize{display:flex}
+#presize::before{content:"";width:2px;height:34px;border-radius:2px;background:#d8d4e4;
+  transition:height .15s ease,background .15s ease}
+#presize:hover::before,#presize.drag::before{background:#8a7bb0;height:56px}
 #pcl{position:absolute;top:1rem;right:1.1rem;background:none;border:none;color:#555555;
   font-family:'CMU Typewriter Text',monospace;font-size:.66rem;cursor:pointer;letter-spacing:.1em}
 #pcl:hover{color:#444}
@@ -234,6 +241,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <div id="ptopic-note">agrupamento a que o termo pertence — uma <b>comunidade</b> detectada pelo algoritmo de <b>Louvain</b>, que reúne automaticamente os conceitos que mais co-ocorrem entre si.</div>
   <div id="pbody"></div>
 </div>
+<div id="presize" title="arraste para alargar · duplo-clique para restaurar"></div>
 <div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
 <div id="imgzoom" hidden><div id="imgzoom-card"><button id="imgzoom-cl">× fechar</button><img id="imgzoom-im" alt=""><div id="imgzoom-cap"></div></div></div>
 <button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">\section{</span><span class="texarg">A tese</span><span class="texcmd">}</span> ↗</button>
@@ -426,6 +434,45 @@ document.getElementById('qzoom').addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQZoom(); });
 document.getElementById('pcl').onclick = () => document.getElementById('panel').classList.remove('open');
+
+// painel redimensionável: arrastar a alça (#presize) na borda esquerda alarga o
+// painel, de modo que o conteúdo (até o "aparece em") caiba sem precisar diminuir
+// o zoom. A largura escolhida fica salva entre visitas.
+(() => {
+  const grip = document.getElementById('presize');
+  const root = document.documentElement;
+  const DEFAULT = '34rem', MIN = 320; // px
+  const saved = localStorage.getItem('panelW');
+  if (saved) root.style.setProperty('--pw', saved);
+  let dragging = false;
+  const setW = clientX => {
+    const max = window.innerWidth * 0.94;
+    const w = Math.min(max, Math.max(MIN, window.innerWidth - clientX));
+    root.style.setProperty('--pw', w + 'px');
+  };
+  grip.addEventListener('pointerdown', e => {
+    dragging = true;
+    grip.classList.add('drag');
+    grip.setPointerCapture(e.pointerId);
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+  grip.addEventListener('pointermove', e => { if (dragging) setW(e.clientX); });
+  const end = () => {
+    if (!dragging) return;
+    dragging = false;
+    grip.classList.remove('drag');
+    document.body.style.userSelect = '';
+    localStorage.setItem('panelW', getComputedStyle(document.getElementById('panel')).width);
+  };
+  grip.addEventListener('pointerup', end);
+  grip.addEventListener('pointercancel', end);
+  // duplo-clique restaura a largura padrão
+  grip.addEventListener('dblclick', () => {
+    root.style.setProperty('--pw', DEFAULT);
+    localStorage.removeItem('panelW');
+  });
+})();
 
 // legenda de tópicos
 const legend = document.getElementById('legend');
