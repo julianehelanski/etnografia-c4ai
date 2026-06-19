@@ -5,7 +5,8 @@ centro de inteligência artificial: seguindo cientistas e engenheiros —
 universidade afora"** (Juliane Helanski · PPGCS/IFCH · Unicamp · 2026).
 
 A página principal é uma **rede textual da tese**: um grafo de co-ocorrência de
-conceitos gerado a partir do `.tex`, organizado em territórios temáticos. Pela
+conceitos gerado a partir do `.tex`, organizado em agrupamentos temáticos
+(comunidades detectadas por Louvain). Pela
 aba **`{a tese}`** abre-se um modal com resumo, sumário comentado, as galerias
 de figuras de cada capítulo e as listas de ilustrações e tabelas.
 
