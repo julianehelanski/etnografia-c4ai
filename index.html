@@ -28,10 +28,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 /* estilo "editor LaTeX" (como no Overleaf): tudo monoespaçado.
    .texcmd = comando LaTeX (azul neon, sem negrito);
    .texarg = chaves + texto do autor (preto, sem negrito);
-   .texttl = título do trabalho (preto, negrito). */
+   .texttl = título do trabalho (preto, sem negrito). */
 .texcmd{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1f6bff;font-weight:400;text-transform:none;letter-spacing:0}
 .texarg{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1a1a1a;font-weight:400;text-transform:none;letter-spacing:0}
-.texttl{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1a1a1a;font-weight:700;text-transform:none;letter-spacing:0}
+.texttl{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1a1a1a;font-weight:400;text-transform:none;letter-spacing:0}
 
 /* legenda de tópicos */
 #legend{position:fixed;bottom:1.4rem;left:1.4rem;z-index:6;background:rgba(255,255,255,.9);
@@ -236,7 +236,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 <div id="intro">
   <div class="pre"><span class="texcmd">\documentclass[</span><span class="texarg">doutorado</span><span class="texcmd">]{</span><span class="texarg">tese</span><span class="texcmd">}</span></div>
-  <h1><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial: seguindo cientistas e engenheiros --- universidade afora</span><span class="texcmd">}</span></h1>
+  <h1><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial: seguindo cientistas e engenheiros universidade afora</span><span class="texcmd">}</span></h1>
   <div class="sub"><span class="texcmd">\author{</span><span class="texarg">Juliane Helanski</span><span class="texcmd">}</span><span class="texarg">&nbsp;·&nbsp;2026</span><br><span class="texcmd">\orientadora{</span><span class="texarg">Suely Kofes</span><span class="texcmd">}</span></div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br>Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)<br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
   <div class="hint"><span class="texcmd">\begin{</span><span class="texarg">document</span><span class="texcmd">}</span></div>
@@ -550,7 +550,7 @@ function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
   const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
+  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+texCmd('ref',t)+'</a>').join('');
   let h='<h2 class="dt">'+texCmd('title','<span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial','texttl')+'</h2>';
   h+='<div class="dsub">'+texCmd('subtitle','seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026')+'</div>';
   const T=DOC.tese;
