@@ -10,6 +10,27 @@ conceitos gerado a partir do `.tex`, organizado em agrupamentos temáticos
 aba **`{a tese}`** abre-se um modal com resumo, sumário comentado, as galerias
 de figuras de cada capítulo e as listas de ilustrações e tabelas.
 
+## Como ler a rede
+
+Cada **nó** é um conceito recorrente no texto; uma **aresta** liga dois conceitos
+que tendem a aparecer juntos (co-ocorrência), com peso dado pelo **NPMI**
+(*normalized pointwise mutual information*) — quanto mais a dupla co-ocorre acima
+do que o acaso explicaria, mais forte a ligação.
+
+Os **agrupamentos temáticos** (cada cor) não são definidos à mão: são
+**comunidades** detectadas automaticamente pelo algoritmo de **Louvain** sobre a
+rede — ele reúne no mesmo grupo os conceitos que mais co-ocorrem entre si. O
+tamanho de cada nó reflete sua **centralidade (PageRank)**. Essa nota técnica
+aparece também na **legenda** do site e no painel de cada termo, para situar o
+leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) está em
+[`infranodus/tese_network.py`](infranodus/tese_network.py).
+
+Ao **clicar num termo**, abre-se à direita um painel (*drawer*) com suas
+métricas, as associações mais fortes (NPMI), trechos da tese e os capítulos em
+que ele aparece. O painel é **redimensionável**: arraste a alça na sua borda
+esquerda para alargá-lo (duplo-clique restaura a largura padrão), e a largura
+escolhida fica salva entre visitas.
+
 ## Identidade visual: a sintaxe LaTeX é proposital
 
 Os títulos e subtítulos do site são escritos na **sintaxe de comandos LaTeX**
