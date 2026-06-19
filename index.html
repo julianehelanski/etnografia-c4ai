@@ -150,7 +150,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .sec.zoom .subs{font-size:.84rem;line-height:1.7}
 #doc .sec .st{font-family:'CMU Serif',serif;font-size:.76rem;font-weight:600;color:#1e1e1e}
 #doc .sec .snota{font-family:'CMU Serif',serif;font-size:.86rem;line-height:1.45;color:#1a1a1a;margin:.05rem 0 .1rem}
-#doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#3f3f3f;line-height:1.6}
+#doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#3f3f3f;line-height:1.6;padding-left:1.5rem;margin-top:.15rem}
+#doc .sec .subs .subln{margin:.06rem 0}
 #doc .lst{column-count:2;column-gap:1.6rem}
 #doc .lst .grp{break-inside:avoid;font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.1em;
   text-transform:uppercase;color:#333333;margin:.7rem 0 .25rem}
@@ -577,7 +578,7 @@ function buildDoc(){
     (c.sections||[]).forEach(s=>{
       h+='<div class="sec"><div class="st">'+texCmd('section',dEsc(s.t))+'</div>';
       if(s.nota)h+='<div class="snota">'+dEsc(s.nota)+'</div>';
-      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(x=>texCmd('subsection',dEsc(x))).join(' ')+'</div>';
+      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(x=>'<div class="subln">'+texCmd('subsection',dEsc(x))+'</div>').join('')+'</div>';
       h+='</div>';
     });
     const cf=capFigs[String(c.num)];
