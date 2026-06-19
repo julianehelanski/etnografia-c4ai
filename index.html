@@ -211,7 +211,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 <div id="title-bar">
   <h2><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> <span class="texcmd">{</span>Rede textual da tese<span class="texcmd">}</span></span><span class="texcmd">}</span></h2>
   <p id="subtitle"><span class="texcmd">\subtitle{</span><span class="texarg">rede de co-ocorrência · 260 conceitos · 6 territórios temáticos</span><span class="texcmd">}</span></p>
-  <p class="texnote">a sintaxe LaTeX (<span class="texcmd">\chapter{</span><span class="texarg">…</span><span class="texcmd">}</span>, <span class="texcmd">\section{</span><span class="texarg">…</span><span class="texcmd">}</span>) é proposital: a tese vive no Overleaf. aqui os comandos chamam a própria tese — seus capítulos, seções e subseções.</p>
+  <p class="texnote">a sintaxe LaTeX (<span class="texcmd">\chapter{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\section{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\subsection{</span><span class="texarg">…</span><span class="texcmd">}</span>) é proposital: a tese vive no Overleaf. aqui os comandos chamam a própria tese — seus capítulos, seções e subseções.</p>
 </div>
 
 <div id="legend"><div class="lh">territórios temáticos</div></div>
@@ -226,7 +226,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 </div>
 <div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
 <div id="imgzoom" hidden><div id="imgzoom-card"><button id="imgzoom-cl">× fechar</button><img id="imgzoom-im" alt=""><div id="imgzoom-cap"></div></div></div>
-<button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">{a tese}</span> ↗</button>
+<button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">\section{</span><span class="texarg">A tese</span><span class="texcmd">}</span> ↗</button>
 <div id="doc"><div id="doc-card">
   <button id="doc-cl">× fechar</button>
   <nav id="doc-nav"></nav>
@@ -564,7 +564,7 @@ function buildDoc(){
   }
   h+='<div class="dh" id="d-resumo">'+texCmd('section','Resumo')+'</div><div class="resumo">'+dEsc(DOC.resumo)+'</div>';
   if(DOC.palavras_chave&&DOC.palavras_chave.length){
-    h+='<div class="kw">'+DOC.palavras_chave.map(k=>'<span class="chip">'+dEsc(k)+'</span>').join('')+'</div>';
+    h+='<div class="kw">'+texCmd('palavraschave',DOC.palavras_chave.map(dEsc).join(', '))+'</div>';
   }
   h+='<div class="dh" id="d-sumario">'+texCmd('section','Sumário')+'</div>';
   const capFigs={'2':CAP2FIGS,'3':CAP3FIGS,'4':CAP4FIGS}; // figuras embutidas em cada capítulo
@@ -575,9 +575,9 @@ function buildDoc(){
     {const cm=capMapa(c.num);if(cm)h+='<a class="cmapa" href="'+cm+'" target="_blank" rel="noopener">'+texCmd('url','mapa do capítulo')+'</a>';}
     h+='</div>';
     (c.sections||[]).forEach(s=>{
-      h+='<div class="sec"><div class="st">'+texCmd('subsection',dEsc(s.t))+'</div>';
+      h+='<div class="sec"><div class="st">'+texCmd('section',dEsc(s.t))+'</div>';
       if(s.nota)h+='<div class="snota">'+dEsc(s.nota)+'</div>';
-      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(dEsc).join(' · ')+'</div>';
+      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(x=>texCmd('subsection',dEsc(x))).join(' ')+'</div>';
       h+='</div>';
     });
     const cf=capFigs[String(c.num)];

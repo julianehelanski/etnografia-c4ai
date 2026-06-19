@@ -26,7 +26,8 @@ decoração: é uma escolha que **marca três coisas ao mesmo tempo**:
    comando como `\chapter{…}` *chama* e estrutura um trecho do documento. Aqui,
    transpondo essa lógica, os comandos **chamam a própria tese**: `\title{…}`
    chama o trabalho, `\chapter{…}` os capítulos, `\section{…}` as seções,
-   `\subsection{…}` as subseções — e `\url{…}` os mapas de cada capítulo.
+   `\subsection{…}` as subseções, `\palavraschave{…}` as palavras-chave — e
+   `\url{…}` os mapas de cada capítulo.
 
 Convenção de cores (estilo editor LaTeX):
 
