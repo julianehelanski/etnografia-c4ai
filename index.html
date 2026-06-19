@@ -138,8 +138,9 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .lst .it:hover{background:#fdf2a0}
 #doc .lst .it.zoom{background:#fdf2a0;cursor:zoom-out;font-size:1.08rem;line-height:1.5;padding:.5rem .6rem;margin:.2rem -.6rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
 #doc .lst .it.zoom .num{font-size:.84rem;min-width:1.9rem}
-#doc .lst .it .itmap{font-family:'CMU Serif',serif;font-size:.72rem;color:#0645ad;text-decoration:underline;text-underline-offset:.12em;margin-left:.5rem;white-space:nowrap}
-#doc .lst .it.zoom .itmap{font-size:.95rem}
+#doc .lst .it .itmap{font-family:'CMU Serif',serif;font-size:.8rem;color:#0645ad;text-decoration:underline;text-underline-offset:.12em;margin-left:.5rem;white-space:nowrap;cursor:pointer}
+#doc .lst .it .itmap:hover{color:#0b0bcf}
+#doc .lst .it.zoom .itmap{font-size:1rem}
 #doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#888888;flex-shrink:0;min-width:1.4rem}
 @media(max-width:620px){#doc .lst{column-count:1}}
 
@@ -375,14 +376,12 @@ const DOC = JSON.parse(document.getElementById('docdata').textContent);
 // tese (campo `link` em DOC.figuras, extraído do \href da legenda pelo gerador
 // infranodus/tese_documento.py). Nada de manter URLs à mão aqui.
 function dEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function dLabel(t){
-  if(/Linha do tempo/i.test(t)) return 'linha do tempo ↗';
-  if(/Texto-mapa do cap[ií]tulo/i.test(t)) return 'mapa ↗';
-  return 'ver diagrama ↗';
-}
-// link do texto-mapa de um capítulo (para o botão "abrir o mapa do capítulo")
+// rótulo único para todo diagrama interativo
+function dLabel(t){return 'ver diagrama ↗';}
+// link do mapa de um capítulo (botão "abrir o mapa do capítulo");
+// casa "Mapa do capítulo capituloN" (e o nome antigo "Texto-mapa…").
 function capMapa(num){
-  const f=(DOC.figuras||[]).find(x=>String(x.cap)===String(num)&&/Texto-mapa do cap[ií]tulo/i.test(x.t)&&x.link);
+  const f=(DOC.figuras||[]).find(x=>String(x.cap)===String(num)&&/(?:Texto-)?mapa do cap[ií]tulo\s+capitulo\d/i.test(x.t)&&x.link);
   return f?f.link:'';
 }
 function dList(items){
