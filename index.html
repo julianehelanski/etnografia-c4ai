@@ -164,6 +164,11 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .gfig img{display:block;width:100%;height:150px;object-fit:contain;background:#faf9fc;border-bottom:1px solid #efedf3}
 #doc .gfig figcaption{font-family:'CMU Serif',serif;font-size:.74rem;line-height:1.3;color:#1a1a1a;padding:.45rem .55rem}
 @media(max-width:560px){#doc .gal{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+#doc .gaud{grid-column:1/-1;margin:0;border:1px solid #e4e1ea;border-radius:6px;background:#fff;padding:.6rem .7rem;display:flex;flex-direction:column;gap:.5rem}
+#doc .gaud figcaption{font-family:'CMU Serif',serif;font-size:.8rem;line-height:1.35;color:#1a1a1a}
+#doc .gaud audio{width:100%;height:34px}
+#doc .gaud-src{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#555555;line-height:1.3}
+#doc .gaud-src a{color:#0645ad;text-decoration:underline;text-underline-offset:.12em}
 #doc .capgal{margin:.3rem 0 .2rem;border-top:1px solid #ece9f1;padding-top:.2rem}
 #doc .capgal .ggrp:first-child{margin-top:.7rem}
 /* lightbox de imagem */
@@ -482,6 +487,7 @@ const CAP3FIGS=[
 ];
 // figuras do capítulo 4 (SPIRA): a voz como dado + microscopia do SARS-CoV-2.
 const CAP4FIGS=[
+  {g:'SPIRA · a voz como dado', type:'audio', s:'audio/PTT-20200511-WA0018.mp3', drive:'https://drive.google.com/file/d/1Bv0d3uwBB-52MBmtN2A_qNoaBIxUkN9y/view?usp=sharing', ds:'https://github.com/Spirabr/Spira-audios', c:'“O amor ao próximo ajuda a enfrentar o coronavírus com a força que a gente precisa”'},
   {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma de uma gravação de voz, com eixos (tempo × frequência)'},
   {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma da voz — a “imagem” que a rede recebe como entrada'},
   {g:'SPIRA · a voz como dado', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação de escalas: espectrograma linear × logarítmico'},
@@ -489,7 +495,6 @@ const CAP4FIGS=[
   {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform) — sujeito-controle'},
   {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform) — paciente'},
   {g:'SPIRA · a voz como dado', s:'figuras/spira_cnn_diagrama_real.png?v=480d92c049', c:'Arquitetura da CNN do SPIRA — diagrama da rede convolucional'},
-  {g:'SPIRA · a voz como dado', s:'figuras/younesi2024_fig7_filtro_deslizante.png?v=fdaa4d8abf', c:'Filtro deslizante (convolução) sobre o espectrograma (Younesi et al., 2024)'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_48H_corona_filopodio_1_dentro.jpg?v=5861823177', c:'Célula Vero infectada (48 h) — filopódios com partículas de SARS-CoV-2'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_48H_corona_filopodio_2_dentro.jpg?v=ca1b102b0f', c:'Célula Vero infectada (48 h) — detalhe dos filopódios'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_72H_corona_filopodio_3_dentro.jpg?v=a7c571268a', c:'Célula Vero infectada (72 h) — filopódios e brotamento viral'},
@@ -499,8 +504,15 @@ const GALITEMS=[]; // registro global das figuras renderizadas (índice estável
 function galBuild(list){
   let h='', cur=null;
   list.forEach(a=>{
-    const gi=GALITEMS.push(a)-1;
     if(a.g!==cur){if(cur!==null)h+='</div>';cur=a.g;h+='<div class="ggrp">'+dEsc(a.g)+'</div><div class="gal">';}
+    if(a.type==='audio'){
+      const fb=a.drive?'<a href="'+a.drive+'" target="_blank" rel="noopener">ouvir no Google Drive</a>':'';
+      const src=a.ds?'<div class="gaud-src">Dataset hospedado em <a href="'+a.ds+'" target="_blank" rel="noopener">'+dEsc(a.ds.replace(/^https?:\/\//,''))+'</a> · CC BY-SA 4.0</div>':'';
+      h+='<figure class="gaud"><figcaption>'+dEsc(a.c)+'</figcaption>'
+        +'<audio controls preload="none"><source src="'+a.s+'" type="audio/mpeg">'+fb+'</audio>'+src+'</figure>';
+      return;
+    }
+    const gi=GALITEMS.push(a)-1; // só imagens entram no índice clicável do lightbox
     h+='<figure class="gfig" data-i="'+gi+'"><img loading="lazy" src="'+a.s+'" alt="'+dEsc(a.c)+'">'
       +'<figcaption>'+dEsc(a.c)+'</figcaption></figure>';
   });
