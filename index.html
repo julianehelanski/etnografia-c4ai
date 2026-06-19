@@ -55,6 +55,14 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .assoc b:hover{text-decoration:underline}
 .quote{font-family:'CMU Serif',serif;font-size:1.08rem;line-height:1.65;color:#1f2430;border-left:3px solid var(--rule-soft);padding-left:.95rem;margin:.95rem 0}
 .quote mark{background:#fbe7a8;color:#141414;padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.quote{cursor:zoom-in}
+#qzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
+#qzoom[hidden]{display:none}
+#qzoom-card{position:relative;background:#fff;max-width:min(1000px,94vw);max-height:90vh;overflow-y:auto;padding:3rem 3.4rem;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,.4);cursor:auto}
+#qzoom-cl{position:absolute;top:1rem;right:1.2rem;font-family:'CMU Typewriter Text',monospace;font-size:.8rem;color:#1a1a1a;background:none;border:none;cursor:pointer;letter-spacing:.04em}
+#qzoom-ch{font-family:'CMU Typewriter Text',monospace;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-bottom:1.1rem}
+#qzoom-tx{font-family:'CMU Serif',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.5;color:#141414}
+#qzoom-tx mark{background:#fbe7a8;color:#141414;padding:.05em .25em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .qch{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#b3b0bb;margin-bottom:.25rem}
 .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.64rem;letter-spacing:.04em;
   border:1px solid #e0deda;border-radius:999px;padding:.18rem .5rem;margin:.2rem .25rem 0 0;color:#444444}
@@ -178,6 +186,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <div id="ptopic"></div>
   <div id="pbody"></div>
 </div>
+<div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
 <button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese">a tese ↗</button>
 <div id="doc"><div id="doc-card">
   <button id="doc-cl">× fechar</button>
@@ -348,8 +357,25 @@ function showTerm(id) {
   document.getElementById('pbody').innerHTML = html;
   document.getElementById('pbody').querySelectorAll('b[data-term]').forEach(b =>
     b.onclick = () => showTerm(b.dataset.term));
+  document.getElementById('pbody').querySelectorAll('.quote').forEach(q =>
+    q.onclick = () => {
+      const ch = q.querySelector('.qch') ? q.querySelector('.qch').textContent : '';
+      const tmp = q.cloneNode(true);
+      const c = tmp.querySelector('.qch'); if (c) c.remove();
+      openQZoom(ch, tmp.innerHTML.trim());
+    });
   document.getElementById('panel').classList.add('open');
 }
+function openQZoom(ch, html){
+  document.getElementById('qzoom-ch').textContent = ch;
+  document.getElementById('qzoom-tx').innerHTML = html;
+  document.getElementById('qzoom').hidden = false;
+}
+function closeQZoom(){ document.getElementById('qzoom').hidden = true; }
+document.getElementById('qzoom').addEventListener('click', e => {
+  if (e.target.id === 'qzoom' || e.target.id === 'qzoom-cl') closeQZoom();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQZoom(); });
 document.getElementById('pcl').onclick = () => document.getElementById('panel').classList.remove('open');
 
 // legenda de tópicos
