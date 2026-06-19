@@ -43,6 +43,9 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #legend .li:hover{color:#000}
 #legend .sw{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:.18rem}
 #legend .li.dim{opacity:.34}
+#legend .lnote{font-family:'CMU Serif',serif;font-size:.6rem;color:#5b6480;line-height:1.35;
+  border-top:1px solid #ececec;margin-top:.6rem;padding-top:.5rem}
+#legend .lnote b{font-weight:600;color:#34405e}
 
 /* painel do termo */
 #panel{position:fixed;top:0;right:0;width:var(--pw,34rem);max-width:94vw;height:100vh;background:rgba(255,255,255,.985);
@@ -53,7 +56,9 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   font-family:'CMU Typewriter Text',monospace;font-size:.66rem;cursor:pointer;letter-spacing:.1em}
 #pcl:hover{color:#444}
 #pterm{font-family:'CMU Serif',serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.2rem}
-#ptopic{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.06em;margin-bottom:1.3rem}
+#ptopic{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.06em;margin-bottom:.5rem}
+#ptopic-note{font-family:'CMU Serif',serif;font-size:.72rem;color:#5b6480;line-height:1.4;margin-bottom:1.3rem}
+#ptopic-note b{font-weight:600;color:#34405e}
 .psec{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
   color:#555555;border-top:1px solid #ececec;padding-top:.7rem;margin:1.3rem 0 .6rem}
 .pstat{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#5b6480;line-height:1.9}
@@ -226,6 +231,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <button id="pcl">× fechar</button>
   <div id="pterm"></div>
   <div id="ptopic"></div>
+  <div id="ptopic-note">agrupamento a que o termo pertence — uma <b>comunidade</b> detectada pelo algoritmo de <b>Louvain</b>, que reúne automaticamente os conceitos que mais co-ocorrem entre si.</div>
   <div id="pbody"></div>
 </div>
 <div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
@@ -445,6 +451,13 @@ comm.filter(c => c.size >= 3).forEach(c => {
   };
   legend.appendChild(el);
 });
+// nota técnica: situa o leitor sobre o que são, de fato, os agrupamentos
+const lnote = document.createElement('div');
+lnote.className = 'lnote';
+lnote.innerHTML = 'Cada cor reúne os termos que mais co-ocorrem entre si: uma ' +
+  '<b>comunidade</b>, detectada automaticamente pelo algoritmo de <b>Louvain</b> ' +
+  'sobre a rede de co-ocorrência.';
+legend.appendChild(lnote);
 
 // ---- documento da tese (resumo · sumário · ilustrações · tabelas) ----
 const DOC = JSON.parse(document.getElementById('docdata').textContent);
