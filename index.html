@@ -21,8 +21,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 /* título */
 #title-bar{position:fixed;top:0;left:0;padding:1.4rem;z-index:5;pointer-events:none}
-#title-bar h2{font-family:'CMU Serif',serif;font-style:normal;font-size:1.1rem;font-weight:600;color:#1a1a1a;line-height:1.35;border-left:2px solid var(--rule-soft);padding-left:.6rem;max-width:32rem}
-#title-bar p{font-family:'CMU Typewriter Text',monospace;font-size:.55rem;color:#9aa0ab;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem;padding-left:.7rem}
+#title-bar h2{font-family:'CMU Serif',serif;font-style:normal;font-size:1.32rem;font-weight:600;color:#1a1a1a;line-height:1.35;border-left:2px solid var(--rule-soft);padding-left:.6rem;max-width:32rem}
+#title-bar p{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#555555;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem;padding-left:.7rem}
 
 /* legenda de tópicos */
 #legend{position:fixed;bottom:1.4rem;left:1.4rem;z-index:6;background:rgba(255,255,255,.9);
@@ -56,8 +56,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .quote{font-family:'CMU Serif',serif;font-size:.74rem;line-height:1.55;color:#333d57;border-left:2px solid var(--rule-soft);padding-left:.7rem;margin:.7rem 0}
 .quote mark{background:#fbe7a8;color:#1c2942;padding:0 .08em;border-radius:2px}
 .qch{display:block;font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#b3b0bb;margin-bottom:.25rem}
-.chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.04em;
-  border:1px solid #e0deda;border-radius:999px;padding:.18rem .5rem;margin:.2rem .25rem 0 0;color:#5b6480}
+.chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.64rem;letter-spacing:.04em;
+  border:1px solid #e0deda;border-radius:999px;padding:.18rem .5rem;margin:.2rem .25rem 0 0;color:#444444}
 
 #tip{position:fixed;background:rgba(255,255,255,.97);border:1px solid var(--rule-soft);color:#333;font-size:.6rem;
   padding:.28rem .55rem;pointer-events:none;z-index:60;display:none;font-family:'CMU Typewriter Text',monospace;
@@ -81,23 +81,23 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc-cl:hover{color:#444}
 #doc-nav{position:sticky;top:-2.6rem;background:#fff;display:flex;gap:1.1rem;flex-wrap:wrap;
   padding:.3rem 0 .7rem;margin-bottom:.4rem;border-bottom:1px solid #eee;z-index:2}
-#doc-nav a{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
-  color:#9aa0ab;text-decoration:none;cursor:pointer}
+#doc-nav a{font-family:'CMU Typewriter Text',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:#3a3a3a;text-decoration:none;cursor:pointer}
 #doc-nav a:hover{color:#1f1f1f}
-#doc h2.dt{font-family:'CMU Serif',serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;color:#161616;margin-bottom:.3rem}
-#doc .dsub{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.1em;color:#555555;margin-bottom:1.4rem}
-#doc .dh{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
-  color:#5b3a52;border-top:1px solid #ececec;padding-top:1.1rem;margin:2rem 0 .9rem}
-#doc .resumo{font-family:'CMU Serif',serif;font-size:.82rem;line-height:1.75;color:#1c1c1c;text-align:justify}
+#doc h2.dt{font-family:'CMU Serif',serif;font-weight:700;font-size:1.75rem;letter-spacing:-.01em;color:#111111;margin-bottom:.3rem}
+#doc .dsub{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;letter-spacing:.1em;color:#333333;margin-bottom:1.4rem}
+#doc .dh{font-family:'CMU Typewriter Text',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#333333;border-top:1px solid #ececec;padding-top:1.1rem;margin:2rem 0 .9rem}
+#doc .resumo{font-family:'CMU Serif',serif;font-size:.96rem;line-height:1.75;color:#1a1a1a;text-align:justify}
 #doc .kw{margin-top:.9rem}
-#doc .kw .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.03em;
-  border:1px solid var(--rule-soft);border-radius:999px;padding:.2rem .6rem;margin:.2rem .3rem 0 0;color:#5b3a52}
+#doc .kw .chip{display:inline-block;font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.03em;
+  border:1px solid var(--rule-soft);border-radius:999px;padding:.2rem .6rem;margin:.2rem .3rem 0 0;color:#444444}
 #doc .cap{margin:1.1rem 0 1.3rem;border-left:2px solid #d4d4d4;padding-left:.9rem}
-#doc .cap .cnum{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.14em;color:#555555}
-#doc .cap .ctitle{font-family:'CMU Serif',serif;font-weight:700;font-size:1.02rem;color:#161616;margin:.05rem 0 .35rem}
-#doc .cap .cresumo{font-family:'CMU Serif',serif;font-size:.76rem;line-height:1.55;color:#333333;margin-bottom:.4rem}
-#doc .cap .cconc{font-family:'CMU Serif',serif;font-size:.74rem;line-height:1.5;color:#1f1f1f;margin-bottom:.5rem}
-#doc .cap .cconc .cct{font-family:'CMU Typewriter Text',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6b6b;margin-right:.45rem}
+#doc .cap .cnum{font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.14em;color:#3a3a3a}
+#doc .cap .ctitle{font-family:'CMU Serif',serif;font-weight:700;font-size:1.2rem;color:#111111;margin:.05rem 0 .35rem}
+#doc .cap .cresumo{font-family:'CMU Serif',serif;font-size:.9rem;line-height:1.55;color:#262626;margin-bottom:.4rem}
+#doc .cap .cconc{font-family:'CMU Serif',serif;font-size:.88rem;line-height:1.5;color:#1a1a1a;margin-bottom:.5rem}
+#doc .cap .cconc .cct{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#505050;margin-right:.45rem}
 #doc .cap .chead{margin:0 -.4rem .2rem;padding:.3rem .4rem;border-radius:4px;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .cap .chead:hover{background:#fdf2a0}
 #doc .cap .chead.zoom{background:#fdf2a0;cursor:zoom-out;padding:.85rem .95rem;margin:.5rem -.95rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
@@ -117,8 +117,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .ov .ovr.zoom{background:#fdf2a0;cursor:zoom-out;padding:.75rem;margin:.35rem -.75rem;box-shadow:0 6px 26px rgba(40,30,55,.18);border-bottom-color:transparent}
 #doc .ov .ovr.zoom .ovk{font-size:.72rem}
 #doc .ov .ovr.zoom .ovv{font-size:1.12rem;line-height:1.65}
-#doc .ov .ovk{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#2b2b2b;padding-top:.1rem}
-#doc .ov .ovv{font-family:'CMU Serif',serif;font-size:.8rem;line-height:1.55;color:#1c1c1c}
+#doc .ov .ovk{font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#222222;padding-top:.1rem}
+#doc .ov .ovv{font-family:'CMU Serif',serif;font-size:.94rem;line-height:1.55;color:#1a1a1a}
 #doc .ov .ovul{margin:0;padding-left:1rem}
 #doc .ov .ovul li{margin:.12rem 0}
 @media(max-width:560px){#doc .ov .ovr{grid-template-columns:1fr;gap:.15rem}}
@@ -129,29 +129,29 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .sec.zoom .snota{font-size:1.02rem;line-height:1.6}
 #doc .sec.zoom .subs{font-size:.84rem;line-height:1.7}
 #doc .sec .st{font-family:'CMU Serif',serif;font-size:.76rem;font-weight:600;color:#1e1e1e}
-#doc .sec .snota{font-family:'CMU Serif',serif;font-size:.72rem;line-height:1.45;color:#555555;margin:.05rem 0 .1rem}
-#doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#666666;line-height:1.6}
+#doc .sec .snota{font-family:'CMU Serif',serif;font-size:.86rem;line-height:1.45;color:#333333;margin:.05rem 0 .1rem}
+#doc .sec .subs{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#3f3f3f;line-height:1.6}
 #doc .lst{column-count:2;column-gap:1.6rem}
-#doc .lst .grp{break-inside:avoid;font-family:'CMU Typewriter Text',monospace;font-size:.54rem;letter-spacing:.1em;
-  text-transform:uppercase;color:#a386b8;margin:.7rem 0 .25rem}
-#doc .lst .it{break-inside:avoid;font-family:'CMU Serif',serif;font-size:.72rem;line-height:1.4;color:#222222;margin:.12rem -.35rem;padding:.1rem .35rem;border-radius:3px;display:flex;gap:.4rem;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
+#doc .lst .grp{break-inside:avoid;font-family:'CMU Typewriter Text',monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#333333;margin:.7rem 0 .25rem}
+#doc .lst .it{break-inside:avoid;font-family:'CMU Serif',serif;font-size:.84rem;line-height:1.4;color:#1a1a1a;margin:.12rem -.35rem;padding:.1rem .35rem;border-radius:3px;display:flex;gap:.4rem;cursor:zoom-in;transition:background .12s ease,padding .15s ease,box-shadow .15s ease}
 #doc .lst .it:hover{background:#fdf2a0}
 #doc .lst .it.zoom{background:#fdf2a0;cursor:zoom-out;font-size:1.08rem;line-height:1.5;padding:.5rem .6rem;margin:.2rem -.6rem;box-shadow:0 6px 26px rgba(40,30,55,.18)}
 #doc .lst .it.zoom .num{font-size:.84rem;min-width:1.9rem}
 #doc .lst .it .itmap{font-family:'CMU Serif',serif;font-size:.8rem;color:#0645ad;text-decoration:underline;text-underline-offset:.12em;margin-left:.5rem;white-space:nowrap;cursor:pointer}
 #doc .lst .it .itmap:hover{color:#0b0bcf}
 #doc .lst .it.zoom .itmap{font-size:1rem}
-#doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.58rem;color:#888888;flex-shrink:0;min-width:1.4rem}
+#doc .lst .it .num{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;color:#555555;flex-shrink:0;min-width:1.4rem}
 @media(max-width:620px){#doc .lst{column-count:1}}
 
 /* intro */
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;
   justify-content:center;cursor:pointer;transition:opacity 1s ease;text-align:center;padding:0 2rem}
 #intro.out{opacity:0;pointer-events:none}
-#intro .pre{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;letter-spacing:.05em;color:#a386b8;margin-bottom:1.4rem;opacity:0;animation:rise 1.4s ease .3s forwards}
-#intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:500;font-size:clamp(1.3rem,2.9vw,2rem);line-height:1.5;max-width:680px;color:#1a1a1a;opacity:0;animation:rise 1.4s ease .6s forwards}
-#intro .sub{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#ef9f2c;margin-top:1.4rem;opacity:0;animation:rise 1.4s ease 1.3s forwards}
-#intro .creds{font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:.03em;line-height:2.05;color:#5b6480;max-width:640px;margin-top:1.25rem;opacity:0;animation:rise 1.4s ease 1.9s forwards}
+#intro .pre{font-family:'CMU Typewriter Text',monospace;font-size:.74rem;letter-spacing:.05em;color:#555555;margin-bottom:1.4rem;opacity:0;animation:rise 1.4s ease .3s forwards}
+#intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:500;font-size:clamp(1.65rem,3.7vw,2.65rem);line-height:1.45;max-width:740px;color:#1a1a1a;opacity:0;animation:rise 1.4s ease .6s forwards}
+#intro .sub{font-family:'CMU Typewriter Text',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#333333;margin-top:1.4rem;opacity:0;animation:rise 1.4s ease 1.3s forwards}
+#intro .creds{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;letter-spacing:.03em;line-height:2.05;color:#444444;max-width:640px;margin-top:1.25rem;opacity:0;animation:rise 1.4s ease 1.9s forwards}
 #intro .creds .creds-line{opacity:.78;font-style:italic;color:#8a8a8a}
 #intro h1 .tx-cmd{color:#555;font-family:'CMU Typewriter Text',monospace;font-weight:500;font-style:normal}
 #intro h1 .tx-b{color:#555;font-family:'CMU Typewriter Text',monospace;font-weight:500;font-style:normal}
