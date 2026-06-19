@@ -35,8 +35,14 @@ confirmadas**:
 
 1. Coloque/atualize o arquivo na tese (em `figuras/...`).
 2. Adicione uma linha no mapa: `caminho/no/site.png` ⟨TAB⟩ `figuras/.../arquivo*.png`.
-3. Referencie a figura no `index.html` (`<img src="figuras/no/site.png">`).
+3. Referencie a figura no `index.html` — seja como `<img src="figuras/no/site.png">`,
+   seja como entrada no array `ANALISES` da **galeria de análises** (objetos
+   `{g, s, c}`: grupo, caminho e legenda).
 4. Pronto — a partir daí ela se atualiza sozinha.
+
+> O `cache_busting_figuras.py` versiona qualquer caminho `figuras/...` entre
+> aspas (atributo `src=`/`href=` **ou** string em JS, como no array `ANALISES`),
+> então o `?v=` vale também para as imagens da galeria.
 
 ## Figuras exibidas no site SEM origem na tese (não sincronizam)
 

@@ -26,9 +26,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, ".."))
 INDEX = os.path.join(ROOT, os.environ.get("SITE_INDEX", "index.html"))
 
-# captura: attr=("|') figuras/caminho.ext (?v=...)? ("|')
+# captura qualquer caminho figuras/... entre aspas (atributo src=/href= OU
+# string em JS, como no array ANALISES da galeria), com ?v=... opcional.
 REF_RE = re.compile(
-    r"""(?P<attr>\b(?:src|href)=)(?P<q>["'])"""
+    r"""(?P<q>["'])"""
     r"""(?P<path>figuras/[^"'?]+?\.(?:png|jpg|jpeg|gif|svg|webp|pdf))"""
     r"""(?:\?v=[0-9a-f]+)?"""
     r"""(?P=q)""",
@@ -60,7 +61,7 @@ def main() -> int:
             return m.group(0)  # arquivo ausente: não mexe
         q = m.group("q")
         stats["updated"] += 1
-        return f"{m.group('attr')}{q}{path}?v={digest}{q}"
+        return f"{q}{path}?v={digest}{q}"
 
     new_html = REF_RE.sub(repl, html)
     if new_html != html:
