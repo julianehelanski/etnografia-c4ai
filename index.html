@@ -23,8 +23,13 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #title-bar{position:fixed;top:0;left:0;padding:1.4rem;z-index:5;pointer-events:none}
 #title-bar h2{font-family:'CMU Serif',serif;font-style:normal;font-size:1.32rem;font-weight:600;color:#1a1a1a;line-height:1.35;border-left:2px solid var(--rule-soft);padding-left:.6rem;max-width:32rem}
 #title-bar p{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#555555;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem;padding-left:.7rem}
-/* tipografia de comando LaTeX (azul neon, como no Overleaf) */
-.texcmd{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1f6bff;font-weight:600;text-transform:none;letter-spacing:0}
+/* estilo "editor LaTeX" (como no Overleaf): tudo monoespaçado.
+   .texcmd = comando LaTeX (azul neon, sem negrito);
+   .texarg = chaves + texto do autor (preto, sem negrito);
+   .texttl = título do trabalho (preto, negrito). */
+.texcmd{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1f6bff;font-weight:400;text-transform:none;letter-spacing:0}
+.texarg{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1a1a1a;font-weight:400;text-transform:none;letter-spacing:0}
+.texttl{font-family:'CMU Typewriter Text','Courier New',monospace;color:#1a1a1a;font-weight:700;text-transform:none;letter-spacing:0}
 
 /* legenda de tópicos */
 #legend{position:fixed;bottom:1.4rem;left:1.4rem;z-index:6;background:rgba(255,255,255,.9);
@@ -202,8 +207,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 <svg id="graph"></svg>
 
 <div id="title-bar">
-  <h2><span class="texcmd">\title{</span><span class="texcmd">{tecno-etnografia}</span> — Rede textual da tese<span class="texcmd">}</span></h2>
-  <p id="subtitle"><span class="texcmd">\subtitle{</span>rede de co-ocorrência · 260 conceitos · 6 territórios temáticos<span class="texcmd">}</span></p>
+  <h2><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> <span class="texcmd">{</span>Rede textual da tese<span class="texcmd">}</span></span><span class="texcmd">}</span></h2>
+  <p id="subtitle"><span class="texcmd">\subtitle{</span><span class="texarg">rede de co-ocorrência · 260 conceitos · 6 territórios temáticos</span><span class="texcmd">}</span></p>
 </div>
 
 <div id="legend"><div class="lh">territórios temáticos</div></div>
@@ -457,10 +462,10 @@ function dList(items){
 }
 function ovRow(k,v){return '<div class="ovr"><span class="ovk">'+texCmd('textbf',dEsc(k))+'</span><span class="ovv">'+dEsc(v)+'</span></div>';}
 function ovList(k,arr){return '<div class="ovr"><span class="ovk">'+texCmd('textbf',dEsc(k))+'</span><span class="ovv"><ul class="ovul">'+arr.map(x=>'<li>'+dEsc(x)+'</li>').join('')+'</ul></span></div>';}
-// envolve um título na sintaxe de comando LaTeX \cmd{...}, com a expressão
-// inteira (comando, chaves e argumento) em azul neon (.texcmd). inner já vem
-// em HTML — não reescrever aqui.
-function texCmd(cmd,inner){return '<span class="texcmd">\\'+cmd+'{'+inner+'}</span>';}
+// renderiza \cmd{argumento} no estilo Overleaf: o comando em azul neon
+// (.texcmd) e as chaves+argumento na cor do texto (.texarg por padrão; passe
+// 'texttl' p/ o título do trabalho, em negrito). inner já vem em HTML.
+function texCmd(cmd,inner,argCls){return '<span class="texcmd">\\'+cmd+'{</span><span class="'+(argCls||'texarg')+'">'+inner+'</span><span class="texcmd">}</span>';}
 // galerias por capítulo (arquivos em figuras/, sincronizados da tese).
 // Legendas curadas; edite à vontade.
 const CAP2FIGS=[
@@ -542,7 +547,7 @@ function buildDoc(){
   const nav=document.getElementById('doc-nav');
   const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
   nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
-  let h='<h2 class="dt">'+texCmd('title','{tecno-etnografia} de um centro de inteligência artificial')+'</h2>';
+  let h='<h2 class="dt">'+texCmd('title','<span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial','texttl')+'</h2>';
   h+='<div class="dsub">'+texCmd('subtitle','seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026')+'</div>';
   const T=DOC.tese;
   if(T){
