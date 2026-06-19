@@ -12,9 +12,11 @@ todos os capítulos. Editáveis no [MermaidChart](https://www.mermaidchart.com/)
 
 - `linha-do-tempo-capitulo{N}.mmd` — código-fonte Mermaid (versionado, editável).
 - `linha-do-tempo-capitulo{N}.svg` — exportação vetorial (backup offline + PDF).
-- Versão interativa (pan/zoom, para a defesa): publicada no MermaidChart; o link
-  fica em `index.html`, no objeto `TEMPOS` (selinho "linha do tempo ↗" na lista
-  de ilustrações da aba "tese").
+- Versão interativa (pan/zoom, para a defesa): publicada no MermaidChart. O link
+  **vive na própria tese** — basta pôr um `\href{https://mermaid.ai/d/...}{...}`
+  na legenda (`\caption`) da figura. O gerador `infranodus/tese_documento.py`
+  extrai esse link para `DOC.figuras[].link` e o site acende sozinho o selinho
+  "linha do tempo ↗" na lista de ilustrações (sem manter URL à mão no site).
 
 ## Cabeçalho-padrão (idêntico em todos)
 
@@ -100,9 +102,9 @@ próprias seções conforme o material.
 ## Fluxo de trabalho
 
 1. Editar o `.mmd` ou colar no MermaidChart.
-2. No MermaidChart: publicar (link interativo) → colar o link em `TEMPOS` no
-   `index.html`.
+2. No MermaidChart: publicar e pôr o link no `\href{...}` da legenda da figura,
+   na própria tese (`.tex`). O site lê esse link sozinho na próxima regeneração.
 3. Exportar SVG → salvar aqui como `linha-do-tempo-capituloN.svg` (backup/PDF).
-4. Na lista de ilustrações da tese, nomear a figura
-   "Linha do tempo do capítulo capituloN" para o site acender o selinho
-   "linha do tempo ↗" (mesmo mecanismo do "mapa ↗" dos texto-mapas).
+4. Para o rótulo do selinho ser "linha do tempo ↗", o título curto da figura
+   (`\caption[...]`) deve conter "Linha do tempo"; "Texto-mapa do capítulo"
+   vira "mapa ↗"; qualquer outro diagrama com link vira "ver diagrama ↗".
