@@ -449,47 +449,49 @@ function dList(items){
 }
 function ovRow(k,v){return '<div class="ovr"><span class="ovk">'+k+'</span><span class="ovv">'+dEsc(v)+'</span></div>';}
 function ovList(k,arr){return '<div class="ovr"><span class="ovk">'+k+'</span><span class="ovv"><ul class="ovul">'+arr.map(x=>'<li>'+dEsc(x)+'</li>').join('')+'</ul></span></div>';}
-// galeria de análises: gráficos bibliométricos e lexicométricos (arquivos em
-// figuras/, sincronizados da tese). Legendas curadas; edite à vontade.
-const ANALISES=[
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-science-in-action.png?v=484d6fb206', c:'Science in Action (1987) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-lab-life.png?v=80cf128008', c:'Laboratory Life (1979) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-pandora.png?v=1ba28f0ea2', c:'A Esperança de Pandora (1999) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-aime.png?v=09e6609fb9', c:'Modos de Existência · AIME (2012) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-clarifications.png?v=04a866cfc7', c:'“Clarifications” — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-recalling.png?v=7fc4a907bf', c:'“Recalling ANT” (texto integral) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour (Cap. 2)', s:'figuras/cap2/cap2-lex-comparacao.png?v=2e11cfc18b', c:'Comparação das frequências de figurações entre as obras'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-grande-area.png?v=8022e294db', c:'CAPES — distribuição por grande área'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-subcampos.png?v=76bf440146', c:'CAPES — distribuição por subcampos'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-humanas.png?v=0a8d570d80', c:'CAPES — áreas das ciências humanas'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-humanas-temporal.png?v=1d7b5d4529', c:'CAPES — evolução temporal nas ciências humanas'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-heatmap-kw.png?v=23f1abc7f3', c:'CAPES — mapa de calor: grande área × palavra-chave'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-capes-heatmap-sub.png?v=b5c8e1faaf', c:'CAPES — mapa de calor: subcampo × grande área'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-scielo-area.png?v=62d73ed289', c:'SciELO — distribuição por área temática'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-scielo-subcampos.png?v=14b9c12ac1', c:'SciELO — distribuição por subcampos'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas (Cap. 2)', s:'figuras/cap2/cap2-bib-comparativo.png?v=93b9bf24ce', c:'Comparativo SciELO × CAPES'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-1-ranking.png?v=82d1c27e88', c:'C4AI — ranking de grupos'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-3-evolucao.png?v=847dfecfd3', c:'C4AI — evolução temporal da produção'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=acebe634a6', c:'C4AI — mapa de calor: grupo × ano'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-6-produtividade.png?v=fef6d16a5d', c:'C4AI — produtividade dos grupos'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-8-composicao.png?v=55a295c265', c:'C4AI — composição temporal'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-9-concentracao.png?v=9fcd7f9249', c:'C4AI — análise de concentração'},
-  {g:'Bibliometria · produção do C4AI (Cap. 3)', s:'figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg?v=2bc57e47f8', c:'C4AI — comparação entre os principais grupos'},
+// galerias por capítulo (arquivos em figuras/, sincronizados da tese).
+// Legendas curadas; edite à vontade.
+const CAP2FIGS=[
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-science-in-action.png?v=484d6fb206', c:'Science in Action (1987) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-lab-life.png?v=80cf128008', c:'Laboratory Life (1979) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-pandora.png?v=1ba28f0ea2', c:'A Esperança de Pandora (1999) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-aime.png?v=09e6609fb9', c:'Modos de Existência · AIME (2012) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-clarifications.png?v=04a866cfc7', c:'“Clarifications” — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-recalling.png?v=7fc4a907bf', c:'“Recalling ANT” (texto integral) — frequência e densidade das figurações'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-comparacao.png?v=2e11cfc18b', c:'Comparação das frequências de figurações entre as obras'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-grande-area.png?v=8022e294db', c:'CAPES — distribuição por grande área'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-subcampos.png?v=76bf440146', c:'CAPES — distribuição por subcampos'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas.png?v=0a8d570d80', c:'CAPES — áreas das ciências humanas'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas-temporal.png?v=1d7b5d4529', c:'CAPES — evolução temporal nas ciências humanas'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-kw.png?v=23f1abc7f3', c:'CAPES — mapa de calor: grande área × palavra-chave'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-sub.png?v=b5c8e1faaf', c:'CAPES — mapa de calor: subcampo × grande área'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-area.png?v=62d73ed289', c:'SciELO — distribuição por área temática'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-subcampos.png?v=14b9c12ac1', c:'SciELO — distribuição por subcampos'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-comparativo.png?v=93b9bf24ce', c:'Comparativo SciELO × CAPES'},
+];
+const CAP3FIGS=[
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-1-ranking.png?v=82d1c27e88', c:'C4AI — ranking de grupos'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-3-evolucao.png?v=847dfecfd3', c:'C4AI — evolução temporal da produção'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=acebe634a6', c:'C4AI — mapa de calor: grupo × ano'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-6-produtividade.png?v=fef6d16a5d', c:'C4AI — produtividade dos grupos'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-8-composicao.png?v=55a295c265', c:'C4AI — composição temporal'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-9-concentracao.png?v=9fcd7f9249', c:'C4AI — análise de concentração'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg?v=2bc57e47f8', c:'C4AI — comparação entre os principais grupos'},
 ];
 // figuras do capítulo 4 (SPIRA): a voz como dado + microscopia do SARS-CoV-2.
 const CAP4FIGS=[
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma de uma gravação de voz, com eixos (tempo × frequência)'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma da voz — a “imagem” que a rede recebe como entrada'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação de escalas: espectrograma linear × logarítmico'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_paciente_com_eixos.png?v=8e006127cc', c:'Espectrograma de paciente, com eixos'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform) — sujeito-controle'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform) — paciente'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/spira_cnn_diagrama_real.png?v=480d92c049', c:'Arquitetura da CNN do SPIRA — diagrama da rede convolucional'},
-  {g:'SPIRA · a voz como dado (Cap. 4)', s:'figuras/younesi2024_fig7_filtro_deslizante.png?v=fdaa4d8abf', c:'Filtro deslizante (convolução) sobre o espectrograma (Younesi et al., 2024)'},
-  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_48H_corona_filopodio_1_dentro.jpg?v=5861823177', c:'Célula Vero infectada (48 h) — filopódios com partículas de SARS-CoV-2'},
-  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_48H_corona_filopodio_2_dentro.jpg?v=ca1b102b0f', c:'Célula Vero infectada (48 h) — detalhe dos filopódios'},
-  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/Vero_72H_corona_filopodio_3_dentro.jpg?v=a7c571268a', c:'Célula Vero infectada (72 h) — filopódios e brotamento viral'},
-  {g:'Microscopia · SARS-CoV-2 (Cap. 4)', s:'figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg?v=4f64088742', c:'SARS-CoV-2 emergindo de célula em cultura (microscopia eletrônica, NIAID)'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma de uma gravação de voz, com eixos (tempo × frequência)'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma da voz — a “imagem” que a rede recebe como entrada'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação de escalas: espectrograma linear × logarítmico'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_paciente_com_eixos.png?v=8e006127cc', c:'Espectrograma de paciente, com eixos'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform) — sujeito-controle'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform) — paciente'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_cnn_diagrama_real.png?v=480d92c049', c:'Arquitetura da CNN do SPIRA — diagrama da rede convolucional'},
+  {g:'SPIRA · a voz como dado', s:'figuras/younesi2024_fig7_filtro_deslizante.png?v=fdaa4d8abf', c:'Filtro deslizante (convolução) sobre o espectrograma (Younesi et al., 2024)'},
+  {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_48H_corona_filopodio_1_dentro.jpg?v=5861823177', c:'Célula Vero infectada (48 h) — filopódios com partículas de SARS-CoV-2'},
+  {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_48H_corona_filopodio_2_dentro.jpg?v=ca1b102b0f', c:'Célula Vero infectada (48 h) — detalhe dos filopódios'},
+  {g:'Microscopia · SARS-CoV-2', s:'figuras/Vero_72H_corona_filopodio_3_dentro.jpg?v=a7c571268a', c:'Célula Vero infectada (72 h) — filopódios e brotamento viral'},
+  {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg?v=4f64088742', c:'SARS-CoV-2 emergindo de célula em cultura (microscopia eletrônica, NIAID)'},
 ];
 const GALITEMS=[]; // registro global das figuras renderizadas (índice estável entre galerias)
 function galBuild(list){
@@ -519,8 +521,8 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImgZoom();});
 function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
-  const ids=['d-tese','d-resumo','d-sumario','d-analises','d-cap4','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','análises','capítulo 4','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
+  const ids=['d-tese','d-resumo','d-sumario','d-cap2','d-cap3','d-cap4','d-figuras','d-tabelas'];
+  nav.innerHTML=['a tese','resumo','sumário','capítulo 2','capítulo 3','capítulo 4','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+t+'</a>').join('');
   let h='<h2 class="dt">{tecno-etnografia} de um centro de inteligência artificial</h2>';
   h+='<div class="dsub">seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026</div>';
   const T=DOC.tese;
@@ -552,8 +554,9 @@ function buildDoc(){
     });
     h+='</div>';
   });
-  h+='<div class="dh" id="d-analises">Análises (gráficos)</div>'+galBuild(ANALISES);
-  h+='<div class="dh" id="d-cap4">Capítulo 4 · SPIRA</div>'+galBuild(CAP4FIGS);
+  h+='<div class="dh" id="d-cap2">Capítulo 2 · Metáforas, figurações e alianças</div>'+galBuild(CAP2FIGS);
+  h+='<div class="dh" id="d-cap3">Capítulo 3 · A rede que Fábio e Cláudio construíram</div>'+galBuild(CAP3FIGS);
+  h+='<div class="dh" id="d-cap4">Capítulo 4 · A rede que Marcelo construiu</div>'+galBuild(CAP4FIGS);
   h+='<div class="dh" id="d-figuras">Lista de ilustrações ('+DOC.figuras.length+')</div>'+dList(DOC.figuras);
   h+='<div class="dh" id="d-tabelas">Lista de tabelas ('+DOC.tabelas.length+')</div>'+dList(DOC.tabelas);
   document.getElementById('doc-body').innerHTML=h;
