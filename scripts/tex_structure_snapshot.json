@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-19 20:52 UTC",
+  "generated": "2026-06-19 23:55 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -102,7 +102,11 @@
         "As entrevistas com Fábio e Cláudio",
         "O fim da parceria C4AI-IBM"
       ],
-      "subsections": [],
+      "subsections": [
+        "Observação",
+        "Entrevistas e documentos",
+        "Mapa analítico"
+      ],
       "figures": [
         "1_ranking_grupos.png",
         "3_evolucao_temporal_geral.png",
