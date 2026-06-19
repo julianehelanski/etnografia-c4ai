@@ -550,7 +550,7 @@ function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
   const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
-  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+texCmd('ref',t)+'</a>').join('');
+  nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+texCmd('nameref',t)+'</a>').join('');
   let h='<h2 class="dt">'+texCmd('title','<span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial','texttl')+'</h2>';
   h+='<div class="dsub">'+texCmd('subtitle','seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026')+'</div>';
   const T=DOC.tese;
