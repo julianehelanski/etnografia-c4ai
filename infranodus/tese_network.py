@@ -103,17 +103,72 @@ def _sentences(tex: str) -> list[str]:
     return re.split(r'(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÀÜÇ"])', clean)
 
 
-def collect_passages(node_ids: set, source_root: Path,
+# pistas de que a frase é definicional/afirmativa (frase-tópico) e não um
+# fragmento narrativo — ganham bônus na pontuação de representatividade.
+_DEF_CUES = re.compile(
+    r"\b(é|são|consiste|trata-se|ou seja|isto é|define-se|significa|"
+    r"caracteriza|entende-se|chama-se|denomina|refere-se|representa|"
+    r"corresponde|constitui|implica)\b",
+    re.IGNORECASE)
+# tamanho "ideal" de um trecho legível no painel (caracteres)
+_IDEAL_LEN = 150
+
+
+def _score_passage(nid: str, text: str, forms: set, present: set,
+                   neighbors: dict) -> float:
+    """Pontua o quanto uma frase é representativa para o termo `nid`.
+
+    Sinais (em ordem de peso):
+    - co-ocorrência com os vizinhos NPMI mais fortes do termo (sinal
+      principal: uma boa frase coloca o termo junto de seus associados);
+    - pista definicional / frase-tópico;
+    - saliência do termo na própria frase (aparece >1 vez, ou perto do início);
+    - frase completa e de tamanho legível.
+    Penaliza frases sobrecarregadas de números (resíduo de dados/citações)."""
+    nbr = neighbors.get(nid, {})
+    # 1. co-ocorrência ponderada por NPMI com os vizinhos do termo
+    neighbor_score = sum(nbr.get(m, 0.0) for m in present if m != nid)
+    # 2. frase definicional / afirmativa
+    cue = 0.6 if (_DEF_CUES.search(text) or ":" in text) else 0.0
+    # 3. saliência do termo na frase
+    low = text.lower()
+    occ = sum(low.count(f.lower()) for f in forms)
+    salience = (0.3 if occ > 1 else 0.0)
+    first = min((low.find(f.lower()) for f in forms if f.lower() in low),
+                default=len(text))
+    if first >= 0 and first <= 40:
+        salience += 0.2
+    # 4. densidade temática branda (não premiar frase "empilhada" de termos)
+    density = 0.12 * min(len(present), 6)
+    # 5. frase completa e bem-dimensionada
+    starts_ok = text[:1].isupper() or text[:1] in "\"“"
+    complete = 0.25 if (starts_ok and text[-1:] in ".!?") else 0.0
+    length_fit = 0.3 * (1 - min(abs(len(text) - _IDEAL_LEN) / _IDEAL_LEN, 1.0))
+    # penalidade: muitos grupos de dígitos → tabela/citação/dado solto
+    digits = len(re.findall(r"\d+", text))
+    digit_pen = 0.4 if digits >= 3 else 0.0
+    return (neighbor_score + cue + salience + density
+            + complete + length_fit - digit_pen)
+
+
+def collect_passages(node_ids: set, source_root: Path, neighbors: dict,
                      per_term: int = 2, lo: int = 60, hi: int = 240) -> dict:
     """Para cada termo (lema), até `per_term` frases reais da tese onde ele
-    aparece, com as ocorrências do termo destacadas em <mark>."""
-    pas = {nid: [] for nid in node_ids}
-    seen = {nid: set() for nid in node_ids}
+    aparece, escolhidas por representatividade (não pela ordem de leitura) e
+    com as ocorrências do termo destacadas em <mark>.
+
+    `neighbors[nid]` é um dicionário {lema_vizinho: npmi} com os associados
+    mais fortes do termo na rede — usado como sinal principal de relevância."""
+    # candidatos por termo: (score, ch, ordem_doc, texto_limpo, forms)
+    cand: dict[str, list] = {nid: [] for nid in node_ids}
+    seen: dict[str, set] = {nid: set() for nid in node_ids}
+    doc_order = 0
     for fname, _label, cid in CHAPTERS:
         src = source_root / fname
         if not src.exists():
             continue
         for sent in _sentences(src.read_text(encoding="utf-8")):
+            doc_order += 1
             s = sent.strip()
             # limpa resíduos de comandos removidos (refs/citações)
             s = re.sub(r"\(\s*[,e]?\s*\)", "", s)   # "( )", "(e )", "( , )"
@@ -133,17 +188,45 @@ def collect_passages(node_ids: set, source_root: Path,
                 lem = lemma(n)
                 if lem in node_ids:
                     surf.setdefault(lem, set()).add(w)
+            present = set(surf.keys())
             for nid, forms in surf.items():
-                if len(pas[nid]) >= per_term or s in seen[nid]:
+                if s in seen[nid]:
                     continue
                 seen[nid].add(s)
-                marked = s
-                for f in sorted(forms, key=len, reverse=True):
-                    marked = re.sub(r"(?<!\w)(" + re.escape(f) + r")(?!\w)",
-                                    "\x01\\1\x02", marked)
-                esc = (_html.escape(marked).replace("\x01", "<mark>")
-                       .replace("\x02", "</mark>"))
-                pas[nid].append({"ch": cid, "t": esc})
+                sc = _score_passage(nid, s, forms, present, neighbors)
+                cand[nid].append((sc, cid, doc_order, s, forms))
+
+    pas = {nid: [] for nid in node_ids}
+    for nid, lst in cand.items():
+        # melhor pontuação primeiro; desempata por ordem no documento (estável)
+        lst.sort(key=lambda c: (-c[0], c[2]))
+        used_ch: set = set()
+        picked: list = []
+        # 1ª passada: prioriza diversidade de capítulos
+        for sc, cid, _o, s, forms in lst:
+            if len(picked) >= per_term:
+                break
+            if cid in used_ch:
+                continue
+            used_ch.add(cid)
+            picked.append((cid, s, forms))
+        # 2ª passada: completa com os melhores restantes se faltou
+        if len(picked) < per_term:
+            chosen = {s for _c, s, _f in picked}
+            for sc, cid, _o, s, forms in lst:
+                if len(picked) >= per_term:
+                    break
+                if s in chosen:
+                    continue
+                picked.append((cid, s, forms))
+        for cid, s, forms in picked:
+            marked = s
+            for f in sorted(forms, key=len, reverse=True):
+                marked = re.sub(r"(?<!\w)(" + re.escape(f) + r")(?!\w)",
+                                "\x01\\1\x02", marked)
+            esc = (_html.escape(marked).replace("\x01", "<mark>")
+                   .replace("\x02", "</mark>"))
+            pas[nid].append({"ch": cid, "t": esc})
     return pas
 
 
@@ -226,9 +309,17 @@ def main() -> int:
     core = sorted(G.nodes(), key=lambda n: pr.get(n, 0), reverse=True)[:args.core]
     core_set = set(core)
 
-    # trechos reais da tese por termo (com o termo destacado)
+    # trechos reais da tese por termo (com o termo destacado), escolhidos por
+    # representatividade: para cada termo, seus vizinhos NPMI mais fortes são o
+    # sinal principal — uma boa frase coloca o termo junto de seus associados.
     node_ids = set(G.nodes())
-    passages = collect_passages(node_ids, args.source_root)
+    npmi_neighbors: dict[str, dict] = {}
+    for n in G.nodes():
+        nbr = sorted(G[n].items(),
+                     key=lambda kv: (kv[1].get("npmi", 0), kv[1].get("weight", 0)),
+                     reverse=True)
+        npmi_neighbors[n] = {m: float(d.get("npmi", 0)) for m, d in nbr[:12]}
+    passages = collect_passages(node_ids, args.source_root, npmi_neighbors)
     tot_pas = sum(len(v) for v in passages.values())
     print(f"    Trechos extraídos: {tot_pas} (termos com ≥1 trecho: "
           f"{sum(1 for v in passages.values() if v)})")
