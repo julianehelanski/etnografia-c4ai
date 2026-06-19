@@ -48,6 +48,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .psec{font-family:'CMU Typewriter Text',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
   color:#9aa0ab;border-top:1px solid #ececec;padding-top:.7rem;margin:1.3rem 0 .6rem}
 .pstat{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;color:#5b6480;line-height:1.9}
+.pexp{display:block;font-family:'CMU Serif',serif;font-size:.78rem;font-style:italic;color:#9aa0ab;
+  line-height:1.4;letter-spacing:0;text-transform:none;margin:.05rem 0 .6rem}
 .assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3}
 .assoc .bar{height:5px;border-radius:3px;flex-shrink:0;min-width:3px}
 .assoc .aw{font-family:'CMU Typewriter Text',monospace;font-size:.54rem;color:#aaa;margin-left:auto}
@@ -331,10 +333,10 @@ function showTerm(id) {
   const amax = d3.max(assoc, a => a.npmi) || 1;
   let html = '';
   html += '<div class="psec">métricas</div><div class="pstat">';
-  html += 'frequência: ' + d.freq + '×<br>';
-  html += 'centralidade (PageRank): ' + d.pagerank.toFixed(4) + '<br>';
-  html += 'conexões (grau): ' + d.degree + '<br>';
-  html += 'ponte (betweenness): ' + d.betweenness.toFixed(3) + '</div>';
+  html += 'frequência: ' + d.freq + '×<span class="pexp">quantas vezes o termo aparece no texto da tese — o mais simples: o quanto ele é recorrente.</span>';
+  html += 'centralidade (PageRank): ' + d.pagerank.toFixed(4) + '<span class="pexp">o peso do termo na rede. Sobe quando ele se conecta a outros termos que também são importantes — não basta ter muitas ligações, importa com quem.</span>';
+  html += 'conexões (grau): ' + d.degree + '<span class="pexp">com quantos outros termos ele aparece lado a lado ao longo da tese — o tamanho da sua vizinhança.</span>';
+  html += 'ponte (betweenness): ' + d.betweenness.toFixed(3) + '<span class="pexp">o quanto o termo funciona como passagem entre assuntos distintos: valor alto indica um termo que costura tópicos que, sem ele, ficariam separados.</span></div>';
 
   html += '<div class="psec">associações mais fortes (NPMI)</div>';
   assoc.forEach(a => {
