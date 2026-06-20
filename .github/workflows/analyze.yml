@@ -136,9 +136,19 @@ jobs:
           fi
           SOURCE_SHA="${{ github.event.client_payload.sha || 'manual' }}"
           git commit -m "Regenerate networks + site figures/keywords from thesis@${SOURCE_SHA:0:7}"
-          # Push retry com backoff exponencial (2s, 4s, 8s, 16s).
+          # Push com integração do remoto: se o main avançou (ex.: runs
+          # concorrentes disparados pela tese), o push é rejeitado com
+          # "fetch first". Antes de repetir, integramos o main remoto via
+          # rebase — a regeneração é determinística (PYTHONHASHSEED=0), então
+          # o rebase tende a aplicar limpo. Backoff exponencial (2s…32s).
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
+            echo "Push rejeitado (tentativa $i): integrando main remoto via rebase…"
+            if ! git pull --rebase origin main; then
+              echo "Conflito no rebase — abortando; o main remoto já tem outputs mais recentes."
+              git rebase --abort || true
+              exit 1
+            fi
             sleep $((2 ** i))
           done
           exit 1
