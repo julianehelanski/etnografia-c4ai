@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-20 17:15 UTC",
+  "generated": "2026-06-20 17:21 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -131,16 +131,16 @@
     "cap4": {
       "sections": [
         "Marcelo e o projeto Spira",
-        "Sustentando as fricções",
+        "Os referenciais analíticos e a cadeia de translação",
         "De onde vêm e o que são os dados do Spira",
-        "Des-crevendo o Covideiro",
-        "Des-crevendo o artigo",
-        "A imagem da voz, o som da imagem",
-        "Cruzando os fios",
+        "A des-crição do Covideiro pelo vocabulário sócio-semiótico",
+        "A circulação do Covideiro como argumento científico",
+        "O espectrograma mel como inscrição da cadeia",
+        "Conclusão: a rede do Covideiro",
         "Nota sobre o percurso: localização do dataset e geração dos espectrogramas"
       ],
       "subsections": [
-        "Dobrando redes",
+        "Topologias, dobras e pontos de entrada na rede",
         "Três sítios etnográficos na cadeia de translação",
         "Estrutura do capítulo: seguindo a cadeia",
         "Situando a rede",
@@ -148,15 +148,15 @@
         "O ``Covideiro''",
         "Resultados e limitações",
         "Visão de Marcelo para a inteligência artificial",
-        "Fricções em eSpiral",
-        "Inscrevendo o Covideiro",
-        "Des-crevendo a configuração",
+        "Quatro vocabulários em eSpiral",
+        "A inscrição do Covideiro",
+        "A des-crição da configuração",
         "Do que a imagem é feita",
         "O que a imagem carrega e apaga",
         "O que a rede neural escuta e vê",
         "Múltiplas insuficiências reSpiratórias",
-        "Três movimentos, uma rede",
-        "Costurando as redes",
+        "Os três movimentos da cadeia",
+        "O reencontro com a rede do capítulo 3",
         "Localização do dataset",
         "Geração dos espectrogramas"
       ],
