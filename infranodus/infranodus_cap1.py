@@ -414,6 +414,24 @@ def extract_tokens(raw: str) -> list[str]:
     return out
 
 
+def collect_surface_forms(raw: str, into: dict) -> None:
+    """Acumula em `into` (token normalizado -> Counter de grafias de superfície,
+    minúsculas e com acento) a grafia original de cada token, usando os MESMOS
+    filtros de `extract_tokens`. Serve para re-acentuar os rótulos exibidos sem
+    alterar a normalização usada nos cálculos (chave = forma normalizada, antes
+    da lematização; assim o rótulo de um nó-lema vem da sua própria grafia, não
+    de variantes flexionadas)."""
+    cleaned = strip_latex(raw)
+    tokens = re.findall(r"[A-Za-zÁ-ÿ]+", cleaned)
+    for tok in tokens:
+        n = normalize_token(tok)
+        if not n or len(n) < 4:
+            continue
+        if n in PT_STOPWORDS or n in LATEX_CMD_TOKENS:
+            continue
+        into.setdefault(n, Counter())[tok.lower()] += 1
+
+
 # ---------------------------------------------------------------------------
 # 2. Build co-occurrence graph (4-gram sliding window, weighted)
 # ---------------------------------------------------------------------------
