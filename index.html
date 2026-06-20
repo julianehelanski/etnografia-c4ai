@@ -273,7 +273,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 <div id="title-bar">
   <h2><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> <span class="texcmd">{</span>Rede textual da tese<span class="texcmd">}</span></span><span class="texcmd">}</span></h2>
-  <p id="subtitle"><span class="texcmd">\subtitle{</span><span class="texarg">rede de co-ocorrência · 260 conceitos · 6 agrupamentos temáticos</span><span class="texcmd">}</span></p>
+  <p id="subtitle"><span class="texcmd">\subtitle{</span><span class="texarg">rede de co-ocorrência · 260 termos · 6 agrupamentos temáticos</span><span class="texcmd">}</span></p>
   <p class="texnote">a sintaxe LaTeX (<span class="texcmd">\chapter{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\section{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\subsection{</span><span class="texarg">…</span><span class="texcmd">}</span>) é proposital: a tese vive no Overleaf. aqui os comandos chamam a própria tese — seus capítulos, seções e subseções.</p>
 </div>
 
@@ -287,7 +287,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <button id="pcl">× fechar</button>
   <div id="pterm"></div>
   <div id="ptopic"></div>
-  <div id="ptopic-note">agrupamento a que o termo pertence — uma <b>comunidade</b> detectada pelo algoritmo de <b>Louvain</b>, que reúne automaticamente os conceitos que mais co-ocorrem entre si.</div>
+  <div id="ptopic-note">agrupamento a que o termo pertence — uma <b>comunidade</b> detectada pelo algoritmo de <b>Louvain</b>, que reúne automaticamente os termos que mais co-ocorrem entre si.</div>
   <div id="pbody"></div>
 </div>
 <div id="presize" title="arraste para alargar · duplo-clique para restaurar"></div>
@@ -305,19 +305,19 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <p>O processo das duas fases é repetido no novo grafo até que não seja possível aumentar mais a modularidade, resultando em uma estrutura hierárquica de comunidades.</p>
   <div class="lvthesis">
     <h3><span class="texcmd">\subsection{</span><span class="texarg">Como foi aplicado nesta tese</span><span class="texcmd">}</span></h3>
-    <p>A rede é construída por co-ocorrência: percorre-se o texto de cada capítulo com uma janela deslizante de quatro palavras, e cada par de conceitos próximos ganha uma aresta — quanto mais perto, maior o peso. Mantêm-se cerca dos <b>180 conceitos mais relevantes</b>, podando as ligações mais fracas.</p>
+    <p>A rede é construída por co-ocorrência: percorre-se o texto de cada capítulo com uma janela deslizante de quatro palavras, e cada par de termos próximos ganha uma aresta — quanto mais perto, maior o peso. Mantêm-se cerca dos <b>180 termos mais relevantes</b>, podando as ligações mais fracas.</p>
     <p>O Louvain é então aplicado sobre essa rede ponderada (pelo peso de co-ocorrência), com <b>semente fixa</b> — de modo que o resultado é <b>determinístico e reprodutível</b>: a mesma tese gera sempre os mesmos agrupamentos — e resolução padrão (1.0).</p>
-    <p>Duas decisões de curadoria complementam o algoritmo: agrupamentos muito pequenos (menos de três conceitos) não são exibidos no mapa; e um agrupamento — <b>"Bibliometria · panorama do campo"</b> — foi reunido manualmente, porque seu vocabulário se dispersava pelos demais e o Louvain não o isolava sozinho. Os nomes dos agrupamentos vêm de termos-assinatura ou dos conceitos de maior peso em cada um.</p>
+    <p>Duas decisões de curadoria complementam o algoritmo: agrupamentos muito pequenos (menos de três termos) não são exibidos no mapa; e um agrupamento — <b>"Bibliometria · panorama do campo"</b> — foi reunido manualmente, porque seu vocabulário se dispersava pelos demais e o Louvain não o isolava sozinho. Os nomes dos agrupamentos vêm de termos-assinatura ou dos termos de maior peso em cada um.</p>
   </div>
 </div></div>
 <div id="purpose"><div id="purpose-card">
   <button id="purpose-cl">× fechar</button>
   <h2><span class="texcmd">\section{</span><span class="texarg">Para que serve esta análise</span><span class="texcmd">}</span></h2>
-  <div class="lvsub">% por que ler a tese como uma rede de conceitos</div>
-  <p>Ler a tese inteira como uma rede de conceitos é um <b>dispositivo heurístico</b>: não substitui a leitura nem produz "a verdade" do texto, mas oferece <em>portas de entrada</em>. A rede torna visível a <b>arquitetura conceitual</b> do trabalho — os eixos em torno dos quais ele gira, os conceitos que funcionam como <b>pontes</b> (alta intermediação / <em>betweenness</em>) entre o vocabulário teórico e a descrição empírica, e as <b>lacunas</b> (ligações fracas) que apontam onde o argumento ainda pode ser costurado.</p>
+  <div class="lvsub">% por que ler a tese como uma rede de termos</div>
+  <p>Ler a tese inteira como uma rede de termos é um <b>dispositivo heurístico</b>: não substitui a leitura nem produz "a verdade" do texto, mas oferece <em>portas de entrada</em>. A rede torna visível a <b>arquitetura conceitual</b> do trabalho — os eixos em torno dos quais ele gira, os termos que funcionam como <b>pontes</b> (alta intermediação / <em>betweenness</em>) entre o vocabulário teórico e a descrição empírica, e as <b>lacunas</b> (ligações fracas) que apontam onde o argumento ainda pode ser costurado.</p>
   <h3><span class="texcmd">\subsection{</span><span class="texarg">Por que nesta tese</span><span class="texcmd">}</span></h3>
   <p>Mais do que um enfeite, a escolha é <b>coerente com a própria tese</b>, que propõe uma <em>tecno-etnografia</em>: descrever práticas tecnocientíficas <b>sem apagar a técnica</b> que as sustenta, seguindo a teoria ator-rede e a noção latouriana de <b>inscrição</b>. Esta rede é, ela mesma, uma inscrição tecnocientífica aplicada <b>reflexivamente</b> ao texto da tese — o aparato fica à vista, não escondido. A interface pratica o que a tese argumenta.</p>
-  <p class="lvphase">Há ainda um eco com o objeto: assim como o SPIRA converte voz → espectrograma → rede neural, este site converte tese → tokens → rede de co-ocorrência. A mesma <b>cadeia de translações</b> que a etnografia descreve, agora voltada sobre o próprio texto. Seguir os conceitos pela rede é uma versão, em miniatura, do gesto que organiza a tese: <em>seguir os atores por onde quer que vão</em>.</p>
+  <p class="lvphase">Há ainda um eco com o objeto: assim como o SPIRA converte voz → espectrograma → rede neural, este site converte tese → tokens → rede de co-ocorrência. A mesma <b>cadeia de translações</b> que a etnografia descreve, agora voltada sobre o próprio texto. Seguir os termos pela rede é uma versão, em miniatura, do gesto que organiza a tese: <em>seguir os atores por onde quer que vão</em>.</p>
 </div></div>
 <button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">\section{</span><span class="texarg">A tese</span><span class="texcmd">}</span> ↗</button>
 <div id="doc"><div id="doc-card">
@@ -352,11 +352,11 @@ const nodes = DATA.nodes.map(n => Object.assign({}, n));
 const byId = {}; nodes.forEach(n => byId[n.id] = n);
 const links = DATA.edges.map(e => ({ source: e.s, target: e.t, w: e.w, npmi: e.npmi }));
 
-// subtítulo dinâmico: nº de conceitos e de agrupamentos sempre em sincronia com os dados
+// subtítulo dinâmico: nº de termos e de agrupamentos sempre em sincronia com os dados
 (() => {
   const sub = document.getElementById('subtitle');
   if (sub) sub.textContent = 'rede de co-ocorrência · ' + nodes.length +
-    ' conceitos · ' + comm.filter(c => c.size >= 3).length + ' agrupamentos temáticos';
+    ' termos · ' + comm.filter(c => c.size >= 3).length + ' agrupamentos temáticos';
 })();
 
 // adjacência para o painel (vizinhos + npmi/peso)
