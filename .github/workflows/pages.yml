@@ -1,10 +1,15 @@
 name: Publica o site no GitHub Pages
 
-# Republica o site estático a cada push na main — inclusive os commits
-# automáticos do analyze.yml que regeneram a análise de redes.
+# Republica o site estático a cada push na main e também quando o analyze.yml
+# termina. O gatilho workflow_run é necessário porque os commits automáticos do
+# analyze (feitos com o GITHUB_TOKEN) NÃO disparam o evento push em outros
+# workflows — sem isso, as regenerações da análise nunca eram publicadas.
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Analisa capítulos da tese"]
+    types: [completed]
   workflow_dispatch:
 
 # Permissões mínimas exigidas pelo deploy de Pages.
@@ -20,6 +25,8 @@ concurrency:
 
 jobs:
   deploy:
+    # em workflow_run, só publica se a análise terminou com sucesso
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
