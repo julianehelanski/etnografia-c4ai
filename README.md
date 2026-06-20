@@ -5,21 +5,21 @@ centro de inteligência artificial: seguindo cientistas e engenheiros —
 universidade afora"** (Juliane Helanski · PPGCS/IFCH · Unicamp · 2026).
 
 A página principal é uma **rede textual da tese**: um grafo de co-ocorrência de
-conceitos gerado a partir do `.tex`, organizado em agrupamentos temáticos
+termos gerado a partir do `.tex`, organizado em agrupamentos temáticos
 (comunidades detectadas por Louvain). Pela
 aba **`{a tese}`** abre-se um modal com resumo, sumário comentado, as galerias
 de figuras de cada capítulo e as listas de ilustrações e tabelas.
 
 ## Como ler a rede
 
-Cada **nó** é um conceito recorrente no texto; uma **aresta** liga dois conceitos
+Cada **nó** é um termo recorrente no texto; uma **aresta** liga dois termos
 que tendem a aparecer juntos (co-ocorrência), com peso dado pelo **NPMI**
 (*normalized pointwise mutual information*) — quanto mais a dupla co-ocorre acima
 do que o acaso explicaria, mais forte a ligação.
 
 Os **agrupamentos temáticos** (cada cor) não são definidos à mão: são
 **comunidades** detectadas automaticamente pelo algoritmo de **Louvain** sobre a
-rede — ele reúne no mesmo grupo os conceitos que mais co-ocorrem entre si. O
+rede — ele reúne no mesmo grupo os termos que mais co-ocorrem entre si. O
 tamanho de cada nó reflete sua **centralidade (PageRank)**. Essa nota técnica
 aparece também na **legenda** do site e no painel de cada termo, para situar o
 leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) está em
@@ -27,10 +27,10 @@ leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) est�
 
 ### Para que serve esta análise — e por que nesta tese
 
-Ler uma tese inteira como uma rede de conceitos é um **dispositivo heurístico**:
+Ler uma tese inteira como uma rede de termos é um **dispositivo heurístico**:
 não substitui a leitura nem produz "a verdade" do texto, mas oferece *portas de
 entrada*. A rede torna visível a **arquitetura conceitual** do trabalho — os
-eixos em torno dos quais ele gira, os conceitos que funcionam como **pontes**
+eixos em torno dos quais ele gira, os termos que funcionam como **pontes**
 (alta intermediação / *betweenness*) traduzindo entre o vocabulário teórico e a
 descrição empírica, e as **lacunas** (ligações fracas) que apontam onde o
 argumento ainda pode ser costurado. É exatamente esse tipo de leitura que a
@@ -49,7 +49,7 @@ argumenta.
 Há ainda um eco com o objeto empírico. Assim como o projeto SPIRA converte
 voz → espectrograma → rede neural, este site converte tese → tokens → rede de
 co-ocorrência: a mesma lógica de **cadeia de translações** que a etnografia
-descreve, agora voltada sobre o próprio texto. Seguir os conceitos pela rede é
+descreve, agora voltada sobre o próprio texto. Seguir os termos pela rede é
 uma versão, em miniatura, do gesto que organiza a tese — *seguir os atores por
 onde quer que vão*.
 
