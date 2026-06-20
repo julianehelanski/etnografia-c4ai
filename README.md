@@ -25,6 +25,34 @@ aparece também na **legenda** do site e no painel de cada termo, para situar o
 leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) está em
 [`infranodus/tese_network.py`](infranodus/tese_network.py).
 
+### Para que serve esta análise — e por que nesta tese
+
+Ler uma tese inteira como uma rede de conceitos é um **dispositivo heurístico**:
+não substitui a leitura nem produz "a verdade" do texto, mas oferece *portas de
+entrada*. A rede torna visível a **arquitetura conceitual** do trabalho — os
+eixos em torno dos quais ele gira, os conceitos que funcionam como **pontes**
+(alta intermediação / *betweenness*) traduzindo entre o vocabulário teórico e a
+descrição empírica, e as **lacunas** (ligações fracas) que apontam onde o
+argumento ainda pode ser costurado. É exatamente esse tipo de leitura que a
+interpretação do capítulo 1 ensaia (ver
+[`infranodus/interpretation_cap1.md`](infranodus/interpretation_cap1.md)).
+
+Mais do que um enfeite, a escolha é **coerente com a própria tese**. O trabalho
+propõe uma *tecno-etnografia*: descrever práticas tecnocientíficas **sem apagar a
+técnica** que as sustenta, seguindo a teoria ator-rede e a noção latouriana de
+**inscrição** — os diagramas, gráficos e representações que fazem o conhecimento
+circular. Esta rede é, ela mesma, uma inscrição tecnocientífica aplicada
+**reflexivamente** ao texto da tese: o aparato fica à vista (co-ocorrência ·
+NPMI · Louvain · PageRank), não escondido. A interface pratica o que a tese
+argumenta.
+
+Há ainda um eco com o objeto empírico. Assim como o projeto SPIRA converte
+voz → espectrograma → rede neural, este site converte tese → tokens → rede de
+co-ocorrência: a mesma lógica de **cadeia de translações** que a etnografia
+descreve, agora voltada sobre o próprio texto. Seguir os conceitos pela rede é
+uma versão, em miniatura, do gesto que organiza a tese — *seguir os atores por
+onde quer que vão*.
+
 Ao **clicar em um termo**, abre-se à direita um painel (*drawer*) com suas
 métricas, as associações mais fortes (NPMI), trechos da tese e os capítulos em
 que ele aparece. O painel é **redimensionável**: arraste a alça na sua borda
