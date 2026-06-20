@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **22,342**
-- Grafo bruto: **6419** nós · **56055** arestas
+- Tokens significativos: **22,340**
+- Grafo bruto: **6419** nós · **56049** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3218** arestas
 - Tópicos detectados (Louvain): **8**
 

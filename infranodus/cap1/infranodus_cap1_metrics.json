@@ -1,8 +1,8 @@
 {
-  "tokens": 22342,
+  "tokens": 22340,
   "graph_full": {
     "nodes": 6419,
-    "edges": 56055
+    "edges": 56049
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "ausencia",
       "b": "manifesta",
-      "npmi": 0.8720070317005917,
+      "npmi": 0.8720050958340755,
       "cooccurrence_weight": 60
     },
     {
       "a": "inteligencia",
       "b": "artificial",
-      "npmi": 0.8579778438723367,
+      "npmi": 0.8579749237451688,
       "cooccurrence_weight": 289
     },
     {
       "a": "existencias",
       "b": "parciais",
-      "npmi": 0.824086173583477,
+      "npmi": 0.8240833708351822,
       "cooccurrence_weight": 81
     },
     {
       "a": "parcial",
       "b": "existencia",
-      "npmi": 0.7481560907742096,
+      "npmi": 0.7481523144103261,
       "cooccurrence_weight": 61
     },
     {
       "a": "teoria",
       "b": "ator",
-      "npmi": 0.7190176462570121,
+      "npmi": 0.7190130748049188,
       "cooccurrence_weight": 92
     },
     {
       "a": "distribuida",
       "b": "agencia",
-      "npmi": 0.7188524943474071,
+      "npmi": 0.7188483293332616,
       "cooccurrence_weight": 53
     },
     {
       "a": "otherness",
       "b": "manifesta",
-      "npmi": 0.705553514869553,
+      "npmi": 0.7055493804399335,
       "cooccurrence_weight": 38
     },
     {
       "a": "presenca",
       "b": "ausencia",
-      "npmi": 0.7022006065973816,
+      "npmi": 0.7021964425039647,
       "cooccurrence_weight": 37
     },
     {
       "a": "parcial",
       "b": "conexao",
-      "npmi": 0.6446600171749479,
+      "npmi": 0.6446551132581434,
       "cooccurrence_weight": 43
     },
     {
       "a": "tecnico",
       "b": "letramento",
-      "npmi": 0.6340256528571198,
+      "npmi": 0.6340206021793527,
       "cooccurrence_weight": 34
     },
     {
       "a": "infraestrutura",
       "b": "computacional",
-      "npmi": 0.6228186898478315,
+      "npmi": 0.6228134611444144,
       "cooccurrence_weight": 35
     },
     {
       "a": "modelo",
       "b": "linguagem",
-      "npmi": 0.6032413825296608,
+      "npmi": 0.6032350891692292,
       "cooccurrence_weight": 84
     },
     {
       "a": "presenca",
       "b": "manifesta",
-      "npmi": 0.6007119441598517,
+      "npmi": 0.6007067802295241,
       "cooccurrence_weight": 22
     },
     {
       "a": "otherness",
       "b": "ausencia",
-      "npmi": 0.6003187908736188,
+      "npmi": 0.600313435296524,
       "cooccurrence_weight": 28
     },
     {
       "a": "heterogeneos",
       "b": "materiais",
-      "npmi": 0.5979164153481848,
+      "npmi": 0.5979108170167771,
       "cooccurrence_weight": 36
     },
     {
       "a": "figuracao",
       "b": "textil",
-      "npmi": 0.5974836725376845,
+      "npmi": 0.5974776910250295,
       "cooccurrence_weight": 54
     },
     {
       "a": "textual",
       "b": "analise",
-      "npmi": 0.5889771621289357,
+      "npmi": 0.5889709454956333,
       "cooccurrence_weight": 68
     },
     {
       "a": "ciencia",
       "b": "sociais",
-      "npmi": 0.5768798340785259,
+      "npmi": 0.576873034388631,
       "cooccurrence_weight": 90
     },
     {
       "a": "condicao",
       "b": "possibilidade",
-      "npmi": 0.5692768142558495,
+      "npmi": 0.5692711728760403,
       "cooccurrence_weight": 24
     },
     {
       "a": "principio",
       "b": "simetria",
-      "npmi": 0.5591748999174615,
+      "npmi": 0.5591693593940951,
       "cooccurrence_weight": 18
     },
     {
       "a": "tecno",
       "b": "etnografia",
-      "npmi": 0.5506180215073497,
+      "npmi": 0.5506111682149163,
       "cooccurrence_weight": 70
     },
     {
       "a": "generativa",
       "b": "artificial",
-      "npmi": 0.5457911164431001,
+      "npmi": 0.5457842660796011,
       "cooccurrence_weight": 59
     },
     {
       "a": "cientista",
       "b": "computacao",
-      "npmi": 0.542875609236574,
+      "npmi": 0.5428697367789219,
       "cooccurrence_weight": 22
     },
     {
       "a": "otherness",
       "b": "presenca",
-      "npmi": 0.5342626018945879,
+      "npmi": 0.5342566187897643,
       "cooccurrence_weight": 21
     },
     {
       "a": "estudos",
       "b": "tecnologia",
-      "npmi": 0.531918025054144,
+      "npmi": 0.5319118575387279,
       "cooccurrence_weight": 25
     }
   ],

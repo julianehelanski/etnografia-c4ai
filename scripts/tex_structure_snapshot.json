@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-20 09:46 UTC",
+  "generated": "2026-06-20 16:51 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -137,8 +137,7 @@
         "Des-crevendo o artigo",
         "A imagem da voz, o som da imagem",
         "Cruzando os fios",
-        "Localização do dataset",
-        "Geração dos espectrogramas"
+        "Nota sobre o percurso: localização do dataset e geração dos espectrogramas"
       ],
       "subsections": [
         "Dobrando redes",
@@ -157,7 +156,9 @@
         "O que a rede neural escuta e vê",
         "Múltiplas insuficiências reSpiratórias",
         "Três movimentos, uma rede",
-        "Costurando as redes"
+        "Costurando as redes",
+        "Localização do dataset",
+        "Geração dos espectrogramas"
       ],
       "figures": [
         "AISelect_20260402_155051_Adobe Acrobat.jpg",
