@@ -350,6 +350,8 @@ const chapLabel = {}; DATA.chapters.forEach(c => chapLabel[c.id] = c.label);
 // nós e arestas
 const nodes = DATA.nodes.map(n => Object.assign({}, n));
 const byId = {}; nodes.forEach(n => byId[n.id] = n);
+// rótulo re-acentuado p/ exibição (o id normalizado continua sendo a chave de cálculo/casamento)
+const labelOf = id => (byId[id] && byId[id].label) || id;
 const links = DATA.edges.map(e => ({ source: e.s, target: e.t, w: e.w, npmi: e.npmi }));
 
 // subtítulo dinâmico: nº de termos e de agrupamentos sempre em sincronia com os dados
@@ -397,7 +399,7 @@ node.filter(d => d.core).append('text')
   .attr('text-anchor', 'middle')
   .attr('dy', d => -nr(d) - 3)
   .attr('font-size', d => labelScale(d.pagerank).toFixed(1) + 'px')
-  .text(d => d.id);
+  .text(d => d.label || d.id);
 
 const sim = d3.forceSimulation(nodes)
   .force('link', d3.forceLink(links).id(d => d.id).distance(d => 26 + 60 * (1 - d.npmi)).strength(d => 0.06 + 0.5 * Math.max(0, d.npmi)))
@@ -441,7 +443,7 @@ node.on('mouseover', (e, d) => {
     const keep = neighborSet(d.id);
     node.style('opacity', n => keep.has(n.id) ? 1 : .12);
     link.style('opacity', l => (l.source.id === d.id || l.target.id === d.id) ? .75 : .03);
-    tip.style.display = 'block'; tip.textContent = d.id + '  ·  ' + d.freq + '×';
+    tip.style.display = 'block'; tip.textContent = (d.label || d.id) + '  ·  ' + d.freq + '×';
   })
   .on('mousemove', e => { tip.style.left = (e.clientX + 12) + 'px'; tip.style.top = (e.clientY - 16) + 'px'; })
   .on('mouseout', () => { node.style('opacity', 1); link.style('opacity', null); tip.style.display = 'none'; })
@@ -473,7 +475,7 @@ if (edgetab) edgetab.onclick = () => { if (topTerm) showTerm(topTerm); };
 function showTerm(id) {
   dismissCue();
   const d = byId[id];
-  document.getElementById('pterm').textContent = id;
+  document.getElementById('pterm').textContent = labelOf(id);
   document.getElementById('pterm').style.color = commColor[d.community];
   const topic = comm.find(c => c.id === d.community);
   document.getElementById('ptopic').textContent = '◆ ' + (topic.name || topic.label.join(' · '));
@@ -492,7 +494,7 @@ function showTerm(id) {
   assoc.forEach(a => {
     const col = commColor[byId[a.id].community];
     html += '<div class="assoc"><span class="bar" style="width:' + (8 + 70 * a.npmi / amax).toFixed(0) +
-      'px;background:' + col + '"></span><b data-term="' + a.id + '">' + a.id + '</b>' +
+      'px;background:' + col + '"></span><b data-term="' + a.id + '">' + labelOf(a.id) + '</b>' +
       '<span class="aw">' + a.npmi.toFixed(2) + '</span></div>';
   });
 

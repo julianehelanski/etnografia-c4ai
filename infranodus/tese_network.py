@@ -26,7 +26,8 @@ from pathlib import Path
 from infranodus_cap1 import (extract_tokens, build_graph, compute_npmi,
                              annotate_npmi, prune_graph, compute_metrics,
                              detect_topics, label_topic,
-                             strip_latex, normalize_token, lemma)
+                             strip_latex, normalize_token, lemma,
+                             collect_surface_forms)
 
 THIS_DIR = Path(__file__).resolve().parent
 
@@ -250,13 +251,16 @@ def main() -> int:
     all_tokens: list[str] = []
     term_chapters: dict[str, set[str]] = {}
     per_chapter_counts: list[tuple[str, int]] = []
+    surface: dict = {}  # token normalizado -> Counter de grafias originais
 
     for fname, label, cid in CHAPTERS:
         src = args.source_root / fname
         if not src.exists():
             print(f"[tese] aviso: {fname} não encontrado, pulando.")
             continue
-        toks = extract_tokens(src.read_text(encoding="utf-8"))
+        raw = src.read_text(encoding="utf-8")
+        toks = extract_tokens(raw)
+        collect_surface_forms(raw, surface)
         per_chapter_counts.append((cid, len(toks)))
         for t in set(toks):
             term_chapters.setdefault(t, set()).add(cid)
@@ -327,11 +331,18 @@ def main() -> int:
     # ordem de capítulo para um termo (menor índice em que aparece) — para cor de origem
     order = {cid: k for k, (_, _, cid) in enumerate(CHAPTERS)}
 
+    def display_label(node_id: str) -> str:
+        """Rótulo re-acentuado: grafia de superfície mais frequente cuja forma
+        normalizada é exatamente o id do nó; se não houver, usa o próprio id."""
+        c = surface.get(node_id)
+        return c.most_common(1)[0][0] if c else node_id
+
     nodes = []
     for n in G.nodes():
         chs = sorted(term_chapters.get(n, set()), key=lambda c: order.get(c, 99))
         nodes.append({
             "id": n,
+            "label": display_label(n),
             "community": comm_of.get(n, 0),
             "freq": int(G.nodes[n].get("freq", 0)),
             "degree": round(float(deg.get(n, 0)), 1),
@@ -357,7 +368,7 @@ def main() -> int:
             "id": i,
             "size": len(c),
             "name": forced_names.get(i) or name_territory(c, used_names),
-            "label": label_topic(c, deg, k=5),
+            "label": [display_label(t) for t in label_topic(c, deg, k=5)],
             "color": PALETTE[i % len(PALETTE)],
         })
 
