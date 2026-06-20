@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-20 21:05 UTC",
+  "generated": "2026-06-20 22:42 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -95,18 +95,14 @@
     },
     "cap3": {
       "sections": [
-        "Do C4AI-IBM à Terra",
-        "Seguindo Fábio e Cláudio: observação, entrevistas e documentos",
+        "Como segui Fábio e Cláudio: observação, entrevistas e documentos",
+        "Como quem segui a rede que Fábio e Cláudio construíram",
         "Criar demanda: a racionalidade de um ecossistema",
-        "A trajetória da IBM",
+        "A IBM",
         "As entrevistas com Fábio e Cláudio",
         "O fim da parceria C4AI-IBM"
       ],
-      "subsections": [
-        "Observação",
-        "Entrevistas e documentos",
-        "Mapa analítico"
-      ],
+      "subsections": [],
       "figures": [
         "1_ranking_grupos.png",
         "3_evolucao_temporal_geral.png",
@@ -130,35 +126,14 @@
     },
     "cap4": {
       "sections": [
-        "Marcelo e o projeto Spira",
-        "Os referenciais analíticos e a cadeia de translação",
-        "De onde vêm e o que são os dados do Spira",
-        "A des-crição do Covideiro pelo vocabulário sócio-semiótico",
-        "A circulação do Covideiro como argumento científico",
-        "O espectrograma mel como inscrição da cadeia",
-        "Conclusão: a rede do Covideiro",
-        "Nota sobre o percurso: localização do dataset e geração dos espectrogramas"
+        "Com quem segui a rede que Marcelo construiu",
+        "O Spira",
+        "As inscrições tecnocientíficas do Spira",
+        "A rede do Covideiro",
+        "Localização do dataset e geração dos espectrogramas"
       ],
       "subsections": [
-        "Topologias, dobras e pontos de entrada na rede",
-        "Três sítios etnográficos na cadeia de translação",
-        "Estrutura do capítulo: seguindo a cadeia",
-        "Situando a rede",
-        "Metodologia e coleta de dados do Spira",
-        "O ``Covideiro''",
-        "Resultados e limitações",
-        "Visão de Marcelo para a inteligência artificial",
-        "Quatro vocabulários em eSpiral",
-        "A inscrição do Covideiro",
-        "A des-crição da configuração",
-        "Do que a imagem é feita",
-        "O que a imagem carrega e apaga",
-        "O que a rede neural escuta e vê",
-        "Múltiplas insuficiências reSpiratórias",
-        "Os três movimentos da cadeia",
-        "O reencontro com a rede do capítulo 3",
-        "Localização do dataset",
-        "Geração dos espectrogramas"
+        "Como segui a rede que Marcelo construiu: entrevista, artigos e relatórios"
       ],
       "figures": [
         "AISelect_20260402_155051_Adobe Acrobat.jpg",
