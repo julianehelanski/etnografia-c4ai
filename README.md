@@ -25,11 +25,47 @@ aparece também na **legenda** do site e no painel de cada termo, para situar o
 leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) está em
 [`infranodus/tese_network.py`](infranodus/tese_network.py).
 
-Ao **clicar num termo**, abre-se à direita um painel (*drawer*) com suas
+Ao **clicar em um termo**, abre-se à direita um painel (*drawer*) com suas
 métricas, as associações mais fortes (NPMI), trechos da tese e os capítulos em
 que ele aparece. O painel é **redimensionável**: arraste a alça na sua borda
 esquerda para alargá-lo (duplo-clique restaura a largura padrão), e a largura
 escolhida fica salva entre visitas.
+
+### O peso (tamanho) dos nós é o PageRank
+
+O tamanho de cada nó é dado **exclusivamente pelo PageRank** do termo
+(`nx.pagerank(G, weight="weight", alpha=0.85)` em
+[`infranodus/infranodus_cap1.py`](infranodus/infranodus_cap1.py); o raio é uma
+escala de raiz quadrada do PageRank, de 3,2 a 22 px, em
+[`index.html`](index.html)). PageRank mede **importância recursiva**: um termo
+pesa mais não por ter muitas ligações, mas por estar ligado a outros termos que
+também são importantes — ponderado pelo peso das arestas (co-ocorrência em janela
+de 4 palavras, com mais peso para pares mais próximos). O PageRank também governa
+o tamanho do rótulo e a repulsão do nó no layout.
+
+As demais métricas exibidas no painel do termo — **grau** (soma dos pesos de
+co-ocorrência), **betweenness** (ponte entre assuntos) e **frequência** — são
+calculadas, mas **não** definem o tamanho do nó. Quais termos viram nós é
+decidido pela poda: mantêm-se os ~180 mais frequentes, removem-se as arestas
+fracas e fica-se com o maior componente conexo.
+
+### Peso ≠ comunidade: a curadoria do agrupamento bibliométrico
+
+Vale distinguir duas camadas independentes: o **peso** de um nó (PageRank, acima)
+e a **comunidade** (cor/agrupamento) a que ele pertence (Louvain). A inserção da
+análise bibliométrica atua **apenas na segunda** — ela reagrupa termos, não muda
+o peso de ninguém.
+
+O vocabulário bibliométrico (`capes`, `producao`, `distribuicao`, `frequencia`,
+`area`, `base`, `corpus`, `brasileira`) já estava na rede como nós e com seu
+tamanho próprio (PageRank), mas o Louvain o **dispersava** pelos demais
+agrupamentos em vez de isolá-lo. Por curadoria
+([`carve_bibliometric_territory`](infranodus/tese_network.py)), esses termos são
+retirados das comunidades onde caíram e reunidos em um agrupamento dedicado —
+**"Bibliometria · panorama do campo"** — desde que ao menos três deles estejam
+presentes (caso contrário, não se força o agrupamento, para não criar um polo
+artificial). Ou seja: a inserção bibliométrica mudou **a que cor** esses termos
+pertencem, não **o tamanho** deles.
 
 ## Identidade visual: a sintaxe LaTeX é proposital
 
