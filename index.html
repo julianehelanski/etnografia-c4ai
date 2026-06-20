@@ -46,6 +46,26 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #legend .lnote{font-family:'CMU Serif',serif;font-size:.6rem;color:#5b6480;line-height:1.35;
   border-top:1px solid #ececec;margin-top:.6rem;padding-top:.5rem}
 #legend .lnote b{font-weight:600;color:#34405e}
+#legend .lalca{display:inline-block;margin-top:.55rem;background:none;border:none;padding:0;cursor:pointer;
+  font-family:'CMU Typewriter Text',monospace;font-size:.6rem;letter-spacing:0;text-align:left}
+#legend .lalca .texarg{text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#cdb6da}
+#legend .lalca:hover .texarg{color:#000;text-decoration-color:#1f6bff}
+/* modal: como o algoritmo de Louvain funciona */
+#louvain{position:fixed;inset:0;z-index:130;background:rgba(40,30,55,.34);backdrop-filter:blur(2px);
+  display:none;align-items:flex-start;justify-content:center;padding:3.2rem 1rem;overflow:auto}
+#louvain.open{display:flex}
+#louvain-card{position:relative;background:#fff;width:min(720px,96vw);border:1px solid #d4d4d4;
+  box-shadow:0 18px 60px rgba(40,30,55,.3);padding:2.6rem 2.4rem 3rem}
+#louvain-cl{position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:#666666;
+  font-family:'CMU Typewriter Text',monospace;font-size:.66rem;cursor:pointer;letter-spacing:.1em}
+#louvain-cl:hover{color:#444}
+#louvain h2{font-family:'CMU Serif',serif;font-weight:700;font-size:1.5rem;letter-spacing:-.01em;color:#111111;margin-bottom:.25rem}
+#louvain .lvsub{font-family:'CMU Typewriter Text',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#555555;margin-bottom:1.3rem}
+#louvain h3{font-family:'CMU Typewriter Text',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#555555;border-top:1px solid #ececec;padding-top:.9rem;margin:1.5rem 0 .7rem}
+#louvain p{font-family:'CMU Serif',serif;font-size:.95rem;line-height:1.6;color:#222222;margin-bottom:.85rem}
+#louvain b{font-weight:700;color:#1a1a1a}
+#louvain .lvphase{border-left:2px solid var(--rule-soft);padding-left:.95rem;margin:.9rem 0}
+#louvain .lvphase b{color:#34405e}
 
 /* painel do termo */
 #panel{position:fixed;top:0;right:0;width:var(--pw,34rem);max-width:94vw;height:100vh;background:rgba(255,255,255,.985);
@@ -260,6 +280,17 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 <div id="presize" title="arraste para alargar · duplo-clique para restaurar"></div>
 <div id="qzoom" hidden><div id="qzoom-card"><button id="qzoom-cl">× fechar</button><div id="qzoom-ch"></div><div id="qzoom-tx"></div></div></div>
 <div id="imgzoom" hidden><div id="imgzoom-card"><button id="imgzoom-cl">× fechar</button><img id="imgzoom-im" alt=""><div id="imgzoom-cap"></div></div></div>
+<div id="louvain"><div id="louvain-card">
+  <button id="louvain-cl">× fechar</button>
+  <h2>O algoritmo de Louvain</h2>
+  <div class="lvsub">como os agrupamentos da rede são detectados</div>
+  <p>O algoritmo de Louvain é um método rápido e eficiente para detectar <b>comunidades</b> (agrupamentos / clusters) em grandes redes e grafos. Ele funciona otimizando iterativamente a <b>modularidade</b> — uma métrica que avalia a densidade de conexões dentro dos grupos em comparação com as conexões esperadas ao acaso.</p>
+  <h3>Como o algoritmo funciona</h3>
+  <p>O processo é executado em duas fases principais que se repetem ciclicamente até que a estrutura da comunidade se estabilize:</p>
+  <p class="lvphase"><b>Fase local (otimização).</b> O algoritmo inicia considerando cada nó como sua própria comunidade isolada. Em seguida, avalia o ganho de modularidade ao mover um nó para a comunidade de cada um dos seus vizinhos. O nó é transferido para a comunidade que oferece o maior ganho positivo. Se nenhum ganho for possível, o nó permanece onde está. Esse processo é repetido para todos os nós até que nenhum movimento melhore a modularidade.</p>
+  <p class="lvphase"><b>Fase de agregação.</b> Uma vez alcançado o limite local da fase anterior, o algoritmo agrupa todos os nós de uma mesma comunidade em um único "supernó" e cria um novo grafo ponderado. As conexões entre esses supernós representam a soma dos pesos das arestas originais.</p>
+  <p>O processo das duas fases é repetido no novo grafo até que não seja possível aumentar mais a modularidade, resultando em uma estrutura hierárquica de comunidades.</p>
+</div></div>
 <button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">\section{</span><span class="texarg">A tese</span><span class="texcmd">}</span> ↗</button>
 <div id="doc"><div id="doc-card">
   <button id="doc-cl">× fechar</button>
@@ -533,6 +564,21 @@ lnote.innerHTML = 'Cada cor reúne os termos que mais co-ocorrem entre si: uma '
   '<b>comunidade</b>, detectada automaticamente pelo algoritmo de <b>Louvain</b> ' +
   'sobre a rede de co-ocorrência.';
 legend.appendChild(lnote);
+// alça: puxa o modal com a explicação de como o Louvain funciona
+const lalca = document.createElement('button');
+lalca.className = 'lalca';
+lalca.innerHTML = '<span class="texcmd">\\louvain{</span>' +
+  '<span class="texarg">como o algoritmo funciona ↗</span><span class="texcmd">}</span>';
+lalca.onclick = openLouvain;
+legend.appendChild(lalca);
+
+// modal "como o Louvain funciona"
+const louvain = document.getElementById('louvain');
+function openLouvain() { louvain.classList.add('open'); }
+function closeLouvain() { louvain.classList.remove('open'); }
+document.getElementById('louvain-cl').onclick = closeLouvain;
+louvain.addEventListener('click', e => { if (e.target.id === 'louvain') closeLouvain(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLouvain(); });
 
 // ---- documento da tese (resumo · sumário · ilustrações · tabelas) ----
 const DOC = JSON.parse(document.getElementById('docdata').textContent);
