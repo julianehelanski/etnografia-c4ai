@@ -1,12 +1,12 @@
 {
   "tokens": 17498,
   "graph_full": {
-    "nodes": 5226,
-    "edges": 45067
+    "nodes": 5225,
+    "edges": 45064
   },
   "graph_pruned": {
     "nodes": 180,
-    "edges": 2568
+    "edges": 2567
   },
   "top_terms_degree": [
     {
@@ -86,12 +86,12 @@
       "degree": 243
     },
     {
-      "term": "universidade",
-      "degree": 243
-    },
-    {
       "term": "empresa",
       "degree": 242
+    },
+    {
+      "term": "universidade",
+      "degree": 241
     },
     {
       "term": "fapesp",
@@ -133,123 +133,123 @@
   "top_terms_pagerank": [
     {
       "term": "claudio",
-      "pagerank": 0.02700112589581509
+      "pagerank": 0.02700441086600458
     },
     {
       "term": "pesquisa",
-      "pagerank": 0.025934293599814334
+      "pagerank": 0.025942981808544242
     },
     {
       "term": "rede",
-      "pagerank": 0.020925176810126817
+      "pagerank": 0.020928061062336557
     },
     {
       "term": "centro",
-      "pagerank": 0.0194673313312907
+      "pagerank": 0.019472516949037545
     },
     {
       "term": "fabio",
-      "pagerank": 0.01696361395049332
+      "pagerank": 0.01696561410771954
     },
     {
       "term": "publico",
-      "pagerank": 0.01635559429384014
+      "pagerank": 0.01635779296589482
     },
     {
       "term": "arranjo",
-      "pagerank": 0.01471803144418901
+      "pagerank": 0.0147212944555005
     },
     {
       "term": "corporacao",
-      "pagerank": 0.014136174805559737
+      "pagerank": 0.01413801389239464
     },
     {
       "term": "seguir",
-      "pagerank": 0.014116800629305246
+      "pagerank": 0.014118440845103093
     },
     {
       "term": "tecnologia",
-      "pagerank": 0.012165859045693918
+      "pagerank": 0.01216858213380473
     },
     {
       "term": "brasil",
-      "pagerank": 0.01191268425848587
+      "pagerank": 0.01191428624897269
     },
     {
       "term": "hollerith",
-      "pagerank": 0.011829088293523955
+      "pagerank": 0.011831442722567408
     },
     {
       "term": "inteligencia",
-      "pagerank": 0.011209641940422723
+      "pagerank": 0.01121108443684496
     },
     {
       "term": "ator",
-      "pagerank": 0.011136273438924088
+      "pagerank": 0.011137580616001789
     },
     {
       "term": "artificial",
-      "pagerank": 0.010806131696102901
+      "pagerank": 0.010807472378476905
     },
     {
       "term": "laboratorio",
-      "pagerank": 0.010702069185099326
+      "pagerank": 0.010703538259844976
     },
     {
       "term": "infraestrutura",
-      "pagerank": 0.010268511735724904
+      "pagerank": 0.010269799327434976
     },
     {
       "term": "empresa",
-      "pagerank": 0.009487493832202326
-    },
-    {
-      "term": "universidade",
-      "pagerank": 0.0094607062953131
+      "pagerank": 0.009488713740794148
     },
     {
       "term": "cientifico",
-      "pagerank": 0.009416237071881977
+      "pagerank": 0.009418270755074912
+    },
+    {
+      "term": "universidade",
+      "pagerank": 0.009384108268047196
     },
     {
       "term": "ecossistema",
-      "pagerank": 0.009348318639611589
+      "pagerank": 0.009349493863150649
     },
     {
       "term": "modelo",
-      "pagerank": 0.009346825983826731
+      "pagerank": 0.009348012413605151
     },
     {
       "term": "fapesp",
-      "pagerank": 0.009159568832669128
+      "pagerank": 0.009160817675363935
     },
     {
       "term": "maquina",
-      "pagerank": 0.00915899259310351
+      "pagerank": 0.009160174411599635
     },
     {
       "term": "instituicao",
-      "pagerank": 0.008977171718449755
+      "pagerank": 0.00897839938286412
     },
     {
       "term": "trajetoria",
-      "pagerank": 0.008715772215640601
+      "pagerank": 0.008716925123117133
     },
     {
       "term": "associacao",
-      "pagerank": 0.008256630488482325
+      "pagerank": 0.00825776358368203
     },
     {
       "term": "campo",
-      "pagerank": 0.00812267839852082
+      "pagerank": 0.008123871243137334
     },
     {
       "term": "dado",
-      "pagerank": 0.00779499160740709
+      "pagerank": 0.007795911576517198
     },
     {
       "term": "encerramento",
-      "pagerank": 0.00770224546946566
+      "pagerank": 0.0077032834983470876
     }
   ],
   "top_terms_betweenness": [
@@ -920,7 +920,7 @@
     {
       "topic_a": 2,
       "topic_b": 3,
-      "edge_density": 0.8505291005291006
+      "edge_density": 0.8478835978835979
     }
   ]
 }

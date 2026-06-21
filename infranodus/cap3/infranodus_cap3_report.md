@@ -11,8 +11,8 @@
 
 ## 1. Resumo quantitativo
 - Tokens significativos: **17,498**
-- Grafo bruto: **5226** nós · **45067** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2568** arestas
+- Grafo bruto: **5225** nós · **45064** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2567** arestas
 - Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
@@ -37,8 +37,8 @@
 | 17 | `infraestrutura` | 255 |
 | 18 | `ecossistema` | 248 |
 | 19 | `cientifico` | 243 |
-| 20 | `universidade` | 243 |
-| 21 | `empresa` | 242 |
+| 20 | `empresa` | 242 |
+| 21 | `universidade` | 241 |
 | 22 | `fapesp` | 238 |
 | 23 | `instituicao` | 232 |
 | 24 | `modelo` | 228 |
@@ -74,8 +74,8 @@ termos frequentes mas perifericamente conectados descem.
 | 16 | `laboratorio` | 0.0107 |
 | 17 | `infraestrutura` | 0.0103 |
 | 18 | `empresa` | 0.0095 |
-| 19 | `universidade` | 0.0095 |
-| 20 | `cientifico` | 0.0094 |
+| 19 | `cientifico` | 0.0094 |
+| 20 | `universidade` | 0.0094 |
 | 21 | `ecossistema` | 0.0093 |
 | 22 | `modelo` | 0.0093 |
 | 23 | `fapesp` | 0.0092 |
