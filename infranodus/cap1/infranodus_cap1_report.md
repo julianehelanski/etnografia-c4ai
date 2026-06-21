@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **22,340**
-- Grafo bruto: **6419** nós · **56049** arestas
+- Tokens significativos: **22,339**
+- Grafo bruto: **6419** nós · **56046** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3218** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -163,7 +163,7 @@ vezes.
 | 20 | `principio` | `simetria` | 0.559 | 18 |
 | 21 | `tecno` | `etnografia` | 0.551 | 70 |
 | 22 | `generativa` | `artificial` | 0.546 | 59 |
-| 23 | `cientista` | `computacao` | 0.543 | 22 |
+| 23 | `cientista` | `computacao` | 0.544 | 22 |
 | 24 | `otherness` | `presenca` | 0.534 | 21 |
 | 25 | `estudos` | `tecnologia` | 0.532 | 25 |
 

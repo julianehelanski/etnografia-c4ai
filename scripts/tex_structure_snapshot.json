@@ -1,9 +1,8 @@
 {
-  "generated": "2026-06-20 22:45 UTC",
+  "generated": "2026-06-21 03:27 UTC",
   "chapters": {
     "cap1": {
       "sections": [
-        "Onde está o laboratório e os seus cientistas?",
         "Etnografias: fazendo o método a partir da experiência",
         "Cortar e costurar redes: os limites da descrição etnográfica",
         "O patchwork como figuração do método",
@@ -99,11 +98,13 @@
         "Como quem segui a rede que Fábio e Cláudio construíram",
         "Criar demanda: a racionalidade de um ecossistema",
         "A IBM",
-        "As entrevistas com Fábio e Cláudio",
+        "O C4AI em textos: das entrevistas às publicações",
         "O fim da parceria C4AI-IBM"
       ],
       "subsections": [],
       "figures": [
+        "10_rede_coword.png",
+        "11_rede_coword_temporal.png",
         "1_ranking_grupos.png",
         "3_evolucao_temporal_geral.png",
         "4_heatmap_grupo_ano.png",
