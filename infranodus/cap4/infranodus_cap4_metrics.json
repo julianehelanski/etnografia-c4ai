@@ -1,17 +1,17 @@
 {
   "tokens": 33313,
   "graph_full": {
-    "nodes": 6697,
-    "edges": 78691
+    "nodes": 6696,
+    "edges": 78692
   },
   "graph_pruned": {
     "nodes": 180,
-    "edges": 4108
+    "edges": 4106
   },
   "top_terms_degree": [
     {
       "term": "spira",
-      "degree": 2084
+      "degree": 2081
     },
     {
       "term": "covideiro",
@@ -23,7 +23,7 @@
     },
     {
       "term": "cadeia",
-      "degree": 1055
+      "degree": 1054
     },
     {
       "term": "artigo",
@@ -47,7 +47,7 @@
     },
     {
       "term": "modelo",
-      "degree": 713
+      "degree": 717
     },
     {
       "term": "projeto",
@@ -95,11 +95,11 @@
     },
     {
       "term": "condicoes",
-      "degree": 425
+      "degree": 423
     },
     {
       "term": "partir",
-      "degree": 417
+      "degree": 420
     },
     {
       "term": "pacientes",
@@ -119,7 +119,7 @@
     },
     {
       "term": "torna",
-      "degree": 405
+      "degree": 391
     },
     {
       "term": "dataset",
@@ -133,137 +133,137 @@
   "top_terms_pagerank": [
     {
       "term": "spira",
-      "pagerank": 0.03933275149489505
+      "pagerank": 0.03929633735002144
     },
     {
       "term": "covideiro",
-      "pagerank": 0.0222759346075022
+      "pagerank": 0.022284018002801893
     },
     {
       "term": "inscricao",
-      "pagerank": 0.0221216293096633
+      "pagerank": 0.022132299443895442
     },
     {
       "term": "cadeia",
-      "pagerank": 0.02047689996767467
+      "pagerank": 0.02047358811268355
     },
     {
       "term": "artigo",
-      "pagerank": 0.018201634036367403
+      "pagerank": 0.018208699465573276
     },
     {
       "term": "rede",
-      "pagerank": 0.01705658617674273
+      "pagerank": 0.01706252690387415
     },
     {
       "term": "objeto",
-      "pagerank": 0.017051361329952892
+      "pagerank": 0.017058718707808278
     },
     {
       "term": "respiratoria",
-      "pagerank": 0.014516029699677444
+      "pagerank": 0.014521503031719495
     },
     {
       "term": "modelo",
-      "pagerank": 0.014345305657739395
+      "pagerank": 0.014419030584744431
     },
     {
       "term": "projeto",
-      "pagerank": 0.013913720680363409
+      "pagerank": 0.013918938769555664
     },
     {
       "term": "insuficiencia",
-      "pagerank": 0.01374097116971668
+      "pagerank": 0.013746009493089387
     },
     {
       "term": "dado",
-      "pagerank": 0.01369160114713043
+      "pagerank": 0.013696660359125349
     },
     {
       "term": "marcelo",
-      "pagerank": 0.012578994849373776
+      "pagerank": 0.012583969867925352
     },
     {
       "term": "espectrograma",
-      "pagerank": 0.011547307002774879
+      "pagerank": 0.01155280872231065
     },
     {
       "term": "coleta",
-      "pagerank": 0.010506442092835532
+      "pagerank": 0.010510310276478425
     },
     {
       "term": "artigos",
-      "pagerank": 0.010149866667281971
+      "pagerank": 0.010154144836338853
     },
     {
       "term": "actante",
-      "pagerank": 0.009541055393128302
+      "pagerank": 0.00954582339692843
     },
     {
       "term": "audio",
-      "pagerank": 0.009110140941478353
+      "pagerank": 0.009113415331400233
     },
     {
       "term": "ruido",
-      "pagerank": 0.009065404660663865
+      "pagerank": 0.009068384079561662
     },
     {
       "term": "pratica",
-      "pagerank": 0.00895234432308066
+      "pagerank": 0.008955931382165605
     },
     {
       "term": "sinal",
-      "pagerank": 0.00864600448164972
+      "pagerank": 0.008650149093732785
     },
     {
       "term": "covid",
-      "pagerank": 0.008610680731238904
-    },
-    {
-      "term": "condicoes",
-      "pagerank": 0.008561022997727256
+      "pagerank": 0.008613489111548214
     },
     {
       "term": "partir",
-      "pagerank": 0.008532105376280557
+      "pagerank": 0.008594898952776354
     },
     {
-      "term": "torna",
-      "pagerank": 0.008489593444786524
+      "term": "condicoes",
+      "pagerank": 0.00853089490061381
     },
     {
       "term": "pacientes",
-      "pagerank": 0.008442522802325284
+      "pagerank": 0.008445170630742665
+    },
+    {
+      "term": "torna",
+      "pagerank": 0.0082440162353286
     },
     {
       "term": "analise",
-      "pagerank": 0.008236382246054634
+      "pagerank": 0.008240231406516654
     },
     {
       "term": "cientifico",
-      "pagerank": 0.008146554446600295
+      "pagerank": 0.008149774486212496
     },
     {
       "term": "secao",
-      "pagerank": 0.007828641381587877
+      "pagerank": 0.0078309854880121
     },
     {
       "term": "dataset",
-      "pagerank": 0.0076925352033944275
+      "pagerank": 0.007695230913366013
     }
   ],
   "top_terms_betweenness": [
     {
       "term": "spira",
-      "betweenness": 0.6358671772016822
+      "betweenness": 0.6329797250643399
     },
     {
       "term": "inscricao",
-      "betweenness": 0.2618165840185801
+      "betweenness": 0.26175381331994224
     },
     {
       "term": "covideiro",
-      "betweenness": 0.16778607745904212
+      "betweenness": 0.16734668256857696
     },
     {
       "term": "cadeia",
@@ -271,7 +271,7 @@
     },
     {
       "term": "objeto",
-      "betweenness": 0.09679241729960454
+      "betweenness": 0.09629025171050153
     },
     {
       "term": "artigo",
@@ -283,7 +283,7 @@
     },
     {
       "term": "espectrograma",
-      "betweenness": 0.06217437700081601
+      "betweenness": 0.06255100119264327
     },
     {
       "term": "rede",
@@ -295,7 +295,7 @@
     },
     {
       "term": "dado",
-      "betweenness": 0.0415542024982738
+      "betweenness": 0.04199359738873893
     },
     {
       "term": "projeto",
@@ -307,19 +307,19 @@
     },
     {
       "term": "ruido",
-      "betweenness": 0.03207582700395455
+      "betweenness": 0.03213859770259243
     },
     {
       "term": "coleta",
       "betweenness": 0.027179712510200234
     },
     {
-      "term": "torna",
-      "betweenness": 0.026614776222459353
+      "term": "sinal",
+      "betweenness": 0.026740317619735107
     },
     {
-      "term": "sinal",
-      "betweenness": 0.02617538133199422
+      "term": "torna",
+      "betweenness": 0.025045508756512458
     },
     {
       "term": "insuficiencia",
@@ -331,7 +331,7 @@
     },
     {
       "term": "programa",
-      "betweenness": 0.02109095474232628
+      "betweenness": 0.02090264264641265
     }
   ],
   "underrated_by_frequency": [
@@ -350,8 +350,8 @@
     {
       "term": "escala",
       "degree_rank": 81,
-      "pagerank_rank": 66,
-      "shift": 15
+      "pagerank_rank": 67,
+      "shift": 14
     },
     {
       "term": "coeficientes",
@@ -421,8 +421,8 @@
     },
     {
       "term": "visivel",
-      "degree_rank": 45,
-      "pagerank_rank": 40,
+      "degree_rank": 47,
+      "pagerank_rank": 42,
       "shift": 5
     }
   ],
@@ -488,16 +488,16 @@
       "cooccurrence_weight": 27
     },
     {
-      "a": "torna",
-      "b": "visivel",
-      "npmi": 0.5139943025003236,
-      "cooccurrence_weight": 60
-    },
-    {
       "a": "acesso",
       "b": "disponivel",
       "npmi": 0.5108397746717064,
       "cooccurrence_weight": 24
+    },
+    {
+      "a": "torna",
+      "b": "visivel",
+      "npmi": 0.5083516768788888,
+      "cooccurrence_weight": 57
     },
     {
       "a": "entrevista",
@@ -562,7 +562,7 @@
     {
       "a": "modelo",
       "b": "treinado",
-      "npmi": 0.4480610066831068,
+      "npmi": 0.44722540747378425,
       "cooccurrence_weight": 49
     },
     {
@@ -896,7 +896,7 @@
     {
       "topic_a": 0,
       "topic_b": 2,
-      "edge_density": 0.7015503875968992
+      "edge_density": 0.7
     },
     {
       "topic_a": 0,
@@ -911,12 +911,12 @@
     {
       "topic_a": 0,
       "topic_b": 3,
-      "edge_density": 0.9689922480620154
+      "edge_density": 0.9715762273901809
     },
     {
       "topic_a": 0,
       "topic_b": 4,
-      "edge_density": 1.0087209302325582
+      "edge_density": 1.0130813953488371
     },
     {
       "topic_a": 2,
@@ -926,7 +926,7 @@
     {
       "topic_a": 2,
       "topic_b": 3,
-      "edge_density": 1.108641975308642
+      "edge_density": 1.1012345679012345
     },
     {
       "topic_a": 1,
@@ -936,12 +936,12 @@
     {
       "topic_a": 1,
       "topic_b": 2,
-      "edge_density": 1.2705426356589147
+      "edge_density": 1.2682170542635658
     },
     {
       "topic_a": 1,
       "topic_b": 3,
-      "edge_density": 1.280792420327304
+      "edge_density": 1.2816537467700257
     }
   ]
 }

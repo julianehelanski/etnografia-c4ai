@@ -11,23 +11,23 @@
 
 ## 1. Resumo quantitativo
 - Tokens significativos: **33,313**
-- Grafo bruto: **6697** nós · **78691** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4108** arestas
+- Grafo bruto: **6696** nós · **78692** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4106** arestas
 - Tópicos detectados (Louvain): **9**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `spira` | 2084 |
+| 1 | `spira` | 2081 |
 | 2 | `covideiro` | 1169 |
 | 3 | `inscricao` | 1134 |
-| 4 | `cadeia` | 1055 |
+| 4 | `cadeia` | 1054 |
 | 5 | `artigo` | 939 |
 | 6 | `objeto` | 876 |
 | 7 | `rede` | 869 |
 | 8 | `respiratoria` | 805 |
 | 9 | `insuficiencia` | 765 |
-| 10 | `modelo` | 713 |
+| 10 | `modelo` | 717 |
 | 11 | `projeto` | 712 |
 | 12 | `dado` | 703 |
 | 13 | `marcelo` | 646 |
@@ -39,13 +39,13 @@
 | 19 | `pratica` | 435 |
 | 20 | `ruido` | 432 |
 | 21 | `covid` | 429 |
-| 22 | `condicoes` | 425 |
-| 23 | `partir` | 417 |
+| 22 | `condicoes` | 423 |
+| 23 | `partir` | 420 |
 | 24 | `pacientes` | 415 |
 | 25 | `sinal` | 414 |
 | 26 | `cientifico` | 413 |
 | 27 | `analise` | 411 |
-| 28 | `torna` | 405 |
+| 28 | `torna` | 391 |
 | 29 | `dataset` | 375 |
 | 30 | `secao` | 374 |
 
@@ -64,24 +64,24 @@ termos frequentes mas perifericamente conectados descem.
 | 6 | `rede` | 0.0171 |
 | 7 | `objeto` | 0.0171 |
 | 8 | `respiratoria` | 0.0145 |
-| 9 | `modelo` | 0.0143 |
+| 9 | `modelo` | 0.0144 |
 | 10 | `projeto` | 0.0139 |
 | 11 | `insuficiencia` | 0.0137 |
 | 12 | `dado` | 0.0137 |
 | 13 | `marcelo` | 0.0126 |
-| 14 | `espectrograma` | 0.0115 |
+| 14 | `espectrograma` | 0.0116 |
 | 15 | `coleta` | 0.0105 |
-| 16 | `artigos` | 0.0101 |
+| 16 | `artigos` | 0.0102 |
 | 17 | `actante` | 0.0095 |
 | 18 | `audio` | 0.0091 |
 | 19 | `ruido` | 0.0091 |
 | 20 | `pratica` | 0.0090 |
-| 21 | `sinal` | 0.0086 |
+| 21 | `sinal` | 0.0087 |
 | 22 | `covid` | 0.0086 |
-| 23 | `condicoes` | 0.0086 |
-| 24 | `partir` | 0.0085 |
-| 25 | `torna` | 0.0085 |
-| 26 | `pacientes` | 0.0084 |
+| 23 | `partir` | 0.0086 |
+| 24 | `condicoes` | 0.0085 |
+| 25 | `pacientes` | 0.0084 |
+| 26 | `torna` | 0.0082 |
 | 27 | `analise` | 0.0082 |
 | 28 | `cientifico` | 0.0081 |
 | 29 | `secao` | 0.0078 |
@@ -95,7 +95,7 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 |---|-------|-------------|----------------|-------|
 | 1 | `caixa` | 111 | 87 | +24 |
 | 2 | `preta` | 104 | 84 | +20 |
-| 3 | `escala` | 81 | 66 | +15 |
+| 3 | `escala` | 81 | 67 | +14 |
 | 4 | `coeficientes` | 102 | 90 | +12 |
 | 5 | `parametros` | 132 | 120 | +12 |
 | 6 | `tecnica` | 141 | 131 | +10 |
@@ -107,31 +107,31 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 12 | `momento` | 99 | 92 | +7 |
 | 13 | `grade` | 149 | 142 | +7 |
 | 14 | `acustico` | 60 | 54 | +6 |
-| 15 | `visivel` | 45 | 40 | +5 |
+| 15 | `visivel` | 47 | 42 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `spira` | 0.6359 |
+| 1 | `spira` | 0.6330 |
 | 2 | `inscricao` | 0.2618 |
-| 3 | `covideiro` | 0.1678 |
+| 3 | `covideiro` | 0.1673 |
 | 4 | `cadeia` | 0.1291 |
-| 5 | `objeto` | 0.0968 |
+| 5 | `objeto` | 0.0963 |
 | 6 | `artigo` | 0.0943 |
 | 7 | `modelo` | 0.0730 |
-| 8 | `espectrograma` | 0.0622 |
+| 8 | `espectrograma` | 0.0626 |
 | 9 | `rede` | 0.0614 |
 | 10 | `respiratoria` | 0.0538 |
-| 11 | `dado` | 0.0416 |
+| 11 | `dado` | 0.0420 |
 | 12 | `projeto` | 0.0407 |
 | 13 | `audio` | 0.0404 |
 | 14 | `ruido` | 0.0321 |
 | 15 | `coleta` | 0.0272 |
-| 16 | `torna` | 0.0266 |
-| 17 | `sinal` | 0.0262 |
+| 16 | `sinal` | 0.0267 |
+| 17 | `torna` | 0.0250 |
 | 18 | `insuficiencia` | 0.0234 |
 | 19 | `marcelo` | 0.0213 |
-| 20 | `programa` | 0.0211 |
+| 20 | `programa` | 0.0209 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -151,8 +151,8 @@ vezes.
 | 8 | `sinal` | `acustico` | 0.549 | 64 |
 | 9 | `tornou` | `possivel` | 0.535 | 34 |
 | 10 | `linguagem` | `processamento` | 0.531 | 27 |
-| 11 | `torna` | `visivel` | 0.514 | 60 |
-| 12 | `acesso` | `disponivel` | 0.511 | 24 |
+| 11 | `acesso` | `disponivel` | 0.511 | 24 |
+| 12 | `torna` | `visivel` | 0.508 | 57 |
 | 13 | `entrevista` | `marcelo` | 0.507 | 107 |
 | 14 | `publico` | `saude` | 0.503 | 22 |
 | 15 | `publico` | `repositorio` | 0.488 | 21 |
@@ -163,7 +163,7 @@ vezes.
 | 20 | `ciencia` | `acao` | 0.461 | 21 |
 | 21 | `cadeia` | `translacoes` | 0.461 | 60 |
 | 22 | `fonoaudiologos` | `medicos` | 0.458 | 28 |
-| 23 | `modelo` | `treinado` | 0.448 | 49 |
+| 23 | `modelo` | `treinado` | 0.447 | 49 |
 | 24 | `conceito` | `referencia` | 0.445 | 16 |
 | 25 | `saude` | `pesquisa` | 0.434 | 18 |
 
@@ -181,11 +181,11 @@ vezes.
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 3** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.7016
+- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 3** [inscricao, cadeia, torna] — densidade ponderada de ligação = 0.7000
 - Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 2** [spira, artigo, projeto] — densidade ponderada de ligação = 0.8183
 - Lacuna entre **Tópico 4** [covideiro, coleta, actante] e **Tópico 5** [rede, espectrograma, partir] — densidade ponderada de ligação = 0.8704
-- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 4** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.9690
-- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 5** [rede, espectrograma, partir] — densidade ponderada de ligação = 1.0087
+- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 4** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.9716
+- Lacuna entre **Tópico 1** [modelo, dado, audio] e **Tópico 5** [rede, espectrograma, partir] — densidade ponderada de ligação = 1.0131
 - Lacuna entre **Tópico 3** [inscricao, cadeia, torna] e **Tópico 5** [rede, espectrograma, partir] — densidade ponderada de ligação = 1.0312
 
 ## 9. Leitura interpretativa
