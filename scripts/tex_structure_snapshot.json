@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 00:29 UTC",
+  "generated": "2026-06-22 00:52 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -34,8 +34,8 @@
         "caderno_quadro.jpg",
         "grade_tres_planos.png",
         "infranodus_cap1_focus.png",
+        "infranodus_cap1_focus_pmi.png",
         "infranodus_cap1_network.png",
-        "infranodus_cap1_pmi.png",
         "linha-do-tempo-capitulo1.pdf",
         "mapa-capitulo1.png",
         "trajectory_alluvial.png",
@@ -76,6 +76,9 @@
         "etapa2bis_recalling_integral_freq_e_densidade.png",
         "etapa3_aime_freq_e_densidade.png",
         "haraway.jpg",
+        "infranodus_cap2_focus.png",
+        "infranodus_cap2_focus_pmi.png",
+        "infranodus_cap2_network.png",
         "latour.jpg",
         "linha-do-tempo-capitulo2.png",
         "mapa-capitulo2.png",
@@ -89,7 +92,10 @@
         "openalex_03_brasil_temporal.png",
         "openalex_04_subcampos_3bases.png",
         "scielo_11_subject_area_share.png",
-        "scielo_21_subcampos_distribuicao.png"
+        "scielo_21_subcampos_distribuicao.png",
+        "trajectory_alluvial.png",
+        "trajectory_gantt.png",
+        "trajectory_semantic.png"
       ]
     },
     "cap3": {
@@ -115,6 +121,9 @@
         "caderno_rodrigues_aula1.pdf",
         "guaman_poma_acllaconas_fiando.png",
         "hollerith_1890_product_sheet.png",
+        "infranodus_cap3_focus.png",
+        "infranodus_cap3_focus_pmi.png",
+        "infranodus_cap3_network.png",
         "khipu_chancay_huando_amnh_b8707.png",
         "linha-do-tempo-capitulo3.png",
         "mapa-analitico-capitulo3.png",
@@ -122,7 +131,10 @@
         "mapa-cadeia-translacao-capitulo3.png",
         "mapa-capitulo3.png",
         "mapa-metodologico-capitulo3.png",
-        "mapa-rede-hollerith-capitulo3.png"
+        "mapa-rede-hollerith-capitulo3.png",
+        "trajectory_alluvial.png",
+        "trajectory_gantt.png",
+        "trajectory_semantic.png"
       ]
     },
     "cap4": {
@@ -167,6 +179,9 @@
         "ibmed2026_fig8_matrizes_confusao_AudioMAE_CNN6.png",
         "ibmed2026_tabela1_revisao_trabalhos_IR.png",
         "ibmed2026_tabela3_arquiteturas_PANN_CNN6_10_14.png",
+        "infranodus_cap4_focus.png",
+        "infranodus_cap4_focus_pmi.png",
+        "infranodus_cap4_network.png",
         "juki_1.jpg",
         "mapa-analitico-capitulo4.png",
         "mapa-argumento-capitulo4.png",
@@ -185,6 +200,9 @@
         "roadmap-Spira-capitulo4-2026-04-13-082509.png",
         "silva2022_tabela1_configuracoes_experimentos.png",
         "stil2021_tabela3_pretraining_com_sem_ruido.png",
+        "trajectory_alluvial.png",
+        "trajectory_gantt.png",
+        "trajectory_semantic.png",
         "younesi2024_fig8_cnn1d.png"
       ]
     }
