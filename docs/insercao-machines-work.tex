@@ -1,0 +1,41 @@
+% =====================================================================
+%  Pagina isolada: B(if)tek - "Machines Work" (2000)
+%  Insercao com icone do YouTube + titulo + citacao, centralizada,
+%  ocupando uma pagina inteira do PDF.
+%
+%  Requisitos no preambulo da tese (uma vez):
+%     \usepackage{graphicx}
+%     \usepackage{xcolor}
+%     \usepackage{hyperref}   % opcional: deixa o icone clicavel
+%
+%  Uso: \input{docs/insercao-machines-work.tex}
+%  (ajuste o caminho da figura conforme a estrutura da sua tese)
+% =====================================================================
+
+\clearpage
+\thispagestyle{empty}
+\begingroup
+\centering
+\null\vfill
+
+% --- icone do YouTube (clicavel se hyperref estiver carregado) ---
+\href{https://youtu.be/955dZpR7QwY}{%
+  \includegraphics[width=3.2cm]{figuras/youtube.png}}\par
+\vspace{1.6em}
+
+% --- titulo / artista ---
+{\Large\textbf{B(if)tek}}\par
+\vspace{0.35em}
+{\large\emph{Machines Work} (2000)}\par
+\vspace{2.4em}
+
+% --- citacao ---
+{\itshape\large
+Machines can do the work\\[0.35em]
+So that people have time to think [\dots]\\[0.35em]
+People can do the work\\[0.35em]
+So that machines have time to think\par}
+
+\vfill
+\endgroup
+\clearpage
