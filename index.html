@@ -10,7 +10,7 @@
 @font-face{font-family:'CMU Serif';font-style:italic;font-weight:400 550;src:url('fonts/cmu-serif-500-italic.woff2') format('woff2');font-display:swap}
 @font-face{font-family:'CMU Serif';font-style:normal;font-weight:551 800;src:url('fonts/cmu-serif-700-roman.woff2') format('woff2');font-display:swap}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--text:#0d0d0d;--text-soft:#151515;--ink:#15233b;--ink-soft:#172132;--rule:#a386b8;--rule-soft:#cdb6da;--mark-bg:rgba(31,107,255,.08);--mark-bd:rgba(31,107,255,.18)}
+:root{--text:#0d0d0d;--text-soft:#151515;--ink:#15233b;--ink-soft:#172132;--rule:#a386b8;--rule-soft:#cdb6da;--mark-bg:rgba(0,75,156,.09);--mark-bd:rgba(0,75,156,.20)}
 body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CMU Serif',serif;color:var(--ink)}
 
 #graph{position:fixed;inset:0;width:100%;height:100%;z-index:3;touch-action:none}
@@ -29,7 +29,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
    .texcmd = comando LaTeX (azul neon, sem negrito);
    .texarg = chaves + texto do autor (preto, sem negrito);
    .texttl = título do trabalho (preto, sem negrito). */
-.texcmd{font-family:'Courier New',monospace;color:#1450e0;font-weight:700;text-transform:none;letter-spacing:0}
+.texcmd{font-family:'Courier New',monospace;color:#004b9c;font-weight:700;text-transform:none;letter-spacing:0}
 .texarg{font-family:'Courier New',monospace;color:var(--text);font-weight:600;text-transform:none;letter-spacing:0}
 .texttl{font-family:'Courier New',monospace;color:var(--text);font-weight:600;text-transform:none;letter-spacing:0}
 
@@ -49,7 +49,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #legend .lalca{display:block;margin-top:.5rem;background:none;border:none;padding:0;cursor:pointer;
   font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:0;text-align:left}
 #legend .lalca .texarg{text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#cdb6da}
-#legend .lalca:hover .texarg{color:var(--text);text-decoration-color:#1f6bff}
+#legend .lalca:hover .texarg{color:var(--text);text-decoration-color:#004b9c}
 /* modal: como o algoritmo de Louvain funciona */
 #louvain,#purpose{position:fixed;inset:0;z-index:130;background:rgba(40,30,55,.34);backdrop-filter:blur(2px);
   display:none;align-items:flex-start;justify-content:center;padding:3.2rem 1rem;overflow:auto}
@@ -99,7 +99,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .assoc b{font-weight:600;cursor:pointer;color:var(--ink)}
 .assoc b:hover{text-decoration:underline}
 .quote{font-family:'CMU Serif',serif;font-size:1.08rem;line-height:1.65;color:var(--ink);background:var(--mark-bg);border-radius:6px;padding:.7rem .95rem;margin:.95rem 0}
-.quote mark{background:#fbe7a8;color:var(--text);padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.quote mark{background:#ffd14d;color:var(--text);padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .quote{cursor:zoom-in}
 #qzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
 #qzoom[hidden]{display:none}
@@ -109,7 +109,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #qzoom-ch{font-family:'Courier New',monospace;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin-bottom:1.1rem}
 #qzoom-tx{font-family:'CMU Serif',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.5;color:var(--text)}
 #qzoom-tx ul,#qzoom-tx .ovul{list-style:none;padding-left:0;margin:0}
-#qzoom-tx mark{background:#f6d36b;color:var(--text);padding:.05em .25em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#qzoom-tx mark{background:#ffd14d;color:var(--text);padding:.05em .25em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 #qzoom-tx .qz-link{font-size:.5em;color:#0645ad;text-decoration:underline;text-underline-offset:.12em}
 .qch{display:block;font-family:'Courier New',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);margin-bottom:.25rem}
 .chip{display:inline-block;font-family:'Courier New',monospace;font-size:.64rem;letter-spacing:.04em;
@@ -124,25 +124,25 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #hint b{font-weight:600;color:var(--ink)}
 /* dica de descoberta: aparece ao carregar e some no primeiro clique/hover */
 #cue{position:fixed;left:50%;bottom:4.6rem;transform:translateX(-50%);z-index:8;
-  background:rgba(52,64,94,.96);color:#fff;font-family:'CMU Serif',serif;font-size:.92rem;
+  background:rgba(36,56,141,.97);color:#fff;font-family:'CMU Serif',serif;font-size:.92rem;
   padding:.55rem 1.05rem;border-radius:2rem;box-shadow:0 6px 22px rgba(70,60,110,.3);
   display:flex;align-items:center;gap:.55rem;white-space:nowrap;pointer-events:none;
   animation:cueBob 1.8s ease-in-out infinite;transition:opacity .5s ease,transform .5s ease}
 #cue b{font-weight:700;color:#e7defb}
-#cue .cue-dot{width:.5rem;height:.5rem;border-radius:50%;background:#c9b8e6;flex-shrink:0;
+#cue .cue-dot{width:.5rem;height:.5rem;border-radius:50%;background:#ec6354;flex-shrink:0;
   animation:cueRing 1.8s ease-out infinite}
 #cue.gone{opacity:0;transform:translateX(-50%) translateY(10px)}
 @keyframes cueBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
-@keyframes cueRing{0%{box-shadow:0 0 0 0 rgba(201,184,230,.7)}70%{box-shadow:0 0 0 .62rem rgba(201,184,230,0)}100%{box-shadow:0 0 0 0 rgba(201,184,230,0)}}
+@keyframes cueRing{0%{box-shadow:0 0 0 0 rgba(236,99,84,.7)}70%{box-shadow:0 0 0 .62rem rgba(236,99,84,0)}100%{box-shadow:0 0 0 0 rgba(236,99,84,0)}}
 @media (max-width:560px){#cue{font-size:.8rem;white-space:normal;max-width:80vw;text-align:center}}
 /* etiqueta de borda (estilo post-it): sinaliza que o painel de detalhes abre à direita */
 #edgetab{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(-2deg);z-index:9;cursor:pointer;
-  background:#fdf3c4;border:1px solid #e9d98a;border-right:none;border-radius:8px 0 0 8px;
-  padding:.6rem .75rem;max-width:9rem;box-shadow:-3px 4px 16px rgba(80,70,30,.2);
-  font-family:'Courier New',monospace;font-size:.6rem;line-height:1.45;color:#5a4d1a;
+  background:#fdeae6;border:1px solid #ec6354;border-right:none;border-radius:8px 0 0 8px;
+  padding:.6rem .75rem;max-width:9rem;box-shadow:-3px 4px 16px rgba(180,60,40,.22);
+  font-family:'Courier New',monospace;font-size:.6rem;line-height:1.45;color:#8a2a1e;
   transition:transform .2s ease,opacity .5s ease,box-shadow .2s ease}
-#edgetab:hover{transform:translateY(-50%) rotate(0);box-shadow:-5px 6px 20px rgba(80,70,30,.28)}
-#edgetab b{display:block;font-weight:700;color:#3f3610;font-size:.66rem;margin-bottom:.18rem}
+#edgetab:hover{transform:translateY(-50%) rotate(0);box-shadow:-5px 6px 20px rgba(180,60,40,.3)}
+#edgetab b{display:block;font-weight:700;color:#b3271a;font-size:.66rem;margin-bottom:.18rem}
 #edgetab .et-ar{color:#b89b2a}
 
 /* botão e modal do documento da tese */
