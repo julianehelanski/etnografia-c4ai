@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 01:18 UTC",
+  "generated": "2026-06-22 01:50 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -35,6 +35,7 @@
         "infranodus_cap1_focus.png",
         "infranodus_cap1_focus_pmi.png",
         "infranodus_cap1_network.png",
+        "linha-do-tempo-capitulo1.pdf",
         "linha-tempo-capitulo1.png",
         "mapa-capitulo1-v2.png",
         "trajectory_alluvial.png",
@@ -92,7 +93,6 @@
         "openalex_03_brasil_temporal.png",
         "openalex_04_subcampos_3bases.png",
         "scielo_11_subject_area_share.png",
-        "scielo_21_subcampos_distribuicao.png",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
         "trajectory_semantic.png"
@@ -109,17 +109,17 @@
       ],
       "subsections": [],
       "figures": [
-        "10_rede_coword.png",
+        "",
         "11_rede_coword_temporal.png",
         "1_ranking_grupos.png",
         "3_evolucao_temporal_geral.png",
         "4_heatmap_grupo_ano.png",
         "6_produtividade_grupos.png",
         "8_composicao_temporal.png",
-        "9_analise_concentracao.png",
-        "arranjo-publico-privado-capitulo3-2026-04-17-222955.png",
+        "arrano",
         "cadeia-translacao-ibm-capitulo3.png",
         "caderno_rodrigues_aula1.pdf",
+        "curva",
         "desenho_patente_hollerith.jpg",
         "infranodus_cap3_focus.png",
         "infranodus_cap3_focus_pmi.png",
@@ -170,6 +170,7 @@
         "acl2021_fig4_analise_ruido_experimentos3x.png",
         "acl2021_tabela2_ruido_paciente_controle_acuracia.png",
         "cadeia-translacao-condensada-capitulo4.png",
+        "capitulo4",
         "cnn14_arquitetura.png",
         "distribuicao_SpO2_P2.png",
         "ibmed2026_fig1_pipeline_coleta_IR_SpO2.png",
@@ -184,6 +185,7 @@
         "infranodus_cap4_network.png",
         "juki_1.jpg",
         "linha-tempo-capitulo4.png",
+        "lor",
         "mapa",
         "mapa-ana",
         "mapa-capitulo4.png",

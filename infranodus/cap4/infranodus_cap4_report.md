@@ -10,9 +10,9 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **33,700**
-- Grafo bruto: **6785** nós · **79634** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4118** arestas
+- Tokens significativos: **33,706**
+- Grafo bruto: **6786** nós · **79639** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4117** arestas
 - Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
@@ -36,7 +36,7 @@
 | 16 | `coleta` | 522 |
 | 17 | `actante` | 473 |
 | 18 | `audio` | 449 |
-| 19 | `analise` | 437 |
+| 19 | `analise` | 434 |
 | 20 | `pratica` | 433 |
 | 21 | `ruido` | 432 |
 | 22 | `covid` | 429 |
@@ -46,8 +46,8 @@
 | 26 | `pacientes` | 415 |
 | 27 | `sinal` | 414 |
 | 28 | `torna` | 389 |
-| 29 | `dataset` | 376 |
-| 30 | `secao` | 376 |
+| 29 | `secao` | 376 |
+| 30 | `dataset` | 375 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -76,8 +76,8 @@ termos frequentes mas perifericamente conectados descem.
 | 18 | `audio` | 0.0092 |
 | 19 | `ruido` | 0.0091 |
 | 20 | `pratica` | 0.0089 |
-| 21 | `analise` | 0.0087 |
-| 22 | `sinal` | 0.0086 |
+| 21 | `sinal` | 0.0086 |
+| 22 | `analise` | 0.0086 |
 | 23 | `covid` | 0.0086 |
 | 24 | `partir` | 0.0086 |
 | 25 | `condicoes` | 0.0086 |
@@ -93,21 +93,21 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `caixa` | 111 | 87 | +24 |
+| 1 | `caixa` | 110 | 87 | +23 |
 | 2 | `preta` | 104 | 84 | +20 |
 | 3 | `escala` | 81 | 68 | +13 |
-| 4 | `disponivel` | 109 | 98 | +11 |
-| 5 | `parametros` | 131 | 120 | +11 |
-| 6 | `coeficientes` | 103 | 93 | +10 |
+| 4 | `parametros` | 131 | 120 | +11 |
+| 5 | `coeficientes` | 103 | 93 | +10 |
+| 6 | `disponivel` | 113 | 104 | +9 |
 | 7 | `linguagem` | 146 | 137 | +9 |
 | 8 | `algoritmo` | 84 | 76 | +8 |
 | 9 | `momento` | 96 | 88 | +8 |
 | 10 | `leitor` | 124 | 116 | +8 |
 | 11 | `processamento` | 76 | 69 | +7 |
-| 12 | `operacao` | 113 | 107 | +6 |
+| 12 | `sinal` | 27 | 21 | +6 |
 | 13 | `tecnica` | 136 | 130 | +6 |
 | 14 | `grade` | 151 | 145 | +6 |
-| 15 | `sinal` | 27 | 22 | +5 |
+| 15 | `acustico` | 59 | 54 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -153,10 +153,10 @@ vezes.
 | 10 | `entrevista` | `marcelo` | 0.508 | 107 |
 | 11 | `torna` | `visivel` | 0.507 | 57 |
 | 12 | `publico` | `saude` | 0.504 | 22 |
-| 13 | `acesso` | `disponivel` | 0.495 | 24 |
+| 13 | `acesso` | `disponivel` | 0.498 | 24 |
 | 14 | `ciencia` | `construcao` | 0.487 | 22 |
 | 15 | `covideiro` | `pandemico` | 0.482 | 103 |
-| 16 | `condicoes` | `producao` | 0.477 | 51 |
+| 16 | `condicoes` | `producao` | 0.478 | 51 |
 | 17 | `publico` | `repositorio` | 0.476 | 21 |
 | 18 | `enfermaria` | `ruido` | 0.463 | 58 |
 | 19 | `ciencia` | `acao` | 0.462 | 21 |
