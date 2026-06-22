@@ -10,7 +10,7 @@
 @font-face{font-family:'CMU Serif';font-style:italic;font-weight:400 550;src:url('fonts/cmu-serif-500-italic.woff2') format('woff2');font-display:swap}
 @font-face{font-family:'CMU Serif';font-style:normal;font-weight:551 800;src:url('fonts/cmu-serif-700-roman.woff2') format('woff2');font-display:swap}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--text:#1a1a1a;--text-soft:#1f1f1f;--ink:#1c2942;--ink-soft:#20283e;--rule:#a386b8;--rule-soft:#cdb6da;--mark-bg:rgba(31,107,255,.08);--mark-bd:rgba(31,107,255,.18)}
+:root{--text:#0d0d0d;--text-soft:#151515;--ink:#15233b;--ink-soft:#172132;--rule:#a386b8;--rule-soft:#cdb6da;--mark-bg:rgba(31,107,255,.08);--mark-bd:rgba(31,107,255,.18)}
 body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CMU Serif',serif;color:var(--ink)}
 
 #graph{position:fixed;inset:0;width:100%;height:100%;z-index:3;touch-action:none}
@@ -29,9 +29,9 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
    .texcmd = comando LaTeX (azul neon, sem negrito);
    .texarg = chaves + texto do autor (preto, sem negrito);
    .texttl = título do trabalho (preto, sem negrito). */
-.texcmd{font-family:'Courier New',monospace;color:#1f6bff;font-weight:400;text-transform:none;letter-spacing:0}
-.texarg{font-family:'Courier New',monospace;color:var(--text);font-weight:400;text-transform:none;letter-spacing:0}
-.texttl{font-family:'Courier New',monospace;color:var(--text);font-weight:400;text-transform:none;letter-spacing:0}
+.texcmd{font-family:'Courier New',monospace;color:#1450e0;font-weight:700;text-transform:none;letter-spacing:0}
+.texarg{font-family:'Courier New',monospace;color:var(--text);font-weight:600;text-transform:none;letter-spacing:0}
+.texttl{font-family:'Courier New',monospace;color:var(--text);font-weight:600;text-transform:none;letter-spacing:0}
 
 /* legenda de tópicos */
 #legend{position:fixed;bottom:1.4rem;left:1.4rem;z-index:6;background:rgba(255,255,255,.9);
@@ -258,7 +258,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro.out{opacity:0;pointer-events:none}
 #intro .pre{font-family:'Courier New',monospace;font-size:.74rem;letter-spacing:.05em;color:var(--text);margin-bottom:1.4rem}
 #intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:400;font-size:clamp(1.05rem,2.4vw,1.9rem);line-height:1.55;max-width:1080px;color:var(--text);text-wrap:balance}
-#intro h1 .texttl,#intro h1 .texcmd{font-weight:300}
+#intro h1 .texttl,#intro h1 .texcmd{font-weight:600}
 #intro .sub{font-family:'Courier New',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text);margin-top:1.4rem}
 #intro .creds{font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.03em;line-height:2.05;color:var(--text);max-width:640px;margin-top:1.25rem}
 #intro .creds .creds-line{opacity:.78;font-style:italic;color:var(--text-soft)}
@@ -289,6 +289,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   #intro .creds .creds-inst{white-space:normal}
   #title-bar h2{font-size:.96rem}
 }
+/* texto Courier mais encorpado (melhor contraste/leitura) */
+#title-bar p,#title-bar .texnote,#hint,#legend .lh,#legend .li .lt,.psec,.pstat,.qch,.lvsub,#ptopic,#cue{font-weight:500}
 </style>
 </head>
 <body>
