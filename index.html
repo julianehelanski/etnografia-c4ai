@@ -258,7 +258,9 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro.out{opacity:0;pointer-events:none}
 #intro .pre{font-family:'Courier New',monospace;font-size:.74rem;letter-spacing:.05em;color:var(--text);margin-bottom:1.4rem}
 #intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:400;font-size:clamp(1.05rem,2.4vw,1.9rem);line-height:1.55;max-width:1080px;color:var(--text);text-wrap:balance}
-#intro h1 .texttl,#intro h1 .texcmd{font-weight:700}
+#intro h1 .texcmd{font-weight:700}
+#intro h1 .texttl{font-weight:400}
+#intro h1 .ttl-l1{white-space:nowrap}
 #intro .sub{font-family:'Courier New',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text);margin-top:1.4rem}
 #intro .creds{font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.03em;line-height:2.05;color:var(--text);max-width:640px;margin-top:1.25rem}
 #intro .creds .creds-line{opacity:.78;font-style:italic;color:var(--text-soft)}
@@ -287,6 +289,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 }
 @media (max-width:560px){
   #intro .creds .creds-inst{white-space:normal}
+  #intro h1 .ttl-l1{white-space:normal}
   #title-bar h2{font-size:.96rem}
 }
 /* texto Courier mais encorpado (melhor contraste/leitura) */
@@ -353,7 +356,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 <div id="intro">
   <div class="pre"><span class="texcmd">\documentclass[</span><span class="texarg">doutorado</span><span class="texcmd">]{</span><span class="texarg">tese</span><span class="texcmd">}</span></div>
-  <h1><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial:<br>seguindo cientistas e engenheiros universidade afora</span><span class="texcmd">}</span></h1>
+  <h1><span class="texcmd">\title{</span><span class="texttl"><span class="ttl-l1"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial:</span><br>seguindo cientistas e engenheiros universidade afora</span><span class="texcmd">}</span></h1>
   <div class="sub"><span class="texcmd">\author{</span><span class="texarg">Juliane Helanski</span><span class="texcmd">}</span><span class="texarg">&nbsp;·&nbsp;2026</span><br><span class="texcmd">\orientadora{</span><span class="texarg">Suely Kofes</span><span class="texcmd">}</span></div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br><span class="creds-inst">Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)</span><br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
   <div class="hint"><span class="texcmd">\begin{</span><span class="texarg">document</span><span class="texcmd">}</span></div>
