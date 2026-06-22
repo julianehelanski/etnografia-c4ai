@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **22,688**
-- Grafo bruto: **6429** nós · **56278** arestas
+- Tokens significativos: **22,708**
+- Grafo bruto: **6436** nós · **56310** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3206** arestas
 - Tópicos detectados (Louvain): **7**
 
@@ -164,7 +164,7 @@ vezes.
 | 21 | `generativa` | `artificial` | 0.545 | 59 |
 | 22 | `cientista` | `computacao` | 0.545 | 22 |
 | 23 | `estudos` | `tecnologia` | 0.533 | 25 |
-| 24 | `otherness` | `presenca` | 0.529 | 21 |
+| 24 | `otherness` | `presenca` | 0.530 | 21 |
 | 25 | `strathern` | `barad` | 0.527 | 30 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
