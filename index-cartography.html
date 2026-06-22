@@ -294,6 +294,38 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 }
 /* texto Courier mais encorpado (melhor contraste/leitura) */
 #title-bar p,#title-bar .texnote,#hint,#legend .lh,#legend .li .lt,.psec,.pstat,.qch,.lvsub,#ptopic,#cue{font-weight:500}
+
+/* ================= TEMA CARTOGRAPHY (preview) ================= */
+:root{--text:#322521;--text-soft:#5b4a40;--ink:#24388d;--ink-soft:#322521;--rule:#e0a96b;--rule-soft:#f0c98a;--mark-bg:rgba(0,75,156,.10);--mark-bd:rgba(0,75,156,.22)}
+body{background:#ffe8af!important;color:#322521}
+#graph{background:#ffe8af}
+/* rede */
+.nlabel{fill:#24388d;stroke:#ffe8af;stroke-width:2.6px}
+.link{stroke:#c2a06a}
+.node circle{stroke:#fff8e6}
+/* sintaxe + titulos */
+.texcmd{color:#004b9c}
+.texttl{color:#322521}
+#title-bar h2{color:#24388d}
+/* capa */
+#intro{background:#ffe8af!important}
+/* paineis e caixas -> pergaminho */
+#panel{background:rgba(255,248,228,.985);border-left-color:#e9cf95}
+#legend{background:rgba(255,248,228,.93);border-color:#e9cf95}
+#tip{background:rgba(255,248,228,.97);border-color:#e9cf95}
+#doc-card,#doc-nav{background:#fff7df}
+#doc-card{border-color:#e9cf95}
+#louvain-card,#purpose-card{background:#fff4d6;border-color:#cfe0fb}
+#qzoom-card{background:#fff3cf}
+#qzoom-card.blue{background:#e8f0fb}
+/* realces */
+.quote{background:#fff3cf}
+.quote mark,#qzoom-tx mark{background:#ffd14d}
+/* dica + etiqueta (ja vivos no base; reforco) */
+#cue{background:rgba(36,56,141,.97)}
+#cue .cue-dot{background:#ec6354}
+#edgetab{background:#fdeae6;border-color:#ec6354;color:#8a2a1e}
+#edgetab b{color:#b3271a}
 </style>
 </head>
 <body>
