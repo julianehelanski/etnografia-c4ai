@@ -1,8 +1,8 @@
 {
-  "tokens": 33696,
+  "tokens": 33700,
   "graph_full": {
     "nodes": 6785,
-    "edges": 79631
+    "edges": 79634
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "caixa",
       "b": "preta",
-      "npmi": 0.8981594618077446,
+      "npmi": 0.898161478656428,
       "cooccurrence_weight": 84
     },
     {
       "a": "imutavel",
       "b": "movel",
-      "npmi": 0.8461549096448115,
+      "npmi": 0.8461579380178558,
       "cooccurrence_weight": 82
     },
     {
       "a": "respiratoria",
       "b": "insuficiencia",
-      "npmi": 0.8427763809654609,
+      "npmi": 0.8427804155608231,
       "cooccurrence_weight": 332
     },
     {
       "a": "grupo",
       "b": "controle",
-      "npmi": 0.6457401985435494,
+      "npmi": 0.6457464182053986,
       "cooccurrence_weight": 40
     },
     {
       "a": "neural",
       "b": "rede",
-      "npmi": 0.5923213958662422,
+      "npmi": 0.5923301159783377,
       "cooccurrence_weight": 136
     },
     {
       "a": "acao",
       "b": "programa",
-      "npmi": 0.5611479526627112,
+      "npmi": 0.5611556280063886,
       "cooccurrence_weight": 38
     },
     {
       "a": "sinal",
       "b": "acustico",
-      "npmi": 0.5501728819470308,
+      "npmi": 0.5501814037266345,
       "cooccurrence_weight": 64
     },
     {
       "a": "tornou",
       "b": "possivel",
-      "npmi": 0.5362641752703541,
+      "npmi": 0.5362721550591963,
       "cooccurrence_weight": 34
     },
     {
       "a": "linguagem",
       "b": "processamento",
-      "npmi": 0.5313667440864901,
+      "npmi": 0.5313745474005613,
       "cooccurrence_weight": 27
     },
     {
       "a": "entrevista",
       "b": "marcelo",
-      "npmi": 0.507794175579556,
+      "npmi": 0.5078043333195025,
       "cooccurrence_weight": 107
     },
     {
       "a": "torna",
       "b": "visivel",
-      "npmi": 0.5072919273750709,
+      "npmi": 0.5073010921062686,
       "cooccurrence_weight": 57
     },
     {
       "a": "publico",
       "b": "saude",
-      "npmi": 0.5041888544417811,
+      "npmi": 0.5041968797682379,
       "cooccurrence_weight": 22
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.49535876633372333,
+      "npmi": 0.4953670326571904,
       "cooccurrence_weight": 24
     },
     {
       "a": "ciencia",
       "b": "construcao",
-      "npmi": 0.4866383817734472,
+      "npmi": 0.4866465283328757,
       "cooccurrence_weight": 22
     },
     {
       "a": "covideiro",
       "b": "pandemico",
-      "npmi": 0.48204894742709015,
+      "npmi": 0.4820594756672485,
       "cooccurrence_weight": 103
     },
     {
       "a": "condicoes",
       "b": "producao",
-      "npmi": 0.4774887034830395,
+      "npmi": 0.47749825609583973,
       "cooccurrence_weight": 51
     },
     {
       "a": "publico",
       "b": "repositorio",
-      "npmi": 0.475561015499189,
+      "npmi": 0.4755694506990871,
       "cooccurrence_weight": 21
     },
     {
       "a": "enfermaria",
       "b": "ruido",
-      "npmi": 0.4630990226114344,
+      "npmi": 0.46310903665206654,
       "cooccurrence_weight": 58
     },
     {
       "a": "ciencia",
       "b": "acao",
-      "npmi": 0.46190175721174515,
+      "npmi": 0.46191041211036427,
       "cooccurrence_weight": 21
     },
     {
       "a": "cadeia",
       "b": "translacoes",
-      "npmi": 0.4609364483451131,
+      "npmi": 0.4609465565623328,
       "cooccurrence_weight": 60
     },
     {
       "a": "fonoaudiologos",
       "b": "medicos",
-      "npmi": 0.45933745909187895,
+      "npmi": 0.4593465079405882,
       "cooccurrence_weight": 28
     },
     {
       "a": "modelo",
       "b": "treinado",
-      "npmi": 0.4481927041689132,
+      "npmi": 0.44820273060194565,
       "cooccurrence_weight": 49
     },
     {
       "a": "conceito",
       "b": "referencia",
-      "npmi": 0.4368971878195879,
+      "npmi": 0.43690592305496345,
       "cooccurrence_weight": 16
     },
     {
       "a": "saude",
       "b": "pesquisa",
-      "npmi": 0.43516128726926895,
+      "npmi": 0.43517018640229,
       "cooccurrence_weight": 18
     },
     {
       "a": "forca",
       "b": "precisa",
-      "npmi": 0.4329726575300783,
+      "npmi": 0.43298113495493706,
       "cooccurrence_weight": 12
     }
   ],

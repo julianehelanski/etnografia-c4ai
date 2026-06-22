@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **17,881**
-- Grafo bruto: **5345** nós · **46011** arestas
+- Tokens significativos: **17,885**
+- Grafo bruto: **5348** nós · **46024** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2572** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -23,8 +23,8 @@
 | 3 | `rede` | 602 |
 | 4 | `centro` | 539 |
 | 5 | `fabio` | 501 |
-| 6 | `publico` | 439 |
-| 7 | `arranjo` | 399 |
+| 6 | `publico` | 438 |
+| 7 | `arranjo` | 398 |
 | 8 | `seguir` | 393 |
 | 9 | `corporacao` | 364 |
 | 10 | `inteligencia` | 317 |
@@ -112,26 +112,26 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `centro` | 0.2406 |
-| 2 | `rede` | 0.2211 |
-| 3 | `pesquisa` | 0.2197 |
-| 4 | `claudio` | 0.1716 |
-| 5 | `fabio` | 0.1265 |
-| 6 | `publico` | 0.1158 |
-| 7 | `corporacao` | 0.0859 |
-| 8 | `seguir` | 0.0808 |
-| 9 | `tecnologia` | 0.0763 |
-| 10 | `ator` | 0.0753 |
-| 11 | `hollerith` | 0.0670 |
+| 1 | `centro` | 0.2418 |
+| 2 | `rede` | 0.2213 |
+| 3 | `pesquisa` | 0.2210 |
+| 4 | `claudio` | 0.1721 |
+| 5 | `fabio` | 0.1267 |
+| 6 | `publico` | 0.1131 |
+| 7 | `corporacao` | 0.0854 |
+| 8 | `seguir` | 0.0812 |
+| 9 | `tecnologia` | 0.0762 |
+| 10 | `ator` | 0.0754 |
+| 11 | `hollerith` | 0.0671 |
 | 12 | `ecossistema` | 0.0531 |
 | 13 | `cientifico` | 0.0526 |
-| 14 | `brasil` | 0.0461 |
+| 14 | `brasil` | 0.0463 |
 | 15 | `modelo` | 0.0411 |
-| 16 | `fapesp` | 0.0335 |
+| 16 | `fapesp` | 0.0334 |
 | 17 | `empresa` | 0.0307 |
 | 18 | `inteligencia` | 0.0306 |
-| 19 | `arranjo` | 0.0305 |
-| 20 | `trajetoria` | 0.0304 |
+| 19 | `trajetoria` | 0.0304 |
+| 20 | `dado` | 0.0287 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
