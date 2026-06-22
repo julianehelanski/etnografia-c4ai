@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 16:02 UTC",
+  "generated": "2026-06-22 16:41 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -61,6 +61,7 @@
         "Mediação técnica"
       ],
       "figures": [
+        "cadeia-mediacao-ia-capitulo2.png",
         "capes_11_grande_area_share.png",
         "capes_13_heatmap_area_keyword.png",
         "capes_21_subcampos_distribuicao.png",
@@ -82,7 +83,6 @@
         "latour.jpg",
         "linha-tempo-capitulo2.png",
         "mapa-capitulo2.png",
-        "mediacaodiferencial_ia_mediacao.png",
         "mediacaosignificado_1_traducao.png",
         "mediacaosignificado_2_composicao.png",
         "mediacaosignificado_3_obscurecimento.png",
@@ -163,10 +163,10 @@
         "infranodus_cap4_focus_pmi.png",
         "infranodus_cap4_network.png",
         "juki_1.jpg",
+        "mapa",
         "mapa-analitico-capitulo4.png",
         "mapa-argumento-capitulo4.png",
         "mapa-cadeia-translacao-capitulo4.png",
-        "mapa-capitulo4.png",
         "mapa-linha-tempo-capitulo4.png",
         "novel-coronavirus-sars-cov-2_49531042907_o.jpg",
         "novel-coronavirus-sars-cov-2_49534865371_o.jpg",
