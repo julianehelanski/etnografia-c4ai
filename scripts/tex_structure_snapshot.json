@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 15:50 UTC",
+  "generated": "2026-06-22 15:52 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -116,7 +116,6 @@
         "6_produtividade_grupos.png",
         "8_composicao_temporal.png",
         "9_analise_concentracao.png",
-        "arrano",
         "cadeia-translacao-ibm-capitulo3.png",
         "caderno_rodrigues_aula1.pdf",
         "desenho_patente_hollerith.jpg",
@@ -130,7 +129,6 @@
         "mapa-capitulo3.png",
         "mapa-metodologico-capitulo3.png",
         "mapa-rede-hollerith-capitulo3.png",
-        "poma",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
         "trajectory_semantic.png"
@@ -138,18 +136,52 @@
     },
     "cap4": {
       "sections": [
+        "Com quem segui a rede que Marcelo construiu",
+        "O Spira",
         "As inscrições tecnocientíficas do Spira",
         "A rede do Covideiro",
         "Localização do dataset e geração dos espectrogramas"
       ],
-      "subsections": [],
+      "subsections": [
+        "Como segui a rede que Marcelo construiu: entrevista, artigos e relatórios"
+      ],
       "figures": [
+        "AISelect_20260403_164426_Chrome.jpg",
+        "HIS-77-186-g001.jpg",
+        "HIS-77-186-g002.jpg",
+        "HIS-77-186-g003.jpg",
+        "HIS-77-186-g004.jpg",
+        "Screenshot_20260521_155105_My Files.jpg",
+        "Spira_comparacao_linear_log.png",
+        "Spira_espectrograma_com_eixos.png",
+        "Spira_espectrograma_sem_legenda.png",
+        "Spira_paciente_com_eixos.png",
+        "Spira_paciente_sem_legenda.png",
+        "Spira_waveform_controle.png",
+        "Spira_waveform_paciente.png",
         "infranodus_cap4_focus.png",
         "infranodus_cap4_focus_pmi.png",
         "infranodus_cap4_network.png",
+        "juki_1.jpg",
+        "mapa-analitico-capitulo4.png",
+        "mapa-argumento-capitulo4.png",
+        "mapa-cadeia-translacao-capitulo4.png",
+        "mapa-capitulo4.png",
+        "mapa-linha-tempo-capitulo4.png",
+        "novel-coronavirus-sars-cov-2_49531042907_o.jpg",
+        "novel-coronavirus-sars-cov-2_49534865371_o.jpg",
+        "novel-coronavirus-sars-cov-2_49557550706_o.jpg",
+        "novel-coronavirus-sars-cov-2_49557550751_o.jpg",
+        "novel-coronavirus-sars-cov-2_49597020853_o.jpg",
+        "novel-coronavirus-sars-cov-2_49597519106_o.jpg",
+        "novel-coronavirus-sars-cov-2_49640655213_o.jpg",
+        "novel-coronavirus-sars-cov-2_49641177636_o.jpg",
+        "novel-coronavirus-sars-cov-2_49641177821_o.jpg",
+        "novel-coronavirus-sars-cov-2_49645120251_o.jpg",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
-        "trajectory_semantic.png"
+        "trajectory_semantic.png",
+        "younesi2024_fig8_cnn1d.png"
       ]
     }
   }
