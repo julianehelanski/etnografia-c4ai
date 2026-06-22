@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 01:57 UTC",
+  "generated": "2026-06-22 02:19 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -35,7 +35,6 @@
         "infranodus_cap1_focus.png",
         "infranodus_cap1_focus_pmi.png",
         "infranodus_cap1_network.png",
-        "linha-do-tempo-capitulo1.pdf",
         "linha-tempo-capitulo1.png",
         "mapa-capitulo1-v2.png",
         "trajectory_alluvial.png",
@@ -139,73 +138,18 @@
     },
     "cap4": {
       "sections": [
-        "Com quem segui a rede que Marcelo construiu",
-        "O Spira",
         "As inscrições tecnocientíficas do Spira",
         "A rede do Covideiro",
         "Localização do dataset e geração dos espectrogramas"
       ],
-      "subsections": [
-        "Como segui a rede que Marcelo construiu: entrevista, artigos e relatórios"
-      ],
+      "subsections": [],
       "figures": [
-        "AISelect_20260402_155051_Adobe Acrobat.jpg",
-        "AISelect_20260402_155107_Adobe Acrobat.jpg",
-        "AISelect_20260402_155118_Adobe Acrobat.jpg",
-        "AISelect_20260403_164426_Chrome.jpg",
-        "HIS-77-186-g001.jpg",
-        "HIS-77-186-g002.jpg",
-        "HIS-77-186-g003.jpg",
-        "HIS-77-186-g004.jpg",
-        "Screenshot_20260521_155105_My Files.jpg",
-        "Spira_cnn_diagrama_real.png",
-        "Spira_comparacao_linear_log.png",
-        "Spira_espectrograma_com_eixos.png",
-        "Spira_espectrograma_sem_legenda.png",
-        "Spira_paciente_com_eixos.png",
-        "Spira_paciente_sem_legenda.png",
-        "Spira_waveform_controle.png",
-        "Spira_waveform_paciente.png",
-        "acl2021_fig2_topologia_CNN_quatro_camadas_conv.png",
-        "acl2021_fig4_analise_ruido_experimentos3x.png",
-        "acl2021_tabela2_ruido_paciente_controle_acuracia.png",
-        "cadeia-translacao-condensada-capitulo4.png",
-        "capitulo4",
-        "cnn14_arquitetura.png",
-        "distribuicao_SpO2_P2.png",
-        "ibmed2026_fig1_pipeline_coleta_IR_SpO2.png",
-        "ibmed2026_fig3_arquitetura_classificacao_binaria.png",
-        "ibmed2026_fig4_audioMAE_pretraining.png",
-        "ibmed2026_fig7_curvas_ROC_AudioMAE_CNN6.png",
-        "ibmed2026_fig8_matrizes_confusao_AudioMAE_CNN6.png",
-        "ibmed2026_tabela1_revisao_trabalhos_IR.png",
-        "ibmed2026_tabela3_arquiteturas_PANN_CNN6_10_14.png",
         "infranodus_cap4_focus.png",
         "infranodus_cap4_focus_pmi.png",
         "infranodus_cap4_network.png",
-        "juki_1.jpg",
-        "linha-tempo-capitulo4.png",
-        "lor",
-        "mapa",
-        "mapa-ana",
-        "mapa-capitulo4.png",
-        "novel-coronavirus-sars-cov-2_49531042907_o.jpg",
-        "novel-coronavirus-sars-cov-2_49534865371_o.jpg",
-        "novel-coronavirus-sars-cov-2_49557550706_o.jpg",
-        "novel-coronavirus-sars-cov-2_49557550751_o.jpg",
-        "novel-coronavirus-sars-cov-2_49597020853_o.jpg",
-        "novel-coronavirus-sars-cov-2_49597519106_o.jpg",
-        "novel-coronavirus-sars-cov-2_49640655213_o.jpg",
-        "novel-coronavirus-sars-cov-2_49641177636_o.jpg",
-        "novel-coronavirus-sars-cov-2_49641177821_o.jpg",
-        "novel-coronavirus-sars-cov-2_49645120251_o.jpg",
-        "pipeline-voz-espectograma-2026-04-12-220916.png",
-        "silva2022_tabela1_configuracoes_experimentos.png",
-        "stil2021_tabela3_pretraining_com_sem_ruido.png",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
-        "trajectory_semantic.png",
-        "younesi2024_fig8_cnn1d.png"
+        "trajectory_semantic.png"
       ]
     }
   }
