@@ -19,7 +19,7 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro .hint{position:absolute;bottom:2.5rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-soft);opacity:0;animation:rise 1s ease 3s forwards,pulse 2.5s ease 3s infinite}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
-#graph-svg{position:fixed;inset:0;width:100%;height:100%}
+#graph-svg{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
 #title-bar{position:fixed;top:1.5rem;left:1.5rem;z-index:5;pointer-events:none}
 #title-bar h2{font-family:'CMU Serif',serif;font-style:normal;font-weight:300;font-size:.72rem;color:var(--text-soft);line-height:1.6;letter-spacing:-.005em}
 #title-bar p{font-size:.55rem;color:var(--text-soft);letter-spacing:.12em;text-transform:uppercase;margin-top:.3rem}
@@ -390,6 +390,16 @@ details.toc-sub>p{color:var(--text)!important}
 #lang-btn{position:fixed;top:1rem;right:1.2rem;z-index:60;font-family:'Courier New',monospace;font-size:.62rem;padding:.34rem .62rem;background:rgba(253,243,248,.95);border:1px solid #d8c0d0;border-radius:999px;cursor:pointer;color:#5b3a52;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:right .5s cubic-bezier(.16,1,.3,1)}
 #panel.open ~ #lang-btn{right:calc(var(--panel-w) + 1.2rem)}
 #pbody .toc-head{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody details.toc-sec>summary{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody details.toc-sub>summary{font-family:'CMU Serif',serif!important;font-size:inherit!important}#pbody .toc-body,#pbody .toc-body p,#pbody .toc-body li{font-family:'CMU Serif',serif!important;font-size:inherit!important}
+
+/* ===== responsivo: celular / tablet ===== */
+@media (max-width:768px){
+  #title-bar{padding:1rem!important}
+  #panel{width:100vw!important;max-width:100vw;padding:2.4rem 1.3rem 3rem}
+  #legend{bottom:.8rem!important;left:.8rem!important;max-width:72vw;max-height:38vh;overflow-y:auto}
+}
+@media (max-width:560px){
+  #intro .creds .creds-inst{white-space:normal}
+}
 </style>
 </head>
 <body>

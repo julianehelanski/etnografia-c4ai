@@ -13,7 +13,8 @@
 :root{--text:#1a1a1a;--text-soft:#1f1f1f;--ink:#1c2942;--ink-soft:#20283e;--rule:#a386b8;--rule-soft:#cdb6da;--mark-bg:rgba(31,107,255,.08);--mark-bd:rgba(31,107,255,.18)}
 body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CMU Serif',serif;color:var(--ink)}
 
-#graph{position:fixed;inset:0;width:100%;height:100%;z-index:3}
+#graph{position:fixed;inset:0;width:100%;height:100%;z-index:3;touch-action:none}
+#graph svg{touch-action:none}
 .link{stroke:#9aa0ab;stroke-linecap:round}
 .node circle{cursor:pointer;stroke:#fff;stroke-width:.7px}
 .nlabel{font-family:'CMU Serif',serif;fill:#1c2942;paint-order:stroke;stroke:#ffffff;stroke-width:2.4px;stroke-linejoin:round;pointer-events:none}
@@ -266,6 +267,23 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro h1 .tx-b{color:var(--text);font-family:'Courier New',monospace;font-weight:500;font-style:normal}
 #intro h1 .tx-d{color:var(--text);font-family:'Courier New',monospace;font-weight:500;font-style:normal;padding:0 .12em}
 #intro .hint{position:absolute;bottom:2.6rem;font-family:'Courier New',monospace;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text)}
+
+/* ===== responsivo: celular / tablet ===== */
+@media (max-width:768px){
+  #title-bar{padding:1rem}
+  #title-bar h2{font-size:1.05rem;max-width:82vw}
+  #title-bar p,#title-bar .texnote{max-width:82vw}
+  #legend{bottom:.8rem;left:.8rem;max-width:72vw;max-height:38vh;overflow-y:auto;padding:.55rem .7rem}
+  #legend .li{font-size:.62rem}
+  #legend .lnote{display:none}
+  #panel{width:100vw;max-width:100vw;padding:2.4rem 1.3rem 3rem}
+  #presize{display:none!important}
+  #hint{display:none}
+}
+@media (max-width:560px){
+  #intro .creds .creds-inst{white-space:normal}
+  #title-bar h2{font-size:.96rem}
+}
 </style>
 </head>
 <body>
