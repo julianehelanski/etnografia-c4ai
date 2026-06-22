@@ -21,6 +21,9 @@ body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #ytcover #ytframe,#ytcover #ytframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 #ytclose{position:absolute;top:1.2rem;right:1.4rem;z-index:210;font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.55);padding:.5rem .9rem;cursor:pointer;border-radius:2px;transition:background .2s}
 #ytclose:hover{background:rgba(255,255,255,.14)}
+#ytbtn{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.5rem;padding:.25rem;background:transparent;border:0;cursor:pointer;font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);opacity:.85;transition:opacity .2s}
+#ytbtn:hover{opacity:1}
+#ytbtn svg{display:block;border-radius:5px}
 #intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:300;font-size:clamp(1.1rem,2.5vw,1.8rem);text-align:center;line-height:1.7;letter-spacing:-.01em;max-width:580px;padding:0 2rem;color:var(--text);opacity:0;animation:rise 1.5s ease .5s forwards}
 #intro .sub{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-soft);margin-top:1.5rem;opacity:0;animation:rise 1.5s ease 1.5s forwards}
 #intro .hint{position:absolute;bottom:2.5rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-soft);opacity:0;animation:rise 1s ease 3s forwards,pulse 2.5s ease 3s infinite}
@@ -420,11 +423,12 @@ details.toc-sub>p{color:var(--text)!important}
   <h1><span class="tx-cmd">\title{</span><span class="tx-b">{</span>tecno-etnografia<span class="tx-b">}</span> de um centro de inteligência artificial: seguindo cientistas e engenheiros <span class="tx-d">---</span> universidade afora<span class="tx-cmd">}</span></h1>
   <div class="sub">\author{Juliane Helanski}&nbsp; ·&nbsp; C4AI · SPIRA · 2025</div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br>Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)<br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
+  <button id="ytbtn" type="button" aria-label="assistir ao vídeo no YouTube"><svg viewBox="0 0 28 20" width="30" height="21" aria-hidden="true"><path fill="#FF0000" d="M27.39 3.12A3.52 3.52 0 0 0 24.92.64C22.74.05 14 .05 14 .05S5.26.05 3.08.64A3.52 3.52 0 0 0 .61 3.12 36.7 36.7 0 0 0 .02 10a36.7 36.7 0 0 0 .59 6.88 3.52 3.52 0 0 0 2.47 2.48C5.26 19.95 14 19.95 14 19.95s8.74 0 10.92-.59a3.52 3.52 0 0 0 2.47-2.48A36.7 36.7 0 0 0 27.98 10a36.7 36.7 0 0 0-.59-6.88Z"/><path fill="#fff" d="M11.2 14.29 18.46 10 11.2 5.71Z"/></svg><span>assistir</span></button>
   <div class="hint">\begin{document}</div>
 </div>
 
 <div id="ytcover" aria-hidden="true">
-  <button id="ytclose" type="button">\end{document} · entrar ✕</button>
+  <button id="ytclose" type="button">\end{document} · fechar ✕</button>
   <div class="ytwrap"><div id="ytframe"></div></div>
 </div>
 <div id="title-bar">
@@ -1070,22 +1074,28 @@ function showMovimento(id){
   var intro   = document.getElementById("intro");
   var ytcover = document.getElementById("ytcover");
   var ytclose = document.getElementById("ytclose");
+  var ytbtn   = document.getElementById("ytbtn");
 
-  // clicar na capa abre o video (com som) por cima dela
+  // clicar na capa (fora do icone) entra na rede textual
   intro.addEventListener("click", function(){
+    intro.classList.add("out");
+    setTimeout(function(){ intro.style.display="none"; }, 1200);
+  });
+
+  // o icone do YouTube abre o video (com som) por cima da capa
+  ytbtn.addEventListener("click", function(e){
+    e.stopPropagation(); // nao deixa o clique entrar no site
     ytcover.classList.add("show");
     ytcover.setAttribute("aria-hidden", "false");
     playWithSound();
   });
 
-  // o botao "fechar" para o video e revela a rede textual
+  // o botao "fechar" para o video e volta para a capa
   ytclose.addEventListener("click", function(e){
     e.stopPropagation();
     if(player && player.stopVideo){ try { player.stopVideo(); } catch(err){} }
     ytcover.classList.remove("show");
     ytcover.setAttribute("aria-hidden", "true");
-    intro.classList.add("out");
-    setTimeout(function(){ intro.style.display="none"; }, 1200);
   });
 })();
 
