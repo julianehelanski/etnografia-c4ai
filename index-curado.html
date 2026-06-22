@@ -14,6 +14,13 @@
 body{background:#f8e2ec;overflow:hidden;width:100vw;height:100vh;font-family:'CMU Serif',serif;color:var(--ink)}
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 1.2s ease}
 #intro.out{opacity:0;pointer-events:none}
+/* video da capa (YouTube) */
+#ytcover{position:fixed;inset:0;z-index:200;background:#000;display:none;align-items:center;justify-content:center}
+#ytcover.show{display:flex}
+#ytcover .ytwrap{position:relative;width:min(92vw,calc(92vh*16/9));max-width:1280px;aspect-ratio:16/9}
+#ytcover #ytframe,#ytcover #ytframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#ytclose{position:absolute;top:1.2rem;right:1.4rem;z-index:210;font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.55);padding:.5rem .9rem;cursor:pointer;border-radius:2px;transition:background .2s}
+#ytclose:hover{background:rgba(255,255,255,.14)}
 #intro h1{font-family:'CMU Serif',serif;font-style:normal;font-weight:300;font-size:clamp(1.1rem,2.5vw,1.8rem);text-align:center;line-height:1.7;letter-spacing:-.01em;max-width:580px;padding:0 2rem;color:var(--text);opacity:0;animation:rise 1.5s ease .5s forwards}
 #intro .sub{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-soft);margin-top:1.5rem;opacity:0;animation:rise 1.5s ease 1.5s forwards}
 #intro .hint{position:absolute;bottom:2.5rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-soft);opacity:0;animation:rise 1s ease 3s forwards,pulse 2.5s ease 3s infinite}
@@ -414,6 +421,11 @@ details.toc-sub>p{color:var(--text)!important}
   <div class="sub">\author{Juliane Helanski}&nbsp; ·&nbsp; C4AI · SPIRA · 2025</div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br>Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)<br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
   <div class="hint">\begin{document}</div>
+</div>
+
+<div id="ytcover" aria-hidden="true">
+  <button id="ytclose" type="button">\end{document} · entrar ✕</button>
+  <div class="ytwrap"><div id="ytframe"></div></div>
 </div>
 <div id="title-bar">
   <h2><span class="tx-b">{</span>tecno-etnografia<span class="tx-b">}</span> de um centro de inteligência artificial<br>seguindo cientistas e engenheiros <span class="tx-d">---</span> universidade afora</h2>
@@ -1024,11 +1036,58 @@ function showMovimento(id){
   if(d) showPanel(d);
 }
 
-document.getElementById("intro").addEventListener("click",()=>{
-  const intro=document.getElementById("intro");
-  intro.classList.add("out");
-  setTimeout(()=>intro.style.display="none",1200);
-});
+// intro + video da capa (YouTube IFrame API)
+(function(){
+  var VIDEO_ID = '955dZpR7QwY';
+  var player, pending = false, ready = false;
+
+  // carrega a API do YouTube
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  // chamado automaticamente pela API quando ela termina de carregar
+  window.onYouTubeIframeAPIReady = function(){
+    player = new YT.Player('ytframe', {
+      videoId: VIDEO_ID,
+      playerVars: { rel:0, modestbranding:1, playsinline:1, fs:1, autoplay:0 },
+      events: {
+        onReady: function(){ ready = true; if(pending) playWithSound(); }
+      }
+    });
+  };
+
+  function playWithSound(){
+    // chamado a partir do clique do usuario -> o navegador libera o audio
+    if(ready && player && player.playVideo){
+      try { player.unMute(); player.setVolume(100); player.playVideo(); } catch(e){}
+      pending = false;
+    } else {
+      pending = true; // toca assim que o player ficar pronto
+    }
+  }
+
+  var intro   = document.getElementById("intro");
+  var ytcover = document.getElementById("ytcover");
+  var ytclose = document.getElementById("ytclose");
+
+  // clicar na capa abre o video (com som) por cima dela
+  intro.addEventListener("click", function(){
+    ytcover.classList.add("show");
+    ytcover.setAttribute("aria-hidden", "false");
+    playWithSound();
+  });
+
+  // o botao "fechar" para o video e revela a rede textual
+  ytclose.addEventListener("click", function(e){
+    e.stopPropagation();
+    if(player && player.stopVideo){ try { player.stopVideo(); } catch(err){} }
+    ytcover.classList.remove("show");
+    ytcover.setAttribute("aria-hidden", "true");
+    intro.classList.add("out");
+    setTimeout(function(){ intro.style.display="none"; }, 1200);
+  });
+})();
 
 const lb=document.getElementById("lightbox");
 const lbImg=document.getElementById("lightbox-img");
