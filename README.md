@@ -142,4 +142,5 @@ se reflitam aqui sem cache obsoleto. Detalhes em
 - `audio/` — gravação de voz do capítulo 4 (SPIRA).
 - `infranodus/` — análise de rede textual e materiais de apoio.
 - `docs/` — documentação de manutenção (sincronização de figuras, setup etc.).
+  Veja [`docs/COMO-RODAR.md`](docs/COMO-RODAR.md) para rodar as análises e atualizar o site manualmente.
 - `scripts/` — utilitários (cache-busting das figuras).
