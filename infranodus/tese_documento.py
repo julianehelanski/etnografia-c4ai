@@ -122,12 +122,49 @@ CHAPTERS = [
 ENV_RE = re.compile(
     r'\\begin\{(figure|table|longtable)\*?\}'
     r'|\\end\{(figure|table|longtable)\*?\}'
+    r'|\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}'
     r'|\\caption(?:\[([^\]]*)\])?\{')
 
 SEC_RE = re.compile(r'\\(section|subsection)\*?\s*\{')
 
 # Diagrama interativo (MermaidChart) embutido na legenda via \href{...}.
 MERMAID_RE = re.compile(r'https://mermaid\.ai/d/[0-9a-fA-F-]+')
+
+# Pasta de figuras que o SITE de fato exibe (figuras/<slug>/...).
+SITE_FIGURAS = THIS_DIR.parent / "figuras"
+
+
+def _site_image(texpath: str | None) -> str | None:
+    r"""Mapeia o \includegraphics da tese para a figura que o site exibe.
+
+    Hoje só as inscrições de rede textual (InfraNodus) e as trajetórias
+    narrativas têm cópia em figuras/<slug>/ com o nome do site. Retorna o
+    caminho relativo ao repositório do site se o arquivo existir; senão None
+    — mesmo princípio de sync_site_figuras.py: só mostra o que o site tem.
+    """
+    if not texpath:
+        return None
+    base = texpath.strip().replace("\\", "/").rsplit("/", 1)[-1].lower()
+    mname = re.search(r"infranodus_cap(\d+)_", base)
+    mdir = re.search(r"cap\.?(\d+)", texpath)
+    m = mname or mdir
+    if not m:
+        return None
+    slug = f"cap{m.group(1)}"
+    name_map = {
+        f"infranodus_cap{m.group(1)}_network.png":   f"{slug}-infranodus-network.png",
+        f"infranodus_cap{m.group(1)}_focus.png":     f"{slug}-infranodus-focus.png",
+        f"infranodus_cap{m.group(1)}_pmi.png":       f"{slug}-infranodus-pmi.png",
+        f"infranodus_cap{m.group(1)}_focus_pmi.png": f"{slug}-infranodus-pmi.png",
+        "trajectory_gantt.png":                      f"{slug}-trajectory-gantt.png",
+        "trajectory_alluvial.png":                   f"{slug}-trajectory-alluvial.png",
+        "trajectory_semantic.png":                   f"{slug}-trajectory-semantic.png",
+    }
+    mapped = name_map.get(base)
+    if not mapped:
+        return None
+    rel = f"figuras/{slug}/{mapped}"
+    return rel if (SITE_FIGURAS / slug / mapped).exists() else None
 
 
 def _is_continuation(s: str) -> bool:
@@ -196,15 +233,20 @@ def parse_captions(tex: str):
     """(figuras, tabelas): legendas na ordem do documento, por ambiente."""
     figs, tabs = [], []
     stack = []
+    last_img = None   # último \includegraphics do ambiente figure corrente
     for m in ENV_RE.finditer(tex):
         g = m.group(0)
         if g.startswith(r"\begin"):
             stack.append(m.group(1))
+            last_img = None
         elif g.startswith(r"\end"):
             if stack:
                 stack.pop()
+            last_img = None
+        elif g.startswith(r"\includegraphics"):
+            last_img = m.group(3)
         else:  # \caption
-            short = m.group(3)
+            short = m.group(4)
             if short is not None and short.strip() == "":
                 # \caption[]{...}: entrada vazia na lista de ilustrações
                 # (típico de continuação de longtable) — não listar.
@@ -216,7 +258,8 @@ def parse_captions(tex: str):
             link_m = MERMAID_RE.search(arg)
             link = link_m.group(0) if link_m else None
             env = stack[-1] if stack else "figure"
-            (tabs if env in ("table", "longtable") else figs).append((cap, link))
+            img = None if env in ("table", "longtable") else _site_image(last_img)
+            (tabs if env in ("table", "longtable") else figs).append((cap, link, img))
     return figs, tabs
 
 
@@ -256,13 +299,15 @@ def main() -> int:
             "sections": parse_outline(tex),
         })
         f, t = parse_captions(tex)
-        for c, link in f:
+        for c, link, img in f:
             fign += 1
             entry = {"n": fign, "cap": num or title, "t": c}
             if link:
                 entry["link"] = link
+            if img:
+                entry["img"] = img
             figuras.append(entry)
-        for c, _link in t:
+        for c, _link, _img in t:
             tabn += 1
             tabelas.append({"n": tabn, "cap": num or title, "t": c})
 
