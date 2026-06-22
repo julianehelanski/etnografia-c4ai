@@ -99,6 +99,90 @@ git push        # o push na main dispara o pages.yml e republica o site
 
 ---
 
+## Caminho 3 — Anaconda / Spyder
+
+Os scripts são ferramentas de linha de comando (`argparse`). Em IDEs como o
+Spyder isso exige passar argumentos e fixar o `PYTHONHASHSEED`. O modo mais
+simples é o **Anaconda Prompt**; o Spyder funciona com alguns ajustes.
+
+### Ambiente conda (uma vez)
+
+```bash
+conda create -n tese python=3.11
+conda activate tese
+
+git clone https://github.com/julianehelanski/tecno-etnografia-tese-site.git
+cd tecno-etnografia-tese-site
+git clone https://github.com/julianehelanski/tecno-etnografia-centro-ia.git _tex
+
+pip install -r requirements.txt
+
+# determinismo: grava a variável no próprio env (precisa existir ANTES de o
+# Python iniciar — definir dentro do script não funciona)
+conda env config vars set PYTHONHASHSEED=0
+conda activate tese      # reativar para a variável valer
+```
+
+### A) Anaconda Prompt (recomendado)
+
+Com o env `tese` ativo e dentro da pasta do repositório, use os mesmos
+comandos da seção "Pipeline" acima (`python infranodus/run_all.py
+--source-root _tex`, etc.). Publicar = `git push` no final.
+
+### B) Spyder
+
+1. **Abrir o Spyder do env certo:** `conda activate tese` e então `spyder`
+   (ou em *Tools → Preferences → Python interpreter*, apontar para o
+   `python` do env `tese`).
+2. **Working directory:** defina a raiz do repositório (canto superior
+   direito), para `_tex`, `index.html` etc. resolverem certo.
+3. **Passar argumentos** — pelo console IPython com `%run`:
+   ```python
+   %run infranodus/run_all.py --source-root _tex
+   %run infranodus/tese_network.py --source-root _tex --inject index.html
+   %run infranodus/sync_site_figuras.py
+   %run scripts/sync_tese_figuras.py --source-root _tex
+   %run infranodus/tese_documento.py --source-root _tex --inject index.html
+   ```
+   Passos da página curada (usam a variável `SITE_INDEX`):
+   ```python
+   import os; os.environ["SITE_INDEX"] = "index-curado.html"
+   %run scripts/atualizar_keywords.py _tex
+   %run scripts/cache_busting_figuras.py
+   %run scripts/sumario_auto.py --source-root _tex
+   ```
+   (Alternativa: *Run → Configuration per file* → campo "Command line
+   options" com os argumentos, e rodar pelo botão ▶.)
+4. **Conferir o determinismo:**
+   ```python
+   import os; print(os.environ.get("PYTHONHASHSEED"))   # tem que imprimir 0
+   ```
+   Se vier `None`, feche o Spyder, rode `conda activate tese` e reabra (a
+   variável só entra ao iniciar o kernel).
+5. **Publicar:** o Spyder não faz `git push` — use o terminal ou o GitHub
+   Desktop.
+
+### C) Jupyter Notebook / Lab
+
+Cada passo numa célula, com `!` (subprocesso), prefixando a variável:
+
+```python
+# Windows:
+!set PYTHONHASHSEED=0 && python infranodus/run_all.py --source-root _tex
+# macOS/Linux:
+!PYTHONHASHSEED=0 python infranodus/run_all.py --source-root _tex
+```
+
+### Resumo das diferenças
+
+| | Anaconda Prompt | Spyder | Jupyter |
+|---|---|---|---|
+| Passar `--args` | direto | `%run script.py --args` ou Run config | `!python script.py --args` |
+| `PYTHONHASHSEED=0` | `conda env config vars set` | idem (reabrir Spyder) | prefixar na célula |
+| `git push` (publicar) | sim | não (terminal/GitHub Desktop) | `!git push` |
+
+---
+
 ## Dois pontos importantes
 
 - **Determinismo:** use sempre `PYTHONHASHSEED=0` (como o CI). Sem isso, a
