@@ -58,6 +58,10 @@ python infranodus/run_all.py --source-root _tex            # ou: --only cap1,cap
 # (B) REDE TEXTUAL principal e injeção no mapa (index.html)
 python infranodus/tese_network.py --source-root _tex --inject index.html
 
+# (B2) REDES POR CAPÍTULO (Louvain próprio de cada capítulo) -> seletor da capa
+#      injeta <script id="netdata-chapters"> em index.html
+python infranodus/tese_network_chapters.py --source-root _tex --inject index.html
+
 # (C) Imagens da análise -> figuras/
 python infranodus/sync_site_figuras.py
 

@@ -25,6 +25,18 @@ aparece também na **legenda** do site e no painel de cada termo, para situar o
 leitor. O pipeline completo (co-ocorrência · NPMI · Louvain · PageRank) está em
 [`infranodus/tese_network.py`](infranodus/tese_network.py).
 
+### A rede por capítulo (seletor da capa)
+
+No alto da página há um **seletor** (`\rede{…}`) que troca o mapa entre a **tese
+inteira** e cada **capítulo** (1 a 4). Cada capítulo tem a sua **própria** rede de
+co-ocorrência e o seu **próprio Louvain** — ou seja, as comunidades são
+recalculadas dentro do capítulo, não herdadas da tese inteira. É a mesma análise
+da capa, aplicada ao recorte de cada capítulo (com painel de termo, associações
+NPMI e trechos do próprio capítulo). Esses conjuntos de dados são gerados por
+[`infranodus/tese_network_chapters.py`](infranodus/tese_network_chapters.py) e
+embutidos no `index.html` (`<script id="netdata-chapters">`); os arquivos por
+capítulo ficam em `infranodus/<cap>/netdata_<cap>.json`.
+
 ### Para que serve esta análise — e por que nesta tese
 
 Ler uma tese inteira como uma rede de termos é um **dispositivo heurístico**:

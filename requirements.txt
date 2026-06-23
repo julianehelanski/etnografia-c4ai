@@ -4,3 +4,4 @@ numpy>=1.24
 scipy>=1.10
 scikit-learn>=1.3
 Pillow>=10
+adjustText>=1.0
