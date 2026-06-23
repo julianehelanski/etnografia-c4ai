@@ -57,6 +57,8 @@ python scrape_c4ai.py    # Excel bruto; depois há curadoria manual -> c4ai_publ
 ```
 ➡️ Saídas em `output/coword/` (PNGs `10_`/`11_`, `rede_coword_interativa.html`, planilhas `.xlsx`).
 
+⚡ **Atalho:** salve o `run_coword.py` na raiz do repo e rode `python run_coword.py` (use `--email voce@x.com` para enriquecer, `--scrape` para recoletar).
+
 ---
 
 ## 3) BIBLIOMETRIA IA-HUMANAS — CAPES / SciELO / OpenAlex
@@ -85,6 +87,8 @@ python analise_comparativa_2026.py
 ➡️ Gera tudo em `figuras/`. Regra: `analise_*` **antes** do `figuras_*`;
 comparativo **por último**. Versões antigas (`analise_scielo.py`,
 `analise_capes.py`, `analise_comparativa.py`) são o recorte histórico.
+
+⚡ **Atalho:** salve o `run_bibliometria.py` na raiz do repo e rode `python run_bibliometria.py` (CAPES + SciELO + comparativo; `--mailto voce@x.com` inclui OpenAlex; `--fontes capes` roda uma base).
 
 ---
 
@@ -133,6 +137,8 @@ python scripts\23_etapa3_aime_visualizacoes.py   # figuras
 **Passos com PDF ou preenchimento manual (só quando precisar):**
 - `01_extract_text.py` + `01b_normalize_text.py` → re-extraem do PDF (precisam dos PDFs + `.env`); o texto normalizado já está commitado, então normalmente **pule**.
 - `06_sampling.py`, `08_validate_sample.py`, `18_…`, `19_…`, `21_…` → **validação amostral**: geram/consomem planilhas que **você codifica à mão** (ex.: `19` precisa do `..._PREENCHIDA.csv`). Siga a ordem da Etapa no `plano_de_trabalho.md`.
+
+⚡ **Atalho:** salve o `run_nucleo_figuracoes.py` na raiz do repo e rode `python run_nucleo_figuracoes.py` (roda só o núcleo automático; `--listar` mostra a sequência, `--only 02,03,04,05,07,10,11` roda o núcleo seguro do Cap. 2).
 
 ---
 
