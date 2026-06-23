@@ -233,7 +233,8 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
 # ---------------------------------------------------------------------------
 
 def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
-                                 path: Path, title: str, group_size: int = 5):
+                                 path: Path, title: str, group_size: int | None = None,
+                                 target_moments: int = 22):
     """Embed groups of paragraphs ("moments") and project to 2D.
 
     Tries the multilingual sentence-transformer first; if the model can't
@@ -245,13 +246,21 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
     Paragraphs are grouped into windows of `group_size` to produce a
     smoother trajectory; per-paragraph embeddings of a long chapter tend
     to live in a noisy high-dimensional space whose 2D projection is
-    visually overcrowded.
+    visually overcrowded. To keep the labels legible, `group_size` is
+    chosen adaptively so the chapter yields ~`target_moments` moments
+    (instead of a fixed window that produced 40-50 cramped labels), and
+    the moment labels are de-collided with `adjustText` (with a graceful
+    fallback when the library is unavailable).
     """
+    import math
     from sklearn.decomposition import PCA, TruncatedSVD
     from sklearn.feature_extraction.text import TfidfVectorizer
 
-    # Group paragraphs into moments
+    # Group paragraphs into moments. Adaptive window: aim for ~target_moments
+    # so the 2D plot does not overcrowd with overlapping labels.
     n_paras = len(paras)
+    if group_size is None:
+        group_size = max(5, math.ceil(n_paras / max(1, target_moments)))
     moments_text: list[str] = []
     moments_tokens: list[list[str]] = []
     moments_bounds: list[tuple[int, int]] = []
@@ -307,17 +316,39 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
     ax.scatter(coords[:, 0], coords[:, 1], s=140, c=colors,
                 edgecolor="#1a1d22", linewidth=0.6, zorder=3)
 
-    # Label every moment with its dominant term
+    # Label every moment with its dominant term, de-colliding the labels so
+    # they stay legible even when moments cluster in the same region of the
+    # projection (the previous fixed offset made them pile up and unreadable).
+    labels = []
     for i, (s, e) in enumerate(moments_bounds):
         c = Counter(moments_tokens[i])
         top_term = c.most_common(1)[0][0] if c else "—"
-        dx, dy = (10, 10) if i % 2 == 0 else (10, -16)
-        ax.annotate(f"¶{s+1}–{e} · {top_term}", coords[i],
-                     xytext=(dx, dy), textcoords="offset points",
-                     fontsize=8.5, color="#0e1116", fontweight="bold",
-                     bbox=dict(boxstyle="round,pad=0.22",
-                                facecolor="white", edgecolor="#cbd5e1",
-                                linewidth=0.6, alpha=0.92))
+        labels.append(f"¶{s+1}–{e} · {top_term}")
+
+    texts = [ax.text(coords[i, 0], coords[i, 1], lab,
+                     fontsize=9, color="#0e1116", fontweight="bold",
+                     ha="center", va="center", zorder=5,
+                     bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
+                               edgecolor="#cbd5e1", linewidth=0.6, alpha=0.95))
+             for i, lab in enumerate(labels)]
+    try:
+        from adjustText import adjust_text
+        adjust_text(texts, x=list(coords[:, 0]), y=list(coords[:, 1]), ax=ax,
+                    force_text=(0.5, 0.8), force_static=(0.2, 0.4),
+                    force_pull=(0.02, 0.02), expand=(1.6, 1.8),
+                    max_move=None, time_lim=8,
+                    arrowprops=dict(arrowstyle="-", color="#94a3b8",
+                                    lw=0.7, alpha=0.85))
+    except Exception as ex:
+        # fallback sem dependência: distribui os rótulos radialmente
+        print(f"    [labels] adjustText indisponível ({type(ex).__name__}); "
+              f"usando deslocamento radial.")
+        span_x = float(coords[:, 0].max() - coords[:, 0].min()) or 1.0
+        span_y = float(coords[:, 1].max() - coords[:, 1].min()) or 1.0
+        for i, t in enumerate(texts):
+            ang = (i % 8) * (math.pi / 4)
+            t.set_position((coords[i, 0] + 0.03 * span_x * math.cos(ang),
+                            coords[i, 1] + 0.03 * span_y * math.sin(ang)))
 
     # Start / end markers
     ax.scatter(*coords[0], s=460, marker="*", color="#10b981",
