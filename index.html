@@ -93,11 +93,11 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .pstat{font-family:'Courier New',monospace;font-size:.62rem;color:var(--ink-soft);line-height:1.9}
 .pexp{display:block;font-family:'CMU Serif',serif;font-size:.78rem;color:var(--text);
   line-height:1.4;letter-spacing:0;text-transform:none;margin:.05rem 0 .6rem}
-.assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3}
+.assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3;cursor:pointer}
 .assoc .bar{height:5px;border-radius:3px;flex-shrink:0;min-width:3px}
 .assoc .aw{font-family:'Courier New',monospace;font-size:.54rem;color:var(--text);margin-left:auto}
-.assoc b{font-weight:600;cursor:pointer;color:var(--ink)}
-.assoc b:hover{text-decoration:underline}
+.assoc b{font-weight:600;color:var(--ink)}
+.assoc:hover b{text-decoration:underline}
 .quote{font-family:'CMU Serif',serif;font-size:1.08rem;line-height:1.65;color:var(--ink);background:var(--mark-bg);border-radius:6px;padding:.7rem .95rem;margin:.95rem 0}
 .quote mark{background:#ffd14d;color:var(--text);padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .quote{cursor:zoom-in}
@@ -479,6 +479,23 @@ node.on('mouseover', (e, d) => {
 
 svg.on('click', () => document.getElementById('panel').classList.remove('open'));
 
+// foco: ao clicar numa associação do painel, a rede responde — destaca o termo
+// e sua vizinhança e reaquece a simulação, puxando-os para o centro, de modo
+// que os nós se reorganizem (se movam) em torno do termo escolhido.
+function focusNode(id) {
+  const d = byId[id];
+  if (!d) return;
+  dismissCue();
+  const keep = neighborSet(id);
+  node.style('opacity', n => keep.has(n.id) ? 1 : .12);
+  link.style('opacity', l => (l.source.id === id || l.target.id === id) ? .75 : .03);
+  const pull = n => keep.has(n.id) ? 0.32 : 0.02;
+  sim.force('x', d3.forceX(W / 2).strength(pull));
+  sim.force('y', d3.forceY(H / 2).strength(pull));
+  sim.alphaTarget(.3).restart();
+  clearTimeout(sim._reheat); sim._reheat = setTimeout(() => sim.alphaTarget(0), 1400);
+}
+
 // dica de descoberta: some no primeiro clique/hover de termo, ou após alguns segundos
 const cue = document.getElementById('cue');
 let cueDone = false;
@@ -538,8 +555,10 @@ function showTerm(id) {
   html += '</div>';
 
   document.getElementById('pbody').innerHTML = html;
-  document.getElementById('pbody').querySelectorAll('b[data-term]').forEach(b =>
-    b.onclick = () => showTerm(b.dataset.term));
+  document.getElementById('pbody').querySelectorAll('.assoc').forEach(row => {
+    const t = row.querySelector('b[data-term]');
+    if (t) row.onclick = () => { focusNode(t.dataset.term); showTerm(t.dataset.term); };
+  });
   document.getElementById('pbody').querySelectorAll('.quote').forEach(q =>
     q.onclick = () => {
       const ch = q.querySelector('.qch') ? q.querySelector('.qch').textContent : '';
