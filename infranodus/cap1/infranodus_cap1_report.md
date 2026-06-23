@@ -10,7 +10,7 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **22,708**
+- Tokens significativos: **22,709**
 - Grafo bruto: **6436** nós · **56310** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3206** arestas
 - Tópicos detectados (Louvain): **7**
@@ -26,10 +26,10 @@
 | 6 | `ciencia` | 588 |
 | 7 | `metodo` | 521 |
 | 8 | `latour` | 512 |
-| 9 | `campo` | 494 |
+| 9 | `campo` | 501 |
 | 10 | `objeto` | 433 |
 | 11 | `humano` | 426 |
-| 12 | `descricao` | 408 |
+| 12 | `descricao` | 409 |
 | 13 | `corte` | 407 |
 | 14 | `analise` | 395 |
 | 15 | `modelo` | 383 |
@@ -62,14 +62,14 @@ termos frequentes mas perifericamente conectados descem.
 | 4 | `artificial` | 0.0160 |
 | 5 | `inteligencia` | 0.0159 |
 | 6 | `ciencia` | 0.0158 |
-| 7 | `metodo` | 0.0146 |
+| 7 | `metodo` | 0.0147 |
 | 8 | `latour` | 0.0144 |
-| 9 | `campo` | 0.0137 |
+| 9 | `campo` | 0.0139 |
 | 10 | `humano` | 0.0120 |
 | 11 | `objeto` | 0.0120 |
 | 12 | `corte` | 0.0115 |
 | 13 | `descricao` | 0.0114 |
-| 14 | `modelo` | 0.0110 |
+| 14 | `modelo` | 0.0109 |
 | 15 | `analise` | 0.0107 |
 | 16 | `inscricao` | 0.0105 |
 | 17 | `strathern` | 0.0105 |
@@ -94,43 +94,43 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
 | 1 | `cientifico` | 130 | 114 | +16 |
-| 2 | `computacional` | 114 | 102 | +12 |
-| 3 | `diagrama` | 101 | 90 | +11 |
+| 2 | `diagrama` | 101 | 90 | +11 |
+| 3 | `computacional` | 114 | 103 | +11 |
 | 4 | `manifesta` | 82 | 73 | +9 |
-| 5 | `funcionam` | 125 | 117 | +8 |
-| 6 | `conexoes` | 115 | 108 | +7 |
+| 5 | `conexoes` | 115 | 108 | +7 |
+| 6 | `funcionam` | 124 | 117 | +7 |
 | 7 | `entidade` | 156 | 149 | +7 |
 | 8 | `efeitos` | 158 | 151 | +7 |
-| 9 | `ausencia` | 69 | 63 | +6 |
-| 10 | `heterogeneos` | 93 | 87 | +6 |
-| 11 | `decisao` | 148 | 142 | +6 |
-| 12 | `termos` | 50 | 45 | +5 |
-| 13 | `actante` | 53 | 48 | +5 |
-| 14 | `otherness` | 58 | 53 | +5 |
-| 15 | `nocao` | 136 | 131 | +5 |
+| 9 | `termos` | 51 | 45 | +6 |
+| 10 | `ausencia` | 69 | 63 | +6 |
+| 11 | `heterogeneos` | 93 | 87 | +6 |
+| 12 | `actante` | 53 | 48 | +5 |
+| 13 | `nocao` | 136 | 131 | +5 |
+| 14 | `decisao` | 148 | 143 | +5 |
+| 15 | `otherness` | 58 | 54 | +4 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `rede` | 0.3914 |
-| 2 | `pesquisa` | 0.2966 |
+| 1 | `rede` | 0.3911 |
+| 2 | `pesquisa` | 0.2967 |
 | 3 | `etnografia` | 0.2007 |
-| 4 | `corte` | 0.0979 |
-| 5 | `latour` | 0.0813 |
+| 4 | `corte` | 0.0978 |
+| 5 | `latour` | 0.0811 |
 | 6 | `ciencia` | 0.0808 |
 | 7 | `campo` | 0.0754 |
-| 8 | `metodo` | 0.0708 |
-| 9 | `descricao` | 0.0703 |
-| 10 | `humano` | 0.0555 |
+| 8 | `metodo` | 0.0709 |
+| 9 | `descricao` | 0.0707 |
+| 10 | `humano` | 0.0554 |
 | 11 | `inscricao` | 0.0484 |
-| 12 | `strathern` | 0.0415 |
+| 12 | `strathern` | 0.0416 |
 | 13 | `tecnociencia` | 0.0397 |
 | 14 | `inteligencia` | 0.0352 |
-| 15 | `analise` | 0.0310 |
-| 16 | `gesto` | 0.0267 |
+| 15 | `analise` | 0.0308 |
+| 16 | `gesto` | 0.0266 |
 | 17 | `modos` | 0.0262 |
-| 18 | `dado` | 0.0257 |
-| 19 | `claude` | 0.0237 |
+| 18 | `dado` | 0.0259 |
+| 19 | `claude` | 0.0236 |
 | 20 | `parcial` | 0.0225 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)

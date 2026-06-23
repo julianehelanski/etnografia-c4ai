@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22 19:36 UTC",
+  "generated": "2026-06-23 02:43 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -99,14 +99,16 @@
     },
     "cap3": {
       "sections": [
-        "Como segui Fábio e Cláudio: observação, entrevistas e documentos",
-        "Como quem segui a rede que Fábio e Cláudio construíram",
+        "Seguindo Fábio e Cláudio",
         "Criar demanda: a racionalidade de um ecossistema",
         "A IBM",
         "O C4AI em textos: das entrevistas às publicações",
         "O fim da parceria C4AI-IBM"
       ],
-      "subsections": [],
+      "subsections": [
+        "Como os segui: observação, entrevistas e documentos",
+        "Com quais referenciais os segui"
+      ],
       "figures": [
         "10_rede_coword.png",
         "11_rede_coword_temporal.png",
@@ -136,14 +138,15 @@
     },
     "cap4": {
       "sections": [
-        "Com quem segui a rede que Marcelo construiu",
+        "Seguindo Marcelo",
         "O Spira",
         "As inscrições tecnocientíficas do Spira",
         "A rede do Covideiro",
         "Localização do dataset e geração dos espectrogramas"
       ],
       "subsections": [
-        "Como segui a rede que Marcelo construiu: entrevista, artigos e relatórios"
+        "Como o segui: entrevista, artigos e relatórios",
+        "Com quais referenciais o segui"
       ],
       "figures": [
         "AISelect_20260403_164426_Chrome.jpg",
