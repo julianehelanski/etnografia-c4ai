@@ -32,16 +32,30 @@ Detalhes: [`COMO-RODAR.md`](COMO-RODAR.md) · parâmetros: [`PARAMETROS.md`](PAR
 ## 2) BIBLIOMETRIA C4AI — co-palavras das publicações
 📁 `bibliometria-publicacoes-c4ai`
 
+O `coword_analysis.py` é quem **gera os gráficos**, lendo `c4ai_publicacoes.xlsx`
+(407 publicações, curadoria manual). O enriquecimento via OpenAlex
+(`enrich_metadata.py`) é **opcional** — melhora os termos (usa abstracts/keywords
+em vez de só títulos).
+
+**Atualização recomendada (termos mais ricos):**
 ```powershell
 cd C:\Users\julia\Desktop\bibliometria-publicacoes-c4ai
-python scrape_c4ai.py        # (opcional) recoleta do site do C4AI — precisa internet
-python preparar_base.py      # c4ai_publicacoes_manual.xlsx -> c4ai_publicacoes.xlsx
-python enrich_metadata.py    # enriquece metadados
-python coword_analysis.py    # análise de co-palavras (gráficos)
+python preparar_base.py                          # _manual.xlsx -> c4ai_publicacoes.xlsx
+python enrich_metadata.py --email seu@email.com  # opcional; OpenAlex (internet) -> _enriquecido.xlsx
+python coword_analysis.py --input c4ai_publicacoes_enriquecido.xlsx
 ```
-⚠️ Ordem **provável** — confirmar nos cabeçalhos de `enrich_metadata.py` e
-`coword_analysis.py`. Se os dados (`c4ai_publicacoes_manual.xlsx`) já
-estiverem na pasta, dá para pular o `scrape_c4ai.py`.
+
+**Versão mínima (só títulos, sem internet):**
+```powershell
+python preparar_base.py
+python coword_analysis.py                        # usa c4ai_publicacoes.xlsx (títulos)
+```
+
+**Re-coletar a lista do site do C4AI (opcional, precisa internet):**
+```powershell
+python scrape_c4ai.py    # Excel bruto; depois há curadoria manual -> c4ai_publicacoes_manual.xlsx
+```
+➡️ Saídas em `output/coword/` (PNGs `10_`/`11_`, `rede_coword_interativa.html`, planilhas `.xlsx`).
 
 ---
 
@@ -75,23 +89,50 @@ comparativo **por último**. Versões antigas (`analise_scielo.py`,
 ---
 
 ## 4) FIGURAÇÕES — Latour × Haraway (Cap. 2)
-📁 `analise_figuracoes`  ·  scripts numerados em `scripts/`
+📁 `analise_figuracoes`  ·  scripts numerados em `scripts/` (01→23)
 
+Projeto em **etapas** (Etapa 1: livros · Etapa 2/2-bis: artigos · Etapa 3:
+AIME · refinamento). Roda-se **em ordem numérica**, mas **não é um “run all”
+cego**: alguns passos geram planilhas que **você preenche à mão** antes do
+passo seguinte. A ordem canônica completa está em `plano_de_trabalho.md` e
+`docs/decisoes_metodologicas.md` do próprio repo.
+
+Preparação:
 ```powershell
 cd C:\Users\julia\Desktop\analise_figuracoes
-pip install -r requirements.txt          # só na primeira vez
+pip install -r requirements.txt          # 1ª vez
 $env:PYTHONHASHSEED = "0"
-
-python scripts\01_extract_text.py    # SÓ se for re-extrair dos PDFs (precisa dos PDFs + .env)
-python scripts\02_kwic.py            # concordâncias (keyword-in-context)
-python scripts\03_frequencies.py     # tabelas de frequência
-python scripts\04_visualizations.py  # gráficos
-python scripts\05_cooccurrence.py    # redes de co-ocorrência
-python scripts\06_sampling.py        # amostragem de passagens
 ```
-➡️ Saídas em `outputs/` (`csv/`, `figuras/`, `relatorios/`, `latex/`).
-💡 Como o texto já está em `corpus/txt/` (commitado), normalmente **pula-se o
-`01`** e começa no `02`. A ordem é a dos números (01→06).
+
+**Núcleo que regenera figuras/tabelas a partir do texto já commitado**
+(`corpus/txt_norm/`) — pode rodar direto:
+```powershell
+# Etapa 1 (livros)
+python scripts\02_kwic.py
+python scripts\03_frequencies.py
+python scripts\04_visualizations.py     # figuras
+python scripts\05_cooccurrence.py       # rede
+python scripts\07_trajectory.py
+# Refinamento (passagens + gráficos do Cap. 2)
+python scripts\10_passo4_kwic_ampliado.py
+python scripts\11_passo4_graficos.py    # figuras
+# Etapa 2 (artigos)
+python scripts\13_audit_articles_etapa2.py
+python scripts\14_etapa2_tabela_comparativa.py
+python scripts\15_etapa2_desambiguar_militar.py
+python scripts\16_etapa2_cocorrencia_comparacao.py
+python scripts\17_etapa2_tabelas_finais.py
+python scripts\20_etapa2bis_tabela_5_obras.py
+# Etapa 3 (AIME)
+python scripts\22_etapa3_aime_pipeline.py
+python scripts\23_etapa3_aime_visualizacoes.py   # figuras
+```
+➡️ Saídas em `outputs/<obra>/` (`csv/`, `figuras/`, `relatorios/`) e em
+`outputs/etapa2_artigos/`, `outputs/passo4/` etc.
+
+**Passos com PDF ou preenchimento manual (só quando precisar):**
+- `01_extract_text.py` + `01b_normalize_text.py` → re-extraem do PDF (precisam dos PDFs + `.env`); o texto normalizado já está commitado, então normalmente **pule**.
+- `06_sampling.py`, `08_validate_sample.py`, `18_…`, `19_…`, `21_…` → **validação amostral**: geram/consomem planilhas que **você codifica à mão** (ex.: `19` precisa do `..._PREENCHIDA.csv`). Siga a ordem da Etapa no `plano_de_trabalho.md`.
 
 ---
 
