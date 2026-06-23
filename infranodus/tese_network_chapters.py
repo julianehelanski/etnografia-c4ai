@@ -98,7 +98,7 @@ def build_chapter_payload(slug: str, source_root: Path) -> dict | None:
     TN.CHAPTERS = [(fname, SLUG_TO_LABEL[slug], slug)]
     try:
         passages = TN.collect_passages(set(G.nodes()), source_root,
-                                       npmi_neighbors, per_term=2)
+                                       npmi_neighbors, per_term=4)
     finally:
         TN.CHAPTERS = saved_chapters
 

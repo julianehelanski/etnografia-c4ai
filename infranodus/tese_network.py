@@ -153,7 +153,7 @@ def _score_passage(nid: str, text: str, forms: set, present: set,
 
 
 def collect_passages(node_ids: set, source_root: Path, neighbors: dict,
-                     per_term: int = 2, lo: int = 60, hi: int = 240) -> dict:
+                     per_term: int = 4, lo: int = 60, hi: int = 240) -> dict:
     """Para cada termo (lema), até `per_term` frases reais da tese onde ele
     aparece, escolhidas por representatividade (não pela ordem de leitura) e
     com as ocorrências do termo destacadas em <mark>.
