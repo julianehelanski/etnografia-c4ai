@@ -143,4 +143,5 @@ se reflitam aqui sem cache obsoleto. Detalhes em
 - `infranodus/` — análise de rede textual e materiais de apoio.
 - `docs/` — documentação de manutenção (sincronização de figuras, setup etc.).
   Veja [`docs/COMO-RODAR.md`](docs/COMO-RODAR.md) para rodar as análises e atualizar o site manualmente.
+  Para regenerar **todas** as análises (site + bibliometrias + figurações), veja [`docs/ATUALIZAR-TUDO.md`](docs/ATUALIZAR-TUDO.md).
 - `scripts/` — utilitários (cache-busting das figuras).
