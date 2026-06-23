@@ -26,6 +26,7 @@ on:
     paths:
       - "infranodus/infranodus_cap1.py"
       - "infranodus/tese_network.py"
+      - "infranodus/tese_network_chapters.py"
       - "infranodus/tese_documento.py"
       - "infranodus/run_all.py"
       - "infranodus/chapters.yml"
@@ -87,6 +88,10 @@ jobs:
       - name: Regenera a rede textual da tese e reinjeta no index.html (mapa principal)
         working-directory: c4ai
         run: python infranodus/tese_network.py --source-root _tex --inject index.html
+
+      - name: Regenera as redes por capítulo (Louvain próprio de cada um) e reinjeta no index.html
+        working-directory: c4ai
+        run: python infranodus/tese_network_chapters.py --source-root _tex --inject index.html
 
       - name: Sincroniza imagens da análise para o site (figuras/)
         working-directory: c4ai
