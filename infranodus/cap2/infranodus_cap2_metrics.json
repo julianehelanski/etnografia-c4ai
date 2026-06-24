@@ -1,12 +1,12 @@
 {
-  "tokens": 28094,
+  "tokens": 28092,
   "graph_full": {
     "nodes": 7051,
-    "edges": 66189
+    "edges": 66180
   },
   "graph_pruned": {
     "nodes": 180,
-    "edges": 3602
+    "edges": 3604
   },
   "top_terms_degree": [
     {
@@ -43,7 +43,7 @@
     },
     {
       "term": "vocabulario",
-      "degree": 759
+      "degree": 760
     },
     {
       "term": "humano",
@@ -133,157 +133,157 @@
   "top_terms_pagerank": [
     {
       "term": "artificial",
-      "pagerank": 0.03193425761255619
+      "pagerank": 0.03191960015241547
     },
     {
       "term": "inteligencia",
-      "pagerank": 0.03185934759653896
+      "pagerank": 0.03184382299887771
     },
     {
       "term": "latour",
-      "pagerank": 0.02145154561532392
+      "pagerank": 0.021443704470418948
     },
     {
       "term": "militar",
-      "pagerank": 0.019258975496930897
+      "pagerank": 0.01925208320472467
     },
     {
       "term": "ciencia",
-      "pagerank": 0.01859237611343549
+      "pagerank": 0.01858550130304675
     },
     {
       "term": "rede",
-      "pagerank": 0.015520258099876134
+      "pagerank": 0.01551530543474114
     },
     {
       "term": "rotulo",
-      "pagerank": 0.015464970460653055
+      "pagerank": 0.015459347891168344
     },
     {
       "term": "analise",
-      "pagerank": 0.014680910466493887
+      "pagerank": 0.014673604077961729
     },
     {
       "term": "vocabulario",
-      "pagerank": 0.01378141755899458
+      "pagerank": 0.01379285786959047
     },
     {
       "term": "humano",
-      "pagerank": 0.01298177990261415
+      "pagerank": 0.012977205961347474
     },
     {
       "term": "campo",
-      "pagerank": 0.012875719798349838
+      "pagerank": 0.012871125657058972
     },
     {
       "term": "figuracao",
-      "pagerank": 0.011545217389013178
+      "pagerank": 0.011541915126503039
     },
     {
       "term": "aime",
-      "pagerank": 0.010578041865560833
+      "pagerank": 0.0105743852040953
     },
     {
       "term": "rotulos",
-      "pagerank": 0.010126966770487082
+      "pagerank": 0.010123073884869601
     },
     {
       "term": "tecnologia",
-      "pagerank": 0.010010318344881378
+      "pagerank": 0.01000734587506815
     },
     {
       "term": "catalogo",
-      "pagerank": 0.009912514151358891
+      "pagerank": 0.009908453203563584
     },
     {
       "term": "teoria",
-      "pagerank": 0.00976240590004285
+      "pagerank": 0.009759519877645177
     },
     {
       "term": "ocorrencias",
-      "pagerank": 0.00947470016287882
+      "pagerank": 0.009471145889486601
     },
     {
       "term": "tecnociencia",
-      "pagerank": 0.009363397399145103
+      "pagerank": 0.009360962781807307
     },
     {
       "term": "ator",
-      "pagerank": 0.008974403808041131
+      "pagerank": 0.008971811719245262
     },
     {
       "term": "descreve",
-      "pagerank": 0.008934555835010223
+      "pagerank": 0.008932140135546624
     },
     {
       "term": "objeto",
-      "pagerank": 0.0088054218328159
+      "pagerank": 0.008802697574719808
     },
     {
       "term": "science",
-      "pagerank": 0.008788994714755654
+      "pagerank": 0.008784710639513364
     },
     {
       "term": "dado",
-      "pagerank": 0.008733733493638273
+      "pagerank": 0.008725460250345584
     },
     {
       "term": "leitura",
-      "pagerank": 0.008625496047053371
+      "pagerank": 0.008621950786551546
     },
     {
       "term": "obras",
-      "pagerank": 0.008330893478550608
+      "pagerank": 0.008327212018979704
     },
     {
       "term": "action",
-      "pagerank": 0.008306046998312366
+      "pagerank": 0.00830161806047698
     },
     {
       "term": "figuracoes",
-      "pagerank": 0.008303010043058057
+      "pagerank": 0.008300445033008716
     },
     {
       "term": "capes",
-      "pagerank": 0.00822285178645803
+      "pagerank": 0.008218143446896461
     },
     {
       "term": "partir",
-      "pagerank": 0.008041223206253095
+      "pagerank": 0.008037951423135565
     }
   ],
   "top_terms_betweenness": [
     {
       "term": "latour",
-      "betweenness": 0.32932647040361557
+      "betweenness": 0.3293892411022534
     },
     {
       "term": "inteligencia",
-      "betweenness": 0.21458163329357854
+      "betweenness": 0.21602535936224967
     },
     {
       "term": "artificial",
-      "betweenness": 0.20871257297093715
+      "betweenness": 0.20990521624505679
     },
     {
       "term": "ciencia",
-      "betweenness": 0.1438704412780114
+      "betweenness": 0.14374489988073566
     },
     {
       "term": "militar",
-      "betweenness": 0.14339966103822735
+      "betweenness": 0.1434624317368652
     },
     {
       "term": "vocabulario",
-      "betweenness": 0.1387232439897056
+      "betweenness": 0.13878601468834348
     },
     {
       "term": "rotulo",
-      "betweenness": 0.094030506559538
+      "betweenness": 0.09409327725817587
     },
     {
       "term": "capes",
-      "betweenness": 0.08392442407883999
+      "betweenness": 0.08273178080472035
     },
     {
       "term": "rede",
@@ -306,12 +306,12 @@
       "betweenness": 0.05442219571903835
     },
     {
-      "term": "humano",
-      "betweenness": 0.05335509384219446
-    },
-    {
       "term": "figuracoes",
       "betweenness": 0.053292323143556586
+    },
+    {
+      "term": "humano",
+      "betweenness": 0.052225221266712696
     },
     {
       "term": "aime",
@@ -396,12 +396,6 @@
       "shift": 7
     },
     {
-      "term": "cientifico",
-      "degree_rank": 111,
-      "pagerank_rank": 104,
-      "shift": 7
-    },
-    {
       "term": "conhecimento",
       "degree_rank": 37,
       "pagerank_rank": 31,
@@ -411,6 +405,12 @@
       "term": "cadeia",
       "degree_rank": 89,
       "pagerank_rank": 83,
+      "shift": 6
+    },
+    {
+      "term": "cientifico",
+      "degree_rank": 111,
+      "pagerank_rank": 105,
       "shift": 6
     },
     {
@@ -430,151 +430,151 @@
     {
       "a": "laboratory",
       "b": "life",
-      "npmi": 0.8713012336788969,
+      "npmi": 0.8712995914176649,
       "cooccurrence_weight": 106
     },
     {
       "a": "hope",
       "b": "pandora",
-      "npmi": 0.8689216026265539,
+      "npmi": 0.8689198919671504,
       "cooccurrence_weight": 120
     },
     {
       "a": "inteligencia",
       "b": "artificial",
-      "npmi": 0.827676387576581,
+      "npmi": 0.8276729300182485,
       "cooccurrence_weight": 819
     },
     {
       "a": "press",
       "b": "university",
-      "npmi": 0.8179442692940917,
+      "npmi": 0.8179421388235031,
       "cooccurrence_weight": 64
     },
     {
       "a": "taxa",
       "b": "interna",
-      "npmi": 0.802953496088668,
+      "npmi": 0.8029512528331342,
       "cooccurrence_weight": 54
     },
     {
       "a": "action",
       "b": "science",
-      "npmi": 0.7891220360912603,
+      "npmi": 0.7891191031054611,
       "cooccurrence_weight": 168
     },
     {
       "a": "crawford",
       "b": "joler",
-      "npmi": 0.7396768283723214,
+      "npmi": 0.7396739897534663,
       "cooccurrence_weight": 41
     },
     {
       "a": "quadro",
       "b": "conclusao",
-      "npmi": 0.7275904522129417,
+      "npmi": 0.7275872809432218,
       "cooccurrence_weight": 62
     },
     {
       "a": "mediacao",
       "b": "tecnica",
-      "npmi": 0.7111317964238005,
+      "npmi": 0.7111281746396743,
       "cooccurrence_weight": 96
     },
     {
       "a": "maquina",
       "b": "aprendizado",
-      "npmi": 0.7100245896964402,
+      "npmi": 0.7100208647353413,
       "cooccurrence_weight": 126
     },
     {
       "a": "teoria",
       "b": "ator",
-      "npmi": 0.7070491139927928,
+      "npmi": 0.7070451226792727,
       "cooccurrence_weight": 152
     },
     {
       "a": "textil",
       "b": "topologico",
-      "npmi": 0.6498273200301985,
+      "npmi": 0.6498234331759637,
       "cooccurrence_weight": 46
     },
     {
       "a": "refinada",
       "b": "contagem",
-      "npmi": 0.6439903617203223,
+      "npmi": 0.6439864511917704,
       "cooccurrence_weight": 46
     },
     {
       "a": "lexicometrica",
       "b": "analise",
-      "npmi": 0.6259642788802987,
+      "npmi": 0.6259596153518722,
       "cooccurrence_weight": 95
     },
     {
       "a": "modelo",
       "b": "linguagem",
-      "npmi": 0.5967837964937353,
+      "npmi": 0.5967790901190652,
       "cooccurrence_weight": 63
     },
     {
       "a": "ator",
       "b": "rede",
-      "npmi": 0.5919120291848555,
+      "npmi": 0.591906469184483,
       "cooccurrence_weight": 154
     },
     {
       "a": "recalling",
       "b": "clarifications",
-      "npmi": 0.5712253112467106,
+      "npmi": 0.5712209169278641,
       "cooccurrence_weight": 27
     },
     {
       "a": "traducao",
       "b": "brasileira",
-      "npmi": 0.5628017507645318,
+      "npmi": 0.5627972701164045,
       "cooccurrence_weight": 27
     },
     {
       "a": "action",
       "b": "pandora",
-      "npmi": 0.5587575616896934,
+      "npmi": 0.5587525685416969,
       "cooccurrence_weight": 52
     },
     {
       "a": "industria",
       "b": "militar",
-      "npmi": 0.5519269994648668,
+      "npmi": 0.5519214663750304,
       "cooccurrence_weight": 89
     },
     {
       "a": "publico",
       "b": "repositorio",
-      "npmi": 0.5300395816115171,
-      "cooccurrence_weight": 33
+      "npmi": 0.5457347872751483,
+      "cooccurrence_weight": 36
     },
     {
       "a": "stengers",
       "b": "haraway",
-      "npmi": 0.5270249158228123,
+      "npmi": 0.5270200181370605,
       "cooccurrence_weight": 29
     },
     {
       "a": "vocabulario",
       "b": "topologico",
-      "npmi": 0.5218860272955184,
+      "npmi": 0.5218805842564704,
       "cooccurrence_weight": 58
     },
     {
       "a": "lexical",
       "b": "catalogo",
-      "npmi": 0.5176197408288639,
+      "npmi": 0.5176145622671046,
       "cooccurrence_weight": 43
     },
     {
       "a": "ciencia",
       "b": "humano",
-      "npmi": 0.5171501640259083,
+      "npmi": 0.5171433943489877,
       "cooccurrence_weight": 177
     }
   ],
@@ -876,7 +876,7 @@
     {
       "topic_a": 3,
       "topic_b": 4,
-      "edge_density": 0.20463320463320464
+      "edge_density": 0.22007722007722008
     },
     {
       "topic_a": 0,
@@ -901,7 +901,7 @@
     {
       "topic_a": 2,
       "topic_b": 3,
-      "edge_density": 0.7338877338877339
+      "edge_density": 0.7352737352737353
     },
     {
       "topic_a": 0,
@@ -921,7 +921,7 @@
     {
       "topic_a": 2,
       "topic_b": 4,
-      "edge_density": 2.1355311355311355
+      "edge_density": 2.139194139194139
     }
   ]
 }

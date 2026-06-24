@@ -10,9 +10,9 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **28,094**
-- Grafo bruto: **7051** nós · **66189** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3602** arestas
+- Tokens significativos: **28,092**
+- Grafo bruto: **7051** nós · **66180** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3604** arestas
 - Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
@@ -26,7 +26,7 @@
 | 6 | `rotulo` | 872 |
 | 7 | `rede` | 819 |
 | 8 | `analise` | 773 |
-| 9 | `vocabulario` | 759 |
+| 9 | `vocabulario` | 760 |
 | 10 | `humano` | 687 |
 | 11 | `campo` | 662 |
 | 12 | `figuracao` | 616 |
@@ -57,8 +57,8 @@ termos frequentes mas perifericamente conectados descem.
 | # | termo | PageRank |
 |---|-------|----------|
 | 1 | `artificial` | 0.0319 |
-| 2 | `inteligencia` | 0.0319 |
-| 3 | `latour` | 0.0215 |
+| 2 | `inteligencia` | 0.0318 |
+| 3 | `latour` | 0.0214 |
 | 4 | `militar` | 0.0193 |
 | 5 | `ciencia` | 0.0186 |
 | 6 | `rede` | 0.0155 |
@@ -103,30 +103,30 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 8 | `brasileira` | 84 | 76 | +8 |
 | 9 | `brasil` | 118 | 110 | +8 |
 | 10 | `modelo` | 59 | 52 | +7 |
-| 11 | `cientifico` | 111 | 104 | +7 |
-| 12 | `conhecimento` | 37 | 31 | +6 |
-| 13 | `cadeia` | 89 | 83 | +6 |
+| 11 | `conhecimento` | 37 | 31 | +6 |
+| 12 | `cadeia` | 89 | 83 | +6 |
+| 13 | `cientifico` | 111 | 105 | +6 |
 | 14 | `collins` | 130 | 124 | +6 |
 | 15 | `investigacao` | 141 | 135 | +6 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `latour` | 0.3293 |
-| 2 | `inteligencia` | 0.2146 |
-| 3 | `artificial` | 0.2087 |
-| 4 | `ciencia` | 0.1439 |
-| 5 | `militar` | 0.1434 |
-| 6 | `vocabulario` | 0.1387 |
-| 7 | `rotulo` | 0.0940 |
-| 8 | `capes` | 0.0839 |
+| 1 | `latour` | 0.3294 |
+| 2 | `inteligencia` | 0.2160 |
+| 3 | `artificial` | 0.2099 |
+| 4 | `ciencia` | 0.1437 |
+| 5 | `militar` | 0.1435 |
+| 6 | `vocabulario` | 0.1388 |
+| 7 | `rotulo` | 0.0941 |
+| 8 | `capes` | 0.0827 |
 | 9 | `rede` | 0.0803 |
 | 10 | `catalogo` | 0.0712 |
 | 11 | `conceito` | 0.0692 |
 | 12 | `analise` | 0.0602 |
 | 13 | `teoria` | 0.0544 |
-| 14 | `humano` | 0.0534 |
-| 15 | `figuracoes` | 0.0533 |
+| 14 | `figuracoes` | 0.0533 |
+| 15 | `humano` | 0.0522 |
 | 16 | `aime` | 0.0480 |
 | 17 | `campo` | 0.0458 |
 | 18 | `descreve` | 0.0446 |
@@ -161,7 +161,7 @@ vezes.
 | 18 | `traducao` | `brasileira` | 0.563 | 27 |
 | 19 | `action` | `pandora` | 0.559 | 52 |
 | 20 | `industria` | `militar` | 0.552 | 89 |
-| 21 | `publico` | `repositorio` | 0.530 | 33 |
+| 21 | `publico` | `repositorio` | 0.546 | 36 |
 | 22 | `stengers` | `haraway` | 0.527 | 29 |
 | 23 | `vocabulario` | `topologico` | 0.522 | 58 |
 | 24 | `lexical` | `catalogo` | 0.518 | 43 |
@@ -181,12 +181,12 @@ vezes.
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 4** [obras, dado, capes] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.2046
+- Lacuna entre **Tópico 4** [obras, dado, capes] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.2201
 - Lacuna entre **Tópico 1** [artificial, inteligencia, ciencia] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.2952
 - Lacuna entre **Tópico 1** [artificial, inteligencia, ciencia] e **Tópico 3** [militar, rotulo, vocabulario] — densidade ponderada de ligação = 0.4803
 - Lacuna entre **Tópico 2** [latour, rede, analise] e **Tópico 4** [obras, dado, capes] — densidade ponderada de ligação = 0.5839
 - Lacuna entre **Tópico 2** [latour, rede, analise] e **Tópico 5** [science, action, pandora] — densidade ponderada de ligação = 0.6512
-- Lacuna entre **Tópico 3** [militar, rotulo, vocabulario] e **Tópico 4** [obras, dado, capes] — densidade ponderada de ligação = 0.7339
+- Lacuna entre **Tópico 3** [militar, rotulo, vocabulario] e **Tópico 4** [obras, dado, capes] — densidade ponderada de ligação = 0.7353
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O capítulo trama três vocabulários. O primeiro é
