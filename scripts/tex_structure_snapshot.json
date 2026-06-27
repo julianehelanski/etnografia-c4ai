@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-27 19:56 UTC",
+  "generated": "2026-06-27 20:30 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -153,13 +153,6 @@
         "HIS-77-186-g003.jpg",
         "HIS-77-186-g004.jpg",
         "Screenshot_20260521_155105_My Files.jpg",
-        "Spira_comparacao_linear_log.png",
-        "Spira_espectrograma_com_eixos.png",
-        "Spira_espectrograma_sem_legenda.png",
-        "Spira_paciente_com_eixos.png",
-        "Spira_paciente_sem_legenda.png",
-        "Spira_waveform_controle.png",
-        "Spira_waveform_paciente.png",
         "cadeia-translacao-condensada-capitulo4.png",
         "infranodus_cap4_focus.png",
         "infranodus_cap4_focus_pmi.png",
@@ -179,6 +172,13 @@
         "novel-coronavirus-sars-cov-2_49641177636_o.jpg",
         "novel-coronavirus-sars-cov-2_49641177821_o.jpg",
         "novel-coronavirus-sars-cov-2_49645120251_o.jpg",
+        "spira_comparacao_linear_log.png",
+        "spira_espectrograma_com_eixos.png",
+        "spira_espectrograma_sem_legenda.png",
+        "spira_paciente_com_eixos.png",
+        "spira_paciente_sem_legenda.png",
+        "spira_waveform_controle.png",
+        "spira_waveform_paciente.png",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
         "trajectory_semantic.png"
