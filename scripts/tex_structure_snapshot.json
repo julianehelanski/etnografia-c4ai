@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-27 09:08 UTC",
+  "generated": "2026-06-27 14:30 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -16,7 +16,7 @@
         "Hinterland e otherness",
         "Do princípio de simetria às existências parciais",
         "Quase-máquinas e agência distribuída",
-        "Multiplicidades ontológicas e a especificidade de Claude",
+        "Multiplicidades ontológicas e a especificidade de claude",
         "Alienação técnica e letramento interdisciplinar",
         "Por que fazer parentesco com este problema?",
         "Instrumentos de inscrição e o fazer-com IA",
@@ -28,9 +28,6 @@
         "Compostando a política: ciência como captação de recursos"
       ],
       "figures": [
-        "1000015590.pdf",
-        "1000015599.pdf",
-        "1000015602.pdf",
         "caderno_quadro.jpg",
         "infranodus_cap1_focus.png",
         "infranodus_cap1_focus_pmi.png",
@@ -120,7 +117,7 @@
         "9_analise_concentracao.png",
         "cadeia-translacao-ibm-capitulo3.png",
         "caderno_rodrigues_aula1.pdf",
-        "desenho_patente_hollerith.jpg",
+        "hollerith_1890_product_sheet.png",
         "infranodus_cap3_focus.png",
         "infranodus_cap3_focus_pmi.png",
         "infranodus_cap3_network.png",
@@ -162,6 +159,7 @@
         "Spira_paciente_sem_legenda.png",
         "Spira_waveform_controle.png",
         "Spira_waveform_paciente.png",
+        "cadeia-translacao-condensada-capitulo4.png",
         "infranodus_cap4_focus.png",
         "infranodus_cap4_focus_pmi.png",
         "infranodus_cap4_network.png",
@@ -169,7 +167,6 @@
         "mapa",
         "mapa-analitico-capitulo4.png",
         "mapa-argumento-capitulo4.png",
-        "mapa-cadeia-translacao-capitulo4.png",
         "mapa-linha-tempo-capitulo4.png",
         "novel-coronavirus-sars-cov-2_49531042907_o.jpg",
         "novel-coronavirus-sars-cov-2_49534865371_o.jpg",
@@ -183,8 +180,7 @@
         "novel-coronavirus-sars-cov-2_49645120251_o.jpg",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
-        "trajectory_semantic.png",
-        "younesi2024_fig8_cnn1d.png"
+        "trajectory_semantic.png"
       ]
     }
   }
