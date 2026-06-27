@@ -1,23 +1,17 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-06-27 14:30 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-06-27 14:36 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
 
-## Mudanças desde a última sincronização
+## Sem divergências
 
-Atualize os nós/sumário/figuras correspondentes no `index.html` (PT **e** EN).
+A estrutura da tese não mudou desde a última sincronização. Nada a fazer.
 
 ### cap1
 
-**Subseções**
-- ✏️ renomeada (provável): `Multiplicidades ontológicas e a especificidade de Claude` → `Multiplicidades ontológicas e a especificidade de claude`
-
-**Figuras**
-- ➖ removida: `1000015590.pdf`
-- ➖ removida: `1000015599.pdf`
-- ➖ removida: `1000015602.pdf`
+_Sem mudanças estruturais._
 
 ### cap2
 
@@ -25,12 +19,8 @@ _Sem mudanças estruturais._
 
 ### cap3
 
-**Figuras**
-- ✏️ renomeada (provável): `desenho_patente_hollerith.jpg` → `hollerith_1890_product_sheet.png`
+_Sem mudanças estruturais._
 
 ### cap4
 
-**Figuras**
-- ➕ adicionada: `cadeia-translacao-condensada-capitulo4.png`
-- ➖ removida: `mapa-cadeia-translacao-capitulo4.png`
-- ➖ removida: `younesi2024_fig8_cnn1d.png`
+_Sem mudanças estruturais._
