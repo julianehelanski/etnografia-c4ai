@@ -37,8 +37,11 @@ from networkx.algorithms.community import louvain_communities
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
 from estilo_rede import (  # noqa: E402
-    COR_ARESTA, COR_BORDA_NO, COR_TEXTO, paleta_rgba, pct_ptbr,
+    COR_ARESTA, COR_BORDA_NO, COR_TEXTO, aplicar_fonte, nota_rodape,
+    paleta_rgba, pct_ptbr,
 )
+
+aplicar_fonte()  # fonte sans-serif única em todas as figuras de rede
 
 THIS_DIR = Path(__file__).resolve().parent
 # CLI default points at the sister thesis (.tex) repo checked out under _tex/.
@@ -595,9 +598,9 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
     top_label_nodes = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(G, pos, labels=labels, font_size=9,
-                            font_color=COR_TEXTO, font_weight="bold", ax=ax)
+                            font_color=COR_TEXTO, ax=ax)
 
-    ax.set_title(title, color=COR_TEXTO, fontsize=16, pad=14)
+    nota_rodape(ax, title)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
@@ -719,10 +722,10 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
     top_label_nodes = sorted(pr_local.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(H, pos, labels=labels, font_size=9,
-                            font_color=COR_TEXTO, font_weight="bold", ax=ax)
+                            font_color=COR_TEXTO, ax=ax)
 
-    subtitle = f"\n(tamanho = PageRank · arestas com NPMI ≥ {pct_ptbr(npmi_threshold, 2)})"
-    ax.set_title(title + subtitle, color=COR_TEXTO, fontsize=15, pad=14)
+    nota = f"{title} · tamanho = PageRank · arestas com NPMI ≥ {pct_ptbr(npmi_threshold, 2)}"
+    nota_rodape(ax, nota)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())

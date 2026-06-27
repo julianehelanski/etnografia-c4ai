@@ -34,10 +34,35 @@ COR_INICIO = "#009E73"   # verde: início da leitura
 COR_FIM = "#D55E00"      # vermelho: fim da leitura
 
 # Tons neutros do desenho (fundo, arestas, borda da bolinha, texto).
+# Texto em cinza escuro suave (nada de preto puro), sem negrito; nota em
+# cinza médio itálico. Sem título embutido (a legenda do LaTeX titula).
 COR_FUNDO = "#ffffff"
 COR_ARESTA = "#9aa3ad"
 COR_BORDA_NO = "#ffffff"  # borda branca da bolinha (identidade visual)
-COR_TEXTO = "#0e1116"
+COR_TEXTO = "#404040"
+COR_NOTA = "#8a8a8a"
+FONTE = "DejaVu Sans"
+
+
+def aplicar_fonte() -> None:
+    """Fonte sans-serif única em todas as figuras de rede/trajetória."""
+    import matplotlib.pyplot as plt
+    plt.rcParams["font.family"] = FONTE
+
+
+def cor_texto_sobre(fundo) -> str:
+    """Branco sobre fundo escuro, cinza escuro sobre fundo claro (contraste
+    legível sem negrito, para rótulos dentro de blocos coloridos)."""
+    from matplotlib.colors import to_rgb
+    r, g, b = to_rgb(fundo)
+    lum = 0.299 * r + 0.587 * g + 0.114 * b
+    return "#ffffff" if lum < 0.55 else "#404040"
+
+
+def nota_rodape(ax, texto: str) -> None:
+    """Nota curta em itálico cinza no rodapé (substitui o título embutido)."""
+    ax.text(0, -0.02, texto, transform=ax.transAxes, fontsize=9,
+            style="italic", color=COR_NOTA, va="top")
 
 
 def cores_categoricas(n: int) -> list[str]:

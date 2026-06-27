@@ -49,8 +49,8 @@ from infranodus_cap1 import (  # noqa: E402
     strip_latex,
 )
 from estilo_rede import (  # noqa: E402
-    COR_BORDA_NO, COR_FIM, COR_INICIO, COR_TEXTO, cores_categoricas,
-    num_ptbr, pct_ptbr,
+    COR_BORDA_NO, COR_FIM, COR_INICIO, COR_NOTA, COR_TEXTO, cor_texto_sobre,
+    cores_categoricas, nota_rodape, num_ptbr, pct_ptbr,
 )
 
 
@@ -120,14 +120,14 @@ def render_gantt(paras: list[str], para_tokens: list[list[str]],
                 va="center", ha="right", fontsize=8, color="#6b7280")
 
     ax.set_yticks([])
-    ax.set_xlabel("parágrafo (ordem de leitura) →", fontsize=11, color="#0e1116")
+    ax.set_xlabel("parágrafo (ordem de leitura) →", fontsize=11, color=COR_TEXTO)
     ax.set_xlim(-3, n_paras + 8)
     ax.set_ylim(-1, len(concepts_sorted))
     ax.invert_yaxis()
-    ax.set_title(
-        f"{title} · Gantt lexical: entrada, persistência e saída dos conceitos\n"
-        "(barra = ‘vida’ do conceito · pontos = ocorrências · ordenado por entrada)",
-        fontsize=13, color="#0e1116", pad=12,
+    nota_rodape(
+        ax,
+        "Gantt lexical: barra = ‘vida’ do conceito · pontos = ocorrências · "
+        "ordenado por entrada",
     )
     ax.grid(axis="x", alpha=0.2)
     for spine in ("top", "right", "left"):
@@ -174,7 +174,7 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
                 facecolor=color[c], edgecolor=COR_BORDA_NO, linewidth=1.0,
             ))
             ax.text(col_x[k], (y_top + y_bot) / 2, c, ha="center", va="center",
-                    fontsize=9.5, color="#0e1116", fontweight="bold")
+                    fontsize=9.5, color=cor_texto_sobre(color[c]))
 
     # Persistence ribbons between adjacent segments
     for k in range(K - 1):
@@ -215,17 +215,16 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
     # Segment labels
     for k, (s, e) in enumerate(bounds):
         ax.text(col_x[k], 1.2, f"Seg. {k+1}\n¶{s+1}–{e}",
-                ha="center", va="bottom", fontsize=10, color="#374151",
-                fontweight="bold")
+                ha="center", va="bottom", fontsize=10, color="#5a5a5a")
 
     ax.set_xlim(col_x[0] - 1.6, col_x[-1] + 1.6)
     y_min = -top_per_seg * (box_h + gap) - 0.4
     ax.set_ylim(y_min, 2.5)
     ax.axis("off")
-    ax.set_title(
-        f"{title} · fluxo de tópicos por segmento (top-{top_per_seg} em {K} segmentos sequenciais)\n"
-        "blocos = peso local · faixas = persistência · ▶ = primeira aparição na cadeia",
-        fontsize=13, color="#0e1116", pad=14,
+    nota_rodape(
+        ax,
+        f"fluxo de tópicos por segmento (top-{top_per_seg} em {K} segmentos) · "
+        "blocos = peso local · faixas = persistência · ▶ = primeira aparição",
     )
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor="#ffffff")
@@ -330,7 +329,7 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
         labels.append(f"¶{s+1}–{e} · {top_term}")
 
     texts = [ax.text(coords[i, 0], coords[i, 1], lab,
-                     fontsize=9, color="#0e1116", fontweight="bold",
+                     fontsize=9, color=COR_TEXTO,
                      ha="center", va="center", zorder=5,
                      bbox=dict(boxstyle="round,pad=0.25", facecolor="white",
                                edgecolor="#cbd5e1", linewidth=0.6, alpha=0.95))
@@ -364,10 +363,10 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
 
     ax.set_xlabel(f"PC1 ({pct_ptbr(var1)}% da variância)", fontsize=11, color=COR_TEXTO)
     ax.set_ylabel(f"PC2 ({pct_ptbr(var2)}% da variância)", fontsize=11, color=COR_TEXTO)
-    ax.set_title(
-        f"{title} · trajetória semântica em {n} momentos (grupos de {group_size} parágrafos)\n"
-        f"(embeddings: {method} · projeção PCA 2D · cor = ordem de leitura)",
-        fontsize=12, color="#0e1116", pad=12,
+    nota_rodape(
+        ax,
+        f"trajetória semântica em {n} momentos (grupos de {group_size} parágrafos) · "
+        f"embeddings {method} · projeção PCA 2D · cor = ordem de leitura",
     )
     ax.legend(loc="best", frameon=True, framealpha=0.9)
     ax.grid(alpha=0.2)
