@@ -34,6 +34,12 @@ import networkx as nx
 import numpy as np
 from networkx.algorithms.community import louvain_communities
 
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from estilo_rede import (  # noqa: E402
+    COR_ARESTA, COR_BORDA_NO, COR_TEXTO, paleta_rgba, pct_ptbr,
+)
+
 THIS_DIR = Path(__file__).resolve().parent
 # CLI default points at the sister thesis (.tex) repo checked out under _tex/.
 # Running these scripts directly (without --chapter) assumes you have
@@ -567,7 +573,7 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
     for i, c in enumerate(comms):
         for n in c:
             node2comm[n] = i
-    palette = plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1)))
+    palette = paleta_rgba(len(comms))
     node_colors = [palette[node2comm.get(n, 0) % len(palette)] for n in G.nodes()]
     max_deg = max(deg.values()) or 1
     node_sizes = [80 + 700 * (deg[n] / max_deg) for n in G.nodes()]
@@ -582,16 +588,16 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         ew = 0.15 + 1.6 * (weights / weights.max())
     else:
         ew = []
-    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.35, width=ew, edge_color="#5a6470")
+    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.35, width=ew, edge_color=COR_ARESTA)
     nx.draw_networkx_nodes(G, pos, ax=ax, node_color=node_colors,
-                           node_size=node_sizes, linewidths=0.4, edgecolors="#1a1d22")
+                           node_size=node_sizes, linewidths=0.8, edgecolors=COR_BORDA_NO)
 
     top_label_nodes = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(G, pos, labels=labels, font_size=9,
-                            font_color="#0e1116", font_weight="bold", ax=ax)
+                            font_color=COR_TEXTO, font_weight="bold", ax=ax)
 
-    ax.set_title(title, color="#0e1116", fontsize=16, pad=14)
+    ax.set_title(title, color=COR_TEXTO, fontsize=16, pad=14)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
@@ -617,7 +623,7 @@ def export_for_gephi(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         for n in c:
             node2comm[n] = i
 
-    palette = (plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1))) * 255).astype(int)
+    palette = (paleta_rgba(len(comms)) * 255).astype(int)
     max_deg = max(deg.values()) or 1
     pr = pr or {}
 
@@ -689,7 +695,7 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
     for i, c in enumerate(comms):
         for n in c:
             node2comm[n] = i
-    palette = plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1)))
+    palette = paleta_rgba(len(comms))
     node_colors = [palette[node2comm.get(n, 0) % len(palette)] for n in H.nodes()]
 
     pr_local = {n: pr.get(n, 0.0) for n in H.nodes()}
@@ -706,17 +712,17 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
         ew = 0.3 + 1.6 * npmis_n
     else:
         ew = []
-    nx.draw_networkx_edges(H, pos, ax=ax, alpha=0.45, width=ew, edge_color="#5a6470")
+    nx.draw_networkx_edges(H, pos, ax=ax, alpha=0.45, width=ew, edge_color=COR_ARESTA)
     nx.draw_networkx_nodes(H, pos, ax=ax, node_color=node_colors,
-                           node_size=node_sizes, linewidths=0.4, edgecolors="#1a1d22")
+                           node_size=node_sizes, linewidths=0.8, edgecolors=COR_BORDA_NO)
 
     top_label_nodes = sorted(pr_local.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(H, pos, labels=labels, font_size=9,
-                            font_color="#0e1116", font_weight="bold", ax=ax)
+                            font_color=COR_TEXTO, font_weight="bold", ax=ax)
 
-    subtitle = f"\n(tamanho = PageRank · arestas com NPMI ≥ {npmi_threshold:.2f})"
-    ax.set_title(title + subtitle, color="#0e1116", fontsize=15, pad=14)
+    subtitle = f"\n(tamanho = PageRank · arestas com NPMI ≥ {pct_ptbr(npmi_threshold, 2)})"
+    ax.set_title(title + subtitle, color=COR_TEXTO, fontsize=15, pad=14)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())

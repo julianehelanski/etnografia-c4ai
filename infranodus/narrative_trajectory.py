@@ -48,6 +48,10 @@ from infranodus_cap1 import (  # noqa: E402
     normalize_token,
     strip_latex,
 )
+from estilo_rede import (  # noqa: E402
+    COR_BORDA_NO, COR_FIM, COR_INICIO, COR_TEXTO, cores_categoricas,
+    num_ptbr, pct_ptbr,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -102,16 +106,16 @@ def render_gantt(paras: list[str], para_tokens: list[list[str]],
     fig.patch.set_facecolor("#ffffff")
     ax.set_facecolor("#ffffff")
 
-    palette = plt.cm.tab20(np.linspace(0, 1, max(len(concepts_sorted), 1)))
+    palette = cores_categoricas(len(concepts_sorted))
     n_paras = len(paras)
 
     for i, (c, d) in enumerate(concepts_sorted):
         col = palette[i]
-        ax.hlines(y=i, xmin=d["first"], xmax=d["last"], colors=col, linewidth=5, alpha=0.45)
-        ax.scatter(d["all"], [i] * len(d["all"]), color=col, s=22,
-                   edgecolor="#1a1d22", linewidth=0.4, zorder=3)
-        ax.text(d["last"] + 0.6, i, f"  {c}  ({d['count']}×)",
-                va="center", fontsize=9, color="#0e1116")
+        ax.hlines(y=i, xmin=d["first"], xmax=d["last"], colors=col, linewidth=5, alpha=0.40)
+        ax.scatter(d["all"], [i] * len(d["all"]), color=col, s=34,
+                   edgecolor=COR_BORDA_NO, linewidth=0.8, zorder=3)
+        ax.text(d["last"] + 0.6, i, f"  {c}  ({num_ptbr(d['count'])}×)",
+                va="center", fontsize=9, color=COR_TEXTO)
         ax.text(d["first"] - 0.6, i, f"¶{d['first']+1}",
                 va="center", ha="right", fontsize=8, color="#6b7280")
 
@@ -149,7 +153,7 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
     seg_top = [[w for w, _ in c.most_common(top_per_seg)] for c in seg_counts]
 
     universe = sorted({c for s in seg_top for c in s})
-    cmap = plt.cm.tab20(np.linspace(0, 1, max(len(universe), 1)))
+    cmap = cores_categoricas(len(universe))
     color = {c: cmap[i] for i, c in enumerate(universe)}
 
     fig, ax = plt.subplots(figsize=(20, 10))
@@ -167,7 +171,7 @@ def render_alluvial(paras: list[str], para_tokens: list[list[str]],
             boxes[(k, c)] = (col_x[k], y_top, y_bot)
             ax.add_patch(plt.Rectangle(
                 (col_x[k] - box_w / 2, y_bot), box_w, box_h,
-                facecolor=color[c], edgecolor="#1a1d22", linewidth=0.7,
+                facecolor=color[c], edgecolor=COR_BORDA_NO, linewidth=1.0,
             ))
             ax.text(col_x[k], (y_top + y_bot) / 2, c, ha="center", va="center",
                     fontsize=9.5, color="#0e1116", fontweight="bold")
@@ -312,9 +316,9 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
                                      alpha=0.7, lw=1.6,
                                      mutation_scale=14))
 
-    # Points
-    ax.scatter(coords[:, 0], coords[:, 1], s=140, c=colors,
-                edgecolor="#1a1d22", linewidth=0.6, zorder=3)
+    # Points (bolinha com borda branca, identidade visual da tese)
+    ax.scatter(coords[:, 0], coords[:, 1], s=160, c=colors,
+                edgecolor=COR_BORDA_NO, linewidth=1.2, zorder=3)
 
     # Label every moment with its dominant term, de-colliding the labels so
     # they stay legible even when moments cluster in the same region of the
@@ -351,15 +355,15 @@ def render_semantic_trajectory(paras: list[str], para_tokens: list[list[str]],
                             coords[i, 1] + 0.03 * span_y * math.sin(ang)))
 
     # Start / end markers
-    ax.scatter(*coords[0], s=460, marker="*", color="#10b981",
-                edgecolor="#0e1116", linewidth=1.5, zorder=4,
+    ax.scatter(*coords[0], s=460, marker="*", color=COR_INICIO,
+                edgecolor="#ffffff", linewidth=1.5, zorder=4,
                 label=f"início · ¶1–{moments_bounds[0][1]}")
-    ax.scatter(*coords[-1], s=320, marker="X", color="#ef4444",
-                edgecolor="#0e1116", linewidth=1.5, zorder=4,
+    ax.scatter(*coords[-1], s=320, marker="X", color=COR_FIM,
+                edgecolor="#ffffff", linewidth=1.5, zorder=4,
                 label=f"fim · ¶{moments_bounds[-1][0]+1}–{moments_bounds[-1][1]}")
 
-    ax.set_xlabel(f"PC1 ({var1:.1f}% da variância)", fontsize=11, color="#0e1116")
-    ax.set_ylabel(f"PC2 ({var2:.1f}% da variância)", fontsize=11, color="#0e1116")
+    ax.set_xlabel(f"PC1 ({pct_ptbr(var1)}% da variância)", fontsize=11, color=COR_TEXTO)
+    ax.set_ylabel(f"PC2 ({pct_ptbr(var2)}% da variância)", fontsize=11, color=COR_TEXTO)
     ax.set_title(
         f"{title} · trajetória semântica em {n} momentos (grupos de {group_size} parágrafos)\n"
         f"(embeddings: {method} · projeção PCA 2D · cor = ordem de leitura)",
