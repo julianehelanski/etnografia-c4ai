@@ -16,7 +16,7 @@
     </attributes>
     <nodes>
       <node id="digital" label="digital">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="14.071713147410359" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -27,7 +27,7 @@
         </attvalues>
       </node>
       <node id="efeito" label="efeito">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="13.928286852589641" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -38,7 +38,7 @@
         </attvalues>
       </node>
       <node id="seguir" label="seguir">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="14.406374501992032" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -49,7 +49,7 @@
         </attvalues>
       </node>
       <node id="cientifico" label="cientifico">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="12.49402390438247" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -60,7 +60,7 @@
         </attvalues>
       </node>
       <node id="corte" label="corte">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="28.318725099601593" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -71,7 +71,7 @@
         </attvalues>
       </node>
       <node id="recursos" label="recursos">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="11.96812749003984" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -82,7 +82,7 @@
         </attvalues>
       </node>
       <node id="teoria" label="teoria">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="21.195219123505975" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -93,7 +93,7 @@
         </attvalues>
       </node>
       <node id="registro" label="registro">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="15.936254980079681" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -104,7 +104,7 @@
         </attvalues>
       </node>
       <node id="diagrama" label="diagrama">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="14.262948207171315" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -115,7 +115,7 @@
         </attvalues>
       </node>
       <node id="kofes" label="kofes">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.310756972111555" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -126,7 +126,7 @@
         </attvalues>
       </node>
       <node id="cadeia" label="cadeia">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="12.97211155378486" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -137,7 +137,7 @@
         </attvalues>
       </node>
       <node id="mundo" label="mundo">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="15.02788844621514" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -148,7 +148,7 @@
         </attvalues>
       </node>
       <node id="modelo" label="modelo">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="25.54581673306773" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -159,7 +159,7 @@
         </attvalues>
       </node>
       <node id="parcial" label="parcial">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="19.7609561752988" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -170,7 +170,7 @@
         </attvalues>
       </node>
       <node id="otherness" label="otherness">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="16.844621513944226" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -181,7 +181,7 @@
         </attvalues>
       </node>
       <node id="publico" label="publico">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="12.063745019920319" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -192,7 +192,7 @@
         </attvalues>
       </node>
       <node id="composicao" label="composicao">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.01593625498008" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -203,7 +203,7 @@
         </attvalues>
       </node>
       <node id="subsecao" label="subsecao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.45019920318725" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -214,7 +214,7 @@
         </attvalues>
       </node>
       <node id="instituicao" label="instituicao">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="14.215139442231077" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -225,7 +225,7 @@
         </attvalues>
       </node>
       <node id="estudos" label="estudos">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="14.50199203187251" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -236,7 +236,7 @@
         </attvalues>
       </node>
       <node id="inteligencia" label="inteligencia">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="40.65338645418327" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -247,7 +247,7 @@
         </attvalues>
       </node>
       <node id="associacao" label="associacao">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="14.932270916334662" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -258,7 +258,7 @@
         </attvalues>
       </node>
       <node id="experiencia" label="experiencia">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.49800796812749" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -269,7 +269,7 @@
         </attvalues>
       </node>
       <node id="gesto" label="gesto">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="22.86852589641434" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -280,7 +280,7 @@
         </attvalues>
       </node>
       <node id="heterogeneos" label="heterogeneos">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="13.737051792828685" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -291,7 +291,7 @@
         </attvalues>
       </node>
       <node id="maior" label="maior">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="12.159362549800797" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -302,7 +302,7 @@
         </attvalues>
       </node>
       <node id="conexao" label="conexao">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="15.649402390438247" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -313,7 +313,7 @@
         </attvalues>
       </node>
       <node id="strathern" label="strathern">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="25.35458167330677" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -324,7 +324,7 @@
         </attvalues>
       </node>
       <node id="sustenta" label="sustenta">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="17.035856573705182" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -335,7 +335,7 @@
         </attvalues>
       </node>
       <node id="modos" label="modos">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="15.649402390438247" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -346,7 +346,7 @@
         </attvalues>
       </node>
       <node id="notas" label="notas">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="11.49003984063745" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -357,7 +357,7 @@
         </attvalues>
       </node>
       <node id="descrever" label="descrever">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="14.167330677290837" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -368,7 +368,7 @@
         </attvalues>
       </node>
       <node id="ciencia" label="ciencia">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="36.30278884462152" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -379,7 +379,7 @@
         </attvalues>
       </node>
       <node id="inscricao" label="inscricao">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="24.302788844621514" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -390,7 +390,7 @@
         </attvalues>
       </node>
       <node id="generativa" label="generativa">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="17.800796812749006" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -401,7 +401,7 @@
         </attvalues>
       </node>
       <node id="contexto" label="contexto">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="10.820717131474103" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -412,7 +412,7 @@
         </attvalues>
       </node>
       <node id="processo" label="processo">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="13.258964143426295" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -423,7 +423,7 @@
         </attvalues>
       </node>
       <node id="distribuida" label="distribuida">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="14.836653386454183" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -434,7 +434,7 @@
         </attvalues>
       </node>
       <node id="conceitos" label="conceitos">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.071713147410359" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -445,7 +445,7 @@
         </attvalues>
       </node>
       <node id="pergunta" label="pergunta">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="15.171314741035857" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -456,7 +456,7 @@
         </attvalues>
       </node>
       <node id="decisoes" label="decisoes">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.310756972111555" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -467,7 +467,7 @@
         </attvalues>
       </node>
       <node id="nomeia" label="nomeia">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="17.992031872509962" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -478,7 +478,7 @@
         </attvalues>
       </node>
       <node id="descrevo" label="descrevo">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="13.019920318725099" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -489,7 +489,7 @@
         </attvalues>
       </node>
       <node id="condicoes" label="condicoes">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="13.8804780876494" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -500,7 +500,7 @@
         </attvalues>
       </node>
       <node id="ator" label="ator">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="23.298804780876495" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -511,7 +511,7 @@
         </attvalues>
       </node>
       <node id="figuracao" label="figuracao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="19.426294820717132" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -522,7 +522,7 @@
         </attvalues>
       </node>
       <node id="narrativa" label="narrativa">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="11.203187250996017" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -533,7 +533,7 @@
         </attvalues>
       </node>
       <node id="elementos" label="elementos">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="10.055776892430279" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -544,7 +544,7 @@
         </attvalues>
       </node>
       <node id="entidades" label="entidades">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="12.49402390438247" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -555,7 +555,7 @@
         </attvalues>
       </node>
       <node id="infraestrutura" label="infraestrutura">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="15.55378486055777" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -566,7 +566,7 @@
         </attvalues>
       </node>
       <node id="existencias" label="existencias">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="16.844621513944226" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -577,7 +577,7 @@
         </attvalues>
       </node>
       <node id="conhecimento" label="conhecimento">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="18.039840637450197" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -588,7 +588,7 @@
         </attvalues>
       </node>
       <node id="ontologia" label="ontologia">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.111553784860558" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -599,7 +599,7 @@
         </attvalues>
       </node>
       <node id="tornam" label="tornam">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="12.207171314741036" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -610,7 +610,7 @@
         </attvalues>
       </node>
       <node id="sustentam" label="sustentam">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="13.258964143426295" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -621,7 +621,7 @@
         </attvalues>
       </node>
       <node id="pensamento" label="pensamento">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="12.92430278884462" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -632,7 +632,7 @@
         </attvalues>
       </node>
       <node id="diferentes" label="diferentes">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="10.43824701195219" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -643,7 +643,7 @@
         </attvalues>
       </node>
       <node id="aparece" label="aparece">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.97609561752988" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -654,7 +654,7 @@
         </attvalues>
       </node>
       <node id="regra" label="regra">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.258964143426295" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -665,7 +665,7 @@
         </attvalues>
       </node>
       <node id="hinterland" label="hinterland">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="17.274900398406373" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -676,7 +676,7 @@
         </attvalues>
       </node>
       <node id="fato" label="fato">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="12.254980079681275" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -687,7 +687,7 @@
         </attvalues>
       </node>
       <node id="arranjo" label="arranjo">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="11.394422310756973" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -698,7 +698,7 @@
         </attvalues>
       </node>
       <node id="laboratorio" label="laboratorio">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="18.470119521912352" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -709,7 +709,7 @@
         </attvalues>
       </node>
       <node id="armadilha" label="armadilha">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="10.103585657370518" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -720,7 +720,7 @@
         </attvalues>
       </node>
       <node id="torna" label="torna">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="16.41434262948207" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -731,7 +731,7 @@
         </attvalues>
       </node>
       <node id="maquina" label="maquina">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="22.916334661354583" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -742,7 +742,7 @@
         </attvalues>
       </node>
       <node id="conceito" label="conceito">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="20.764940239043824" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -753,7 +753,7 @@
         </attvalues>
       </node>
       <node id="pratica" label="pratica">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="26.119521912350596" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -764,7 +764,7 @@
         </attvalues>
       </node>
       <node id="leitura" label="leitura">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.067729083665338" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -775,7 +775,7 @@
         </attvalues>
       </node>
       <node id="partir" label="partir">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="19.856573705179283" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -786,7 +786,7 @@
         </attvalues>
       </node>
       <node id="cientista" label="cientista">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="14.836653386454183" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -797,7 +797,7 @@
         </attvalues>
       </node>
       <node id="material" label="material">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="16.796812749003983" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -808,7 +808,7 @@
         </attvalues>
       </node>
       <node id="computacao" label="computacao">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="12.828685258964143" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -819,7 +819,7 @@
         </attvalues>
       </node>
       <node id="linguagem" label="linguagem">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="16.03187250996016" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -830,7 +830,7 @@
         </attvalues>
       </node>
       <node id="tecnicas" label="tecnicas">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="11.920318725099602" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -841,7 +841,7 @@
         </attvalues>
       </node>
       <node id="computacional" label="computacional">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="13.40239043824701" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -852,7 +852,7 @@
         </attvalues>
       </node>
       <node id="termo" label="termo">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="14.167330677290837" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -863,7 +863,7 @@
         </attvalues>
       </node>
       <node id="dado" label="dado">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="23.155378486055774" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -874,7 +874,7 @@
         </attvalues>
       </node>
       <node id="relacoes" label="relacoes">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="15.697211155378486" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -885,7 +885,7 @@
         </attvalues>
       </node>
       <node id="posicao" label="posicao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="15.410358565737052" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -896,7 +896,7 @@
         </attvalues>
       </node>
       <node id="textil" label="textil">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="16.844621513944226" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -907,7 +907,7 @@
         </attvalues>
       </node>
       <node id="presenca" label="presenca">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="15.07569721115538" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -918,7 +918,7 @@
         </attvalues>
       </node>
       <node id="ausencia" label="ausencia">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="15.745019920318725" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -929,7 +929,7 @@
         </attvalues>
       </node>
       <node id="palavra" label="palavra">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="11.0597609561753" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -940,7 +940,7 @@
         </attvalues>
       </node>
       <node id="campo" label="campo">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="33.33864541832669" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -951,7 +951,7 @@
         </attvalues>
       </node>
       <node id="agencia" label="agencia">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="17.992031872509962" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -962,7 +962,7 @@
         </attvalues>
       </node>
       <node id="superficie" label="superficie">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="10.103585657370518" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -973,7 +973,7 @@
         </attvalues>
       </node>
       <node id="termos" label="termos">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="16.796812749003983" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -984,7 +984,7 @@
         </attvalues>
       </node>
       <node id="construcao" label="construcao">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="17.705179282868528" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -995,7 +995,7 @@
         </attvalues>
       </node>
       <node id="compostagem" label="compostagem">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="15.266932270916335" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1006,7 +1006,7 @@
         </attvalues>
       </node>
       <node id="descricao" label="descricao">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="27.266932270916335" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1017,7 +1017,7 @@
         </attvalues>
       </node>
       <node id="metodo" label="metodo">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="31.808764940239044" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1028,7 +1028,7 @@
         </attvalues>
       </node>
       <node id="diferenca" label="diferenca">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="12.49402390438247" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1039,7 +1039,7 @@
         </attvalues>
       </node>
       <node id="opera" label="opera">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.398406374501992" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1050,7 +1050,7 @@
         </attvalues>
       </node>
       <node id="pesquisa" label="pesquisa">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="54.32669322709163" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -1061,7 +1061,7 @@
         </attvalues>
       </node>
       <node id="recusa" label="recusa">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="11.585657370517929" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1072,7 +1072,7 @@
         </attvalues>
       </node>
       <node id="parciais" label="parciais">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="19.235059760956176" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1083,7 +1083,7 @@
         </attvalues>
       </node>
       <node id="tecnico" label="tecnico">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="17.179282868525895" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1094,7 +1094,7 @@
         </attvalues>
       </node>
       <node id="simultaneamente" label="simultaneamente">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="12.637450199203187" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1105,7 +1105,7 @@
         </attvalues>
       </node>
       <node id="politicas" label="politicas">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="10.533864541832669" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -1116,7 +1116,7 @@
         </attvalues>
       </node>
       <node id="tecnociencia" label="tecnociencia">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="17.322709163346616" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1127,7 +1127,7 @@
         </attvalues>
       </node>
       <node id="obra" label="obra">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.733067729083665" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1138,7 +1138,7 @@
         </attvalues>
       </node>
       <node id="sistema" label="sistema">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="11.776892430278885" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1149,7 +1149,7 @@
         </attvalues>
       </node>
       <node id="conjunto" label="conjunto">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.541832669322709" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1160,7 +1160,7 @@
         </attvalues>
       </node>
       <node id="distintas" label="distintas">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="10.725099601593625" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1171,7 +1171,7 @@
         </attvalues>
       </node>
       <node id="tecnologia" label="tecnologia">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="17.131474103585656" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1182,7 +1182,7 @@
         </attvalues>
       </node>
       <node id="parte" label="parte">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="22.96414342629482" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1193,7 +1193,7 @@
         </attvalues>
       </node>
       <node id="acesso" label="acesso">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="13.163346613545816" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1204,7 +1204,7 @@
         </attvalues>
       </node>
       <node id="vocabulario" label="vocabulario">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.928286852589641" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1215,7 +1215,7 @@
         </attvalues>
       </node>
       <node id="argumento" label="argumento">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.980079681274901" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1226,7 +1226,7 @@
         </attvalues>
       </node>
       <node id="social" label="social">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="11.298804780876495" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1237,7 +1237,7 @@
         </attvalues>
       </node>
       <node id="instrumentos" label="instrumentos">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="12.159362549800797" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1248,7 +1248,7 @@
         </attvalues>
       </node>
       <node id="textual" label="textual">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="16.366533864541832" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1259,7 +1259,7 @@
         </attvalues>
       </node>
       <node id="objeto" label="objeto">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="31.139442231075698" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1270,7 +1270,7 @@
         </attvalues>
       </node>
       <node id="acao" label="acao">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.302788844621514" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1281,7 +1281,7 @@
         </attvalues>
       </node>
       <node id="spira" label="spira">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="17.37051792828685" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1292,7 +1292,7 @@
         </attvalues>
       </node>
       <node id="precisa" label="precisa">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="12.828685258964143" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1303,7 +1303,7 @@
         </attvalues>
       </node>
       <node id="formulacao" label="formulacao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="16.653386454183266" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1314,7 +1314,7 @@
         </attvalues>
       </node>
       <node id="escolha" label="escolha">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="11.442231075697212" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1325,7 +1325,7 @@
         </attvalues>
       </node>
       <node id="relacao" label="relacao">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="23.872509960159363" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1336,7 +1336,7 @@
         </attvalues>
       </node>
       <node id="escrita" label="escrita">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="19.808764940239044" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1347,7 +1347,7 @@
         </attvalues>
       </node>
       <node id="decisao" label="decisao">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="12.44621513944223" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -1358,7 +1358,7 @@
         </attvalues>
       </node>
       <node id="conexoes" label="conexoes">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.115537848605577" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1369,7 +1369,7 @@
         </attvalues>
       </node>
       <node id="operacao" label="operacao">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="13.115537848605577" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1380,7 +1380,7 @@
         </attvalues>
       </node>
       <node id="humano" label="humano">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="28.55776892430279" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1391,7 +1391,7 @@
         </attvalues>
       </node>
       <node id="analise" label="analise">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="23.633466135458164" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1402,7 +1402,7 @@
         </attvalues>
       </node>
       <node id="manifesta" label="manifesta">
-        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:color r="58" g="95" b="160" a="1.0" />
         <viz:size value="14.884462151394423" />
         <attvalues>
           <attvalue for="0" value="8" />
@@ -1413,7 +1413,7 @@
         </attvalues>
       </node>
       <node id="tecno" label="tecno">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="13.737051792828685" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1424,7 +1424,7 @@
         </attvalues>
       </node>
       <node id="existencia" label="existencia">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="17.179282868525895" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1435,7 +1435,7 @@
         </attvalues>
       </node>
       <node id="letramento" label="letramento">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="14.932270916334662" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1446,7 +1446,7 @@
         </attvalues>
       </node>
       <node id="trama" label="trama">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="10.916334661354583" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1457,7 +1457,7 @@
         </attvalues>
       </node>
       <node id="formula" label="formula">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.02390438247012" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1468,7 +1468,7 @@
         </attvalues>
       </node>
       <node id="questao" label="questao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="11.96812749003984" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1479,7 +1479,7 @@
         </attvalues>
       </node>
       <node id="entrevistas" label="entrevistas">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="9.434262948207172" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -1490,7 +1490,7 @@
         </attvalues>
       </node>
       <node id="efeitos" label="efeitos">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="11.49003984063745" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1501,7 +1501,7 @@
         </attvalues>
       </node>
       <node id="pesquisador" label="pesquisador">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="19.904382470119522" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -1512,7 +1512,7 @@
         </attvalues>
       </node>
       <node id="costura" label="costura">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.637450199203187" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1523,7 +1523,7 @@
         </attvalues>
       </node>
       <node id="funcionam" label="funcionam">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.92430278884462" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1534,7 +1534,7 @@
         </attvalues>
       </node>
       <node id="haraway" label="haraway">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="22.294820717131472" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1545,7 +1545,7 @@
         </attvalues>
       </node>
       <node id="propriedade" label="propriedade">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="13.019920318725099" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1556,7 +1556,7 @@
         </attvalues>
       </node>
       <node id="ponto" label="ponto">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="15.266932270916335" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1567,7 +1567,7 @@
         </attvalues>
       </node>
       <node id="possivel" label="possivel">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="14.310756972111555" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1578,7 +1578,7 @@
         </attvalues>
       </node>
       <node id="principio" label="principio">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.067729083665338" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1589,7 +1589,7 @@
         </attvalues>
       </node>
       <node id="pessoa" label="pessoa">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="11.585657370517929" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1600,7 +1600,7 @@
         </attvalues>
       </node>
       <node id="problema" label="problema">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.589641434262948" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1611,7 +1611,7 @@
         </attvalues>
       </node>
       <node id="sistemas" label="sistemas">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="14.02390438247012" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -1622,7 +1622,7 @@
         </attvalues>
       </node>
       <node id="funciona" label="funciona">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="11.96812749003984" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1633,7 +1633,7 @@
         </attvalues>
       </node>
       <node id="condicao" label="condicao">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="14.884462151394423" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1644,7 +1644,7 @@
         </attvalues>
       </node>
       <node id="barad" label="barad">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.589641434262948" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1655,7 +1655,7 @@
         </attvalues>
       </node>
       <node id="pensar" label="pensar">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="17.513944223107572" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1666,7 +1666,7 @@
         </attvalues>
       </node>
       <node id="existe" label="existe">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="11.729083665338646" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1677,7 +1677,7 @@
         </attvalues>
       </node>
       <node id="artificial" label="artificial">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="41.13147410358566" />
         <attvalues>
           <attvalue for="0" value="6" />
@@ -1688,7 +1688,7 @@
         </attvalues>
       </node>
       <node id="materiais" label="materiais">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="19.235059760956176" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1699,7 +1699,7 @@
         </attvalues>
       </node>
       <node id="plano" label="plano">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="18.80478087649402" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1710,7 +1710,7 @@
         </attvalues>
       </node>
       <node id="nocao" label="nocao">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="12.350597609561753" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1721,7 +1721,7 @@
         </attvalues>
       </node>
       <node id="movimento" label="movimento">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="11.0597609561753" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1732,7 +1732,7 @@
         </attvalues>
       </node>
       <node id="claude" label="claude">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="21.00398406374502" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1743,7 +1743,7 @@
         </attvalues>
       </node>
       <node id="momento" label="momento">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="12.44621513944223" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1754,7 +1754,7 @@
         </attvalues>
       </node>
       <node id="observacao" label="observacao">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="10.964143426294822" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1765,7 +1765,7 @@
         </attvalues>
       </node>
       <node id="actante" label="actante">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="17.227091633466138" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1776,7 +1776,7 @@
         </attvalues>
       </node>
       <node id="tecnica" label="tecnica">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="12.398406374501992" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1787,7 +1787,7 @@
         </attvalues>
       </node>
       <node id="rede" label="rede">
-        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:color r="86" g="180" b="233" a="1.0" />
         <viz:size value="68.0" />
         <attvalues>
           <attvalue for="0" value="4" />
@@ -1798,7 +1798,7 @@
         </attvalues>
       </node>
       <node id="substancia" label="substancia">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="14.980079681274901" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1809,7 +1809,7 @@
         </attvalues>
       </node>
       <node id="latour" label="latour">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="34.58167330677291" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1820,7 +1820,7 @@
         </attvalues>
       </node>
       <node id="disponivel" label="disponivel">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="11.824701195219124" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1831,7 +1831,7 @@
         </attvalues>
       </node>
       <node id="natureza" label="natureza">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="10.48605577689243" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1842,7 +1842,7 @@
         </attvalues>
       </node>
       <node id="corporacao" label="corporacao">
-        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:color r="153" g="153" b="153" a="1.0" />
         <viz:size value="10.294820717131474" />
         <attvalues>
           <attvalue for="0" value="7" />
@@ -1853,7 +1853,7 @@
         </attvalues>
       </node>
       <node id="entidade" label="entidade">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="11.49003984063745" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1864,7 +1864,7 @@
         </attvalues>
       </node>
       <node id="gestos" label="gestos">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="10.247011952191235" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1875,7 +1875,7 @@
         </attvalues>
       </node>
       <node id="produz" label="produz">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="15.314741035856574" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1886,7 +1886,7 @@
         </attvalues>
       </node>
       <node id="cortes" label="cortes">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="13.928286852589641" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1897,7 +1897,7 @@
         </attvalues>
       </node>
       <node id="secao" label="secao">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="19.617529880478088" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1908,7 +1908,7 @@
         </attvalues>
       </node>
       <node id="lugar" label="lugar">
-        <viz:color r="44" g="160" b="44" a="1.0" />
+        <viz:color r="0" g="158" b="115" a="1.0" />
         <viz:size value="17.609561752988046" />
         <attvalues>
           <attvalue for="0" value="2" />
@@ -1919,7 +1919,7 @@
         </attvalues>
       </node>
       <node id="etnografia" label="etnografia">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="51.93625498007968" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1930,7 +1930,7 @@
         </attvalues>
       </node>
       <node id="parceria" label="parceria">
-        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:color r="204" g="121" b="167" a="1.0" />
         <viz:size value="12.01593625498008" />
         <attvalues>
           <attvalue for="0" value="3" />
@@ -1941,7 +1941,7 @@
         </attvalues>
       </node>
       <node id="sociais" label="sociais">
-        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:color r="230" g="159" b="0" a="1.0" />
         <viz:size value="20.573705179282868" />
         <attvalues>
           <attvalue for="0" value="1" />
@@ -1952,7 +1952,7 @@
         </attvalues>
       </node>
       <node id="descreve" label="descreve">
-        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:color r="213" g="94" b="0" a="1.0" />
         <viz:size value="20.717131474103585" />
         <attvalues>
           <attvalue for="0" value="5" />
@@ -1963,7 +1963,7 @@
         </attvalues>
       </node>
       <node id="simetria" label="simetria">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="14.119521912350598" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1974,7 +1974,7 @@
         </attvalues>
       </node>
       <node id="desenvolve" label="desenvolve">
-        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:color r="0" g="114" b="178" a="1.0" />
         <viz:size value="12.01593625498008" />
         <attvalues>
           <attvalue for="0" value="0" />
@@ -1985,7 +1985,7 @@
         </attvalues>
       </node>
       <node id="centro" label="centro">
-        <viz:color r="127" g="127" b="127" a="1.0" />
+        <viz:color r="240" g="228" b="66" a="1.0" />
         <viz:size value="15.123505976095618" />
         <attvalues>
           <attvalue for="0" value="6" />
