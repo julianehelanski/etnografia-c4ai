@@ -109,12 +109,6 @@ jobs:
           SITE_INDEX: index-curado.html
         run: python scripts/atualizar_keywords.py _tex
 
-      - name: Cache-busting das figuras (index-curado.html)
-        working-directory: c4ai
-        env:
-          SITE_INDEX: index-curado.html
-        run: python scripts/cache_busting_figuras.py
-
       - name: Sumário automático dos capítulos (index-curado.html)
         working-directory: c4ai
         env:
@@ -129,12 +123,26 @@ jobs:
         working-directory: c4ai
         run: python infranodus/tese_documento.py --source-root _tex --inject index.html
 
+      # Cache-busting POR ÚLTIMO, depois de toda regeneração/sincronização/
+      # injeção de figuras e de qualquer reescrita dos index. Versiona os TRÊS
+      # index (não só o curado): assim o ?v= sempre bate com os bytes reais das
+      # figuras e o GitHub Pages baixa as versões novas, sem ajuste manual.
+      - name: Cache-busting das figuras (todos os index)
+        working-directory: c4ai
+        run: |
+          for idx in index.html index-curado.html index-cartography.html; do
+            if [ -f "$idx" ]; then
+              echo "→ cache-busting $idx"
+              SITE_INDEX="$idx" python scripts/cache_busting_figuras.py
+            fi
+          done
+
       - name: Commit & push outputs
         working-directory: c4ai
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infranodus/ figuras/ index.html index-curado.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
+          git add infranodus/ figuras/ index.html index-curado.html index-cartography.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
           if git diff --cached --quiet; then
             echo "Sem mudanças nos outputs da análise."
             exit 0
