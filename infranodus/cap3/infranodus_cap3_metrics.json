@@ -1,8 +1,8 @@
 {
-  "tokens": 17786,
+  "tokens": 17784,
   "graph_full": {
-    "nodes": 5347,
-    "edges": 45841
+    "nodes": 5345,
+    "edges": 45834
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "informacao",
       "b": "verbal",
-      "npmi": 0.8709895942658652,
+      "npmi": 0.8709869216278787,
       "cooccurrence_weight": 80
     },
     {
       "a": "inteligencia",
       "b": "artificial",
-      "npmi": 0.8639157626011699,
+      "npmi": 0.8639125845257273,
       "cooccurrence_weight": 144
     },
     {
       "a": "unidos",
       "b": "estados",
-      "npmi": 0.8591352136288353,
+      "npmi": 0.8591324547950759,
       "cooccurrence_weight": 57
     },
     {
       "a": "relatorios",
       "b": "anuais",
-      "npmi": 0.7754235248739465,
+      "npmi": 0.7754192848507078,
       "cooccurrence_weight": 46
     },
     {
       "a": "aberto",
       "b": "codigo",
-      "npmi": 0.7477307177269694,
+      "npmi": 0.7477259723688636,
       "cooccurrence_weight": 45
     },
     {
       "a": "linguagem",
       "b": "processamento",
-      "npmi": 0.7357440424450824,
+      "npmi": 0.7357393872865802,
       "cooccurrence_weight": 30
     },
     {
       "a": "historica",
       "b": "investigacao",
-      "npmi": 0.6222101597685187,
+      "npmi": 0.6222037293287149,
       "cooccurrence_weight": 24
     },
     {
       "a": "elaboracao",
       "b": "base",
-      "npmi": 0.6155698147969161,
+      "npmi": 0.6155634009419106,
       "cooccurrence_weight": 21
     },
     {
       "a": "claudio",
       "b": "fabio",
-      "npmi": 0.5889120994564278,
+      "npmi": 0.5889021942554662,
       "cooccurrence_weight": 169
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.588823934934452,
+      "npmi": 0.5888168092063272,
       "cooccurrence_weight": 27
     },
     {
       "a": "novembro",
       "b": "dezembro",
-      "npmi": 0.5713498889089325,
+      "npmi": 0.5713426394579757,
       "cooccurrence_weight": 23
     },
     {
       "a": "passagem",
       "b": "ponto",
-      "npmi": 0.5702856274595534,
+      "npmi": 0.5702781804604449,
       "cooccurrence_weight": 27
     },
     {
       "a": "research",
       "b": "brasil",
-      "npmi": 0.5465082711631685,
+      "npmi": 0.5465001226688574,
       "cooccurrence_weight": 38
     },
     {
       "a": "inovacao",
       "b": "ecossistema",
-      "npmi": 0.5269389648360908,
+      "npmi": 0.5269301677414184,
       "cooccurrence_weight": 43
     },
     {
       "a": "cientifico",
       "b": "producao",
-      "npmi": 0.5102148031110348,
+      "npmi": 0.5102060024832908,
       "cooccurrence_weight": 34
     },
     {
       "a": "entrevistas",
       "b": "observacao",
-      "npmi": 0.5078384219355286,
+      "npmi": 0.507830394248132,
       "cooccurrence_weight": 18
     },
     {
       "a": "translacao",
       "b": "cadeias",
-      "npmi": 0.5066671824836667,
+      "npmi": 0.5066595825764272,
       "cooccurrence_weight": 12
     },
     {
       "a": "mapa",
       "b": "problemas",
-      "npmi": 0.5058395919248088,
+      "npmi": 0.5058319792683434,
       "cooccurrence_weight": 12
     },
     {
       "a": "relatorios",
       "b": "base",
-      "npmi": 0.4982988203194943,
+      "npmi": 0.49829063703088244,
       "cooccurrence_weight": 18
     },
     {
       "a": "gente",
       "b": "dinheiro",
-      "npmi": 0.4969350987635266,
+      "npmi": 0.4969271046016136,
       "cooccurrence_weight": 15
     },
     {
       "a": "relatorios",
       "b": "elaboracao",
-      "npmi": 0.4963905048688395,
+      "npmi": 0.4963825793090939,
       "cooccurrence_weight": 14
     },
     {
       "a": "research",
       "b": "fechamento",
-      "npmi": 0.4943696646450142,
+      "npmi": 0.4943618752916411,
       "cooccurrence_weight": 12
     },
     {
       "a": "hollerith",
       "b": "tabulacao",
-      "npmi": 0.48239322076343816,
+      "npmi": 0.4823838345181599,
       "cooccurrence_weight": 36
     },
     {
       "a": "hollerith",
       "b": "maquina",
-      "npmi": 0.4794723739974707,
+      "npmi": 0.4794622424891421,
       "cooccurrence_weight": 55
     },
     {
       "a": "anuais",
       "b": "base",
-      "npmi": 0.4756069886663845,
+      "npmi": 0.47559891026960716,
       "cooccurrence_weight": 12
     }
   ],
