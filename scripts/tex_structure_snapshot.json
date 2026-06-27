@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-27 14:36 UTC",
+  "generated": "2026-06-27 15:42 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -89,6 +89,7 @@
         "openalex_03_brasil_temporal.png",
         "openalex_04_subcampos_3bases.png",
         "scielo_11_subject_area_share.png",
+        "scielo_21_subcampos_distribuicao.png",
         "trajectory_alluvial.png",
         "trajectory_gantt.png",
         "trajectory_semantic.png"
