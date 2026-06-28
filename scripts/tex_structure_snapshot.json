@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-28 15:12 UTC",
+  "generated": "2026-06-28 15:13 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -110,12 +110,7 @@
       "figures": [
         "10_rede_coword.png",
         "11_rede_coword_temporal.png",
-        "1_ranking_grupos.png",
-        "3_evolucao_temporal_geral.png",
         "4_heatmap_grupo_ano.png",
-        "6_produtividade_grupos.png",
-        "8_composicao_temporal.png",
-        "9_analise_concentracao.png",
         "cadeia-translacao-ibm-capitulo3.png",
         "caderno_rodrigues_aula1.pdf",
         "hollerith_1890_product_sheet.png",
