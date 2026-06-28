@@ -1,13 +1,13 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-06-27 20:30 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-06-28 09:35 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
 
-## Mudanças desde a última sincronização
+## Sem divergências
 
-Atualize os nós/sumário/figuras correspondentes no `index.html` (PT **e** EN).
+A estrutura da tese não mudou desde a última sincronização. Nada a fazer.
 
 ### cap1
 
@@ -23,18 +23,4 @@ _Sem mudanças estruturais._
 
 ### cap4
 
-**Figuras**
-- ➕ adicionada: `spira_comparacao_linear_log.png`
-- ➕ adicionada: `spira_espectrograma_com_eixos.png`
-- ➕ adicionada: `spira_espectrograma_sem_legenda.png`
-- ➕ adicionada: `spira_paciente_com_eixos.png`
-- ➕ adicionada: `spira_paciente_sem_legenda.png`
-- ➕ adicionada: `spira_waveform_controle.png`
-- ➕ adicionada: `spira_waveform_paciente.png`
-- ➖ removida: `Spira_comparacao_linear_log.png`
-- ➖ removida: `Spira_espectrograma_com_eixos.png`
-- ➖ removida: `Spira_espectrograma_sem_legenda.png`
-- ➖ removida: `Spira_paciente_com_eixos.png`
-- ➖ removida: `Spira_paciente_sem_legenda.png`
-- ➖ removida: `Spira_waveform_controle.png`
-- ➖ removida: `Spira_waveform_paciente.png`
+_Sem mudanças estruturais._
