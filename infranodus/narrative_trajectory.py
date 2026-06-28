@@ -267,7 +267,12 @@ def _dodge_labels(fig, ax, texts, anchors, *, pad_px: float = 3.0,
     centers = np.zeros((n, 2))
     sizes = np.zeros((n, 2))
     for i, t in enumerate(texts):
-        bb = t.get_window_extent(renderer=renderer)
+        # Medir a CAIXA visível (patch do bbox arredondado), não só o texto:
+        # o patch é maior que o texto pela folga do boxstyle, e era por isso
+        # que rótulos "separados" ainda tinham as caixas brancas sobrepostas.
+        patch = t.get_bbox_patch()
+        bb = (patch.get_window_extent(renderer)
+              if patch is not None else t.get_window_extent(renderer=renderer))
         centers[i] = [(bb.x0 + bb.x1) / 2.0, (bb.y0 + bb.y1) / 2.0]
         sizes[i] = [bb.width, bb.height]
 
@@ -279,9 +284,10 @@ def _dodge_labels(fig, ax, texts, anchors, *, pad_px: float = 3.0,
         except Exception:
             pass
 
-    for _ in range(iterations):
+    def separate_labels() -> bool:
+        """Empurra pares de rótulos sobrepostos (caixas visíveis) ao longo do
+        eixo de menor penetração. É a restrição prioritária."""
         moved = False
-        # 1) repulsão entre caixas de rótulos sobrepostas
         for i in range(n):
             for j in range(i + 1, n):
                 dx = centers[i, 0] - centers[j, 0]
@@ -298,8 +304,12 @@ def _dodge_labels(fig, ax, texts, anchors, *, pad_px: float = 3.0,
                         s = oy / 2.0 * (1.0 if dy >= 0 else -1.0)
                         centers[i, 1] += s
                         centers[j, 1] -= s
-        # 2) afasta cada rótulo de TODAS as bolinhas (mantém marcadores à vista).
-        #    A própria âncora usa folga maior; início/fim, maior ainda.
+        return moved
+
+    def repel_points() -> bool:
+        """Afasta cada rótulo de TODAS as bolinhas (mantém marcadores à vista);
+        folga maior na própria âncora e maior ainda em início/fim."""
+        moved = False
         for i in range(n):
             for p in range(m):
                 if p == i:
@@ -318,7 +328,11 @@ def _dodge_labels(fig, ax, texts, anchors, *, pad_px: float = 3.0,
                         centers[i, 0] += ox * (1.0 if dx >= 0 else -1.0)
                     else:
                         centers[i, 1] += oy * (1.0 if dy >= 0 else -1.0)
-        # 3) afasta rótulos de obstáculos (ex.: caixa de legenda)
+        return moved
+
+    def repel_obstacles() -> bool:
+        """Afasta rótulos de obstáculos (ex.: caixa de legenda)."""
+        moved = False
         for i in range(n):
             for bb in obstacle_boxes:
                 lx0 = centers[i, 0] - sizes[i, 0] / 2.0 - obstacle_pad_px
@@ -335,6 +349,24 @@ def _dodge_labels(fig, ax, texts, anchors, *, pad_px: float = 3.0,
                         centers[i, 0] += ox * (1.0 if centers[i, 0] >= cx else -1.0)
                     else:
                         centers[i, 1] += oy * (1.0 if centers[i, 1] >= cy else -1.0)
+        return moved
+
+    # Fase 1: todas as restrições. A separação rótulo-rótulo vem por último
+    # para que o estado de saída tenda a não ter sobreposição entre rótulos.
+    for _ in range(iterations):
+        moved = repel_points()
+        moved = repel_obstacles() or moved
+        moved = separate_labels() or moved
+        if not moved:
+            break
+
+    # Fase 2: limpeza dedicada. Sem a repulsão dos pontos (que poderia reabrir
+    # colisões), garante zero sobreposição entre rótulos e fora da legenda. Os
+    # marcadores de início/fim seguem visíveis pelo zorder, mesmo se um rótulo
+    # encostar numa bolinha comum.
+    for _ in range(800):
+        moved = repel_obstacles()
+        moved = separate_labels() or moved
         if not moved:
             break
 
