@@ -68,10 +68,8 @@ python infranodus/sync_site_figuras.py
 # (D) Figuras de conteúdo da tese -> figuras/
 python scripts/sync_tese_figuras.py --source-root _tex
 
-# (E) Página curada (index-curado.html): palavras-chave, cache-busting, sumário
-SITE_INDEX=index-curado.html python scripts/atualizar_keywords.py _tex
-SITE_INDEX=index-curado.html python scripts/cache_busting_figuras.py
-SITE_INDEX=index-curado.html python scripts/sumario_auto.py --source-root _tex
+# (E) Cache-busting das figuras -> index.html
+SITE_INDEX=index.html python scripts/cache_busting_figuras.py
 
 # (F) Relatório de divergência tese <-> site
 python scripts/relatorio_divergencia_tese.py --source-root _tex
@@ -83,7 +81,7 @@ python infranodus/tese_documento.py --source-root _tex --inject index.html
 ### Publicar (atualizar o site)
 
 ```bash
-git add infranodus/ figuras/ index.html index-curado.html \
+git add infranodus/ figuras/ index.html \
         docs/divergencia-tese.md scripts/tex_structure_snapshot.json
 git commit -m "Regenera redes + figuras/keywords a partir da tese"
 git push        # o push na main dispara o pages.yml e republica o site
@@ -150,12 +148,10 @@ comandos da seção "Pipeline" acima (`python infranodus/run_all.py
    %run scripts/sync_tese_figuras.py --source-root _tex
    %run infranodus/tese_documento.py --source-root _tex --inject index.html
    ```
-   Passos da página curada (usam a variável `SITE_INDEX`):
+   Cache-busting das figuras (usa a variável `SITE_INDEX`):
    ```python
-   import os; os.environ["SITE_INDEX"] = "index-curado.html"
-   %run scripts/atualizar_keywords.py _tex
+   import os; os.environ["SITE_INDEX"] = "index.html"
    %run scripts/cache_busting_figuras.py
-   %run scripts/sumario_auto.py --source-root _tex
    ```
    (Alternativa: *Run → Configuration per file* → campo "Command line
    options" com os argumentos, e rodar pelo botão ▶.)
@@ -195,8 +191,8 @@ Cada passo numa célula, com `!` (subprocesso), prefixando a variável:
   saída pode variar e gerar diffs espúrios.
 - **O que NÃO é gerado por script:** textos dos nós, ligações editoriais
   entre capítulos, seções escritas à mão — e os ajustes visuais do site
-  (cores, capa, fontes, responsividade, QR). Isso é edição direta nos
-  arquivos `index.html` / `index-curado.html`. O pipeline acima regenera
+  (cores, capa, fontes, responsividade, QR). Isso é edição direta no
+  arquivo `index.html`. O pipeline acima regenera
   **dados e figuras**, preservando o restante.
 
 > Veja também [`scripts/README.md`](../scripts/README.md) e
