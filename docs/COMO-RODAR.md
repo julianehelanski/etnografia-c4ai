@@ -94,7 +94,6 @@ git push        # o push na main dispara o pages.yml e republica o site
 | Análise | Script | Observação |
 |---|---|---|
 | **Lexicométrica** (rede de termos) | `infranodus/tese_network.py` (mapa) e `infranodus/run_all.py` → `infranodus_cap*.py` (por capítulo) | núcleo do site |
-| **Palavras-chave** (frequência + TF‑IDF) | `scripts/atualizar_keywords.py` | só recalcula contagens; *quais* termos entram é curado à mão no dicionário `CURADAS` no topo do script |
 | **Bibliométrica** (CAPES/SciELO) | as figuras (`figuras/cap2/cap2-bib-*`) são geradas no **repositório da tese** e só **sincronizadas** aqui por `scripts/sync_tese_figuras.py`; o agrupamento "Bibliometria · panorama do campo" é curado em `tese_network.py` (`carve_bibliometric_territory`) | a geração dos gráficos bibliométricos está no repo `.tex`, não aqui |
 | **Trajetória narrativa** | `infranodus/narrative_trajectory.py` (via `run_all.py`) | alluvial / gantt / semântico |
 | **Atualização do site** | injeção via `--inject` + `git push` → `pages.yml` | deploy automático |

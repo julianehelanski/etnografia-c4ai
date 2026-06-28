@@ -20,7 +20,6 @@ $tese = "..\tecno-etnografia-centro-ia"
 
 python infranodus\run_all.py --source-root $tese            # PNGs por capítulo
 python infranodus\tese_network.py --source-root $tese --inject index.html  # mapa
-python scripts\atualizar_keywords.py $tese                  # palavras-chave
 
 git add -A ; git commit -m "Atualiza análise textual" ; git push   # publica o site
 ```
