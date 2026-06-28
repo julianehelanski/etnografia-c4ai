@@ -102,20 +102,6 @@ jobs:
         working-directory: c4ai
         run: python scripts/sync_tese_figuras.py --source-root _tex
 
-      # Os passos abaixo mantêm a página curada arquivada (index-curado.html)
-      # em dia. O mapa principal (index.html) é a rede textual, regenerada acima.
-      - name: Atualiza contagens de palavras-chave (index-curado.html)
-        working-directory: c4ai
-        env:
-          SITE_INDEX: index-curado.html
-        run: python scripts/atualizar_keywords.py _tex
-
-      - name: Sumário automático dos capítulos (index-curado.html)
-        working-directory: c4ai
-        env:
-          SITE_INDEX: index-curado.html
-        run: python scripts/sumario_auto.py --source-root _tex
-
       - name: Relatório de divergência tese ↔ site (seções/figuras)
         working-directory: c4ai
         run: python scripts/relatorio_divergencia_tese.py --source-root _tex
@@ -125,25 +111,19 @@ jobs:
         run: python infranodus/tese_documento.py --source-root _tex --inject index.html
 
       # Cache-busting POR ÚLTIMO, depois de toda regeneração/sincronização/
-      # injeção de figuras e de qualquer reescrita dos index. Versiona os TRÊS
-      # index (não só o curado): assim o ?v= sempre bate com os bytes reais das
-      # figuras e o GitHub Pages baixa as versões novas, sem ajuste manual.
-      - name: Cache-busting das figuras (todos os index)
+      # injeção de figuras e de qualquer reescrita do index. Garante que o ?v=
+      # bate com os bytes reais das figuras e o GitHub Pages baixa as versões
+      # novas, sem ajuste manual.
+      - name: Cache-busting das figuras (index.html)
         working-directory: c4ai
-        run: |
-          for idx in index.html index-curado.html index-cartography.html; do
-            if [ -f "$idx" ]; then
-              echo "→ cache-busting $idx"
-              SITE_INDEX="$idx" python scripts/cache_busting_figuras.py
-            fi
-          done
+        run: SITE_INDEX=index.html python scripts/cache_busting_figuras.py
 
       - name: Commit & push outputs
         working-directory: c4ai
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add infranodus/ figuras/ index.html index-curado.html index-cartography.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
+          git add infranodus/ figuras/ index.html docs/divergencia-tese.md scripts/tex_structure_snapshot.json
           if git diff --cached --quiet; then
             echo "Sem mudanças nos outputs da análise."
             exit 0
