@@ -29,6 +29,7 @@ on:
       - "infranodus/tese_network_chapters.py"
       - "infranodus/tese_documento.py"
       - "infranodus/run_all.py"
+      - "infranodus/narrative_trajectory.py"
       - "infranodus/chapters.yml"
       - "infranodus/interpretation_*.md"
       - ".github/workflows/analyze.yml"
