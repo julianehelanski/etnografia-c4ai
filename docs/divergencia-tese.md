@@ -1,13 +1,13 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-07-03 17:58 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-07-03 18:24 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
 
-## Mudanças desde a última sincronização
+## Sem divergências
 
-Atualize os nós/sumário/figuras correspondentes no `index.html` (PT **e** EN).
+A estrutura da tese não mudou desde a última sincronização. Nada a fazer.
 
 ### cap1
 
@@ -19,16 +19,8 @@ _Sem mudanças estruturais._
 
 ### cap3
 
-**Seções**
-- ✏️ renomeada (provável): `O C4AI em textos: das entrevistas às publicações` → `O C4AI: das entrevistas às publicações`
-
-**Subseções**
-- ➕ adicionada: `As publicações acadêmicas do C4AI`
-
-**Figuras**
-- ➕ adicionada: `12_composicao_equipe_bolhas.png`
+_Sem mudanças estruturais._
 
 ### cap4
 
-**Figuras**
-- ✏️ renomeada (provável): `mapa` → `mapa-capitulo4.png`
+_Sem mudanças estruturais._
