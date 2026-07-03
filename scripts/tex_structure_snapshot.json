@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03 09:38 UTC",
+  "generated": "2026-07-03 17:58 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -100,16 +100,18 @@
         "Seguindo Fábio e Cláudio",
         "Criar demanda: a racionalidade de um ecossistema",
         "A IBM",
-        "O C4AI em textos: das entrevistas às publicações",
+        "O C4AI: das entrevistas às publicações",
         "O fim da parceria C4AI-IBM"
       ],
       "subsections": [
         "Como os segui: observação, entrevistas e documentos",
-        "Com quais referenciais os segui"
+        "Com quais referenciais os segui",
+        "As publicações acadêmicas do C4AI"
       ],
       "figures": [
         "10_rede_coword.png",
         "11_rede_coword_temporal.png",
+        "12_composicao_equipe_bolhas.png",
         "4_heatmap_grupo_ano.png",
         "cadeia-translacao-ibm-capitulo3.png",
         "caderno_rodrigues_aula1.pdf",
@@ -153,9 +155,9 @@
         "infranodus_cap4_focus_pmi.png",
         "infranodus_cap4_network.png",
         "juki_1.jpg",
-        "mapa",
         "mapa-analitico-capitulo4.png",
         "mapa-argumento-capitulo4.png",
+        "mapa-capitulo4.png",
         "mapa-linha-tempo-capitulo4.png",
         "novel-coronavirus-sars-cov-2_49531042907_o.jpg",
         "novel-coronavirus-sars-cov-2_49534865371_o.jpg",

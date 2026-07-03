@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,923**
-- Grafo bruto: **6735** nós · **78062** arestas
+- Tokens significativos: **32,928**
+- Grafo bruto: **6736** nós · **78075** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4063** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -27,7 +27,7 @@
 | 7 | `rede` | 868 |
 | 8 | `respiratoria` | 752 |
 | 9 | `insuficiencia` | 719 |
-| 10 | `projeto` | 683 |
+| 10 | `projeto` | 686 |
 | 11 | `dado` | 681 |
 | 12 | `modelo` | 653 |
 | 13 | `marcelo` | 647 |
@@ -41,7 +41,7 @@
 | 21 | `covid` | 411 |
 | 22 | `analise` | 408 |
 | 23 | `audio` | 403 |
-| 24 | `partir` | 397 |
+| 24 | `partir` | 400 |
 | 25 | `pacientes` | 388 |
 | 26 | `sinal` | 386 |
 | 27 | `secao` | 378 |
@@ -64,7 +64,7 @@ termos frequentes mas perifericamente conectados descem.
 | 6 | `objeto` | 0.0178 |
 | 7 | `rede` | 0.0176 |
 | 8 | `respiratoria` | 0.0141 |
-| 9 | `projeto` | 0.0138 |
+| 9 | `projeto` | 0.0139 |
 | 10 | `dado` | 0.0137 |
 | 11 | `modelo` | 0.0136 |
 | 12 | `insuficiencia` | 0.0134 |
@@ -78,8 +78,8 @@ termos frequentes mas perifericamente conectados descem.
 | 20 | `audio` | 0.0086 |
 | 21 | `covid` | 0.0086 |
 | 22 | `cientifico` | 0.0086 |
-| 23 | `analise` | 0.0084 |
-| 24 | `partir` | 0.0084 |
+| 23 | `partir` | 0.0084 |
+| 24 | `analise` | 0.0084 |
 | 25 | `sinal` | 0.0083 |
 | 26 | `pacientes` | 0.0082 |
 | 27 | `secao` | 0.0081 |
