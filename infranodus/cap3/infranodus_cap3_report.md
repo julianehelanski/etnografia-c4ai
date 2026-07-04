@@ -10,44 +10,44 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **18,745**
-- Grafo bruto: **5658** nós · **48799** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2605** arestas
+- Tokens significativos: **18,647**
+- Grafo bruto: **5647** nós · **48576** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2592** arestas
 - Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `claudio` | 848 |
-| 2 | `pesquisa` | 723 |
-| 3 | `rede` | 562 |
-| 4 | `centro` | 535 |
+| 1 | `claudio` | 840 |
+| 2 | `pesquisa` | 720 |
+| 3 | `rede` | 559 |
+| 4 | `centro` | 534 |
 | 5 | `fabio` | 520 |
-| 6 | `seguir` | 366 |
-| 7 | `publico` | 362 |
-| 8 | `artificial` | 343 |
-| 9 | `inteligencia` | 342 |
-| 10 | `brasil` | 332 |
-| 11 | `corporacao` | 327 |
-| 12 | `arranjo` | 325 |
-| 13 | `ator` | 297 |
-| 14 | `maquina` | 282 |
+| 6 | `seguir` | 364 |
+| 7 | `publico` | 353 |
+| 8 | `artificial` | 341 |
+| 9 | `inteligencia` | 338 |
+| 10 | `brasil` | 329 |
+| 11 | `corporacao` | 325 |
+| 12 | `arranjo` | 316 |
+| 13 | `ator` | 287 |
+| 14 | `maquina` | 285 |
 | 15 | `hollerith` | 278 |
-| 16 | `tecnologia` | 272 |
-| 17 | `empresa` | 261 |
-| 18 | `fapesp` | 258 |
-| 19 | `ecossistema` | 247 |
+| 16 | `tecnologia` | 270 |
+| 17 | `fapesp` | 259 |
+| 18 | `empresa` | 256 |
+| 19 | `laboratorio` | 247 |
 | 20 | `modelo` | 245 |
-| 21 | `laboratorio` | 244 |
-| 22 | `instituicao` | 240 |
-| 23 | `dado` | 230 |
-| 24 | `campo` | 222 |
-| 25 | `universidade` | 217 |
-| 26 | `informacao` | 216 |
+| 21 | `ecossistema` | 242 |
+| 22 | `instituicao` | 231 |
+| 23 | `dado` | 228 |
+| 24 | `campo` | 219 |
+| 25 | `informacao` | 218 |
+| 26 | `universidade` | 217 |
 | 27 | `associacao` | 213 |
-| 28 | `infraestrutura` | 213 |
-| 29 | `trajetoria` | 204 |
-| 30 | `vinculo` | 201 |
+| 28 | `infraestrutura` | 209 |
+| 29 | `trajetoria` | 207 |
+| 30 | `verbal` | 202 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -56,36 +56,36 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `claudio` | 0.0295 |
-| 2 | `pesquisa` | 0.0269 |
-| 3 | `rede` | 0.0209 |
+| 1 | `claudio` | 0.0293 |
+| 2 | `pesquisa` | 0.0268 |
+| 3 | `rede` | 0.0208 |
 | 4 | `centro` | 0.0196 |
 | 5 | `fabio` | 0.0179 |
-| 6 | `seguir` | 0.0138 |
-| 7 | `publico` | 0.0137 |
-| 8 | `brasil` | 0.0129 |
-| 9 | `corporacao` | 0.0128 |
-| 10 | `arranjo` | 0.0125 |
-| 11 | `artificial` | 0.0121 |
-| 12 | `inteligencia` | 0.0120 |
-| 13 | `ator` | 0.0114 |
-| 14 | `hollerith` | 0.0112 |
-| 15 | `maquina` | 0.0111 |
-| 16 | `tecnologia` | 0.0110 |
-| 17 | `empresa` | 0.0102 |
-| 18 | `fapesp` | 0.0101 |
-| 19 | `modelo` | 0.0101 |
-| 20 | `dado` | 0.0095 |
-| 21 | `laboratorio` | 0.0094 |
-| 22 | `ecossistema` | 0.0094 |
-| 23 | `instituicao` | 0.0094 |
-| 24 | `campo` | 0.0089 |
-| 25 | `infraestrutura` | 0.0088 |
+| 6 | `seguir` | 0.0137 |
+| 7 | `publico` | 0.0133 |
+| 8 | `brasil` | 0.0128 |
+| 9 | `corporacao` | 0.0127 |
+| 10 | `arranjo` | 0.0121 |
+| 11 | `artificial` | 0.0120 |
+| 12 | `inteligencia` | 0.0118 |
+| 13 | `hollerith` | 0.0112 |
+| 14 | `maquina` | 0.0111 |
+| 15 | `ator` | 0.0110 |
+| 16 | `tecnologia` | 0.0109 |
+| 17 | `fapesp` | 0.0102 |
+| 18 | `empresa` | 0.0100 |
+| 19 | `modelo` | 0.0100 |
+| 20 | `laboratorio` | 0.0096 |
+| 21 | `dado` | 0.0094 |
+| 22 | `ecossistema` | 0.0092 |
+| 23 | `instituicao` | 0.0090 |
+| 24 | `campo` | 0.0088 |
+| 25 | `infraestrutura` | 0.0087 |
 | 26 | `associacao` | 0.0085 |
 | 27 | `universidade` | 0.0084 |
-| 28 | `trajetoria` | 0.0082 |
-| 29 | `analise` | 0.0080 |
-| 30 | `vinculo` | 0.0079 |
+| 28 | `trajetoria` | 0.0083 |
+| 29 | `analise` | 0.0081 |
+| 30 | `vinculo` | 0.0078 |
 
 ## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
 Diferença de posição (rank por degree) − (rank por PageRank). Valor
@@ -93,45 +93,45 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `conta` | 147 | 125 | +22 |
-| 2 | `linguas` | 110 | 96 | +14 |
-| 3 | `indigenas` | 104 | 92 | +12 |
-| 4 | `mostra` | 141 | 129 | +12 |
-| 5 | `estados` | 67 | 57 | +10 |
-| 6 | `comercial` | 83 | 74 | +9 |
-| 7 | `tecnociencia` | 116 | 107 | +9 |
+| 1 | `conta` | 146 | 123 | +23 |
+| 2 | `linguas` | 100 | 87 | +13 |
+| 3 | `indigenas` | 101 | 88 | +13 |
+| 4 | `mostra` | 140 | 127 | +13 |
+| 5 | `estados` | 69 | 59 | +10 |
+| 6 | `logica` | 153 | 144 | +9 |
+| 7 | `pessoas` | 172 | 163 | +9 |
 | 8 | `vida` | 173 | 164 | +9 |
-| 9 | `unidos` | 79 | 71 | +8 |
-| 10 | `pratica` | 88 | 80 | +8 |
-| 11 | `logica` | 152 | 144 | +8 |
-| 12 | `pessoas` | 171 | 163 | +8 |
-| 13 | `recursos` | 60 | 54 | +6 |
-| 14 | `secao` | 62 | 56 | +6 |
-| 15 | `tecnica` | 64 | 58 | +6 |
+| 9 | `tecnociencia` | 116 | 108 | +8 |
+| 10 | `censo` | 138 | 130 | +8 |
+| 11 | `latour` | 102 | 95 | +7 |
+| 12 | `inscricao` | 152 | 145 | +7 |
+| 13 | `tecnica` | 66 | 60 | +6 |
+| 14 | `pratica` | 91 | 85 | +6 |
+| 15 | `codigo` | 45 | 40 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `centro` | 0.3307 |
-| 2 | `pesquisa` | 0.2797 |
-| 3 | `claudio` | 0.2162 |
-| 4 | `rede` | 0.1666 |
-| 5 | `fabio` | 0.1204 |
-| 6 | `brasil` | 0.0700 |
-| 7 | `seguir` | 0.0665 |
-| 8 | `inteligencia` | 0.0657 |
-| 9 | `fapesp` | 0.0642 |
-| 10 | `tecnologia` | 0.0576 |
-| 11 | `ator` | 0.0567 |
-| 12 | `hollerith` | 0.0566 |
-| 13 | `publico` | 0.0521 |
-| 14 | `dado` | 0.0511 |
-| 15 | `corporacao` | 0.0483 |
-| 16 | `artificial` | 0.0414 |
-| 17 | `empresa` | 0.0405 |
-| 18 | `maquina` | 0.0378 |
-| 19 | `modelo` | 0.0320 |
-| 20 | `ecossistema` | 0.0319 |
+| 1 | `centro` | 0.3197 |
+| 2 | `pesquisa` | 0.2762 |
+| 3 | `claudio` | 0.2063 |
+| 4 | `rede` | 0.1728 |
+| 5 | `fabio` | 0.1243 |
+| 6 | `publico` | 0.0647 |
+| 7 | `inteligencia` | 0.0644 |
+| 8 | `seguir` | 0.0635 |
+| 9 | `fapesp` | 0.0627 |
+| 10 | `brasil` | 0.0615 |
+| 11 | `tecnologia` | 0.0584 |
+| 12 | `hollerith` | 0.0579 |
+| 13 | `ator` | 0.0572 |
+| 14 | `dado` | 0.0516 |
+| 15 | `corporacao` | 0.0507 |
+| 16 | `artificial` | 0.0397 |
+| 17 | `modelo` | 0.0393 |
+| 18 | `empresa` | 0.0381 |
+| 19 | `maquina` | 0.0379 |
+| 20 | `ecossistema` | 0.0321 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -145,47 +145,47 @@ vezes.
 | 2 | `inteligencia` | `artificial` | 0.864 | 153 |
 | 3 | `unidos` | `estados` | 0.858 | 48 |
 | 4 | `linguas` | `indigenas` | 0.782 | 40 |
-| 5 | `aberto` | `codigo` | 0.740 | 51 |
-| 6 | `linguagem` | `processamento` | 0.691 | 36 |
-| 7 | `maquina` | `aprendizado` | 0.636 | 47 |
-| 8 | `acesso` | `disponivel` | 0.635 | 34 |
-| 9 | `historica` | `investigacao` | 0.619 | 24 |
-| 10 | `claudio` | `fabio` | 0.580 | 179 |
-| 11 | `research` | `brasil` | 0.567 | 47 |
-| 12 | `inovacao` | `ecossistema` | 0.551 | 46 |
-| 13 | `passagem` | `ponto` | 0.523 | 21 |
-| 14 | `novembro` | `dezembro` | 0.520 | 12 |
-| 15 | `laboratorio` | `fechamento` | 0.517 | 31 |
-| 16 | `hollerith` | `tabulacao` | 0.516 | 39 |
-| 17 | `comercial` | `tecnica` | 0.513 | 19 |
-| 18 | `gente` | `dinheiro` | 0.497 | 15 |
-| 19 | `entrevistas` | `observacao` | 0.495 | 20 |
-| 20 | `documentos` | `entrevistas` | 0.492 | 21 |
-| 21 | `sistema` | `tabulacao` | 0.487 | 24 |
-| 22 | `claudio` | `informacao` | 0.478 | 63 |
-| 23 | `linguas` | `projeto` | 0.468 | 12 |
-| 24 | `cadeia` | `translacao` | 0.466 | 12 |
-| 25 | `pessoas` | `vida` | 0.461 | 9 |
+| 5 | `linguagem` | `natural` | 0.760 | 43 |
+| 6 | `aberto` | `codigo` | 0.740 | 51 |
+| 7 | `linguagem` | `processamento` | 0.691 | 36 |
+| 8 | `processamento` | `natural` | 0.688 | 24 |
+| 9 | `maquina` | `aprendizado` | 0.636 | 47 |
+| 10 | `acesso` | `disponivel` | 0.635 | 34 |
+| 11 | `historica` | `investigacao` | 0.618 | 24 |
+| 12 | `claudio` | `fabio` | 0.579 | 179 |
+| 13 | `research` | `brasil` | 0.566 | 47 |
+| 14 | `inovacao` | `ecossistema` | 0.550 | 46 |
+| 15 | `novembro` | `dezembro` | 0.528 | 12 |
+| 16 | `passagem` | `ponto` | 0.523 | 21 |
+| 17 | `laboratorio` | `fechamento` | 0.517 | 31 |
+| 18 | `hollerith` | `tabulacao` | 0.516 | 39 |
+| 19 | `comercial` | `tecnica` | 0.512 | 19 |
+| 20 | `entrevistas` | `observacao` | 0.499 | 20 |
+| 21 | `gente` | `dinheiro` | 0.497 | 15 |
+| 22 | `sistema` | `tabulacao` | 0.486 | 24 |
+| 23 | `documentos` | `entrevistas` | 0.481 | 21 |
+| 24 | `claudio` | `informacao` | 0.477 | 63 |
+| 25 | `linguas` | `projeto` | 0.468 | 12 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (53 termos): pesquisa, centro, publico, corporacao, fapesp, instituicao
-- **Tópico 2** (42 termos): rede, seguir, arranjo, ator, campo, associacao
-- **Tópico 3** (25 termos): tecnologia, modelo, dado, codigo, aberto, ciencia
-- **Tópico 4** (20 termos): maquina, hollerith, tabulacao, tecnica, estados, escala
-- **Tópico 5** (16 termos): brasil, laboratorio, vinculo, pesquisador, acesso, research
-- **Tópico 6** (14 termos): claudio, fabio, informacao, verbal, pergunta, entrevistas
-- **Tópico 7** (10 termos): artificial, inteligencia, empresa, ecossistema, inovacao, brasileiro
+- **Tópico 1** (49 termos): claudio, rede, fabio, seguir, ator, campo
+- **Tópico 2** (33 termos): tecnologia, modelo, dado, codigo, linguagem, aberto
+- **Tópico 3** (32 termos): pesquisa, centro, analise, pesquisador, cientifico, parte
+- **Tópico 4** (32 termos): publico, corporacao, arranjo, fapesp, instituicao, universidade
+- **Tópico 5** (18 termos): artificial, inteligencia, maquina, hollerith, empresa, ecossistema
+- **Tópico 6** (12 termos): brasil, laboratorio, acesso, research, fechamento, estados
+- **Tópico 7** (4 termos): trajetoria, historica, leitura, investigacao
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 4** [maquina, hollerith, tabulacao] e **Tópico 5** [brasil, laboratorio, vinculo] — densidade ponderada de ligação = 0.2562
-- Lacuna entre **Tópico 1** [pesquisa, centro, publico] e **Tópico 4** [maquina, hollerith, tabulacao] — densidade ponderada de ligação = 0.3170
-- Lacuna entre **Tópico 2** [rede, seguir, arranjo] e **Tópico 3** [tecnologia, modelo, dado] — densidade ponderada de ligação = 0.3219
-- Lacuna entre **Tópico 2** [rede, seguir, arranjo] e **Tópico 4** [maquina, hollerith, tabulacao] — densidade ponderada de ligação = 0.3500
-- Lacuna entre **Tópico 3** [tecnologia, modelo, dado] e **Tópico 5** [brasil, laboratorio, vinculo] — densidade ponderada de ligação = 0.3525
-- Lacuna entre **Tópico 3** [tecnologia, modelo, dado] e **Tópico 4** [maquina, hollerith, tabulacao] — densidade ponderada de ligação = 0.3900
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 2** [tecnologia, modelo, dado] — densidade ponderada de ligação = 0.2764
+- Lacuna entre **Tópico 2** [tecnologia, modelo, dado] e **Tópico 4** [publico, corporacao, arranjo] — densidade ponderada de ligação = 0.3693
+- Lacuna entre **Tópico 2** [tecnologia, modelo, dado] e **Tópico 3** [pesquisa, centro, analise] — densidade ponderada de ligação = 0.3996
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 5** [artificial, inteligencia, maquina] — densidade ponderada de ligação = 0.4014
+- Lacuna entre **Tópico 4** [publico, corporacao, arranjo] e **Tópico 5** [artificial, inteligencia, maquina] — densidade ponderada de ligação = 0.4149
+- Lacuna entre **Tópico 1** [claudio, rede, fabio] e **Tópico 4** [publico, corporacao, arranjo] — densidade ponderada de ligação = 0.4758
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O capítulo segue o arranjo do C4AI em três planos
