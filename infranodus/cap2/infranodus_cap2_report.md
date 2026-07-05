@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **28,180**
-- Grafo bruto: **7059** nós · **66341** arestas
+- Tokens significativos: **28,174**
+- Grafo bruto: **7058** nós · **66337** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3600** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -24,8 +24,8 @@
 | 4 | `militar` | 1114 |
 | 5 | `ciencia` | 1025 |
 | 6 | `rotulo` | 879 |
-| 7 | `rede` | 817 |
-| 8 | `analise` | 774 |
+| 7 | `rede` | 809 |
+| 8 | `analise` | 766 |
 | 9 | `vocabulario` | 764 |
 | 10 | `humano` | 690 |
 | 11 | `campo` | 660 |
@@ -56,14 +56,14 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `artificial` | 0.0319 |
+| 1 | `artificial` | 0.0320 |
 | 2 | `inteligencia` | 0.0319 |
 | 3 | `latour` | 0.0210 |
 | 4 | `militar` | 0.0191 |
 | 5 | `ciencia` | 0.0186 |
 | 6 | `rotulo` | 0.0156 |
-| 7 | `rede` | 0.0154 |
-| 8 | `analise` | 0.0147 |
+| 7 | `rede` | 0.0153 |
+| 8 | `analise` | 0.0146 |
 | 9 | `vocabulario` | 0.0139 |
 | 10 | `humano` | 0.0130 |
 | 11 | `campo` | 0.0128 |
@@ -112,26 +112,26 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `latour` | 0.3214 |
-| 2 | `inteligencia` | 0.2148 |
-| 3 | `artificial` | 0.2086 |
-| 4 | `ciencia` | 0.1434 |
+| 1 | `latour` | 0.3244 |
+| 2 | `inteligencia` | 0.2156 |
+| 3 | `artificial` | 0.2092 |
+| 4 | `ciencia` | 0.1435 |
 | 5 | `militar` | 0.1426 |
-| 6 | `vocabulario` | 0.1364 |
+| 6 | `vocabulario` | 0.1370 |
 | 7 | `rotulo` | 0.0948 |
 | 8 | `capes` | 0.0838 |
-| 9 | `rede` | 0.0729 |
-| 10 | `catalogo` | 0.0706 |
-| 11 | `conceito` | 0.0683 |
-| 12 | `analise` | 0.0585 |
-| 13 | `humano` | 0.0531 |
-| 14 | `figuracoes` | 0.0523 |
-| 15 | `teoria` | 0.0504 |
-| 16 | `aime` | 0.0475 |
+| 9 | `catalogo` | 0.0701 |
+| 10 | `rede` | 0.0694 |
+| 11 | `conceito` | 0.0686 |
+| 12 | `analise` | 0.0541 |
+| 13 | `humano` | 0.0532 |
+| 14 | `figuracoes` | 0.0525 |
+| 15 | `teoria` | 0.0522 |
+| 16 | `aime` | 0.0476 |
 | 17 | `campo` | 0.0459 |
 | 18 | `figuracao` | 0.0443 |
-| 19 | `descreve` | 0.0436 |
-| 20 | `tecnociencia` | 0.0357 |
+| 19 | `descreve` | 0.0442 |
+| 20 | `tecnociencia` | 0.0358 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -154,9 +154,9 @@ vezes.
 | 11 | `teoria` | `ator` | 0.707 | 152 |
 | 12 | `refinada` | `contagem` | 0.647 | 46 |
 | 13 | `textil` | `topologico` | 0.644 | 46 |
-| 14 | `lexicometrica` | `analise` | 0.626 | 95 |
+| 14 | `lexicometrica` | `analise` | 0.627 | 95 |
 | 15 | `modelo` | `linguagem` | 0.597 | 63 |
-| 16 | `ator` | `rede` | 0.592 | 154 |
+| 16 | `ator` | `rede` | 0.593 | 154 |
 | 17 | `recalling` | `clarifications` | 0.571 | 27 |
 | 18 | `acesso` | `disponivel` | 0.565 | 18 |
 | 19 | `traducao` | `brasileira` | 0.563 | 27 |

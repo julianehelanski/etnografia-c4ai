@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,928**
-- Grafo bruto: **6736** nós · **78075** arestas
+- Tokens significativos: **32,922**
+- Grafo bruto: **6735** nós · **78070** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4063** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -24,7 +24,7 @@
 | 4 | `cadeia` | 1057 |
 | 5 | `artigo` | 909 |
 | 6 | `objeto` | 886 |
-| 7 | `rede` | 868 |
+| 7 | `rede` | 864 |
 | 8 | `respiratoria` | 752 |
 | 9 | `insuficiencia` | 719 |
 | 10 | `projeto` | 686 |
@@ -39,7 +39,7 @@
 | 19 | `cientifico` | 421 |
 | 20 | `condicoes` | 421 |
 | 21 | `covid` | 411 |
-| 22 | `analise` | 408 |
+| 22 | `analise` | 404 |
 | 23 | `audio` | 403 |
 | 24 | `partir` | 400 |
 | 25 | `pacientes` | 388 |
@@ -62,7 +62,7 @@ termos frequentes mas perifericamente conectados descem.
 | 4 | `cadeia` | 0.0212 |
 | 5 | `artigo` | 0.0182 |
 | 6 | `objeto` | 0.0178 |
-| 7 | `rede` | 0.0176 |
+| 7 | `rede` | 0.0175 |
 | 8 | `respiratoria` | 0.0141 |
 | 9 | `projeto` | 0.0139 |
 | 10 | `dado` | 0.0137 |
@@ -79,8 +79,8 @@ termos frequentes mas perifericamente conectados descem.
 | 21 | `covid` | 0.0086 |
 | 22 | `cientifico` | 0.0086 |
 | 23 | `partir` | 0.0084 |
-| 24 | `analise` | 0.0084 |
-| 25 | `sinal` | 0.0083 |
+| 24 | `sinal` | 0.0083 |
+| 25 | `analise` | 0.0083 |
 | 26 | `pacientes` | 0.0082 |
 | 27 | `secao` | 0.0081 |
 | 28 | `ruido` | 0.0081 |
@@ -107,22 +107,22 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 12 | `resultado` | 83 | 77 | +6 |
 | 13 | `coeficientes` | 99 | 93 | +6 |
 | 14 | `processo` | 117 | 111 | +6 |
-| 15 | `repositorio` | 76 | 71 | +5 |
+| 15 | `publico` | 81 | 76 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `spira` | 0.6010 |
-| 2 | `inscricao` | 0.2505 |
+| 1 | `spira` | 0.6016 |
+| 2 | `inscricao` | 0.2510 |
 | 3 | `covideiro` | 0.1864 |
-| 4 | `cadeia` | 0.1379 |
+| 4 | `cadeia` | 0.1384 |
 | 5 | `objeto` | 0.0991 |
-| 6 | `rede` | 0.0806 |
+| 6 | `rede` | 0.0802 |
 | 7 | `artigo` | 0.0764 |
 | 8 | `modelo` | 0.0746 |
 | 9 | `respiratoria` | 0.0700 |
 | 10 | `espectrograma` | 0.0554 |
-| 11 | `dado` | 0.0482 |
+| 11 | `dado` | 0.0483 |
 | 12 | `projeto` | 0.0461 |
 | 13 | `ruido` | 0.0299 |
 | 14 | `sinal` | 0.0274 |
@@ -131,7 +131,7 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 17 | `programa` | 0.0209 |
 | 18 | `audio` | 0.0198 |
 | 19 | `covid` | 0.0196 |
-| 20 | `analise` | 0.0190 |
+| 20 | `analise` | 0.0185 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -144,7 +144,7 @@ vezes.
 | 1 | `caixa` | `preta` | 0.898 | 81 |
 | 2 | `imutavel` | `movel` | 0.846 | 82 |
 | 3 | `respiratoria` | `insuficiencia` | 0.844 | 308 |
-| 4 | `neural` | `rede` | 0.589 | 121 |
+| 4 | `neural` | `rede` | 0.590 | 121 |
 | 5 | `acao` | `programa` | 0.563 | 38 |
 | 6 | `sinal` | `acustico` | 0.549 | 61 |
 | 7 | `tornou` | `possivel` | 0.532 | 34 |
