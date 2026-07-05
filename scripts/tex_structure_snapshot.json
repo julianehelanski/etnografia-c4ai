@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-04 12:38 UTC",
+  "generated": "2026-07-05 00:10 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -100,13 +100,13 @@
         "Seguindo Fábio e Cláudio",
         "Criar demanda: a racionalidade de um ecossistema",
         "A IBM",
-        "O C4AI: das entrevistas às publicações",
-        "O fim da parceria C4AI-IBM"
+        "O C4AI: das entrevistas às publicações"
       ],
       "subsections": [
         "Como os segui: observação, entrevistas e documentos",
         "Com quais referenciais os segui",
-        "As publicações acadêmicas do C4AI"
+        "As publicações acadêmicas do C4AI",
+        "(Co)relações parciais: o fim da parceria C4AI-IBM-FAPESP, ecossistemas de inovação e a exploração do futuro"
       ],
       "figures": [
         "10_rede_coword.png",
