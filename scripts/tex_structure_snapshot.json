@@ -1,8 +1,9 @@
 {
-  "generated": "2026-07-06 11:08 UTC",
+  "generated": "2026-07-06 20:43 UTC",
   "chapters": {
     "cap1": {
       "sections": [
+        "",
         "Etnografias: fazendo o método a partir da experiência",
         "Cortar e costurar redes: os limites da descrição etnográfica",
         "O patchwork como figuração do método",
@@ -42,6 +43,7 @@
     },
     "cap2": {
       "sections": [
+        "",
         "Contando figurações: análise lexicométrica de seis obras de Bruno Latour",
         "Estudos da ciência, tecnologia e do digital",
         "Estudos sobre a inteligência artificial e a questão da mediação técnica",
@@ -121,7 +123,6 @@
         "infranodus_cap3_network.png",
         "khipu_chancay_huando_amnh_b8707.png",
         "linha-tempo-capitulo3.png",
-        "mapa-analitico-capitulo3.png",
         "mapa-associacoes-capitulo3.png",
         "mapa-capitulo3.png",
         "mapa-metodologico-capitulo3.png",
@@ -136,8 +137,9 @@
         "Seguindo Marcelo",
         "O Spira",
         "As inscrições tecnocientíficas do Spira",
-        "A rede do Covideiro",
-        "Localização do dataset e geração dos espectrogramas"
+        "A rede do covideiro",
+        "Localização do dataset e geração dos espectrogramas",
+        "Análise de rede textual do capítulo"
       ],
       "subsections": [
         "Como o segui: entrevista, artigos e relatórios",

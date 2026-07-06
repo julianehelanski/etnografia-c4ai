@@ -23,7 +23,7 @@
           <attvalue for="1" value="72" />
           <attvalue for="2" value="249.0" />
           <attvalue for="3" value="0.06019377447948876" />
-          <attvalue for="4" value="0.016449345343751292" />
+          <attvalue for="4" value="0.016450283391169763" />
         </attvalues>
       </node>
       <node id="trajetoria" label="trajetoria">
@@ -34,7 +34,7 @@
           <attvalue for="1" value="47" />
           <attvalue for="2" value="146.0" />
           <attvalue for="3" value="0.03421974850546279" />
-          <attvalue for="4" value="0.011269212077156724" />
+          <attvalue for="4" value="0.011269815677503726" />
         </attvalues>
       </node>
       <node id="sigo" label="sigo">
@@ -45,7 +45,7 @@
           <attvalue for="1" value="26" />
           <attvalue for="2" value="90.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006948195891206245" />
+          <attvalue for="4" value="0.006949041916013978" />
         </attvalues>
       </node>
       <node id="comercial" label="comercial">
@@ -56,7 +56,7 @@
           <attvalue for="1" value="23" />
           <attvalue for="2" value="58.0" />
           <attvalue for="3" value="0.00515357658214801" />
-          <attvalue for="4" value="0.005660671219000268" />
+          <attvalue for="4" value="0.005660683760549916" />
         </attvalues>
       </node>
       <node id="cientifico" label="cientifico">
@@ -67,7 +67,7 @@
           <attvalue for="1" value="43" />
           <attvalue for="2" value="136.0" />
           <attvalue for="3" value="0.016285301999587713" />
-          <attvalue for="4" value="0.010303327480218349" />
+          <attvalue for="4" value="0.010303328710989684" />
         </attvalues>
       </node>
       <node id="corte" label="corte">
@@ -78,7 +78,7 @@
           <attvalue for="1" value="24" />
           <attvalue for="2" value="56.0" />
           <attvalue for="3" value="0.008864151721294579" />
-          <attvalue for="4" value="0.005045576144633196" />
+          <attvalue for="4" value="0.005045766942934297" />
         </attvalues>
       </node>
       <node id="unidos" label="unidos">
@@ -89,7 +89,7 @@
           <attvalue for="1" value="18" />
           <attvalue for="2" value="81.0" />
           <attvalue for="3" value="0.0026798598227169654" />
-          <attvalue for="4" value="0.007793281572402089" />
+          <attvalue for="4" value="0.007793290103007" />
         </attvalues>
       </node>
       <node id="recursos" label="recursos">
@@ -100,7 +100,7 @@
           <attvalue for="1" value="36" />
           <attvalue for="2" value="73.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.0062629324255558585" />
+          <attvalue for="4" value="0.006262909300015845" />
         </attvalues>
       </node>
       <node id="grupo" label="grupo">
@@ -111,7 +111,7 @@
           <attvalue for="1" value="29" />
           <attvalue for="2" value="97.0" />
           <attvalue for="3" value="0.0008245722531436817" />
-          <attvalue for="4" value="0.007864646171103004" />
+          <attvalue for="4" value="0.007864687475460399" />
         </attvalues>
       </node>
       <node id="modelo" label="modelo">
@@ -122,7 +122,7 @@
           <attvalue for="1" value="77" />
           <attvalue for="2" value="174.0" />
           <attvalue for="3" value="0.02556173984745413" />
-          <attvalue for="4" value="0.013114100253374115" />
+          <attvalue for="4" value="0.013114157917741552" />
         </attvalues>
       </node>
       <node id="publico" label="publico">
@@ -133,7 +133,7 @@
           <attvalue for="1" value="78" />
           <attvalue for="2" value="258.0" />
           <attvalue for="3" value="0.03463203463203463" />
-          <attvalue for="4" value="0.017674167636664632" />
+          <attvalue for="4" value="0.017674162231360566" />
         </attvalues>
       </node>
       <node id="instituicao" label="instituicao">
@@ -144,7 +144,7 @@
           <attvalue for="1" value="60" />
           <attvalue for="2" value="153.0" />
           <attvalue for="3" value="0.005978148835291692" />
-          <attvalue for="4" value="0.011170414314331899" />
+          <attvalue for="4" value="0.011170393848777774" />
         </attvalues>
       </node>
       <node id="inteligencia" label="inteligencia">
@@ -155,7 +155,7 @@
           <attvalue for="1" value="50" />
           <attvalue for="2" value="300.0" />
           <attvalue for="3" value="0.09668109668109667" />
-          <attvalue for="4" value="0.018782573733853548" />
+          <attvalue for="4" value="0.01878261967566758" />
         </attvalues>
       </node>
       <node id="associacao" label="associacao">
@@ -166,7 +166,7 @@
           <attvalue for="1" value="66" />
           <attvalue for="2" value="142.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.01012299370494817" />
+          <attvalue for="4" value="0.010124298449513234" />
         </attvalues>
       </node>
       <node id="brasileiro" label="brasileiro">
@@ -177,7 +177,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="78.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006169093153248309" />
+          <attvalue for="4" value="0.006169188486883379" />
         </attvalues>
       </node>
       <node id="relatorios" label="relatorios">
@@ -188,7 +188,7 @@
           <attvalue for="1" value="34" />
           <attvalue for="2" value="137.0" />
           <attvalue for="3" value="0.01443001443001443" />
-          <attvalue for="4" value="0.010271441956660885" />
+          <attvalue for="4" value="0.01027149467391387" />
         </attvalues>
       </node>
       <node id="hollerith" label="hollerith">
@@ -199,7 +199,7 @@
           <attvalue for="1" value="62" />
           <attvalue for="2" value="189.0" />
           <attvalue for="3" value="0.06019377447948876" />
-          <attvalue for="4" value="0.014274995251205676" />
+          <attvalue for="4" value="0.014275066317505239" />
         </attvalues>
       </node>
       <node id="saude" label="saude">
@@ -210,7 +210,7 @@
           <attvalue for="1" value="30" />
           <attvalue for="2" value="61.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.0050527180389131855" />
+          <attvalue for="4" value="0.005052718952176846" />
         </attvalues>
       </node>
       <node id="maior" label="maior">
@@ -221,7 +221,7 @@
           <attvalue for="1" value="34" />
           <attvalue for="2" value="63.0" />
           <attvalue for="3" value="0.00041228612657184083" />
-          <attvalue for="4" value="0.005738644169133635" />
+          <attvalue for="4" value="0.0057387091926433854" />
         </attvalues>
       </node>
       <node id="ciencia" label="ciencia">
@@ -232,7 +232,7 @@
           <attvalue for="1" value="41" />
           <attvalue for="2" value="90.0" />
           <attvalue for="3" value="0.009482580911152338" />
-          <attvalue for="4" value="0.0073145752070551025" />
+          <attvalue for="4" value="0.007314599613262506" />
         </attvalues>
       </node>
       <node id="pergunta" label="pergunta">
@@ -243,7 +243,7 @@
           <attvalue for="1" value="44" />
           <attvalue for="2" value="135.0" />
           <attvalue for="3" value="0.016903731189445475" />
-          <attvalue for="4" value="0.010167314629789913" />
+          <attvalue for="4" value="0.01016718656658129" />
         </attvalues>
       </node>
       <node id="descrevo" label="descrevo">
@@ -254,7 +254,7 @@
           <attvalue for="1" value="34" />
           <attvalue for="2" value="130.0" />
           <attvalue for="3" value="0.0022675736961451248" />
-          <attvalue for="4" value="0.009786870355336463" />
+          <attvalue for="4" value="0.009787899004099898" />
         </attvalues>
       </node>
       <node id="resposta" label="resposta">
@@ -265,7 +265,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="59.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005053783290791818" />
+          <attvalue for="4" value="0.005053471323804401" />
         </attvalues>
       </node>
       <node id="gente" label="gente">
@@ -276,7 +276,7 @@
           <attvalue for="1" value="28" />
           <attvalue for="2" value="68.0" />
           <attvalue for="3" value="0.001443001443001443" />
-          <attvalue for="4" value="0.0058871929682587495" />
+          <attvalue for="4" value="0.005887129029583851" />
         </attvalues>
       </node>
       <node id="ator" label="ator">
@@ -287,7 +287,7 @@
           <attvalue for="1" value="62" />
           <attvalue for="2" value="200.0" />
           <attvalue for="3" value="0.048237476808905375" />
-          <attvalue for="4" value="0.014045191370048631" />
+          <attvalue for="4" value="0.014046259680275928" />
         </attvalues>
       </node>
       <node id="infraestrutura" label="infraestrutura">
@@ -298,7 +298,7 @@
           <attvalue for="1" value="56" />
           <attvalue for="2" value="125.0" />
           <attvalue for="3" value="0.008348794063079777" />
-          <attvalue for="4" value="0.00957878398670276" />
+          <attvalue for="4" value="0.009578753231528294" />
         </attvalues>
       </node>
       <node id="conhecimento" label="conhecimento">
@@ -309,7 +309,7 @@
           <attvalue for="1" value="36" />
           <attvalue for="2" value="46.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.004430866215806493" />
+          <attvalue for="4" value="0.004430915108761489" />
         </attvalues>
       </node>
       <node id="aberto" label="aberto">
@@ -320,7 +320,7 @@
           <attvalue for="1" value="29" />
           <attvalue for="2" value="108.0" />
           <attvalue for="3" value="0.0006184291898577612" />
-          <attvalue for="4" value="0.008672947189731833" />
+          <attvalue for="4" value="0.008672957649632199" />
         </attvalues>
       </node>
       <node id="historica" label="historica">
@@ -331,7 +331,7 @@
           <attvalue for="1" value="24" />
           <attvalue for="2" value="90.0" />
           <attvalue for="3" value="0.012368583797155224" />
-          <attvalue for="4" value="0.007755093800383767" />
+          <attvalue for="4" value="0.007755183790208092" />
         </attvalues>
       </node>
       <node id="arranjo" label="arranjo">
@@ -342,7 +342,7 @@
           <attvalue for="1" value="90" />
           <attvalue for="2" value="213.0" />
           <attvalue for="3" value="0.017934446505875078" />
-          <attvalue for="4" value="0.014615697400791994" />
+          <attvalue for="4" value="0.014616904049008214" />
         </attvalues>
       </node>
       <node id="laboratorio" label="laboratorio">
@@ -353,7 +353,7 @@
           <attvalue for="1" value="68" />
           <attvalue for="2" value="220.0" />
           <attvalue for="3" value="0.0484436198721913" />
-          <attvalue for="4" value="0.015437471364454067" />
+          <attvalue for="4" value="0.01543783909623612" />
         </attvalues>
       </node>
       <node id="maquina" label="maquina">
@@ -364,7 +364,7 @@
           <attvalue for="1" value="69" />
           <attvalue for="2" value="227.0" />
           <attvalue for="3" value="0.04019789734075448" />
-          <attvalue for="4" value="0.01608435152423822" />
+          <attvalue for="4" value="0.016084302814262607" />
         </attvalues>
       </node>
       <node id="pratica" label="pratica">
@@ -375,7 +375,7 @@
           <attvalue for="1" value="36" />
           <attvalue for="2" value="42.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.004283408217027525" />
+          <attvalue for="4" value="0.004283399415363041" />
         </attvalues>
       </node>
       <node id="fapesp" label="fapesp">
@@ -386,7 +386,7 @@
           <attvalue for="1" value="66" />
           <attvalue for="2" value="174.0" />
           <attvalue for="3" value="0.03421974850546279" />
-          <attvalue for="4" value="0.01229373025089884" />
+          <attvalue for="4" value="0.012293599009364655" />
         </attvalues>
       </node>
       <node id="producao" label="producao">
@@ -397,7 +397,7 @@
           <attvalue for="1" value="26" />
           <attvalue for="2" value="77.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006393417397419287" />
+          <attvalue for="4" value="0.006393445901245933" />
         </attvalues>
       </node>
       <node id="partir" label="partir">
@@ -408,7 +408,7 @@
           <attvalue for="1" value="52" />
           <attvalue for="2" value="107.0" />
           <attvalue for="3" value="0.011544011544011544" />
-          <attvalue for="4" value="0.008668255909759118" />
+          <attvalue for="4" value="0.008668408732110191" />
         </attvalues>
       </node>
       <node id="material" label="material">
@@ -419,7 +419,7 @@
           <attvalue for="1" value="35" />
           <attvalue for="2" value="50.0" />
           <attvalue for="3" value="0.00041228612657184083" />
-          <attvalue for="4" value="0.004865099262437826" />
+          <attvalue for="4" value="0.0048650893653434425" />
         </attvalues>
       </node>
       <node id="computacao" label="computacao">
@@ -430,7 +430,7 @@
           <attvalue for="1" value="35" />
           <attvalue for="2" value="74.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006123799272520954" />
+          <attvalue for="4" value="0.006123773852781698" />
         </attvalues>
       </node>
       <node id="linguagem" label="linguagem">
@@ -441,7 +441,7 @@
           <attvalue for="1" value="35" />
           <attvalue for="2" value="139.0" />
           <attvalue for="3" value="0.011131725417439703" />
-          <attvalue for="4" value="0.01094791901895845" />
+          <attvalue for="4" value="0.0109479452051369" />
         </attvalues>
       </node>
       <node id="dado" label="dado">
@@ -452,7 +452,7 @@
           <attvalue for="1" value="86" />
           <attvalue for="2" value="165.0" />
           <attvalue for="3" value="0.038342609771181195" />
-          <attvalue for="4" value="0.01244696017031667" />
+          <attvalue for="4" value="0.012446952925512096" />
         </attvalues>
       </node>
       <node id="posicao" label="posicao">
@@ -463,7 +463,7 @@
           <attvalue for="1" value="32" />
           <attvalue for="2" value="61.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005267763782579965" />
+          <attvalue for="4" value="0.0052677975771458175" />
         </attvalues>
       </node>
       <node id="relatorio" label="relatorio">
@@ -474,7 +474,7 @@
           <attvalue for="1" value="38" />
           <attvalue for="2" value="77.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.0064268772160984795" />
+          <attvalue for="4" value="0.006426912624615689" />
         </attvalues>
       </node>
       <node id="relacoes" label="relacoes">
@@ -485,7 +485,7 @@
           <attvalue for="1" value="25" />
           <attvalue for="2" value="50.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.004776050271175385" />
+          <attvalue for="4" value="0.004776067357178058" />
         </attvalues>
       </node>
       <node id="inovacao" label="inovacao">
@@ -496,7 +496,7 @@
           <attvalue for="1" value="41" />
           <attvalue for="2" value="150.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.010438614802408482" />
+          <attvalue for="4" value="0.010438434272234" />
         </attvalues>
       </node>
       <node id="obia" label="obia">
@@ -507,7 +507,7 @@
           <attvalue for="1" value="17" />
           <attvalue for="2" value="79.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006551670950618274" />
+          <attvalue for="4" value="0.00655175633999291" />
         </attvalues>
       </node>
       <node id="campo" label="campo">
@@ -518,7 +518,7 @@
           <attvalue for="1" value="67" />
           <attvalue for="2" value="138.0" />
           <attvalue for="3" value="0.004741290455576169" />
-          <attvalue for="4" value="0.010184730981163768" />
+          <attvalue for="4" value="0.010185629455830696" />
         </attvalues>
       </node>
       <node id="investigacao" label="investigacao">
@@ -529,7 +529,7 @@
           <attvalue for="1" value="19" />
           <attvalue for="2" value="59.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.005457697222578067" />
+          <attvalue for="4" value="0.00545774679075688" />
         </attvalues>
       </node>
       <node id="termos" label="termos">
@@ -540,7 +540,7 @@
           <attvalue for="1" value="37" />
           <attvalue for="2" value="61.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.0053891282957441505" />
+          <attvalue for="4" value="0.005389130715213389" />
         </attvalues>
       </node>
       <node id="claudio" label="claudio">
@@ -551,7 +551,7 @@
           <attvalue for="1" value="170" />
           <attvalue for="2" value="739.0" />
           <attvalue for="3" value="0.22923108637394352" />
-          <attvalue for="4" value="0.04484152796303834" />
+          <attvalue for="4" value="0.04483085743738369" />
         </attvalues>
       </node>
       <node id="research" label="research">
@@ -562,7 +562,7 @@
           <attvalue for="1" value="26" />
           <attvalue for="2" value="97.0" />
           <attvalue for="3" value="0.0010307153164296021" />
-          <attvalue for="4" value="0.007433135413902979" />
+          <attvalue for="4" value="0.007433234723339925" />
         </attvalues>
       </node>
       <node id="pesquisa" label="pesquisa">
@@ -573,7 +573,7 @@
           <attvalue for="1" value="164" />
           <attvalue for="2" value="548.0" />
           <attvalue for="3" value="0.33858998144712427" />
-          <attvalue for="4" value="0.03582675538676901" />
+          <attvalue for="4" value="0.035826628350596156" />
         </attvalues>
       </node>
       <node id="negocio" label="negocio">
@@ -584,18 +584,18 @@
           <attvalue for="1" value="23" />
           <attvalue for="2" value="67.0" />
           <attvalue for="3" value="0.004638218923933209" />
-          <attvalue for="4" value="0.005913425082073817" />
+          <attvalue for="4" value="0.005913407120595369" />
         </attvalues>
       </node>
       <node id="segui" label="segui">
         <viz:color r="0" g="158" b="115" a="1.0" />
-        <viz:size value="18.23004059539919" />
+        <viz:size value="18.148849797023004" />
         <attvalues>
           <attvalue for="0" value="2" />
           <attvalue for="1" value="30" />
-          <attvalue for="2" value="126.0" />
+          <attvalue for="2" value="125.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.008883319889531279" />
+          <attvalue for="4" value="0.008831802039360308" />
         </attvalues>
       </node>
       <node id="brasil" label="brasil">
@@ -606,7 +606,7 @@
           <attvalue for="1" value="73" />
           <attvalue for="2" value="255.0" />
           <attvalue for="3" value="0.05761698618841476" />
-          <attvalue for="4" value="0.017847316217291895" />
+          <attvalue for="4" value="0.017848081244516097" />
         </attvalues>
       </node>
       <node id="sistema" label="sistema">
@@ -617,7 +617,7 @@
           <attvalue for="1" value="36" />
           <attvalue for="2" value="57.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005208887866313393" />
+          <attvalue for="4" value="0.005208843948434644" />
         </attvalues>
       </node>
       <node id="financiamento" label="financiamento">
@@ -628,7 +628,7 @@
           <attvalue for="1" value="41" />
           <attvalue for="2" value="93.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.007081689646769048" />
+          <attvalue for="4" value="0.007081501535225787" />
         </attvalues>
       </node>
       <node id="projeto" label="projeto">
@@ -639,7 +639,7 @@
           <attvalue for="1" value="25" />
           <attvalue for="2" value="41.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.004058829804957849" />
+          <attvalue for="4" value="0.004058708334562349" />
         </attvalues>
       </node>
       <node id="tecnologia" label="tecnologia">
@@ -650,7 +650,7 @@
           <attvalue for="1" value="94" />
           <attvalue for="2" value="162.0" />
           <attvalue for="3" value="0.017316017316017316" />
-          <attvalue for="4" value="0.011730808295393537" />
+          <attvalue for="4" value="0.011730853611950112" />
         </attvalues>
       </node>
       <node id="parte" label="parte">
@@ -661,7 +661,7 @@
           <attvalue for="1" value="47" />
           <attvalue for="2" value="120.0" />
           <attvalue for="3" value="0.0016491445062873633" />
-          <attvalue for="4" value="0.009337272243054567" />
+          <attvalue for="4" value="0.009337447527587596" />
         </attvalues>
       </node>
       <node id="acesso" label="acesso">
@@ -672,7 +672,7 @@
           <attvalue for="1" value="35" />
           <attvalue for="2" value="99.0" />
           <attvalue for="3" value="0.019171304885590598" />
-          <attvalue for="4" value="0.008446803784981322" />
+          <attvalue for="4" value="0.008446761594927304" />
         </attvalues>
       </node>
       <node id="publicacoes" label="publicacoes">
@@ -683,7 +683,7 @@
           <attvalue for="1" value="40" />
           <attvalue for="2" value="110.0" />
           <attvalue for="3" value="0.005772005772005772" />
-          <attvalue for="4" value="0.008669498394805082" />
+          <attvalue for="4" value="0.008669526508956615" />
         </attvalues>
       </node>
       <node id="aprendizado" label="aprendizado">
@@ -694,7 +694,7 @@
           <attvalue for="1" value="20" />
           <attvalue for="2" value="103.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.007554868217597662" />
+          <attvalue for="4" value="0.007554864375208066" />
         </attvalues>
       </node>
       <node id="escala" label="escala">
@@ -705,7 +705,7 @@
           <attvalue for="1" value="35" />
           <attvalue for="2" value="53.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.004960444780759416" />
+          <attvalue for="4" value="0.004960489711226333" />
         </attvalues>
       </node>
       <node id="empresa" label="empresa">
@@ -716,7 +716,7 @@
           <attvalue for="1" value="78" />
           <attvalue for="2" value="191.0" />
           <attvalue for="3" value="0.02989074417645846" />
-          <attvalue for="4" value="0.0135798640406386" />
+          <attvalue for="4" value="0.013579808219341608" />
         </attvalues>
       </node>
       <node id="documentos" label="documentos">
@@ -727,7 +727,7 @@
           <attvalue for="1" value="22" />
           <attvalue for="2" value="87.0" />
           <attvalue for="3" value="0.018965161822304677" />
-          <attvalue for="4" value="0.007046335865148481" />
+          <attvalue for="4" value="0.007047006849733803" />
         </attvalues>
       </node>
       <node id="ecossistema" label="ecossistema">
@@ -738,7 +738,7 @@
           <attvalue for="1" value="68" />
           <attvalue for="2" value="233.0" />
           <attvalue for="3" value="0.03669346526489384" />
-          <attvalue for="4" value="0.015610242691923154" />
+          <attvalue for="4" value="0.015609944669086342" />
         </attvalues>
       </node>
       <node id="relacao" label="relacao">
@@ -749,7 +749,7 @@
           <attvalue for="1" value="28" />
           <attvalue for="2" value="71.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005849786536989873" />
+          <attvalue for="4" value="0.005849792224035937" />
         </attvalues>
       </node>
       <node id="informacao" label="informacao">
@@ -760,7 +760,7 @@
           <attvalue for="1" value="31" />
           <attvalue for="2" value="213.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.013074261784368843" />
+          <attvalue for="4" value="0.013072478652792083" />
         </attvalues>
       </node>
       <node id="humano" label="humano">
@@ -771,7 +771,7 @@
           <attvalue for="1" value="40" />
           <attvalue for="2" value="49.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.004620124831768811" />
+          <attvalue for="4" value="0.004620310208387531" />
         </attvalues>
       </node>
       <node id="analise" label="analise">
@@ -782,7 +782,7 @@
           <attvalue for="1" value="51" />
           <attvalue for="2" value="129.0" />
           <attvalue for="3" value="0.01566687280972995" />
-          <attvalue for="4" value="0.00985906803095823" />
+          <attvalue for="4" value="0.009859313762005955" />
         </attvalues>
       </node>
       <node id="questao" label="questao">
@@ -793,7 +793,7 @@
           <attvalue for="1" value="24" />
           <attvalue for="2" value="81.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.006604699130636777" />
+          <attvalue for="4" value="0.006604686142282518" />
         </attvalues>
       </node>
       <node id="entrevistas" label="entrevistas">
@@ -804,7 +804,7 @@
           <attvalue for="1" value="42" />
           <attvalue for="2" value="161.0" />
           <attvalue for="3" value="0.059575345289631" />
-          <attvalue for="4" value="0.011410175786938172" />
+          <attvalue for="4" value="0.011410477332611394" />
         </attvalues>
       </node>
       <node id="tabulacao" label="tabulacao">
@@ -815,7 +815,7 @@
           <attvalue for="1" value="31" />
           <attvalue for="2" value="114.0" />
           <attvalue for="3" value="0.0020614306328592042" />
-          <attvalue for="4" value="0.009214866615061346" />
+          <attvalue for="4" value="0.009214882926680655" />
         </attvalues>
       </node>
       <node id="codigo" label="codigo">
@@ -826,7 +826,7 @@
           <attvalue for="1" value="30" />
           <attvalue for="2" value="123.0" />
           <attvalue for="3" value="0.020820449391877962" />
-          <attvalue for="4" value="0.009712383670030827" />
+          <attvalue for="4" value="0.009712426194767622" />
         </attvalues>
       </node>
       <node id="bluetalks" label="bluetalks">
@@ -837,7 +837,7 @@
           <attvalue for="1" value="29" />
           <attvalue for="2" value="84.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006598300840012734" />
+          <attvalue for="4" value="0.006597832272058235" />
         </attvalues>
       </node>
       <node id="pesquisador" label="pesquisador">
@@ -848,7 +848,7 @@
           <attvalue for="1" value="52" />
           <attvalue for="2" value="98.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.007636670359498236" />
+          <attvalue for="4" value="0.007636668952459417" />
         </attvalues>
       </node>
       <node id="universidade" label="universidade">
@@ -859,7 +859,7 @@
           <attvalue for="1" value="50" />
           <attvalue for="2" value="159.0" />
           <attvalue for="3" value="0.0020614306328592042" />
-          <attvalue for="4" value="0.011168259506676518" />
+          <attvalue for="4" value="0.011168302590308134" />
         </attvalues>
       </node>
       <node id="deixa" label="deixa">
@@ -870,7 +870,7 @@
           <attvalue for="1" value="25" />
           <attvalue for="2" value="63.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005603916400803006" />
+          <attvalue for="4" value="0.0056039934078649396" />
         </attvalues>
       </node>
       <node id="ponto" label="ponto">
@@ -881,18 +881,18 @@
           <attvalue for="1" value="38" />
           <attvalue for="2" value="83.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006900542209699526" />
+          <attvalue for="4" value="0.00690098895395282" />
         </attvalues>
       </node>
       <node id="fabio" label="fabio">
         <viz:color r="204" g="121" b="167" a="1.0" />
-        <viz:size value="45.1041948579161" />
+        <viz:size value="45.18538565629229" />
         <attvalues>
           <attvalue for="0" value="3" />
           <attvalue for="1" value="86" />
-          <attvalue for="2" value="457.0" />
-          <attvalue for="3" value="0.15831787260358687" />
-          <attvalue for="4" value="0.027382632522290555" />
+          <attvalue for="2" value="458.0" />
+          <attvalue for="3" value="0.16903731189445473" />
+          <attvalue for="4" value="0.027434402361865444" />
         </attvalues>
       </node>
       <node id="estados" label="estados">
@@ -903,7 +903,7 @@
           <attvalue for="1" value="23" />
           <attvalue for="2" value="70.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006936424446610901" />
+          <attvalue for="4" value="0.006936453501687691" />
         </attvalues>
       </node>
       <node id="interesse" label="interesse">
@@ -914,7 +914,7 @@
           <attvalue for="1" value="20" />
           <attvalue for="2" value="62.0" />
           <attvalue for="3" value="0.0070088641517212944" />
-          <attvalue for="4" value="0.005293487104029178" />
+          <attvalue for="4" value="0.005293331473869367" />
         </attvalues>
       </node>
       <node id="processamento" label="processamento">
@@ -925,7 +925,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="114.0" />
           <attvalue for="3" value="0.026798598227169654" />
-          <attvalue for="4" value="0.009134550890872022" />
+          <attvalue for="4" value="0.009134560331628093" />
         </attvalues>
       </node>
       <node id="artificial" label="artificial">
@@ -936,7 +936,7 @@
           <attvalue for="1" value="55" />
           <attvalue for="2" value="309.0" />
           <attvalue for="3" value="0.05627705627705627" />
-          <attvalue for="4" value="0.019540847163150434" />
+          <attvalue for="4" value="0.019540945628158064" />
         </attvalues>
       </node>
       <node id="vinculo" label="vinculo">
@@ -947,7 +947,7 @@
           <attvalue for="1" value="37" />
           <attvalue for="2" value="132.0" />
           <attvalue for="3" value="0.0006184291898577612" />
-          <attvalue for="4" value="0.009829187280735703" />
+          <attvalue for="4" value="0.009829286651431004" />
         </attvalues>
       </node>
       <node id="verbal" label="verbal">
@@ -958,7 +958,7 @@
           <attvalue for="1" value="27" />
           <attvalue for="2" value="189.0" />
           <attvalue for="3" value="0.016903731189445475" />
-          <attvalue for="4" value="0.011779637511619362" />
+          <attvalue for="4" value="0.011778080908594493" />
         </attvalues>
       </node>
       <node id="fala" label="fala">
@@ -969,7 +969,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="67.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.0054573672534284755" />
+          <attvalue for="4" value="0.005456989649533952" />
         </attvalues>
       </node>
       <node id="natural" label="natural">
@@ -980,7 +980,7 @@
           <attvalue for="1" value="17" />
           <attvalue for="2" value="95.0" />
           <attvalue for="3" value="0.0006184291898577612" />
-          <attvalue for="4" value="0.007944355134161023" />
+          <attvalue for="4" value="0.00794439184596222" />
         </attvalues>
       </node>
       <node id="observacao" label="observacao">
@@ -991,7 +991,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="72.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.006036287259925543" />
+          <attvalue for="4" value="0.006037159454630375" />
         </attvalues>
       </node>
       <node id="tecnica" label="tecnica">
@@ -1002,7 +1002,7 @@
           <attvalue for="1" value="30" />
           <attvalue for="2" value="60.0" />
           <attvalue for="3" value="0.0022675736961451248" />
-          <attvalue for="4" value="0.005916682147512268" />
+          <attvalue for="4" value="0.005916693715882953" />
         </attvalues>
       </node>
       <node id="actante" label="actante">
@@ -1013,7 +1013,7 @@
           <attvalue for="1" value="26" />
           <attvalue for="2" value="58.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005321480982544376" />
+          <attvalue for="4" value="0.005321739410829496" />
         </attvalues>
       </node>
       <node id="rede" label="rede">
@@ -1024,7 +1024,7 @@
           <attvalue for="1" value="144" />
           <attvalue for="2" value="413.0" />
           <attvalue for="3" value="0.1706864564007421" />
-          <attvalue for="4" value="0.027684890576355006" />
+          <attvalue for="4" value="0.027687496693439718" />
         </attvalues>
       </node>
       <node id="disponivel" label="disponivel">
@@ -1035,7 +1035,7 @@
           <attvalue for="1" value="24" />
           <attvalue for="2" value="68.0" />
           <attvalue for="3" value="0.0006184291898577612" />
-          <attvalue for="4" value="0.006331235346056182" />
+          <attvalue for="4" value="0.00633119980719322" />
         </attvalues>
       </node>
       <node id="corporacao" label="corporacao">
@@ -1046,7 +1046,7 @@
           <attvalue for="1" value="89" />
           <attvalue for="2" value="231.0" />
           <attvalue for="3" value="0.03298289012574727" />
-          <attvalue for="4" value="0.0162470543228891" />
+          <attvalue for="4" value="0.01624708936408291" />
         </attvalues>
       </node>
       <node id="secao" label="secao">
@@ -1057,7 +1057,7 @@
           <attvalue for="1" value="21" />
           <attvalue for="2" value="50.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.00482851081554121" />
+          <attvalue for="4" value="0.0048285843149189" />
         </attvalues>
       </node>
       <node id="fechamento" label="fechamento">
@@ -1068,7 +1068,7 @@
           <attvalue for="1" value="23" />
           <attvalue for="2" value="99.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.007668319321844673" />
+          <attvalue for="4" value="0.007668363141804618" />
         </attvalues>
       </node>
       <node id="etnografia" label="etnografia">
@@ -1079,7 +1079,7 @@
           <attvalue for="1" value="40" />
           <attvalue for="2" value="94.0" />
           <attvalue for="3" value="0.00020614306328592042" />
-          <attvalue for="4" value="0.007526740385791843" />
+          <attvalue for="4" value="0.007526775519245095" />
         </attvalues>
       </node>
       <node id="parceria" label="parceria">
@@ -1090,7 +1090,7 @@
           <attvalue for="1" value="26" />
           <attvalue for="2" value="67.0" />
           <attvalue for="3" value="0.0" />
-          <attvalue for="4" value="0.005692737178235656" />
+          <attvalue for="4" value="0.005692765993180157" />
         </attvalues>
       </node>
       <node id="descreve" label="descreve">
@@ -1101,7 +1101,7 @@
           <attvalue for="1" value="36" />
           <attvalue for="2" value="74.0" />
           <attvalue for="3" value="0.0022675736961451248" />
-          <attvalue for="4" value="0.006502986194805525" />
+          <attvalue for="4" value="0.00650290961612204" />
         </attvalues>
       </node>
       <node id="centro" label="centro">
@@ -1112,7 +1112,7 @@
           <attvalue for="1" value="123" />
           <attvalue for="2" value="389.0" />
           <attvalue for="3" value="0.2533498247783962" />
-          <attvalue for="4" value="0.025346912010752454" />
+          <attvalue for="4" value="0.025346751672802505" />
         </attvalues>
       </node>
     </nodes>
@@ -4312,9 +4312,9 @@
           <attvalue for="5" value="0.020912990032603815" />
         </attvalues>
       </edge>
-      <edge source="claudio" target="fabio" id="639" weight="182.0">
+      <edge source="claudio" target="fabio" id="639" weight="183.0">
         <attvalues>
-          <attvalue for="5" value="0.5782496344959047" />
+          <attvalue for="5" value="0.5801312795991882" />
         </attvalues>
       </edge>
       <edge source="claudio" target="corporacao" id="640" weight="6.0">
@@ -4322,9 +4322,9 @@
           <attvalue for="5" value="-0.09362032280390319" />
         </attvalues>
       </edge>
-      <edge source="claudio" target="segui" id="641" weight="16.0">
+      <edge source="claudio" target="segui" id="641" weight="15.0">
         <attvalues>
-          <attvalue for="5" value="0.18582270843700657" />
+          <attvalue for="5" value="0.17510003923155182" />
         </attvalues>
       </edge>
       <edge source="claudio" target="centro" id="642" weight="22.0">

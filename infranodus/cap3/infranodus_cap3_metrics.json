@@ -2,7 +2,7 @@
   "tokens": 18874,
   "graph_full": {
     "nodes": 5692,
-    "edges": 49141
+    "edges": 49140
   },
   "graph_pruned": {
     "nodes": 180,
@@ -23,7 +23,7 @@
     },
     {
       "term": "fabio",
-      "degree": 531
+      "degree": 532
     },
     {
       "term": "centro",
@@ -133,123 +133,123 @@
   "top_terms_pagerank": [
     {
       "term": "claudio",
-      "pagerank": 0.03069595463047478
+      "pagerank": 0.0306909129455673
     },
     {
       "term": "pesquisa",
-      "pagerank": 0.026355233840277298
+      "pagerank": 0.026355186577631994
     },
     {
       "term": "rede",
-      "pagerank": 0.02037808111015387
+      "pagerank": 0.0203789656104488
     },
     {
       "term": "centro",
-      "pagerank": 0.01828536244101262
+      "pagerank": 0.018285308623847252
     },
     {
       "term": "fabio",
-      "pagerank": 0.018075489852253636
+      "pagerank": 0.018104561850601913
     },
     {
       "term": "seguir",
-      "pagerank": 0.013346182938063248
+      "pagerank": 0.013346410097542692
     },
     {
       "term": "arranjo",
-      "pagerank": 0.013008728168278458
+      "pagerank": 0.013009175195878972
     },
     {
       "term": "corporacao",
-      "pagerank": 0.012791902896135713
+      "pagerank": 0.012791891647067424
     },
     {
       "term": "publico",
-      "pagerank": 0.012779877194917322
+      "pagerank": 0.012779863724501664
     },
     {
       "term": "tecnologia",
-      "pagerank": 0.012774378224723899
+      "pagerank": 0.012774443408199316
     },
     {
       "term": "brasil",
-      "pagerank": 0.012451545291274409
+      "pagerank": 0.012451861986212832
     },
     {
       "term": "inteligencia",
-      "pagerank": 0.012128196103212328
+      "pagerank": 0.012128272153292019
     },
     {
       "term": "artificial",
-      "pagerank": 0.012110378715382399
+      "pagerank": 0.012110532860882949
     },
     {
       "term": "fapesp",
-      "pagerank": 0.011606281021811033
+      "pagerank": 0.01160620776235409
     },
     {
       "term": "maquina",
-      "pagerank": 0.011507046997297913
+      "pagerank": 0.011507025143327573
     },
     {
       "term": "ecossistema",
-      "pagerank": 0.010846512726381555
+      "pagerank": 0.010846435235550263
     },
     {
       "term": "ator",
-      "pagerank": 0.010786162399145776
+      "pagerank": 0.010786479109924365
     },
     {
       "term": "dado",
-      "pagerank": 0.010668792109536522
+      "pagerank": 0.010668813780092223
     },
     {
       "term": "hollerith",
-      "pagerank": 0.01066289793043605
+      "pagerank": 0.010662945411463946
     },
     {
       "term": "modelo",
-      "pagerank": 0.010534309592411691
+      "pagerank": 0.010534431717948326
     },
     {
       "term": "laboratorio",
-      "pagerank": 0.010219957074459565
+      "pagerank": 0.010220123578605935
     },
     {
       "term": "empresa",
-      "pagerank": 0.00995188652922895
+      "pagerank": 0.009951838217787176
     },
     {
       "term": "universidade",
-      "pagerank": 0.008820545576831219
+      "pagerank": 0.008820559637119547
     },
     {
       "term": "campo",
-      "pagerank": 0.008470142588043503
+      "pagerank": 0.008470478034849549
     },
     {
       "term": "instituicao",
-      "pagerank": 0.00841789739311435
+      "pagerank": 0.00841788688547812
     },
     {
       "term": "infraestrutura",
-      "pagerank": 0.0083999692166313
+      "pagerank": 0.008399975876481924
     },
     {
       "term": "associacao",
-      "pagerank": 0.00828140029249732
+      "pagerank": 0.008281855098462201
     },
     {
       "term": "informacao",
-      "pagerank": 0.008141868972450887
+      "pagerank": 0.00814114135518922
     },
     {
       "term": "trajetoria",
-      "pagerank": 0.008099675981891027
+      "pagerank": 0.008099893496179707
     },
     {
       "term": "pergunta",
-      "pagerank": 0.008013335922168074
+      "pagerank": 0.008013284039645439
     }
   ],
   "top_terms_betweenness": [
@@ -271,7 +271,7 @@
     },
     {
       "term": "fabio",
-      "betweenness": 0.1293704098926621
+      "betweenness": 0.1353336262632603
     },
     {
       "term": "tecnologia",
@@ -496,8 +496,8 @@
     {
       "a": "claudio",
       "b": "fabio",
-      "npmi": 0.5782496344959047,
-      "cooccurrence_weight": 182
+      "npmi": 0.5801312795991882,
+      "cooccurrence_weight": 183
     },
     {
       "a": "research",

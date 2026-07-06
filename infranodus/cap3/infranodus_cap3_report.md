@@ -11,7 +11,7 @@
 
 ## 1. Resumo quantitativo
 - Tokens significativos: **18,874**
-- Grafo bruto: **5692** nós · **49141** arestas
+- Grafo bruto: **5692** nós · **49140** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2601** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -21,7 +21,7 @@
 | 1 | `claudio` | 897 |
 | 2 | `pesquisa` | 724 |
 | 3 | `rede` | 551 |
-| 4 | `fabio` | 531 |
+| 4 | `fabio` | 532 |
 | 5 | `centro` | 503 |
 | 6 | `seguir` | 358 |
 | 7 | `inteligencia` | 346 |
@@ -116,7 +116,7 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 2 | `centro` | 0.2578 |
 | 3 | `claudio` | 0.2185 |
 | 4 | `rede` | 0.1737 |
-| 5 | `fabio` | 0.1294 |
+| 5 | `fabio` | 0.1353 |
 | 6 | `tecnologia` | 0.0826 |
 | 7 | `dado` | 0.0728 |
 | 8 | `inteligencia` | 0.0697 |
@@ -152,7 +152,7 @@ vezes.
 | 9 | `acesso` | `disponivel` | 0.654 | 40 |
 | 10 | `maquina` | `aprendizado` | 0.648 | 53 |
 | 11 | `historica` | `investigacao` | 0.619 | 24 |
-| 12 | `claudio` | `fabio` | 0.578 | 182 |
+| 12 | `claudio` | `fabio` | 0.580 | 183 |
 | 13 | `research` | `brasil` | 0.576 | 51 |
 | 14 | `inovacao` | `ecossistema` | 0.550 | 58 |
 | 15 | `laboratorio` | `fechamento` | 0.516 | 34 |
