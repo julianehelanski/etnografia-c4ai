@@ -10,15 +10,15 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,664**
-- Grafo bruto: **6742** nós · **77915** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4009** arestas
+- Tokens significativos: **32,657**
+- Grafo bruto: **6742** nós · **77899** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4011** arestas
 - Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `spira` | 1887 |
+| 1 | `spira` | 1889 |
 | 2 | `covideiro` | 1177 |
 | 3 | `inscricao` | 1094 |
 | 4 | `cadeia` | 1020 |
@@ -35,7 +35,7 @@
 | 15 | `artigos` | 527 |
 | 16 | `coleta` | 505 |
 | 17 | `actante` | 465 |
-| 18 | `condicoes` | 437 |
+| 18 | `condicoes` | 436 |
 | 19 | `cientifico` | 430 |
 | 20 | `pratica` | 418 |
 | 21 | `covid` | 418 |
@@ -46,8 +46,8 @@
 | 26 | `ruido` | 374 |
 | 27 | `secao` | 369 |
 | 28 | `analise` | 366 |
-| 29 | `dispositivo` | 356 |
-| 30 | `torna` | 353 |
+| 29 | `torna` | 353 |
+| 30 | `dispositivo` | 350 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -58,7 +58,7 @@ termos frequentes mas perifericamente conectados descem.
 |---|-------|----------|
 | 1 | `spira` | 0.0372 |
 | 2 | `covideiro` | 0.0234 |
-| 3 | `inscricao` | 0.0221 |
+| 3 | `inscricao` | 0.0222 |
 | 4 | `cadeia` | 0.0206 |
 | 5 | `rede` | 0.0190 |
 | 6 | `objeto` | 0.0178 |
@@ -84,8 +84,8 @@ termos frequentes mas perifericamente conectados descem.
 | 26 | `pacientes` | 0.0082 |
 | 27 | `secao` | 0.0080 |
 | 28 | `torna` | 0.0079 |
-| 29 | `dispositivo` | 0.0077 |
-| 30 | `laboratorio` | 0.0076 |
+| 29 | `laboratorio` | 0.0076 |
+| 30 | `analise` | 0.0076 |
 
 ## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
 Diferença de posição (rank por degree) − (rank por PageRank). Valor
@@ -95,29 +95,29 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 |---|-------|-------------|----------------|-------|
 | 1 | `escala` | 79 | 63 | +16 |
 | 2 | `coeficientes` | 96 | 86 | +10 |
-| 3 | `processo` | 118 | 109 | +9 |
-| 4 | `pesquisa` | 74 | 66 | +8 |
-| 5 | `processamento` | 76 | 68 | +8 |
+| 3 | `pesquisa` | 74 | 65 | +9 |
+| 4 | `processamento` | 76 | 67 | +9 |
+| 5 | `processo` | 118 | 109 | +9 |
 | 6 | `momento` | 93 | 85 | +8 |
-| 7 | `leitor` | 125 | 117 | +8 |
+| 7 | `leitor` | 126 | 118 | +8 |
 | 8 | `clinica` | 94 | 87 | +7 |
-| 9 | `grupo` | 113 | 106 | +7 |
-| 10 | `acesso` | 126 | 119 | +7 |
-| 11 | `disponivel` | 106 | 100 | +6 |
+| 9 | `disponivel` | 106 | 99 | +7 |
+| 10 | `grupo` | 113 | 106 | +7 |
+| 11 | `acesso` | 123 | 117 | +6 |
 | 12 | `microfone` | 152 | 146 | +6 |
 | 13 | `parametros` | 155 | 149 | +6 |
 | 14 | `analitico` | 160 | 154 | +6 |
-| 15 | `onda` | 112 | 107 | +5 |
+| 15 | `repositorio` | 73 | 68 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `spira` | 0.5507 |
-| 2 | `inscricao` | 0.2302 |
-| 3 | `covideiro` | 0.1947 |
-| 4 | `cadeia` | 0.1267 |
+| 1 | `spira` | 0.5508 |
+| 2 | `inscricao` | 0.2301 |
+| 3 | `covideiro` | 0.1948 |
+| 4 | `cadeia` | 0.1268 |
 | 5 | `objeto` | 0.0947 |
-| 6 | `rede` | 0.0940 |
+| 6 | `rede` | 0.0938 |
 | 7 | `artigo` | 0.0877 |
 | 8 | `respiratoria` | 0.0758 |
 | 9 | `modelo` | 0.0744 |
@@ -128,8 +128,8 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 14 | `insuficiencia` | 0.0325 |
 | 15 | `ruido` | 0.0297 |
 | 16 | `sinal` | 0.0279 |
-| 17 | `marcelo` | 0.0244 |
-| 18 | `torna` | 0.0235 |
+| 17 | `marcelo` | 0.0243 |
+| 18 | `torna` | 0.0236 |
 | 19 | `instituicao` | 0.0213 |
 | 20 | `covid` | 0.0202 |
 
@@ -157,18 +157,18 @@ vezes.
 | 14 | `enfermaria` | `ruido` | 0.488 | 57 |
 | 15 | `torna` | `visivel` | 0.480 | 45 |
 | 16 | `covideiro` | `pandemico` | 0.478 | 97 |
-| 17 | `condicoes` | `producao` | 0.471 | 51 |
+| 17 | `condicoes` | `producao` | 0.475 | 51 |
 | 18 | `publico` | `saude` | 0.470 | 18 |
 | 19 | `ciencia` | `construcao` | 0.467 | 19 |
 | 20 | `modelo` | `treinado` | 0.460 | 49 |
 | 21 | `fonoaudiologos` | `medicos` | 0.457 | 28 |
 | 22 | `tornar` | `visivel` | 0.453 | 20 |
 | 23 | `cadeia` | `translacoes` | 0.437 | 51 |
-| 24 | `conceito` | `referencia` | 0.431 | 16 |
+| 24 | `conceito` | `referencia` | 0.435 | 16 |
 | 25 | `controles` | `enfermaria` | 0.424 | 27 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (38 termos): inscricao, cadeia, secao, analise, dispositivo, torna
+- **Tópico 1** (38 termos): inscricao, cadeia, secao, analise, torna, dispositivo
 - **Tópico 2** (36 termos): dado, modelo, espectrograma, audio, sinal, imagem
 - **Tópico 3** (30 termos): spira, artigo, projeto, marcelo, artigos, cientifico
 - **Tópico 4** (21 termos): covideiro, coleta, actante, condicoes, pandemico, humano

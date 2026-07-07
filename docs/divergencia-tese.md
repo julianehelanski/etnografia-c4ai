@@ -1,6 +1,6 @@
 # Divergência tese ↔ site
 
-> Gerado em 2026-07-07 21:26 UTC por `scripts/relatorio_divergencia_tese.py`.
+> Gerado em 2026-07-07 22:05 UTC por `scripts/relatorio_divergencia_tese.py`.
 > Compara a estrutura do `.tex` com a última sincronização.
 > **Não altera o site** — serve para você atualizar a curadoria
 > (seções, subseções, sumário, figuras) em PT e EN.
@@ -19,17 +19,14 @@ _Sem mudanças estruturais._
 
 ### cap3
 
-_Sem mudanças estruturais._
+**Subseções**
+- ➕ adicionada: `O momento etnográfico`
+- ➕ adicionada: `Uma imagem antiga: khipu e Hollerith`
+- ➕ adicionada: `A trajetória técnico-comercial`
+- ➕ adicionada: `Estado, trabalho e gênero`
+- ➕ adicionada: `A IBM no Brasil e nas universidades`
+- ➕ adicionada: `A translação fundadora e o C4AI`
 
 ### cap4
 
-**Subseções**
-- ➕ adicionada: `O projeto e sua rede`
-- ➕ adicionada: `O covideiro: coleta e resultados`
-- ➕ adicionada: `De onde vêm os dados`
-- ➕ adicionada: `Situar as pessoas: a cadeia de inscrição da doença`
-- ➕ adicionada: `A configuração do covideiro`
-- ➕ adicionada: `O artigo como actante`
-- ➕ adicionada: `Da voz ao espectrograma`
-- ➕ adicionada: `O espectrograma na escrita etnográfica`
-- ➕ adicionada: `As três insuficiências`
+_Sem mudanças estruturais._
