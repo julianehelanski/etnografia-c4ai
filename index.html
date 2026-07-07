@@ -264,11 +264,19 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #imgzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.78);backdrop-filter:blur(2px);
   display:flex;align-items:center;justify-content:center;padding:3vh 3vw;cursor:zoom-out}
 #imgzoom[hidden]{display:none}
-#imgzoom-card{position:relative;max-width:96vw;max-height:94vh;display:flex;flex-direction:column;align-items:center;cursor:auto}
-#imgzoom-im{max-width:96vw;max-height:84vh;object-fit:contain;background:#fff;border-radius:6px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
-#imgzoom-cap{margin-top:.8rem;font-family:'CMU Serif',serif;font-size:.95rem;color:#f3f0ea;text-align:center;max-width:60rem;line-height:1.4}
+#imgzoom-card{position:relative;max-width:96vw;max-height:94vh;display:flex;flex-direction:row;align-items:center;gap:1.6rem;cursor:auto}
+#imgzoom-im{min-width:0;max-width:70vw;max-height:90vh;object-fit:contain;background:#fff;border-radius:6px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+#imgzoom-cap{flex:0 0 21rem;align-self:stretch;max-height:90vh;overflow-y:auto;font-family:'CMU Serif',serif;font-size:.95rem;color:#f3f0ea;text-align:left;line-height:1.5;
+  padding:.9rem 1rem;border-left:1px solid rgba(243,240,234,.25);display:flex;flex-direction:column;justify-content:center}
 #imgzoom-cap .texarg{color:#f3f0ea}
 #imgzoom-cap .texcmd{color:#7fb0ff}
+/* telas estreitas ou retrato: a legenda volta para baixo da imagem */
+@media (max-width:820px),(orientation:portrait){
+  #imgzoom-card{flex-direction:column;align-items:center;gap:.7rem}
+  #imgzoom-im{max-width:94vw;max-height:70vh}
+  #imgzoom-cap{flex:none;align-self:stretch;max-width:94vw;max-height:22vh;text-align:center;
+    border-left:none;border-top:1px solid rgba(243,240,234,.25);justify-content:flex-start}
+}
 #imgzoom-cl{position:absolute;top:-2.1rem;right:0;font-family:'Courier New',monospace;font-size:.8rem;
   color:#f3f0ea;background:none;border:none;cursor:pointer;letter-spacing:.04em}
 
