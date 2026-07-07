@@ -10,15 +10,15 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,668**
-- Grafo bruto: **6745** nós · **77924** arestas
+- Tokens significativos: **32,698**
+- Grafo bruto: **6749** nós · **77994** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4012** arestas
 - Tópicos detectados (Louvain): **8**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `spira` | 1886 |
+| 1 | `spira` | 1883 |
 | 2 | `covideiro` | 1177 |
 | 3 | `inscricao` | 1094 |
 | 4 | `cadeia` | 1020 |
@@ -56,11 +56,11 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `spira` | 0.0372 |
+| 1 | `spira` | 0.0371 |
 | 2 | `covideiro` | 0.0234 |
-| 3 | `inscricao` | 0.0221 |
+| 3 | `inscricao` | 0.0222 |
 | 4 | `cadeia` | 0.0206 |
-| 5 | `rede` | 0.0189 |
+| 5 | `rede` | 0.0190 |
 | 6 | `objeto` | 0.0179 |
 | 7 | `artigo` | 0.0178 |
 | 8 | `dado` | 0.0146 |
@@ -107,7 +107,7 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 12 | `microfone` | 152 | 146 | +6 |
 | 13 | `parametros` | 155 | 149 | +6 |
 | 14 | `analitico` | 160 | 154 | +6 |
-| 15 | `resultado` | 82 | 77 | +5 |
+| 15 | `publico` | 82 | 77 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
@@ -147,7 +147,7 @@ vezes.
 | 4 | `escuta` | `clinica` | 0.636 | 39 |
 | 5 | `neural` | `rede` | 0.593 | 127 |
 | 6 | `acao` | `programa` | 0.566 | 38 |
-| 7 | `sinal` | `acustico` | 0.548 | 61 |
+| 7 | `sinal` | `acustico` | 0.546 | 61 |
 | 8 | `tornou` | `possivel` | 0.538 | 34 |
 | 9 | `mapa` | `analitico` | 0.529 | 25 |
 | 10 | `linguagem` | `processamento` | 0.525 | 27 |
@@ -184,7 +184,7 @@ texto — candidatos a aprofundamento argumentativo.
 - Lacuna entre **Tópico 1** [inscricao, cadeia, analise] e **Tópico 2** [dado, modelo, audio] — densidade ponderada de ligação = 0.5926
 - Lacuna entre **Tópico 2** [dado, modelo, audio] e **Tópico 3** [spira, artigo, projeto] — densidade ponderada de ligação = 0.8426
 - Lacuna entre **Tópico 2** [dado, modelo, audio] e **Tópico 5** [espectrograma, condicao, paciente] — densidade ponderada de ligação = 0.8519
-- Lacuna entre **Tópico 1** [inscricao, cadeia, analise] e **Tópico 5** [espectrograma, condicao, paciente] — densidade ponderada de ligação = 0.8962
+- Lacuna entre **Tópico 1** [inscricao, cadeia, analise] e **Tópico 5** [espectrograma, condicao, paciente] — densidade ponderada de ligação = 0.8950
 - Lacuna entre **Tópico 3** [spira, artigo, projeto] e **Tópico 5** [espectrograma, condicao, paciente] — densidade ponderada de ligação = 0.9206
 - Lacuna entre **Tópico 2** [dado, modelo, audio] e **Tópico 4** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.9248
 
