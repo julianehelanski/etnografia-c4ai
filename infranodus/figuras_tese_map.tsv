@@ -58,6 +58,7 @@ figuras/spira_comparacao_linear_log.png	figuras/cap.4/imagem-voz/spira_comparaca
 figuras/spira_espectrograma_com_eixos.png	figuras/cap.4/imagem-voz/spira_espectrograma_com_eixos.png
 figuras/spira_espectrograma_sem_legenda.png	figuras/cap.4/imagem-voz/spira_espectrograma_sem_legenda.png
 figuras/spira_paciente_com_eixos.png	figuras/cap.4/imagem-voz/spira_paciente_com_eixos.png
+figuras/spira_paciente_sem_legenda.png	figuras/cap.4/imagem-voz/spira_paciente_sem_legenda.png
 figuras/spira_waveform_controle.png	figuras/cap.4/imagem-voz/spira_waveform_controle.png
 figuras/spira_waveform_paciente.png	figuras/cap.4/imagem-voz/spira_waveform_paciente.png
 figuras/HIS-77-186-g001.jpg	figuras/cap.4/covid/HIS-77-186-g001.jpg
@@ -110,3 +111,9 @@ figuras/AISelect_20260403_164426_Chrome.jpg	figuras/cap.4/covid/AISelect_2026040
 #   figuras/cap3/cap3-biblio-9-concentracao.png       <- cap.3/bibliometria-c4ai/9_analise_concentracao.png
 #   figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg <- cap.3/bibliometria-c4ai/7_comparacao_top_grupos.png
 #   figuras/spira_cnn_diagrama_real.png               <- cap.4/imagem-voz/spira_cnn_diagrama_real.png
+#
+# CONVERSÕES MANUAIS (não sincronizadas automaticamente): figuras cuja origem
+# na tese é PDF. O sync (scripts/sync_tese_figuras.py) só copia rasters, então
+# estas são geradas à mão com pymupdf (página 1, lado maior 1600 px) e versionadas
+# como asset do site. Se o PDF mudar na tese, regenere manualmente.
+#   figuras/cap3/cap3-caderno-rodrigues-aula1.png <- cap.3/caderno_rodrigues_aula1.pdf (página 1)
