@@ -1008,7 +1008,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')docEl.classList.remo
     return 'rgb(' + Math.round(a[0]+(b[0]-a[0])*f) + ',' + Math.round(a[1]+(b[1]-a[1])*f) + ',' + Math.round(a[2]+(b[2]-a[2])*f) + ')';
   };
 
-  let actx, analyser, td, hist = [], raf = null;
+  let actx, analyser, freq, rings = [], avg = 0, lastBeat = 0, raf = null;
   const fit = () => {
     const dpr = Math.min(devicePixelRatio || 1, 2);
     cv.width = i.clientWidth * dpr; cv.height = i.clientHeight * dpr;
@@ -1024,22 +1024,33 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')docEl.classList.remo
     if (tx) tx.textContent = p ? 'pausar a música' : 'tocar a música de abertura';
   };
 
-  const step = 3; // espaçamento entre colunas da onda (px)
+  // anéis concêntricos pulsando com a música (ripples), em viridis, sobre fundo branco
   const draw = () => {
     raf = requestAnimationFrame(draw);
-    analyser.getByteTimeDomainData(td);
-    let peak = 0;
-    for (let k = 0; k < td.length; k++) { const v = Math.abs(td[k] - 128) / 128; if (v > peak) peak = v; }
-    const W = i.clientWidth, H = i.clientHeight, mid = H * 0.5;
-    const cols = Math.floor(W / step);
-    hist.push(peak); if (hist.length > cols) hist.shift();
+    analyser.getByteFrequencyData(freq);
+    // energia na banda grave-média (o "pulso" da música)
+    const n = Math.max(4, Math.floor(freq.length * 0.18));
+    let e = 0; for (let k = 0; k < n; k++) e += freq[k];
+    e = e / (n * 255); // 0..1
+    avg = avg ? avg * 0.92 + e * 0.08 : e;
+    const now = performance.now();
+    // dispara um anel na batida (energia acima da média recente) ou de leve a cada ~850ms
+    if ((e > avg * 1.32 && e > 0.05 && now - lastBeat > 160) || (e > 0.02 && now - lastBeat > 850)) {
+      lastBeat = now;
+      rings.push({ s: Math.max(0.15, Math.min(1, e)), t0: now });
+    }
+    const W = i.clientWidth, H = i.clientHeight, cx = W / 2, cy = H / 2;
+    const maxR = Math.hypot(W, H) * 0.55;
     ctx.clearRect(0, 0, W, H);
-    ctx.lineWidth = 1.6; ctx.lineCap = 'round';
-    for (let x = 0; x < hist.length; x++) {
-      const a = hist[x], h = Math.max(1.2, a * H * 0.4), px = W - (hist.length - x) * step;
-      ctx.strokeStyle = vir(a);
-      ctx.globalAlpha = 0.14 + 0.5 * a; // discreta: sobe um pouco com a amplitude
-      ctx.beginPath(); ctx.moveTo(px, mid - h); ctx.lineTo(px, mid + h); ctx.stroke();
+    for (let k = rings.length - 1; k >= 0; k--) {
+      const ring = rings[k];
+      const r = ((now - ring.t0) / 1000) * (140 + 130 * ring.s); // batidas fortes se expandem mais rápido
+      const pr = r / maxR;
+      if (pr >= 1) { rings.splice(k, 1); continue; }
+      ctx.strokeStyle = vir(pr);                       // roxo no centro -> teal/verde nas bordas
+      ctx.globalAlpha = (1 - pr) * (0.10 + 0.30 * ring.s); // discreto; some ao expandir
+      ctx.lineWidth = 1 + 2.4 * ring.s;
+      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
     }
     ctx.globalAlpha = 1;
   };
@@ -1048,13 +1059,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')docEl.classList.remo
     if (actx) return;
     actx = new (window.AudioContext || window.webkitAudioContext)();
     const src = actx.createMediaElementSource(audio);
-    analyser = actx.createAnalyser(); analyser.fftSize = 1024;
-    td = new Uint8Array(analyser.fftSize);
+    analyser = actx.createAnalyser(); analyser.fftSize = 2048; analyser.smoothingTimeConstant = 0.75;
+    freq = new Uint8Array(analyser.frequencyBinCount);
     src.connect(analyser); analyser.connect(actx.destination);
   };
 
   audio.addEventListener('play', () => { setUI(true); if (!reduce && !raf) draw(); });
-  const onStop = () => { setUI(false); if (raf) { cancelAnimationFrame(raf); raf = null; } hist = []; ctx.clearRect(0, 0, i.clientWidth, i.clientHeight); };
+  const onStop = () => { setUI(false); if (raf) { cancelAnimationFrame(raf); raf = null; } rings = []; ctx.clearRect(0, 0, i.clientWidth, i.clientHeight); };
   audio.addEventListener('pause', onStop);
 
   btn.addEventListener('click', e => {
