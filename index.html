@@ -15,7 +15,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 #graph{position:fixed;inset:0;width:100%;height:100%;z-index:3;touch-action:none}
 #graph svg{touch-action:none}
-.link{stroke:#6f7682;stroke-linecap:round}
+.link{stroke:#3a4150;stroke-linecap:round}
 .node circle{cursor:pointer;stroke:#fff;stroke-width:.7px}
 .nlabel{font-family:'CMU Serif',serif;fill:#1c2942;paint-order:stroke;stroke:#ffffff;stroke-width:2.4px;stroke-linejoin:round;pointer-events:none}
 
@@ -452,7 +452,7 @@ const prExtent = d3.extent(nodes, n => n.pagerank);
 const rScale = d3.scaleSqrt().domain(prExtent).range([3.2, 22]);
 const wExtent = d3.extent(links, l => l.w);
 const lwScale = d3.scaleLinear().domain(wExtent).range([0.3, 2.4]);
-const loScale = d3.scaleLinear().domain(wExtent).range([0.12, 0.5]);
+const loScale = d3.scaleLinear().domain(wExtent).range([0.22, 0.72]);
 const nr = d => rScale(d.pagerank);
 
 const svg = d3.select('#graph');
