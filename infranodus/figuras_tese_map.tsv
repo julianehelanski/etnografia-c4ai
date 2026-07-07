@@ -9,9 +9,6 @@
 # migraram para figuras/cap.4/diagramas-mermaid/ com nomes "mapa-*"), o que fazia
 # o sync pular silenciosamente a origem e o site manter cópias antigas. Origens
 # que a tese removeu de vez estão listadas no rodapé (bloco "RETIRADAS").
-figuras/Vero_48H_corona_filopodio_1_dentro.jpg	figuras/cap.4/covid/Vero_48H_corona_filopodio_1_dentro.jpg
-figuras/Vero_48H_corona_filopodio_2_dentro.jpg	figuras/cap.4/covid/Vero_48H_corona_filopodio_2_dentro.jpg
-figuras/Vero_72H_corona_filopodio_3_dentro.jpg	figuras/cap.4/covid/Vero_72H_corona_filopodio_3_dentro.jpg
 figuras/cadeia-translacao-condensada-capitulo4-2026-04-15-202330.png	figuras/cap.4/diagramas-mermaid/cadeia-translacao-condensada-capitulo4*.png
 figuras/cap1/cap1-caderno-campo.jpg	figuras/cap.1/caderno_quadro.jpg
 figuras/cap1/cap1-grade-tres-planos.png	figuras/cap.1/tres-planos-capitulo4.png
@@ -51,8 +48,10 @@ figuras/novel-coronavirus-sars-cov-2_49557550706_o.jpg	figuras/cap.4/covid/novel
 figuras/novel-coronavirus-sars-cov-2_49557550751_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49557550751_o.jpg
 figuras/novel-coronavirus-sars-cov-2_49597020853_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49597020853_o.jpg
 figuras/novel-coronavirus-sars-cov-2_49597519106_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49597519106_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49640655213_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49640655213_o.jpg
 figuras/novel-coronavirus-sars-cov-2_49641177636_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49641177636_o.jpg
 figuras/novel-coronavirus-sars-cov-2_49641177821_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49641177821_o.jpg
+figuras/novel-coronavirus-sars-cov-2_49645120251_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49645120251_o.jpg
 figuras/quadro-analitico-capitulo4-2026-04-15-202321.png	figuras/cap.4/diagramas-mermaid/mapa-analitico-capitulo4.png
 figuras/spira_cnn_diagrama_real.png	figuras/cap.4/imagem-voz/spira_cnn_diagrama_real.png
 figuras/spira_comparacao_linear_log.png	figuras/cap.4/imagem-voz/spira_comparacao_linear_log.png
@@ -89,3 +88,12 @@ figuras/AISelect_20260403_164426_Chrome.jpg	figuras/cap.4/covid/AISelect_2026040
 #   figuras/Dscn7345.jpg  <- cap.4/covid/Dscn7345.jpg
 #   figuras/Dscn7348.jpg  <- cap.4/covid/Dscn7348.jpg
 #   figuras/Dscn7350.jpg  <- cap.4/covid/Dscn7350.jpg
+#
+# RETIRADAS (2026-07-07): as três microscopias de células Vero infectadas
+# (filopódios) não são referenciadas na figura de microscopia do SARS-CoV-2 do
+# capítulo 4 (fig:sars-cov-2), que reúne juki_1 mais dez imagens NIAID/NIH. Os
+# arquivos-origem ainda existem em cap.4/covid/, mas saem da galeria do site
+# para alinhar o grupo à figura da tese. Reative se voltarem à figura.
+#   figuras/Vero_48H_corona_filopodio_1_dentro.jpg <- cap.4/covid/Vero_48H_corona_filopodio_1_dentro.jpg
+#   figuras/Vero_48H_corona_filopodio_2_dentro.jpg <- cap.4/covid/Vero_48H_corona_filopodio_2_dentro.jpg
+#   figuras/Vero_72H_corona_filopodio_3_dentro.jpg <- cap.4/covid/Vero_72H_corona_filopodio_3_dentro.jpg
