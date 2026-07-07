@@ -788,47 +788,53 @@ function ovList(k,arr){return '<div class="ovr"><span class="ovk">'+texCmd('text
 function texCmd(cmd,inner,argCls){return '<span class="texcmd">\\'+cmd+'{</span><span class="'+(argCls||'texarg')+'">'+inner+'</span><span class="texcmd">}</span>';}
 // galerias por capítulo (arquivos em figuras/, sincronizados da tese).
 // Legendas curadas; edite à vontade.
+const CAP1FIGS=[
+  {g:'Caderno de campo', s:'figuras/cap1/cap1-caderno-campo.jpg?v=8bb0a7e508', c:'Anotação de caderno de campo de 28 de julho de 2025'},
+];
 const CAP2FIGS=[
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-science-in-action.png?v=5a079b3368', c:'Science in Action (1987) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-lab-life.png?v=05b10085e0', c:'Laboratory Life (1979) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-pandora.png?v=c42e9960f2', c:'A Esperança de Pandora (1999) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-aime.png?v=74f34992c7', c:'Modos de Existência · AIME (2012) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-clarifications.png?v=21f7d647dd', c:'“Clarifications” — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-recalling.png?v=be350a899e', c:'“Recalling ANT” (texto integral) — frequência e densidade das figurações'},
-  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-comparacao.png?v=ada325527a', c:'Comparação das frequências de figurações entre as obras'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-grande-area.png?v=7430b95177', c:'CAPES — distribuição por grande área'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-subcampos.png?v=4853ccddfe', c:'CAPES — distribuição por subcampos'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas.png?v=f2de1d9c6b', c:'CAPES — áreas das ciências humanas'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas-temporal.png?v=268f9bfbb2', c:'CAPES — evolução temporal nas ciências humanas'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-kw.png?v=3cc1ca4398', c:'CAPES — mapa de calor: grande área × palavra-chave'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-sub.png?v=aa31a142bc', c:'CAPES — mapa de calor: subcampo × grande área'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-area.png?v=ec51468598', c:'SciELO — distribuição por área temática'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-subcampos.png?v=463f6e775a', c:'SciELO — distribuição por subcampos'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-comparativo.png?v=5dafe378cb', c:'Comparativo SciELO × CAPES'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-ranking-paises.png?v=95ba5c3482', c:'OpenAlex — os 15 maiores produtores de IA nas humanidades (2016–2024)'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-taxa-interna.png?v=efb0f747e0', c:'OpenAlex — taxa interna de IA nas humanidades por país'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-brasil-temporal.png?v=f96f1cf5c2', c:'OpenAlex — evolução da produção brasileira de IA nas humanidades'},
-  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-subcampos-3bases.png?v=fa404034c6', c:'OpenAlex — subcampos de IA nas três bases (CAPES · SciELO · OpenAlex)'},
+  {g:'Figurações · Latour e Haraway', s:'figuras/cap2/cap2-latour.jpg?v=bb1cad3b52', c:'O autor cercado de aliados e o leitor sozinho'},
+  {g:'Figurações · Latour e Haraway', s:'figuras/cap2/cap2-haraway.jpg?v=b30ad6c7eb', c:"Cat's Cradle / String Theory, de Baila Goldenthal"},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-lab-life.png?v=05b10085e0', c:'Frequência e distribuição dos rótulos em Laboratory Life'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-science-in-action.png?v=5a079b3368', c:'Frequência e distribuição dos rótulos em Science in Action'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-pandora.png?v=c42e9960f2', c:"Frequência e distribuição dos rótulos em Pandora's Hope"},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-comparacao.png?v=ada325527a', c:'Densidade comparada dos rótulos nas três obras de Latour'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-clarifications.png?v=21f7d647dd', c:'Frequência e distribuição dos rótulos em Clarifications'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-recalling.png?v=be350a899e', c:'Frequência e distribuição dos rótulos em On Recalling ANT'},
+  {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-aime.png?v=74f34992c7', c:'Frequência e distribuição dos rótulos em AIME'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-grande-area.png?v=7430b95177', c:'Distribuição da produção sobre IA por grande área, Capes 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-subcampos.png?v=4853ccddfe', c:'Distribuição do corpus Capes por subcampo, 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-kw.png?v=3cc1ca4398', c:'Co-ocorrência entre termos-chave e grandes áreas, Capes 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-heatmap-sub.png?v=aa31a142bc', c:'Concentração dos subcampos por grande área, Capes 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas.png?v=f2de1d9c6b', c:'Produção sobre IA nas Ciências Humanas por área, Capes 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-capes-humanas-temporal.png?v=268f9bfbb2', c:'Evolução temporal da produção sobre IA nas Ciências Humanas, Capes 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-area.png?v=ec51468598', c:'Distribuição do corpus SciELO por subject_area, 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-scielo-subcampos.png?v=463f6e775a', c:'Distribuição do corpus SciELO por subcampo, 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-comparativo.png?v=5dafe378cb', c:'Análise comparativa SciELO e Capes nas Ciências Humanas, 2021–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-ranking-paises.png?v=95ba5c3482', c:'Maiores produtores de IA nas Humanidades, OpenAlex 2016–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-taxa-interna.png?v=efb0f747e0', c:'Taxa interna de IA nas Humanidades por país, OpenAlex 2016–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-brasil-temporal.png?v=f96f1cf5c2', c:'Evolução da produção brasileira de IA nas Humanidades, OpenAlex 2016–2024'},
+  {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-subcampos-3bases.png?v=fa404034c6', c:'Comparação dos subcampos de IA nas três bases'},
 ];
 const CAP3FIGS=[
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-1-ranking.png?v=51d0a1299f', c:'C4AI — ranking de grupos'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-3-evolucao.png?v=d7ffe74a61', c:'C4AI — evolução temporal da produção'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=7e5a9f6662', c:'C4AI — produção por grupo × ano'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-6-produtividade.png?v=910dfe1e40', c:'C4AI — produtividade dos grupos'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-8-composicao.png?v=7fce6c65a2', c:'C4AI — composição temporal'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-9-concentracao.png?v=24ccc8982f', c:'C4AI — análise de concentração'},
-  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg?v=af8bae1cf0', c:'C4AI — comparação entre os principais grupos'},
+  {g:'Inscrições históricas · Hollerith e khipu', s:'figuras/cap3/cap3-hollerith-1890.png?v=0b91b234be', c:'Folha de produto da máquina de tabulação de Hollerith (1890)'},
+  {g:'Inscrições históricas · Hollerith e khipu', s:'figuras/cap3/cap3-khipu-chancay.png?v=1ec9ae4633', c:'khipu da região de Chancay-Huando (AMNH B/8707)'},
+  {g:'Caderno de campo', s:'figuras/cap3/cap3-caderno-rodrigues-aula1.png?v=a4f0434f81', c:'Caderno de campo: primeira aula do curso de probabilidade e estatística (28/07/2025)'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=7e5a9f6662', c:'Matriz de bolhas da produção científica do C4AI por grupo de pesquisa e ano (2020–2024)'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-12-composicao.png?v=d206bbb100', c:'Composição das equipes do C4AI por grupo de pesquisa e ano de relatório (2021–2025)'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-10-rede-coword.png?v=50c2060806', c:'Rede de co-ocorrência de termos dos títulos do C4AI (2020–2024)'},
+  {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-11-rede-coword-temporal.png?v=f424a0975b', c:'Deslocamento temático da co-ocorrência de termos do C4AI por período'},
 ];
 // figuras do capítulo 4 (SPIRA): a voz como dado + microscopia do SARS-CoV-2.
 const CAP4FIGS=[
   {g:'SPIRA · a voz como dado', type:'audio', s:'audio/PTT-20200511-WA0018.mp3', drive:'https://drive.google.com/file/d/1Bv0d3uwBB-52MBmtN2A_qNoaBIxUkN9y/view?usp=sharing', ds:'https://github.com/Spirabr/Spira-audios', c:'“O amor ao próximo ajuda a enfrentar o coronavírus com a força que a gente precisa”'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma de uma gravação de voz, com eixos (tempo × frequência)'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma da voz — a “imagem” que a rede recebe como entrada'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação de escalas: espectrograma linear × logarítmico'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_paciente_com_eixos.png?v=8e006127cc', c:'Espectrograma de paciente, com eixos'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform) — sujeito-controle'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform) — paciente'},
-  {g:'SPIRA · a voz como dado', s:'figuras/spira_cnn_diagrama_real.png?v=480d92c049', c:'Arquitetura da CNN do SPIRA — diagrama da rede convolucional'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_paciente_sem_legenda.png?v=bdc669f281', c:'Espectrograma do arquivo PTT-20200511-WA0018.wav: paciente no covideiro, 11 mai. 2020'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_controle.png?v=94391cfeb9', c:'Forma de onda (waveform): voluntário saudável, dataset Spira (CC BY-SA 4.0)'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_waveform_paciente.png?v=65e8fdbb2e', c:'Forma de onda (waveform): paciente hospitalizado, arquivo PTT-20200511-WA0018.wav'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_sem_legenda.png?v=581201cef1', c:'Espectrograma mel gerado a partir de uma gravação do grupo controle do dataset público do Spira (CC BY-SA 4.0)'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_espectrograma_com_eixos.png?v=483b057ca1', c:'Espectrograma mel com eixos nomeados: voluntário saudável'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_paciente_com_eixos.png?v=8e006127cc', c:'Espectrograma mel com eixos nomeados: paciente hospitalizado com insuficiência respiratória'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_paciente_sem_legenda.png?v=bdc669f281', c:'Imagem fantasma: espectrograma mel do arquivo PTT-20200511-WA0018.wav, paciente com IR'},
+  {g:'SPIRA · a voz como dado', s:'figuras/spira_comparacao_linear_log.png?v=ad06df9b7a', c:'Comparação entre espectrograma mel em escala linear e logarítmica, dataset Spira'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/juki_1.jpg?v=1dc369ed2c', c:'SARS-CoV-2, microscopia eletrônica de varredura. Colorização: IOC/Fiocruz.'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg?v=4f64088742', c:'SARS-CoV-2, microscopia eletrônica de transmissão, fundo azul. Colorização: NIAID/NIH.'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49557550706_o.jpg?v=6c810ab93d', c:'SARS-CoV-2 emergindo de superfície celular, microscopia eletrônica de varredura. Colorização: NIAID/NIH.'},
@@ -840,10 +846,11 @@ const CAP4FIGS=[
   {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49641177821_o.jpg?v=4fc87c0053', c:'Partículas do SARS-CoV-2, colorização verde-amarela. NIAID/NIH.'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49645120251_o.jpg?v=c6bce418ee', c:'Quatro partículas do SARS-CoV-2, microscopia eletrônica de transmissão. Colorização: NIAID/NIH.'},
   {g:'Microscopia · SARS-CoV-2', s:'figuras/novel-coronavirus-sars-cov-2_49534865371_o.jpg?v=aab8099205', c:'Partículas do SARS-CoV-2, microscopia eletrônica de varredura. Colorização: NIAID/NIH.'},
-  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g004.jpg?v=812a4d53c7', c:'Coleta por autópsia minimamente invasiva guiada por ultrassom (MIA-US) — Covid-19'},
-  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g001.jpg?v=b22654bdb5', c:'Histologia pulmonar em casos fatais de Covid-19'},
-  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g002.jpg?v=9a2f878628', c:'Marcadores epiteliais no tecido pulmonar (imunohistoquímica)'},
-  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g003.jpg?v=e84b8878e8', c:'Histologia extrapulmonar em casos fatais de Covid-19'},
+  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g004.jpg?v=812a4d53c7', c:'Autópsia minimamente invasiva guiada por ultrassom (MIA-US) em casos fatais de Covid-19'},
+  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g001.jpg?v=b22654bdb5', c:'Características histológicas pulmonares em casos fatais de Covid-19'},
+  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g002.jpg?v=9a2f878628', c:'Marcadores epiteliais no tecido pulmonar'},
+  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/HIS-77-186-g003.jpg?v=e84b8878e8', c:'Características histológicas extrapulmonares em casos fatais de Covid-19'},
+  {g:'Histologia · do epitélio íntegro à lesão (Covid-19)', s:'figuras/AISelect_20260403_164426_Chrome.jpg?v=5d004d309b', c:'Patologia pulmonar, cerebral e esplênica em casos fatais de SARS'},
 ];
 const GALITEMS=[]; // registro global das figuras renderizadas (índice estável entre galerias)
 function galBuild(list){
@@ -901,7 +908,7 @@ function buildDoc(){
     h+='<div class="kw">'+texCmd('palavraschave',DOC.palavras_chave.map(dEsc).join(', '))+'</div>';
   }
   h+='<div class="dh" id="d-sumario">'+texCmd('section','Sumário')+'</div>';
-  const capFigs={'2':CAP2FIGS,'3':CAP3FIGS,'4':CAP4FIGS}; // figuras embutidas em cada capítulo
+  const capFigs={'1':CAP1FIGS,'2':CAP2FIGS,'3':CAP3FIGS,'4':CAP4FIGS}; // figuras embutidas em cada capítulo
   DOC.sumario.forEach(c=>{
     h+='<div class="cap"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
     h+='<div class="ctitle">'+texCmd('chapter',dEsc(c.title))+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';

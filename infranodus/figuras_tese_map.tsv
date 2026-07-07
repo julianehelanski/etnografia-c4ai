@@ -33,13 +33,14 @@ figuras/cap2/cap2-lex-lab-life.png	figuras/cap.2/lexicometria/etapa1_lab_life_fr
 figuras/cap2/cap2-lex-pandora.png	figuras/cap.2/lexicometria/etapa1_pandora_freq_e_densidade.png
 figuras/cap2/cap2-lex-recalling.png	figuras/cap.2/lexicometria/etapa2bis_recalling_integral_freq_e_densidade.png
 figuras/cap2/cap2-lex-science-in-action.png	figuras/cap.2/lexicometria/etapa1_sia_freq_e_densidade.png
-figuras/cap3/cap3-biblio-1-ranking.png	figuras/cap.3/bibliometria-c4ai/1_ranking_grupos.png
-figuras/cap3/cap3-biblio-3-evolucao.png	figuras/cap.3/bibliometria-c4ai/3_evolucao_temporal_geral.png
+figuras/cap2/cap2-latour.jpg	figuras/cap.2/latour.jpg
+figuras/cap2/cap2-haraway.jpg	figuras/cap.2/haraway.jpg
 figuras/cap3/cap3-biblio-4-heatmap.png	figuras/cap.3/bibliometria-c4ai/4_producao_grupo_ano.png
-figuras/cap3/cap3-biblio-6-produtividade.png	figuras/cap.3/bibliometria-c4ai/6_produtividade_grupos.png
-figuras/cap3/cap3-biblio-8-composicao.png	figuras/cap.3/bibliometria-c4ai/8_composicao_temporal.png
-figuras/cap3/cap3-biblio-9-concentracao.png	figuras/cap.3/bibliometria-c4ai/9_analise_concentracao.png
-figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg	figuras/cap.3/bibliometria-c4ai/7_comparacao_top_grupos.png
+figuras/cap3/cap3-biblio-12-composicao.png	figuras/cap.3/bibliometria-c4ai/12_composicao_equipe_bolhas.png
+figuras/cap3/cap3-biblio-10-rede-coword.png	figuras/cap.3/bibliometria-c4ai/10_rede_coword.png
+figuras/cap3/cap3-biblio-11-rede-coword-temporal.png	figuras/cap.3/bibliometria-c4ai/11_rede_coword_temporal.png
+figuras/cap3/cap3-hollerith-1890.png	figuras/cap.3/hollerith_1890_product_sheet.png
+figuras/cap3/cap3-khipu-chancay.png	figuras/cap.3/khipu_chancay_huando_amnh_b8707.png
 figuras/cap4-argumento.png	figuras/cap.4/diagramas-mermaid/mapa-argumento-capitulo4.png
 figuras/juki_1.jpg	figuras/cap.4/covid/juki_1.jpg
 figuras/novel-coronavirus-sars-cov-2_49531042907_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49531042907_o.jpg
@@ -53,11 +54,11 @@ figuras/novel-coronavirus-sars-cov-2_49641177636_o.jpg	figuras/cap.4/covid/novel
 figuras/novel-coronavirus-sars-cov-2_49641177821_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49641177821_o.jpg
 figuras/novel-coronavirus-sars-cov-2_49645120251_o.jpg	figuras/cap.4/covid/novel-coronavirus-sars-cov-2_49645120251_o.jpg
 figuras/quadro-analitico-capitulo4-2026-04-15-202321.png	figuras/cap.4/diagramas-mermaid/mapa-analitico-capitulo4.png
-figuras/spira_cnn_diagrama_real.png	figuras/cap.4/imagem-voz/spira_cnn_diagrama_real.png
 figuras/spira_comparacao_linear_log.png	figuras/cap.4/imagem-voz/spira_comparacao_linear_log.png
 figuras/spira_espectrograma_com_eixos.png	figuras/cap.4/imagem-voz/spira_espectrograma_com_eixos.png
 figuras/spira_espectrograma_sem_legenda.png	figuras/cap.4/imagem-voz/spira_espectrograma_sem_legenda.png
 figuras/spira_paciente_com_eixos.png	figuras/cap.4/imagem-voz/spira_paciente_com_eixos.png
+figuras/spira_paciente_sem_legenda.png	figuras/cap.4/imagem-voz/spira_paciente_sem_legenda.png
 figuras/spira_waveform_controle.png	figuras/cap.4/imagem-voz/spira_waveform_controle.png
 figuras/spira_waveform_paciente.png	figuras/cap.4/imagem-voz/spira_waveform_paciente.png
 figuras/HIS-77-186-g001.jpg	figuras/cap.4/covid/HIS-77-186-g001.jpg
@@ -97,3 +98,22 @@ figuras/AISelect_20260403_164426_Chrome.jpg	figuras/cap.4/covid/AISelect_2026040
 #   figuras/Vero_48H_corona_filopodio_1_dentro.jpg <- cap.4/covid/Vero_48H_corona_filopodio_1_dentro.jpg
 #   figuras/Vero_48H_corona_filopodio_2_dentro.jpg <- cap.4/covid/Vero_48H_corona_filopodio_2_dentro.jpg
 #   figuras/Vero_72H_corona_filopodio_3_dentro.jpg <- cap.4/covid/Vero_72H_corona_filopodio_3_dentro.jpg
+#
+# RETIRADAS (2026-07-07): figuras que estavam nas galerias do site mas não
+# aparecem em nenhum lugar da tese. Removidas para espelhar a tese, já que a
+# padronização usa a legenda da tese para cada figura. Seis gráficos de
+# bibliometria do C4AI (cap.3) e o diagrama da CNN do Spira (cap.4). Reative se
+# entrarem na tese.
+#   figuras/cap3/cap3-biblio-1-ranking.png            <- cap.3/bibliometria-c4ai/1_ranking_grupos.png
+#   figuras/cap3/cap3-biblio-3-evolucao.png           <- cap.3/bibliometria-c4ai/3_evolucao_temporal_geral.png
+#   figuras/cap3/cap3-biblio-6-produtividade.png      <- cap.3/bibliometria-c4ai/6_produtividade_grupos.png
+#   figuras/cap3/cap3-biblio-8-composicao.png         <- cap.3/bibliometria-c4ai/8_composicao_temporal.png
+#   figuras/cap3/cap3-biblio-9-concentracao.png       <- cap.3/bibliometria-c4ai/9_analise_concentracao.png
+#   figuras/cap3/cap3-biblio-comparacao-top-grupos.jpg <- cap.3/bibliometria-c4ai/7_comparacao_top_grupos.png
+#   figuras/spira_cnn_diagrama_real.png               <- cap.4/imagem-voz/spira_cnn_diagrama_real.png
+#
+# CONVERSÕES MANUAIS (não sincronizadas automaticamente): figuras cuja origem
+# na tese é PDF. O sync (scripts/sync_tese_figuras.py) só copia rasters, então
+# estas são geradas à mão com pymupdf (página 1, lado maior 1600 px) e versionadas
+# como asset do site. Se o PDF mudar na tese, regenere manualmente.
+#   figuras/cap3/cap3-caderno-rodrigues-aula1.png <- cap.3/caderno_rodrigues_aula1.pdf (página 1)
