@@ -10,10 +10,10 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **18,874**
+- Tokens significativos: **18,873**
 - Grafo bruto: **5692** nós · **49140** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2601** arestas
-- Tópicos detectados (Louvain): **8**
+- Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -61,7 +61,7 @@ termos frequentes mas perifericamente conectados descem.
 | 3 | `rede` | 0.0204 |
 | 4 | `centro` | 0.0183 |
 | 5 | `fabio` | 0.0181 |
-| 6 | `seguir` | 0.0133 |
+| 6 | `seguir` | 0.0134 |
 | 7 | `arranjo` | 0.0130 |
 | 8 | `corporacao` | 0.0128 |
 | 9 | `publico` | 0.0128 |
@@ -71,7 +71,7 @@ termos frequentes mas perifericamente conectados descem.
 | 13 | `artificial` | 0.0121 |
 | 14 | `fapesp` | 0.0116 |
 | 15 | `maquina` | 0.0115 |
-| 16 | `ecossistema` | 0.0108 |
+| 16 | `ecossistema` | 0.0109 |
 | 17 | `ator` | 0.0108 |
 | 18 | `dado` | 0.0107 |
 | 19 | `hollerith` | 0.0107 |
@@ -97,13 +97,13 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 2 | `vida` | 170 | 158 | +12 |
 | 3 | `estados` | 67 | 58 | +9 |
 | 4 | `estatistica` | 110 | 101 | +9 |
-| 5 | `linguas` | 107 | 99 | +8 |
-| 6 | `mostra` | 135 | 127 | +8 |
-| 7 | `tecnica` | 64 | 57 | +7 |
-| 8 | `humano` | 89 | 82 | +7 |
-| 9 | `indigenas` | 101 | 94 | +7 |
-| 10 | `objeto` | 147 | 140 | +7 |
-| 11 | `pratica` | 84 | 78 | +6 |
+| 5 | `indigenas` | 101 | 93 | +8 |
+| 6 | `linguas` | 107 | 99 | +8 |
+| 7 | `mostra` | 135 | 127 | +8 |
+| 8 | `tecnica` | 64 | 57 | +7 |
+| 9 | `objeto` | 147 | 140 | +7 |
+| 10 | `pratica` | 84 | 78 | +6 |
+| 11 | `humano` | 88 | 82 | +6 |
 | 12 | `actante` | 69 | 64 | +5 |
 | 13 | `unidos` | 72 | 67 | +5 |
 | 14 | `material` | 79 | 74 | +5 |
@@ -112,26 +112,26 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `pesquisa` | 0.3143 |
-| 2 | `centro` | 0.2578 |
-| 3 | `claudio` | 0.2185 |
-| 4 | `rede` | 0.1737 |
-| 5 | `fabio` | 0.1353 |
+| 1 | `pesquisa` | 0.3131 |
+| 2 | `centro` | 0.2575 |
+| 3 | `claudio` | 0.2184 |
+| 4 | `rede` | 0.1734 |
+| 5 | `fabio` | 0.1366 |
 | 6 | `tecnologia` | 0.0826 |
 | 7 | `dado` | 0.0728 |
 | 8 | `inteligencia` | 0.0697 |
 | 9 | `fapesp` | 0.0668 |
-| 10 | `seguir` | 0.0644 |
+| 10 | `seguir` | 0.0646 |
 | 11 | `ator` | 0.0585 |
 | 12 | `hollerith` | 0.0556 |
 | 13 | `brasil` | 0.0503 |
 | 14 | `ecossistema` | 0.0475 |
 | 15 | `corporacao` | 0.0441 |
 | 16 | `empresa` | 0.0411 |
-| 17 | `artificial` | 0.0395 |
+| 17 | `artificial` | 0.0394 |
 | 18 | `maquina` | 0.0374 |
-| 19 | `arranjo` | 0.0342 |
-| 20 | `entrevistas` | 0.0331 |
+| 19 | `entrevistas` | 0.0343 |
+| 20 | `arranjo` | 0.0342 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -169,24 +169,23 @@ vezes.
 
 ## 7. Tópicos latentes (comunidades Louvain)
 - **Tópico 1** (48 termos): pesquisa, centro, arranjo, publico, corporacao, fapesp
-- **Tópico 2** (36 termos): rede, seguir, ator, campo, associacao, descrevo
+- **Tópico 2** (37 termos): rede, seguir, ator, associacao, descrevo, etnografia
 - **Tópico 3** (26 termos): tecnologia, maquina, hollerith, tabulacao, ciencia, aprendizado
-- **Tópico 4** (18 termos): dado, modelo, codigo, linguagem, aberto, processamento
+- **Tópico 4** (18 termos): claudio, fabio, informacao, campo, verbal, pergunta
 - **Tópico 5** (18 termos): ecossistema, empresa, inovacao, trajetoria, descreve, historica
-- **Tópico 6** (16 termos): claudio, fabio, informacao, verbal, pergunta, entrevistas
-- **Tópico 7** (12 termos): inteligencia, artificial, brasil, laboratorio, vinculo, research
-- **Tópico 8** (6 termos): acesso, estados, unidos, disponivel, sustenta, decisao
+- **Tópico 6** (17 termos): dado, modelo, codigo, linguagem, aberto, processamento
+- **Tópico 7** (16 termos): inteligencia, artificial, brasil, laboratorio, vinculo, acesso
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [rede, seguir, ator] e **Tópico 4** [dado, modelo, codigo] — densidade ponderada de ligação = 0.2130
-- Lacuna entre **Tópico 2** [rede, seguir, ator] e **Tópico 3** [tecnologia, maquina, hollerith] — densidade ponderada de ligação = 0.3419
-- Lacuna entre **Tópico 3** [tecnologia, maquina, hollerith] e **Tópico 4** [dado, modelo, codigo] — densidade ponderada de ligação = 0.3526
-- Lacuna entre **Tópico 4** [dado, modelo, codigo] e **Tópico 5** [ecossistema, empresa, inovacao] — densidade ponderada de ligação = 0.3735
-- Lacuna entre **Tópico 2** [rede, seguir, ator] e **Tópico 5** [ecossistema, empresa, inovacao] — densidade ponderada de ligação = 0.4074
-- Lacuna entre **Tópico 1** [pesquisa, centro, arranjo] e **Tópico 2** [rede, seguir, ator] — densidade ponderada de ligação = 0.4161
+- Lacuna entre **Tópico 3** [tecnologia, maquina, hollerith] e **Tópico 4** [claudio, fabio, informacao] — densidade ponderada de ligação = 0.2329
+- Lacuna entre **Tópico 2** [rede, seguir, ator] e **Tópico 3** [tecnologia, maquina, hollerith] — densidade ponderada de ligação = 0.3358
+- Lacuna entre **Tópico 1** [pesquisa, centro, arranjo] e **Tópico 2** [rede, seguir, ator] — densidade ponderada de ligação = 0.4054
+- Lacuna entre **Tópico 2** [rede, seguir, ator] e **Tópico 5** [ecossistema, empresa, inovacao] — densidade ponderada de ligação = 0.4069
+- Lacuna entre **Tópico 1** [pesquisa, centro, arranjo] e **Tópico 3** [tecnologia, maquina, hollerith] — densidade ponderada de ligação = 0.4503
+- Lacuna entre **Tópico 3** [tecnologia, maquina, hollerith] e **Tópico 5** [ecossistema, empresa, inovacao] — densidade ponderada de ligação = 0.5064
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O capítulo segue o arranjo do C4AI em três planos
