@@ -291,7 +291,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro.playing #introwave{opacity:1}
 #intro>*:not(#introwave){position:relative;z-index:1}
 #abertura-audio{position:fixed;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
-#introaudio{margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;font-family:'Courier New',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--text);background:rgba(255,255,255,.9);border:1px solid var(--rule-soft);border-radius:999px;padding:.42rem .95rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
+.ia-row{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.5rem}
+#introyt{display:inline-flex;align-items:center;line-height:0;opacity:.72;transition:opacity .15s ease,transform .15s ease}
+#introyt:hover{opacity:1;transform:scale(1.08)}
+#introaudio{display:inline-flex;align-items:center;gap:.5rem;font-family:'Courier New',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--text);background:rgba(255,255,255,.9);border:1px solid var(--rule-soft);border-radius:999px;padding:.42rem .95rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
 #introaudio:hover{background:#fdf2a0;border-color:#004b9c}
 #introaudio.on{background:#004b9c;border-color:#004b9c;color:#fff}
 #introaudio .ia-ic{font-size:.95rem;line-height:1}
@@ -404,7 +407,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <h1><span class="texcmd">\title{</span><span class="texttl"><span class="ttl-l1"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial:</span><br>seguindo cientistas e engenheiros universidade afora</span><span class="texcmd">}</span></h1>
   <div class="sub"><span class="texcmd">\author{</span><span class="texarg">Juliane Helanski</span><span class="texcmd">}</span><span class="texarg">&nbsp;·&nbsp;2026</span><br><span class="texcmd">\orientadora{</span><span class="texarg">Suely Kofes</span><span class="texcmd">}</span></div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br><span class="creds-inst">Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)</span><br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
-  <button id="introaudio" type="button" aria-pressed="false" title="tocar a música de abertura"><span class="ia-ic">♪</span><span class="ia-tx">tocar a música de abertura</span></button>
+  <div class="ia-row">
+    <button id="introaudio" type="button" aria-pressed="false" title="tocar a música de abertura"><span class="ia-ic">♪</span><span class="ia-tx">tocar a música de abertura</span></button>
+    <a id="introyt" href="https://www.youtube.com/watch?v=955dZpR7QwY" target="_blank" rel="noopener" title="ver o vídeo completo com a animação no YouTube" aria-label="ver o vídeo completo no YouTube"><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><path fill="#FF0000" d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.55 15.57V8.43L15.82 12z"/></svg></a>
+  </div>
   <div class="hint"><span class="texcmd">\begin{</span><span class="texarg">document</span><span class="texcmd">}</span></div>
 </div>
 <audio id="abertura-audio" src="audio/abertura.mp3" loop preload="auto" aria-hidden="true"></audio>
@@ -1057,6 +1063,9 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')docEl.classList.remo
     if (actx.state === 'suspended') actx.resume();
     if (audio.paused) audio.play().catch(() => {}); else audio.pause();
   });
+
+  const yt = document.getElementById('introyt');
+  if (yt) yt.addEventListener('click', e => e.stopPropagation()); // abre o YouTube sem entrar na rede
 })();
 
 // seletor de rede da capa: tese inteira · cada capítulo (com seu próprio Louvain)
