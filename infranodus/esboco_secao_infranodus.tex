@@ -92,6 +92,45 @@ e \textit{gesto}, com um segundo agrupamento ator-rede em \textit{rede},
 \textit{otherness}, \textit{ausência}, \textit{presença} e
 \textit{manifesta}.
 
+Convém que eu explicite, antes de expor a primeira dessas figuras, em que
+sentido ela e o grafo que acompanha esta tese no site são a mesma análise
+em dois regimes. O procedimento tem duas camadas sobrepostas. A primeira é
+a rede de co-ocorrência, que converte o texto em nós, os termos, e em
+arestas, a proximidade entre eles, e da qual extraio as medidas que leio
+adiante: o \textit{degree}, que mede a centralidade de cada termo, o
+\textit{betweenness}, que localiza os termos-ponte por onde um vocabulário
+transita para outro, e o NPMI, que revela os pares mais colados. A segunda
+camada é a detecção de comunidades pelo algoritmo de Louvain, que roda
+sobre esse mesmo grafo e o reparte nos agrupamentos que a cor das figuras
+exibe, lidos aqui como tópicos latentes. As duas camadas operam juntas nos
+dois lugares em que mobilizo a análise, e a diferença entre eles está no
+escopo e na mídia, com o método mantido idêntico. No corpo impresso da
+tese aplico o procedimento capítulo a capítulo, rodando o Louvain dentro
+de cada um e congelando o resultado em uma figura estática, uma inscrição
+no sentido que \textcite{Latour1986Visualization} dá ao termo, um móvel
+imutável que curo, legendo e faço entrar na leitura linear do argumento, e
+que me devolve a estrutura temática interna daquele capítulo. No site que
+acompanha a tese aplico o mesmo procedimento à tese inteira de uma vez,
+rodando o Louvain sobre o conjunto dos capítulos concatenados, e o
+apresento como um grafo navegável em que percorro os termos, abro as
+passagens que os sustentam e alterno entre a tese como um todo e cada
+capítulo. A escolha da mídia é ela própria parte do método não inocente
+que assumo desde o capítulo~\ref{capitulo1}, pois a figura fixa faz uma
+afirmação e a superfície navegável abre uma exploração, e cada uma
+inscreve, à sua maneira, o gesto reflexivo de submeter esta tese ao mesmo
+tratamento que ela dá aos seus objetos.\footnote{A diferença de escopo tem
+uma consequência que registro para não confundi-la com ruído. Rodado sobre
+a tese inteira, o Louvain produz uma única partição, em que cada termo
+recebe uma comunidade válida para o todo e os agrupamentos são temas
+transversais aos capítulos; rodado capítulo a capítulo, produz uma
+partição independente para cada um, de sorte que um mesmo termo pode
+pertencer a comunidades distintas em capítulos distintos, conforme a sua
+vizinhança lexical se desloca. As comunidades por capítulo pedem, por
+isso, que eu as rotule antes de compará-las, ao passo que a partição da
+tese inteira já as oferece comparáveis. Preservo os dois regimes porque
+cada um responde a uma pergunta: a estrutura interna de cada capítulo, de
+um lado, e os temas que atravessam a tese inteira, de outro.}
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth,keepaspectratio]{figuras/cap.1/infranodus_cap1_focus.png}
