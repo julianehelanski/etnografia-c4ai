@@ -1,0 +1,78 @@
+% =====================================================================
+% Capítulo 4 — Esboço de seção/interlúdio (análise de rede textual)
+% Modelo: esboco_secao_infranodus.tex (capítulo 1).
+%
+% Estilo seguido (regras da tese): primeira pessoa do singular, sem
+% travessões em texto principal, "capítulo" minúsculo em referências
+% cruzadas, aspas com \enquote{}, sem fórmulas do tipo "não X, mas Y".
+%
+% Observação técnica: copie
+%   infranodus/cap4/infranodus_cap4_focus.png
+% para
+%   figuras/cap.4/infranodus_cap4_focus.png
+% =====================================================================
+
+\subsection*{Interlúdio: a rede textual do capítulo}
+
+Submeto por fim à análise de rede textual do capítulo~\ref{capitulo1} os
+32.745~\textit{tokens} deste capítulo, o mais extenso da tese. O
+grafo organiza-se em torno de \textit{spira}, que é ao mesmo tempo o
+termo de maior \textit{degree} e, com larga margem, a maior ponte de
+todos os capítulos (\textit{betweenness}~0,55). Ao seu redor
+condensa-se o aparato latouriano da inscrição, e os pares de maior
+associação são exatamente os conceitos-chave que mobilizo:
+\textit{caixa}~$\leftrightarrow$~\textit{preta}, a caixa-preta, e
+\textit{imutável}~$\leftrightarrow$~\textit{móvel} (NPMI~0,84), o
+móvel imutável de \textcite{Latour1986Visualization}. O par
+\textit{cálculo}~$\leftrightarrow$~\textit{centro} (0,77) inscreve
+na rede o \enquote{centro de cálculo}, e a cena clínica aparece na
+co-ocorrência mais pesada do capítulo,
+\textit{respiratória}~$\leftrightarrow$~\textit{insuficiência}
+(peso~308, NPMI~0,84).
+
+A cadeia de translações que o capítulo narra deixa-se ler na sequência
+de comunidades do grafo. Ela parte da cena clínica (\textit{respiratória},
+\textit{insuficiência}, \textit{covid}, \textit{paciente},
+\textit{ruído}), passa pelo sinal (\textit{espectrograma},
+\textit{sinal}, \textit{acústico}), atravessa o dado e o modelo
+(\textit{dado}, \textit{modelo}, \textit{áudio},
+\textit{rede}~$\leftrightarrow$~\textit{neural}) e chega ao
+\textit{artigo}. As pontes do grafo, além de \textit{spira}, são
+\textit{inscrição}, \textit{covideiro}, \textit{cadeia}, \textit{artigo}
+e \textit{objeto}, e vale deter-me em \textit{covideiro}: o neologismo
+que cunho no capítulo, o actante pandêmico, opera como conector de
+comunidades, de sorte que a própria invenção lexical do texto faz, na
+rede, trabalho de tradução. A teoria e o objeto empírico, que nos
+capítulos anteriores custavam a se tocar, aqui compartilham vizinhança,
+e o grafo mostra a inscrição latouriana já colada à matéria acústica e
+estatística do SPIRA.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth,keepaspectratio]{figuras/cap.4/infranodus_cap4_focus.png}
+\caption[Rede textual do capítulo~\ref{capitulo4} (\textit{text network
+analysis})]{Rede textual do capítulo~\ref{capitulo4}
+(\textit{text network analysis}). Os nós são os termos de maior
+\textit{degree} ponderado; o tamanho do nó acompanha o \textit{degree};
+a cor indica a comunidade detectada por Louvain ponderado; as arestas,
+arqueadas, recebem a mistura das cores das comunidades que ligam.
+Versão de alta resolução, arquivo \texttt{.gexf} para o \textit{Gephi} e
+relatório completo em \texttt{infranodus/cap4/} no repositório desta
+tese.}
+\label{fig:infranodus-cap4}
+\end{figure}
+
+As ligações mais fracas caem, de modo revelador, nas juntas da própria
+cadeia. A lacuna mais forte separa a teoria da inscrição
+(\textit{inscrição}, \textit{cadeia}, \textit{dispositivo}) do par
+\textit{dado}~$\leftrightarrow$~\textit{modelo}; e seguem ralas as
+costuras entre o espectrograma e o artigo, e entre o sinal e o dado. A
+rede é mais rala exatamente onde o capítulo promete o essencial, que é
+mostrar como cada elo converte um estado no seguinte, da voz ao sinal, do
+sinal ao espectrograma, do espectrograma ao dado, do dado ao modelo e do
+modelo ao artigo. Leio essa rarefação como a agenda de reescrita que o
+capítulo me deixa, tornando explícita cada tradução em vez de confiá-la à
+adjacência dos termos. O gesto latouriano me dá o critério, pois uma
+cadeia de inscrições só se sustenta quando cada passagem é reversível e
+narrável \parencite{Latour1986Visualization}, e o grafo assinala os
+pontos em que essa narração ainda me falta.

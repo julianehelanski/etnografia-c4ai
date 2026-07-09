@@ -1,0 +1,100 @@
+% =====================================================================
+% Capítulo 2 — Esboço de seção/interlúdio (análise de rede textual)
+% Modelo: esboco_secao_infranodus.tex (capítulo 1). O método já foi
+% apresentado no interlúdio do capítulo 1; aqui retomo o gesto e leio a
+% rede específica deste capítulo.
+%
+% Estilo seguido (regras da tese): primeira pessoa do singular, sem
+% travessões em texto principal, "capítulo" minúsculo em referências
+% cruzadas, aspas com \enquote{}, sem fórmulas do tipo "não X, mas Y".
+%
+% Observação técnica: para o build encontrar a figura, copie
+%   infranodus/cap2/infranodus_cap2_focus.png
+% para
+%   figuras/cap.2/infranodus_cap2_focus.png
+% (mantendo a convenção do capítulo). As entradas bibliográficas usadas
+% aqui já foram sugeridas no rodapé de esboco_secao_infranodus.tex.
+% =====================================================================
+
+\subsection*{Interlúdio: a rede textual do capítulo}
+
+Retomo neste ponto o gesto de análise de rede textual que apresentei no
+capítulo~\ref{capitulo1}, aplicando à íntegra deste capítulo o mesmo
+\textit{pipeline} de co-ocorrência, comunidades de Louvain
+\parencite{blondel2008fast} e centralidade
+\parencite{paranyushkin2019infranodus}. Convertidos os
+28.174~\textit{tokens} do capítulo em um grafo de 180 termos, a
+detecção de comunidades separa três vocabulários que reconheço como as
+três operações do argumento. O primeiro é a leitura cerrada das
+figurações em Latour, e o grafo o registra de um modo que me interessa:
+as próprias obras aparecem condensadas em pares lexicais de altíssima
+associação, \textit{laboratory}~$\leftrightarrow$~\textit{life}
+(NPMI~0,87), \textit{hope}~$\leftrightarrow$~\textit{pandora}
+(0,87) e \textit{action}~$\leftrightarrow$~\textit{science}
+(0,79), de modo que \enquote{Laboratory Life}, \enquote{A Esperança
+de Pandora} e \enquote{Science in Action} entram na rede como
+etiquetas lexicais compactas. O segundo vocabulário é a genealogia
+militar-industrial da inteligência artificial, ancorada em
+\textit{militar}, \textit{indústria}, \textit{inteligência} e
+\textit{artificial}. O terceiro é o panorama bibliométrico do campo
+brasileiro, reunido em torno de \textit{capes}, \textit{distribuição},
+\textit{produção} e \textit{corpus}.
+
+Os termos de maior \textit{degree} ponderado são \textit{artificial},
+\textit{inteligência}, \textit{latour}, \textit{militar} e
+\textit{ciência}, e o par \textit{inteligência}~$\leftrightarrow$~%
+\textit{artificial} é a co-ocorrência mais pesada de todo o capítulo
+(peso~819, NPMI~0,83): o objeto que descrevo aparece nomeado
+sempre da mesma forma, colado, quase uma palavra só. A maior ponte do
+grafo, por \textit{betweenness}, é \textit{latour} (0,32),
+seguido de \textit{inteligência}, \textit{artificial}, \textit{ciência},
+\textit{militar} e \textit{vocabulário}. Que \textit{latour} seja o termo
+que mais costura comunidades distintas é coerente com um capítulo que
+faz do vocabulário latouriano o seu operador de leitura; e que
+\textit{vocabulário} apareça ele próprio como ponte devolve ao capítulo
+a sua própria imagem, já que o gesto do capítulo é um exercício sobre
+vocabulários, sobre o que as figurações fazem quando nomeiam.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth,keepaspectratio]{figuras/cap.2/infranodus_cap2_focus.png}
+\caption[Rede textual do capítulo~\ref{capitulo2} (\textit{text network
+analysis})]{Rede textual do capítulo~\ref{capitulo2}
+(\textit{text network analysis}). Os nós são os termos de maior
+\textit{degree} ponderado; o tamanho do nó acompanha o \textit{degree};
+a cor indica a comunidade detectada por Louvain ponderado; as arestas,
+arqueadas, recebem a mistura das cores das comunidades que ligam.
+Versão de alta resolução, arquivo \texttt{.gexf} para o \textit{Gephi} e
+relatório completo em \texttt{infranodus/cap2/} no repositório desta
+tese.}
+\label{fig:infranodus-cap2}
+\end{figure}
+
+O que o grafo me devolve com mais força é uma assimetria que sustenta o
+argumento do capítulo. O polo militar-industrial está lexicalmente denso:
+\textit{militar} figura entre os termos de maior \textit{degree} e entre
+as maiores pontes, e articula uma vizinhança própria. A contrafiguração
+têxtil-feminista que oponho a esse polo, ao contrário, mal se inscreve na
+superfície da rede, e sua ausência entre os termos centrais é ela mesma
+um dado: a figuração militar já está sedimentada no vocabulário com que o
+campo fala de si, enquanto a alternativa haraweana ainda precisa ser
+tecida no texto para deixar rastro mensurável. Leio essa desproporção
+como confirmação empírica modesta da tese que o capítulo defende, e como
+tarefa, já que tornar a contrafiguração audível é torná-la também
+lexicalmente presente.
+
+A segunda leitura vem das ligações mais fracas. As comunidades que menos
+se costuram são a do panorama bibliométrico (\textit{capes},
+\textit{distribuição}, \textit{produção}) e a das obras de Latour lidas
+no original (\textit{science}, \textit{action}, \textit{pandora},
+\textit{hope}); fraca também é a costura entre o vocabulário da
+inteligência artificial e essas mesmas obras. O mapeamento quantitativo
+do campo e a leitura cerrada das figurações correm em paralelo sem se
+tocarem, e a rede torna visível uma junta que o próprio capítulo se
+propõe a fazer trabalhar: mostrar como a lexicometria das obras-fonte
+conversa com o panorama bibliométrico da literatura que as recebe. Os
+actantes menores que o grafo isola, o par
+\textit{crawford}~$\leftrightarrow$~\textit{joler} (0,74) da
+anatomia da IA e a etiqueta \textit{aime} do inquérito latouriano sobre
+os modos de existência, confirmam que a rede registra com fidelidade as
+referências que mobilizo, ainda quando as deixo em posição periférica.
