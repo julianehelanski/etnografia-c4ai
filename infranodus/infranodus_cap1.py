@@ -37,8 +37,8 @@ from networkx.algorithms.community import louvain_communities
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
 from estilo_rede import (  # noqa: E402
-    COR_ARESTA, COR_BORDA_NO, COR_TEXTO, aplicar_fonte, nota_rodape,
-    paleta_rgba, pct_ptbr,
+    COR_BORDA_NO, COR_TEXTO, RAD_ARESTA, aplicar_fonte,
+    cores_arestas, nota_rodape, paleta_rgba, pct_ptbr,
 )
 
 aplicar_fonte()  # fonte sans-serif única em todas as figuras de rede
@@ -577,7 +577,8 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         for n in c:
             node2comm[n] = i
     palette = paleta_rgba(len(comms))
-    node_colors = [palette[node2comm.get(n, 0) % len(palette)] for n in G.nodes()]
+    node_color_map = {n: palette[node2comm.get(n, 0) % len(palette)] for n in G.nodes()}
+    node_colors = [node_color_map[n] for n in G.nodes()]
     max_deg = max(deg.values()) or 1
     node_sizes = [80 + 700 * (deg[n] / max_deg) for n in G.nodes()]
 
@@ -591,7 +592,10 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         ew = 0.15 + 1.6 * (weights / weights.max())
     else:
         ew = []
-    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.35, width=ew, edge_color=COR_ARESTA)
+    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.5, width=ew,
+                           edge_color=cores_arestas(G, node_color_map),
+                           arrows=True, arrowstyle="-",
+                           connectionstyle=f"arc3,rad={RAD_ARESTA}")
     nx.draw_networkx_nodes(G, pos, ax=ax, node_color=node_colors,
                            node_size=node_sizes, linewidths=0.8, edgecolors=COR_BORDA_NO)
 
@@ -699,7 +703,8 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
         for n in c:
             node2comm[n] = i
     palette = paleta_rgba(len(comms))
-    node_colors = [palette[node2comm.get(n, 0) % len(palette)] for n in H.nodes()]
+    node_color_map = {n: palette[node2comm.get(n, 0) % len(palette)] for n in H.nodes()}
+    node_colors = [node_color_map[n] for n in H.nodes()]
 
     pr_local = {n: pr.get(n, 0.0) for n in H.nodes()}
     max_pr = max(pr_local.values()) or 1.0
@@ -715,7 +720,10 @@ def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
         ew = 0.3 + 1.6 * npmis_n
     else:
         ew = []
-    nx.draw_networkx_edges(H, pos, ax=ax, alpha=0.45, width=ew, edge_color=COR_ARESTA)
+    nx.draw_networkx_edges(H, pos, ax=ax, alpha=0.55, width=ew,
+                           edge_color=cores_arestas(H, node_color_map),
+                           arrows=True, arrowstyle="-",
+                           connectionstyle=f"arc3,rad={RAD_ARESTA}")
     nx.draw_networkx_nodes(H, pos, ax=ax, node_color=node_colors,
                            node_size=node_sizes, linewidths=0.8, edgecolors=COR_BORDA_NO)
 

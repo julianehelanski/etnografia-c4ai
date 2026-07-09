@@ -43,6 +43,10 @@ COR_TEXTO = "#404040"
 COR_NOTA = "#8a8a8a"
 FONTE = "DejaVu Sans"
 
+# Curvatura das arestas (arc3 rad): leve arqueamento no lugar da linha reta,
+# na mesma lógica da rede interativa do site.
+RAD_ARESTA = 0.16
+
 
 def aplicar_fonte() -> None:
     """Fonte sans-serif única em todas as figuras de rede/trajetória."""
@@ -76,6 +80,24 @@ def paleta_rgba(n: int):
     """Versão RGBA (0--1) das cores categóricas, p/ APIs que pedem array."""
     from matplotlib.colors import to_rgba
     return np.array([to_rgba(c) for c in cores_categoricas(max(n, 1))])
+
+
+def cor_aresta_mistura(rgba_u, rgba_v):
+    """Cor da aresta como mistura (média RGB) das cores dos dois nós que ela
+    liga: arestas internas a uma comunidade herdam sua cor; arestas entre
+    comunidades exibem a transição das duas cores. Equivalente estático ao
+    degradê origem→destino da rede interativa do site."""
+    from matplotlib.colors import to_rgba
+    a = np.array(to_rgba(rgba_u))
+    b = np.array(to_rgba(rgba_v))
+    return tuple((a + b) / 2.0)
+
+
+def cores_arestas(G, node_color_map):
+    """Lista de cores RGBA, uma por aresta de ``G``, na ordem de ``G.edges()``,
+    misturando as cores dos nós de cada extremidade (ver ``cor_aresta_mistura``)."""
+    return [cor_aresta_mistura(node_color_map[u], node_color_map[v])
+            for u, v in G.edges()]
 
 
 def num_ptbr(valor) -> str:
