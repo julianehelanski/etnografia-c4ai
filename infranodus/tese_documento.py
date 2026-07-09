@@ -145,6 +145,9 @@ def _site_image(texpath: str | None) -> str | None:
     if not texpath:
         return None
     base = texpath.strip().replace("\\", "/").rsplit("/", 1)[-1].lower()
+    # Rede textual da tese inteira (Considerações finais): cópia na raiz de figuras/.
+    if base == "rede_tese_inteira.png":
+        return "figuras/rede_tese_inteira.png" if (SITE_FIGURAS / base).exists() else None
     mname = re.search(r"infranodus_cap(\d+)_", base)
     mdir = re.search(r"cap\.?(\d+)", texpath)
     m = mname or mdir
