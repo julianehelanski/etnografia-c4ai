@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09 10:05 UTC",
+  "generated": "2026-07-09 17:33 UTC",
   "chapters": {
     "cap1": {
       "sections": [
@@ -143,9 +143,7 @@
         "Seguindo Marcelo",
         "O Spira",
         "As inscrições tecnocientíficas do Spira",
-        "A rede do covideiro",
-        "Localização do dataset e geração dos espectrogramas",
-        "Análise de rede textual do capítulo"
+        "A rede do covideiro"
       ],
       "subsections": [
         "O momento etnográfico",
@@ -159,7 +157,9 @@
         "O artigo como actante",
         "Da voz ao espectrograma",
         "O espectrograma na escrita etnográfica",
-        "As três insuficiências"
+        "As três insuficiências",
+        "Localização do dataset e geração dos espectrogramas",
+        "Análise de rede textual do capítulo"
       ],
       "figures": [
         "AISelect_20260403_164426_Chrome.jpg",
