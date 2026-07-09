@@ -273,10 +273,16 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;
   justify-content:center;cursor:pointer;transition:opacity 1s ease,background-color .6s ease,color .6s ease;text-align:center;padding:0 2rem}
 #intro.out{opacity:0;pointer-events:none}
-/* enquanto a música toca, um brilho viridis translúcido pulsa nas bordas; o fundo da capa continua branco */
-#intro.beat{animation:introglow 7s ease-in-out infinite}
-@keyframes introglow{0%{box-shadow:inset 0 0 150px 34px rgba(34,0,42,.34)}16%{box-shadow:inset 0 0 175px 46px rgba(32,33,67,.34)}33%{box-shadow:inset 0 0 165px 42px rgba(20,60,71,.37)}50%{box-shadow:inset 0 0 200px 56px rgba(15,80,70,.40)}66%{box-shadow:inset 0 0 175px 46px rgba(19,103,89,.37)}83%{box-shadow:inset 0 0 165px 42px rgba(20,107,90,.34)}100%{box-shadow:inset 0 0 150px 34px rgba(34,0,42,.34)}}
-@media(prefers-reduced-motion:reduce){#intro.beat{animation:none;box-shadow:inset 0 0 160px 44px rgba(20,60,71,.32)}}
+/* "tech music": enquanto a música toca, o fundo da capa pulsa em cores neon */
+#intro.beat{color:#eaf2ff;animation:introbeat 4.5s ease-in-out infinite,intropulse 1.3s ease-in-out infinite}
+#intro.beat .texarg,#intro.beat .creds,#intro.beat .creds-inst,#intro.beat .creds-line,#intro.beat .hint{color:#eaf2ff}
+#intro.beat .texcmd{color:#6fd3ff}
+#intro.beat .texttl,#intro.beat .ttl-l1{color:#ffffff;text-shadow:0 0 18px rgba(120,180,255,.55)}
+#intro.beat #introaudio{background:#004b9c;border-color:#6fd3ff;color:#fff}
+#intro.beat #introaudio:hover{background:#0a63c4;border-color:#9fe0ff}
+@keyframes introbeat{0%{background-color:#0b1026}16%{background-color:#241046}33%{background-color:#07142e}50%{background-color:#2a0b3d}66%{background-color:#06182a}83%{background-color:#3a0f2e}100%{background-color:#0b1026}}
+@keyframes intropulse{0%,100%{box-shadow:inset 0 0 140px 30px rgba(80,140,255,.10)}50%{box-shadow:inset 0 0 230px 65px rgba(150,90,255,.30)}}
+@media(prefers-reduced-motion:reduce){#intro.beat{animation:none;background-color:#0b1026;box-shadow:none}}
 #ytaudio{position:fixed;left:-9999px;top:0;width:200px;height:120px;opacity:0;pointer-events:none}
 #introaudio{margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;font-family:'Courier New',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--text);background:rgba(255,255,255,.9);border:1px solid var(--rule-soft);border-radius:999px;padding:.42rem .95rem;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
 #introaudio:hover{background:#fdf2a0;border-color:#004b9c}
