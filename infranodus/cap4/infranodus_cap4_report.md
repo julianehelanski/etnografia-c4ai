@@ -10,44 +10,44 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,795**
-- Grafo bruto: **6763** nós · **78215** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4022** arestas
-- Tópicos detectados (Louvain): **8**
+- Tokens significativos: **32,887**
+- Grafo bruto: **6763** nós · **78418** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4030** arestas
+- Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `spira` | 1908 |
-| 2 | `covideiro` | 1185 |
-| 3 | `inscricao` | 1107 |
-| 4 | `cadeia` | 1041 |
-| 5 | `rede` | 950 |
-| 6 | `artigo` | 890 |
-| 7 | `objeto` | 888 |
-| 8 | `respiratoria` | 765 |
-| 9 | `insuficiencia` | 730 |
-| 10 | `dado` | 730 |
+| 1 | `spira` | 1911 |
+| 2 | `covideiro` | 1179 |
+| 3 | `inscricao` | 1128 |
+| 4 | `cadeia` | 1047 |
+| 5 | `rede` | 1004 |
+| 6 | `artigo` | 895 |
+| 7 | `objeto` | 885 |
+| 8 | `respiratoria` | 763 |
+| 9 | `dado` | 732 |
+| 10 | `insuficiencia` | 726 |
 | 11 | `modelo` | 664 |
-| 12 | `projeto` | 655 |
-| 13 | `marcelo` | 620 |
-| 14 | `espectrograma` | 538 |
-| 15 | `artigos` | 527 |
+| 12 | `projeto` | 658 |
+| 13 | `marcelo` | 617 |
+| 14 | `artigos` | 535 |
+| 15 | `espectrograma` | 533 |
 | 16 | `coleta` | 503 |
-| 17 | `actante` | 461 |
+| 17 | `actante` | 463 |
 | 18 | `condicoes` | 436 |
-| 19 | `cientifico` | 430 |
+| 19 | `cientifico` | 432 |
 | 20 | `pratica` | 422 |
-| 21 | `covid` | 420 |
-| 22 | `audio` | 417 |
-| 23 | `partir` | 403 |
-| 24 | `pacientes` | 385 |
-| 25 | `sinal` | 384 |
-| 26 | `ruido` | 376 |
-| 27 | `secao` | 360 |
-| 28 | `analise` | 357 |
-| 29 | `laboratorio` | 350 |
-| 30 | `dispositivo` | 349 |
+| 21 | `covid` | 422 |
+| 22 | `audio` | 414 |
+| 23 | `partir` | 406 |
+| 24 | `analise` | 392 |
+| 25 | `pacientes` | 385 |
+| 26 | `sinal` | 384 |
+| 27 | `ruido` | 376 |
+| 28 | `secao` | 362 |
+| 29 | `dispositivo` | 351 |
+| 30 | `laboratorio` | 350 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -56,36 +56,36 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `spira` | 0.0374 |
-| 2 | `covideiro` | 0.0234 |
-| 3 | `inscricao` | 0.0223 |
+| 1 | `spira` | 0.0373 |
+| 2 | `covideiro` | 0.0232 |
+| 3 | `inscricao` | 0.0226 |
 | 4 | `cadeia` | 0.0209 |
-| 5 | `rede` | 0.0191 |
-| 6 | `objeto` | 0.0179 |
-| 7 | `artigo` | 0.0178 |
+| 5 | `rede` | 0.0201 |
+| 6 | `artigo` | 0.0178 |
+| 7 | `objeto` | 0.0178 |
 | 8 | `dado` | 0.0148 |
-| 9 | `respiratoria` | 0.0145 |
-| 10 | `modelo` | 0.0139 |
-| 11 | `insuficiencia` | 0.0138 |
+| 9 | `respiratoria` | 0.0143 |
+| 10 | `modelo` | 0.0138 |
+| 11 | `insuficiencia` | 0.0136 |
 | 12 | `projeto` | 0.0132 |
-| 13 | `marcelo` | 0.0126 |
-| 14 | `espectrograma` | 0.0113 |
-| 15 | `artigos` | 0.0106 |
+| 13 | `marcelo` | 0.0125 |
+| 14 | `espectrograma` | 0.0111 |
+| 15 | `artigos` | 0.0107 |
 | 16 | `coleta` | 0.0105 |
 | 17 | `actante` | 0.0097 |
-| 18 | `pratica` | 0.0091 |
-| 19 | `condicoes` | 0.0091 |
-| 20 | `audio` | 0.0089 |
+| 18 | `pratica` | 0.0090 |
+| 19 | `condicoes` | 0.0090 |
+| 20 | `audio` | 0.0088 |
 | 21 | `covid` | 0.0088 |
 | 22 | `cientifico` | 0.0088 |
 | 23 | `partir` | 0.0085 |
 | 24 | `sinal` | 0.0083 |
 | 25 | `ruido` | 0.0083 |
 | 26 | `pacientes` | 0.0081 |
-| 27 | `secao` | 0.0077 |
-| 28 | `torna` | 0.0076 |
-| 29 | `laboratorio` | 0.0076 |
-| 30 | `ponto` | 0.0076 |
+| 27 | `analise` | 0.0081 |
+| 28 | `secao` | 0.0078 |
+| 29 | `torna` | 0.0077 |
+| 30 | `laboratorio` | 0.0076 |
 
 ## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
 Diferença de posição (rank por degree) − (rank por PageRank). Valor
@@ -93,44 +93,44 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `escala` | 82 | 66 | +16 |
+| 1 | `escala` | 82 | 69 | +13 |
 | 2 | `clinica` | 89 | 79 | +10 |
-| 3 | `grade` | 137 | 127 | +10 |
-| 4 | `leitor` | 126 | 117 | +9 |
-| 5 | `coeficientes` | 95 | 87 | +8 |
-| 6 | `pesquisa` | 74 | 67 | +7 |
+| 3 | `pesquisa` | 74 | 65 | +9 |
+| 4 | `disponivel` | 108 | 99 | +9 |
+| 5 | `algoritmo` | 71 | 63 | +8 |
+| 6 | `processamento` | 80 | 73 | +7 |
 | 7 | `resultado` | 88 | 81 | +7 |
-| 8 | `mapa` | 145 | 138 | +7 |
-| 9 | `processamento` | 79 | 73 | +6 |
-| 10 | `momento` | 94 | 88 | +6 |
-| 11 | `onda` | 115 | 109 | +6 |
-| 12 | `acesso` | 127 | 121 | +6 |
-| 13 | `linguagem` | 141 | 135 | +6 |
-| 14 | `microfone` | 154 | 148 | +6 |
-| 15 | `torna` | 33 | 28 | +5 |
+| 8 | `coeficientes` | 98 | 91 | +7 |
+| 9 | `grade` | 139 | 132 | +7 |
+| 10 | `analitico` | 165 | 158 | +7 |
+| 11 | `escolha` | 117 | 111 | +6 |
+| 12 | `mapa` | 142 | 136 | +6 |
+| 13 | `momento` | 95 | 90 | +5 |
+| 14 | `pessoas` | 109 | 104 | +5 |
+| 15 | `linguagem` | 144 | 139 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `spira` | 0.5434 |
-| 2 | `inscricao` | 0.2277 |
-| 3 | `covideiro` | 0.2075 |
-| 4 | `cadeia` | 0.1273 |
-| 5 | `artigo` | 0.0970 |
-| 6 | `rede` | 0.0969 |
-| 7 | `objeto` | 0.0936 |
-| 8 | `respiratoria` | 0.0749 |
-| 9 | `modelo` | 0.0746 |
-| 10 | `espectrograma` | 0.0647 |
+| 1 | `spira` | 0.5351 |
+| 2 | `inscricao` | 0.2324 |
+| 3 | `covideiro` | 0.2068 |
+| 4 | `cadeia` | 0.1194 |
+| 5 | `rede` | 0.1050 |
+| 6 | `artigo` | 0.0972 |
+| 7 | `objeto` | 0.0937 |
+| 8 | `modelo` | 0.0747 |
+| 9 | `respiratoria` | 0.0679 |
+| 10 | `espectrograma` | 0.0651 |
 | 11 | `dado` | 0.0638 |
-| 12 | `projeto` | 0.0485 |
-| 13 | `insuficiencia` | 0.0329 |
-| 14 | `coleta` | 0.0327 |
-| 15 | `ruido` | 0.0293 |
-| 16 | `sinal` | 0.0282 |
-| 17 | `marcelo` | 0.0260 |
+| 12 | `projeto` | 0.0486 |
+| 13 | `coleta` | 0.0329 |
+| 14 | `ruido` | 0.0293 |
+| 15 | `sinal` | 0.0282 |
+| 16 | `marcelo` | 0.0262 |
+| 17 | `insuficiencia` | 0.0239 |
 | 18 | `pratica` | 0.0237 |
-| 19 | `torna` | 0.0232 |
+| 19 | `torna` | 0.0234 |
 | 20 | `instituicao` | 0.0215 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
@@ -144,18 +144,18 @@ vezes.
 | 1 | `respiratoria` | `insuficiencia` | 0.844 | 308 |
 | 2 | `imutavel` | `movel` | 0.842 | 81 |
 | 3 | `calculo` | `centro` | 0.772 | 85 |
-| 4 | `escuta` | `clinica` | 0.640 | 42 |
-| 5 | `neural` | `rede` | 0.591 | 127 |
+| 4 | `escuta` | `clinica` | 0.641 | 42 |
+| 5 | `neural` | `rede` | 0.590 | 127 |
 | 6 | `acao` | `programa` | 0.567 | 38 |
 | 7 | `sinal` | `acustico` | 0.548 | 61 |
 | 8 | `tornou` | `possivel` | 0.535 | 34 |
 | 9 | `mapa` | `analitico` | 0.529 | 25 |
-| 10 | `linguagem` | `processamento` | 0.525 | 27 |
-| 11 | `entrevista` | `marcelo` | 0.504 | 100 |
-| 12 | `publico` | `repositorio` | 0.497 | 24 |
-| 13 | `acesso` | `disponivel` | 0.493 | 24 |
+| 10 | `linguagem` | `processamento` | 0.526 | 27 |
+| 11 | `entrevista` | `marcelo` | 0.505 | 100 |
+| 12 | `acesso` | `disponivel` | 0.497 | 24 |
+| 13 | `publico` | `repositorio` | 0.497 | 24 |
 | 14 | `enfermaria` | `ruido` | 0.488 | 57 |
-| 15 | `torna` | `visivel` | 0.482 | 45 |
+| 15 | `torna` | `visivel` | 0.483 | 45 |
 | 16 | `covideiro` | `pandemico` | 0.477 | 97 |
 | 17 | `condicoes` | `producao` | 0.470 | 51 |
 | 18 | `publico` | `saude` | 0.467 | 18 |
@@ -163,30 +163,29 @@ vezes.
 | 20 | `modelo` | `treinado` | 0.459 | 49 |
 | 21 | `fonoaudiologos` | `medicos` | 0.457 | 28 |
 | 22 | `tornar` | `visivel` | 0.454 | 20 |
-| 23 | `cadeia` | `translacoes` | 0.436 | 51 |
-| 24 | `conceito` | `referencia` | 0.431 | 16 |
+| 23 | `cadeia` | `translacoes` | 0.437 | 51 |
+| 24 | `textual` | `analise` | 0.435 | 27 |
 | 25 | `controles` | `enfermaria` | 0.425 | 27 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (35 termos): inscricao, cadeia, secao, dispositivo, ponto, torna
-- **Tópico 2** (34 termos): dado, modelo, audio, sinal, ruido, enfermaria
-- **Tópico 3** (29 termos): covideiro, coleta, actante, condicoes, laboratorio, pandemico
-- **Tópico 4** (25 termos): espectrograma, paciente, arquivo, virus, produz, imagem
-- **Tópico 5** (24 termos): spira, artigo, projeto, marcelo, artigos, cientifico
-- **Tópico 6** (12 termos): objeto, pratica, condicao, distintas, distintos, diferentes
-- **Tópico 7** (11 termos): respiratoria, insuficiencia, covid, pacientes, acustica, deteccao
-- **Tópico 8** (10 termos): rede, partir, neural, associacao, topologia, arquitetura
+- **Tópico 1** (43 termos): dado, modelo, espectrograma, audio, sinal, paciente
+- **Tópico 2** (40 termos): inscricao, cadeia, secao, dispositivo, torna, ponto
+- **Tópico 3** (31 termos): spira, artigo, projeto, marcelo, artigos, cientifico
+- **Tópico 4** (22 termos): respiratoria, insuficiencia, coleta, condicoes, covid, pacientes
+- **Tópico 5** (20 termos): covideiro, actante, pandemico, virus, humano, configuracao
+- **Tópico 6** (12 termos): rede, partir, analise, neural, textual, associacao
+- **Tópico 7** (12 termos): objeto, pratica, condicao, distintas, distintos, diferentes
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [inscricao, cadeia, secao] e **Tópico 2** [dado, modelo, audio] — densidade ponderada de ligação = 0.5908
-- Lacuna entre **Tópico 3** [covideiro, coleta, actante] e **Tópico 4** [espectrograma, paciente, arquivo] — densidade ponderada de ligação = 0.7572
-- Lacuna entre **Tópico 2** [dado, modelo, audio] e **Tópico 4** [espectrograma, paciente, arquivo] — densidade ponderada de ligação = 0.8071
-- Lacuna entre **Tópico 2** [dado, modelo, audio] e **Tópico 3** [covideiro, coleta, actante] — densidade ponderada de ligação = 0.8611
-- Lacuna entre **Tópico 1** [inscricao, cadeia, secao] e **Tópico 4** [espectrograma, paciente, arquivo] — densidade ponderada de ligação = 0.8617
-- Lacuna entre **Tópico 4** [espectrograma, paciente, arquivo] e **Tópico 5** [spira, artigo, projeto] — densidade ponderada de ligação = 0.9383
+- Lacuna entre **Tópico 2** [inscricao, cadeia, secao] e **Tópico 4** [respiratoria, insuficiencia, coleta] — densidade ponderada de ligação = 0.6568
+- Lacuna entre **Tópico 1** [dado, modelo, espectrograma] e **Tópico 2** [inscricao, cadeia, secao] — densidade ponderada de ligação = 0.7023
+- Lacuna entre **Tópico 1** [dado, modelo, espectrograma] e **Tópico 3** [spira, artigo, projeto] — densidade ponderada de ligação = 0.8875
+- Lacuna entre **Tópico 2** [inscricao, cadeia, secao] e **Tópico 5** [covideiro, actante, pandemico] — densidade ponderada de ligação = 0.9313
+- Lacuna entre **Tópico 1** [dado, modelo, espectrograma] e **Tópico 4** [respiratoria, insuficiencia, coleta] — densidade ponderada de ligação = 0.9450
+- Lacuna entre **Tópico 1** [dado, modelo, espectrograma] e **Tópico 5** [covideiro, actante, pandemico] — densidade ponderada de ligação = 0.9860
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O capítulo organiza-se em torno do projeto SPIRA (a
