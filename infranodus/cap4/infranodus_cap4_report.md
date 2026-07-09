@@ -10,8 +10,8 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **32,793**
-- Grafo bruto: **6762** nós · **78208** arestas
+- Tokens significativos: **32,795**
+- Grafo bruto: **6763** nós · **78215** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **4022** arestas
 - Tópicos detectados (Louvain): **8**
 
@@ -100,12 +100,12 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 | 5 | `coeficientes` | 95 | 87 | +8 |
 | 6 | `pesquisa` | 74 | 67 | +7 |
 | 7 | `resultado` | 88 | 81 | +7 |
-| 8 | `processamento` | 79 | 73 | +6 |
-| 9 | `momento` | 94 | 88 | +6 |
-| 10 | `onda` | 115 | 109 | +6 |
-| 11 | `acesso` | 127 | 121 | +6 |
-| 12 | `linguagem` | 141 | 135 | +6 |
-| 13 | `frequencia` | 150 | 144 | +6 |
+| 8 | `mapa` | 145 | 138 | +7 |
+| 9 | `processamento` | 79 | 73 | +6 |
+| 10 | `momento` | 94 | 88 | +6 |
+| 11 | `onda` | 115 | 109 | +6 |
+| 12 | `acesso` | 127 | 121 | +6 |
+| 13 | `linguagem` | 141 | 135 | +6 |
 | 14 | `microfone` | 154 | 148 | +6 |
 | 15 | `torna` | 33 | 28 | +5 |
 

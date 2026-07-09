@@ -1,8 +1,8 @@
 {
-  "tokens": 32793,
+  "tokens": 32795,
   "graph_full": {
-    "nodes": 6762,
-    "edges": 78208
+    "nodes": 6763,
+    "edges": 78215
   },
   "graph_pruned": {
     "nodes": 180,
@@ -133,123 +133,123 @@
   "top_terms_pagerank": [
     {
       "term": "spira",
-      "pagerank": 0.037368840797753336
+      "pagerank": 0.03737072281836297
     },
     {
       "term": "covideiro",
-      "pagerank": 0.02344271235988886
+      "pagerank": 0.02344384367084955
     },
     {
       "term": "inscricao",
-      "pagerank": 0.022277763223848182
+      "pagerank": 0.022278798336936412
     },
     {
       "term": "cadeia",
-      "pagerank": 0.02091255881598046
+      "pagerank": 0.020914038483000205
     },
     {
       "term": "rede",
-      "pagerank": 0.01912591797311279
+      "pagerank": 0.019127368574469575
     },
     {
       "term": "objeto",
-      "pagerank": 0.017909274014140483
+      "pagerank": 0.017910082592016596
     },
     {
       "term": "artigo",
-      "pagerank": 0.017783596300782335
+      "pagerank": 0.017784432058046536
     },
     {
       "term": "dado",
-      "pagerank": 0.014768094369864761
+      "pagerank": 0.014768724154436792
     },
     {
       "term": "respiratoria",
-      "pagerank": 0.014455660797226171
+      "pagerank": 0.014456223292283054
     },
     {
       "term": "modelo",
-      "pagerank": 0.013864722618384461
+      "pagerank": 0.013865476696271683
     },
     {
       "term": "insuficiencia",
-      "pagerank": 0.013775149827184675
+      "pagerank": 0.013775688188599625
     },
     {
       "term": "projeto",
-      "pagerank": 0.013234208776994418
+      "pagerank": 0.013234937438081278
     },
     {
       "term": "marcelo",
-      "pagerank": 0.012623376685643214
+      "pagerank": 0.01262424706604905
     },
     {
       "term": "espectrograma",
-      "pagerank": 0.011269041018103018
+      "pagerank": 0.011269480332895786
     },
     {
       "term": "artigos",
-      "pagerank": 0.010560925929912134
+      "pagerank": 0.010561489760408445
     },
     {
       "term": "coleta",
-      "pagerank": 0.010491896896506718
+      "pagerank": 0.010492392428458725
     },
     {
       "term": "actante",
-      "pagerank": 0.009672772132414593
+      "pagerank": 0.009673151720689407
     },
     {
       "term": "pratica",
-      "pagerank": 0.00906816874666734
+      "pagerank": 0.009068515643205516
     },
     {
       "term": "condicoes",
-      "pagerank": 0.009059425505940926
+      "pagerank": 0.009059766281029002
     },
     {
       "term": "audio",
-      "pagerank": 0.008914920718412354
+      "pagerank": 0.008915367107357651
     },
     {
       "term": "covid",
-      "pagerank": 0.008810697453913522
+      "pagerank": 0.008811037705780771
     },
     {
       "term": "cientifico",
-      "pagerank": 0.008773090465082503
+      "pagerank": 0.00877345606955826
     },
     {
       "term": "partir",
-      "pagerank": 0.008492654104219968
+      "pagerank": 0.008492998826777315
     },
     {
       "term": "sinal",
-      "pagerank": 0.008328767976107277
+      "pagerank": 0.008329051366063111
     },
     {
       "term": "ruido",
-      "pagerank": 0.00829727594773479
+      "pagerank": 0.008297564500883339
     },
     {
       "term": "pacientes",
-      "pagerank": 0.00813336044087056
+      "pagerank": 0.008133634418011161
     },
     {
       "term": "secao",
-      "pagerank": 0.007747845693661735
+      "pagerank": 0.00774816879414925
     },
     {
       "term": "torna",
-      "pagerank": 0.007620125338265163
+      "pagerank": 0.007620429017203758
     },
     {
       "term": "laboratorio",
-      "pagerank": 0.007588612866715761
+      "pagerank": 0.007588916198120475
     },
     {
       "term": "ponto",
-      "pagerank": 0.007566012385578056
+      "pagerank": 0.007566454210124848
     }
   ],
   "top_terms_betweenness": [
@@ -378,6 +378,12 @@
       "shift": 7
     },
     {
+      "term": "mapa",
+      "degree_rank": 145,
+      "pagerank_rank": 138,
+      "shift": 7
+    },
+    {
       "term": "processamento",
       "degree_rank": 79,
       "pagerank_rank": 73,
@@ -408,12 +414,6 @@
       "shift": 6
     },
     {
-      "term": "frequencia",
-      "degree_rank": 150,
-      "pagerank_rank": 144,
-      "shift": 6
-    },
-    {
       "term": "microfone",
       "degree_rank": 154,
       "pagerank_rank": 148,
@@ -430,151 +430,151 @@
     {
       "a": "respiratoria",
       "b": "insuficiencia",
-      "npmi": 0.8438456664214166,
+      "npmi": 0.8438477039687466,
       "cooccurrence_weight": 308
     },
     {
       "a": "imutavel",
       "b": "movel",
-      "npmi": 0.8423708328166364,
+      "npmi": 0.8423724309401895,
       "cooccurrence_weight": 81
     },
     {
       "a": "calculo",
       "b": "centro",
-      "npmi": 0.7715192541908915,
+      "npmi": 0.7715215706432833,
       "cooccurrence_weight": 85
     },
     {
       "a": "escuta",
       "b": "clinica",
-      "npmi": 0.6404319675498796,
+      "npmi": 0.6404352603438437,
       "cooccurrence_weight": 42
     },
     {
       "a": "neural",
       "b": "rede",
-      "npmi": 0.5912103265151142,
+      "npmi": 0.5912147836840161,
       "cooccurrence_weight": 127
     },
     {
       "a": "acao",
       "b": "programa",
-      "npmi": 0.5665140730811778,
+      "npmi": 0.5665179840190635,
       "cooccurrence_weight": 38
     },
     {
       "a": "sinal",
       "b": "acustico",
-      "npmi": 0.5480044885386134,
+      "npmi": 0.5480088734562203,
       "cooccurrence_weight": 61
     },
     {
       "a": "tornou",
       "b": "possivel",
-      "npmi": 0.5351309496372401,
+      "npmi": 0.5351350758289537,
       "cooccurrence_weight": 34
     },
     {
       "a": "mapa",
       "b": "analitico",
-      "npmi": 0.5289174055058379,
+      "npmi": 0.5289212326349366,
       "cooccurrence_weight": 25
     },
     {
       "a": "linguagem",
       "b": "processamento",
-      "npmi": 0.525370708993691,
+      "npmi": 0.5253747850756215,
       "cooccurrence_weight": 27
     },
     {
       "a": "entrevista",
       "b": "marcelo",
-      "npmi": 0.5042886078044546,
+      "npmi": 0.5042938271731127,
       "cooccurrence_weight": 100
     },
     {
       "a": "publico",
       "b": "repositorio",
-      "npmi": 0.4966487587341322,
+      "npmi": 0.49665301095815206,
       "cooccurrence_weight": 24
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.4932862735769019,
+      "npmi": 0.49329055420661344,
       "cooccurrence_weight": 24
     },
     {
       "a": "enfermaria",
       "b": "ruido",
-      "npmi": 0.48822664873813154,
+      "npmi": 0.488231560587739,
       "cooccurrence_weight": 57
     },
     {
       "a": "torna",
       "b": "visivel",
-      "npmi": 0.48235574705604506,
+      "npmi": 0.48236053707402293,
       "cooccurrence_weight": 45
     },
     {
       "a": "covideiro",
       "b": "pandemico",
-      "npmi": 0.4766135679989827,
+      "npmi": 0.47661900056266776,
       "cooccurrence_weight": 97
     },
     {
       "a": "condicoes",
       "b": "producao",
-      "npmi": 0.47007387001380985,
+      "npmi": 0.47007886860128484,
       "cooccurrence_weight": 51
     },
     {
       "a": "publico",
       "b": "saude",
-      "npmi": 0.46703292058277057,
+      "npmi": 0.46703725046853195,
       "cooccurrence_weight": 18
     },
     {
       "a": "ciencia",
       "b": "construcao",
-      "npmi": 0.4622401203626402,
+      "npmi": 0.4622444217037538,
       "cooccurrence_weight": 19
     },
     {
       "a": "modelo",
       "b": "treinado",
-      "npmi": 0.45895903275448047,
+      "npmi": 0.4589641048035364,
       "cooccurrence_weight": 49
     },
     {
       "a": "fonoaudiologos",
       "b": "medicos",
-      "npmi": 0.4572586887630562,
+      "npmi": 0.4572633737765632,
       "cooccurrence_weight": 28
     },
     {
       "a": "tornar",
       "b": "visivel",
-      "npmi": 0.4535160489712972,
+      "npmi": 0.4535205518628388,
       "cooccurrence_weight": 20
     },
     {
       "a": "cadeia",
       "b": "translacoes",
-      "npmi": 0.43629526270541624,
+      "npmi": 0.4363005799133816,
       "cooccurrence_weight": 51
     },
     {
       "a": "conceito",
       "b": "referencia",
-      "npmi": 0.43055534385219846,
+      "npmi": 0.4305598986280457,
       "cooccurrence_weight": 16
     },
     {
       "a": "controles",
       "b": "enfermaria",
-      "npmi": 0.42453146444120315,
+      "npmi": 0.424536406523253,
       "cooccurrence_weight": 27
     }
   ],
