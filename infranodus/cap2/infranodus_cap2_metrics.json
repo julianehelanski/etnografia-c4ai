@@ -1,8 +1,8 @@
 {
-  "tokens": 28174,
+  "tokens": 28194,
   "graph_full": {
-    "nodes": 7058,
-    "edges": 66337
+    "nodes": 7060,
+    "edges": 66357
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "laboratory",
       "b": "life",
-      "npmi": 0.8713912766101849,
+      "npmi": 0.8714077062450368,
       "cooccurrence_weight": 109
     },
     {
       "a": "hope",
       "b": "pandora",
-      "npmi": 0.8689809536207924,
+      "npmi": 0.8689980633275076,
       "cooccurrence_weight": 123
     },
     {
       "a": "inteligencia",
       "b": "artificial",
-      "npmi": 0.8278143750794464,
+      "npmi": 0.827848776278834,
       "cooccurrence_weight": 819
     },
     {
       "a": "press",
       "b": "university",
-      "npmi": 0.8180293232209559,
+      "npmi": 0.8180505365730076,
       "cooccurrence_weight": 64
     },
     {
       "a": "taxa",
       "b": "interna",
-      "npmi": 0.8030430538489518,
+      "npmi": 0.8030653908590497,
       "cooccurrence_weight": 54
     },
     {
       "a": "action",
       "b": "science",
-      "npmi": 0.7899369693553383,
+      "npmi": 0.789966171816507,
       "cooccurrence_weight": 171
     },
     {
       "a": "crawford",
       "b": "joler",
-      "npmi": 0.7397901571209987,
+      "npmi": 0.7398184236389285,
       "cooccurrence_weight": 41
     },
     {
       "a": "quadro",
       "b": "conclusao",
-      "npmi": 0.7220320431308448,
+      "npmi": 0.7220642793153615,
       "cooccurrence_weight": 62
     },
     {
       "a": "mediacao",
       "b": "tecnica",
-      "npmi": 0.7112763825220011,
+      "npmi": 0.7113124423265748,
       "cooccurrence_weight": 96
     },
     {
       "a": "maquina",
       "b": "aprendizado",
-      "npmi": 0.7101732928730667,
+      "npmi": 0.7102103789082936,
       "cooccurrence_weight": 126
     },
     {
       "a": "teoria",
       "b": "ator",
-      "npmi": 0.7072084450760324,
+      "npmi": 0.7072481801294729,
       "cooccurrence_weight": 152
     },
     {
       "a": "refinada",
       "b": "contagem",
-      "npmi": 0.647230699852001,
+      "npmi": 0.6472693024961891,
       "cooccurrence_weight": 46
     },
     {
       "a": "textil",
       "b": "topologico",
-      "npmi": 0.6438708833547683,
+      "npmi": 0.6439102631532615,
       "cooccurrence_weight": 46
     },
     {
       "a": "lexicometrica",
       "b": "analise",
-      "npmi": 0.6273787083207708,
+      "npmi": 0.6274249878564817,
       "cooccurrence_weight": 95
     },
     {
       "a": "modelo",
       "b": "linguagem",
-      "npmi": 0.5969716874432771,
+      "npmi": 0.5970185495108299,
       "cooccurrence_weight": 63
     },
     {
       "a": "ator",
       "b": "rede",
-      "npmi": 0.5933387074091651,
+      "npmi": 0.5933938958458582,
       "cooccurrence_weight": 154
     },
     {
       "a": "recalling",
       "b": "clarifications",
-      "npmi": 0.5714007543210727,
+      "npmi": 0.5714445148589835,
       "cooccurrence_weight": 27
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.5654508562084709,
+      "npmi": 0.5654927787868758,
       "cooccurrence_weight": 18
     },
     {
       "a": "traducao",
       "b": "brasileira",
-      "npmi": 0.5629806405333626,
+      "npmi": 0.5630252607757931,
       "cooccurrence_weight": 27
     },
     {
       "a": "action",
       "b": "pandora",
-      "npmi": 0.5622367525293915,
+      "npmi": 0.5622863995323044,
       "cooccurrence_weight": 54
     },
     {
       "a": "industria",
       "b": "militar",
-      "npmi": 0.5521478889592855,
+      "npmi": 0.5522029793674909,
       "cooccurrence_weight": 89
     },
     {
       "a": "publico",
       "b": "repositorio",
-      "npmi": 0.5302375939095232,
+      "npmi": 0.5302869831085351,
       "cooccurrence_weight": 33
     },
     {
       "a": "stengers",
       "b": "haraway",
-      "npmi": 0.5272204549564432,
+      "npmi": 0.5272692277691534,
       "cooccurrence_weight": 29
     },
     {
       "a": "vocabulario",
       "b": "topologico",
-      "npmi": 0.5210049112437399,
+      "npmi": 0.5210592343754878,
       "cooccurrence_weight": 58
     },
     {
       "a": "lexical",
       "b": "catalogo",
-      "npmi": 0.5178264906630804,
+      "npmi": 0.5178780587529488,
       "cooccurrence_weight": 43
     }
   ],

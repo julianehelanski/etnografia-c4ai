@@ -1,8 +1,8 @@
 {
-  "tokens": 18887,
+  "tokens": 18907,
   "graph_full": {
-    "nodes": 5693,
-    "edges": 49167
+    "nodes": 5696,
+    "edges": 49187
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "informacao",
       "b": "verbal",
-      "npmi": 0.8723104808141143,
+      "npmi": 0.8723352693794629,
       "cooccurrence_weight": 83
     },
     {
       "a": "inteligencia",
       "b": "artificial",
-      "npmi": 0.864139599935737,
+      "npmi": 0.8641693349672871,
       "cooccurrence_weight": 150
     },
     {
       "a": "unidos",
       "b": "estados",
-      "npmi": 0.85991556722875,
+      "npmi": 0.8599408797788954,
       "cooccurrence_weight": 54
     },
     {
       "a": "linguas",
       "b": "indigenas",
-      "npmi": 0.7821153632970691,
+      "npmi": 0.7821526619932649,
       "cooccurrence_weight": 40
     },
     {
       "a": "linguagem",
       "b": "natural",
-      "npmi": 0.7500814112632483,
+      "npmi": 0.750125367178535,
       "cooccurrence_weight": 46
     },
     {
       "a": "aberto",
       "b": "codigo",
-      "npmi": 0.7331243253015436,
+      "npmi": 0.7331725483893257,
       "cooccurrence_weight": 54
     },
     {
       "a": "processamento",
       "b": "natural",
-      "npmi": 0.6951248992018373,
+      "npmi": 0.6951744349478307,
       "cooccurrence_weight": 28
     },
     {
       "a": "linguagem",
       "b": "processamento",
-      "npmi": 0.6760372759117931,
+      "npmi": 0.6760929616391375,
       "cooccurrence_weight": 40
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.6543502117352217,
+      "npmi": 0.6544096252369451,
       "cooccurrence_weight": 40
     },
     {
       "a": "maquina",
       "b": "aprendizado",
-      "npmi": 0.6477534685257077,
+      "npmi": 0.6478167102699063,
       "cooccurrence_weight": 53
     },
     {
       "a": "historica",
       "b": "investigacao",
-      "npmi": 0.6192310127614736,
+      "npmi": 0.6192914496494241,
       "cooccurrence_weight": 24
     },
     {
       "a": "claudio",
       "b": "fabio",
-      "npmi": 0.5801934933189575,
+      "npmi": 0.5802890872108092,
       "cooccurrence_weight": 183
     },
     {
       "a": "research",
       "b": "brasil",
-      "npmi": 0.5732589463064688,
+      "npmi": 0.5733347981752291,
       "cooccurrence_weight": 51
     },
     {
       "a": "inovacao",
       "b": "ecossistema",
-      "npmi": 0.5498574371499958,
+      "npmi": 0.5499395333391224,
       "cooccurrence_weight": 58
     },
     {
       "a": "laboratorio",
       "b": "fechamento",
-      "npmi": 0.5157919230524948,
+      "npmi": 0.5158730132362197,
       "cooccurrence_weight": 34
     },
     {
       "a": "hollerith",
       "b": "tabulacao",
-      "npmi": 0.5117497782167567,
+      "npmi": 0.5118333595879143,
       "cooccurrence_weight": 39
     },
     {
       "a": "brasileiro",
       "b": "contexto",
-      "npmi": 0.5082453313562081,
+      "npmi": 0.5083160356352094,
       "cooccurrence_weight": 12
     },
     {
       "a": "comercial",
       "b": "tecnica",
-      "npmi": 0.5019084594264528,
+      "npmi": 0.5019848424651273,
       "cooccurrence_weight": 19
     },
     {
       "a": "claudio",
       "b": "informacao",
-      "npmi": 0.49034517401772987,
+      "npmi": 0.49044128776225904,
       "cooccurrence_weight": 72
     },
     {
       "a": "sistema",
       "b": "tabulacao",
-      "npmi": 0.4871037005563641,
+      "npmi": 0.48718510911961,
       "cooccurrence_weight": 24
     },
     {
       "a": "gente",
       "b": "dinheiro",
-      "npmi": 0.48707347398968676,
+      "npmi": 0.48714952747473844,
       "cooccurrence_weight": 15
     },
     {
       "a": "documentos",
       "b": "entrevistas",
-      "npmi": 0.48537012343372055,
+      "npmi": 0.48545020374975617,
       "cooccurrence_weight": 21
     },
     {
       "a": "fapesp",
       "b": "convenio",
-      "npmi": 0.48382318884164943,
+      "npmi": 0.48390459857102325,
       "cooccurrence_weight": 23
     },
     {
       "a": "entrevistas",
       "b": "observacao",
-      "npmi": 0.4815817794849876,
+      "npmi": 0.48166187483025574,
       "cooccurrence_weight": 20
     },
     {
       "a": "cadeia",
       "b": "translacao",
-      "npmi": 0.4589453141527087,
+      "npmi": 0.4590231067674053,
       "cooccurrence_weight": 12
     }
   ],
