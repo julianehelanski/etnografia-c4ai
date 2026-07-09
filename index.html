@@ -448,7 +448,7 @@ const prExtent = d3.extent(nodes, n => n.pagerank);
 const rScale = d3.scaleSqrt().domain(prExtent).range([3.2, 22]);
 const wExtent = d3.extent(links, l => l.w);
 const lwScale = d3.scaleLinear().domain(wExtent).range([0.3, 2.4]);
-const loScale = d3.scaleLinear().domain(wExtent).range([0.22, 0.72]);
+const loScale = d3.scaleLinear().domain(wExtent).range([0.4, 0.9]);
 const nr = d => rScale(d.pagerank);
 
 const svg = d3.select('#graph');
