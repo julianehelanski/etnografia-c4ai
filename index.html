@@ -58,9 +58,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
   border-top:1px solid #ececec;margin-top:.6rem;padding-top:.5rem}
 #legend .lnote b{font-weight:600;color:var(--ink)}
 #legend .lalca{display:block;margin-top:.5rem;background:none;border:none;padding:0;cursor:pointer;
-  font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:0;text-align:left}
-#legend .lalca .texarg{text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#cdb6da}
-#legend .lalca:hover .texarg{color:var(--text);text-decoration-color:#004b9c}
+  font-family:'Source Serif 4',Georgia,'Palatino Linotype',serif;font-size:.72rem;letter-spacing:0;text-align:left;
+  color:var(--ink);text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#cdb6da}
+#legend .lalca:hover{color:var(--text);text-decoration-color:#004b9c}
+#legend .li .lname{font-family:'Source Serif 4',Georgia,'Palatino Linotype',serif}
 /* modal: como o algoritmo de Louvain funciona */
 #louvain,#purpose{position:fixed;inset:0;z-index:130;background:rgba(40,30,55,.34);backdrop-filter:blur(2px);
   display:none;align-items:flex-start;justify-content:center;padding:3.2rem 1rem;overflow:auto}
@@ -176,6 +177,16 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
 #doc-nav a:hover{color:var(--text-soft)}
 #doc h2.dt{font-family:'Source Serif 4',Georgia,'Palatino Linotype',serif;font-weight:700;font-size:1.75rem;letter-spacing:-.01em;color:var(--text);margin-bottom:.3rem}
 #doc .dsub{font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--text);margin-bottom:1.4rem}
+/* índice clicável no topo da aba (navegação por hipertexto) */
+#doc .dtoc{margin:.1rem 0 2rem;padding-bottom:1.4rem;border-bottom:1px solid #ececec}
+#doc .dtoc-h{font-family:'Courier New',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.75rem}
+#doc .dtoc-l{display:flex;flex-direction:column;gap:.06rem;align-items:flex-start}
+#doc .dtoc-g{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);margin:.75rem 0 .3rem}
+#doc .dtoc-a{font-family:'Source Serif 4',Georgia,'Palatino Linotype',serif;font-size:.96rem;line-height:1.5;color:var(--ink);text-decoration:none;cursor:pointer;padding:.06rem 0;border-bottom:1px solid transparent;transition:border-color .12s ease,color .12s ease}
+#doc .dtoc-a:hover{color:var(--text);border-bottom-color:var(--rule)}
+#doc .dtoc-cap{padding-left:1rem}
+#doc .captop{display:inline-block;margin-top:1.1rem;font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--text-soft);text-decoration:none;cursor:pointer}
+#doc .captop:hover{color:var(--text)}
 #doc .dh{font-family:'Courier New',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--text);border-top:1px solid #ececec;padding-top:1.1rem;margin:2rem 0 .9rem}
 #doc .resumo{font-family:'Source Serif 4',Georgia,'Palatino Linotype',serif;font-size:.98rem;line-height:1.6;color:var(--text);text-align:justify}
@@ -351,17 +362,17 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
 <svg id="graph"></svg>
 
 <div id="title-bar">
-  <h2><span class="texcmd">\title{</span><span class="texttl"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> <span class="texcmd">{</span>Rede textual da tese<span class="texcmd">}</span></span><span class="texcmd">}</span></h2>
-  <p id="subtitle"><span class="texcmd">\subtitle{</span><span class="texarg">rede de co-ocorrência · 260 termos · 6 agrupamentos temáticos</span><span class="texcmd">}</span></p>
-  <p class="texnote">a sintaxe LaTeX (<span class="texcmd">\chapter{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\section{</span><span class="texarg">…</span><span class="texcmd">}</span> <span class="texcmd">\subsection{</span><span class="texarg">…</span><span class="texcmd">}</span>) é proposital: a tese vive no Overleaf. aqui os comandos chamam a própria tese — seus capítulos, seções e subseções.</p>
+  <h2>Rede textual da tese</h2>
+  <p id="subtitle">rede de co-ocorrência · 260 termos · 6 agrupamentos temáticos</p>
+  <p class="texnote">A tese lida como rede: cada termo é um nó, cada ligação uma co-ocorrência, e as cores reúnem os termos que mais aparecem juntos (agrupamentos de Louvain). Arraste os nós, aproxime com a roda, clique num termo para abrir seus detalhes.</p>
   <div id="netsel" role="group" aria-label="escolher a rede do mapa">
-    <span class="texcmd">\rede{</span><button class="ns-b" data-sel="tese">tese inteira</button><button class="ns-b" data-sel="cap1">cap 1 · método</button><button class="ns-b" data-sel="cap2">cap 2 · figurações</button><button class="ns-b" data-sel="cap3">cap 3 · C4AI</button><button class="ns-b" data-sel="cap4">cap 4 · SPIRA</button><span class="texcmd">}</span>
+    <button class="ns-b" data-sel="tese">tese inteira</button><button class="ns-b" data-sel="cap1">cap 1 · método</button><button class="ns-b" data-sel="cap2">cap 2 · figurações</button><button class="ns-b" data-sel="cap3">cap 3 · C4AI</button><button class="ns-b" data-sel="cap4">cap 4 · SPIRA</button>
   </div>
 </div>
 
-<div id="legend"><div class="lh"><span class="texcmd">\legend{</span><span class="texarg">agrupamentos temáticos</span><span class="texcmd">}</span></div></div>
-<div id="hint">arraste · zoom com a roda</div>
-<div id="edgetab" title="ver um termo de exemplo"><b>clique em um termo</b>o painel de detalhes abre deste lado <span class="et-ar">↩</span></div>
+<div id="legend"><div class="lh">agrupamentos temáticos</div></div>
+<div id="hint">Arraste · zoom com a roda</div>
+<div id="edgetab" title="ver um termo de exemplo"><b>Clique em um termo</b>O painel de detalhes abre deste lado <span class="et-ar">↩</span></div>
 <div id="tip"></div>
 
 <div id="panel">
@@ -376,16 +387,16 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
 <div id="imgzoom" hidden><div id="imgzoom-card"><button id="imgzoom-cl">× fechar</button><img id="imgzoom-im" alt=""><div id="imgzoom-cap"></div></div></div>
 <div id="louvain"><div id="louvain-card">
   <button id="louvain-cl">× fechar</button>
-  <h2><span class="texcmd">\section{</span><span class="texarg">O algoritmo de Louvain</span><span class="texcmd">}</span></h2>
-  <div class="lvsub">% como os agrupamentos da rede são detectados</div>
+  <h2>O algoritmo de Louvain</h2>
+  <div class="lvsub">Como os agrupamentos da rede são detectados</div>
   <p>O algoritmo de Louvain é um método rápido e eficiente para detectar <b>comunidades</b> (agrupamentos / clusters) em grandes redes e grafos. Ele funciona otimizando iterativamente a <b>modularidade</b> — uma métrica que avalia a densidade de conexões dentro dos grupos em comparação com as conexões esperadas ao acaso.</p>
-  <h3><span class="texcmd">\subsection{</span><span class="texarg">Como o algoritmo funciona</span><span class="texcmd">}</span></h3>
+  <h3>Como o algoritmo funciona</h3>
   <p>O processo é executado em duas fases principais que se repetem ciclicamente até que a estrutura da comunidade se estabilize:</p>
   <p class="lvphase"><b>Fase local (otimização).</b> O algoritmo inicia considerando cada nó como sua própria comunidade isolada. Em seguida, avalia o ganho de modularidade ao mover um nó para a comunidade de cada um dos seus vizinhos. O nó é transferido para a comunidade que oferece o maior ganho positivo. Se nenhum ganho for possível, o nó permanece onde está. Esse processo é repetido para todos os nós até que nenhum movimento melhore a modularidade.</p>
   <p class="lvphase"><b>Fase de agregação.</b> Uma vez alcançado o limite local da fase anterior, o algoritmo agrupa todos os nós de uma mesma comunidade em um único "supernó" e cria um novo grafo ponderado. As conexões entre esses supernós representam a soma dos pesos das arestas originais.</p>
   <p>O processo das duas fases é repetido no novo grafo até que não seja possível aumentar mais a modularidade, resultando em uma estrutura hierárquica de comunidades.</p>
   <div class="lvthesis">
-    <h3><span class="texcmd">\subsection{</span><span class="texarg">Como foi aplicado nesta tese</span><span class="texcmd">}</span></h3>
+    <h3>Como foi aplicado nesta tese</h3>
     <p>A rede é construída por co-ocorrência: percorre-se o texto de cada capítulo com uma janela deslizante de quatro palavras, e cada par de termos próximos ganha uma aresta — quanto mais perto, maior o peso. Mantêm-se cerca dos <b>180 termos mais relevantes</b>, podando as ligações mais fracas.</p>
     <p>O Louvain é então aplicado sobre essa rede ponderada (pelo peso de co-ocorrência), com <b>semente fixa</b> — de modo que o resultado é <b>determinístico e reprodutível</b>: a mesma tese gera sempre os mesmos agrupamentos — e resolução padrão (1.0).</p>
     <p>Duas decisões de curadoria complementam o algoritmo: agrupamentos muito pequenos (menos de três termos) não são exibidos no mapa; e um agrupamento — <b>"Bibliometria · panorama do campo"</b> — foi reunido manualmente, porque seu vocabulário se dispersava pelos demais e o Louvain não o isolava sozinho. Os nomes dos agrupamentos vêm de termos-assinatura ou dos termos de maior peso em cada um.</p>
@@ -393,30 +404,30 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
 </div></div>
 <div id="purpose"><div id="purpose-card">
   <button id="purpose-cl">× fechar</button>
-  <h2><span class="texcmd">\section{</span><span class="texarg">Para que serve esta análise</span><span class="texcmd">}</span></h2>
-  <div class="lvsub">% por que ler a tese como uma rede de termos</div>
+  <h2>Para que serve esta análise</h2>
+  <div class="lvsub">Por que ler a tese como uma rede de termos</div>
   <p>Ler a tese inteira como uma rede de termos é um <b>dispositivo heurístico</b>: não substitui a leitura nem produz "a verdade" do texto, mas oferece <em>portas de entrada</em>. A rede torna visível a <b>arquitetura conceitual</b> do trabalho — os eixos em torno dos quais ele gira, os termos que funcionam como <b>pontes</b> (alta intermediação / <em>betweenness</em>) entre o vocabulário teórico e a descrição empírica, e as <b>lacunas</b> (ligações fracas) que apontam onde o argumento ainda pode ser costurado.</p>
-  <h3><span class="texcmd">\subsection{</span><span class="texarg">Por que nesta tese</span><span class="texcmd">}</span></h3>
+  <h3>Por que nesta tese</h3>
   <p>Mais do que um enfeite, a escolha é <b>coerente com a própria tese</b>, que propõe uma <em>tecno-etnografia</em>: descrever práticas tecnocientíficas <b>sem apagar a técnica</b> que as sustenta, seguindo a teoria ator-rede e a noção latouriana de <b>inscrição</b>. Esta rede é, ela mesma, uma inscrição tecnocientífica aplicada <b>reflexivamente</b> ao texto da tese — o aparato fica à vista, não escondido. A interface pratica o que a tese argumenta.</p>
   <p class="lvphase">Há ainda um eco com o objeto: assim como o SPIRA converte voz → espectrograma → rede neural, este site converte tese → tokens → rede de co-ocorrência. A mesma <b>cadeia de translações</b> que a etnografia descreve, agora voltada sobre o próprio texto. Seguir os termos pela rede é uma versão, em miniatura, do gesto que organiza a tese: <em>seguir os atores por onde quer que vão</em>.</p>
-  <h3><span class="texcmd">\subsection{</span><span class="texarg">Uma entre várias inscrições</span><span class="texcmd">}</span></h3>
+  <h3>Uma entre várias inscrições</h3>
   <p>Este grafo é a <b>rede de co-ocorrência</b>, uma leitura <b>sincrônica</b>: ignora a ordem de leitura e mostra <em>quais termos se associam a quais</em>. Na tese impressa, ela ganha ainda duas variantes (o núcleo por centralidade e o núcleo por associação surpreendente) e, ao lado delas, três vistas <b>diacrônicas</b>, que levam em conta a ordem de leitura de cada capítulo: o <b>Gantt lexical</b> (<em>quando cada conceito entra e sai</em>), o <b>fluxo aluvial</b> (<em>quem domina cada trecho</em>) e a <b>trajetória semântica</b> (<em>que arco o capítulo traça</em>). Cada uma é uma grafia diferente do mesmo texto, e responde a uma pergunta distinta.</p>
 </div></div>
 <div id="reading"><div id="reading-card">
   <button id="reading-cl">× fechar</button>
-  <h2><span class="texcmd">\section{</span><span class="texarg">O que a rede mostra</span><span class="texcmd">}</span></h2>
-  <div class="lvsub">% a leitura da rede da tese inteira</div>
+  <h2>O que a rede mostra</h2>
+  <div class="lvsub">A leitura da rede da tese inteira</div>
   <p>Lida como um só grafo, da Apresentação às Considerações finais, a tese gira em torno de <b>rede</b> — o termo de maior centralidade e a maior <b>ponte</b> (<em>betweenness</em>) de todo o trabalho. A palavra carrega a ambivalência que percorre a tese: nela se encontram a <em>rede sociotécnica</em> que descrevo e a <em>análise de rede</em> que pratico. Ao seu redor, a espinha do texto reúne <b>artificial</b>, <b>inteligência</b>, <b>pesquisa</b>, <b>spira</b>, <b>ciência</b>, <b>latour</b>, <b>dado</b> e <b>objeto</b>.</p>
-  <h3><span class="texcmd">\subsection{</span><span class="texarg">As sete regiões do argumento</span><span class="texcmd">}</span></h3>
+  <h3>As sete regiões do argumento</h3>
   <p>O Louvain, aplicado sobre a tese toda, separa <b>sete comunidades</b> que reconheço como as regiões do meu próprio percurso: a <b>etnografia e o método</b>, o projeto <b>SPIRA</b>, o arranjo do <b>C4AI</b>, as <b>figurações e a genealogia militar</b>, a <b>inteligência artificial como objeto</b>, a <b>teoria ator-rede</b> e o <b>panorama bibliométrico</b> do campo. Os capítulos deixam, assim, marca lexical própria e legível no grafo.</p>
   <p>As co-ocorrências mais fortes (<em>NPMI</em>) funcionam como um índice dos compromissos que sustento de ponta a ponta: <b>respiratória ↔ insuficiência</b> (a cena clínica do SPIRA), <b>inteligência ↔ artificial</b> (o objeto técnico), <b>cláudio ↔ fábio</b> (os interlocutores do campo), <b>teoria ↔ ator</b> (o aparato ator-rede) e <b>indústria ↔ militar</b> (a genealogia do capítulo 2). Cada região do argumento deixa um par denso.</p>
   <div class="lvthesis">
-    <h3><span class="texcmd">\subsection{</span><span class="texarg">O que isso me diz</span><span class="texcmd">}</span></h3>
+    <h3>O que isso me diz</h3>
     <p>A comunidade da <b>teoria ator-rede</b> é a <b>menor</b> em número de termos e, ao mesmo tempo, a <b>mais central</b> e a que mais faz ponte — enquanto os objetos empíricos (SPIRA, C4AI, a IA) ocupam as comunidades maiores. A tese se sustenta por um <b>vocabulário de método enxuto</b> que atravessa territórios empíricos amplos.</p>
     <p>Ler a tese inteira pela sua própria rede é a última <b>inscrição</b> do trabalho: submeter o texto ao mesmo tratamento que ele dá aos seus objetos, sabendo que medir é também produzir o que se mede. É o gesto reflexivo que a tese pratica desde o primeiro capítulo, agora fechado sobre o todo.</p>
   </div>
 </div></div>
-<button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese"><span class="texcmd">\section{</span><span class="texarg">A tese</span><span class="texcmd">}</span> ↗</button>
+<button id="doc-btn" title="Resumo, sumário, figuras e tabelas da tese">A tese ↗</button>
 <div id="doc"><div id="doc-card">
   <button id="doc-cl">× fechar</button>
   <nav id="doc-nav"></nav>
@@ -424,12 +435,12 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
 </div></div>
 
 <div id="intro">
-  <div class="pre"><span class="texcmd">\documentclass[</span><span class="texarg">doutorado</span><span class="texcmd">]{</span><span class="texarg">tese</span><span class="texcmd">}</span></div>
-  <h1><span class="texcmd">\title{</span><span class="texttl"><span class="ttl-l1"><span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial:</span><br>seguindo cientistas e engenheiros universidade afora</span><span class="texcmd">}</span></h1>
-  <div class="sub"><span class="texcmd">\author{</span><span class="texarg">Juliane Helanski</span><span class="texcmd">}</span><span class="texarg">&nbsp;·&nbsp;2026</span><br><span class="texcmd">\orientadora{</span><span class="texarg">Suely Kofes</span><span class="texcmd">}</span></div>
+  <div class="pre">Tese de doutorado · ciências sociais</div>
+  <h1><span class="ttl-l1">tecno-etnografia de um centro de inteligência artificial:</span><br>seguindo cientistas e engenheiros universidade afora</h1>
+  <div class="sub">Juliane Helanski · 2026 · orientação Suely Kofes</div>
   <div class="creds">Universidade Estadual de Campinas (Unicamp)<br><span class="creds-inst">Instituto de Filosofia e Ciências Humanas (IFCH) · Programa de Pós-Graduação em Ciências Sociais (PPGCS)</span><br><span class="creds-line">linha de pesquisa: modos de conhecimento e suas expressões, experiências e trajetória</span></div>
   <button id="introaudio" type="button" aria-pressed="false" title="tocar a música de abertura (áudio do YouTube)"><span class="ia-ic">♪</span><span class="ia-tx">tocar a música de abertura</span></button>
-  <div class="hint"><span class="texcmd">\begin{</span><span class="texarg">document</span><span class="texcmd">}</span></div>
+  <div class="hint">clique para entrar</div>
 </div>
 <div id="ytaudio" aria-hidden="true"></div>
 
@@ -719,8 +730,8 @@ comm.filter(c => c.size >= 3).forEach(c => {
   const el = document.createElement('div');
   el.className = 'li';
   el.innerHTML = '<span class="sw" style="background:' + c.color + '"></span><span>' +
-    '<span class="texcmd">\\item </span><span class="texarg">' + (c.name || c.label.slice(0, 3).join(' · ')) + '</span>' +
-    (c.name ? '<span class="lt">% ' + c.label.slice(0, 4).join(' · ') + '</span>' : '') + '</span>';
+    '<span class="lname">' + (c.name || c.label.slice(0, 3).join(' · ')) + '</span>' +
+    (c.name ? '<span class="lt">' + c.label.slice(0, 4).join(' · ') + '</span>' : '') + '</span>';
   el.onclick = () => {
     activeComm = (activeComm === c.id) ? null : c.id;
     node.style('opacity', n => activeComm == null || n.community === activeComm ? 1 : .1);
@@ -746,24 +757,21 @@ legend.appendChild(lnote);
 // alça: puxa o modal com a explicação de como o Louvain funciona
 const lalca = document.createElement('button');
 lalca.className = 'lalca';
-lalca.innerHTML = '<span class="texcmd">\\louvain{</span>' +
-  '<span class="texarg">como o algoritmo funciona ↗</span><span class="texcmd">}</span>';
+lalca.innerHTML = 'Como o algoritmo funciona ↗';
 lalca.onclick = openLouvain;
 legend.appendChild(lalca);
 
 // alça: puxa o modal "para que serve esta análise"
 const palca = document.createElement('button');
 palca.className = 'lalca';
-palca.innerHTML = '<span class="texcmd">\\justificativa{</span>' +
-  '<span class="texarg">para que serve esta análise ↗</span><span class="texcmd">}</span>';
+palca.innerHTML = 'Para que serve esta análise ↗';
 palca.onclick = openPurpose;
 legend.appendChild(palca);
 
 // alça: puxa o modal com a leitura da rede da tese inteira
 const ralca = document.createElement('button');
 ralca.className = 'lalca';
-ralca.innerHTML = '<span class="texcmd">\\leitura{</span>' +
-  '<span class="texarg">o que a rede mostra ↗</span><span class="texcmd">}</span>';
+ralca.innerHTML = 'O que a rede mostra ↗';
 ralca.onclick = openReading;
 legend.appendChild(ralca);
 
@@ -936,17 +944,29 @@ document.getElementById('imgzoom').addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImgZoom();});
 const ANALISES={'1':{read:['<strong>O que a rede mostra.</strong> O núcleo gira em torno de <code>rede</code>, <code>etnografia</code> e <code>pesquisa</code>, articulando quatro famílias de termos: a etnografia e o campo (<code>campo</code>, <code>descricao</code>, <code>pratica</code>); o método e a teoria ator-rede (<code>metodo</code>, <code>latour</code>, <code>corte</code>, <code>strathern</code>, <code>haraway</code>); a IA como objeto (<code>artificial</code>, <code>inteligencia</code>, <code>objeto</code>, <code>modelo</code>, <code>laboratorio</code>); e a simetria humano/não-humano (<code>humano</code>, <code>relacao</code>, <code>parcial</code>, <code>maquina</code>, <code>agencia</code>). Um pequeno polo teórico denso reúne Law e Mol (<code>otherness</code>, <code>ausencia</code>, <code>presenca</code>).','<strong>Pontes.</strong> As maiores pontes são <code>rede</code>, <code>pesquisa</code> e <code>etnografia</code> — palavras-coringa que circulam entre os sub-vocabulários —, seguidas de <code>corte</code> (o corte agencial), <code>latour</code>, <code>ciencia</code> e <code>metodo</code>.','<strong>Lacuna.</strong> A ligação mais fraca está entre o método/ator-rede (<code>metodo</code>, <code>latour</code>, <code>corte</code>) e a IA como objeto (<code>artificial</code>, <code>inteligencia</code>, <code>objeto</code>): o vocabulário com que se promete descrever e o objeto técnico a descrever ainda não estão suficientemente costurados.'],nucleo:'rede · etnografia · pesquisa · artificial · inteligência · ciência · método · latour · campo · objeto',pontes:'rede · pesquisa · etnografia · corte · latour · ciência · campo · método',topicos:['etnografia · pesquisa · campo · descrição · prática','método · Latour · corte · Strathern · Haraway','artificial · inteligência · objeto · modelo · laboratório','humano · relação · parcial · máquina · agência','rede · análise · ator · teoria · textual','ciência · dado · sociais · tecnologia · técnico','Law/Mol: otherness · ausência · presença · manifesta'],npmi:['<code>parcial ↔ existencia</code> (Strathern · 0,75)','<code>distribuida ↔ agencia</code> (0,72)','<code>teoria ↔ ator</code> (0,72)','<code>presenca ↔ ausencia</code> (Law/Mol · 0,70)','<code>tecnico ↔ letramento</code> (0,64)','<code>principio ↔ simetria</code> (0,56)'],lacuna:'entre o método/ator-rede e a IA como objeto — densidade 0,33, a mais baixa entre tópicos grandes.',figs:[{s:'figuras/cap1/cap1-infranodus-network.png?v=53d20cf57e',c:'Rede textual completa do capítulo'},{s:'figuras/cap1/cap1-infranodus-focus.png?v=add49f3f0c',c:'Núcleo da rede (top-100, ligações fortes)'},{s:'figuras/cap1/cap1-infranodus-pmi.png?v=4e1e78ca24',c:'Rede ponderada por PageRank · NPMI'},{s:'figuras/cap1/cap1-trajectory-gantt.png?v=a90d7704cd',c:'Gantt lexical: entrada, persistência e saída dos conceitos'},{s:'figuras/cap1/cap1-trajectory-alluvial.png?v=e5668e070b',c:'Fluxo aluvial dos conceitos entre segmentos'},{s:'figuras/cap1/cap1-trajectory-semantic.png?v=756c2d4b55',c:'Arco semântico: a trajetória do início ao fim'}]},'2':{read:['<strong>O que a rede mostra.</strong> O capítulo trama três vocabulários: a leitura das <em>figurações</em> em Latour — cujos livros aparecem como duplas de altíssima associação, <code>laboratory ↔ life</code>, <code>hope ↔ pandora</code>, <code>science ↔ action</code> —, a genealogia militar-industrial da IA (<code>militar</code>, <code>industria</code>, <code>inteligencia</code>, <code>artificial</code>) e o panorama bibliométrico do campo brasileiro (<code>capes</code>, <code>scielo</code>, <code>producao</code>, <code>obras</code>).','<strong>Pontes.</strong> <code>latour</code> é a grande ponte do capítulo (0,33), seguido de <code>inteligencia</code>, <code>artificial</code>, <code>ciencia</code>, <code>militar</code> e <code>vocabulario</code> — coerente com um capítulo que é, ele mesmo, um exercício de vocabulário.','<strong>Lacuna.</strong> As ligações mais fracas estão entre o tópico bibliométrico (<code>obras</code>, <code>dado</code>, <code>capes</code>) e as obras de Latour lidas no original (<code>science</code>, <code>action</code>, <code>pandora</code>): o mapeamento quantitativo do campo e a leitura cerrada das figurações correm em paralelo sem se costurarem.'],nucleo:'artificial · inteligência · latour · militar · ciência · rótulo · rede · análise · vocabulário · humano',pontes:'latour · inteligência · artificial · ciência · militar · vocabulário · rótulo · capes',topicos:['artificial · inteligência · ciência · humano · campo','Latour · rede · teoria · ator · tecnociência','militar · rótulo · vocabulário · figuração · AIME','obras · dado · CAPES · SciELO · produção (bibliometria)','science · action · pandora · hope · laboratory · life','quadro · conclusão · investigação'],npmi:['<code>laboratory ↔ life</code> (0,87)','<code>hope ↔ pandora</code> (0,87)','<code>action ↔ science</code> (0,79)','<code>teoria ↔ ator</code> (0,71)','<code>industria ↔ militar</code> (0,55)','<code>stengers ↔ haraway</code> (0,53)'],lacuna:'entre o panorama bibliométrico (<code>obras</code>, <code>capes</code>) e as obras de Latour no original (<code>science</code>, <code>action</code>, <code>pandora</code>) — densidade 0,20, a mais baixa.',figs:[{s:'figuras/cap2/cap2-infranodus-network.png?v=0c0c091315',c:'Rede textual completa do capítulo'},{s:'figuras/cap2/cap2-infranodus-focus.png?v=83698f9fd9',c:'Núcleo da rede (top-100, ligações fortes)'},{s:'figuras/cap2/cap2-infranodus-pmi.png?v=ed726d38e8',c:'Rede ponderada por PageRank · NPMI'},{s:'figuras/cap2/cap2-trajectory-gantt.png?v=e9f9d101d8',c:'Gantt lexical: entrada, persistência e saída dos conceitos'},{s:'figuras/cap2/cap2-trajectory-alluvial.png?v=0861cc472a',c:'Fluxo aluvial dos conceitos entre segmentos'},{s:'figuras/cap2/cap2-trajectory-semantic.png?v=21ffc01fb6',c:'Arco semântico: a trajetória do início ao fim'}]},'3':{read:['<strong>O que a rede mostra.</strong> O capítulo segue o arranjo do C4AI em três planos que o grafo separa: a infraestrutura histórica (<code>tecnologia</code>, <code>hollerith</code>, <code>infraestrutura</code>, <code>maquina</code>, <code>trajetoria</code>), o arranjo público-privado do presente (<code>publico</code>, <code>arranjo</code>, <code>corporacao</code>, <code>universidade</code>) e o vocabulário do método (<code>rede</code>, <code>ator</code>, <code>associacao</code>, <code>sigo</code>). Os atores seguidos formam uma dupla forte: <code>claudio ↔ fabio</code>.','<strong>Pontes.</strong> <code>centro</code> e <code>pesquisa</code> são as maiores pontes, seguidas de <code>rede</code>, <code>claudio</code>, <code>publico</code>, <code>corporacao</code> e <code>fabio</code> — termos-coringa que circulam entre a história infraestrutural, o arranjo institucional e o campo.','<strong>Lacuna.</strong> A ligação mais fraca está entre o centro de pesquisa (<code>pesquisa</code>, <code>centro</code>, <code>fapesp</code>) e o método ator-rede (<code>rede</code>, <code>ator</code>, <code>associacao</code>): a instituição descrita e o método que a descreve correm lado a lado.'],nucleo:'claudio · pesquisa · rede · centro · fabio · público · arranjo · corporação · seguir · brasil',pontes:'centro · pesquisa · rede · claudio · público · corporação · fabio · tecnologia · hollerith',topicos:['tecnologia · Hollerith · infraestrutura · empresa · máquina (IBM)','pesquisa · centro · científico · FAPESP · relatórios','rede · ator · associação · descrevo · sigo (método)','público · arranjo · corporação · Brasil · universidade','Claudio · Fabio · seguir · informação · campo','modelo · código · aberto · negócio · processamento','inteligência · artificial · ecossistema · inovação · OBIA'],npmi:['<code>informacao ↔ verbal</code> (0,87)','<code>estados ↔ unidos</code> (0,86)','<code>codigo ↔ aberto</code> (0,75)','<code>claudio ↔ fabio</code> (0,58)','<code>inovacao ↔ ecossistema</code> (0,53)','<code>translacao ↔ cadeias</code> (0,51)'],lacuna:'entre o centro de pesquisa (<code>pesquisa</code>, <code>centro</code>) e o método ator-rede (<code>rede</code>, <code>ator</code>) — densidade 0,32, a mais baixa.',figs:[{s:'figuras/cap3/cap3-infranodus-network.png?v=0e6fbec819',c:'Rede textual completa do capítulo'},{s:'figuras/cap3/cap3-infranodus-focus.png?v=c6ca34b430',c:'Núcleo da rede (top-100, ligações fortes)'},{s:'figuras/cap3/cap3-infranodus-pmi.png?v=5b6ebb47f6',c:'Rede ponderada por PageRank · NPMI'},{s:'figuras/cap3/cap3-trajectory-gantt.png?v=0733c6eec6',c:'Gantt lexical: entrada, persistência e saída dos conceitos'},{s:'figuras/cap3/cap3-trajectory-alluvial.png?v=0d1cb23bab',c:'Fluxo aluvial dos conceitos entre segmentos'},{s:'figuras/cap3/cap3-trajectory-semantic.png?v=c9cb92b7e0',c:'Arco semântico: a trajetória do início ao fim'}]},'4':{read:['<strong>O que a rede mostra.</strong> O capítulo organiza-se em torno do projeto SPIRA (a maior ponte do grafo, 0,60) e do aparato latouriano da <em>inscrição</em>: os pares de maior associação são os conceitos-chave — <code>caixa ↔ preta</code> e <code>imutavel ↔ movel</code> (o móvel imutável). A <code>cadeia</code> de translações percorre a cena clínica (<code>respiratoria</code>, <code>insuficiencia</code>, <code>covid</code>, <code>enfermaria</code>), o sinal (<code>espectrograma</code>, <code>acustico</code>), o dado e o modelo (<code>treinamento</code>, rede <code>neural</code>) e chega ao <code>artigo</code>.','<strong>Pontes.</strong> Além de <code>spira</code>, são pontes <code>inscricao</code>, <code>covideiro</code>, <code>cadeia</code>, <code>objeto</code>, <code>rede</code> e <code>artigo</code>. Note <code>covideiro</code> — o neologismo/actante cunhado no capítulo — fazendo trabalho de tradução na rede.','<strong>Lacuna.</strong> As ligações mais fracas caem nas <em>juntas</em> da cadeia: entre a teoria da inscrição (<code>inscricao</code>, <code>cadeia</code>) e o par dado/modelo, e ao longo das translações sinal → dado → artigo — exatamente as passagens que o capítulo narra.'],nucleo:'spira · covideiro · inscrição · cadeia · artigo · objeto · rede · respiratória · insuficiência · dado',pontes:'spira · inscrição · covideiro · cadeia · objeto · rede · artigo · modelo',topicos:['inscrição · cadeia · dispositivo · Latour · produz','SPIRA · artigo · projeto · Marcelo · análise','dado · modelo · áudio · campo · treinamento','espectrograma · sinal · paciente · vírus · imagem','respiratória · insuficiência · coleta · COVID · ruído','covideiro · actante · pandêmico · humano · configuração','rede · neural · ator · associação'],npmi:['<code>caixa ↔ preta</code> (0,90)','<code>imutavel ↔ movel</code> (0,85)','<code>respiratoria ↔ insuficiencia</code> (0,84)','<code>neural ↔ rede</code> (0,59)','<code>sinal ↔ acustico</code> (0,55)','<code>torna ↔ visivel</code> (0,48)'],lacuna:'entre a teoria da inscrição (<code>inscricao</code>, <code>cadeia</code>) e o par dado/modelo (<code>dado</code>, <code>modelo</code>) — densidade 0,53, a mais baixa.',figs:[{s:'figuras/cap4/cap4-infranodus-network.png?v=efd6b2f10c',c:'Rede textual completa do capítulo'},{s:'figuras/cap4/cap4-infranodus-focus.png?v=8d2642bab1',c:'Núcleo da rede (top-100, ligações fortes)'},{s:'figuras/cap4/cap4-infranodus-pmi.png?v=a3bac7aab9',c:'Rede ponderada por PageRank · NPMI'},{s:'figuras/cap4/cap4-trajectory-gantt.png?v=a3d4c48c51',c:'Gantt lexical: entrada, persistência e saída dos conceitos'},{s:'figuras/cap4/cap4-trajectory-alluvial.png?v=12105fd928',c:'Fluxo aluvial dos conceitos entre segmentos'},{s:'figuras/cap4/cap4-trajectory-semantic.png?v=1c1e9f864f',c:'Arco semântico: a trajetória do início ao fim'}]}};
-function _afRow(k,v){return '<div class="cf"><span class="cfk">'+k+'</span><span class="cfv">'+v+'</span></div>';}function _afList(k,a){return '<div class="cf"><span class="cfk">'+k+'</span><span class="cfv"><ul class="cfl">'+a.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></span></div>';}function analiseBuild(a){if(!a)return '';var h='<div class="capanal">';h+='<div class="canal-h">'+texCmd('subsection','Leitura da rede textual')+'</div>';h+='<div class="canal-note">análise de rede textual (InfraNodus): o capítulo lido como grafo de co-ocorrência de termos — seu núcleo, suas pontes (alta intermediação), seus tópicos (Louvain) e suas lacunas. Portas de entrada, não a verdade do texto.</div>';a.read.forEach(function(p){h+='<p class="canal-p">'+p+'</p>';});h+='<div class="canal-find">';h+=_afRow('núcleo conceitual',a.nucleo);h+=_afRow('pontes',a.pontes);if(a.topicos&&a.topicos.length)h+=_afList('tópicos · Louvain',a.topicos);if(a.npmi&&a.npmi.length)h+=_afList('pares fortes · NPMI',a.npmi);h+=_afRow('lacuna estrutural',a.lacuna);h+='</div>';if(a.figs&&a.figs.length)h+='<div class="capgal canal-gal">'+galBuild(a.figs.map(function(f){return {g:'rede textual e trajetória do capítulo',s:f.s,c:f.c};}))+'</div>';h+='</div>';return h;}
+function _afRow(k,v){return '<div class="cf"><span class="cfk">'+k+'</span><span class="cfv">'+v+'</span></div>';}function _afList(k,a){return '<div class="cf"><span class="cfk">'+k+'</span><span class="cfv"><ul class="cfl">'+a.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></span></div>';}function analiseBuild(a){if(!a)return '';var h='<div class="capanal">';h+='<div class="canal-h">Leitura da rede textual</div>';h+='<div class="canal-note">Análise de rede textual (InfraNodus): o capítulo lido como grafo de co-ocorrência de termos — seu núcleo, suas pontes (alta intermediação), seus tópicos (Louvain) e suas lacunas. Portas de entrada, não a verdade do texto.</div>';a.read.forEach(function(p){h+='<p class="canal-p">'+p+'</p>';});h+='<div class="canal-find">';h+=_afRow('núcleo conceitual',a.nucleo);h+=_afRow('pontes',a.pontes);if(a.topicos&&a.topicos.length)h+=_afList('tópicos · Louvain',a.topicos);if(a.npmi&&a.npmi.length)h+=_afList('pares fortes · NPMI',a.npmi);h+=_afRow('lacuna estrutural',a.lacuna);h+='</div>';if(a.figs&&a.figs.length)h+='<div class="capgal canal-gal">'+galBuild(a.figs.map(function(f){return {g:'rede textual e trajetória do capítulo',s:f.s,c:f.c};}))+'</div>';h+='</div>';return h;}
 function buildDoc(){
   if(!DOC||!DOC.sumario) return;
   const nav=document.getElementById('doc-nav');
   const ids=['d-tese','d-resumo','d-sumario','d-figuras','d-tabelas'];
   nav.innerHTML=['a tese','resumo','sumário','ilustrações','tabelas'].map((t,i)=>'<a data-i="'+i+'">'+dEsc(t)+'</a>').join('');
-  let h='<h2 class="dt">'+texCmd('title','<span class="texcmd">{</span>tecno-etnografia<span class="texcmd">}</span> de um centro de inteligência artificial','texttl')+'</h2>';
-  h+='<div class="dsub">'+texCmd('subtitle','seguindo cientistas e engenheiros — universidade afora · Juliane Helanski · 2026')+'</div>';
+  // sem folha de rosto: a aba abre num índice clicável (hipertexto da tese)
+  const slug=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const capId=c=>c.num?('cap-'+c.num):('cap-'+slug(c.title));
+  let h='<div class="dtoc"><div class="dtoc-h">índice</div><div class="dtoc-l">';
+  h+='<a class="dtoc-a" data-go="d-tese">A tese em síntese</a>';
+  h+='<a class="dtoc-a" data-go="d-resumo">Resumo</a>';
+  h+='<div class="dtoc-g">capítulos</div>';
+  DOC.sumario.forEach(c=>{
+    h+='<a class="dtoc-a dtoc-cap" data-go="'+capId(c)+'">'+dEsc((c.num?('cap. '+c.num+' · '):'')+c.title)+'</a>';
+  });
+  h+='<div class="dtoc-g">listas</div>';
+  h+='<a class="dtoc-a" data-go="d-figuras">Ilustrações</a>';
+  h+='<a class="dtoc-a" data-go="d-tabelas">Tabelas</a>';
+  h+='</div></div>';
   const T=DOC.tese;
   if(T){
-    h+='<div class="dh" id="d-tese">'+texCmd('section','A tese em síntese')+'</div><div class="ov">';
+    h+='<div class="dh" id="d-tese">A tese em síntese</div><div class="ov">';
     h+=ovRow('Tema',T.tema)+ovRow('Objeto',T.objeto)+ovRow('Pergunta',T.pergunta)+ovRow('Objetivo',T.objetivo);
     if(T.questoes&&T.questoes.length)h+=ovList('Questões',T.questoes);
     h+=ovRow('Conclusão',T.conclusao);
@@ -954,34 +974,42 @@ function buildDoc(){
     if(T.desdobramentos)h+=ovList('Desdobramentos',T.desdobramentos);
     h+='</div>';
   }
-  h+='<div class="dh" id="d-resumo">'+texCmd('section','Resumo')+'</div><div class="resumo">'+dEsc(DOC.resumo)+'</div>';
+  h+='<div class="dh" id="d-resumo">Resumo</div><div class="resumo">'+dEsc(DOC.resumo)+'</div>';
   if(DOC.palavras_chave&&DOC.palavras_chave.length){
     h+='<div class="kw">'+DOC.palavras_chave.map(k=>'<span class="chip">'+dEsc(k)+'</span>').join('')+'</div>';
   }
-  h+='<div class="dh" id="d-sumario">'+texCmd('section','Sumário')+'</div>';
+  h+='<div class="dh" id="d-sumario">Sumário</div>';
   const capFigs={'1':CAP1FIGS,'2':CAP2FIGS,'3':CAP3FIGS,'4':CAP4FIGS}; // figuras embutidas em cada capítulo
   DOC.sumario.forEach(c=>{
-    h+='<div class="cap"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
-    h+='<div class="ctitle">'+texCmd('chapter',dEsc(c.title))+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';
+    h+='<div class="cap" id="'+capId(c)+'"><div class="chead"><div class="cnum">'+(c.num?('Capítulo '+c.num):dEsc(c.title).toUpperCase())+'</div>';
+    h+='<div class="ctitle">'+dEsc(c.title)+'</div><div class="cresumo">'+dEsc(c.resumo)+'</div>';
     if(c.conclusao)h+='<div class="cconc"><span class="cct">a que chega</span>'+dEsc(c.conclusao)+'</div>';
     {const cm=capMapa(c.num);if(cm)h+='<a class="cmapa" href="'+cm+'" target="_blank" rel="noopener">mapa do capítulo ↗</a>';}
     h+='</div>';
     (c.sections||[]).forEach(s=>{
-      h+='<div class="sec"><div class="st">'+texCmd('section',dEsc(s.t))+'</div>';
+      h+='<div class="sec"><div class="st">'+dEsc(s.t)+'</div>';
       if(s.nota)h+='<div class="snota">'+dEsc(s.nota)+'</div>';
-      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(x=>'<div class="subln">'+texCmd('subsection',dEsc(x))+'</div>').join('')+'</div>';
+      if(s.subs&&s.subs.length)h+='<div class="subs">'+s.subs.map(x=>'<div class="subln">'+dEsc(x)+'</div>').join('')+'</div>';
       h+='</div>';
     });
     const cf=capFigs[String(c.num)];
     if(cf)h+='<div class="capgal">'+galBuild(cf)+'</div>';
     const an=ANALISES[String(c.num)];
     if(an)h+=analiseBuild(an);
+    h+='<a class="captop" data-go="doc-top">↑ Voltar ao índice</a>';
     h+='</div>';
   });
-  h+='<div class="dh" id="d-figuras">'+texCmd('section','Lista de ilustrações ('+DOC.figuras.length+')')+'</div>'+dList(DOC.figuras);
-  h+='<div class="dh" id="d-tabelas">'+texCmd('section','Lista de tabelas ('+DOC.tabelas.length+')')+'</div>'+dList(DOC.tabelas);
+  h+='<div class="dh" id="d-figuras">Lista de ilustrações ('+DOC.figuras.length+')</div>'+dList(DOC.figuras);
+  h+='<div class="dh" id="d-tabelas">Lista de tabelas ('+DOC.tabelas.length+')</div>'+dList(DOC.tabelas);
   document.getElementById('doc-body').innerHTML=h;
   nav.querySelectorAll('a').forEach(a=>a.onclick=()=>document.getElementById(ids[+a.dataset.i]).scrollIntoView({behavior:'smooth',block:'start'}));
+  // índice e âncoras: saltam para o alvo dentro do painel da tese
+  const docScroll=document.getElementById('doc');
+  document.getElementById('doc-body').querySelectorAll('[data-go]').forEach(a=>a.onclick=ev=>{
+    ev.stopPropagation();
+    if(a.dataset.go==='doc-top'){docScroll.scrollTo({top:0,behavior:'smooth'});return;}
+    const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  });
   // clique amplia (zoom para leitura/apresentação) o cabeçalho do capítulo; um por vez
   const body=document.getElementById('doc-body');
   body.addEventListener('click',e=>{
