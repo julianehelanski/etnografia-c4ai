@@ -10,10 +10,10 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **28,288**
-- Grafo bruto: **7060** nós · **66558** arestas
+- Tokens significativos: **28,289**
+- Grafo bruto: **7059** nós · **66558** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3606** arestas
-- Tópicos detectados (Louvain): **8**
+- Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
@@ -25,7 +25,7 @@
 | 5 | `ciencia` | 1016 |
 | 6 | `rotulo` | 853 |
 | 7 | `rede` | 820 |
-| 8 | `analise` | 768 |
+| 8 | `analise` | 769 |
 | 9 | `vocabulario` | 764 |
 | 10 | `humano` | 688 |
 | 11 | `campo` | 653 |
@@ -57,13 +57,13 @@ termos frequentes mas perifericamente conectados descem.
 | # | termo | PageRank |
 |---|-------|----------|
 | 1 | `artificial` | 0.0319 |
-| 2 | `inteligencia` | 0.0318 |
+| 2 | `inteligencia` | 0.0317 |
 | 3 | `latour` | 0.0211 |
 | 4 | `militar` | 0.0187 |
-| 5 | `ciencia` | 0.0185 |
+| 5 | `ciencia` | 0.0184 |
 | 6 | `rede` | 0.0156 |
 | 7 | `rotulo` | 0.0151 |
-| 8 | `analise` | 0.0146 |
+| 8 | `analise` | 0.0147 |
 | 9 | `vocabulario` | 0.0139 |
 | 10 | `humano` | 0.0130 |
 | 11 | `campo` | 0.0127 |
@@ -153,7 +153,7 @@ vezes.
 | 10 | `maquina` | `aprendizado` | 0.710 | 126 |
 | 11 | `teoria` | `ator` | 0.707 | 152 |
 | 12 | `textil` | `topologico` | 0.644 | 46 |
-| 13 | `lexicometrica` | `analise` | 0.626 | 95 |
+| 13 | `lexicometrica` | `analise` | 0.625 | 95 |
 | 14 | `modelo` | `linguagem` | 0.597 | 63 |
 | 15 | `ator` | `rede` | 0.591 | 154 |
 | 16 | `recalling` | `clarifications` | 0.572 | 27 |
@@ -162,31 +162,30 @@ vezes.
 | 19 | `action` | `pandora` | 0.563 | 54 |
 | 20 | `industria` | `militar` | 0.552 | 89 |
 | 21 | `publico` | `repositorio` | 0.531 | 33 |
-| 22 | `stengers` | `haraway` | 0.527 | 29 |
+| 22 | `stengers` | `haraway` | 0.528 | 29 |
 | 23 | `vocabulario` | `topologico` | 0.519 | 58 |
 | 24 | `ciencia` | `humano` | 0.517 | 177 |
 | 25 | `lexical` | `catalogo` | 0.512 | 43 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (42 termos): leitura, obras, dado, capes, partir, artigos
-- **Tópico 2** (41 termos): latour, militar, rotulo, vocabulario, figuracao, rotulos
-- **Tópico 3** (37 termos): rede, analise, teoria, tecnociencia, ator, descreve
-- **Tópico 4** (26 termos): artificial, inteligencia, objeto, maquina, pesquisa, tecnica
-- **Tópico 5** (25 termos): ciencia, humano, campo, tecnologia, antropologia, conhecimento
+- **Tópico 1** (51 termos): rede, analise, teoria, tecnociencia, ator, descreve
+- **Tópico 2** (42 termos): leitura, obras, dado, capes, partir, artigos
+- **Tópico 3** (42 termos): latour, militar, rotulo, vocabulario, figuracao, rotulos
+- **Tópico 4** (21 termos): artificial, inteligencia, objeto, maquina, pesquisa, tecnica
+- **Tópico 5** (17 termos): ciencia, humano, campo, tecnologia, antropologia, estudos
 - **Tópico 6** (5 termos): quadro, modos, conclusao, investigacao, grupo
 - **Tópico 7** (2 termos): press, university
-- **Tópico 8** (2 termos): joler, crawford
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [latour, militar, rotulo] e **Tópico 5** [ciencia, humano, campo] — densidade ponderada de ligação = 0.4302
-- Lacuna entre **Tópico 2** [latour, militar, rotulo] e **Tópico 4** [artificial, inteligencia, objeto] — densidade ponderada de ligação = 0.4484
-- Lacuna entre **Tópico 1** [leitura, obras, dado] e **Tópico 3** [rede, analise, teoria] — densidade ponderada de ligação = 0.5734
-- Lacuna entre **Tópico 1** [leitura, obras, dado] e **Tópico 2** [latour, militar, rotulo] — densidade ponderada de ligação = 0.8810
-- Lacuna entre **Tópico 3** [rede, analise, teoria] e **Tópico 5** [ciencia, humano, campo] — densidade ponderada de ligação = 0.9178
-- Lacuna entre **Tópico 1** [leitura, obras, dado] e **Tópico 5** [ciencia, humano, campo] — densidade ponderada de ligação = 0.9552
+- Lacuna entre **Tópico 3** [latour, militar, rotulo] e **Tópico 4** [artificial, inteligencia, objeto] — densidade ponderada de ligação = 0.5147
+- Lacuna entre **Tópico 3** [latour, militar, rotulo] e **Tópico 5** [ciencia, humano, campo] — densidade ponderada de ligação = 0.5154
+- Lacuna entre **Tópico 1** [rede, analise, teoria] e **Tópico 2** [leitura, obras, dado] — densidade ponderada de ligação = 0.5341
+- Lacuna entre **Tópico 1** [rede, analise, teoria] e **Tópico 3** [latour, militar, rotulo] — densidade ponderada de ligação = 0.8273
+- Lacuna entre **Tópico 2** [leitura, obras, dado] e **Tópico 3** [latour, militar, rotulo] — densidade ponderada de ligação = 0.8770
+- Lacuna entre **Tópico 1** [rede, analise, teoria] e **Tópico 5** [ciencia, humano, campo] — densidade ponderada de ligação = 0.9239
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O capítulo trama três vocabulários. O primeiro é

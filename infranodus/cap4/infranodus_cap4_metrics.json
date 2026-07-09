@@ -1,8 +1,8 @@
 {
-  "tokens": 32887,
+  "tokens": 32888,
   "graph_full": {
-    "nodes": 6763,
-    "edges": 78418
+    "nodes": 6764,
+    "edges": 78421
   },
   "graph_pruned": {
     "nodes": 180,
@@ -430,151 +430,151 @@
     {
       "a": "respiratoria",
       "b": "insuficiencia",
-      "npmi": 0.8439412397752442,
+      "npmi": 0.8439422544157448,
       "cooccurrence_weight": 308
     },
     {
       "a": "imutavel",
       "b": "movel",
-      "npmi": 0.8424458045391751,
+      "npmi": 0.8424466005752804,
       "cooccurrence_weight": 81
     },
     {
       "a": "calculo",
       "b": "centro",
-      "npmi": 0.7716279244033041,
+      "npmi": 0.771629078243842,
       "cooccurrence_weight": 85
     },
     {
       "a": "escuta",
       "b": "clinica",
-      "npmi": 0.6405864471912704,
+      "npmi": 0.6405880875042683,
       "cooccurrence_weight": 42
     },
     {
       "a": "neural",
       "b": "rede",
-      "npmi": 0.5897876591678298,
+      "npmi": 0.5897898880212282,
       "cooccurrence_weight": 127
     },
     {
       "a": "acao",
       "b": "programa",
-      "npmi": 0.5666975537512386,
+      "npmi": 0.5666995020187248,
       "cooccurrence_weight": 38
     },
     {
       "a": "sinal",
       "b": "acustico",
-      "npmi": 0.5482101994334266,
+      "npmi": 0.5482123836795505,
       "cooccurrence_weight": 61
     },
     {
       "a": "tornou",
       "b": "possivel",
-      "npmi": 0.5353245301846512,
+      "npmi": 0.5353265857107059,
       "cooccurrence_weight": 34
     },
     {
       "a": "mapa",
       "b": "analitico",
-      "npmi": 0.5290969617106929,
+      "npmi": 0.5290988683878923,
       "cooccurrence_weight": 25
     },
     {
       "a": "linguagem",
       "b": "processamento",
-      "npmi": 0.5255619411671222,
+      "npmi": 0.5255639717848151,
       "cooccurrence_weight": 27
     },
     {
       "a": "entrevista",
       "b": "marcelo",
-      "npmi": 0.5045334562341657,
+      "npmi": 0.5045360559420943,
       "cooccurrence_weight": 100
     },
     {
       "a": "acesso",
       "b": "disponivel",
-      "npmi": 0.4972805631862414,
+      "npmi": 0.49728267976176993,
       "cooccurrence_weight": 24
     },
     {
       "a": "publico",
       "b": "repositorio",
-      "npmi": 0.4968482560175736,
+      "npmi": 0.4968503744132243,
       "cooccurrence_weight": 24
     },
     {
       "a": "enfermaria",
       "b": "ruido",
-      "npmi": 0.4884570808401303,
+      "npmi": 0.4884595275889854,
       "cooccurrence_weight": 57
     },
     {
       "a": "torna",
       "b": "visivel",
-      "npmi": 0.4825804671602594,
+      "npmi": 0.48258285329754774,
       "cooccurrence_weight": 45
     },
     {
       "a": "covideiro",
       "b": "pandemico",
-      "npmi": 0.47686841947605324,
+      "npmi": 0.47687112541171867,
       "cooccurrence_weight": 97
     },
     {
       "a": "condicoes",
       "b": "producao",
-      "npmi": 0.47030837307110873,
+      "npmi": 0.4703108630652248,
       "cooccurrence_weight": 51
     },
     {
       "a": "publico",
       "b": "saude",
-      "npmi": 0.46723606446286997,
+      "npmi": 0.4672382216136335,
       "cooccurrence_weight": 18
     },
     {
       "a": "ciencia",
       "b": "construcao",
-      "npmi": 0.46244192618533886,
+      "npmi": 0.46244406914024594,
       "cooccurrence_weight": 19
     },
     {
       "a": "modelo",
       "b": "treinado",
-      "npmi": 0.459196982812132,
+      "npmi": 0.4591995094140433,
       "cooccurrence_weight": 49
     },
     {
       "a": "fonoaudiologos",
       "b": "medicos",
-      "npmi": 0.45747848893203924,
+      "npmi": 0.4574808228969187,
       "cooccurrence_weight": 28
     },
     {
       "a": "tornar",
       "b": "visivel",
-      "npmi": 0.4537273085871267,
+      "npmi": 0.45372955190522574,
       "cooccurrence_weight": 20
     },
     {
       "a": "cadeia",
       "b": "translacoes",
-      "npmi": 0.436544713481344,
+      "npmi": 0.4365473621929278,
       "cooccurrence_weight": 51
     },
     {
       "a": "textual",
       "b": "analise",
-      "npmi": 0.43453728071300096,
+      "npmi": 0.4345396749857234,
       "cooccurrence_weight": 27
     },
     {
       "a": "controles",
       "b": "enfermaria",
-      "npmi": 0.4247633256029171,
+      "npmi": 0.42476578764352896,
       "cooccurrence_weight": 27
     }
   ],
