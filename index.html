@@ -366,7 +366,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'So
   <p id="subtitle">rede de co-ocorrência · 260 termos · 6 agrupamentos temáticos</p>
   <p class="texnote">A tese lida como rede: cada termo é um nó, cada ligação uma co-ocorrência, e as cores reúnem os termos que mais aparecem juntos (agrupamentos de Louvain). Arraste os nós, aproxime com a roda, clique num termo para abrir seus detalhes.</p>
   <div id="netsel" role="group" aria-label="escolher a rede do mapa">
-    <button class="ns-b" data-sel="tese">tese inteira</button><button class="ns-b" data-sel="cap1">cap 1 · método</button><button class="ns-b" data-sel="cap2">cap 2 · figurações</button><button class="ns-b" data-sel="cap3">cap 3 · C4AI</button><button class="ns-b" data-sel="cap4">cap 4 · SPIRA</button>
+    <button class="ns-b" data-sel="tese">Tese inteira</button><button class="ns-b" data-sel="cap1">Cap 1 · Método</button><button class="ns-b" data-sel="cap2">Cap 2 · Figurações</button><button class="ns-b" data-sel="cap3">Cap 3 · C4AI</button><button class="ns-b" data-sel="cap4">Cap 4 · SPIRA</button>
   </div>
 </div>
 
@@ -958,7 +958,7 @@ function buildDoc(){
   h+='<a class="dtoc-a" data-go="d-resumo">Resumo</a>';
   h+='<div class="dtoc-g">capítulos</div>';
   DOC.sumario.forEach(c=>{
-    h+='<a class="dtoc-a dtoc-cap" data-go="'+capId(c)+'">'+dEsc((c.num?('cap. '+c.num+' · '):'')+c.title)+'</a>';
+    h+='<a class="dtoc-a dtoc-cap" data-go="'+capId(c)+'">'+dEsc((c.num?('Cap. '+c.num+' · '):'')+c.title)+'</a>';
   });
   h+='<div class="dtoc-g">listas</div>';
   h+='<a class="dtoc-a" data-go="d-figuras">Ilustrações</a>';
