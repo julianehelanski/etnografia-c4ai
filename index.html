@@ -15,7 +15,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 
 #graph{position:fixed;inset:0;width:100%;height:100%;z-index:3;touch-action:none}
 #graph svg{touch-action:none}
-.link{fill:none;stroke:#3a4150;stroke-linecap:round}
+.link{fill:none;stroke-linecap:round}
 .node circle{cursor:pointer;stroke:#fff;stroke-width:.7px}
 .nlabel{font-family:'CMU Serif',serif;fill:#1c2942;paint-order:stroke;stroke:#ffffff;stroke-width:2.4px;stroke-linejoin:round;pointer-events:none}
 
@@ -456,8 +456,20 @@ const g = svg.append('g');
 const zoom = d3.zoom().scaleExtent([0.2, 5]).on('zoom', e => g.attr('transform', e.transform));
 svg.call(zoom);
 
+// cada aresta recebe um degradê da cor do nó de origem à cor do nó de destino
+// (mesma paleta de comunidades usada nos círculos), via <linearGradient> em user space
+const endId = x => (typeof x === 'object' ? x.id : x);
+const commColorOf = ref => commColor[byId[endId(ref)].community];
+const defs = svg.append('defs');
+const grad = defs.selectAll('linearGradient').data(links).join('linearGradient')
+  .attr('id', (d, i) => 'lg-' + i)
+  .attr('gradientUnits', 'userSpaceOnUse');
+grad.append('stop').attr('offset', '0%').attr('stop-color', d => commColorOf(d.source));
+grad.append('stop').attr('offset', '100%').attr('stop-color', d => commColorOf(d.target));
+
 const link = g.append('g').selectAll('path').data(links).join('path')
   .attr('class', 'link')
+  .attr('stroke', (d, i) => 'url(#lg-' + i + ')')
   .attr('stroke-width', d => lwScale(d.w))
   .attr('stroke-opacity', d => loScale(d.w));
 
@@ -498,6 +510,8 @@ const sim = d3.forceSimulation(nodes)
 let settled = false;
 sim.on('tick', () => {
   link.attr('d', linkPath);
+  grad.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
   node.attr('transform', d => `translate(${d.x},${d.y})`);
 });
 sim.on('end', () => { settled = true; fitView(); });
