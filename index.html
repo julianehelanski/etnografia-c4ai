@@ -94,6 +94,10 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #reading .lvphase{background:var(--mark-bg);border-radius:6px;padding:.7rem .9rem;margin:.9rem 0}
 #reading .lvthesis{background:var(--mark-bg);border:1px solid var(--mark-bd);border-radius:6px;padding:1rem 1.15rem .4rem;margin-top:1.4rem}
 #reading .lvthesis h3{border-top:none;padding-top:0;margin-top:0}
+/* realce + zoom nas caixas de texto dos três modais (apresentação na defesa) */
+#louvain p,#purpose p,#reading p,#louvain .lvphase,#purpose .lvphase,#reading .lvphase,#louvain .lvthesis,#purpose .lvthesis,#reading .lvthesis{cursor:zoom-in;transition:background .12s ease,box-shadow .12s ease}
+#louvain p:hover,#purpose p:hover,#reading p:hover{background:#bfe6e6;box-shadow:0 0 0 .35rem #bfe6e6;border-radius:2px}
+#louvain .lvphase:hover,#purpose .lvphase:hover,#reading .lvphase:hover,#louvain .lvthesis:hover,#purpose .lvthesis:hover,#reading .lvthesis:hover{background:#bfe6e6}
 
 /* painel do termo */
 #panel{position:fixed;top:0;right:0;width:var(--pw,34rem);max-width:94vw;height:100vh;background:rgba(255,255,255,.985);
@@ -126,7 +130,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .assoc:hover b{text-decoration:underline}
 .quote{font-family:'CMU Serif',serif;font-size:.82rem;line-height:1.5;color:var(--ink);background:var(--mark-bg);border-radius:5px;padding:.45rem .65rem;margin:.5rem 0}
 .quote mark{background:#ffd14d;color:var(--text);padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.quote{cursor:zoom-in}
+.quote{cursor:zoom-in;transition:background .12s ease}
+.quote:hover{background:#bfe6e6}
 #qzoom{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
 #qzoom[hidden]{display:none}
 #qzoom-card{position:relative;background:#e2c8d2;max-width:min(1000px,94vw);max-height:90vh;overflow-y:auto;padding:3rem 3.4rem;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,.4);cursor:auto}
@@ -681,6 +686,25 @@ function openQZoom(ch, html, blue){
   document.getElementById('qzoom-card').classList.toggle('blue', !!blue);
   document.getElementById('qzoom').hidden = false;
 }
+// zoom colorido também nos três modais da tela da rede: clicar num parágrafo
+// (ou caixa) amplia o texto para leitura pela banca durante a defesa.
+['louvain','purpose','reading'].forEach(id => {
+  const card = document.getElementById(id + '-card');
+  if (!card) return;
+  card.addEventListener('click', e => {
+    if (e.target.closest('button') || e.target.closest('a')) return;
+    const el = e.target.closest('#' + id + '-card p, #' + id + '-card .lvphase, #' + id + '-card .lvthesis');
+    if (!el) return;
+    let ch = '', n = el;
+    while (n && n !== card && !ch) {
+      let s = n.previousElementSibling;
+      while (s) { if (/^H[1-4]$/.test(s.tagName)) { ch = s.textContent.trim(); break; } s = s.previousElementSibling; }
+      n = n.parentElement;
+    }
+    if (!ch) { const h = card.querySelector('h2'); ch = h ? h.textContent.trim() : ''; }
+    openQZoom(ch, el.innerHTML, true);
+  });
+});
 function closeQZoom(){ document.getElementById('qzoom').hidden = true; }
 document.getElementById('qzoom').addEventListener('click', e => {
   if (e.target.id === 'qzoom' || e.target.id === 'qzoom-cl') closeQZoom();
