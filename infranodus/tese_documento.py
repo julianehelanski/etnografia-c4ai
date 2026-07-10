@@ -82,14 +82,14 @@ CHAPTERS = [
      "A entrada em campo: a pergunta que move a tese e o primeiro encontro com "
      "um sistema de IA (o SPIRA), que abre o percurso etnográfico.",
      ""),
-    ("ex_cap1.tex", "1", "Método",
+    ("ex_cap1.tex", "1", "Onde está o laboratório e os seus cientistas?",
      "Documenta o percurso da etnógrafa pelo campo e constrói o método a partir "
      "da experiência: o patchwork como figuração, as existências parciais "
      "(incluindo o fazer-com IA generativa) e a compostagem.",
      "Chega a quatro lições metodológicas e à proposta da tecnoetnografia — "
      "modo de pesquisa que habita a tensão entre a circulabilidade técnica das "
      "inscrições e a realidade sensível dos corpos."),
-    ("ex_cap2.tex", "2", "Metáforas, figurações e alianças",
+    ("ex_cap2.tex", "2", "Metáforas, figurações e alianças: revisão da literatura",
      "Reconstrói as alianças teóricas da tese em duas tramas: a análise "
      "lexicométrica das figurações em seis obras de Latour e o mapeamento "
      "bibliométrico do campo brasileiro de IA nas ciências humanas.",
@@ -111,13 +111,27 @@ CHAPTERS = [
      "respiratória específica ao covideiro pandêmico: sua falha de "
      "generalização é evidência empírica da tensão ontológica (Mol). Propõe a "
      "inscrição tecnoetnográfica."),
-    ("ex_cap5.tex", "", "Considerações finais",
+    ("ex_cap5.tex", "", "Considerações finais: arrematando os fios",
      "Cruza as redes longas (Cap. 3) e curtas (Cap. 4) e reúne as contribuições "
      "empírica, metodológica e analítica da tese.",
      "Os dois pontos de cruzamento — a falha do SPIRA e a dissolução IBM-C4AI — "
      "revelam a fragilidade de redes que pareciam estáveis: as inscrições "
      "carregavam, ocultas, as condições de sua produção."),
 ]
+
+# título real do capítulo: primeiro \chapter{...} ou \chapter*{...} do .tex
+CHAP_RE = re.compile(r'\\chapter\*?\s*(?:\[[^\]]*\])?\s*\{')
+
+
+def parse_chapter_title(tex: str, fallback: str) -> str:
+    """Extrai o título real do \\chapter{...} (ou \\chapter*{...}) do .tex,
+    para casar com o nome oficial no documento. Cai no fallback curado se
+    o comando não for encontrado."""
+    m = CHAP_RE.search(tex)
+    if not m:
+        return fallback
+    arg, _ = _match_brace_arg(tex, m.end() - 1)
+    return clean_title(arg) or fallback
 
 ENV_RE = re.compile(
     r'\\begin\{(figure|table|longtable)\*?\}'
@@ -297,7 +311,8 @@ def main() -> int:
         tex = src.read_text(encoding="utf-8")
         sumario.append({
             "id": fname.replace("ex_", "").replace(".tex", ""),
-            "num": num, "title": title, "resumo": resumo_cap,
+            "num": num, "title": parse_chapter_title(tex, title),
+            "resumo": resumo_cap,
             "conclusao": conclusao_cap,
             "sections": parse_outline(tex),
         })
