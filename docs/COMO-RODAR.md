@@ -76,6 +76,11 @@ python scripts/relatorio_divergencia_tese.py --source-root _tex
 
 # (G) Documento da tese (resumo · sumário · ilustrações · tabelas) -> index.html
 python infranodus/tese_documento.py --source-root _tex --inject index.html
+
+# (H) Referências (bibliografia citada) -> index.html
+#     lê tese.tex + tese.bib, extrai só as obras com \textcite/\parencite e
+#     reinjeta o <script id="refsdata"> (seção "Referências" da aba "A tese").
+python infranodus/tese_referencias.py --source-root _tex --inject index.html
 ```
 
 ### Publicar (atualizar o site)
