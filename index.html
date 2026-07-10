@@ -847,11 +847,8 @@ function texCmd(cmd,inner,argCls){return '<span class="texcmd">\\'+cmd+'{</span>
 // galerias por capítulo (arquivos em figuras/, sincronizados da tese).
 // Legendas curadas; edite à vontade.
 const CAP1FIGS=[
-  {g:'Caderno de campo', s:'figuras/cap1/cap1-caderno-campo.jpg?v=8bb0a7e508', c:'Anotação de caderno de campo de 28 de julho de 2025'},
 ];
 const CAP2FIGS=[
-  {g:'Figurações · Latour e Haraway', s:'figuras/cap2/cap2-latour.jpg?v=bb1cad3b52', c:'O autor cercado de aliados e o leitor sozinho'},
-  {g:'Figurações · Latour e Haraway', s:'figuras/cap2/cap2-haraway.jpg?v=b30ad6c7eb', c:"Cat's Cradle / String Theory, de Baila Goldenthal"},
   {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-lab-life.png?v=05b10085e0', c:'Frequência e distribuição dos rótulos em Laboratory Life'},
   {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-science-in-action.png?v=5a079b3368', c:'Frequência e distribuição dos rótulos em Science in Action'},
   {g:'Lexicometria · figurações em Latour', s:'figuras/cap2/cap2-lex-pandora.png?v=c42e9960f2', c:"Frequência e distribuição dos rótulos em Pandora's Hope"},
@@ -874,9 +871,6 @@ const CAP2FIGS=[
   {g:'Bibliometria · campo brasileiro de IA nas humanas', s:'figuras/cap2/cap2-bib-openalex-subcampos-3bases.png?v=fa404034c6', c:'Comparação dos subcampos de IA nas três bases'},
 ];
 const CAP3FIGS=[
-  {g:'Inscrições históricas · Hollerith e khipu', s:'figuras/cap3/cap3-hollerith-1890.png?v=0b91b234be', c:'Folha de produto da máquina de tabulação de Hollerith (1890)'},
-  {g:'Inscrições históricas · Hollerith e khipu', s:'figuras/cap3/cap3-khipu-chancay.png?v=1ec9ae4633', c:'khipu da região de Chancay-Huando (AMNH B/8707)'},
-  {g:'Caderno de campo', s:'figuras/cap3/cap3-caderno-rodrigues-aula1.png?v=a4f0434f81', c:'Caderno de campo: primeira aula do curso de probabilidade e estatística (28/07/2025)'},
   {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-4-heatmap.png?v=7e5a9f6662', c:'Matriz de bolhas da produção científica do C4AI por grupo de pesquisa e ano (2020–2024)'},
   {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-12-composicao.png?v=d206bbb100', c:'Composição das equipes do C4AI por grupo de pesquisa e ano de relatório (2021–2025)'},
   {g:'Bibliometria · produção do C4AI', s:'figuras/cap3/cap3-biblio-10-rede-coword.png?v=50c2060806', c:'Rede de co-ocorrência de termos dos títulos do C4AI (2020–2024)'},
@@ -995,7 +989,7 @@ function buildDoc(){
       h+='</div>';
     });
     const cf=capFigs[String(c.num)];
-    if(cf)h+='<div class="capgal">'+galBuild(cf)+'</div>';
+    if(cf&&cf.length)h+='<div class="capgal">'+galBuild(cf)+'</div>';
     const an=ANALISES[String(c.num)];
     if(an)h+=analiseBuild(an);
     h+='<a class="captop" data-go="doc-top">↑ Voltar ao índice</a>';
