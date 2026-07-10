@@ -379,7 +379,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 <div id="title-bar">
   <h2>Rede textual da tese</h2>
   <p id="subtitle">rede de co-ocorrência · 260 termos · 6 agrupamentos temáticos</p>
-  <p class="texnote">A tese lida como rede: cada termo é um nó, cada ligação uma co-ocorrência, e as cores reúnem os termos que mais aparecem juntos (agrupamentos de Louvain). Arraste os nós, aproxime com a roda, clique num termo para abrir seus detalhes.</p>
+  <p class="texnote">Arraste os nós, aproxime com a roda, clique num termo para abrir seus detalhes.</p>
   <div id="netsel" role="group" aria-label="escolher a rede do mapa">
     <button class="ns-b" data-sel="tese">Tese inteira</button><button class="ns-b" data-sel="cap1">Cap 1 · Método</button><button class="ns-b" data-sel="cap2">Cap 2 · Figurações</button><button class="ns-b" data-sel="cap3">Cap 3 · C4AI</button><button class="ns-b" data-sel="cap4">Cap 4 · SPIRA</button>
   </div>
@@ -393,7 +393,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <button id="pcl">× fechar</button>
   <div id="pterm"></div>
   <div id="ptopic"></div>
-  <div id="ptopic-note">agrupamento a que o termo pertence — uma <b>comunidade</b> detectada pelo algoritmo de <b>Louvain</b>, que reúne automaticamente os termos que mais co-ocorrem entre si.</div>
+  <div id="ptopic-note">agrupamento temático a que <b>este termo</b> pertence.</div>
   <div id="pbody"></div>
 </div>
 <div id="presize" title="arraste para alargar · duplo-clique para restaurar"></div>
@@ -786,9 +786,9 @@ comm.filter(c => c.size >= 3).forEach(c => {
 // nota técnica: situa o leitor sobre o que são, de fato, os agrupamentos
 const lnote = document.createElement('div');
 lnote.className = 'lnote';
-lnote.innerHTML = 'Cada cor reúne os termos que mais co-ocorrem entre si: uma ' +
-  '<b>comunidade</b>, detectada automaticamente pelo algoritmo de <b>Louvain</b> ' +
-  'sobre a rede de co-ocorrência.';
+lnote.innerHTML = 'Cada termo é um nó e cada ligação, uma co-ocorrência. As cores ' +
+  'reúnem os termos que mais co-ocorrem entre si — uma <b>comunidade</b>, detectada ' +
+  'automaticamente pelo algoritmo de <b>Louvain</b>.';
 legend.appendChild(lnote);
 // alça: puxa o modal com a explicação de como o Louvain funciona
 const lalca = document.createElement('button');
