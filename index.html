@@ -120,7 +120,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #ptopic-note b{font-weight:600;color:var(--ink)}
 .psec{font-family:'Courier New',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--text);border-top:1px solid #ececec;padding-top:.7rem;margin:1.3rem 0 .6rem}
-.pstat{font-family:'Courier New',monospace;font-size:.62rem;color:var(--ink-soft);line-height:1.9}
+.pstat{font-family:'Courier New',monospace;font-size:.62rem;color:var(--ink-soft);line-height:1.9;cursor:zoom-in;border-radius:5px;transition:background .12s ease}
+.pstat:hover{background:#bfe6e6}
 .pexp{display:block;font-family:'CMU Serif',serif;font-size:.78rem;color:var(--text);
   line-height:1.4;letter-spacing:0;text-transform:none;margin:.05rem 0 .6rem}
 .assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3;cursor:pointer}
@@ -271,6 +272,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .capanal code{font-family:'Courier New',monospace;font-size:.82em;background:#efedf5;padding:.04em .3em;border-radius:3px}
 #doc .capanal .canal-find{margin:.7rem 0 .2rem;display:flex;flex-direction:column;gap:.32rem}
 #doc .capanal .cf{display:flex;gap:.6rem;align-items:baseline}
+#doc .capanal .canal-note,#doc .capanal .canal-p,#doc .capanal .cf{cursor:zoom-in;border-radius:2px;transition:background .12s ease,box-shadow .12s ease}
+#doc .capanal .canal-note:hover,#doc .capanal .canal-p:hover,#doc .capanal .cf:hover{background:#bfe6e6;box-shadow:0 0 0 .3rem #bfe6e6}
 #doc .capanal .cfk{flex:0 0 9.5rem;font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);text-align:right}
 #doc .capanal .cfv{flex:1;font-family:'CMU Serif',serif;font-size:.84rem;line-height:1.45;color:var(--text)}
 #doc .capanal .cfl{margin:.05rem 0 0;padding-left:1rem}
@@ -671,6 +674,8 @@ function showTerm(id) {
     const t = row.querySelector('b[data-term]');
     if (t) row.onclick = () => { focusNode(t.dataset.term); showTerm(t.dataset.term); };
   });
+  document.getElementById('pbody').querySelectorAll('.pstat').forEach(s =>
+    s.onclick = () => openQZoom('métricas · ' + labelOf(id), s.innerHTML, true));
   document.getElementById('pbody').querySelectorAll('.quote').forEach(q =>
     q.onclick = () => {
       const ch = q.querySelector('.qch') ? q.querySelector('.qch').textContent : '';
@@ -1038,7 +1043,7 @@ function buildDoc(){
     if(e.target.closest('a'))return; // não interfere nos links (mapa do capítulo etc.)
     const gf=e.target.closest('.gfig');
     if(gf){const a=GALITEMS[+gf.dataset.i];if(a)openImgZoom(a.s,a.c);return;}
-    const head=e.target.closest('.chead,.sec,.ovr,.lst .it,.canal-h,.resumo');
+    const head=e.target.closest('.chead,.sec,.ovr,.lst .it,.canal-h,.resumo,.canal-note,.canal-p,.cf');
     if(!head)return;
     let ch='', html='', blue=false;
     const link=head.getAttribute('data-link')||'';
@@ -1074,6 +1079,13 @@ function buildDoc(){
       const note=box&&box.querySelector('.canal-note')?'<p><em>'+box.querySelector('.canal-note').innerHTML+'</em></p>':'';
       const paras=box?[...box.querySelectorAll('.canal-p')].map(p=>'<p>'+p.innerHTML+'</p>').join(''):'';
       html=note+paras;
+    }else if(head.matches('.canal-note,.canal-p')){
+      blue=true; ch='Leitura da rede textual'; html=head.innerHTML;
+    }else if(head.matches('.cf')){
+      blue=true;
+      const k=head.querySelector('.cfk'), v=head.querySelector('.cfv');
+      ch=k?k.textContent.trim():'Leitura da rede textual';
+      html=v?v.innerHTML:head.innerHTML;
     }
     if(link)html+='<br><br><a class="qz-link" href="'+link+'" target="_blank" rel="noopener">ver diagrama ↗</a>';
     if(html)openQZoom(ch,html,blue);
