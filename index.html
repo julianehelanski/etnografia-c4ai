@@ -32,8 +32,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #title-bar .texnote{font-family:'Courier New',monospace;font-size:.56rem;line-height:1.65;color:var(--text-soft);letter-spacing:.01em;margin-top:.8rem;padding-left:.7rem;max-width:25rem}
 #netsel{pointer-events:auto;margin-top:.7rem;display:flex;flex-wrap:wrap;align-items:center;gap:.28rem;max-width:27rem;font-family:'Courier New',monospace}
 #netsel>.texcmd{font-size:.66rem}
-#netsel .ns-b{font-family:'Courier New',monospace;font-size:.66rem;color:var(--text);background:rgba(255,255,255,.72);border:1px solid var(--rule-soft);border-radius:4px;padding:.14rem .5rem;cursor:pointer;transition:background .12s ease,border-color .12s ease,color .12s ease}
-#netsel .ns-b:hover{background:#e2c8d2;border-color:#004b9c}
+#netsel .ns-b{font-family:'Courier New',monospace;font-size:.66rem;color:#0645ad;background:rgba(255,255,255,.72);border:1px solid var(--rule-soft);border-radius:4px;padding:.14rem .5rem;cursor:pointer;text-decoration:underline;text-underline-offset:.15em;transition:background .12s ease,border-color .12s ease,color .12s ease}
+#netsel .ns-b:hover{background:#e2c8d2;border-color:#004b9c;color:#0b0080}
 #netsel .ns-b.on{background:#004b9c;border-color:#004b9c;color:#fff;font-weight:700}
 @media(max-width:768px){#netsel{max-width:80vw}#netsel .ns-b{font-size:.62rem;padding:.1rem .4rem}}
 #title-bar .texnote b{color:var(--text);font-weight:700}
@@ -60,8 +60,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #legend .lnote b{font-weight:600;color:var(--ink)}
 #legend .lalca{display:block;margin-top:.5rem;background:none;border:none;padding:0;cursor:pointer;
   font-family:'CMU Serif',serif;font-size:.72rem;letter-spacing:0;text-align:left;
-  color:var(--ink);text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#cdb6da}
-#legend .lalca:hover{color:var(--text);text-decoration-color:#004b9c}
+  color:#0645ad;text-decoration:underline;text-underline-offset:.15em;text-decoration-color:#0645ad}
+#legend .lalca:hover{color:#0b0080;text-decoration-color:#0b0080}
 #legend .li .lname{font-family:'CMU Serif',serif}
 /* modal: como o algoritmo de Louvain funciona */
 #louvain,#purpose{position:fixed;inset:0;z-index:130;background:rgba(40,30,55,.34);backdrop-filter:blur(2px);
@@ -127,8 +127,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 .assoc{display:flex;align-items:center;gap:.5rem;font-size:.74rem;margin:.28rem 0;line-height:1.3;cursor:pointer}
 .assoc .bar{height:5px;border-radius:3px;flex-shrink:0;min-width:3px}
 .assoc .aw{font-family:'Courier New',monospace;font-size:.54rem;color:var(--text);margin-left:auto}
-.assoc b{font-weight:600;color:var(--ink)}
-.assoc:hover b{text-decoration:underline}
+.assoc b{font-weight:600;color:#0645ad;text-decoration:underline;text-underline-offset:.15em}
+.assoc:hover b{color:#0b0080}
 .quote{font-family:'CMU Serif',serif;font-size:.82rem;line-height:1.5;color:var(--ink);background:var(--mark-bg);border-radius:5px;padding:.45rem .65rem;margin:.5rem 0}
 .quote mark{background:#ffd14d;color:var(--text);padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .quote{cursor:zoom-in;transition:background .12s ease}
@@ -180,8 +180,8 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc-nav{position:sticky;top:-2.6rem;background:#fff;display:flex;gap:1.1rem;flex-wrap:wrap;
   padding:.3rem 0 .7rem;margin-bottom:.4rem;border-bottom:1px solid #eee;z-index:2}
 #doc-nav a{font-family:'Courier New',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--text);text-decoration:none;cursor:pointer}
-#doc-nav a:hover{color:var(--text-soft)}
+  color:#0645ad;text-decoration:underline;text-underline-offset:.15em;cursor:pointer}
+#doc-nav a:hover{color:#0b0080}
 #doc h2.dt{font-family:'CMU Serif',serif;font-weight:600;font-size:1.75rem;letter-spacing:-.01em;color:var(--text);margin-bottom:.3rem}
 #doc .dsub{font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--text);margin-bottom:1.4rem}
 /* índice clicável no topo da aba (navegação por hipertexto) */
@@ -189,11 +189,11 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
 #doc .dtoc-h{font-family:'Courier New',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.75rem}
 #doc .dtoc-l{display:flex;flex-direction:column;gap:.06rem;align-items:flex-start}
 #doc .dtoc-g{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);margin:.75rem 0 .3rem}
-#doc .dtoc-a{font-family:'CMU Serif',serif;font-size:.96rem;line-height:1.5;color:var(--ink);text-decoration:none;cursor:pointer;padding:.06rem 0;border-bottom:1px solid transparent;transition:border-color .12s ease,color .12s ease}
-#doc .dtoc-a:hover{color:var(--text);border-bottom-color:var(--rule)}
+#doc .dtoc-a{font-family:'CMU Serif',serif;font-size:.96rem;line-height:1.5;color:#0645ad;text-decoration:underline;text-underline-offset:.15em;cursor:pointer;padding:.06rem 0;transition:color .12s ease}
+#doc .dtoc-a:hover{color:#0b0080}
 #doc .dtoc-cap{padding-left:1rem}
-#doc .captop{display:inline-block;margin-top:1.1rem;font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--text-soft);text-decoration:none;cursor:pointer}
-#doc .captop:hover{color:var(--text)}
+#doc .captop{display:inline-block;margin-top:1.1rem;font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.08em;color:#0645ad;text-decoration:underline;text-underline-offset:.15em;cursor:pointer}
+#doc .captop:hover{color:#0b0080}
 #doc .dh{font-family:'Courier New',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--text);border-top:1px solid #ececec;padding-top:1.1rem;margin:2rem 0 .9rem}
 #doc .resumo{font-family:'CMU Serif',serif;font-size:.98rem;line-height:1.6;color:var(--text);text-align:justify;margin:0 -.5rem;padding:.4rem .5rem;border-radius:4px;cursor:zoom-in;transition:background .12s ease}
