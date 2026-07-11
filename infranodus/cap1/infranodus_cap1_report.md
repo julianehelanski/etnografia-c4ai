@@ -10,44 +10,44 @@
 > mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
-- Tokens significativos: **22,800**
-- Grafo bruto: **6514** nós · **57550** arestas
-- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3253** arestas
-- Tópicos detectados (Louvain): **8**
+- Tokens significativos: **23,272**
+- Grafo bruto: **6604** nós · **58753** arestas
+- Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **3297** arestas
+- Tópicos detectados (Louvain): **7**
 
 ## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
-| 1 | `rede` | 1276 |
-| 2 | `pesquisa` | 965 |
-| 3 | `etnografia` | 920 |
-| 4 | `artificial` | 698 |
-| 5 | `inteligencia` | 693 |
-| 6 | `ciencia` | 599 |
-| 7 | `latour` | 597 |
-| 8 | `campo` | 537 |
-| 9 | `metodo` | 518 |
-| 10 | `objeto` | 485 |
-| 11 | `corte` | 471 |
-| 12 | `humano` | 429 |
-| 13 | `descricao` | 420 |
-| 14 | `inscricao` | 392 |
-| 15 | `pratica` | 388 |
-| 16 | `strathern` | 372 |
-| 17 | `modelo` | 357 |
-| 18 | `relacao` | 346 |
-| 19 | `analise` | 345 |
-| 20 | `ator` | 336 |
-| 21 | `dado` | 328 |
-| 22 | `maquina` | 322 |
-| 23 | `gesto` | 318 |
-| 24 | `parte` | 313 |
+| 1 | `rede` | 1283 |
+| 2 | `pesquisa` | 981 |
+| 3 | `etnografia` | 849 |
+| 4 | `artificial` | 701 |
+| 5 | `inteligencia` | 692 |
+| 6 | `ciencia` | 614 |
+| 7 | `latour` | 604 |
+| 8 | `campo` | 580 |
+| 9 | `metodo` | 535 |
+| 10 | `objeto` | 492 |
+| 11 | `corte` | 477 |
+| 12 | `humano` | 439 |
+| 13 | `inscricao` | 419 |
+| 14 | `descricao` | 417 |
+| 15 | `pratica` | 396 |
+| 16 | `strathern` | 385 |
+| 17 | `modelo` | 374 |
+| 18 | `ator` | 350 |
+| 19 | `relacao` | 345 |
+| 20 | `gesto` | 343 |
+| 21 | `analise` | 343 |
+| 22 | `dado` | 325 |
+| 23 | `parte` | 316 |
+| 24 | `maquina` | 314 |
 | 25 | `haraway` | 308 |
-| 26 | `teoria` | 302 |
-| 27 | `conceito` | 277 |
-| 28 | `descreve` | 276 |
-| 29 | `sociais` | 270 |
-| 30 | `escrita` | 255 |
+| 26 | `teoria` | 305 |
+| 27 | `conceito` | 305 |
+| 28 | `escrita` | 286 |
+| 29 | `descreve` | 275 |
+| 30 | `sociais` | 268 |
 
 ## 3. Conceitos mais influentes (PageRank · centralidade na rede)
 PageRank pondera a importância de um nó pela importância dos seus
@@ -56,36 +56,36 @@ termos frequentes mas perifericamente conectados descem.
 
 | # | termo | PageRank |
 |---|-------|----------|
-| 1 | `rede` | 0.0330 |
-| 2 | `pesquisa` | 0.0253 |
-| 3 | `etnografia` | 0.0242 |
-| 4 | `artificial` | 0.0165 |
-| 5 | `inteligencia` | 0.0165 |
+| 1 | `rede` | 0.0326 |
+| 2 | `pesquisa` | 0.0254 |
+| 3 | `etnografia` | 0.0222 |
+| 4 | `artificial` | 0.0164 |
+| 5 | `inteligencia` | 0.0162 |
 | 6 | `latour` | 0.0160 |
-| 7 | `ciencia` | 0.0157 |
-| 8 | `campo` | 0.0145 |
-| 9 | `metodo` | 0.0142 |
+| 7 | `ciencia` | 0.0159 |
+| 8 | `campo` | 0.0155 |
+| 9 | `metodo` | 0.0145 |
 | 10 | `objeto` | 0.0130 |
-| 11 | `corte` | 0.0128 |
+| 11 | `corte` | 0.0129 |
 | 12 | `humano` | 0.0120 |
-| 13 | `descricao` | 0.0115 |
-| 14 | `inscricao` | 0.0112 |
-| 15 | `pratica` | 0.0107 |
-| 16 | `strathern` | 0.0104 |
-| 17 | `modelo` | 0.0101 |
-| 18 | `relacao` | 0.0097 |
-| 19 | `analise` | 0.0094 |
-| 20 | `maquina` | 0.0091 |
-| 21 | `dado` | 0.0090 |
-| 22 | `haraway` | 0.0089 |
-| 23 | `parte` | 0.0089 |
-| 24 | `gesto` | 0.0087 |
-| 25 | `ator` | 0.0086 |
-| 26 | `conceito` | 0.0080 |
-| 27 | `descreve` | 0.0079 |
-| 28 | `teoria` | 0.0078 |
-| 29 | `sociais` | 0.0075 |
-| 30 | `escrita` | 0.0073 |
+| 13 | `inscricao` | 0.0117 |
+| 14 | `descricao` | 0.0113 |
+| 15 | `pratica` | 0.0108 |
+| 16 | `strathern` | 0.0107 |
+| 17 | `modelo` | 0.0104 |
+| 18 | `relacao` | 0.0096 |
+| 19 | `gesto` | 0.0093 |
+| 20 | `analise` | 0.0092 |
+| 21 | `parte` | 0.0088 |
+| 22 | `haraway` | 0.0088 |
+| 23 | `dado` | 0.0088 |
+| 24 | `ator` | 0.0088 |
+| 25 | `maquina` | 0.0088 |
+| 26 | `conceito` | 0.0087 |
+| 27 | `escrita` | 0.0080 |
+| 28 | `descreve` | 0.0078 |
+| 29 | `teoria` | 0.0077 |
+| 30 | `sociais` | 0.0073 |
 
 ## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
 Diferença de posição (rank por degree) − (rank por PageRank). Valor
@@ -93,45 +93,45 @@ positivo = o termo é *mais central na rede* do que sugere sua frequência.
 
 | # | termo | degree-rank | pagerank-rank | salto |
 |---|-------|-------------|----------------|-------|
-| 1 | `cientifico` | 140 | 126 | +14 |
-| 2 | `computacional` | 111 | 99 | +12 |
-| 3 | `instituicao` | 95 | 84 | +11 |
-| 4 | `diagrama` | 106 | 95 | +11 |
-| 5 | `infraestrutura` | 74 | 64 | +10 |
-| 6 | `acesso` | 119 | 110 | +9 |
-| 7 | `funcionam` | 124 | 115 | +9 |
-| 8 | `termos` | 53 | 47 | +6 |
-| 9 | `actante` | 54 | 48 | +6 |
-| 10 | `cortes` | 102 | 96 | +6 |
-| 11 | `decisao` | 139 | 133 | +6 |
-| 12 | `disponivel` | 154 | 148 | +6 |
-| 13 | `conexoes` | 116 | 111 | +5 |
-| 14 | `fato` | 141 | 136 | +5 |
-| 15 | `pensar` | 47 | 43 | +4 |
+| 1 | `cientifico` | 144 | 128 | +16 |
+| 2 | `computacional` | 114 | 100 | +14 |
+| 3 | `infraestrutura` | 75 | 65 | +10 |
+| 4 | `instituicao` | 96 | 86 | +10 |
+| 5 | `diagrama` | 97 | 87 | +10 |
+| 6 | `cortes` | 107 | 98 | +9 |
+| 7 | `spira` | 64 | 57 | +7 |
+| 8 | `formula` | 105 | 99 | +6 |
+| 9 | `tecnica` | 110 | 104 | +6 |
+| 10 | `funcionam` | 117 | 111 | +6 |
+| 11 | `acesso` | 119 | 113 | +6 |
+| 12 | `termos` | 46 | 41 | +5 |
+| 13 | `manifesta` | 71 | 66 | +5 |
+| 14 | `condicoes` | 106 | 101 | +5 |
+| 15 | `palavra` | 153 | 148 | +5 |
 
 ## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
-| 1 | `rede` | 0.4034 |
+| 1 | `rede` | 0.3891 |
 | 2 | `pesquisa` | 0.2598 |
-| 3 | `etnografia` | 0.1955 |
-| 4 | `latour` | 0.1606 |
-| 5 | `corte` | 0.1184 |
-| 6 | `campo` | 0.0880 |
-| 7 | `ciencia` | 0.0743 |
-| 8 | `inscricao` | 0.0722 |
-| 9 | `descricao` | 0.0612 |
-| 10 | `metodo` | 0.0611 |
-| 11 | `humano` | 0.0477 |
-| 12 | `strathern` | 0.0402 |
-| 13 | `objeto` | 0.0322 |
-| 14 | `maquina` | 0.0312 |
-| 15 | `dado` | 0.0266 |
-| 16 | `modos` | 0.0254 |
+| 3 | `etnografia` | 0.1758 |
+| 4 | `latour` | 0.1578 |
+| 5 | `corte` | 0.1156 |
+| 6 | `campo` | 0.1028 |
+| 7 | `ciencia` | 0.0772 |
+| 8 | `inscricao` | 0.0729 |
+| 9 | `metodo` | 0.0707 |
+| 10 | `descricao` | 0.0554 |
+| 11 | `humano` | 0.0519 |
+| 12 | `strathern` | 0.0418 |
+| 13 | `objeto` | 0.0329 |
+| 14 | `maquina` | 0.0313 |
+| 15 | `dado` | 0.0255 |
+| 16 | `modos` | 0.0252 |
 | 17 | `parcial` | 0.0227 |
-| 18 | `hinterland` | 0.0207 |
-| 19 | `laboratorio` | 0.0202 |
-| 20 | `pratica` | 0.0201 |
+| 18 | `hinterland` | 0.0202 |
+| 19 | `pratica` | 0.0201 |
+| 20 | `laboratorio` | 0.0196 |
 
 ## 6. Pares de termos com associação mais surpreendente (NPMI)
 NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
@@ -142,51 +142,50 @@ vezes.
 | # | termo A | termo B | NPMI | co-ocorr. (peso) |
 |---|---------|---------|------|------------------|
 | 1 | `ausencia` | `manifesta` | 0.864 | 67 |
-| 2 | `inteligencia` | `artificial` | 0.857 | 310 |
-| 3 | `existencias` | `parciais` | 0.826 | 84 |
-| 4 | `parcial` | `existencia` | 0.744 | 59 |
-| 5 | `teoria` | `ator` | 0.727 | 101 |
-| 6 | `distribuida` | `agencia` | 0.726 | 52 |
-| 7 | `presenca` | `ausencia` | 0.706 | 43 |
-| 8 | `otherness` | `manifesta` | 0.683 | 40 |
-| 9 | `tecnico` | `letramento` | 0.654 | 46 |
-| 10 | `parcial` | `conexao` | 0.639 | 43 |
-| 11 | `pergunta` | `responde` | 0.631 | 36 |
-| 12 | `infraestrutura` | `computacional` | 0.630 | 38 |
-| 13 | `presenca` | `manifesta` | 0.621 | 28 |
-| 14 | `otherness` | `ausencia` | 0.616 | 34 |
-| 15 | `modelo` | `linguagem` | 0.611 | 84 |
-| 16 | `figuracao` | `textil` | 0.599 | 54 |
-| 17 | `heterogeneos` | `materiais` | 0.598 | 36 |
-| 18 | `ciencia` | `sociais` | 0.580 | 94 |
-| 19 | `textual` | `analise` | 0.566 | 56 |
+| 2 | `inteligencia` | `artificial` | 0.857 | 313 |
+| 3 | `existencias` | `parciais` | 0.827 | 84 |
+| 4 | `parcial` | `existencia` | 0.745 | 59 |
+| 5 | `teoria` | `ator` | 0.728 | 104 |
+| 6 | `distribuida` | `agencia` | 0.727 | 52 |
+| 7 | `presenca` | `ausencia` | 0.707 | 43 |
+| 8 | `otherness` | `manifesta` | 0.684 | 40 |
+| 9 | `tecnico` | `letramento` | 0.655 | 46 |
+| 10 | `parcial` | `conexao` | 0.634 | 43 |
+| 11 | `infraestrutura` | `computacional` | 0.631 | 38 |
+| 12 | `pergunta` | `responde` | 0.626 | 36 |
+| 13 | `presenca` | `manifesta` | 0.622 | 28 |
+| 14 | `otherness` | `ausencia` | 0.618 | 34 |
+| 15 | `modelo` | `linguagem` | 0.614 | 87 |
+| 16 | `heterogeneos` | `materiais` | 0.600 | 36 |
+| 17 | `figuracao` | `textil` | 0.597 | 54 |
+| 18 | `ciencia` | `sociais` | 0.578 | 94 |
+| 19 | `textual` | `analise` | 0.565 | 56 |
 | 20 | `generativa` | `artificial` | 0.554 | 62 |
-| 21 | `tecno` | `etnografia` | 0.554 | 73 |
-| 22 | `cientista` | `computacao` | 0.550 | 22 |
-| 23 | `principio` | `simetria` | 0.547 | 18 |
-| 24 | `acesso` | `disponivel` | 0.544 | 18 |
-| 25 | `otherness` | `presenca` | 0.543 | 25 |
+| 21 | `principio` | `simetria` | 0.548 | 18 |
+| 22 | `otherness` | `hinterland` | 0.546 | 36 |
+| 23 | `acesso` | `disponivel` | 0.545 | 18 |
+| 24 | `otherness` | `presenca` | 0.545 | 25 |
+| 25 | `antropologia` | `tecnica` | 0.544 | 21 |
 
 ## 7. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (49 termos): latour, metodo, corte, strathern, gesto, haraway
-- **Tópico 2** (34 termos): pesquisa, artificial, inteligencia, objeto, pratica, modelo
-- **Tópico 3** (27 termos): etnografia, descricao, inscricao, parte, descreve, pergunta
-- **Tópico 4** (20 termos): humano, relacao, maquina, parcial, plano, agencia
-- **Tópico 5** (19 termos): rede, analise, ator, teoria, termos, actante
-- **Tópico 6** (15 termos): ciencia, campo, dado, sociais, escrita, tecnologia
-- **Tópico 7** (9 termos): materiais, ponto, condicoes, heterogeneos, precisa, momento
-- **Tópico 8** (7 termos): otherness, hinterland, ausencia, presenca, manifesta, palavra
+- **Tópico 1** (48 termos): pesquisa, campo, objeto, pratica, modelo, escrita
+- **Tópico 2** (39 termos): latour, corte, strathern, gesto, haraway, conceito
+- **Tópico 3** (27 termos): etnografia, metodo, inscricao, descricao, parte, descreve
+- **Tópico 4** (24 termos): artificial, inteligencia, ciencia, dado, sociais, laboratorio
+- **Tópico 5** (18 termos): humano, relacao, maquina, parcial, plano, agencia
+- **Tópico 6** (17 termos): rede, ator, analise, teoria, termos, actante
+- **Tópico 7** (7 termos): otherness, hinterland, ausencia, manifesta, presenca, palavra
 
 ## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
 Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
 texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 1** [latour, metodo, corte] e **Tópico 2** [pesquisa, artificial, inteligencia] — densidade ponderada de ligação = 0.5582
-- Lacuna entre **Tópico 1** [latour, metodo, corte] e **Tópico 4** [humano, relacao, maquina] — densidade ponderada de ligação = 0.5827
-- Lacuna entre **Tópico 2** [pesquisa, artificial, inteligencia] e **Tópico 4** [humano, relacao, maquina] — densidade ponderada de ligação = 0.5956
-- Lacuna entre **Tópico 3** [etnografia, descricao, inscricao] e **Tópico 4** [humano, relacao, maquina] — densidade ponderada de ligação = 0.5963
-- Lacuna entre **Tópico 4** [humano, relacao, maquina] e **Tópico 5** [rede, analise, ator] — densidade ponderada de ligação = 0.6553
-- Lacuna entre **Tópico 1** [latour, metodo, corte] e **Tópico 5** [rede, analise, ator] — densidade ponderada de ligação = 0.6681
+- Lacuna entre **Tópico 2** [latour, corte, strathern] e **Tópico 4** [artificial, inteligencia, ciencia] — densidade ponderada de ligação = 0.3451
+- Lacuna entre **Tópico 1** [pesquisa, campo, objeto] e **Tópico 5** [humano, relacao, maquina] — densidade ponderada de ligação = 0.4618
+- Lacuna entre **Tópico 4** [artificial, inteligencia, ciencia] e **Tópico 5** [humano, relacao, maquina] — densidade ponderada de ligação = 0.5486
+- Lacuna entre **Tópico 1** [pesquisa, campo, objeto] e **Tópico 2** [latour, corte, strathern] — densidade ponderada de ligação = 0.5801
+- Lacuna entre **Tópico 2** [latour, corte, strathern] e **Tópico 5** [humano, relacao, maquina] — densidade ponderada de ligação = 0.6111
+- Lacuna entre **Tópico 3** [etnografia, metodo, inscricao] e **Tópico 5** [humano, relacao, maquina] — densidade ponderada de ligação = 0.6523
 
 ## 9. Leitura interpretativa
 **O que a rede mostra.** O núcleo do capítulo gira em torno de `rede`,
