@@ -48,6 +48,13 @@ PALETTE = ["#6c8ebf", "#9b59c6", "#56b04a", "#ef8a3c", "#27adc4",
 
 BREAK = "brk"  # sentinela: não colide com nenhum token real
 
+# conceitos-âncora da tese: sempre recebem rótulo no grafo, mesmo quando o
+# PageRank os deixaria fora do núcleo (top-N). São termos de peso teórico, não
+# de frequência — "tecnografia", conceito central, aparece pouco como palavra e
+# co-ocorre com poucos termos, então sua centralidade estrutural é baixa. Fixá-los
+# torna o argumento legível sem falsear o tamanho do nó (que segue o PageRank real).
+ANCHOR_TERMS = {"tecnografia", "etnografia", "inscricao", "mediacao", "conceito"}
+
 # nomes legíveis dos territórios, por termos-assinatura (ordem = prioridade)
 TERRITORY_RULES = [
     (("ator", "actante"), "Teoria Ator-Rede"),
@@ -350,6 +357,7 @@ def main() -> int:
             "betweenness": round(float(btw.get(n, 0)), 4),
             "chapters": chs,
             "core": n in core_set,
+            "pin": n in ANCHOR_TERMS,
             "passages": passages.get(n, []),
         })
 
