@@ -41,15 +41,16 @@ TESE = {
     "pergunta": "Onde está o laboratório de IA e onde estão os seus cientistas? "
                 "O que cientistas e engenheiros fazem quando desenvolvem "
                 "inteligência artificial?",
-    "objetivo": "Descrever o arranjo das práticas tecnocientíficas dessa rede e "
-                "analisar como o plano institucional-corporativo e o plano "
-                "técnico-situado se articulam na produção de conhecimento em IA "
-                "e na produção de conhecimento sobre IA pelas ciências sociais.",
+    "objetivo": "Descrever o arranjo das práticas tecnocientíficas da rede "
+                "sociotécnica do C4AI e analisar como o plano "
+                "institucional-corporativo e o plano técnico-situado se "
+                "articulam na produção de conhecimento em IA e na produção de "
+                "conhecimento sobre IA pelas ciências sociais.",
     "questoes": [
         "Como se faz IA, na prática, num centro de pesquisa?",
         "Como um arranjo público-privado nasce, funciona e se dissolve?",
-        "Como a voz de um paciente se converte em dado e em diagnóstico — e o "
-        "que se perde nessa cadeia de inscrições?",
+        "Como a voz de um paciente se converte em dado e em classificação pela "
+        "rede neural — e o que se perde nessa cadeia de inscrições?",
         "Que vocabulário (figurações) descreve a tecnociência sem denunciá-la "
         "nem celebrá-la?",
     ],
@@ -119,23 +120,28 @@ CHAPTERS = [
      "Segue Fábio e Cláudio pela rede longa que sustentou o C4AI por cinco "
      "anos, dos cartões de Hollerith (1890) à genealogia da IBM e à "
      "racionalidade do ecossistema de inovação.",
-     "Documenta o ciclo completo da parceria (2020–2025) e identifica um padrão "
-     "de construção de dependência sedimentado pela IBM ao longo de 135 anos — "
-     "proposto como tecnopoder; encerra com a dissolução IBM-C4AI (dez. 2025)."),
+     "Documenta o ciclo completo da parceria (2020–2025) e descreve o padrão "
+     "de reprodução de dependências técnica e comercial sedimentado pela IBM "
+     "ao longo de 135 anos, lido na figura do tecnopoder (termo tomado de "
+     "Brennan); encerra com a dissolução IBM-C4AI (dez. 2025)."),
     ("ex_cap4.tex", "4", "A rede que Marcelo construiu",
      "Segue Marcelo Finger pela rede curta do SPIRA: a cadeia de translações "
      "que converte a voz de pacientes com Covid-19 em espectrogramas "
-     "processados por redes neurais — da fala ao dado ao diagnóstico.",
+     "processados por redes neurais — da fala ao dado à detecção de "
+     "insuficiência respiratória.",
      "Mostra que o modelo (96,5% de precisão) aprendeu uma insuficiência "
      "respiratória específica ao covideiro pandêmico: sua falha de "
      "generalização é evidência empírica da tensão ontológica (Mol). Propõe a "
      "inscrição tecnográfica."),
     ("ex_cap5.tex", "", "Considerações finais: arrematando os fios",
-     "Cruza as redes longas (Cap. 3) e curtas (Cap. 4) e reúne as contribuições "
-     "empírica, metodológica e analítica da tese.",
-     "Os dois pontos de cruzamento — a falha do SPIRA e a dissolução IBM-C4AI — "
-     "revelam a fragilidade de redes que pareciam estáveis: as inscrições "
-     "carregavam, ocultas, as condições de sua produção."),
+     "Retoma os três movimentos do método — o corte, os atores e actantes, a "
+     "compostagem —, relê o C4AI (rede longa) e o SPIRA (rede curta) como a "
+     "mesma rede sob cortes distintos e reúne as contribuições e as questões "
+     "que ficam em aberto.",
+     "O computador é o próprio laboratório de uma tecnociência distribuída, e "
+     "as redes que pareciam estáveis revelaram-se composições precárias; a "
+     "própria tese — repartida entre Overleaf, GitHub e o site — partilha essa "
+     "condição: existe enquanto as suas conexões forem mantidas."),
 ]
 
 # título real do capítulo: primeiro \chapter{...} ou \chapter*{...} do .tex
@@ -215,8 +221,21 @@ def _trunc(s: str, n: int = 170) -> str:
     return s if len(s) <= n else s[:n - 1].rstrip() + "…"
 
 
+def _refs_cap(s: str) -> str:
+    """\\ref{capituloN} → N, como no PDF compilado (para exibição)."""
+    return re.sub(r"~?\\(?:ref|cref|Cref|autoref|nameref)\{capitulo(\d+)\}", r" \1", s)
+
+
+def _polish(s: str) -> str:
+    """Acabamento tipográfico do texto extraído: travessões TeX, \\_ e espaços."""
+    s = s.replace("---", "—").replace("--", "–").replace(r"\_", "_")
+    s = re.sub(r"\s+([.,;:!?])", r"\1", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def _pre(s: str) -> str:
     """Remove ruído de LaTeX preservando caixa, acentos e hífens (para exibição)."""
+    s = _refs_cap(s)
     s = re.sub(r"(?<!\\)%.*", "", s)                                   # comentários
     s = re.sub(r"\\(begin|end)\{[^}]*\}", " ", s)                      # ambientes
     s = re.sub(r"\\label\{[^}]*\}", " ", s)
@@ -231,7 +250,7 @@ def _pre(s: str) -> str:
 
 def first_sentence(tex_segment: str) -> str:
     """Primeira frase de prosa de um trecho .tex (para nota de seção)."""
-    txt = re.sub(r"\s+", " ", clean_title(_pre(tex_segment))).strip()
+    txt = _polish(clean_title(_pre(tex_segment)))
     m = re.search(r"(.+?[.!?])(\s|$)", txt)
     sent = (m.group(1) if m else txt)
     return _trunc(sent, 180)
@@ -288,7 +307,8 @@ def parse_captions(tex: str):
                 # (típico de continuação de longtable) — não listar.
                 continue
             arg, _ = _match_brace_arg(tex, m.end() - 1)
-            cap = clean_title(short) if short else _trunc(clean_title(arg))
+            cap = (_polish(clean_title(_refs_cap(short))) if short
+                   else _trunc(_polish(clean_title(_refs_cap(arg)))))
             if not cap or _is_continuation(cap):
                 continue
             link_m = MERMAID_RE.search(arg)
@@ -301,9 +321,9 @@ def parse_captions(tex: str):
 
 def parse_resumo(src: Path):
     raw = src.read_text(encoding="utf-8")
-    clean = re.sub(r"\s+", " ", clean_title(_pre(raw))).strip()
+    clean = _polish(clean_title(_pre(raw)))
     parts = re.split(r"Palavras[\s-]*chave\s*:?\s*", clean, maxsplit=1)
-    resumo = parts[0].strip()
+    resumo = re.sub(r"^Resumo\s+", "", parts[0].strip())
     palavras = []
     if len(parts) > 1:
         kw = parts[1].split(".")[0]   # só a frase das palavras-chave
