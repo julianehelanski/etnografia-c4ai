@@ -218,7 +218,8 @@ SECOES_CURADAS = {
         {"t": "O que proponho", "subs": [], "nota":
          "Chamo esta tese de uma tecnografia: um conceito que se constitui no "
          "próprio gesto de pôr em relação o campo, a teoria, minhas memórias de "
-         "pesquisa e os modelos de linguagem junto aos quais escrevo, e não um "
+         "pesquisa e os modelos de linguagem junto aos quais faço esta tese, e "
+         "não um "
          "método trazido pronto para aplicar. O nome teve uma primeira forma, "
          "tecno-etnografia, e a contração para tecnografia pertence ao mesmo "
          "percurso em que o conceito se fez. Desse gesto de pôr em relação "
@@ -311,7 +312,8 @@ SECOES_CURADAS = {
          "lento, pero avanzo, o lema do caracol zapatista da dedicatória."},
         {"t": "Arremate", "subs": [], "nota":
          "No centro do grafo de co-ocorrência de toda a tese está rede, o termo "
-         "de maior degree e a maior ponte, e nele se encontram os dois sentidos "
+         "de maior grau (degree) e a maior ponte, e nele se encontram os dois "
+         "sentidos "
          "que mantive lado a lado: a rede sociotécnica que descrevi e a análise "
          "de rede que pratiquei. O vocabulário de método é o mais enxuto e o "
          "mais central; os objetos empíricos ocupam as comunidades maiores. "
