@@ -96,6 +96,54 @@ TESE = {
     ],
 }
 
+# Curadoria de títulos e notas de seção. A extração vem do .tex; estes itens
+# foram revisados para o site e ainda divergem do texto da tese. Cada entrada
+# mapeia o texto extraído → o texto que vai ao ar. Quando o .tex for
+# atualizado, a chave deixa de casar e a entrada pode sair daqui (o
+# --relatorio-curadoria lista as que já não casam com nada).
+CURADORIA = {
+    "ex_cap1.tex": {
+        # notas de seção (1ª frase extraída)
+        "Antes de entrar em campo, situo o leitor sobre o que vai encontrar "
+        "neste capítulo 1.":
+            "Antes de entrar em campo, situo quem me lê sobre o que vai "
+            "encontrar neste capítulo 1.",
+        "Direct access to anything is not in the power of “humans” souls and "
+        "machinery.":
+            "Direct access to anything is not in the power of human souls and "
+            "machinery.",
+        "Este capítulo funcionou como laboratório de suas próprias decisões.":
+            "Faço deste capítulo o laboratório de minhas próprias decisões.",
+        # títulos de subseção
+        "Compostando o método: acompanhar a pesquisa em IA enquanto ciência "
+        "em construção":
+            "Compostando o método: acompanhar a pesquisa em IA como ciência "
+            "em construção",
+    },
+}
+
+
+_CURADORIA_USADA: set[tuple[str, str]] = set()
+
+
+def curar(fname: str, texto: str) -> str:
+    """Aplica a curadoria de título/nota, quando houver, ao texto extraído."""
+    novo = CURADORIA.get(fname, {}).get(texto)
+    if novo is None:
+        return texto
+    _CURADORIA_USADA.add((fname, texto))
+    return novo
+
+
+def avisar_curadoria_obsoleta() -> None:
+    """Avisa sobre entradas que já não casam com o .tex (tese atualizada)."""
+    for fname, mapa in CURADORIA.items():
+        for chave in mapa:
+            if (fname, chave) not in _CURADORIA_USADA:
+                print(f"[doc] curadoria sem correspondência em {fname}: "
+                      f"{chave[:70]!r} — o .tex mudou? revise CURADORIA.")
+
+
 # capítulo: (arquivo, número, título, resumo [o que faz], conclusão [a que chega])
 CHAPTERS = [
     ("ex_cap0.tex", "", "Apresentação",
@@ -103,11 +151,11 @@ CHAPTERS = [
      "um sistema de IA (o SPIRA), que abre o percurso etnográfico.",
      ""),
     ("ex_cap1.tex", "1", "Onde está o laboratório e os seus cientistas?",
-     "Documenta o percurso da etnógrafa pelo campo e constrói o método a partir "
-     "da experiência: o patchwork como figuração, as existências parciais "
+     "Documento meu percurso pelo campo e construo o método a partir da "
+     "experiência: o patchwork como figuração, as existências parciais "
      "(incluindo o fazer-com IA generativa) e a compostagem.",
-     "Chega a quatro lições metodológicas e à proposta da tecnografia — "
-     "modo de pesquisa que habita a tensão entre a circulabilidade técnica das "
+     "Chego a quatro lições metodológicas e à proposta da tecnografia, modo de "
+     "pesquisa que habita a tensão entre a circulabilidade técnica das "
      "inscrições e a realidade sensível dos corpos."),
     ("ex_cap2.tex", "2", "Metáforas, figurações e alianças: revisão da literatura",
      "Reconstrói as alianças teóricas da tese em duas tramas: a análise "
@@ -226,6 +274,15 @@ def _refs_cap(s: str) -> str:
     return re.sub(r"~?\\(?:ref|cref|Cref|autoref|nameref)\{capitulo(\d+)\}", r" \1", s)
 
 
+def _enquote(s: str) -> str:
+    """\\enquote{x} → “x”: preserva as aspas que o PDF mostra."""
+    prev = None
+    while prev != s:
+        prev = s
+        s = re.sub(r"\\enquote\*?\s*\{([^{}]*)\}", r"“\1”", s)
+    return s
+
+
 def _polish(s: str) -> str:
     """Acabamento tipográfico do texto extraído: travessões TeX, \\_ e espaços."""
     s = s.replace("---", "—").replace("--", "–").replace(r"\_", "_")
@@ -235,7 +292,7 @@ def _polish(s: str) -> str:
 
 def _pre(s: str) -> str:
     """Remove ruído de LaTeX preservando caixa, acentos e hífens (para exibição)."""
-    s = _refs_cap(s)
+    s = _enquote(_refs_cap(s))
     s = re.sub(r"(?<!\\)%.*", "", s)                                   # comentários
     s = re.sub(r"\\(begin|end)\{[^}]*\}", " ", s)                      # ambientes
     s = re.sub(r"\\label\{[^}]*\}", " ", s)
@@ -256,7 +313,7 @@ def first_sentence(tex_segment: str) -> str:
     return _trunc(sent, 180)
 
 
-def parse_outline(tex: str) -> list[dict]:
+def parse_outline(tex: str, fname: str = "") -> list[dict]:
     """Seções (com subseções e nota de 1ª frase), na ordem do documento."""
     secs: list[dict] = []
     seen = False
@@ -264,7 +321,7 @@ def parse_outline(tex: str) -> list[dict]:
     for idx, m in enumerate(matches):
         kind = m.group(1)
         arg, nxt = _match_brace_arg(tex, m.end() - 1)
-        title = clean_title(arg)
+        title = curar(fname, clean_title(_enquote(arg)))
         if not title:
             continue
         # trecho até o próximo section/subsection → nota (1ª frase)
@@ -274,7 +331,7 @@ def parse_outline(tex: str) -> list[dict]:
         cut = re.search(r"\\begin\{(figure|table|longtable|itemize|enumerate)", body)
         if cut:
             body = body[:cut.start()]
-        nota = first_sentence(body)
+        nota = curar(fname, first_sentence(body))
         if kind == "section" or not seen:
             seen = seen or kind == "section"
             secs.append({"t": title, "nota": nota, "subs": []})
@@ -353,7 +410,7 @@ def main() -> int:
             "num": num, "title": parse_chapter_title(tex, title),
             "resumo": resumo_cap,
             "conclusao": conclusao_cap,
-            "sections": parse_outline(tex),
+            "sections": parse_outline(tex, fname),
         })
         f, t = parse_captions(tex)
         for c, link, img in f:
@@ -367,6 +424,8 @@ def main() -> int:
         for c, _link, _img in t:
             tabn += 1
             tabelas.append({"n": tabn, "cap": num or title, "t": c})
+
+    avisar_curadoria_obsoleta()
 
     payload = {
         "tese": TESE,
