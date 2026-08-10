@@ -120,6 +120,28 @@ CURADORIA = {
             "Compostando o método: acompanhar a pesquisa em IA como ciência "
             "em construção",
     },
+    "ex_cap2.tex": {
+        # notas que a extração cortava em 180 caracteres: as versões curadas
+        # fecham a frase em vez de reticências.
+        "A figuração militar-industrial é um ponto sensível na escrita de "
+        "Latour, e isso se torna mais explícito quando deixo de apoiá-la "
+        "apenas na leitura de passagens que escolhi citar d…":
+            "A figuração militar-industrial é um ponto sensível na escrita de "
+            "Latour, e isso se torna mais explícito quando deixo de apoiá-la "
+            "apenas na leitura de passagens que escolhi citar dele.",
+        "Isso se torna uma estrutura complexa de cadeias de fornecimento "
+        "dentro de cadeias de fornecimento, um zoom fractal de dezenas de "
+        "milhares de fornecedores, milhões de quilômetros d…":
+            "Isso se torna uma estrutura complexa de cadeias de fornecimento "
+            "dentro de cadeias de fornecimento, um zoom fractal de dezenas de "
+            "milhares de fornecedores, milhões de quilômetros de estradas.",
+        "Abri o capítulo 2 com duas epígrafes e duas figuras postas lado a "
+        "lado, a do exército de aliados de Latour e a do berço de gato de "
+        "Haraway, porque em Haraway a figuração propõe e…":
+            "Abri o capítulo 2 com duas epígrafes e duas figuras postas lado a "
+            "lado, a do exército de aliados de Latour e a do berço de gato de "
+            "Haraway, porque em Haraway a figuração propõe mundos.",
+    },
 }
 
 
@@ -158,12 +180,12 @@ CHAPTERS = [
      "pesquisa que habita a tensão entre a circulabilidade técnica das "
      "inscrições e a realidade sensível dos corpos."),
     ("ex_cap2.tex", "2", "Metáforas, figurações e alianças: revisão da literatura",
-     "Reconstrói as alianças teóricas da tese em duas tramas: a análise "
+     "Reconstruo as alianças teóricas da tese em duas tramas: a análise "
      "lexicométrica das figurações em seis obras de Latour e o mapeamento "
      "bibliométrico do campo brasileiro de IA nas ciências humanas.",
-     "Mostra que a figuração militar-industrial é situada e que o vocabulário "
-     "têxtil-topológico organiza os textos metateóricos de Latour; documenta um "
-     "campo brasileiro em formação, onde a pesquisa se insere."),
+     "Mostro que a figuração militar-industrial é situada e que o vocabulário "
+     "têxtil-topológico organiza os textos metateóricos de Latour; documento um "
+     "campo brasileiro em formação, onde insiro minha pesquisa."),
     ("ex_cap3.tex", "3", "A rede que Fábio e Cláudio construíram",
      "Segue Fábio e Cláudio pela rede longa que sustentou o C4AI por cinco "
      "anos, dos cartões de Hollerith (1890) à genealogia da IBM e à "
