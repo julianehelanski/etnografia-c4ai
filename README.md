@@ -1,6 +1,6 @@
-# {tecno-etnografia} — Rede textual da tese
+# {tecnografia} — Rede textual da tese
 
-Site interativo que acompanha a tese de doutorado **"{tecno-etnografia} de um
+Site interativo que acompanha a tese de doutorado **"{tecnografia} de um
 centro de inteligência artificial: seguindo cientistas e engenheiros —
 universidade afora"** (Juliane Helanski · PPGCS/IFCH · Unicamp · 2026).
 
@@ -50,7 +50,7 @@ interpretação do capítulo 1 ensaia (ver
 [`infranodus/interpretation_cap1.md`](infranodus/interpretation_cap1.md)).
 
 Mais do que um enfeite, a escolha é **coerente com a própria tese**. O trabalho
-propõe uma *tecno-etnografia*: descrever práticas tecnocientíficas **sem apagar a
+propõe uma *tecnografia*: descrever práticas tecnocientíficas **sem apagar a
 técnica** que as sustenta, seguindo a teoria ator-rede e a noção latouriana de
 **inscrição** — os diagramas, gráficos e representações que fazem o conhecimento
 circular. Esta rede é, ela mesma, uma inscrição tecnocientífica aplicada
@@ -117,7 +117,7 @@ decoração: é uma escolha que **marca três coisas ao mesmo tempo**:
 
 1. **O Overleaf / o LaTeX** como o ambiente material em que a tese é, de fato,
    escrita e composta — a infraestrutura técnica fica à vista, não escondida.
-2. **O próprio conceito de _tecno-etnografia_** que a tese propõe e desenvolve:
+2. **O próprio conceito de _tecnografia_** que a tese propõe e desenvolve:
    descrever práticas tecnocientíficas sem apagar a técnica que as sustenta.
    A interface pratica o que a tese argumenta.
 3. **A lógica de "chamada" do LaTeX**, transposta para o site. Em LaTeX, um
