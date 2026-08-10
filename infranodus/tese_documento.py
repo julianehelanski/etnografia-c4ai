@@ -26,12 +26,14 @@ from relatorio_divergencia_tese import clean_title, _match_brace_arg  # noqa: E4
 # Curada (não gerada): revise/ajuste se quiser outra ênfase.
 TESE = {
     "tema": "A pesquisa em inteligência artificial como prática tecnocientífica "
-            "situada — uma etnografia do Centro de Inteligência Artificial da "
-            "USP (C4AI) entre 2020 e 2025.",
+            "situada — tecnografias do Centro de Inteligência Artificial da "
+            "USP (C4AI), seguindo cientistas e engenheiros universidade afora "
+            "(2020–2025).",
     "objeto": "A rede sociotécnica que associou universidade pública e "
               "corporação transnacional (USP · IBM · FAPESP) na pesquisa de IA "
               "no Brasil, da fundação à dissolução; e a cadeia técnica do projeto "
-              "SPIRA, da voz do paciente ao diagnóstico.",
+              "SPIRA, da voz do paciente ao diagnóstico, até a abertura da "
+              "segunda fase (SPIRA-BM).",
     "pergunta": "Onde está o laboratório de IA e onde estão os seus cientistas? "
                 "O que cientistas e engenheiros fazem quando desenvolvem "
                 "inteligência artificial?",
@@ -41,7 +43,7 @@ TESE = {
                 "e na produção de conhecimento sobre IA pelas ciências sociais.",
     "questoes": [
         "Como se faz IA, na prática, num centro de pesquisa?",
-        "Como um arranjo público-privado nasce, opera e se dissolve?",
+        "Como um arranjo público-privado nasce, funciona e se dissolve?",
         "Como a voz de um paciente se converte em dado e em diagnóstico — e o "
         "que se perde nessa cadeia de inscrições?",
         "Que vocabulário (figurações) descreve a tecnociência sem denunciá-la "
@@ -49,30 +51,38 @@ TESE = {
     ],
     "conclusao": "Fazer IA é fazer tecnociência: construir fatos e, ao mesmo "
                  "tempo, sustentar as redes que os tornam possíveis. O "
-                 "laboratório está distribuído (no computador, em casa, na "
-                 "enfermaria) e as redes que pareciam estáveis revelaram-se "
-                 "composições precárias — a falha de generalização do SPIRA e a "
-                 "dissolução da parceria IBM-C4AI (dez. 2025) tornaram visível "
-                 "essa fragilidade.",
+                 "computador é o próprio laboratório — a tecnociência da IA se "
+                 "faz distribuída, sobre infraestrutura computacional que poucos "
+                 "atores no mundo detêm — e as redes que pareciam estáveis "
+                 "revelaram-se composições precárias: a falha de generalização "
+                 "do SPIRA e a dissolução da parceria IBM-C4AI (dez. 2025) "
+                 "tornaram visível essa fragilidade.",
     "contribuicoes": [
         "Empírica — o registro etnográfico do ciclo completo de uma parceria "
         "público-privada em IA no Brasil, do nascimento à dissolução (inclui "
         "relatórios não-públicos e entrevistas que preservam a ciência em "
         "construção).",
         "Metodológica — as quatro lições do Capítulo 1, a proposta da "
-        "tecnoetnografia e o uso das notas de rodapé como dispositivo "
-        "teórico-metodológico.",
-        "Analítica — o conceito de inscrição tecnoetnográfica, a leitura do "
-        "SPIRA como objeto fracional (Mol/Law) e a proposta descritiva de "
-        "tecnopoder.",
+        "tecnografia (conceito que nasceu como tecnoetnografia e foi renomeado "
+        "no encontro com a antropologia da técnica) e o uso das notas de rodapé "
+        "como dispositivo teórico-metodológico.",
+        "Analítica — o conceito de inscrição tecnográfica, a leitura do SPIRA "
+        "como objeto fracional (Mol/Law), a descrição da IA generativa como "
+        "mediador não determinista, cuja resposta se enacta a cada uso situado, "
+        "e o tecnopoder (termo tomado de Brennan e deslocado para o material do "
+        "Capítulo 3).",
     ],
     "desdobramentos": [
-        "Acompanhar o SPIRA-BM (segunda fase) e realizar a entrevista com "
-        "Larissa Berti.",
-        "Acompanhar o C4AI após a saída da IBM — o que resta quando a rede se "
-        "desfaz.",
-        "Investigar a composição entre pesquisadora e modelo de linguagem "
-        "(Claude) na produção da tese.",
+        "Acompanhar a continuação do SPIRA-BM para além do recorte da tese e "
+        "realizar a entrevista com Larissa Berti, ponto de entrada para a "
+        "análise da segunda fase.",
+        "Acompanhar o C4AI após a saída da IBM — a redistribuição de recursos, "
+        "competências e vínculos, e os arranjos que sustentam a infraestrutura "
+        "pública de pesquisa (o JAIRU, inaugurado pela USP em fev. 2026).",
+        "Levar adiante as questões de pesquisa e ensino com IA não "
+        "determinista: regimes de declaração e auditabilidade, letramento "
+        "técnico nas ciências sociais e a desigualdade epistêmica entre "
+        "acessos.",
     ],
 }
 
@@ -86,7 +96,7 @@ CHAPTERS = [
      "Documenta o percurso da etnógrafa pelo campo e constrói o método a partir "
      "da experiência: o patchwork como figuração, as existências parciais "
      "(incluindo o fazer-com IA generativa) e a compostagem.",
-     "Chega a quatro lições metodológicas e à proposta da tecnoetnografia — "
+     "Chega a quatro lições metodológicas e à proposta da tecnografia — "
      "modo de pesquisa que habita a tensão entre a circulabilidade técnica das "
      "inscrições e a realidade sensível dos corpos."),
     ("ex_cap2.tex", "2", "Metáforas, figurações e alianças: revisão da literatura",
@@ -110,7 +120,7 @@ CHAPTERS = [
      "Mostra que o modelo (96,5% de precisão) aprendeu uma insuficiência "
      "respiratória específica ao covideiro pandêmico: sua falha de "
      "generalização é evidência empírica da tensão ontológica (Mol). Propõe a "
-     "inscrição tecnoetnográfica."),
+     "inscrição tecnográfica."),
     ("ex_cap5.tex", "", "Considerações finais: arrematando os fios",
      "Cruza as redes longas (Cap. 3) e curtas (Cap. 4) e reúne as contribuições "
      "empírica, metodológica e analítica da tese.",
