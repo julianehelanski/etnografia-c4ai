@@ -403,17 +403,17 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'CM
   <button id="louvain-cl">× fechar</button>
   <h2>O algoritmo de Louvain</h2>
   <div class="lvsub">Como os agrupamentos da rede são detectados</div>
-  <p>O algoritmo de Louvain é um método rápido e eficiente para detectar <b>comunidades</b> (agrupamentos / clusters) em grandes redes e grafos. Ele funciona otimizando iterativamente a <b>modularidade</b> — uma métrica que avalia a densidade de conexões dentro dos grupos em comparação com as conexões esperadas ao acaso.</p>
+  <p>O algoritmo de Louvain é um método rápido e eficiente para detectar <b>comunidades</b> (agrupamentos, ou clusters) em grandes redes e grafos. Ele funciona otimizando iterativamente a <b>modularidade</b>, uma métrica que avalia a densidade de conexões dentro dos grupos em comparação com as conexões esperadas ao acaso.</p>
   <h3>Como o algoritmo funciona</h3>
-  <p>O processo é executado em duas fases principais que se repetem ciclicamente até que a estrutura da comunidade se estabilize:</p>
-  <p class="lvphase"><b>Fase local (otimização).</b> O algoritmo inicia considerando cada nó como sua própria comunidade isolada. Em seguida, avalia o ganho de modularidade ao mover um nó para a comunidade de cada um dos seus vizinhos. O nó é transferido para a comunidade que oferece o maior ganho positivo. Se nenhum ganho for possível, o nó permanece onde está. Esse processo é repetido para todos os nós até que nenhum movimento melhore a modularidade.</p>
-  <p class="lvphase"><b>Fase de agregação.</b> Uma vez alcançado o limite local da fase anterior, o algoritmo agrupa todos os nós de uma mesma comunidade em um único "supernó" e cria um novo grafo ponderado. As conexões entre esses supernós representam a soma dos pesos das arestas originais.</p>
-  <p>O processo das duas fases é repetido no novo grafo até que não seja possível aumentar mais a modularidade, resultando em uma estrutura hierárquica de comunidades.</p>
+  <p>O processo se dá em duas fases que se repetem ciclicamente até que a estrutura de comunidades se estabilize.</p>
+  <p class="lvphase"><b>Fase local (otimização).</b> O algoritmo começa considerando cada nó como sua própria comunidade isolada. Em seguida, avalia o ganho de modularidade ao mover um nó para a comunidade de cada um dos seus vizinhos, e o transfere para a comunidade que oferece o maior ganho positivo. Quando nenhum ganho é possível, o nó permanece onde está. Isso se repete para todos os nós até que nenhum movimento melhore a modularidade.</p>
+  <p class="lvphase"><b>Fase de agregação.</b> Alcançado o limite local da fase anterior, o algoritmo agrupa todos os nós de uma mesma comunidade em um único "supernó" e cria um novo grafo ponderado, no qual as conexões entre supernós somam os pesos das arestas originais.</p>
+  <p>As duas fases se repetem sobre o novo grafo até que a modularidade não possa mais aumentar, o que resulta em uma estrutura hierárquica de comunidades.</p>
   <div class="lvthesis">
-    <h3>Como foi aplicado nesta tese</h3>
-    <p>A rede é construída por co-ocorrência: percorre-se o texto de cada capítulo com uma janela deslizante de quatro palavras, e cada par de termos próximos ganha uma aresta — quanto mais perto, maior o peso. Mantêm-se cerca dos <b>180 termos mais relevantes</b>, podando as ligações mais fracas.</p>
-    <p>O Louvain é então aplicado sobre essa rede ponderada (pelo peso de co-ocorrência), com <b>semente fixa</b> — de modo que o resultado é <b>determinístico e reprodutível</b>: a mesma tese gera sempre os mesmos agrupamentos — e resolução padrão (1.0).</p>
-    <p>Duas decisões de curadoria complementam o algoritmo: agrupamentos muito pequenos (menos de três termos) não são exibidos no mapa; e um agrupamento — <b>"Bibliometria · panorama do campo"</b> — foi reunido manualmente, porque seu vocabulário se dispersava pelos demais e o Louvain não o isolava sozinho. Os nomes dos agrupamentos vêm de termos-assinatura ou dos termos de maior peso em cada um.</p>
+    <h3>Como apliquei nesta tese</h3>
+    <p>A rede se constrói por co-ocorrência: percorro o texto com uma janela deslizante que avança palavra a palavra, e cada par de termos próximos ganha uma aresta, com peso tanto maior quanto menor a distância entre eles. Mantenho cerca dos <b>260 termos mais relevantes</b> e podo as ligações mais fracas.</p>
+    <p>Aplico então o Louvain sobre essa rede ponderada, com <b>semente fixa</b>, de modo que o resultado é <b>determinístico e reprodutível</b>, a mesma tese gera sempre os mesmos agrupamentos, e com resolução padrão (1.0).</p>
+    <p>Duas decisões de curadoria complementam o algoritmo. Agrupamentos muito pequenos, com menos de três termos, não aparecem no mapa. E um agrupamento, <b>"Bibliometria · panorama do campo"</b>, reuni manualmente, porque seu vocabulário se dispersava pelos demais e o Louvain não o isolava sozinho. Os nomes dos agrupamentos vêm de termos-assinatura ou dos termos de maior peso em cada um.</p>
   </div>
 </div></div>
 <div id="purpose"><div id="purpose-card">
