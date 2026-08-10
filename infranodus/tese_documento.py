@@ -29,13 +29,15 @@ TESE = {
             "situada — tecnografias do C4AI, o Centro de Inteligência "
             "Artificial da USP, seguindo cientistas e engenheiros universidade "
             "afora.",
-    "objeto": "A rede sociotécnica que associou universidade pública, agência "
-              "de fomento e corporação transnacional (USP · FAPESP · IBM) na "
-              "pesquisa de IA no Brasil, da fundação do C4AI (2020) à "
-              "dissolução da parceria (2025); e a cadeia de inscrições do "
-              "projeto SPIRA, que converteu a voz de pacientes hospitalizados "
-              "com Covid-19 em espectrogramas processados por redes neurais "
-              "para a detecção de insuficiência respiratória.",
+    "objeto": "Cada capítulo corta um objeto etnográfico próprio: a própria "
+              "pesquisa enquanto prática composta, humana e além de humana "
+              "(cap. 1); a obra de Latour e o campo brasileiro de estudos de IA "
+              "nas ciências humanas (cap. 2); a rede longa do arranjo "
+              "USP · FAPESP · IBM que sustentou o C4AI, da fundação (2020) à "
+              "dissolução da parceria (2025) (cap. 3); e a rede curta que se "
+              "ata em torno do SPIRA, da voz de pacientes hospitalizados com "
+              "Covid-19 à detecção de insuficiência respiratória pela rede "
+              "neural (cap. 4).",
     "pergunta": "Onde está o laboratório de IA e onde estão os seus cientistas? "
                 "O que cientistas e engenheiros fazem quando desenvolvem "
                 "inteligência artificial?",
