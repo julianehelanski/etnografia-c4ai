@@ -26,14 +26,16 @@ from relatorio_divergencia_tese import clean_title, _match_brace_arg  # noqa: E4
 # Curada (não gerada): revise/ajuste se quiser outra ênfase.
 TESE = {
     "tema": "A pesquisa em inteligência artificial como prática tecnocientífica "
-            "situada — tecnografias do Centro de Inteligência Artificial da "
-            "USP (C4AI), seguindo cientistas e engenheiros universidade afora "
-            "(2020–2025).",
-    "objeto": "A rede sociotécnica que associou universidade pública e "
-              "corporação transnacional (USP · IBM · FAPESP) na pesquisa de IA "
-              "no Brasil, da fundação à dissolução; e a cadeia técnica do projeto "
-              "SPIRA, da voz do paciente ao diagnóstico, até a abertura da "
-              "segunda fase (SPIRA-BM).",
+            "situada — tecnografias do C4AI, o Centro de Inteligência "
+            "Artificial da USP, seguindo cientistas e engenheiros universidade "
+            "afora.",
+    "objeto": "A rede sociotécnica que associou universidade pública, agência "
+              "de fomento e corporação transnacional (USP · FAPESP · IBM) na "
+              "pesquisa de IA no Brasil, da fundação do C4AI (2020) à "
+              "dissolução da parceria (2025); e a cadeia de inscrições do "
+              "projeto SPIRA, que converteu a voz de pacientes hospitalizados "
+              "com Covid-19 em espectrogramas processados por redes neurais "
+              "para a detecção de insuficiência respiratória.",
     "pergunta": "Onde está o laboratório de IA e onde estão os seus cientistas? "
                 "O que cientistas e engenheiros fazem quando desenvolvem "
                 "inteligência artificial?",
@@ -73,16 +75,21 @@ TESE = {
         "Capítulo 3).",
     ],
     "desdobramentos": [
-        "Acompanhar a continuação do SPIRA-BM para além do recorte da tese e "
-        "realizar a entrevista com Larissa Berti, ponto de entrada para a "
-        "análise da segunda fase.",
-        "Acompanhar o C4AI após a saída da IBM — a redistribuição de recursos, "
-        "competências e vínculos, e os arranjos que sustentam a infraestrutura "
-        "pública de pesquisa (o JAIRU, inaugurado pela USP em fev. 2026).",
-        "Levar adiante as questões de pesquisa e ensino com IA não "
-        "determinista: regimes de declaração e auditabilidade, letramento "
-        "técnico nas ciências sociais e a desigualdade epistêmica entre "
-        "acessos.",
+        "A reconfiguração da rede após o encerramento da parceria C4AI-IBM "
+        "(dez. 2025): como se redistribuem recursos, competências e vínculos "
+        "quando um arranjo desse porte se desfaz.",
+        "O lugar da universidade pública na pesquisa em IA quando o "
+        "conhecimento de ponta migra para as corporações: sob quais arranjos, "
+        "com quais salvaguardas e em direção a quais finalidades se firmam os "
+        "vínculos com quem detém a infraestrutura computacional (do Arandu ao "
+        "JAIRU, inaugurado em fev. 2026) — pergunta que um retorno ao campo, "
+        "com a continuação do SPIRA-BM, talvez deixe seguir.",
+        "O vocabulário crítico que as ciências humanas e sociais brasileiras "
+        "ainda constroem para descrever a IA — o campo em formação que o "
+        "mapeamento bibliométrico registrou.",
+        "O que o não determinismo da IA generativa significa para a pesquisa e "
+        "o ensino: regimes de declaração e auditabilidade, letramento técnico "
+        "nas ciências sociais e a desigualdade epistêmica entre acessos.",
     ],
 }
 
